@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Vendedor — Seller Sync</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0c0e12;--sidebar:#10131a;--card:#161a24;--border:#1e2435;
+  --txt:#e4eaf5;--mut:#7b8aaa;--acc:#22c55e;--acc2:#16a34a;
+  --gold:#f59e0b;--blue:#3b82f6;
+  --font:system-ui,'Segoe UI',Roboto,sans-serif;
+}
+html,body{height:100%}
+body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:flex;height:100vh;overflow:hidden}
+
+/* SIDEBAR */
+.sidebar{width:300px;flex-shrink:0;background:var(--sidebar);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;overflow:hidden}
+.sidebar-header{padding:18px 16px 12px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sidebar-title{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.sidebar-count{font-size:11px;color:var(--acc);margin-top:2px}
+.sidebar-search{padding:10px 12px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sidebar-search input{width:100%;background:#1a1f2e;border:1px solid var(--border);border-radius:8px;
+  padding:8px 12px;color:var(--txt);font-size:13px;outline:none}
+.sidebar-search input:focus{border-color:var(--acc)}
+.lead-list{flex:1;overflow-y:auto;padding:8px}
+.lead-item{display:flex;gap:10px;align-items:center;padding:10px 10px;border-radius:10px;cursor:pointer;
+  transition:background .15s;margin-bottom:3px;border:1px solid transparent}
+.lead-item:hover{background:var(--card)}
+.lead-item.active{background:var(--card);border-color:var(--acc)}
+.lead-thumb{width:42px;height:42px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--border)}
+.lead-thumb-placeholder{width:42px;height:42px;border-radius:8px;background:var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.lead-info{flex:1;min-width:0}
+.lead-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead-cat{font-size:11px;color:var(--mut);margin-top:1px}
+.lead-rating{font-size:11px;color:var(--gold);margin-left:auto;flex-shrink:0}
+
+/* MAIN */
+.main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.empty-state{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;color:var(--mut)}
+.empty-state .big{font-size:48px}
+.empty-state p{font-size:14px}
+
+/* LEAD DETAIL */
+.detail{padding:28px 32px;max-width:980px}
+.detail-header{display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.detail-name{font-size:24px;font-weight:700;line-height:1.2}
+.detail-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;
+  font-size:12px;background:var(--card);border:1px solid var(--border)}
+.tag.green{border-color:rgba(34,197,94,.3);color:var(--acc)}
+.tag.gold{border-color:rgba(245,158,11,.3);color:var(--gold)}
+.tag.blue{border-color:rgba(59,130,246,.3);color:var(--blue)}
+.detail-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;
+  font-size:14px;font-weight:600;cursor:pointer;border:0;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 4px 16px -4px rgba(34,197,94,.4);
+  transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(34,197,94,.5)}
+.btn.ghost{background:var(--card);box-shadow:none;border:1px solid var(--border);color:var(--txt)}
+.btn.ghost:hover{border-color:var(--acc);color:var(--acc);box-shadow:none;transform:none}
+.btn.copied{background:#1e3a2a;border-color:var(--acc);color:var(--acc)}
+
+/* SITE URL */
+.site-url-box{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:12px 16px;margin-bottom:24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.site-url-label{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em;flex-shrink:0}
+.site-url-text{font-size:13px;color:var(--blue);flex:1;word-break:break-all}
+
+/* SECTIONS */
+.section-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);
+  margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:28px}
+.gallery a{display:block;border-radius:8px;overflow:hidden;border:1px solid var(--border);
+  aspect-ratio:1;transition:.2s}
+.gallery a:hover{border-color:var(--acc);transform:scale(1.02)}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block}
+.no-images{color:var(--mut);font-size:13px;background:var(--card);border-radius:8px;
+  padding:16px;border:1px dashed var(--border);margin-bottom:28px}
+
+/* COPY BLOCKS */
+.copy-blocks{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.copy-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.copy-card-head{display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid var(--border)}
+.copy-card-head h3{font-size:14px;font-weight:600}
+.copy-btn{background:#1a1f2e;border:1px solid var(--border);border-radius:7px;
+  padding:5px 12px;font-size:12px;cursor:pointer;color:var(--mut);transition:.15s;white-space:nowrap}
+.copy-btn:hover{border-color:var(--acc);color:var(--acc)}
+.copy-btn.ok{background:rgba(34,197,94,.15);border-color:var(--acc);color:var(--acc)}
+pre.copy-text{padding:14px 16px;font:13px/1.7 var(--font);color:#c8d6f0;white-space:pre-wrap;
+  word-break:break-word}
+
+/* CONTACT */
+.contact-box{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.contact-item{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:10px 14px;font-size:13px}
+.contact-item .label{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.contact-item .val{font-weight:600;margin-top:1px}
+.contact-item a{color:var(--blue);text-decoration:none}
+.contact-item a:hover{text-decoration:underline}
+
+/* SCROLLBAR */
+.lead-list::-webkit-scrollbar,.main::-webkit-scrollbar{width:5px}
+.lead-list::-webkit-scrollbar-track,.main::-webkit-scrollbar-track{background:transparent}
+.lead-list::-webkit-scrollbar-thumb,.main::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  body{flex-direction:column}
+  .sidebar{width:100%;height:200px;flex-shrink:0}
+  .lead-list{display:flex;flex-direction:row;gap:6px;overflow-x:auto;overflow-y:hidden;padding:8px}
+  .lead-item{flex-direction:column;min-width:100px;text-align:center}
+  .detail{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">Painel do Vendedor</div>
+    <div class="sidebar-count" id="countLabel"></div>
+  </div>
+  <div class="sidebar-search">
+    <input type="search" id="searchInput" placeholder="Buscar lead...">
+  </div>
+  <div class="lead-list" id="leadList"></div>
+</nav>
+
+<main class="main" id="main">
+  <div class="empty-state" id="emptyState">
+    <div class="big">📋</div>
+    <p>Selecione um lead na lateral para ver os detalhes</p>
+  </div>
+  <div class="detail" id="detail" style="display:none"></div>
+</main>
+
+<script>
+const LEADS = [{"slug":"augustos-barbershop-46c6cbfb","name":"Augustos Barbershop","category":"Barbearia","phone":"(31) 99158-9751","rating":5,"instagram":"augustosbarber","presence":"SOCIAL_ONLY","address":"Av. João César de Oliveira, 6701 - loja 07 08 - Beatriz, Contagem - MG, 32040-000","siteUrl":"https://augustos-barbershop-46c6cbfb.tiectu.easypanel.host","images":["insta-1.jpg","insta-2.jpg","insta-3.jpg","insta-4.jpg","insta-5.jpg","insta-6.jpg","insta-7.jpg","insta-8.jpg","maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nEspaço impecável, espelhos dourados, equipe com foto editorial. Branding que poucos negócios locais têm. Mas na hora que um homem em Contagem abre o Google e digita \"barbearia perto de mim\", a Augustos não aparece. O cliente vai pra quem tem site — mesmo que a barbearia seja pior.\n\n*DEPOIS:*\nEle pesquisa, encontra o site da Augustos, vê a foto do interior com aquela energia premium, a equipe em foto profissional, a nota 5.0 — e agenda antes de ligar pra qualquer concorrente. O site vende o padrão antes do primeiro corte.\n\n*A PONTE:*\nJá fizemos. Com as fotos reais da Augustos — o interior panorâmico, os retratos da equipe, o cliente satisfeito no espelho. Está pronto pra você ver e aprovar.\n\n*→ [Ver o site da Augustos Barbershop]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho Instagram e funciona.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo pra mexer.\"*  \n\n*\"Já tenho WhatsApp pra agendamento.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(31) 99158-9751* — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar como ficou?\""}]},{"slug":"dra-karina-resende-harmonizacao-orofacial-ec350c83","name":"Dra Karina Resende / Harmonização Orofacial","category":"Centro de saúde e beleza","phone":"(62) 99237-7040","rating":5,"instagram":"dra.karinaresende","presence":"SOCIAL_ONLY","address":"R. PR-2, 99 - Vila Redencao, Goiânia - GO, 74850-200","siteUrl":"https://dra-karina-resende-harmonizacao-orofacial-ec350c83.tiectu.easypanel.host","images":["insta-1.jpg","insta-2.jpg","insta-3.jpg","insta-4.jpg","insta-5.jpg","insta-6.jpg","insta-7.jpg","insta-8.jpg","maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nNota 5.0, especialidade orofacial (diferencial técnico que poucos têm), antes/depois documentados de qualidade. Mas quando uma paciente em Goiânia pesquisa \"harmonização orofacial\" ou \"preenchimento labial natural\" — a Dra. Karina simplesmente não aparece.\n\n*DEPOIS:*\nEla pesquisa, encontra o site, vê a foto calorosa da Dra. Karina, lê sobre a especialidade orofacial (entende que é mais técnica que a estética comum), vê os resultados reais — e agenda com muito mais confiança. O site posiciona a especialidade antes mesmo da consulta.\n\n*A PONTE:*\nJá está pronto. Com as suas fotos reais, seu diferencial orofacial explicado, os resultados documentados. Está pronto pra ver.\n\n*→ [Ver o site da Dra. Karina Resende]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho Instagram e funciona.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo pra mexer.\"*  \n\n*\"Pacientes chegam pelo Instagram.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(62) 99237-7040* — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar como ficou?\""}]},{"slug":"dra-mariana-obeid-harmonizacao-facial-91c2a701","name":"Dra Mariana Obeid - Harmonização Facial","category":"Centro de saúde e beleza","phone":"(62) 99696-8804","rating":5,"instagram":"dramarianaobeid","presence":"SOCIAL_ONLY","address":"R. T-28, 1491 - St. Bueno, Goiânia - GO, 74210-040","siteUrl":"https://dra-mariana-obeid-harmonizacao-facial-91c2a701.tiectu.easypanel.host","images":["insta-1.jpg","insta-2.jpg","insta-3.jpg","insta-4.jpg","insta-5.jpg","insta-6.jpg","insta-7.jpg","insta-8.jpg","maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nNota 5.0, resultados reais documentados, Setor Bueno. Uma carteira de antes/depois que mostra naturalidade e técnica. Mas quando uma paciente do Setor Bueno pesquisa \"harmonização facial\" no Google — a Dra. Mariana não aparece.\n\n*DEPOIS:*\nEla pesquisa, encontra o site, vê imediatamente um antes/depois real no hero, sente a naturalidade do resultado — e agenda com confiança antes de pesquisar mais ninguém. O site usa os seus resultados como argumento de venda principal.\n\n*A PONTE:*\nJá está pronto. Com os seus resultados reais como protagonistas. Está pronto pra você ver.\n\n*→ [Ver o site da Dra. Mariana Obeid]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho Instagram.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(62) 99696-8804* — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar?\""}]},{"slug":"dra-camilla-queiroz-harmonizacao-facial-1ea93462","name":"Dra. Camilla Queiroz | Harmonização Facial","category":"Centro de saúde e beleza","phone":"(62) 99418-8629","rating":5,"instagram":null,"presence":"WHATSAPP_ONLY","address":"Medicorum Centro Clínico - R. C-139, 853 - Jardim América, Goiânia - GO, 74275-070","siteUrl":"https://dra-camilla-queiroz-harmonizacao-facial-1ea93462.tiectu.easypanel.host","images":["maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nNota 5.0, Medicorum Centro Clínico, Jardim América. Uma credencial que poucos têm. Mas na hora que uma paciente pesquisa \"harmonização facial Jardim América\" ou \"harmonização Goiânia\" — a Dra. Camilla não aparece. O único link online é um botão de WhatsApp. Quem não sabe o número não chega até você.\n\n*DEPOIS:*\nEla pesquisa, encontra o site, vê a foto editorial profissional, lê sobre o Medicorum, entende que é uma médica de referência com nota 5.0 — e agenda pelo WhatsApp com confiança. O site é a porta que faltava.\n\n*A PONTE:*\nJá está pronto. Com sua foto, o Medicorum destacado, seus procedimentos. Está pronto pra ver.\n\n*→ [Ver o site da Dra. Camilla Queiroz]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Já atendo pelo WhatsApp e funciona.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(62) 99418-8629* — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar?\""}]},{"slug":"dra-rosanna-rossi-harmonizacao-facial-em-goiania-g-3b8ccee7","name":"Dra. Rosanna Rossi | Harmonização Facial em Goiânia - Goiás","category":"Centro de saúde e beleza","phone":"(62) 98230-0443","rating":4.8,"instagram":"dra.rosannarossi","presence":"SOCIAL_ONLY","address":"R. 120, 313 - St. Sul, Goiânia - GO, 74085-450","siteUrl":"https://dra-rosanna-rossi-harmonizacao-facial-em-goiania-g.tiectu.easypanel.host","images":["insta-1.jpg","insta-2.jpg","insta-3.jpg","insta-4.jpg","insta-5.jpg","insta-6.jpg","insta-7.jpg","insta-8.jpg","maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nBranding RR bordado nas toalhas, antes/depois em fundo preto com logo dourado, foto editorial em blazer branco. Uma identidade visual que rivaliza com clínicas de capital. Mas quando uma paciente em Goiânia pesquisa \"harmonização facial Setor Sul\" no Google — a Dra. Rosanna simplesmente não aparece.\n\n*DEPOIS:*\nEla pesquisa, encontra o site, vê a foto editorial da Dra. em blazer branco, os resultados reais em fundo preto com o logo RR, entende que é um trabalho de excelência — e agenda antes de comparar com mais ninguém. O site transmite o mesmo luxo silencioso que o branding dela já comunica.\n\n*A PONTE:*\nJá fizemos. No padrão dark premium que o branding RR exige — com as suas fotos reais. Está pronto pra você ver.\n\n*→ [Ver o site da Dra. Rosanna Rossi]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho Instagram e funciona.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo.\"*  \n\n*\"Paciente que me acha no Instagram já conhece meu trabalho.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(62) 98230-0443* ou (62) 98189-8351 — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar como ficou?\""}]},{"slug":"myriele-centro-de-estetica-48f1d27c","name":"Myriéle Centro de Estética","category":"Centro de saúde e beleza","phone":"(62) 99913-7117","rating":5,"instagram":"myrielecentroestetico","presence":"SOCIAL_ONLY","address":"Criolipólise, Limpeza de Pele, Drenagem linfática Vibrocel, Centro Estético - Av. 85, 420 - St. Sul, Goiânia - GO, 74080-010","siteUrl":"https://myriele-centro-de-estetica-48f1d27c.tiectu.easypanel.host","images":["insta-1.jpg","insta-2.jpg","insta-3.jpg","insta-4.jpg","insta-5.jpg","insta-6.jpg","insta-7.jpg","insta-8.jpg","maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nNota 5.0, ritual de roupão e champanhe, criolipólise com resultado em sessão única. Resultados reais, clientes satisfeitas. Mas quando uma mulher em Goiânia abre o Google e pesquisa \"criolipólise Setor Sul\" ou \"drenagem linfática Goiânia\" — a Myriéle não aparece. Só acha quem já segue no Instagram.\n\n*DEPOIS:*\nEla pesquisa, encontra o site da Myriéle, vê a foto da cliente de roupão com champanhe, lê sobre o \"Crio da MY\" com resultado em 1 sessão, vê a nota 5.0 — e agenda antes mesmo de pesquisar mais. O site converte a curiosidade em agendamento.\n\n*A PONTE:*\nJá fizemos. Com as suas fotos reais — o ritual premium, o ambiente clean, o seu rosto. Está pronto pra você ver e aprovar.\n\n*→ [Ver o site da Myriéle Centro de Estética]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho Instagram e está funcionando.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo.\"*  \n\n*\"Só atendo quem chega pelo Instagram.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(62) 99913-7117* — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar como ficou?\""}]},{"slug":"pizzarella-dce53a49","name":"Pizzarella","category":"Pizzaria","phone":"(31) 3292-3000","rating":4.4,"instagram":"pizzarellalourdes","presence":"BUILDER_SITE","address":"Av. Olegário Maciel, 2280 - Santo Agostinho, Belo Horizonte - MG, 30180-111","siteUrl":"https://pizzarella-dce53a49.tiectu.easypanel.host","images":["insta-1.jpg","insta-2.jpg","insta-4.jpg","insta-5.jpg","insta-6.jpg","insta-7.jpg","insta-8.jpg","maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (curta — PAS)","text":"Oi! Tudo certo? Aqui é o [seu nome].\n\nFui pesquisar \"pizzaria no Lourdes\" no Google e a Pizzarella não aparece com site — quem busca acaba caindo no concorrente primeiro. E hoje cada pedido pelo iFood ainda deixa uma boa comissão pelo caminho.\n\nFiz uma *prévia de um site da Pizzarella*, com as fotos das suas pizzas, pra cliente te achar no Google e pedir *direto no seu WhatsApp* (sem comissão) — e ainda reservar mesa.\n\nPosso te mandar pra você ver? Leva 2 minutos. 🍕"},{"title":"Headline + CTA","text":"*Headline:* A pizza do Lourdes que todo mundo acha no Google — e pede direto com você.\n*CTA:* 👉 Ver a prévia do site da Pizzarella"},{"title":"Apresentação do site (BAB — acompanha a demo)","text":"*Hoje, como tá:*\nA Pizzarella vive de Instagram e iFood. O problema é que quem pesquisa \"pizzaria perto de mim\" ou \"pizzaria no Lourdes\" no Google não te encontra — e fecha com quem aparece. Fora que, em todo pedido pelo iFood, uma fatia do seu lucro fica pra plataforma.\n\n*Como poderia ser:*\nO cliente busca pizza na região, a Pizzarella aparece primeiro, ele bate o olho nas fotos das suas pizzas, e pede *direto no seu WhatsApp* — sem comissão nenhuma. Quem quer jantar aí, reserva a mesa em 2 toques. Tudo funcionando 24h, até quando a loja tá fechada.\n\n*A ponte:*\nÉ exatamente isso que essa prévia faz. Já está montada, com a cara da Pizzarella e as suas fotos. Você não precisa mexer em nada — só olhar e aprovar. Se gostar, em poucos dias está no ar."},{"title":"Quebra de objeções (específicas)","text":"*\"Já tenho Instagram e iFood, pra que site?\"*\nO Insta é ótimo pra mostrar, mas é alugado — cai, é bloqueado, e some seu negócio junto. E quem pesquisa no Google não te acha por lá. O iFood te dá pedido, mas cobra comissão em cada um. O site é *seu*: aparece no Google, manda o cliente direto pro seu WhatsApp e corta a comissão. Ele não substitui o Insta — ele pega o cliente que o Insta não alcança.\n\n*\"É caro?\"*\nCaro é o cliente que procura pizza no Lourdes, não acha a Pizzarella e pede no concorrente — isso acontece toda semana. O site se paga com uns poucos pedidos diretos (sem a comissão do iFood). E dá pra deixar numa mensalidade tranquila.\n\n*\"Não tenho tempo pra isso.\"*\nEssa é a melhor parte: você não faz nada. A gente monta tudo com as fotos das suas pizzas e te entrega pronto. Você só dá o ok.\n\n*\"Não sei se preciso.\"*\nPosso te mostrar uma coisa rápida? Tem pizzaria na região que já aparece no Google com site e pega o cliente antes. Montei a prévia da Pizzarella pra você comparar — 2 minutinhos e você decide."}]},{"slug":"quezia-celestino-harmonizacao-facial-goiania-b08c424a","name":"Quezia Celestino | Harmonização Facial - Goiânia","category":"Centro de saúde e beleza","phone":"(62) 99126-1609","rating":5,"instagram":null,"presence":"BUILDER_SITE","address":"Av. T-9, 2310 - Qd. 523 Sala 908A - Jardim América, Goiânia - GO, 74255-220","siteUrl":"https://quezia-celestino-harmonizacao-facial-goiania-b08c4.tiectu.easypanel.host","images":[],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nNota 5.0, clínica em bairro nobre, procedimentos de alto padrão. Mas quando alguém pesquisa \"harmonização facial Goiânia\" e chega até você, encontra um site no Canva — gratuito, sem domínio próprio, igual ao de qualquer estudante recém-formado.\n\nA primeira impressão mata a credibilidade antes mesmo de você falar.\n\n*DEPOIS:*\nUm site profissional, com paleta elegante, seu nome em destaque, procedimentos bem apresentados e botão direto pro seu WhatsApp. A paciente abre, sente que está numa clínica de alto padrão, e agenda. O site filtra quem é sério sobre o procedimento.\n\n*A PONTE:*\nJá montamos. Um site no padrão premium que seu trabalho exige — sem Canva, sem template barato. Está pronto pra você ver e aprovar.\n\n*→ [Ver o site da Dra. Quezia]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho o site no Canva e funciona.\"*  \n\n*\"É caro.\"*  \n\n*\"Não tenho tempo.\"*  \n\n*\"Instagram já resolve.\"*"},{"title":"Sequência","text":"1. Mensagem no WhatsApp *(62) 99126-1609* — item 1\n2. Interesse → link do site + item 2\n3. Objeção → item 4\n4. Fechar: \"Posso te ligar em 5 minutos pra mostrar como ficou?\""}]},{"slug":"studio-barber-club-antiga-octo-s-barber-0644fae1","name":"Studio Barber Club - Antiga Octo's Barber","category":"Barbearia","phone":"(31) 99280-4048","rating":4.9,"instagram":null,"presence":"BUILDER_SITE","address":"Av. Jair Rodrigues Vale, 202 - 2 Andar, loja 104 - Inconfidentes, Contagem - MG, 32260-080","siteUrl":"https://studio-barber-club-antiga-octo-s-barber-0644fae1.tiectu.easypanel.host","images":["maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS, curta)","text":""},{"title":"Copy da apresentação do site (BAB)","text":"*ANTES — a realidade de hoje:*\n\nVocê tem um dos melhores atendimentos de Contagem, nota 4.9, agenda cheia pelo AppBarber. Mas quem ainda não te conhece e pesquisa no Google... não te acha. O AppBarber tem o link de agendamento, não o *seu* nome. A página dele é igual à de centenas de outras barbearias — sem a identidade do Studio, sem a sua história, sem o que te diferencia.\n\nResultado: clientes em potencial a 2 km daqui fecham com outra barbearia só porque apareceu primeiro no Google.\n\n*DEPOIS — com o site próprio:*\n\nQuando alguém digitar \"barbearia Contagem\" ou \"barbearia Inconfidentes\", encontra o Studio Barber Club, com foto do espaço, lista de serviços, nota 4.9 em destaque e botão direto pro seu WhatsApp. Sem intermediário, sem taxa de agendamento de terceiro.\n\n*A PONTE — este site:*\n\nJá montamos o site do Studio com as fotos reais do seu espaço — aquele ambiente dark com LED que é diferente de tudo por aqui. Está pronto, com o seu nome, sua nota, seus serviços e CTA direto pro seu WhatsApp.\n\nVocê não precisa fazer nada. A gente fez.\n\n*→ [Ver o site do Studio Barber Club]*"},{"title":"Headline + CTA","text":"*Headline:*\n\n*Subheadline:*\n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Já tenho o AppBarber, tô bem.\"*\n\n*\"Deve ser caro.\"*\n\n*\"Não tenho tempo pra cuidar disso.\"*\n\n*\"Não sei se preciso.\"*"},{"title":"Sequência sugerida de abordagem","text":"1. Enviar *mensagem de abordagem* (item 1) pelo WhatsApp do lead: *(31) 99280-4048*\n2. Se responder com interesse → enviar *link do site ao vivo* + copy de apresentação (item 2)\n3. Se objetar → usar *quebra de objeção* específica (item 4)\n4. CTA final: \"Posso te ligar em 5 minutos pra mostrar como funciona?\""}]},{"slug":"vostra-barbearia-e71ded2b","name":"Vostra Barbearia","category":"Barbearia","phone":"(31) 99607-5278","rating":5,"instagram":null,"presence":"BUILDER_SITE","address":"R. Antônio Bernardino Muniz, 149 - Loja 101 - Centro, Contagem - MG, 32040-630","siteUrl":"https://vostra-barbearia-e71ded2b.tiectu.easypanel.host","images":["maps-1.jpg"],"copy":[{"title":"Mensagem de abordagem (WhatsApp — PAS)","text":""},{"title":"Copy da apresentação (BAB)","text":"*ANTES:*\nNota 5.0, fachada com neon que chama atenção na rua, Instagram ativo. Mas digitalmente, o que representa a La Vostra é uma página do AgendaServico — igual à de qualquer outra barbearia, sem sua identidade, sem sua foto, sem o que te diferencia.\n\nQuem pesquisa no Google não encontra a La Vostra. Encontra o AgendaServico.\n\n*DEPOIS:*\nUm cliente novo no Centro vê a fachada, pega o celular, pesquisa \"La Vostra Barbearia\" — e abre um site com a foto do neon, a nota 5.0 em destaque, os serviços e um botão direto pro seu WhatsApp. Em 10 segundos ele agendou. Sem passar por plataforma de terceiro.\n\n*A PONTE:*\nJá montamos. O site está no ar com a foto real da sua fachada — aquele neon que ninguém esquece. Só falta você ver e dizer \"aprovado\".\n\n*→ [Ver o site da La Vostra]*"},{"title":"Headline + CTA","text":"*Headline:*  \n\n*CTA:*"},{"title":"Quebra de objeções","text":"*\"Tenho Instagram e AgendaServico, tô bem.\"*  \n\n*\"Deve custar caro.\"*  \n\n*\"Não tenho tempo.\"*  \n\n*\"Minha fachada já chama atenção.\"*"},{"title":"Sequência de abordagem","text":"1. Mensagem no WhatsApp *(31) 99607-5278* — item 1 acima\n2. Resposta com interesse → link do site + item 2\n3. Objeção → usar item 4 específico\n4. Fechar: \"Te chamo em 5 min pra mostrar o site no celular — tem 5 minutinhos?\""}]}];
+
+const esc = s => String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const presenceColor = p => ({SOCIAL_ONLY:'blue',WHATSAPP_ONLY:'blue',BUILDER_SITE:'gold',OWN_SITE:'gold',NO_PRESENCE:'gold'}[p]??'');
+
+function renderSidebar(leads) {
+  const list = document.getElementById('leadList');
+  document.getElementById('countLabel').textContent = leads.length + ' leads';
+  list.innerHTML = leads.map((l,i) => {
+    const thumb = l.images[0]
+      ? `<img class="lead-thumb" src="${esc(l.siteUrl)}/imagens/${esc(l.images[0])}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : '';
+    const emoji = l.category.includes('arbear')||l.category.includes('Barbearia') ? '💈'
+      : l.category.includes('Pizza') ? '🍕'
+      : l.category.includes('saúde')||l.category.includes('stética') ? '✨' : '🏢';
+    return `<div class="lead-item" data-idx="${l._idx}" onclick="selectLead(${l._idx})">
+      ${thumb}
+      <div class="lead-thumb-placeholder" style="${thumb?'display:none':''}">${emoji}</div>
+      <div class="lead-info">
+        <div class="lead-name">${esc(l.name)}</div>
+        <div class="lead-cat">${esc(l.category)}</div>
+      </div>
+      ${l.rating ? `<div class="lead-rating">★ ${l.rating}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function selectLead(idx) {
+  document.querySelectorAll('.lead-item').forEach(el => el.classList.remove('active'));
+  const el = document.querySelector(`[data-idx="${idx}"]`);
+  if (el) el.classList.add('active');
+
+  const l = LEADS[idx];
+  document.getElementById('emptyState').style.display = 'none';
+  const detail = document.getElementById('detail');
+  detail.style.display = 'block';
+
+  const presColor = presenceColor(l.presence);
+  const igTag = l.instagram ? `<span class="tag blue">📷 @${esc(l.instagram)}</span>` : '';
+  const presTag = l.presence ? `<span class="tag ${presColor}">${esc(l.presence)}</span>` : '';
+  const ratingTag = l.rating ? `<span class="tag gold">★ ${l.rating}</span>` : '';
+
+  const gallery = l.images.length
+    ? l.images.map(f => `<a href="${esc(l.siteUrl)}/imagens/${esc(f)}" target="_blank">
+        <img src="${esc(l.siteUrl)}/imagens/${esc(f)}" alt="${esc(f)}" loading="lazy">
+      </a>`).join('')
+    : null;
+
+  const copyBlocks = l.copy.map((b, i) => `
+    <div class="copy-card">
+      <div class="copy-card-head">
+        <h3>${esc(b.title)}</h3>
+        <button class="copy-btn" data-lead="${idx}" data-block="${i}" onclick="copyBlock(this,${idx},${i})">📋 Copiar</button>
+      </div>
+      <pre class="copy-text" id="cb-${idx}-${i}">${esc(b.text)}</pre>
+    </div>`).join('');
+
+  const waNum = l.phone.replace(/\D/g,'');
+  const waLink = waNum ? `https://wa.me/55${waNum}` : null;
+
+  detail.innerHTML = `
+    <div class="detail-header">
+      <div>
+        <div class="detail-name">${esc(l.name)}</div>
+        <div class="detail-meta">${ratingTag}${presTag}${igTag}<span class="tag">${esc(l.category)}</span></div>
+      </div>
+      <div class="detail-actions">
+        <a class="btn" href="${esc(l.siteUrl)}" target="_blank">🔗 Abrir site ao vivo</a>
+        <button class="btn ghost" onclick="copyUrl('${esc(l.siteUrl)}',this)">📋 Copiar link</button>
+      </div>
+    </div>
+
+    <div class="site-url-box">
+      <span class="site-url-label">URL</span>
+      <span class="site-url-text">${esc(l.siteUrl)}</span>
+    </div>
+
+    <div class="contact-box">
+      ${l.phone ? `<div class="contact-item"><div><div class="label">Telefone</div><div class="val">${esc(l.phone)}</div></div></div>` : ''}
+      ${waLink ? `<div class="contact-item"><div><div class="label">WhatsApp</div><div class="val"><a href="${esc(waLink)}" target="_blank">Abrir conversa ↗</a></div></div></div>` : ''}
+      ${l.address ? `<div class="contact-item"><div><div class="label">Endereço</div><div class="val">${esc(l.address)}</div></div></div>` : ''}
+    </div>
+
+    ${l.images.length ? `<div class="section-title">Imagens (${l.images.length})</div><div class="gallery">${gallery}</div>` : `<div class="no-images">Sem imagens disponíveis</div>`}
+
+    ${l.copy.length ? `<div class="section-title">Copy de venda — clique para copiar</div><div class="copy-blocks">${copyBlocks}</div>` : ''}
+  `;
+
+  detail.scrollTop = 0;
+  document.getElementById('main').scrollTop = 0;
+}
+
+function copyBlock(btn, leadIdx, blockIdx) {
+  const text = document.getElementById(`cb-${leadIdx}-${blockIdx}`).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1500);
+  });
+}
+
+function copyUrl(url, btn) {
+  navigator.clipboard.writeText(url).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+// Index para lookup
+LEADS.forEach((l, i) => l._idx = i);
+
+let filtered = [...LEADS];
+renderSidebar(filtered);
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase();
+  filtered = LEADS.filter(l =>
+    l.name.toLowerCase().includes(q) ||
+    l.category.toLowerCase().includes(q) ||
+    l.phone.includes(q)
+  );
+  renderSidebar(filtered);
+});
+
+// Select first lead on load
+if (LEADS.length) selectLead(0);
+</script>
+</body>
+</html>
