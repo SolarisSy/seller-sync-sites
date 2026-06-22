@@ -1,2 +1,6 @@
-FROM nginx:alpine
-COPY . /usr/share/nginx/html
+FROM node:20-alpine
+WORKDIR /app
+COPY . /app
+ENV PORT=80
+EXPOSE 80
+CMD ["node", "server.js"]

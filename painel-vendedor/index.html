@@ -210,6 +210,7 @@ function selectLead(idx) {
   if (el) el.classList.add('active');
 
   const l = LEADS[idx];
+  currentIdx = idx;
   document.getElementById('emptyState').style.display = 'none';
   const detail = document.getElementById('detail');
   detail.style.display = 'block';
@@ -302,32 +303,48 @@ function copyUrl(url, btn) {
   });
 }
 
-// ── STATE (localStorage) ──────────────────────────────────────────
-const STATE_KEY = 'ss_lead_status';
-function getStates() { try { return JSON.parse(localStorage.getItem(STATE_KEY)||'{}'); } catch { return {}; } }
-function saveStates(s) { localStorage.setItem(STATE_KEY, JSON.stringify(s)); }
-function getState(slug) { const s = getStates(); return s[slug] || {}; }
-function patchState(slug, patch) {
-  const all = getStates();
-  all[slug] = Object.assign({}, all[slug]||{}, patch);
-  saveStates(all);
+// ── STATE (servidor COMPARTILHADO — todos veem os mesmos status) ───
+let STATUS = {};
+let currentIdx = null;
+const API = '/api/status';
+
+function getStates() { return STATUS; }
+function getState(slug) { return STATUS[slug] || {}; }
+
+function refreshUI() {
+  renderSidebar(applyFilter());
+  if (currentIdx != null) selectLead(currentIdx);
 }
 
-function toggleMsg(slug) {
-  const st = getState(slug);
-  patchState(slug, { msg: !st.msg });
-  const idx = LEADS.find(l => l.slug === slug)?._idx;
-  if (idx != null) selectLead(idx);
-  renderSidebar(applyFilter());
+async function loadStatus(silent) {
+  try {
+    const r = await fetch(API, { cache: 'no-store' });
+    if (!r.ok) throw new Error('http ' + r.status);
+    STATUS = await r.json();
+    refreshUI();
+  } catch (e) {
+    if (!silent) console.warn('Falha ao carregar status do servidor:', e.message);
+  }
 }
 
-function toggleReject(slug) {
-  const st = getState(slug);
-  patchState(slug, { rej: !st.rej });
-  const idx = LEADS.find(l => l.slug === slug)?._idx;
-  if (idx != null) selectLead(idx);
-  renderSidebar(applyFilter());
+async function patchState(slug, patch) {
+  STATUS[slug] = Object.assign({}, STATUS[slug] || {}, patch);  // otimista
+  refreshUI();
+  try {
+    const r = await fetch(API + '/' + encodeURIComponent(slug), {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patch)
+    });
+    if (!r.ok) throw new Error('http ' + r.status);
+    STATUS[slug] = await r.json();   // confirmado pelo servidor
+    refreshUI();
+  } catch (e) {
+    console.warn('Falha ao salvar status no servidor:', e.message);
+    await loadStatus(true);          // reverte para o estado real do servidor
+  }
 }
+
+function toggleMsg(slug)    { patchState(slug, { msg: !getState(slug).msg }); }
+function toggleReject(slug) { patchState(slug, { rej: !getState(slug).rej }); }
 
 // ── FILTERS ───────────────────────────────────────────────────────
 let activeFilter = 'all';
@@ -367,13 +384,16 @@ function updateStats() {
 // ── INIT ──────────────────────────────────────────────────────────
 LEADS.forEach((l, i) => l._idx = i);
 
-let filtered = applyFilter();
-renderSidebar(filtered);
+renderSidebar(applyFilter());
 
 document.getElementById('searchInput').addEventListener('input', () => renderSidebar(applyFilter()));
 
 // Select first lead on load
 if (LEADS.length) selectLead(0);
+
+// Estado compartilhado: carrega do servidor e acompanha mudancas de outros vendedores
+loadStatus();
+setInterval(() => loadStatus(true), 15000);
 </script>
 </body>
 </html>
