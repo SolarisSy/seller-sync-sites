@@ -65,6 +65,29 @@ body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:fl
 .btn.ghost{background:var(--card);box-shadow:none;border:1px solid var(--border);color:var(--txt)}
 .btn.ghost:hover{border-color:var(--acc);color:var(--acc);box-shadow:none;transform:none}
 .btn.copied{background:#1e3a2a;border-color:var(--acc);color:var(--acc)}
+.btn.danger{background:linear-gradient(135deg,#dc2626,#b91c1c);box-shadow:0 4px 16px -4px rgba(220,38,38,.4)}
+.btn.danger:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(220,38,38,.5)}
+.btn.warn{background:linear-gradient(135deg,#d97706,#b45309);box-shadow:0 4px 16px -4px rgba(217,119,6,.4)}
+.btn.warn:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(217,119,6,.5)}
+.btn.ghost-active{background:#1e2435;border-color:var(--acc);color:var(--acc)}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot.msg{background:#22c55e}
+.dot.rej{background:#ef4444}
+/* FILTER BAR */
+.filter-bar{display:flex;gap:5px;padding:8px 12px;border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap}
+.filter-pill{font-size:11px;padding:4px 11px;border-radius:20px;border:1px solid var(--border);
+  background:transparent;color:var(--mut);cursor:pointer;transition:.15s;white-space:nowrap}
+.filter-pill:hover{border-color:var(--acc);color:var(--txt)}
+.filter-pill.on{background:var(--card);border-color:var(--acc);color:var(--txt)}
+.filter-pill.on.rej{border-color:#ef4444;color:#fca5a5}
+.filter-pill.on.msg{border-color:#22c55e;color:var(--acc)}
+/* STATS */
+.stats-bar{font-size:11px;color:var(--mut);padding:5px 16px 8px;display:flex;gap:12px;flex-shrink:0}
+/* REJECTED BANNER */
+.rej-banner{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:10px;
+  padding:11px 15px;margin-bottom:20px;color:#fca5a5;font-size:13px;display:flex;align-items:center;gap:8px}
+/* STATUS ACTIONS */
+.status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
 /* SITE URL */
 .site-url-box{background:var(--card);border:1px solid var(--border);border-radius:10px;
@@ -132,6 +155,13 @@ pre.copy-text{padding:14px 16px;font:13px/1.7 var(--font);color:#c8d6f0;white-sp
   <div class="sidebar-search">
     <input type="search" id="searchInput" placeholder="Buscar lead...">
   </div>
+  <div class="filter-bar">
+    <button class="filter-pill on" data-filter="all" onclick="setFilter('all',this)">Todos</button>
+    <button class="filter-pill msg" data-filter="msg" onclick="setFilter('msg',this)">✉ Enviados</button>
+    <button class="filter-pill rej" data-filter="rej" onclick="setFilter('rej',this)">✗ Reprovados</button>
+    <button class="filter-pill" data-filter="pending" onclick="setFilter('pending',this)">Pendentes</button>
+  </div>
+  <div class="stats-bar" id="statsBar"></div>
   <div class="lead-list" id="leadList"></div>
 </nav>
 
@@ -152,12 +182,16 @@ const presenceColor = p => ({SOCIAL_ONLY:'blue',WHATSAPP_ONLY:'blue',BUILDER_SIT
 function renderSidebar(leads) {
   const list = document.getElementById('leadList');
   document.getElementById('countLabel').textContent = leads.length + ' leads';
+  updateStats();
   list.innerHTML = leads.map((l,i) => {
     const thumb = l.images[0]
       ? `<img class="lead-thumb" src="${esc(l.siteUrl)}/imagens/${esc(l.images[0])}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : '';
     const emoji = l.category.includes('arbear')||l.category.includes('Barbearia') ? '💈'
       : l.category.includes('Pizza') ? '🍕'
       : l.category.includes('saúde')||l.category.includes('stética') ? '✨' : '🏢';
+    const st = getState(l.slug);
+    const dot = st.rej ? `<span class="dot rej" title="Site reprovado"></span>`
+               : st.msg ? `<span class="dot msg" title="Mensagem enviada"></span>` : '';
     return `<div class="lead-item" data-idx="${l._idx}" onclick="selectLead(${l._idx})">
       ${thumb}
       <div class="lead-thumb-placeholder" style="${thumb?'display:none':''}">${emoji}</div>
@@ -165,7 +199,7 @@ function renderSidebar(leads) {
         <div class="lead-name">${esc(l.name)}</div>
         <div class="lead-cat">${esc(l.category)}</div>
       </div>
-      ${l.rating ? `<div class="lead-rating">★ ${l.rating}</div>` : ''}
+      ${dot || (l.rating ? `<div class="lead-rating">★ ${l.rating}</div>` : '')}
     </div>`;
   }).join('');
 }
@@ -180,6 +214,7 @@ function selectLead(idx) {
   const detail = document.getElementById('detail');
   detail.style.display = 'block';
 
+  const st = getState(l.slug);
   const presColor = presenceColor(l.presence);
   const igTag = l.instagram ? `<span class="tag blue">📷 @${esc(l.instagram)}</span>` : '';
   const presTag = l.presence ? `<span class="tag ${presColor}">${esc(l.presence)}</span>` : '';
@@ -213,6 +248,17 @@ function selectLead(idx) {
         <a class="btn" href="${esc(l.siteUrl)}" target="_blank">🔗 Abrir site ao vivo</a>
         <button class="btn ghost" onclick="copyUrl('${esc(l.siteUrl)}',this)">📋 Copiar link</button>
       </div>
+    </div>
+
+    ${st.rej ? `<div class="rej-banner">✗ <strong>Site reprovado</strong> — marcado para revisão e melhoria.</div>` : ''}
+
+    <div class="status-actions">
+      <button id="btnMsg" class="btn ${st.msg?'warn':'ghost'}" onclick="toggleMsg('${esc(l.slug)}')">
+        ${st.msg ? '✉ Mensagem enviada' : '✉ Marcar mensagem enviada'}
+      </button>
+      <button id="btnRej" class="btn ${st.rej?'danger':'ghost'}" onclick="toggleReject('${esc(l.slug)}')">
+        ${st.rej ? '✗ Reprovado' : '✗ Reprovar site'}
+      </button>
     </div>
 
     <div class="site-url-box">
@@ -254,21 +300,75 @@ function copyUrl(url, btn) {
   });
 }
 
-// Index para lookup
+// ── STATE (localStorage) ──────────────────────────────────────────
+const STATE_KEY = 'ss_lead_status';
+function getStates() { try { return JSON.parse(localStorage.getItem(STATE_KEY)||'{}'); } catch { return {}; } }
+function saveStates(s) { localStorage.setItem(STATE_KEY, JSON.stringify(s)); }
+function getState(slug) { const s = getStates(); return s[slug] || {}; }
+function patchState(slug, patch) {
+  const all = getStates();
+  all[slug] = Object.assign({}, all[slug]||{}, patch);
+  saveStates(all);
+}
+
+function toggleMsg(slug) {
+  const st = getState(slug);
+  patchState(slug, { msg: !st.msg });
+  const idx = LEADS.find(l => l.slug === slug)?._idx;
+  if (idx != null) selectLead(idx);
+  renderSidebar(applyFilter());
+}
+
+function toggleReject(slug) {
+  const st = getState(slug);
+  patchState(slug, { rej: !st.rej });
+  const idx = LEADS.find(l => l.slug === slug)?._idx;
+  if (idx != null) selectLead(idx);
+  renderSidebar(applyFilter());
+}
+
+// ── FILTERS ───────────────────────────────────────────────────────
+let activeFilter = 'all';
+
+function setFilter(f, el) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('on'));
+  el.classList.add('on');
+  renderSidebar(applyFilter());
+}
+
+function applyFilter() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  return LEADS.filter(l => {
+    const st = getState(l.slug);
+    const matchQ = !q || l.name.toLowerCase().includes(q) || l.category.toLowerCase().includes(q) || l.phone.includes(q);
+    if (!matchQ) return false;
+    if (activeFilter === 'msg') return st.msg;
+    if (activeFilter === 'rej') return st.rej;
+    if (activeFilter === 'pending') return !st.msg && !st.rej;
+    return true;
+  });
+}
+
+function updateStats() {
+  const all = getStates();
+  const msgCount = LEADS.filter(l => all[l.slug]?.msg).length;
+  const rejCount = LEADS.filter(l => all[l.slug]?.rej).length;
+  const bar = document.getElementById('statsBar');
+  if (bar) bar.innerHTML = [
+    msgCount ? `<span style="color:var(--acc)">✉ ${msgCount} enviados</span>` : '',
+    rejCount ? `<span style="color:#ef4444">✗ ${rejCount} reprovados</span>` : '',
+    (!msgCount && !rejCount) ? '<span>Nenhum status ainda</span>' : '',
+  ].filter(Boolean).join('<span style="opacity:.3">·</span>');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────
 LEADS.forEach((l, i) => l._idx = i);
 
-let filtered = [...LEADS];
+let filtered = applyFilter();
 renderSidebar(filtered);
 
-document.getElementById('searchInput').addEventListener('input', e => {
-  const q = e.target.value.toLowerCase();
-  filtered = LEADS.filter(l =>
-    l.name.toLowerCase().includes(q) ||
-    l.category.toLowerCase().includes(q) ||
-    l.phone.includes(q)
-  );
-  renderSidebar(filtered);
-});
+document.getElementById('searchInput').addEventListener('input', () => renderSidebar(applyFilter()));
 
 // Select first lead on load
 if (LEADS.length) selectLead(0);
