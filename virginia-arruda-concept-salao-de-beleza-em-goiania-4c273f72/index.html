@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virgínia Arruda Concept — Salão de Beleza em Goiânia</title>
+<meta name="description" content="Salão de beleza conceito no Setor Marista, Goiânia. Nota 4.9. Cabelo, coloração e tratamentos. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --white: #f9f9f6;
+    --champagne: #e8d5c4;
+    --blush: #c4937a;
+    --gold: #c9a84c;
+    --gold-light: #e0c46e;
+    --charcoal: #2a2a2a;
+    --gray: #7a7068;
+    --bg: #f9f9f6;
+    --radius: 14px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--charcoal); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 52px; display:flex; align-items:center; justify-content:space-between; transition:background .35s, box-shadow .35s; }
+  header.scrolled { background:rgba(42,42,42,.96); backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(201,168,76,.15); }
+  .logo { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:400; letter-spacing:.1em; text-decoration:none; color:var(--white); display:flex; flex-direction:column; line-height:1.1; }
+  .logo em { font-style:italic; }
+  .logo span { font-size:.6rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); margin-top:3px; }
+  nav a { color:rgba(255,255,255,.6); text-decoration:none; margin-left:26px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; transition:color .2s; }
+  nav a:hover { color:var(--gold); }
+
+  /* ── HERO ── */
+  .hero { position:relative; height:100vh; min-height:640px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .hero-bg { position:absolute; inset:0; background:url('imagens/maps-1.jpg') center 40%/cover no-repeat; animation:kb 28s ease-in-out infinite alternate; }
+  @keyframes kb { from{transform:scale(1)} to{transform:scale(1.06)} }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(42,42,42,.65) 0%, rgba(42,42,42,.35) 50%, rgba(42,42,42,.7) 100%); }
+  .hero-content { position:relative; z-index:2; text-align:center; padding:0 8%; max-width:820px; }
+  .eyebrow { display:inline-flex; align-items:center; gap:14px; font-size:.68rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); margin-bottom:22px; }
+  .eyebrow::before, .eyebrow::after { content:''; width:32px; height:1px; background:var(--gold); }
+  h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5.5rem); font-weight:300; line-height:1.05; color:var(--white); margin-bottom:20px; }
+  h1 em { font-style:italic; color:var(--gold); }
+  .hero-sub { font-size:.88rem; color:rgba(255,255,255,.65); line-height:1.9; margin-bottom:38px; font-weight:300; max-width:480px; margin-left:auto; margin-right:auto; }
+  .hero-cta { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .hero-rating { position:absolute; bottom:36px; right:8%; display:flex; align-items:center; gap:12px; z-index:2; }
+  .rating-pill { background:rgba(42,42,42,.7); backdrop-filter:blur(10px); border:1px solid rgba(201,168,76,.25); border-radius:50px; padding:10px 20px; display:flex; align-items:center; gap:10px; }
+  .rating-num { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--gold); line-height:1; }
+  .rating-stars { font-size:.8rem; color:var(--gold); letter-spacing:2px; }
+  .rating-label { font-size:.65rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; margin-top:1px; }
+
+  /* BTNs */
+  .btn-primary { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--blush),#a87060); color:var(--white); font-weight:500; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; padding:14px 32px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(196,147,122,.35); transition:transform .2s, box-shadow .2s; }
+  .btn-primary:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(196,147,122,.5); }
+  .btn-ghost { display:inline-flex; align-items:center; gap:8px; color:var(--white); border:1px solid rgba(255,255,255,.3); padding:13px 26px; border-radius:50px; text-decoration:none; font-size:.78rem; letter-spacing:.06em; transition:border-color .2s, color .2s; }
+  .btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
+  .btn-gold { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--charcoal); font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 30px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(201,168,76,.3); transition:transform .2s; }
+  .btn-gold:hover { transform:translateY(-3px); }
+
+  /* ── SECTIONS ── */
+  section { padding:96px 8%; }
+  .section-label { display:flex; align-items:center; gap:10px; font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--blush); margin-bottom:10px; }
+  .section-label::after { content:''; height:1px; background:rgba(196,147,122,.3); width:36px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:300; line-height:1.1; margin-bottom:12px; }
+  h2 em { font-style:italic; color:var(--blush); }
+  .lead-p { color:var(--gray); max-width:500px; margin-bottom:50px; line-height:1.88; font-weight:300; font-size:.87rem; }
+
+  /* ── SOBRE ── */
+  .sobre { background:var(--white); }
+  .sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:var(--radius); overflow:hidden; box-shadow:0 24px 60px rgba(42,42,42,.1); }
+  .sobre-img { position:relative; overflow:hidden; }
+  .sobre-img img { width:100%; height:100%; min-height:540px; object-fit:cover; object-position:center; display:block; transition:transform .6s; }
+  .sobre-img:hover img { transform:scale(1.04); }
+  .sobre-copy { background:var(--champagne); padding:64px 52px; display:flex; flex-direction:column; justify-content:center; }
+  .sobre-copy h2 { color:var(--charcoal); margin-bottom:20px; }
+  .sobre-copy p { font-size:.87rem; color:var(--gray); line-height:1.9; margin-bottom:14px; }
+  .detalhe { display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-top:1px solid rgba(196,147,122,.15); }
+  .detalhe-icon { font-size:1.1rem; flex-shrink:0; margin-top:3px; }
+  .detalhe p { font-size:.83rem; color:var(--gray); line-height:1.65; margin:0; }
+  .detalhe strong { color:var(--charcoal); }
+
+  /* ── SERVIÇOS ── */
+  .servicos { background:var(--bg); }
+  .serv-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; }
+  .serv-card { background:var(--white); border-radius:var(--radius); padding:32px 28px; border:1px solid rgba(42,42,42,.06); transition:transform .3s, box-shadow .3s, border-color .3s; }
+  .serv-card:hover { transform:translateY(-5px); box-shadow:0 20px 44px rgba(42,42,42,.1); border-color:rgba(196,147,122,.3); }
+  .serv-num { font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:300; color:rgba(196,147,122,.2); line-height:1; margin-bottom:10px; }
+  .serv-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--charcoal); margin-bottom:8px; }
+  .serv-card p { font-size:.82rem; color:var(--gray); line-height:1.75; }
+  .serv-tag { display:inline-block; margin-top:14px; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--blush); border-bottom:1px solid rgba(196,147,122,.3); padding-bottom:2px; }
+
+  /* ── CONCEPT ── */
+  .concept { background:var(--charcoal); padding:80px 8%; text-align:center; }
+  .concept-quote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,3rem); font-style:italic; font-weight:300; color:var(--white); line-height:1.3; max-width:680px; margin:0 auto 32px; }
+  .concept-quote em { color:var(--gold); font-style:normal; }
+  .concept-sub { font-size:.83rem; color:rgba(255,255,255,.4); letter-spacing:.1em; text-transform:uppercase; }
+
+  /* ── RATING ── */
+  .rating-strip { background:linear-gradient(135deg,var(--blush),#a87060); padding:60px 8%; text-align:center; }
+  .rating-strip .big { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:300; color:var(--white); line-height:1; }
+  .rating-strip .stars-lg { font-size:1.4rem; color:rgba(255,255,255,.85); letter-spacing:6px; margin:6px 0 10px; }
+  .rating-strip p { color:rgba(255,255,255,.65); font-size:.86rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background:var(--white); }
+  .loc-grid { display:grid; grid-template-columns:1fr 1fr; gap:52px; }
+  .loc-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:var(--charcoal); margin-bottom:24px; }
+  .loc-item { display:flex; gap:14px; margin-bottom:18px; }
+  .loc-icon { font-size:1rem; flex-shrink:0; margin-top:2px; }
+  .loc-item p { font-size:.86rem; color:var(--gray); line-height:1.75; }
+  .loc-item strong { color:var(--charcoal); }
+  .map-box { background:var(--bg); border-radius:var(--radius); height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid rgba(42,42,42,.08); color:var(--gray); }
+  .map-box a { background:linear-gradient(135deg,var(--blush),#a87060); color:#fff; padding:11px 22px; border-radius:50px; text-decoration:none; font-size:.8rem; }
+
+  /* ── FOOTER ── */
+  footer { background:var(--charcoal); padding:28px 8%; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(201,168,76,.1); flex-wrap:wrap; gap:12px; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--gold); }
+  footer p { font-size:.74rem; color:rgba(255,255,255,.3); }
+  footer a { color:var(--gold); text-decoration:none; }
+
+  /* ── WA FAB ── */
+  .wa-btn { position:fixed; bottom:26px; right:26px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 6px 22px rgba(37,211,102,.4); transition:transform .2s; }
+  .wa-btn:hover { transform:scale(1.1); }
+  .wa-btn::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.35); animation:ping 2s ease-out infinite; }
+  @keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.6);opacity:0} }
+  .wa-btn svg { width:26px; height:26px; fill:white; }
+
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s, transform .65s; }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal:nth-child(2){transition-delay:.1s}.reveal:nth-child(3){transition-delay:.2s}.reveal:nth-child(4){transition-delay:.3s}
+
+  @media(max-width:900px) {
+    header{padding:14px 20px;} nav{display:none;}
+    .sobre-grid,.loc-grid{grid-template-columns:1fr;}
+    .sobre-img{min-height:280px;}
+    section{padding:68px 6%;}
+    .btn-ghost{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-bg{animation:none;}.reveal{transition:none;opacity:1;transform:none;}.wa-btn::before{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo"><em>Virgínia Arruda</em><span>Concept · Setor Marista · Goiânia</span></a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5562998101408" target="_blank">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Salão de Beleza · Setor Marista</div>
+    <h1>Onde beleza<br>é <em>conceito</em> —<br>não rotina.</h1>
+    <p class="hero-sub">No coração do Setor Marista, Goiânia. Um espaço criado para quem entende que cuidar-se é um ritual.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5562998101408?text=Ol%C3%A1%2C%20Virg%C3%ADnia!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar Horário
+      </a>
+      <a href="#sobre" class="btn-ghost">Conhecer o Concept</a>
+    </div>
+  </div>
+  <div class="hero-rating">
+    <div class="rating-pill">
+      <div>
+        <div class="rating-num">4.9</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-label">Google Maps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada do Virgínia Arruda Concept — Salão Setor Marista Goiânia" loading="lazy">
+    </div>
+    <div class="sobre-copy reveal">
+      <div class="section-label">O Espaço</div>
+      <h2><em>Virgínia Arruda</em><br>Concept</h2>
+      <p>Um salão pensado em cada detalhe — da fachada ao resultado. O Concept não é apenas um salão de beleza; é um espaço de experiência criado para mulheres que exigem o melhor.</p>
+      <p>No Setor Marista, o endereço mais sofisticado de Goiânia, onde cada visita é um ritual de autocuidado.</p>
+      <div class="detalhe">
+        <div class="detalhe-icon">✂️</div>
+        <p><strong>Equipe especializada</strong><br>Profissionais selecionados com técnica, cuidado e sensibilidade estética.</p>
+      </div>
+      <div class="detalhe">
+        <div class="detalhe-icon">📍</div>
+        <p><strong>Setor Marista, Goiânia</strong><br>R. 137, 459 — no bairro mais nobre da capital goiana.</p>
+      </div>
+      <div class="detalhe">
+        <div class="detalhe-icon">⭐</div>
+        <p><strong>Nota 4.9 no Google</strong><br>Excelência confirmada por quem passou pelo Concept.</p>
+      </div>
+      <div style="margin-top:30px;">
+        <a href="https://wa.me/5562998101408?text=Ol%C3%A1%2C%20Virg%C3%ADnia!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="btn-primary">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="section-label">O que oferecemos</div>
+  <h2>Serviços <em>Concept</em></h2>
+  <p class="lead-p">Cada serviço pensado para realçar a beleza natural — com técnica, produto de qualidade e atenção personalizada.</p>
+  <div class="serv-grid">
+    <div class="serv-card reveal">
+      <div class="serv-num">01</div>
+      <h3>Corte & Finalização</h3>
+      <p>Cortes personalizados ao rosto e estilo de vida. Finalização que entrega resultado real — não apenas no salão.</p>
+      <span class="serv-tag">Personalizado</span>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">02</div>
+      <h3>Coloração & Luzes</h3>
+      <p>Balayage, mechas, loiro platinado e coloração global. Técnicas modernas com produtos de alta performance.</p>
+      <span class="serv-tag">Alta performance</span>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">03</div>
+      <h3>Tratamentos Capilares</h3>
+      <p>Cronogramas, hidratações profundas, reconstrução e selagem. Cabelo transformado de dentro para fora.</p>
+      <span class="serv-tag">Transformação</span>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">04</div>
+      <h3>Escova & Progressiva</h3>
+      <p>Escova modelada com volume e brilho. Progressiva com resultado duradouro e cabelo saudável.</p>
+      <span class="serv-tag">Resultado duradouro</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT QUOTE -->
+<div class="concept">
+  <div class="concept-quote reveal">
+    "Cuidar-se não é luxo — é <em>prioridade.</em>"
+  </div>
+  <div class="concept-sub">Virgínia Arruda Concept · Setor Marista, Goiânia</div>
+</div>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">4.9</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Avaliação no Google Maps — de clientes que voltam sempre ao Concept</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Setor <em>Marista</em></h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Virgínia Arruda Concept</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>R. 137, 459 — Quadra 49, Lote 10</strong><br>Setor Marista, Goiânia - GO<br>CEP 74170-120</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📞</div><div><p><strong>(62) 99810-1408</strong><br>WhatsApp e ligações</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🕐</div><div><p><strong>Segunda a Sábado</strong><br>09h às 19h · Horários conforme agendamento</p></div></div>
+      <div style="margin-top:28px;">
+        <a href="https://wa.me/5562998101408?text=Ol%C3%A1%2C%20Virg%C3%ADnia!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="btn-gold">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🗺️</span>
+      <p style="font-size:.85rem;text-align:center;max-width:200px;color:var(--gray);">R. 137, 459 — Setor Marista<br>Goiânia, GO</p>
+      <a href="https://www.google.com/maps/place/Virg%C3%ADnia+Arruda+Concept+%7C+Sal%C3%A3o+de+beleza+em+Goi%C3%A2nia/@-16.6990706,-49.2631635,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Virgínia Arruda Concept</span>
+  <p>© 2025 Virgínia Arruda Concept — Goiânia, GO</p>
+  <p><a href="https://wa.me/5562998101408">(62) 99810-1408</a></p>
+</footer>
+
+<a href="https://wa.me/5562998101408?text=Ol%C3%A1%2C%20Virg%C3%ADnia!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="wa-btn" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
