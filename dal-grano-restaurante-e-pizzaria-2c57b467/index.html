@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dal Grano Restaurante e Pizzaria — Pampulha, Belo Horizonte</title>
+<meta name="description" content="Restaurante italiano em Pampulha, BH. Pizzas e massas artesanais na Av. Presidente Antônio Carlos. Nota 4.7. Reserve pelo telefone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --terra: #6b3320;
+    --terra-deep: #4a2115;
+    --cream: #faf0e4;
+    --cream-dark: #f2e4d0;
+    --gold: #c9a34c;
+    --gold-light: #e0bc6a;
+    --wood: #3d1f0a;
+    --white: #ffffff;
+    --gray: #6a5c50;
+    --radius: 12px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--wood); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header { position:fixed; top:0; left:0; right:0; z-index:100; padding:18px 48px; display:flex; align-items:center; justify-content:space-between; transition:background .35s, box-shadow .35s; }
+  header.scrolled { background:rgba(61,31,10,.96); backdrop-filter:blur(10px); box-shadow:0 1px 0 rgba(201,163,76,.2); }
+  .logo { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; letter-spacing:.08em; text-decoration:none; color:var(--white); display:flex; flex-direction:column; line-height:1.1; }
+  .logo span { font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-style:normal; margin-top:2px; }
+  nav a { color:rgba(255,255,255,.65); text-decoration:none; margin-left:24px; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; transition:color .2s; }
+  nav a:hover { color:var(--gold); }
+
+  /* ── HERO ── */
+  .hero { position:relative; height:100vh; min-height:620px; display:flex; align-items:flex-end; overflow:hidden; }
+  .hero-bg { position:absolute; inset:0; background:url('imagens/maps-1.jpg') center/cover no-repeat; animation:kb 26s ease-in-out infinite alternate; }
+  @keyframes kb { from{transform:scale(1)} to{transform:scale(1.07)} }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(160deg, rgba(61,31,10,.78) 0%, rgba(61,31,10,.4) 50%, rgba(61,31,10,.05) 100%); }
+  .hero-content { position:relative; z-index:2; padding:0 8% 88px; width:100%; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .hero-left { max-width:600px; }
+  .eyebrow { display:flex; align-items:center; gap:12px; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+  .eyebrow::before { content:''; width:28px; height:1px; background:var(--gold); }
+  h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,5.5vw,5.2rem); font-weight:300; line-height:1.05; color:var(--white); margin-bottom:18px; }
+  h1 em { font-style:italic; color:var(--gold); }
+  .hero-sub { font-size:.87rem; color:rgba(255,255,255,.65); line-height:1.85; margin-bottom:34px; max-width:460px; font-weight:300; }
+  .hero-badge { background:rgba(61,31,10,.65); backdrop-filter:blur(10px); border:1px solid rgba(201,163,76,.3); border-radius:var(--radius); padding:20px 28px; text-align:center; flex-shrink:0; }
+  .badge-num { font-family:'Cormorant Garamond',serif; font-size:3.8rem; font-weight:300; color:var(--gold); line-height:1; }
+  .badge-stars { color:var(--gold); font-size:.85rem; letter-spacing:3px; margin:4px 0; }
+  .badge-label { font-size:.66rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; }
+
+  /* BTNs */
+  .btn-primary { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--terra),var(--terra-deep)); color:var(--cream); font-weight:500; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; padding:14px 30px; border-radius:50px; text-decoration:none; border:1px solid rgba(201,163,76,.3); box-shadow:0 6px 24px rgba(107,51,32,.4); transition:transform .2s, box-shadow .2s, border-color .2s; }
+  .btn-primary:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(107,51,32,.55); border-color:var(--gold); }
+  .btn-gold { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--wood); font-weight:700; font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; padding:14px 30px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(201,163,76,.35); transition:transform .2s, box-shadow .2s; }
+  .btn-gold:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(201,163,76,.5); }
+
+  /* ── SECTIONS ── */
+  section { padding:88px 8%; }
+  .section-label { display:flex; align-items:center; gap:10px; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--terra); margin-bottom:10px; }
+  .section-label::after { content:''; height:1px; background:rgba(107,51,32,.2); width:40px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.5vw,2.9rem); font-weight:300; line-height:1.1; margin-bottom:12px; }
+  h2 em { font-style:italic; color:var(--terra); }
+  .lead-p { color:var(--gray); max-width:480px; margin-bottom:46px; line-height:1.85; font-weight:300; font-size:.87rem; }
+
+  /* ── SOBRE (split) ── */
+  .sobre { background:var(--white); }
+  .sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:var(--radius); overflow:hidden; box-shadow:0 20px 60px rgba(61,31,10,.12); }
+  .sobre-img { position:relative; overflow:hidden; }
+  .sobre-img img { width:100%; height:100%; min-height:480px; object-fit:cover; object-position:center 30%; display:block; transition:transform .6s; }
+  .sobre-img:hover img { transform:scale(1.04); }
+  .sobre-copy { background:var(--cream); padding:56px 48px; display:flex; flex-direction:column; justify-content:center; }
+  .sobre-copy h2 { margin-bottom:20px; }
+  .sobre-copy p { font-size:.87rem; color:var(--gray); line-height:1.88; margin-bottom:14px; }
+  .sobre-detail { display:flex; align-items:flex-start; gap:14px; padding:16px 0; border-top:1px solid rgba(107,51,32,.1); margin-top:14px; }
+  .sobre-detail:first-of-type { border-top:none; margin-top:0; }
+  .sobre-icon { font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+  .sobre-detail p { font-size:.83rem; color:var(--gray); line-height:1.6; }
+  .sobre-detail strong { color:var(--wood); }
+
+  /* ── CARDÁPIO ── */
+  .cardapio { background:var(--cream-dark); }
+  .menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+  .menu-card { background:var(--white); border-radius:var(--radius); overflow:hidden; border:1px solid rgba(107,51,32,.08); transition:transform .3s, box-shadow .3s; }
+  .menu-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(107,51,32,.12); }
+  .menu-card-img { height:180px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; position:relative; overflow:hidden; }
+  .menu-card-bg1 { background:linear-gradient(135deg,#7D3C1A 0%,#4a2115 100%); }
+  .menu-card-bg2 { background:linear-gradient(135deg,#5C3317 0%,#3d1f0a 100%); }
+  .menu-card-bg3 { background:linear-gradient(135deg,#8B4513 0%,#6B3320 100%); }
+  .menu-card-bg4 { background:linear-gradient(135deg,#4a3020 0%,#2C1A0A 100%); }
+  .menu-card-body { padding:20px 22px; }
+  .menu-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--wood); margin-bottom:6px; }
+  .menu-card p { font-size:.82rem; color:var(--gray); line-height:1.7; }
+  .menu-tag { display:inline-block; margin-top:12px; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--terra); border-bottom:1px solid rgba(107,51,32,.25); padding-bottom:2px; }
+
+  /* ── AMBIENTE ── */
+  .ambiente { background:var(--wood); padding:0; position:relative; overflow:hidden; }
+  .ambiente-inner { display:grid; grid-template-columns:1fr 1fr; }
+  .ambiente-img { position:relative; overflow:hidden; min-height:500px; }
+  .ambiente-img img { width:100%; height:100%; object-fit:cover; object-position:right center; display:block; transition:transform .6s; filter:brightness(.85); }
+  .ambiente-img:hover img { transform:scale(1.04); }
+  .ambiente-copy { padding:72px 56px; display:flex; flex-direction:column; justify-content:center; }
+  .ambiente-copy .section-label { color:var(--gold); }
+  .ambiente-copy .section-label::after { background:rgba(201,163,76,.3); }
+  .ambiente-copy h2 { color:var(--cream); }
+  .ambiente-copy p { font-size:.87rem; color:rgba(250,240,228,.6); line-height:1.88; margin-bottom:14px; }
+  .ambiente-feature { display:flex; gap:12px; align-items:flex-start; margin-top:12px; }
+  .ambiente-feature .icon { font-size:1.1rem; flex-shrink:0; }
+  .ambiente-feature p { font-size:.82rem; color:rgba(250,240,228,.65); margin:0; }
+  .ambiente-feature strong { color:var(--gold); }
+
+  /* ── RATING ── */
+  .rating-strip { background:linear-gradient(135deg,var(--terra),var(--terra-deep)); padding:56px 8%; text-align:center; }
+  .rating-strip .big { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:300; color:var(--cream); line-height:1; }
+  .rating-strip .stars-lg { font-size:1.4rem; color:var(--gold); letter-spacing:6px; margin:6px 0 10px; }
+  .rating-strip p { color:rgba(250,240,228,.65); font-size:.86rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background:var(--cream); }
+  .loc-grid { display:grid; grid-template-columns:1fr 1fr; gap:52px; }
+  .loc-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:var(--wood); margin-bottom:24px; }
+  .loc-item { display:flex; gap:14px; margin-bottom:18px; }
+  .loc-icon { font-size:1rem; flex-shrink:0; margin-top:2px; }
+  .loc-item p { font-size:.86rem; color:var(--gray); line-height:1.72; }
+  .loc-item strong { color:var(--wood); }
+  .map-box { background:var(--white); border-radius:var(--radius); height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid rgba(107,51,32,.1); color:var(--gray); box-shadow:0 4px 20px rgba(61,31,10,.08); }
+  .map-box a { background:linear-gradient(135deg,var(--terra),var(--terra-deep)); color:var(--cream); padding:11px 22px; border-radius:50px; text-decoration:none; font-size:.8rem; }
+
+  /* ── FOOTER ── */
+  footer { background:var(--wood); padding:28px 8%; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(201,163,76,.1); flex-wrap:wrap; gap:12px; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--gold); }
+  footer p { font-size:.75rem; color:rgba(250,240,228,.3); }
+  footer a { color:var(--gold); text-decoration:none; }
+
+  /* ── PHONE BTN ── */
+  .phone-fab { position:fixed; bottom:26px; right:26px; z-index:999; display:flex; align-items:center; gap:12px; background:linear-gradient(135deg,var(--terra),var(--terra-deep)); color:var(--cream); text-decoration:none; padding:14px 22px; border-radius:50px; font-size:.85rem; font-weight:600; box-shadow:0 6px 24px rgba(107,51,32,.45); transition:transform .2s, box-shadow .2s; border:1px solid rgba(201,163,76,.3); }
+  .phone-fab:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(107,51,32,.6); }
+  .phone-fab::before { content:''; position:absolute; inset:-6px; border-radius:50px; border:2px solid rgba(201,163,76,.25); animation:ping 2.5s ease-out infinite; }
+  @keyframes ping { 0%{opacity:.8;transform:scale(1)} 100%{opacity:0;transform:scale(1.25)} }
+
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s, transform .65s; }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal:nth-child(2){transition-delay:.1s}.reveal:nth-child(3){transition-delay:.2s}.reveal:nth-child(4){transition-delay:.3s}
+
+  @media(max-width:900px) {
+    header{padding:14px 20px;} nav{display:none;}
+    .hero-content{flex-direction:column;align-items:flex-start;padding:0 6% 60px;}
+    .sobre-grid,.ambiente-inner,.loc-grid{grid-template-columns:1fr;}
+    .sobre-img{min-height:260px;} .ambiente-img{min-height:240px;}
+    section{padding:64px 6%;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-bg{animation:none;}.reveal{transition:none;opacity:1;transform:none;}.phone-fab::before{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">Dal Grano<span>Pampulha · Belo Horizonte</span></a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#ambiente">Ambiente</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="eyebrow">Restaurante Italiano · Pampulha</div>
+      <h1>Culinária italiana<br>de verdade — na<br>beira da <em>Pampulha.</em></h1>
+      <p class="hero-sub">Pizzas artesanais e massas frescas em um ambiente que convida a ficar. Na Av. Presidente Antônio Carlos, desde quando comer bem era o programa perfeito.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="tel:3135059240" class="btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Reservar Agora
+        </a>
+        <a href="#sobre" class="btn-primary">Conhecer o Dal Grano</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-num">4.7</div>
+      <div class="badge-stars">★★★★★</div>
+      <div class="badge-label">Google Maps</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Salão do Dal Grano — Restaurante Italiano Pampulha" loading="lazy">
+    </div>
+    <div class="sobre-copy reveal">
+      <div class="section-label">Sobre o Dal Grano</div>
+      <h2>Tradição italiana,<br><em>alma mineira.</em></h2>
+      <p>O Dal Grano nasce da crença de que comer bem é um ritual — não uma transação. No salão de teto em madeira e parede de pedra, o tempo passa diferente.</p>
+      <p>Cozinha aberta à vista do salão, para que cada prato seja uma experiência do começo ao fim. Ingredientes selecionados, massas preparadas com técnica e carinho.</p>
+      <div class="sobre-detail">
+        <div class="sobre-icon">🍕</div>
+        <p><strong>Pizzas artesanais</strong><br>Massa de fermentação lenta, ingredientes importados e nacionais selecionados.</p>
+      </div>
+      <div class="sobre-detail">
+        <div class="sobre-icon">🍝</div>
+        <p><strong>Massas e risotos</strong><br>Receitas clássicas italianas preparadas com técnica e produtos de qualidade.</p>
+      </div>
+      <div class="sobre-detail">
+        <div class="sobre-icon">📍</div>
+        <p><strong>Pampulha, BH</strong><br>Na Av. Presidente Antônio Carlos — coração da orla da Lagoa da Pampulha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="cardapio" id="cardapio">
+  <div class="section-label">O que servimos</div>
+  <h2>Cardápio <em>Dal Grano</em></h2>
+  <p class="lead-p">Do clássico neapolitano ao comfort food italiano — tudo preparado com ingredientes selecionados e técnica apurada.</p>
+  <div class="menu-grid">
+    <div class="menu-card reveal">
+      <div class="menu-card-img menu-card-bg1">🍕</div>
+      <div class="menu-card-body">
+        <h3>Pizzas Artesanais</h3>
+        <p>Massa de fermentação lenta com crust dourado e crocante. Molho de tomate San Marzano, muzzarella fior di latte, coberturas selecionadas.</p>
+        <span class="menu-tag">Carro-chefe</span>
+      </div>
+    </div>
+    <div class="menu-card reveal">
+      <div class="menu-card-img menu-card-bg2">🍝</div>
+      <div class="menu-card-body">
+        <h3>Massas Frescas</h3>
+        <p>Fettuccine, tagliatelle e gnocchi preparados no dia. Molhos clássicos: bolognese, carbonara, al funghi, pomodoro fresco.</p>
+        <span class="menu-tag">Feitas no dia</span>
+      </div>
+    </div>
+    <div class="menu-card reveal">
+      <div class="menu-card-img menu-card-bg3">🥂</div>
+      <div class="menu-card-body">
+        <h3>Entradas & Antepastos</h3>
+        <p>Bruschette, carpaccio, tábua de frios italianos e saladas frescas para abrir o apetite com elegância.</p>
+        <span class="menu-tag">Para dividir</span>
+      </div>
+    </div>
+    <div class="menu-card reveal">
+      <div class="menu-card-img menu-card-bg4">🍮</div>
+      <div class="menu-card-body">
+        <h3>Dolci Italiani</h3>
+        <p>Tiramisù clássico, panna cotta, cannoli e sobremesas da casa para finalizar com a doçura italiana.</p>
+        <span class="menu-tag">Sobremesas artesanais</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTE -->
+<div class="ambiente" id="ambiente">
+  <div class="ambiente-inner">
+    <div class="ambiente-copy reveal">
+      <div class="section-label">O Espaço</div>
+      <h2>Um salão que <em>convida a ficar.</em></h2>
+      <p>Teto em réguas de madeira, parede de pedra natural, iluminação âmbar quente — o Dal Grano foi pensado para que a experiência comece antes do prato chegar.</p>
+      <div class="ambiente-feature"><div class="icon">🪵</div><p><strong style="color:var(--gold)">Arquitetura rústica refinada</strong><br>Madeira, pedra e luz que criam o clima certo para uma refeição especial.</p></div>
+      <div class="ambiente-feature" style="margin-top:14px"><div class="icon">👨‍🍳</div><p><strong style="color:var(--gold)">Cozinha aberta</strong><br>Veja a magia acontecer — o cheiro de pizza saindo do forno chega antes do garçom.</p></div>
+      <div style="margin-top:32px;"><a href="tel:3135059240" class="btn-gold">Fazer uma Reserva</a></div>
+    </div>
+    <div class="ambiente-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Ambiente do Dal Grano — interior com teto de madeira" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">4.7</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Avaliação no Google Maps — de clientes que voltam sempre</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Na orla da <em>Pampulha</em></h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Dal Grano Restaurante e Pizzaria</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>Av. Pres. Antônio Carlos, 7456</strong><br>Pampulha, Belo Horizonte - MG<br>CEP 31270-672</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📞</div><div><p><strong>(31) 3505-9240</strong><br>Reservas e informações</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🕐</div><div><p><strong>Terça a Domingo</strong><br>Almoço: 11h30–15h · Jantar: 19h–23h</p></div></div>
+      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="tel:3135059240" class="btn-gold">Ligar e Reservar</a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🗺️</span>
+      <p style="font-size:.85rem;text-align:center;max-width:200px;color:var(--gray);">Av. Pres. Antônio Carlos, 7456<br>Pampulha, Belo Horizonte</p>
+      <a href="https://www.google.com/maps/place/Dal+Grano+Restaurante+e+Pizzaria/@-19.8567196,-43.9599958,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Dal Grano</span>
+  <p>© 2025 Dal Grano Restaurante e Pizzaria — Pampulha, BH</p>
+  <p><a href="tel:3135059240">(31) 3505-9240</a></p>
+</footer>
+
+<a href="tel:3135059240" class="phone-fab">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  (31) 3505-9240
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
