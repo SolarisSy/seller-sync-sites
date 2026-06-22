@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TALK Barbearia — São Luís | Corte, barba e estilo no Calhau</title>
+<meta name="description" content="TALK Barbearia no Calhau, São Luís - MA. Nota 4.9 no Google. Corte, barba e acabamento de barbeiro. Agende seu horário pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfície */
+  --bg-base:#100d0b;
+  --bg-surface:#1a1512;
+  --bg-inset:#221b16;
+  --bg-card:#1f1814;
+  /* texto */
+  --text-primary:#f4ede4;
+  --text-secondary:#b8aa9b;
+  --text-muted:#7d7064;
+  --text-inverse:#100d0b;
+  /* marca */
+  --accent:#c8842e;
+  --accent-dark:#a86a1f;
+  --accent-subtle:rgba(200,132,46,.10);
+  --accent-border:rgba(200,132,46,.24);
+  --gold:#d9a441;
+  --gold-light:#e6bf6a;
+  /* sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3),0 2px 6px rgba(0,0,0,.25);
+  --shadow-md:0 2px 4px rgba(0,0,0,.3),0 8px 18px rgba(0,0,0,.35),0 20px 40px rgba(0,0,0,.3);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.3),0 16px 32px rgba(0,0,0,.4),0 40px 80px rgba(0,0,0,.45);
+  --shadow-accent:0 8px 24px rgba(200,132,46,.28);
+  --shadow-accent-strong:0 12px 34px rgba(200,132,46,.42);
+  /* type */
+  --text-display:clamp(3rem,2rem + 6vw,6.5rem);
+  --text-h2:clamp(2rem,1.4rem + 2.8vw,3.4rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:.96;--lh-heading:1.08;--lh-body:1.75;
+  --ls-display:.01em;--ls-overline:.22em;
+  /* spacing */
+  --section-pad:clamp(5rem,9vw,9rem);
+  --content-max:1180px;--prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,1.6rem);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg-base);color:var(--text-primary);
+  font-size:var(--text-body);line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Oswald',sans-serif;line-height:var(--lh-heading);text-wrap:balance;text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* overline */
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter';font-size:.7rem;font-weight:600;
+  letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;flex:none}
+
+/* buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:11px;padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Oswald';font-weight:600;
+  font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:4px;
+  box-shadow:var(--shadow-accent);transition:transform .3s var(--ease),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:1rem 1.8rem;min-height:50px;
+  border:1px solid var(--accent-border);color:var(--text-primary);font-family:'Oswald';font-weight:500;
+  font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:4px;
+  transition:border-color .25s ease,background .25s ease,transform .3s var(--ease);touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:20px clamp(1.5rem,5vw,4rem);transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(16,13,11,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--accent-border);padding-top:14px;padding-bottom:14px}
+.logo{font-family:'Oswald';font-weight:700;font-size:1.35rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:#fff}
+.logo span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a:not(.btn-ghost){font-size:.82rem;letter-spacing:.04em;text-decoration:none;color:var(--text-secondary);
+  text-transform:uppercase;font-weight:500;transition:color .25s ease}
+.nav a:not(.btn-ghost):hover{color:var(--text-primary)}
+.nav .btn-ghost{padding:.65rem 1.3rem;min-height:0;font-size:.78rem}
+@media(max-width:820px){.nav a:not(.btn-ghost){display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-hero.jpg') center 30%/cover;
+  animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(155deg,rgba(16,13,11,.35) 25%,rgba(16,13,11,.78) 68%,rgba(16,13,11,.97) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+.hero-content{position:relative;z-index:3;width:100%;max-width:var(--content-max);margin:0 auto;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3.5rem,7vw,6rem);display:flex;align-items:flex-end;
+  justify-content:space-between;gap:32px;flex-wrap:wrap}
+.hero-text{max-width:760px}
+.hero-eyebrow{font-family:'Oswald';font-weight:500;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+.hero-title{font-family:'Oswald';font-weight:700;font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:var(--ls-display);text-transform:uppercase;color:#fff;margin-bottom:26px;overflow:hidden}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s var(--ease) forwards}
+.hero-title em{font-style:normal;color:var(--accent);
+  background:linear-gradient(135deg,var(--gold-light),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title .line:nth-child(2) .word{animation-delay:.4s}
+.hero-title .line:nth-child(3) .word{animation-delay:.55s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{max-width:480px;color:var(--text-secondary);font-size:1.05rem;line-height:1.7;
+  opacity:0;animation:fadein 1s var(--ease) .85s forwards}
+.hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadein 1s var(--ease) 1s forwards}
+@keyframes fadein{to{opacity:1}}
+.hero-badge{display:flex;flex-direction:column;gap:6px;padding:20px 26px;border-radius:8px;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.14);box-shadow:0 8px 24px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.18);
+  opacity:0;animation:fadein 1s var(--ease) 1.15s forwards}
+.hero-badge .stars{display:flex;gap:3px;color:var(--gold-light)}
+.hero-badge .num{font-family:'Oswald';font-weight:700;font-size:2.2rem;color:#fff;line-height:1}
+.hero-badge .lbl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+  font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted);
+  display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadein 1s ease 1.6s forwards}
+.scroll-hint .bar{width:1px;height:34px;background:linear-gradient(var(--accent),transparent);animation:scrolldn 1.8s ease-in-out infinite}
+@keyframes scrolldn{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:560px){.hero-badge{padding:14px 18px}.hero-badge .num{font-size:1.7rem}.scroll-hint{display:none}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>.reveal:nth-child(2){transition-delay:.06s}
+.stagger>.reveal:nth-child(3){transition-delay:.12s}
+.stagger>.reveal:nth-child(4){transition-delay:.18s}
+.stagger>.reveal:nth-child(5){transition-delay:.24s}
+.stagger>.reveal:nth-child(6){transition-delay:.3s}
+
+/* ---------- sobre ---------- */
+.sobre{background:var(--bg-surface);position:relative}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;max-width:var(--content-max);margin:0 auto}
+.sobre h2{font-size:var(--text-h2);font-weight:700;margin-bottom:22px}
+.sobre h2 em{font-style:normal;color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.sobre-stats{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap}
+.stat .n{font-family:'Oswald';font-weight:700;font-size:2.3rem;color:var(--gold-light);line-height:1}
+.stat .l{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+.sobre-img{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-img img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.sobre-img::after{content:'';position:absolute;inset:0;border:1px solid var(--accent-border);border-radius:8px;pointer-events:none}
+.sobre-tag{position:absolute;bottom:18px;left:18px;padding:10px 16px;border-radius:6px;font-family:'Oswald';
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(16,13,11,.7);
+  backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);color:var(--gold-light)}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-img img{min-height:320px}}
+
+/* ---------- servicos ---------- */
+.servicos{background:var(--bg-base);clip-path:polygon(0 0,100% 4%,100% 100%,0 96%);
+  padding-top:calc(var(--section-pad) + 4vw);padding-bottom:calc(var(--section-pad) + 4vw)}
+.sec-head{max-width:var(--content-max);margin:0 auto 56px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.sec-head .overline{justify-content:center}
+.sec-head h2{font-size:var(--text-h2);font-weight:700;max-width:16ch}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards);max-width:var(--content-max);margin:0 auto}
+.serv-card{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:34px 30px;
+  display:flex;flex-direction:column;
+  transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:8px;
+  background:var(--accent-subtle);color:var(--accent);margin-bottom:22px}
+.serv-icon svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.6;fill:none}
+.serv-card h3{font-size:1.25rem;font-weight:600;margin-bottom:10px;color:#fff}
+.serv-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.65;flex:1}
+.serv-price{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:baseline;gap:6px}
+.serv-price .from{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Oswald';font-weight:600;font-size:1.5rem;color:var(--gold-light)}
+.serv-note{text-align:center;color:var(--text-muted);font-size:.82rem;margin-top:34px;max-width:var(--content-max);margin-left:auto;margin-right:auto}
+
+/* ---------- galeria ---------- */
+.galeria{background:var(--bg-surface)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px;max-width:var(--content-max);margin:0 auto}
+.gal-item{position:relative;overflow:hidden;border-radius:6px}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal-item::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(16,13,11,.55));opacity:0;transition:opacity .4s ease}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-item:hover::after{opacity:1}
+.gal-item.tall{grid-row:span 2}
+.gal-item.wide{grid-column:span 2}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gal-item.wide{grid-column:span 2}}
+
+/* ---------- experiencia ---------- */
+.exp{position:relative;background:var(--bg-inset);overflow:hidden}
+.exp::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.exp-grid{position:relative;z-index:1;display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;max-width:var(--content-max);margin:0 auto}
+.exp-img{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.exp-img img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.exp h2{font-size:var(--text-h2);font-weight:700;margin-bottom:26px}
+.exp h2 em{font-style:normal;color:var(--accent)}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:22px;margin-top:10px}
+.exp-list li{display:flex;gap:16px;align-items:flex-start}
+.exp-list .mk{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--accent-border);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);margin-top:2px}
+.exp-list .mk svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+.exp-list h3{font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:4px}
+.exp-list p{font-size:.9rem;color:var(--text-secondary)}
+@media(max-width:820px){.exp-grid{grid-template-columns:1fr}.exp-img{order:-1}.exp-img img{min-height:300px}}
+
+/* ---------- cta agendar ---------- */
+.agendar{position:relative;text-align:center;background:linear-gradient(rgba(16,13,11,.82),rgba(16,13,11,.92)),url('imagens/web-razor.jpg') center/cover fixed;
+  clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.agendar .overline{justify-content:center}
+.agendar h2{font-size:clamp(2.2rem,1.6rem + 3vw,3.8rem);font-weight:700;color:#fff;max-width:18ch;margin:0 auto 20px}
+.agendar h2 em{font-style:normal;color:var(--gold-light)}
+.agendar p{max-width:520px;margin:0 auto 34px;color:var(--text-secondary)}
+
+/* ---------- localizacao ---------- */
+.local{background:var(--bg-surface)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;max-width:var(--content-max);margin:0 auto}
+.local h2{font-size:var(--text-h2);font-weight:700;margin-bottom:24px}
+.info-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.info-row .ic{flex:none;width:42px;height:42px;border-radius:8px;background:var(--accent-subtle);color:var(--accent);
+  display:flex;align-items:center;justify-content:center}
+.info-row .ic svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.6;fill:none}
+.info-row h3{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px;font-family:'Inter';font-weight:600}
+.info-row p{color:var(--text-primary);font-size:1rem;line-height:1.55}
+.info-row a{color:var(--text-primary);text-decoration:none;transition:color .2s}
+.info-row a:hover{color:var(--accent)}
+.local-img{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.local-img img{width:100%;height:100%;min-height:380px;object-fit:cover}
+.local-img::after{content:'';position:absolute;inset:0;border:1px solid var(--accent-border);border-radius:8px}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}.local-img img{min-height:280px}}
+
+/* ---------- footer ---------- */
+footer{background:var(--bg-base);padding:48px clamp(1.5rem,6vw,5rem);border-top:1px solid rgba(255,255,255,.06)}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot-logo{font-family:'Oswald';font-weight:700;font-size:1.3rem;letter-spacing:.16em;text-transform:uppercase}
+.foot-logo span{color:var(--accent)}
+footer .small{color:var(--text-muted);font-size:.8rem}
+footer .foot-cta{color:var(--text-secondary);text-decoration:none;font-size:.85rem;letter-spacing:.04em;
+  text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:color .25s}
+footer .foot-cta:hover{color:var(--accent)}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .2s}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.hero-badge,.scroll-hint{transition:none;animation:none;opacity:1;transform:none}
+  .scroll-hint .bar,.wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">TALK<span>.</span></a>
+  <nav class="nav">
+    <a href="#sobre">A Casa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Trabalhos</a>
+    <a href="#local">Onde Estamos</a>
+    <a class="btn-ghost" href="https://wa.me/5598981051008?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20na%20TALK%20Barbearia." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Barbearia · Calhau · São Luís — MA</div>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Corte</span></span>
+        <span class="line"><span class="word">na</span> <span class="word">régua,</span></span>
+        <span class="line"><span class="word"><em>presença</em></span> <span class="word"><em>de</em></span> <span class="word"><em>respeito.</em></span></span>
+      </h1>
+      <p class="hero-sub">Barba, cabelo e acabamento feitos por quem entende. A barbearia mais bem avaliada do Calhau — agora a um clique do seu agendamento.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="https://wa.me/5598981051008?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20na%20TALK%20Barbearia." target="_blank" rel="noopener">
+          Agendar pelo WhatsApp
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn-ghost" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="stars">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7-.9z"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7-.9z"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7-.9z"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7-.9z"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7-.9z"/></svg>
+      </div>
+      <span class="num">4.9</span>
+      <span class="lbl">Avaliação no Google</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Role</span><span class="bar"></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="reveal">
+      <div class="overline">A casa</div>
+      <h2>Onde o homem <em>cuida</em> de si.</h2>
+      <p>A TALK nasceu pra ser referência de barbearia no Calhau: ambiente pensado, atendimento no detalhe e aquele acabamento que faz a diferença quando você se olha no espelho.</p>
+      <p>Não é só cortar cabelo. É sair daqui com a postura em dia, pronto pra reunião, pro rolê ou pra foto. Por isso somos a barbearia mais bem avaliada da região no Google.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="n">4.9</div><div class="l">Nota Google</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">No detalhe</div></div>
+        <div class="stat"><div class="n">Calhau</div><div class="l">Av. dos Holandeses</div></div>
+      </div>
+    </div>
+    <div class="sobre-img reveal">
+      <img src="imagens/web-razor.jpg" alt="Interior da barbearia TALK — ambiente industrial com cadeiras clássicas">
+      <span class="sobre-tag">Ambiente TALK</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="sec-head">
+    <div class="overline">O que fazemos</div>
+    <h2>Serviços que <em>elevam</em> o seu visual</h2>
+  </div>
+  <div class="serv-grid stagger">
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+      <h3>Corte Masculino</h3>
+      <p>Do clássico ao degradê na régua. Tesoura, máquina e acabamento feitos pra valorizar o seu rosto.</p>
+      <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 35</span></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M4 4c4 0 6 3 8 6s4 6 8 6"/><path d="M4 4c0 6 3 10 8 12"/><circle cx="19" cy="17" r="2"/></svg></div>
+      <h3>Barba Modelada</h3>
+      <p>Toalha quente, navalha e desenho sob medida. A barba alinhada que muda toda a sua presença.</p>
+      <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 30</span></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M5 9h14l-1 11H6z"/><path d="M9 13v3M15 13v3"/></svg></div>
+      <h3>Combo Cabelo + Barba</h3>
+      <p>O pacote completo num só horário. Sai renovado, alinhado e pronto pra qualquer compromisso.</p>
+      <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 55</span></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>Acabamento & Pezinho</h3>
+      <p>Retoque rápido pra manter o corte sempre na linha entre uma visita e outra. Detalhe que conta.</p>
+      <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 20</span></div>
+    </div>
+  </div>
+  <p class="serv-note">Valores de referência — confirme o serviço e o horário pelo WhatsApp.</p>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="sec-head">
+    <div class="overline">Trabalhos</div>
+    <h2>O resultado fala por <em>nós</em></h2>
+  </div>
+  <div class="gal-grid stagger">
+    <div class="gal-item tall reveal"><img src="imagens/web-chair.jpg" alt="Degradê com navalha de acabamento"></div>
+    <div class="gal-item wide reveal"><img src="imagens/web-interior.jpg" alt="Corte masculino sendo finalizado"></div>
+    <div class="gal-item reveal"><img src="imagens/web-beard.jpg" alt="Barba sendo modelada com navalha"></div>
+    <div class="gal-item reveal"><img src="imagens/web-detail.jpg" alt="Acabamento de nuca com máquina"></div>
+    <div class="gal-item wide reveal"><img src="imagens/web-fade.jpg" alt="Cliente sendo atendido na cadeira"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section class="exp">
+  <div class="exp-grid">
+    <div class="exp-img reveal">
+      <img src="imagens/web-tools.jpg" alt="Ferramentas de barbeiro — máquinas e pentes">
+    </div>
+    <div class="reveal">
+      <div class="overline">A experiência TALK</div>
+      <h2>Mais que um corte. Um <em>ritual.</em></h2>
+      <ul class="exp-list">
+        <li>
+          <span class="mk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h3>Profissionais que entendem do ofício</h3><p>Cada corte sai do jeito que você pediu — e do jeito que cai melhor em você.</p></div>
+        </li>
+        <li>
+          <span class="mk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h3>Hora marcada, sem fila</h3><p>Você agenda pelo WhatsApp e chega na hora certa. Seu tempo vale.</p></div>
+        </li>
+        <li>
+          <span class="mk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><h3>Ambiente pra relaxar</h3><p>Música, conversa boa e um espaço pensado pra você desligar do corre.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAR -->
+<section class="agendar">
+  <div class="wrap reveal">
+    <div class="overline">Bora marcar</div>
+    <h2>Seu próximo corte começa com uma <em>mensagem</em>.</h2>
+    <p>Sem ligação, sem espera. Manda um "oi" no WhatsApp e a gente já reserva seu horário na TALK.</p>
+    <a class="btn-primary" href="https://wa.me/5598981051008?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20na%20TALK%20Barbearia." target="_blank" rel="noopener">
+      Chamar no WhatsApp
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Passa lá na TALK</h2>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><h3>Endereço</h3><p>Av. dos Holandeses, 200 — Calhau<br>São Luís — MA, 65071-380</p></div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+        <div><h3>Contato / WhatsApp</h3><p><a href="https://wa.me/5598981051008?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20na%20TALK%20Barbearia." target="_blank" rel="noopener">(98) 98105-1008</a></p></div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><h3>Atendimento</h3><p>Seg a Sáb — agende seu melhor horário pelo WhatsApp</p></div>
+      </div>
+      <a class="btn-primary" style="margin-top:14px" href="https://www.google.com/maps/place/TALK+BARBEARIA/@-2.4903472,-44.2635949,17z/data=!4m6!3m5!1s0x7f6939a6bc9158b:0x7bd27cd874711330" target="_blank" rel="noopener">
+        Ver no Google Maps
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
+    </div>
+    <div class="local-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada da TALK Barbearia no Calhau, São Luís">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">TALK<span>.</span> Barbearia</div>
+      <p class="small" style="margin-top:8px">Av. dos Holandeses, 200 — Calhau · São Luís — MA</p>
+    </div>
+    <a class="foot-cta" href="https://wa.me/5598981051008?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20na%20TALK%20Barbearia." target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598981051008?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20na%20TALK%20Barbearia." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
