@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Rosanna Rossi — Harmonização Facial em Goiânia</title>
+<meta name="description" content="Harmonização facial, botox e preenchimento em Goiânia. Naturalidade que impressiona. Nota 4.8 no Google. Setor Sul. Agende sua consulta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --black: #0d0d0d;
+    --dark: #161614;
+    --card: #1c1c1a;
+    --champagne: #e8dcc8;
+    --gold: #c9a84c;
+    --gold-light: #e0c57a;
+    --white: #f8f6f2;
+    --gray: #6b6b6b;
+    --radius: 12px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background .4s, box-shadow .4s;
+  }
+  header.scrolled { background: rgba(13,13,13,.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(201,168,76,.15); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; letter-spacing: .2em; text-decoration: none; color: var(--white); text-transform: uppercase; }
+  .logo em { font-style: italic; color: var(--gold); }
+  nav a { color: rgba(248,246,242,.6); text-decoration: none; margin-left: 30px; font-size: .73rem; letter-spacing: .14em; text-transform: uppercase; transition: color .2s; }
+  nav a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero { position: relative; height: 100vh; min-height: 650px; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: url('imagens/maps-1.jpg') center 15%/cover no-repeat; animation: kb 22s ease-in-out infinite alternate; }
+  @keyframes kb { from{transform:scale(1)} to{transform:scale(1.05)} }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(13,13,13,.75) 0%, rgba(13,13,13,.35) 50%, rgba(13,13,13,.1) 100%); }
+  .hero-content { position: relative; z-index: 2; padding: 0 8% 80px; width: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .hero-left { max-width: 560px; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .eyebrow::before { content:''; width: 28px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem,5.5vw,5rem); font-weight: 300; line-height: 1.05; letter-spacing: .02em; margin-bottom: 22px; }
+  h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub { font-size: .88rem; color: rgba(248,246,242,.65); line-height: 1.85; margin-bottom: 38px; font-weight: 300; }
+  .hero-badge { background: rgba(13,13,13,.65); backdrop-filter: blur(10px); border: 1px solid rgba(201,168,76,.25); border-radius: var(--radius); padding: 20px 26px; text-align: center; flex-shrink: 0; }
+  .badge-num { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 300; color: var(--gold); line-height: 1; }
+  .badge-stars { color: var(--gold); font-size: .85rem; letter-spacing: 3px; margin: 4px 0; }
+  .badge-label { font-size: .66rem; color: var(--gray); text-transform: uppercase; letter-spacing: .12em; }
+
+  /* BTNs */
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--black); font-weight: 500; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; padding: 15px 32px; border-radius: 50px; text-decoration: none; box-shadow: 0 6px 28px rgba(201,168,76,.35); transition: transform .2s, box-shadow .2s; }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,168,76,.5); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; color: var(--white); border: 1px solid rgba(248,246,242,.2); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-size: .78rem; letter-spacing: .06em; transition: border-color .2s, color .2s; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── SOBRE ── */
+  .sobre { background: var(--dark); padding: 96px 8%; }
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sobre-img { position: relative; border-radius: var(--radius); overflow: hidden; }
+  .sobre-img img { width: 100%; min-height: 520px; object-fit: cover; object-position: top; display: block; }
+  .sobre-img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 24px 20px; background: linear-gradient(to top, rgba(13,13,13,.85), transparent); font-family: 'Cormorant Garamond', serif; font-size: .85rem; letter-spacing: .12em; color: var(--champagne); text-transform: uppercase; text-align: center; }
+  .sobre-text { }
+  .section-label { display: flex; align-items: center; gap: 10px; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .section-label::after { content:''; height: 1px; background: rgba(201,168,76,.25); width: 44px; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,3.5vw,3rem); font-weight: 300; line-height: 1.1; margin-bottom: 22px; }
+  h2 em { font-style: italic; color: var(--gold); }
+  .sobre-text p { font-size: .87rem; color: rgba(248,246,242,.6); line-height: 1.88; margin-bottom: 14px; font-weight: 300; }
+  .lead { color: rgba(248,246,242,.55); max-width: 460px; margin-bottom: 44px; line-height: 1.85; font-weight: 300; font-size: .88rem; }
+
+  /* ── PROCEDIMENTOS ── */
+  .procedimentos { background: var(--black); padding: 96px 8%; }
+  .proc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 2px; margin-top: 52px; }
+  .proc-card { background: var(--card); padding: 36px 28px; border: 1px solid rgba(255,255,255,.04); transition: border-color .3s, background .3s; cursor: default; }
+  .proc-card:hover { border-color: rgba(201,168,76,.3); background: #222220; }
+  .proc-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: rgba(201,168,76,.2); line-height: 1; margin-bottom: 12px; }
+  .proc-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; margin-bottom: 10px; color: var(--white); }
+  .proc-card p { font-size: .81rem; color: var(--gray); line-height: 1.75; }
+  .proc-tag { display: inline-block; margin-top: 16px; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(201,168,76,.3); padding-bottom: 2px; }
+
+  /* ── ANTES/DEPOIS ── */
+  .resultados { background: var(--dark); padding: 96px 8%; }
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 48px; }
+  .result-card { position: relative; overflow: hidden; }
+  .result-card img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; transition: transform .5s; }
+  .result-card:hover img { transform: scale(1.03); }
+  .result-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top,rgba(13,13,13,.85),transparent); padding: 40px 20px 18px; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--champagne); }
+
+  /* ── BRANDING ── */
+  .branding { background: var(--black); padding: 0; }
+  .brand-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .brand-img { overflow: hidden; }
+  .brand-img img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; transition: transform .5s; }
+  .brand-img:hover img { transform: scale(1.04); }
+  .brand-copy { background: var(--card); display: flex; flex-direction: column; justify-content: center; padding: 64px 56px; }
+  .brand-copy h2 { font-size: clamp(1.8rem,3vw,2.6rem); margin-bottom: 20px; }
+  .brand-copy p { font-size: .85rem; color: var(--gray); line-height: 1.85; margin-bottom: 12px; }
+
+  /* ── RATING ── */
+  .rating-strip { padding: 64px 8%; text-align: center; background: linear-gradient(135deg,#1a1400,var(--card),#1a1400); border-top: 1px solid rgba(201,168,76,.12); border-bottom: 1px solid rgba(201,168,76,.12); }
+  .rating-strip .big { font-family: 'Cormorant Garamond', serif; font-size: 7rem; font-weight: 300; color: var(--gold); line-height: 1; }
+  .rating-strip .stars-lg { font-size: 1.4rem; color: var(--gold); letter-spacing: 6px; margin: 6px 0 10px; }
+  .rating-strip p { color: var(--gray); font-size: .86rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background: var(--dark); padding: 96px 8%; }
+  .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+  .loc-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--gold); margin-bottom: 28px; }
+  .loc-item { display: flex; gap: 14px; margin-bottom: 20px; }
+  .loc-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+  .loc-item p { font-size: .85rem; color: var(--gray); line-height: 1.72; }
+  .loc-item strong { color: var(--white); }
+  .map-box { background: var(--card); border-radius: var(--radius); height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border: 1px solid rgba(201,168,76,.1); color: var(--gray); }
+  .map-box a { background: linear-gradient(135deg,var(--gold),var(--gold-light)); color: var(--black); padding: 11px 22px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: .8rem; letter-spacing: .06em; }
+
+  /* ── FOOTER ── */
+  footer { background: #080808; padding: 32px 8%; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,168,76,.1); flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 300; letter-spacing: .25em; color: var(--gold); text-transform: uppercase; }
+  footer p { font-size: .75rem; color: var(--gray); }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── WHATSAPP ── */
+  .wa-btn { position: fixed; bottom: 26px; right: 26px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 6px 22px rgba(37,211,102,.4); transition: transform .2s; }
+  .wa-btn:hover { transform: scale(1.1); }
+  .wa-btn::before { content:''; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(37,211,102,.35); animation: ping 2s ease-out infinite; }
+  @keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.65);opacity:0} }
+  .wa-btn svg { width: 26px; height: 26px; fill: white; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s, transform .65s; }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal:nth-child(2){transition-delay:.1s} .reveal:nth-child(3){transition-delay:.2s} .reveal:nth-child(4){transition-delay:.3s}
+
+  @media(max-width:900px) {
+    header { padding: 14px 20px; } nav { display: none; }
+    .hero-content { flex-direction: column; align-items: flex-start; padding: 0 6% 60px; }
+    .sobre-grid, .result-grid, .brand-grid, .loc-grid { grid-template-columns: 1fr; }
+    section, .sobre, .procedimentos, .resultados, .localizacao { padding: 64px 6%; }
+    .brand-copy { padding: 40px 30px; }
+    .btn-ghost { display: none; }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .hero-bg { animation: none; } .reveal { transition: none; opacity: 1; transform: none; } .wa-btn::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">Dra. <em>Rosanna Rossi</em></a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5562981898351" target="_blank" rel="noopener">Consulta</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="eyebrow">Harmonização Facial · Goiânia, GO</div>
+      <h1>Harmonização<br>que <em>realça.</em><br>Naturalidade<br>que <em>impressiona.</em></h1>
+      <p class="hero-sub">Botox, preenchimento e harmonização facial com resultado que preserva quem você é — mais descansada, mais confiante, mais você.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/5562981898351?text=Ol%C3%A1%2C%20Dra.%20Rosanna!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar Consulta
+        </a>
+        <a href="#resultados" class="btn-ghost">Ver resultados</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-num">4.8</div>
+      <div class="badge-stars">★★★★★</div>
+      <div class="badge-label">Google Maps</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/insta-4.jpg" alt="Rosanna Rossi — identidade da marca" loading="lazy">
+      <div class="sobre-img-caption">RR · Rosanna Rossi · Goiânia</div>
+    </div>
+    <div class="sobre-text reveal">
+      <div class="section-label">Quem é</div>
+      <h2>Dra. <em>Rosanna Rossi</em></h2>
+      <p>Médica especializada em harmonização facial e procedimentos estéticos — com foco em resultado natural que preserva a identidade de cada paciente.</p>
+      <p>Atende no Setor Sul de Goiânia com um padrão de excelência que se reflete em cada detalhe: desde a faixa e toalha bordadas com o logo RR até o resultado documentado em cada procedimento.</p>
+      <p>Botox feminino e masculino, preenchimento labial, harmonização completa — tudo com precisão, técnica e o respeito que você merece.</p>
+      <div style="margin-top:30px;">
+        <a href="https://wa.me/5562981898351?text=Ol%C3%A1%2C%20Dra.%20Rosanna!%20Quero%20saber%20mais%20sobre%20os%20procedimentos." target="_blank" class="btn-primary">Falar com a Dra. Rosanna</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="procedimentos" id="procedimentos">
+  <div class="section-label">O que oferecemos</div>
+  <h2>Procedimentos de<br><em>alta precisão</em></h2>
+  <p class="lead">Cada tratamento planejado para o seu rosto — sem exageros, sem o "feito" artificial. Naturalidade é a assinatura.</p>
+  <div class="proc-grid">
+    <div class="proc-card reveal"><div class="proc-num">01</div><h3>Harmonização Facial</h3><p>Protocolo completo que equilibra traços, projeta pontos e renova a face sem perder a essência.</p><span class="proc-tag">Resultado natural</span></div>
+    <div class="proc-card reveal"><div class="proc-num">02</div><h3>Botox Feminino</h3><p>Suaviza linhas de expressão e previne o envelhecimento com naturalidade. Sem congelar, sem exagerar.</p><span class="proc-tag">Anti-aging</span></div>
+    <div class="proc-card reveal"><div class="proc-num">03</div><h3>Botox Masculino</h3><p>Cuidado facial para homens — discreto, natural, sem que "pareça feito". Rosto fresco, não artificial.</p><span class="proc-tag">Masculino</span></div>
+    <div class="proc-card reveal"><div class="proc-num">04</div><h3>Preenchimento Labial</h3><p>Lábios mais definidos e volumosos com o ácido hialurônico na medida certa para o seu rosto.</p><span class="proc-tag">Lábios · Contorno</span></div>
+  </div>
+</section>
+
+<!-- ANTES/DEPOIS -->
+<section class="resultados" id="resultados">
+  <div class="section-label">Resultados reais</div>
+  <h2>Antes e <em>Depois</em></h2>
+  <p class="lead">Cada caso é único. O que não muda é o compromisso com a naturalidade e a excelência técnica.</p>
+  <div class="result-grid">
+    <div class="result-card reveal">
+      <img src="imagens/insta-1.jpg" alt="Resultado harmonização — Dra. Rosanna Rossi" loading="lazy">
+      <div class="result-label">Harmonização Facial · Masculino</div>
+    </div>
+    <div class="result-card reveal">
+      <img src="imagens/insta-3.jpg" alt="Resultado harmonização feminino — Dra. Rosanna Rossi" loading="lazy">
+      <div class="result-label">Harmonização Facial · Feminino</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDING / IDENTIDADE -->
+<div class="branding">
+  <div class="brand-grid">
+    <div class="brand-img">
+      <img src="imagens/maps-1.jpg" alt="Dra. Rosanna Rossi" loading="lazy">
+    </div>
+    <div class="brand-copy">
+      <div class="section-label">A experiência RR</div>
+      <h2>Um padrão que<br>você <em>sente</em></h2>
+      <p>Desde a toalha bordada com o monograma RR sobre o mármore até o momento do resultado — cada detalhe foi pensado para que a sua experiência seja à altura do cuidado que você merece.</p>
+      <p>Porque harmonização de verdade começa antes da agulha — começa na forma como você é recebida.</p>
+      <div style="margin-top:28px;">
+        <a href="https://wa.me/5562981898351?text=Ol%C3%A1%2C%20Dra.%20Rosanna!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-primary">Agendar Consulta</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">4.8</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Avaliação no Google Maps — de pacientes reais de Goiânia</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Venha nos <em>conhecer</em></h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Dra. Rosanna Rossi</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>Rua 120, 313</strong><br>Setor Sul — Goiânia, GO<br>CEP 74085-450</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📞</div><div><p><strong>(62) 98230-0443</strong><br>WhatsApp: (62) 98189-8351</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📸</div><div><p><strong>@dra.rosannarossi</strong><br>Siga no Instagram</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🕐</div><div><p><strong>Segunda a Sexta</strong><br>08h às 18h · Sábados com agendamento prévio</p></div></div>
+      <div style="margin-top:28px;">
+        <a href="https://wa.me/5562981898351?text=Ol%C3%A1%2C%20Dra.%20Rosanna!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-primary">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🗺️</span>
+      <p style="font-size:.85rem; text-align:center; max-width:200px; color:var(--gray);">Rua 120, 313 — Setor Sul<br>Goiânia, GO</p>
+      <a href="https://www.google.com/maps/place/Dra.+Rosanna+Rossi+%7C+Harmoniza%C3%A7%C3%A3o+Facial+em+Goi%C3%A2nia+-+Goi%C3%A1s/@-16.6963978,-49.2495165,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">RR · Rosanna Rossi</span>
+  <p>© 2025 Dra. Rosanna Rossi — Goiânia, GO</p>
+  <p><a href="https://wa.me/5562981898351">(62) 98189-8351</a></p>
+</footer>
+
+<a href="https://wa.me/5562981898351?text=Ol%C3%A1%2C%20Dra.%20Rosanna!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="wa-btn" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
