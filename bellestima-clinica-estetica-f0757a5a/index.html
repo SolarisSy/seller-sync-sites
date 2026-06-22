@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellestima Clínica Estética — Nova Suíça, Goiânia</title>
+<meta name="description" content="Clínica estética na Nova Suíça, Goiânia. Nota 4.5 no Google. Tratamentos faciais e corporais. Ligue ou agende: (62) 3070-9255.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --bg-base:    #faf7f2;
+  --bg-surface: #ffffff;
+  --bg-inset:   #f0e9de;
+  --bg-dark:    #1a1512;
+  --bg-dark-2:  #2c2218;
+
+  --text-primary:   #1a1512;
+  --text-secondary: #3d2e20;
+  --text-muted:     #8a7a68;
+  --text-inverse:   #faf7f2;
+
+  --gold:        #c8a86a;
+  --gold-dark:   #8b6e45;
+  --gold-light:  #dfc08c;
+  --gold-subtle: rgba(200,168,106,.10);
+  --gold-border: rgba(200,168,106,.22);
+
+  --text-display: clamp(2.8rem, 2rem + 4vw, 5.4rem);
+  --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3rem);
+  --text-body:    clamp(0.88rem, 0.8rem + 0.3vw, 1rem);
+  --lh-display:   1.0;
+  --lh-body:      1.72;
+  --ls-display:  -0.03em;
+  --ls-overline:  0.18em;
+
+  --shadow-sm:
+    0 1px 2px rgba(0,0,0,.04),
+    0 2px 6px rgba(0,0,0,.04);
+  --shadow-md:
+    0 2px 4px rgba(0,0,0,.04),
+    0 8px 18px rgba(0,0,0,.07),
+    0 20px 40px rgba(0,0,0,.04);
+  --shadow-lg:
+    0 4px 8px rgba(0,0,0,.04),
+    0 16px 32px rgba(0,0,0,.06),
+    0 40px 80px rgba(200,168,106,.08);
+  --shadow-gold:
+    0 6px 20px rgba(200,168,106,.30),
+    0 2px 6px  rgba(200,168,106,.18);
+
+  --section-pad: clamp(5rem, 9vw, 10rem);
+  --radius: 16px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg-base); color: var(--text-primary); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* grain */
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px; opacity: 0.025;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+header.scrolled {
+  background: rgba(26,21,18,.97);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(200,168,106,.2);
+}
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem; font-weight: 800; letter-spacing: 0.04em;
+  text-decoration: none; color: var(--text-inverse); text-transform: lowercase;
+}
+.logo em { font-style: italic; font-weight: 300; color: var(--gold); }
+nav a {
+  color: rgba(250,247,242,.5); text-decoration: none;
+  margin-left: 22px; font-size: 0.7rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  position: relative; transition: color 0.2s;
+}
+nav a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.76,0,0.24,1);
+}
+nav a:hover { color: var(--gold); }
+nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* ── HERO — Cinematic full-bleed, text base-left ── */
+.hero {
+  position: relative;
+  height: 100dvh; min-height: 600px;
+  display: grid; align-items: end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('imagens/maps-1.jpg') center 40%/cover no-repeat;
+  animation: kb 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes kb { from{transform:scale(1)} to{transform:scale(1.06)} }
+
+/* overlay diagonal: escuro à esquerda, transparente à direita */
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(105deg,
+      rgba(26,21,18,.92) 0%,
+      rgba(26,21,18,.75) 42%,
+      rgba(26,21,18,.3)  65%,
+      rgba(26,21,18,.08) 100%
+    );
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vh,5.5rem);
+  max-width: 680px;
+}
+
+.overline {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.65rem; letter-spacing: var(--ls-overline);
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 20px;
+}
+.overline::before { content: ''; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+
+/* Line-by-line slide-up */
+.hero-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--text-display);
+  font-weight: 800; line-height: var(--lh-display);
+  letter-spacing: var(--ls-display); text-transform: lowercase;
+  color: var(--text-inverse);
+  max-width: 14ch; margin-bottom: 18px;
+  text-wrap: balance;
+}
+.hero-title .line {
+  display: block; overflow: hidden;
+}
+.hero-title .line-inner {
+  display: block;
+  opacity: 0; transform: translateY(105%);
+  animation: line-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-title .line:nth-child(1) .line-inner { animation-delay: 0.3s; }
+.hero-title .line:nth-child(2) .line-inner { animation-delay: 0.48s; }
+.hero-title .line:nth-child(3) .line-inner { animation-delay: 0.66s; color: var(--gold-light); }
+@keyframes line-up { to { opacity: 1; transform: translateY(0); } }
+
+.hero-sub {
+  font-size: var(--text-body); line-height: var(--lh-body);
+  color: rgba(250,247,242,.55); max-width: 400px; margin-bottom: 26px;
+  opacity: 0; animation: fade-in 0.7s 1s ease forwards;
+}
+
+.hero-stats {
+  display: flex; gap: 16px; margin-bottom: 28px; flex-wrap: wrap;
+  opacity: 0; animation: fade-in 0.7s 1.1s ease forwards;
+}
+.hero-stat {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(250,247,242,.08);
+  backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid rgba(200,168,106,.22);
+  border-radius: 50px; padding: 9px 16px;
+}
+.stat-num {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1;
+}
+.stat-stars { font-size: 0.68rem; color: var(--gold); letter-spacing: 2px; display: block; }
+.stat-label { font-size: 0.6rem; color: rgba(250,247,242,.35); text-transform: uppercase; letter-spacing: .1em; display: block; }
+
+.hero-cta { opacity: 0; animation: fade-in 0.7s 1.25s ease forwards; }
+@keyframes fade-in { to { opacity: 1; } }
+
+/* ── BOTÕES ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.9rem 2rem; min-height: 48px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--bg-dark);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none;
+  border-radius: 50px; box-shadow: var(--shadow-gold);
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(200,168,106,.4), 0 4px 10px rgba(200,168,106,.3); }
+.btn-primary:active { transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 0.85rem 1.6rem; min-height: 48px;
+  color: rgba(250,247,242,.6); border: 1px solid rgba(250,247,242,.2);
+  border-radius: 50px; text-decoration: none; margin-left: 10px;
+  font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: border-color 0.25s, color 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── SOBRE ── */
+.sobre {
+  background: var(--bg-surface);
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+  padding: calc(var(--section-pad) + 5vw) clamp(1.5rem,6vw,5rem) var(--section-pad);
+  margin-top: -5vw;
+}
+.sobre-inner {
+  display: grid; grid-template-columns: 3fr 2fr;
+  gap: clamp(3rem,6vw,5rem); align-items: start;
+  max-width: 1200px; margin: 0 auto;
+}
+.sobre-copy h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--text-h2); font-weight: 700; line-height: 1.08;
+  text-transform: lowercase; letter-spacing: -0.02em;
+  text-wrap: balance; margin-bottom: 14px;
+}
+.sobre-copy h2 em { font-style: italic; font-weight: 300; color: var(--gold-dark); }
+.sobre-copy p { font-size: var(--text-body); color: var(--text-muted); line-height: var(--lh-body); margin-bottom: 14px; }
+.nota-pill {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--gold-subtle); border: 1px solid var(--gold-border);
+  border-radius: 50px; padding: 12px 22px; margin: 18px 0 26px;
+}
+.nota-pill .num { font-family: 'Raleway', sans-serif; font-size: 2rem; font-weight: 700; color: var(--gold-dark); line-height: 1; }
+.nota-pill .stars { font-size: 0.76rem; color: var(--gold); letter-spacing: 3px; display: block; }
+.nota-pill .lbl { font-size: 0.64rem; color: var(--gold-dark); opacity: .7; text-transform: uppercase; letter-spacing: .1em; display: block; }
+.feature {
+  display: flex; gap: 14px; padding: 13px 0;
+  border-top: 1px solid rgba(200,168,106,.1); align-items: flex-start;
+}
+.feat-line { width: 20px; height: 2px; background: var(--gold); flex-shrink: 0; margin-top: 9px; border-radius: 1px; }
+.feature p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
+.feature strong { color: var(--text-primary); font-weight: 500; }
+
+/* fachada no sobre */
+.sobre-visual { position: relative; }
+.sobre-img-frame {
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.sobre-img-frame img {
+  width: 100%; display: block;
+  transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.sobre-img-frame:hover img { transform: scale(1.03); }
+/* acento dourado */
+.sobre-visual::after {
+  content: ''; position: absolute; bottom: -16px; right: -16px;
+  width: 60%; height: 60%;
+  border: 2px solid var(--gold-border);
+  border-radius: var(--radius);
+  z-index: -1;
+}
+
+/* ── PROCEDIMENTOS ── */
+.procedimentos {
+  background: var(--bg-inset);
+  padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+}
+.proc-header { max-width: 1200px; margin: 0 auto 3rem; }
+.proc-header h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--text-h2); font-weight: 700; line-height: 1.08;
+  text-transform: lowercase; letter-spacing: -0.02em; text-wrap: balance;
+}
+.proc-header h2 em { font-style: italic; font-weight: 300; color: var(--gold-dark); }
+.proc-header p { font-size: var(--text-body); color: var(--text-muted); line-height: var(--lh-body); max-width: 480px; margin-top: 10px; }
+
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1rem,2.5vw,1.5rem);
+  max-width: 1200px; margin: 0 auto;
+}
+.proc-card {
+  background: var(--bg-surface); border-radius: var(--radius);
+  padding: clamp(1.5rem,3vw,2.2rem);
+  border: 1px solid rgba(200,168,106,.12);
+  transition:
+    transform  0.35s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+.proc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md), 0 0 0 1px var(--gold-border);
+  border-color: var(--gold-border);
+}
+.proc-num {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem; font-weight: 800;
+  color: rgba(200,168,106,.15); line-height: 1; margin-bottom: 12px;
+  letter-spacing: -0.04em;
+}
+.proc-card h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.15rem; font-weight: 700; text-transform: lowercase;
+  color: var(--text-primary); margin-bottom: 9px; letter-spacing: -0.01em;
+}
+.proc-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.72; }
+.proc-tag {
+  display: inline-block; margin-top: 14px;
+  font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-dark); border-bottom: 1px solid var(--gold-border); padding-bottom: 2px;
+}
+
+/* ── INSTAGRAM STRIP ── */
+.insta-strip {
+  background: var(--bg-dark);
+  padding: clamp(4rem,7vw,6rem) clamp(1.5rem,6vw,5rem);
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 16px;
+}
+.insta-icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+}
+.insta-icon svg { width: 26px; height: 26px; fill: white; }
+.insta-strip h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 700;
+  color: var(--text-inverse); letter-spacing: -0.02em; text-transform: lowercase;
+}
+.insta-strip p { font-size: var(--text-body); color: rgba(250,247,242,.45); max-width: 420px; line-height: var(--lh-body); }
+.insta-handle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--gold);
+}
+.nota-row {
+  display: flex; align-items: center; gap: 16px;
+  background: rgba(250,247,242,.06); border: 1px solid var(--gold-border);
+  border-radius: 50px; padding: 10px 22px; margin-top: 8px;
+}
+.nota-row .num { font-family: 'Raleway', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.nota-row .stars { font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; display: block; }
+.nota-row .lbl { font-size: 0.6rem; color: rgba(250,247,242,.35); text-transform: uppercase; letter-spacing: .1em; display: block; }
+
+/* ── LOCALIZAÇÃO ── */
+.localizacao {
+  background: var(--bg-surface);
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+  padding: calc(var(--section-pad) + 4vw) clamp(1.5rem,6vw,5rem) var(--section-pad);
+  margin-top: -4vw;
+}
+.loc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,5rem); max-width: 1200px; margin: 0 auto; }
+.loc-copy h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--text-h2); font-weight: 700; line-height: 1.08;
+  text-transform: lowercase; letter-spacing: -0.02em; text-wrap: balance;
+  margin-bottom: 28px;
+}
+.loc-copy h2 em { font-style: italic; font-weight: 300; color: var(--gold-dark); }
+.loc-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+.loc-icon {
+  width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%;
+  background: var(--gold-subtle); border: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+}
+.loc-item p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.72; }
+.loc-item strong { color: var(--text-primary); font-weight: 500; }
+.map-box {
+  background: var(--bg-inset); border-radius: var(--radius); min-height: 290px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; border: 1px solid rgba(200,168,106,.12);
+}
+.map-box p { font-size: 0.84rem; color: var(--text-muted); text-align: center; max-width: 180px; line-height: 1.6; }
+.map-box a {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--bg-dark); padding: 10px 22px; border-radius: 50px;
+  text-decoration: none; font-weight: 700; font-size: 0.78rem;
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+.map-box a:hover { transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-dark);
+  padding: 26px clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 14px;
+  border-top: 1px solid rgba(200,168,106,.12);
+}
+.footer-logo {
+  font-family: 'Raleway', sans-serif; font-weight: 800;
+  text-transform: lowercase; font-size: 1rem; color: var(--gold);
+}
+footer p { font-size: 0.72rem; color: rgba(250,247,242,.28); }
+footer a { color: rgba(250,247,242,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--gold); }
+
+/* ── WA FAB ── */
+.wa-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%; background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,.4);
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color: transparent;
+}
+.wa-fab:hover { transform: scale(1.1); }
+.wa-fab::before {
+  content: ''; position: absolute; inset: -7px; border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.35);
+  animation: pulse 2.2s ease-out infinite;
+}
+@keyframes pulse { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.7);opacity:0} }
+.wa-fab svg { width: 24px; height: 24px; fill: white; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.in { opacity: 1; transform: none; }
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* ── RESPONSIVE ── */
+@media (max-width:900px) {
+  header { padding:16px 20px; } nav { display:none; }
+  .hero { height:100dvh; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(26,21,18,.6) 0%, rgba(26,21,18,.9) 70%); }
+  .hero-content { max-width:100%; }
+  .sobre { clip-path:none; padding-top:var(--section-pad); margin-top:0; }
+  .sobre-inner { grid-template-columns:1fr; }
+  .sobre-visual::after { display:none; }
+  .loc-inner { grid-template-columns:1fr; }
+  .localizacao { clip-path:none; padding-top:var(--section-pad); margin-top:0; }
+  .btn-ghost { display:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-bg { animation:none; }
+  .reveal { transition:none; opacity:1; transform:none; }
+  .hero-title .line-inner { animation:none; opacity:1; transform:none; }
+  .hero-sub,.hero-stats,.hero-cta { animation:none; opacity:1; }
+  .wa-fab::before { animation:none; }
+  body::before { display:none; }
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">bellestima <em>clínica estética</em></a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#localizacao">Localização</a>
+    <a href="tel:+556230709255">Ligar</a>
+  </nav>
+</header>
+
+<!-- ── HERO CINEMATIC ── -->
+<div class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="overline">Clínica Estética · Nova Suíça · Goiânia</div>
+    <h1 class="hero-title">
+      <span class="line"><span class="line-inner">beleza</span></span>
+      <span class="line"><span class="line-inner">que eleva a</span></span>
+      <span class="line"><span class="line-inner">autoestima.</span></span>
+    </h1>
+    <p class="hero-sub">Tratamentos estéticos faciais e corporais — com cuidado, técnica e atenção à sua autoestima.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-num">4.5</div>
+        <div>
+          <span class="stat-stars">★★★★★</span>
+          <span class="stat-label">Google Maps</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="tel:+556230709255" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Ligar Agora
+      </a>
+      <a href="#sobre" class="btn-ghost">Conhecer a Clínica</a>
+    </div>
+  </div>
+</div>
+
+<!-- wave: hero → sobre -->
+<div aria-hidden="true" style="display:block;line-height:0;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:clamp(36px,5vw,72px);display:block;">
+    <path d="M0,32 C360,64 1080,0 1440,32 L1440,64 L0,64 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ── SOBRE ── -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-copy">
+      <div class="overline reveal">A Clínica</div>
+      <h2 class="reveal">bellestima — <em>beleza e autoestima</em> juntas</h2>
+      <p class="reveal">Bellestima nasceu do encontro entre dois conceitos: beleza e autoestima. O nome diz tudo — cada tratamento aqui existe para fazer você se sentir melhor com a sua própria imagem.</p>
+      <p class="reveal">Clínica estruturada na Nova Suíça com identidade própria, espaço organizado e nota 4.5 no Google.</p>
+      <div class="nota-pill reveal">
+        <div class="num">4.5</div>
+        <div>
+          <span class="stars">★★★★☆</span>
+          <span class="lbl">Google Maps</span>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feat-line"></div>
+        <p><strong>Identidade própria</strong><br>Marca desenvolvida, fachada com logo, espaço pensado. Um negócio estruturado — que agora tem site.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feat-line"></div>
+        <p><strong>Nova Suíça, Goiânia</strong><br>R. C-258, 252 — bairro residencial de bom padrão, estacionamento próprio na clínica.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feat-line"></div>
+        <p><strong>@bellestimaestetica</strong><br>Presença no Instagram — agora também com site para capturar quem pesquisa no Google.</p>
+      </div>
+      <div style="margin-top:28px" class="reveal">
+        <a href="tel:+556230709255" class="btn-primary">Ligar para Agendar</a>
+      </div>
+    </div>
+    <div class="sobre-visual reveal">
+      <div class="sobre-img-frame">
+        <img src="imagens/maps-1.jpg" alt="Fachada da Bellestima Clínica Estética" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCEDIMENTOS ── -->
+<section class="procedimentos" id="procedimentos">
+  <div class="proc-header">
+    <div class="overline reveal">Serviços</div>
+    <h2 class="reveal">tratamentos <em>bellestima</em></h2>
+    <p class="reveal">Estética facial e corporal — para realçar sua beleza e fortalecer sua autoestima.</p>
+  </div>
+  <div class="proc-grid">
+    <div class="proc-card reveal">
+      <div class="proc-num">01</div>
+      <h3>limpeza de pele</h3>
+      <p>Higienização profunda com extração, protocolo calmante e finalização hidratante. Pele limpa e renovada.</p>
+      <span class="proc-tag">Facial</span>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-num">02</div>
+      <h3>peeling químico</h3>
+      <p>Renovação celular com ácidos para manchas, textura e acne. Tom mais uniforme e pele revitalizada.</p>
+      <span class="proc-tag">Renovação</span>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-num">03</div>
+      <h3>hidratação profunda</h3>
+      <p>Reidratação com ativos de alta performance. Firmeza, luminosidade e proteção em um único protocolo.</p>
+      <span class="proc-tag">Luminosidade</span>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-num">04</div>
+      <h3>drenagem linfática</h3>
+      <p>Técnica manual para redução de inchaço, ativação da circulação e melhora da silhueta.</p>
+      <span class="proc-tag">Corporal</span>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-num">05</div>
+      <h3>massagem relaxante</h3>
+      <p>Alívio de tensões musculares com técnicas que devolvem leveza ao corpo e tranquilidade à mente.</p>
+      <span class="proc-tag">Bem-estar</span>
+    </div>
+    <div class="proc-card reveal">
+      <div class="proc-num">06</div>
+      <h3>depilação</h3>
+      <p>Cera quente e fria para remoção eficiente e confortável. Pele lisa por mais tempo, sem irritação.</p>
+      <span class="proc-tag">Duradouro</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSTAGRAM + NOTA ── -->
+<div class="insta-strip">
+  <div class="insta-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+  </div>
+  <h3 class="reveal">siga a bellestima</h3>
+  <p class="reveal">Acompanhe resultados, dicas e novidades da clínica.</p>
+  <div class="insta-handle reveal">@bellestimaestetica</div>
+  <div class="nota-row reveal">
+    <div class="num">4.5</div>
+    <div>
+      <span class="stars">★★★★☆</span>
+      <span class="lbl">Google Maps</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── LOCALIZAÇÃO ── -->
+<section class="localizacao" id="localizacao">
+  <div class="loc-inner">
+    <div>
+      <div class="overline reveal">Localização</div>
+      <h2 class="reveal">Nova Suíça,<br><em>Goiânia</em></h2>
+      <div class="loc-item reveal">
+        <div class="loc-icon" aria-hidden="true">📍</div>
+        <p><strong>R. C-258, 252</strong><br>Nova Suíça, Goiânia - GO · CEP 74280-210<br>Estacionamento próprio</p>
+      </div>
+      <div class="loc-item reveal">
+        <div class="loc-icon" aria-hidden="true">📞</div>
+        <p><strong>(62) 3070-9255</strong><br>Ligações e agendamentos</p>
+      </div>
+      <div class="loc-item reveal">
+        <div class="loc-icon" aria-hidden="true">🕐</div>
+        <p><strong>Segunda a Sábado</strong><br>09h às 19h · Conforme agendamento</p>
+      </div>
+      <div style="margin-top:28px" class="reveal">
+        <a href="tel:+556230709255" class="btn-primary">Ligar para Agendar</a>
+      </div>
+    </div>
+    <div class="map-box reveal">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <p>R. C-258, 252<br>Nova Suíça, Goiânia</p>
+      <a href="https://www.google.com/maps/place/Bellestima+Cl%C3%ADnica+Est%C3%A9tica/@-16.7155311,-49.2726825,17z" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">bellestima</span>
+  <p>© 2025 Bellestima Clínica Estética — Nova Suíça, Goiânia, GO</p>
+  <p><a href="tel:+556230709255">(62) 3070-9255</a></p>
+</footer>
+
+<a href="tel:+556230709255" class="wa-fab" aria-label="Ligar para a Bellestima">
+  <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50), {passive:true});
+
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+}), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
