@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belle Salute — Estética Facial e Corporal | Goiânia</title>
+<meta name="description" content="Estética facial e corporal no Setor Bueno, Goiânia. Nota 4.5. Tratamentos de beleza e bem-estar na Av. T-1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --sage: #6b8f71;
+    --sage-deep: #4d6e53;
+    --sage-light: #8fac94;
+    --cream: #faf6f0;
+    --cream-dark: #f2ece2;
+    --gold: #c9a84c;
+    --gold-light: #e0c46e;
+    --white: #ffffff;
+    --charcoal: #2c2c2c;
+    --gray: #6a7068;
+    --radius: 14px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--charcoal); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header { position:fixed; top:0; left:0; right:0; z-index:100; padding:20px 52px; display:flex; align-items:center; justify-content:space-between; transition:background .35s, box-shadow .35s; }
+  header.scrolled { background:rgba(44,44,44,.97); backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(107,143,113,.2); }
+  .logo { font-family:'Cormorant Garamond',serif; display:flex; flex-direction:column; text-decoration:none; }
+  .logo-main { font-size:1.3rem; font-weight:400; letter-spacing:.06em; color:var(--white); font-style:italic; }
+  .logo-sub { font-size:.58rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-top:2px; }
+  nav a { color:rgba(255,255,255,.6); text-decoration:none; margin-left:24px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; transition:color .2s; }
+  nav a:hover { color:var(--gold); }
+
+  /* ── HERO ── */
+  .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden;
+    background:linear-gradient(145deg,var(--sage-deep) 0%,var(--sage) 40%,#7ca882 70%,#8fac94 100%); }
+  /* SVG organic background */
+  .hero-orb1 { position:absolute; top:-15%; right:-10%; width:70vmax; height:70vmax; border-radius:50%; background:rgba(255,255,255,.06); }
+  .hero-orb2 { position:absolute; bottom:-20%; left:-5%; width:50vmax; height:50vmax; border-radius:50%; background:rgba(255,255,255,.04); }
+  .hero-leaf { position:absolute; right:8%; top:50%; transform:translateY(-50%); opacity:.12; }
+  .hero-content { position:relative; z-index:2; padding:120px 8% 80px; max-width:700px; }
+  .eyebrow { display:flex; align-items:center; gap:14px; font-size:.68rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold-light); margin-bottom:22px; }
+  .eyebrow::before { content:''; width:32px; height:1px; background:var(--gold-light); }
+  h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5.8rem); font-weight:300; line-height:1.05; color:var(--white); margin-bottom:20px; }
+  h1 em { font-style:italic; color:var(--gold-light); }
+  .hero-sub { font-size:.88rem; color:rgba(255,255,255,.65); line-height:1.92; margin-bottom:36px; max-width:480px; font-weight:300; }
+  .hero-stats { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:36px; }
+  .stat { text-align:center; padding:18px 24px; background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border-radius:12px; border:1px solid rgba(255,255,255,.15); }
+  .stat-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:300; color:var(--gold-light); line-height:1; }
+  .stat-stars { font-size:.75rem; color:var(--gold-light); letter-spacing:2px; }
+  .stat-label { font-size:.65rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; margin-top:2px; }
+
+  /* BTNs */
+  .btn-gold { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--charcoal); font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 30px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(201,168,76,.4); transition:transform .2s, box-shadow .2s; }
+  .btn-gold:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(201,168,76,.55); }
+  .btn-sage { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--sage),var(--sage-deep)); color:var(--white); font-weight:500; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 28px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(107,143,113,.35); transition:transform .2s; margin-left:12px; }
+  .btn-sage:hover { transform:translateY(-3px); }
+  .btn-outline { display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,.75); border:1px solid rgba(255,255,255,.3); padding:13px 24px; border-radius:50px; text-decoration:none; font-size:.78rem; transition:border-color .2s; margin-left:12px; }
+  .btn-outline:hover { border-color:var(--gold-light); color:var(--gold-light); }
+
+  /* ── SECTIONS ── */
+  section { padding:92px 8%; }
+  .section-label { display:flex; align-items:center; gap:10px; font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--sage); margin-bottom:10px; }
+  .section-label::after { content:''; height:1px; background:rgba(107,143,113,.3); width:36px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:300; line-height:1.1; margin-bottom:12px; }
+  h2 em { font-style:italic; color:var(--sage); }
+  .lead-p { color:var(--gray); max-width:520px; margin-bottom:50px; line-height:1.88; font-weight:300; font-size:.87rem; }
+
+  /* ── SOBRE ── */
+  .sobre { background:var(--white); }
+  .sobre-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+  .sobre-visual { background:linear-gradient(145deg,var(--sage-deep),var(--sage),#8fac94); border-radius:var(--radius); min-height:460px; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .sobre-visual::before { content:''; position:absolute; top:-40px; right:-40px; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.08); }
+  .sobre-visual::after { content:''; position:absolute; bottom:-30px; left:-30px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.06); }
+  .sobre-icon-big { font-size:5rem; z-index:1; margin-bottom:16px; }
+  .sobre-visual-text { font-family:'Cormorant Garamond',serif; font-size:2rem; font-style:italic; font-weight:300; color:rgba(255,255,255,.9); z-index:1; text-align:center; padding:0 24px; line-height:1.2; }
+  .sobre-copy p { font-size:.87rem; color:var(--gray); line-height:1.9; margin-bottom:14px; }
+  .pillar { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid rgba(107,143,113,.12); }
+  .pillar-icon { font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+  .pillar p { font-size:.83rem; color:var(--gray); line-height:1.65; margin:0; }
+  .pillar strong { color:var(--charcoal); }
+
+  /* ── SERVIÇOS ── */
+  .servicos { background:var(--cream-dark); }
+  .serv-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+  .serv-card { background:var(--white); border-radius:var(--radius); padding:28px 24px; border:1px solid rgba(107,143,113,.1); transition:transform .3s, box-shadow .3s, border-color .3s; }
+  .serv-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(107,143,113,.15); border-color:rgba(107,143,113,.35); }
+  .serv-icon { font-size:2rem; margin-bottom:12px; }
+  .serv-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; color:var(--charcoal); margin-bottom:8px; }
+  .serv-card p { font-size:.82rem; color:var(--gray); line-height:1.7; }
+  .serv-tag { display:inline-block; margin-top:12px; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage); border-bottom:1px solid rgba(107,143,113,.3); padding-bottom:2px; }
+
+  /* ── VALORES ── */
+  .valores { background:var(--sage-deep); padding:80px 8%; }
+  .valores-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+  .valor-item { text-align:center; padding:32px 20px; }
+  .valor-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--gold); line-height:1; margin-bottom:8px; }
+  .valor-label { font-size:.78rem; color:rgba(255,255,255,.6); letter-spacing:.06em; text-transform:uppercase; }
+
+  /* ── RATING ── */
+  .rating-strip { background:linear-gradient(135deg,var(--sage),var(--sage-deep)); padding:56px 8%; text-align:center; }
+  .rating-strip .big { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:300; color:var(--white); line-height:1; }
+  .rating-strip .stars-lg { font-size:1.4rem; color:var(--gold-light); letter-spacing:6px; margin:6px 0 10px; }
+  .rating-strip p { color:rgba(255,255,255,.6); font-size:.86rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background:var(--white); }
+  .loc-grid { display:grid; grid-template-columns:1fr 1fr; gap:52px; }
+  .loc-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:var(--charcoal); margin-bottom:24px; }
+  .loc-item { display:flex; gap:14px; margin-bottom:18px; }
+  .loc-icon { font-size:1rem; flex-shrink:0; margin-top:2px; }
+  .loc-item p { font-size:.86rem; color:var(--gray); line-height:1.72; }
+  .loc-item strong { color:var(--charcoal); }
+  .map-box { background:var(--cream); border-radius:var(--radius); height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid rgba(107,143,113,.15); color:var(--gray); }
+  .map-box a { background:linear-gradient(135deg,var(--sage),var(--sage-deep)); color:#fff; padding:11px 22px; border-radius:50px; text-decoration:none; font-size:.8rem; }
+
+  /* ── FOOTER ── */
+  footer { background:var(--charcoal); padding:28px 8%; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(107,143,113,.15); flex-wrap:wrap; gap:12px; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--gold); }
+  footer p { font-size:.74rem; color:rgba(255,255,255,.3); }
+  footer a { color:var(--sage-light); text-decoration:none; }
+
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s, transform .65s; }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal:nth-child(2){transition-delay:.1s}.reveal:nth-child(3){transition-delay:.2s}.reveal:nth-child(4){transition-delay:.3s}.reveal:nth-child(5){transition-delay:.35s}.reveal:nth-child(6){transition-delay:.4s}
+
+  @media(max-width:900px) {
+    header{padding:14px 20px;} nav{display:none;}
+    .sobre-inner,.loc-grid{grid-template-columns:1fr;}
+    .sobre-visual{min-height:260px;}
+    section,.valores{padding:64px 6%;}
+    .btn-sage,.btn-outline{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">
+    <span class="logo-main">Belle Salute</span>
+    <span class="logo-sub">Estética · Setor Bueno · Goiânia</span>
+  </a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://www.google.com/maps/place/Belle+Salute+Est%C3%A9tica+Facial+e+Corporal/@-16.697995,-49.273727,17z" target="_blank">Encontrar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <!-- Decorative leaf SVG -->
+  <svg class="hero-leaf" width="400" height="600" viewBox="0 0 400 600" fill="none">
+    <path d="M200 10 C200 10 380 150 380 300 C380 450 200 590 200 590 C200 590 20 450 20 300 C20 150 200 10 200 10Z" fill="white" opacity="0.06"/>
+    <path d="M200 80 C200 80 320 200 320 300 C320 400 200 520 200 520 C200 520 80 400 80 300 C80 200 200 80 200 80Z" stroke="white" stroke-width="1" fill="none" opacity="0.1"/>
+  </svg>
+  <div class="hero-content">
+    <div class="eyebrow">Estética Facial e Corporal · Setor Bueno</div>
+    <h1>Onde beleza<br>e saúde se<br><em>encontram.</em></h1>
+    <p class="hero-sub">No Setor Bueno, o endereço mais nobre de Goiânia. Um espaço onde cada tratamento é pensado para o seu bem-estar de dentro para fora.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">4.5</div>
+        <div class="stat-stars">★★★★★</div>
+        <div class="stat-label">Google Maps</div>
+      </div>
+      <div class="stat" style="padding:18px 20px;">
+        <div style="font-size:2rem;line-height:1;color:rgba(255,255,255,.9);font-family:'Cormorant Garamond',serif;font-style:italic;">Setor<br>Bueno</div>
+        <div class="stat-label" style="margin-top:6px;">Goiânia · GO</div>
+      </div>
+    </div>
+    <div>
+      <a href="https://www.google.com/maps/place/Belle+Salute+Est%C3%A9tica+Facial+e+Corporal/@-16.697995,-49.273727,17z" target="_blank" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Como Chegar
+      </a>
+      <a href="#servicos" class="btn-outline">Nossos Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-visual reveal">
+      <div class="sobre-icon-big">🌿</div>
+      <div class="sobre-visual-text">"Beleza que<br>nasce do cuidado"</div>
+    </div>
+    <div class="reveal">
+      <div class="section-label">A Belle Salute</div>
+      <h2>Beleza como<br><em>bem-estar</em></h2>
+      <p>A Belle Salute — "Bela Saúde" — nasceu da convicção de que a beleza verdadeira é inseparável do equilíbrio do corpo e da mente. Não é sobre aparência: é sobre como você se sente.</p>
+      <p>No Setor Bueno, na Av. T-1, um espaço cuidadosamente criado para que cada cliente se sinta especial — com tratamentos personalizados e atenção ao detalhe.</p>
+      <div class="pillar"><div class="pillar-icon">🌱</div><p><strong>Tratamentos personalizados</strong><br>Cada protocolo adaptado ao seu biotipo, necessidade e objetivo.</p></div>
+      <div class="pillar"><div class="pillar-icon">✨</div><p><strong>Setor Bueno</strong><br>Av. T-1, 1522 — no coração do bairro mais sofisticado de Goiânia.</p></div>
+      <div class="pillar"><div class="pillar-icon">⭐</div><p><strong>Nota 4.5 no Google</strong><br>Clientes que retornam e recomendam.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="section-label">O que fazemos</div>
+  <h2>Tratamentos <em>Belle Salute</em></h2>
+  <p class="lead-p">Estética facial e corporal com técnica e carinho — para você se sentir e se ver melhor.</p>
+  <div class="serv-grid">
+    <div class="serv-card reveal"><div class="serv-icon">✨</div><h3>Limpeza de Pele</h3><p>Higienização profunda, extração e hidratação. Pele renovada, limpa e radiante.</p><span class="serv-tag">Pele limpa</span></div>
+    <div class="serv-card reveal"><div class="serv-icon">💆</div><h3>Hidratação Facial</h3><p>Protocolos de hidratação intensa com ativos premium. Luminosidade e firmeza imediatas.</p><span class="serv-tag">Luminosidade</span></div>
+    <div class="serv-card reveal"><div class="serv-icon">🫧</div><h3>Peeling & Renovação</h3><p>Peeling químico e físico para renovar a pele, reduzir manchas e uniformizar o tom.</p><span class="serv-tag">Anti-manchas</span></div>
+    <div class="serv-card reveal"><div class="serv-icon">🌊</div><h3>Drenagem Linfática</h3><p>Drenagem manual e mecânica para reduzir inchaços, celulite e melhorar a circulação.</p><span class="serv-tag">Corporal</span></div>
+    <div class="serv-card reveal"><div class="serv-icon">❄️</div><h3>Criolipólise</h3><p>Redução de gordura localizada com resfriamento controlado. Sem cirurgia, sem recuperação.</p><span class="serv-tag">Modelagem</span></div>
+    <div class="serv-card reveal"><div class="serv-icon">💆‍♀️</div><h3>Massoterapia</h3><p>Massagem relaxante e modeladora para aliviar tensões, modelar o corpo e restaurar o equilíbrio.</p><span class="serv-tag">Bem-estar</span></div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<div class="valores">
+  <div class="valores-grid">
+    <div class="valor-item reveal"><div class="valor-num">4.5</div><div class="valor-label">Nota Google Maps</div></div>
+    <div class="valor-item reveal"><div class="valor-num" style="font-size:1.6rem;padding-top:.5rem;">Setor<br>Bueno</div><div class="valor-label">Goiânia · GO</div></div>
+    <div class="valor-item reveal"><div class="valor-num">Facial<br>+<br>Corporal</div><div class="valor-label" style="margin-top:6px;">Tratamentos completos</div></div>
+  </div>
+</div>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">4.5</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Avaliação no Google Maps — de clientes que confiam na Belle Salute</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Setor <em>Bueno</em>, Goiânia</h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Belle Salute Estética</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>Av. T-1, 1522 — Qd. 68, Lt. 09</strong><br>Setor Bueno, Goiânia - GO<br>CEP 74210-045</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🗺️</div><div><p><strong>Como chegar</strong><br>Consulte o Google Maps para rotas e horários de funcionamento atualizados.</p></div></div>
+      <div style="margin-top:28px;">
+        <a href="https://www.google.com/maps/place/Belle+Salute+Est%C3%A9tica+Facial+e+Corporal/@-16.697995,-49.273727,17z" target="_blank" class="btn-sage">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Ver no Google Maps
+        </a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🌿</span>
+      <p style="font-size:.85rem;text-align:center;max-width:200px;color:var(--gray);">Av. T-1, 1522 — Setor Bueno<br>Goiânia, GO</p>
+      <a href="https://www.google.com/maps/place/Belle+Salute+Est%C3%A9tica+Facial+e+Corporal/@-16.697995,-49.273727,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Belle Salute</span>
+  <p>© 2025 Belle Salute Estética — Setor Bueno, Goiânia</p>
+  <p><a href="https://www.google.com/maps/place/Belle+Salute+Est%C3%A9tica+Facial+e+Corporal/@-16.697995,-49.273727,17z" target="_blank">Ver no Maps</a></p>
+</footer>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
