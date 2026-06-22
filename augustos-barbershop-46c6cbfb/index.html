@@ -43,7 +43,7 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url('imagens/maps-1.jpg') center/cover no-repeat;
+    background: url('../imagens/maps-1.jpg') center/cover no-repeat;
     animation: kb 20s ease-in-out infinite alternate;
   }
   @keyframes kb { from{transform:scale(1)} to{transform:scale(1.07)} }
@@ -104,14 +104,13 @@
     position: relative; overflow: hidden; aspect-ratio: 3/4;
     cursor: pointer;
   }
-  .team-card img { width:100%; height:100%; object-fit:cover; transition: transform .5s; display:block; }
+  .team-card img { width:100%; height:100%; object-fit:cover; object-position: top center; transition: transform .5s; display:block; }
   .team-card:hover img { transform: scale(1.05); }
   .team-overlay {
     position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(13,13,13,.9) 0%, transparent 100%);
-    padding: 24px 20px; transform: translateY(30%); transition: transform .3s;
+    background: linear-gradient(to top, rgba(13,13,13,.95) 0%, rgba(13,13,13,.75) 45%, transparent 100%);
+    padding: 28px 22px 22px; transition: transform .3s;
   }
-  .team-card:hover .team-overlay { transform: translateY(0); }
   .team-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
   .team-role { font-size: .78rem; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
 
@@ -228,21 +227,21 @@
   <p class="lead">Profissionais apaixonados pelo que fazem, com técnica, estilo e o comprometimento que a nota 5.0 exige.</p>
   <div class="team-grid">
     <div class="team-card reveal">
-      <img src="imagens/insta-3.jpg" alt="Barbeiro Augustos" loading="lazy">
+      <img src="../imagens/insta-3.jpg" alt="Barbeiro Augustos" loading="lazy">
       <div class="team-overlay">
         <div class="team-name">Barbeiro</div>
         <div class="team-role">Master Barber</div>
       </div>
     </div>
     <div class="team-card reveal">
-      <img src="imagens/insta-4.jpg" alt="Equipe Augustos" loading="lazy">
+      <img src="../imagens/insta-4.jpg" alt="Equipe Augustos" loading="lazy">
       <div class="team-overlay">
         <div class="team-name">Equipe</div>
         <div class="team-role">Barbeiro Especialista</div>
       </div>
     </div>
     <div class="team-card reveal">
-      <img src="imagens/insta-2.jpg" alt="Augustos Barbershop" loading="lazy">
+      <img src="../imagens/insta-2.jpg" alt="Augustos Barbershop" loading="lazy">
       <div class="team-overlay">
         <div class="team-name">Augustos</div>
         <div class="team-role">Recepção & Gestão</div>
@@ -268,13 +267,13 @@
 <div class="galeria" id="galeria">
   <div class="galeria-strip">
     <div class="galeria-img main">
-      <img src="imagens/maps-1.jpg" alt="Interior Augustos Barbershop" loading="lazy">
+      <img src="../imagens/maps-1.jpg" alt="Interior Augustos Barbershop" loading="lazy">
     </div>
     <div class="galeria-img">
-      <img src="imagens/insta-1.jpg" alt="Atendimento Augustos" loading="lazy">
+      <img src="../imagens/insta-1.jpg" alt="Atendimento Augustos" loading="lazy">
     </div>
     <div class="galeria-img">
-      <img src="imagens/insta-3.jpg" alt="Barbeiro Augustos" loading="lazy">
+      <img src="../imagens/insta-3.jpg" alt="Barbeiro Augustos" loading="lazy">
     </div>
   </div>
 </div>
