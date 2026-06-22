@@ -51,10 +51,11 @@ const server = http.createServer((req, res) => {
       let patch = {};
       try { patch = JSON.parse(body || '{}'); } catch { return sendJSON(res, 400, { error: 'json invalido' }); }
       const cur = status[slug] || {};
-      // aceita apenas os campos conhecidos, como boolean
+      // aceita apenas os campos conhecidos
       const next = Object.assign({}, cur);
       if ('msg' in patch) next.msg = !!patch.msg;
       if ('rej' in patch) next.rej = !!patch.rej;
+      if ('reason' in patch) next.reason = String(patch.reason == null ? '' : patch.reason).slice(0, 2000);
       next.updatedAt = Date.now();
       status[slug] = next;
       persist();

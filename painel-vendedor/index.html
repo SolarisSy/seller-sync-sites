@@ -85,7 +85,14 @@ body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:fl
 .stats-bar{font-size:11px;color:var(--mut);padding:5px 16px 8px;display:flex;gap:12px;flex-shrink:0}
 /* REJECTED BANNER */
 .rej-banner{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:10px;
-  padding:11px 15px;margin-bottom:20px;color:#fca5a5;font-size:13px;display:flex;align-items:center;gap:8px}
+  padding:13px 15px;margin-bottom:20px;color:#fca5a5;font-size:13px;display:flex;flex-direction:column;gap:9px}
+.rej-head{display:flex;align-items:center;gap:8px}
+.rej-note-label{font-size:11px;color:#fca5a5;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.rej-note{width:100%;background:#1a1f2e;border:1px solid rgba(239,68,68,.3);border-radius:8px;color:var(--txt);
+  font:13px/1.5 var(--font);padding:10px 12px;resize:vertical;min-height:62px;outline:none}
+.rej-note:focus{border-color:#ef4444}
+.rej-note::placeholder{color:var(--mut)}
+.rej-note-hint{font-size:11px;color:var(--acc);min-height:14px}
 /* STATUS ACTIONS */
 .status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
@@ -252,7 +259,14 @@ function selectLead(idx) {
       </div>
     </div>
 
-    ${st.rej ? `<div class="rej-banner">✗ <strong>Site reprovado</strong> — marcado para revisão e melhoria.</div>` : ''}
+    ${st.rej ? `<div class="rej-banner">
+      <div class="rej-head">✗ <strong>Site reprovado</strong> — marcado para revisão e melhoria.</div>
+      <div class="rej-note-label">Motivo da reprovação — o que precisa melhorar? (todos os vendedores veem)</div>
+      <textarea class="rej-note" id="rejNote" placeholder="Ex.: hero com foto ruim, faltou WhatsApp, cores destoam da marca..."
+        onfocus="editingReason=true"
+        onblur="editingReason=false; saveReason('${esc(l.slug)}', this.value)">${esc(st.reason||'')}</textarea>
+      <div class="rej-note-hint" id="rejNoteHint"></div>
+    </div>` : ''}
 
     <div class="status-actions">
       <button id="btnMsg" class="btn ${st.msg?'warn':'ghost'}" onclick="toggleMsg('${esc(l.slug)}')">
@@ -306,6 +320,7 @@ function copyUrl(url, btn) {
 // ── STATE (servidor COMPARTILHADO — todos veem os mesmos status) ───
 let STATUS = {};
 let currentIdx = null;
+let editingReason = false;   // trava o re-render do detalhe enquanto digita o motivo
 const API = '/api/status';
 
 function getStates() { return STATUS; }
@@ -313,7 +328,15 @@ function getState(slug) { return STATUS[slug] || {}; }
 
 function refreshUI() {
   renderSidebar(applyFilter());
-  if (currentIdx != null) selectLead(currentIdx);
+  // nao re-renderiza o detalhe se o vendedor esta escrevendo o motivo (perderia o texto/foco)
+  if (currentIdx != null && !editingReason) selectLead(currentIdx);
+}
+
+async function saveReason(slug, text) {
+  if (text === (getState(slug).reason || '')) return;  // nada mudou
+  await patchState(slug, { reason: text });
+  const h = document.getElementById('rejNoteHint');
+  if (h) { h.textContent = '✓ motivo salvo'; setTimeout(() => { const e = document.getElementById('rejNoteHint'); if (e) e.textContent = ''; }, 1800); }
 }
 
 async function loadStatus(silent) {
