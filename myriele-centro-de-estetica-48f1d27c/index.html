@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myriéle Centro de Estética — Criolipólise Nota 5.0 em Goiânia</title>
+<meta name="description" content="Criolipólise, drenagem linfática e limpeza de pele com resultado em 1 sessão. Nota 5.0 no Google. Setor Sul, Goiânia. Agende pelo WhatsApp!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --white: #ffffff;
+    --cream: #faf3ec;
+    --blush: #f5d9d9;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --dark: #3a3a3a;
+    --mid: #7a7a7a;
+    --radius: 14px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--dark); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 44px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background .3s, box-shadow .3s;
+  }
+  header.scrolled { background: rgba(255,255,255,.97); backdrop-filter: blur(10px); box-shadow: 0 2px 24px rgba(0,0,0,.08); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; letter-spacing: .06em; text-decoration: none; color: var(--dark); }
+  .logo em { font-style: italic; color: var(--gold); }
+  nav a { color: var(--dark); text-decoration: none; margin-left: 26px; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; opacity:.6; transition: opacity .2s, color .2s; }
+  nav a:hover { opacity:1; color: var(--gold); }
+
+  /* ── HERO SPLIT ── */
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+  .hero-img { position: relative; overflow: hidden; }
+  .hero-img img { width:100%; height:100%; object-fit:cover; animation: kb 20s ease-in-out infinite alternate; display:block; }
+  @keyframes kb { from{transform:scale(1)} to{transform:scale(1.06)} }
+  .hero-copy {
+    background: var(--cream);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 100px 60px 60px;
+    position: relative;
+  }
+  .hero-copy::before {
+    content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(245,217,217,.5) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .eyebrow { display:flex; align-items:center; gap:10px; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+  .eyebrow::before { content:''; width:20px; height:1px; background:var(--gold); }
+  h1 { font-family:'Cormorant Garamond', serif; font-size:clamp(2.4rem,4vw,3.8rem); font-weight:600; line-height:1.12; color:var(--dark); margin-bottom:20px; }
+  h1 em { font-style:italic; color:var(--gold); }
+  .hero-sub { font-size:.92rem; color:var(--mid); line-height:1.75; margin-bottom:36px; max-width:360px; font-weight:300; }
+  .hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+  .hero-badge {
+    position:absolute; bottom:40px; right:40px;
+    background: var(--white); border-radius:var(--radius);
+    padding:16px 20px; text-align:center;
+    box-shadow: 0 8px 32px rgba(201,168,76,.2);
+    border: 1px solid rgba(201,168,76,.2);
+  }
+  .badge-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--gold); line-height:1; }
+  .badge-stars { color:var(--gold); font-size:.9rem; letter-spacing:2px; margin:3px 0; }
+  .badge-label { font-size:.68rem; color:var(--mid); text-transform:uppercase; letter-spacing:.1em; }
+
+  /* BTNS */
+  .btn-primary {
+    display:inline-flex; align-items:center; gap:10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color:#fff; font-weight:600; font-size:.85rem; letter-spacing:.04em;
+    padding:14px 28px; border-radius:50px; text-decoration:none;
+    box-shadow: 0 6px 24px rgba(201,168,76,.35); transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(201,168,76,.5); }
+  .btn-ghost {
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--dark); border:1px solid rgba(58,58,58,.2);
+    padding:13px 24px; border-radius:50px; text-decoration:none;
+    font-size:.82rem; transition:border-color .2s, color .2s;
+  }
+  .btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
+
+  /* ── SECTIONS ── */
+  section { padding:88px 8%; }
+  .section-label { display:flex; align-items:center; gap:10px; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  .section-label::after { content:''; height:1px; background:rgba(201,168,76,.3); width:40px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.5vw,3rem); font-weight:600; line-height:1.1; margin-bottom:12px; color:var(--dark); }
+  h2 em { font-style:italic; color:var(--gold); }
+  .lead { color:var(--mid); max-width:480px; margin-bottom:48px; line-height:1.8; font-weight:300; }
+
+  /* ── DIFERENCIAIS ── */
+  .diferenciais { background: var(--cream); }
+  .diff-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:24px; }
+  .diff-card {
+    background:var(--white); border-radius:var(--radius); padding:32px 26px;
+    border:1px solid rgba(201,168,76,.12); transition:transform .3s, box-shadow .3s;
+  }
+  .diff-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(201,168,76,.15); }
+  .diff-icon { font-size:2rem; margin-bottom:16px; }
+  .diff-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:600; margin-bottom:8px; color:var(--dark); }
+  .diff-card p { font-size:.82rem; color:var(--mid); line-height:1.7; }
+
+  /* ── SERVIÇOS ── */
+  .services { background:var(--white); }
+  .svc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .svc-card {
+    background:var(--cream); border-radius:var(--radius); padding:30px 26px;
+    border:1px solid rgba(201,168,76,.1); transition:transform .3s;
+  }
+  .svc-card:hover { transform:translateY(-4px); }
+  .svc-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:rgba(201,168,76,.2); line-height:1; margin-bottom:8px; }
+  .svc-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; margin-bottom:10px; color:var(--dark); }
+  .svc-card p { font-size:.83rem; color:var(--mid); line-height:1.72; }
+  .svc-tag { display:inline-block; margin-top:14px; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+
+  /* ── AMBIENTE ── */
+  .ambiente { background:var(--cream); }
+  .amb-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  .amb-img { border-radius:var(--radius); overflow:hidden; }
+  .amb-img img { width:100%; height:100%; object-fit:cover; min-height:400px; display:block; transition:transform .4s; }
+  .amb-img:hover img { transform:scale(1.03); }
+  .amb-text { padding:0 20px; }
+  .amb-text h2 { margin-bottom:20px; }
+  .amb-text p { font-size:.88rem; color:var(--mid); line-height:1.8; margin-bottom:16px; }
+  .amb-pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .pill { background:var(--white); border:1px solid rgba(201,168,76,.25); border-radius:50px; padding:7px 16px; font-size:.75rem; color:var(--dark); letter-spacing:.05em; }
+
+  /* ── SOBRE ── */
+  .sobre { background:var(--white); }
+  .sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+  .sobre-img { position:relative; border-radius:var(--radius); overflow:hidden; }
+  .sobre-img img { width:100%; object-fit:cover; display:block; min-height:480px; object-position:top; }
+  .sobre-img::after { content:'Myriéle · Especialista em Estética Corporal'; position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(58,58,58,.85),transparent); color:#fff; font-size:.78rem; letter-spacing:.08em; padding:40px 20px 18px; text-align:center; }
+  .sobre-text h2 { margin-bottom:16px; }
+  .sobre-text p { font-size:.88rem; color:var(--mid); line-height:1.85; margin-bottom:14px; }
+
+  /* ── RATING ── */
+  .rating-strip { background:linear-gradient(135deg,var(--gold),var(--gold-light)); padding:56px 8%; text-align:center; }
+  .rating-strip .big { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:600; color:#fff; line-height:1; }
+  .rating-strip .stars-lg { font-size:1.6rem; color:rgba(255,255,255,.85); letter-spacing:6px; margin:6px 0 10px; }
+  .rating-strip p { color:rgba(255,255,255,.75); font-size:.88rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background:var(--cream); }
+  .loc-grid { display:grid; grid-template-columns:1fr 1fr; gap:52px; }
+  .loc-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--gold); margin-bottom:24px; }
+  .loc-item { display:flex; gap:14px; margin-bottom:20px; }
+  .loc-icon { font-size:1rem; flex-shrink:0; margin-top:2px; }
+  .loc-item p { font-size:.87rem; color:var(--mid); line-height:1.7; }
+  .loc-item strong { color:var(--dark); }
+  .map-box { background:var(--white); border-radius:var(--radius); height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid rgba(201,168,76,.15); color:var(--mid); }
+  .map-box a { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#fff; padding:11px 22px; border-radius:50px; text-decoration:none; font-weight:600; font-size:.82rem; }
+
+  /* ── FOOTER ── */
+  footer { background:#f5ede3; padding:32px 8%; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(201,168,76,.15); flex-wrap:wrap; gap:14px; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; font-style:italic; color:var(--gold); }
+  footer p { font-size:.78rem; color:var(--mid); }
+  footer a { color:var(--gold); text-decoration:none; }
+
+  /* ── WHATSAPP ── */
+  .wa-btn { position:fixed; bottom:26px; right:26px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 6px 22px rgba(37,211,102,.4); transition:transform .2s; }
+  .wa-btn:hover { transform:scale(1.1); }
+  .wa-btn::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.35); animation:ping 2s ease-out infinite; }
+  @keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.65);opacity:0} }
+  .wa-btn svg { width:26px; height:26px; fill:white; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s; }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal:nth-child(2){transition-delay:.1s} .reveal:nth-child(3){transition-delay:.2s} .reveal:nth-child(4){transition-delay:.3s}
+
+  @media(max-width:900px) {
+    .hero { grid-template-columns:1fr; }
+    .hero-img { min-height:45vh; }
+    .hero-copy { padding:60px 30px 80px; }
+    .amb-grid, .sobre-grid, .loc-grid { grid-template-columns:1fr; }
+    header { padding:14px 20px; } nav { display:none; }
+    section { padding:64px 6%; }
+    .hero-badge { position:relative; bottom:auto; right:auto; align-self:flex-start; margin-top:24px; }
+    .btn-ghost { display:none; }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .hero-img img { animation:none; } .reveal { transition:none; opacity:1; transform:none; } .wa-btn::before { animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">Myriéle <em>Centro de Estética</em></a>
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#ambiente">Ambiente</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5562999137117" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO SPLIT -->
+<section class="hero" id="home">
+  <div class="hero-img">
+    <img src="imagens/insta-2.jpg" alt="Experiência Premium Myriéle — cliente em roupão com champanhe">
+  </div>
+  <div class="hero-copy">
+    <div class="eyebrow">Estética Corporal · Goiânia, GO</div>
+    <h1>Resultado que você vê<br>em <em>1 sessão.</em></h1>
+    <p class="hero-sub">Criolipólise, drenagem linfática e limpeza de pele com resultado comprovado. Ritual premium do início ao fim — porque você merece mais do que um tratamento.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5562999137117?text=Ol%C3%A1%2C%20Myri%C3%A9le!%20Quero%20agendar%20uma%20sess%C3%A3o." target="_blank" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar agora
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-num">5.0</div>
+      <div class="badge-stars">★★★★★</div>
+      <div class="badge-label">Google Maps</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais" id="diferenciais">
+  <div class="section-label">Por que a Myriéle</div>
+  <h2>Mais do que um tratamento,<br>uma <em>experiência</em></h2>
+  <p class="lead">Cada detalhe foi pensado para que você saia renovada — por dentro e por fora.</p>
+  <div class="diff-grid">
+    <div class="diff-card reveal"><div class="diff-icon">⚡</div><h3>Resultado em 1 Sessão</h3><p>A "Crio da MY" é especialidade da casa — resultados visíveis na primeira sessão, sem precisar esperar semanas.</p></div>
+    <div class="diff-card reveal"><div class="diff-icon">🥂</div><h3>Ritual Premium</h3><p>Roupão quentinho, champanhe e atendimento exclusivo. Aqui você é tratada como merece — do início ao fim.</p></div>
+    <div class="diff-card reveal"><div class="diff-icon">⭐</div><h3>Nota 5.0 no Google</h3><p>Avaliação máxima de clientes reais de Goiânia. Confiança construída resultado a resultado.</p></div>
+    <div class="diff-card reveal"><div class="diff-icon">📍</div><h3>Setor Sul, Goiânia</h3><p>Localização privilegiada na Av. 85, de fácil acesso, em espaço aconchegante e bem estruturado.</p></div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="section-label">O que fazemos</div>
+  <h2>Tratamentos que<br><em>transformam</em></h2>
+  <p class="lead">Protocolos com tecnologia e técnica que entregam resultados reais — não promessas.</p>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <h3>Criolipólise</h3>
+      <p>O "Crio da MY" — elimina gordura localizada com frio controlado. Resultado visível em 1 sessão, sem cirurgia, sem recuperação.</p>
+      <span class="svc-tag">Gordura localizada · Sessão única</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">02</div>
+      <h3>Drenagem Linfática Vibrocel</h3>
+      <p>Técnica que combina drenagem manual com vibração — reduz inchaço, melhora a circulação e define o corpo.</p>
+      <span class="svc-tag">Modelagem corporal · Inchaço</span>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">03</div>
+      <h3>Limpeza de Pele</h3>
+      <p>Protocolo completo de limpeza profunda — extração, hidratação e cuidado para pele renovada e saudável.</p>
+      <span class="svc-tag">Pele · Rejuvenescimento</span>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTE -->
+<section class="ambiente" id="ambiente">
+  <div class="amb-grid">
+    <div class="amb-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Ambiente Myriéle Centro de Estética" loading="lazy">
+    </div>
+    <div class="amb-text reveal">
+      <div class="section-label">O espaço</div>
+      <h2>Um ambiente pensado<br>para <em>você</em></h2>
+      <p>Sala clean, cadeiras confortáveis, iluminação suave. Cada detalhe do ambiente foi escolhido para que você relaxe e aproveite cada minuto do seu tratamento.</p>
+      <p>Porque cuidar do corpo também é cuidar da mente — e aqui você faz os dois ao mesmo tempo.</p>
+      <div class="amb-pills">
+        <span class="pill">Sala climatizada</span>
+        <span class="pill">Ambiente clean</span>
+        <span class="pill">Ritual completo</span>
+        <span class="pill">Roupão + champanhe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/insta-4.jpg" alt="Myriéle — Especialista em Estética Corporal" loading="lazy">
+    </div>
+    <div class="sobre-text reveal">
+      <div class="section-label">Quem é a Myriéle</div>
+      <h2>Especialista em<br><em>resultados reais</em></h2>
+      <p>Myriéle não é só uma esteticista — é especialista em eliminar gordura localizada e flacidez com protocolos que funcionam de verdade, comprovados sessão a sessão.</p>
+      <p>Com anos de experiência e uma metodologia própria (o "Crio da MY"), construiu uma base de clientes satisfeitas e a nota 5.0 que fala por si.</p>
+      <p>Mais do que o resultado físico, ela entrega confiança. O ritual de roupão e champanhe não é detalhe — é o respeito que você merece.</p>
+      <div style="margin-top:28px;">
+        <a href="https://wa.me/5562999137117?text=Ol%C3%A1%2C%20Myri%C3%A9le!%20Quero%20saber%20mais%20sobre%20os%20tratamentos." target="_blank" class="btn-primary">Conversar com a Myriéle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">5.0</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Avaliação máxima no Google Maps — de clientes reais de Goiânia</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Venha nos <em>visitar</em></h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Myriéle Centro de Estética</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>Av. 85, 420</strong><br>Setor Sul — Goiânia, GO<br>CEP 74080-010</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📞</div><div><p><strong>(62) 99913-7117</strong><br>WhatsApp e ligações</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📸</div><div><p><strong>@myrielecentroestetico</strong><br>Siga no Instagram</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🕐</div><div><p><strong>Segunda a Sexta</strong><br>08h às 19h · Sábados mediante agendamento</p></div></div>
+      <div style="margin-top:28px;">
+        <a href="https://wa.me/5562999137117?text=Ol%C3%A1%2C%20Myri%C3%A9le!%20Quero%20agendar%20uma%20sess%C3%A3o." target="_blank" class="btn-primary">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🗺️</span>
+      <p style="font-size:.85rem; text-align:center; max-width:200px; color:var(--mid);">Av. 85, 420 — Setor Sul<br>Goiânia, GO</p>
+      <a href="https://www.google.com/maps/place/Myri%C3%A9le+Centro+de+Est%C3%A9tica/@-16.6857323,-49.2593424,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Myriéle Centro de Estética</span>
+  <p>© 2025 Myriéle Centro de Estética — Goiânia, GO</p>
+  <p><a href="https://wa.me/5562999137117">(62) 99913-7117</a></p>
+</footer>
+
+<a href="https://wa.me/5562999137117?text=Ol%C3%A1%2C%20Myri%C3%A9le!%20Quero%20agendar%20uma%20sess%C3%A3o." target="_blank" class="wa-btn" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
