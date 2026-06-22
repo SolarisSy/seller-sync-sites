@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augustos Barbershop — Nota 5.0 em Contagem, MG</title>
+<meta name="description" content="Barbearia premium em Contagem, MG. Corte masculino, barba e experiência de verdade. Nota 5.0 no Google. Bairro Beatriz. Agende pelo WhatsApp!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --black: #0d0d0d;
+    --dark: #171715;
+    --stone: #2a2a28;
+    --card: #1e1e1c;
+    --gold: #c9a84c;
+    --gold-light: #e0c068;
+    --white: #f5f5f5;
+    --gray: #7a7a78;
+    --radius: 10px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 44px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background .3s, box-shadow .3s;
+  }
+  header.scrolled { background: rgba(10,10,10,.96); backdrop-filter: blur(10px); box-shadow: 0 2px 28px rgba(0,0,0,.7); }
+  .logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; letter-spacing: .14em; text-decoration: none; color: var(--white); text-transform: uppercase; }
+  .logo span { color: var(--gold); }
+  nav a { color: var(--white); text-decoration: none; margin-left: 26px; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; opacity:.7; transition: opacity .2s, color .2s; }
+  nav a:hover { opacity:1; color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; height: 100vh; min-height: 620px;
+    display: flex; align-items: flex-end; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('imagens/maps-1.jpg') center/cover no-repeat;
+    animation: kb 20s ease-in-out infinite alternate;
+  }
+  @keyframes kb { from{transform:scale(1)} to{transform:scale(1.07)} }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(13,13,13,.95) 0%, rgba(13,13,13,.5) 45%, rgba(13,13,13,.15) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 8% 80px; width: 100%;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+  }
+  .hero-left { max-width: 620px; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .eyebrow::before { content:''; width:24px; height:1px; background:var(--gold); }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 900; line-height: .98; letter-spacing: .02em; text-transform: uppercase; margin-bottom: 24px; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-badge {
+    background: rgba(13,13,13,.7); backdrop-filter: blur(8px);
+    border: 1px solid rgba(201,168,76,.3); border-radius: var(--radius);
+    padding: 18px 24px; text-align: center; flex-shrink: 0;
+  }
+  .badge-num { font-family: 'Barlow Condensed', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .badge-stars { color: var(--gold); font-size: 1rem; letter-spacing: 3px; margin: 4px 0; }
+  .badge-label { font-size: .72rem; color: var(--gray); text-transform: uppercase; letter-spacing: .1em; }
+
+  /* BTNs */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #0d0d0d; font-weight: 700; font-size: .88rem; letter-spacing: .04em;
+    padding: 15px 30px; border-radius: 50px; text-decoration: none;
+    box-shadow: 0 6px 28px rgba(201,168,76,.4); transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(201,168,76,.55); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--white); border: 1px solid rgba(245,245,245,.25);
+    padding: 14px 26px; border-radius: 50px; text-decoration: none;
+    font-size: .85rem; transition: border-color .2s, color .2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── SECTIONS ── */
+  section { padding: 96px 8%; }
+  .section-label { display: flex; align-items: center; gap: 12px; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .section-label::after { content:''; height:1px; background:rgba(201,168,76,.25); width:50px; }
+  h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; text-transform: uppercase; letter-spacing: .03em; line-height: 1.05; margin-bottom: 14px; }
+  h2 em { font-style: normal; color: var(--gold); }
+  .lead { color: rgba(245,245,245,.6); max-width: 500px; margin-bottom: 52px; line-height: 1.8; font-weight: 300; }
+
+  /* ── EQUIPE ── */
+  .equipe { background: var(--dark); }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; }
+  .team-card {
+    position: relative; overflow: hidden; aspect-ratio: 3/4;
+    cursor: pointer;
+  }
+  .team-card img { width:100%; height:100%; object-fit:cover; transition: transform .5s; display:block; }
+  .team-card:hover img { transform: scale(1.05); }
+  .team-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(13,13,13,.9) 0%, transparent 100%);
+    padding: 24px 20px; transform: translateY(30%); transition: transform .3s;
+  }
+  .team-card:hover .team-overlay { transform: translateY(0); }
+  .team-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+  .team-role { font-size: .78rem; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+
+  /* ── SERVIÇOS ── */
+  .services { background: var(--black); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+  .svc-card { background: var(--card); border-radius: var(--radius); padding: 28px 24px; border: 1px solid rgba(255,255,255,.05); transition: transform .3s, border-color .3s; }
+  .svc-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,.35); }
+  .svc-icon { font-size: 1.8rem; margin-bottom: 14px; }
+  .svc-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+  .svc-card p { font-size: .82rem; color: rgba(245,245,245,.5); line-height: 1.65; }
+  .svc-price { display:block; margin-top:14px; font-size: .78rem; color: var(--gold); border-top: 1px solid rgba(201,168,76,.18); padding-top:10px; font-weight:600; }
+
+  /* ── GALERIA ── */
+  .galeria { background: var(--dark); padding: 0; }
+  .galeria-strip { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2px; }
+  .galeria-strip .main { grid-row: span 2; }
+  .galeria-strip img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .4s; min-height: 220px; }
+  .galeria-strip img:hover { transform: scale(1.03); }
+  .galeria-img { overflow: hidden; }
+
+  /* ── RATING ── */
+  .rating-strip { background: var(--gold); padding: 56px 8%; text-align: center; }
+  .rating-strip .big { font-family: 'Barlow Condensed', sans-serif; font-size: 7rem; font-weight: 900; color: #0d0d0d; line-height: 1; }
+  .rating-strip .stars-lg { font-size: 1.8rem; color: #0d0d0d; letter-spacing: 6px; margin: 6px 0 10px; }
+  .rating-strip p { color: rgba(13,13,13,.65); font-size: .9rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background: var(--dark); }
+  .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+  .loc-info h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .loc-item { display: flex; gap: 14px; margin-bottom: 20px; }
+  .loc-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .loc-item p { font-size: .88rem; color: rgba(245,245,245,.68); line-height: 1.65; }
+  .loc-item strong { color: var(--white); }
+  .map-box { background: var(--card); border-radius: var(--radius); height: 300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid rgba(255,255,255,.05); color:var(--gray); }
+  .map-box a { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color:#0d0d0d; padding:11px 22px; border-radius:50px; text-decoration:none; font-weight:700; font-size:.82rem; }
+
+  /* ── FOOTER ── */
+  footer { background: #080808; padding: 36px 8%; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(255,255,255,.05); flex-wrap:wrap; gap:14px; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size:1.1rem; font-weight:900; color:var(--gold); letter-spacing:.1em; }
+  footer p { font-size:.78rem; color:var(--gray); }
+  footer a { color:var(--gold); text-decoration:none; }
+
+  /* ── WHATSAPP ── */
+  .wa-btn { position:fixed; bottom:26px; right:26px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 6px 22px rgba(37,211,102,.45); transition:transform .2s; }
+  .wa-btn:hover { transform:scale(1.1); }
+  .wa-btn::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:ping 2s ease-out infinite; }
+  @keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.65);opacity:0} }
+  .wa-btn svg { width:26px; height:26px; fill:white; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s, transform .6s; }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal:nth-child(2){transition-delay:.1s} .reveal:nth-child(3){transition-delay:.2s} .reveal:nth-child(4){transition-delay:.3s}
+
+  @media(max-width:768px){
+    header{padding:14px 20px;} nav{display:none;}
+    .hero-content{flex-direction:column; align-items:flex-start; padding:0 6% 60px;}
+    .hero-badge{align-self:flex-start;}
+    section{padding:72px 6%;}
+    .team-grid{grid-template-columns:1fr 1fr;}
+    .galeria-strip{grid-template-columns:1fr 1fr;} .galeria-strip .main{grid-row:auto;}
+    .loc-grid{grid-template-columns:1fr;}
+    footer{flex-direction:column; text-align:center;}
+    .btn-ghost{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-bg{animation:none;} .reveal{transition:none;opacity:1;transform:none;} .wa-btn::before{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">Augustos <span>Barbershop</span></a>
+  <nav>
+    <a href="#equipe">Equipe</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5531991589751" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="eyebrow">Barbearia Premium · Contagem, MG</div>
+      <h1>Onde o corte<br>vira <em>arte</em></h1>
+      <div class="hero-btns">
+        <a href="https://wa.me/5531991589751?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Augustos%20Barbershop." target="_blank" class="btn-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#equipe" class="btn-ghost">Conheça a equipe</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-num">5.0</div>
+      <div class="badge-stars">★★★★★</div>
+      <div class="badge-label">Google Maps</div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="equipe" id="equipe">
+  <div class="section-label">Quem faz acontecer</div>
+  <h2>A equipe <em>Augustos</em></h2>
+  <p class="lead">Profissionais apaixonados pelo que fazem, com técnica, estilo e o comprometimento que a nota 5.0 exige.</p>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <img src="imagens/insta-3.jpg" alt="Barbeiro Augustos" loading="lazy">
+      <div class="team-overlay">
+        <div class="team-name">Barbeiro</div>
+        <div class="team-role">Master Barber</div>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <img src="imagens/insta-4.jpg" alt="Equipe Augustos" loading="lazy">
+      <div class="team-overlay">
+        <div class="team-name">Equipe</div>
+        <div class="team-role">Barbeiro Especialista</div>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <img src="imagens/insta-2.jpg" alt="Augustos Barbershop" loading="lazy">
+      <div class="team-overlay">
+        <div class="team-name">Augustos</div>
+        <div class="team-role">Recepção & Gestão</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="section-label">O que oferecemos</div>
+  <h2>Serviços que <em>definem</em> o estilo</h2>
+  <p class="lead">Do corte clássico ao degradê moderno — todos executados com precisão e produtos de primeira linha.</p>
+  <div class="services-grid">
+    <div class="svc-card reveal"><div class="svc-icon">✂️</div><h3>Corte Masculino</h3><p>Degradê, tesoura ou máquina. Cada estilo com acabamento impecável.</p><span class="svc-price">A partir de R$ 55</span></div>
+    <div class="svc-card reveal"><div class="svc-icon">🪒</div><h3>Barba</h3><p>Navalha, toalha quente e finalizadores premium. Barba do seu jeito.</p><span class="svc-price">A partir de R$ 40</span></div>
+    <div class="svc-card reveal"><div class="svc-icon">💎</div><h3>Combo</h3><p>Corte + barba com ritual completo. A experiência Augustos.</p><span class="svc-price">A partir de R$ 85</span></div>
+    <div class="svc-card reveal"><div class="svc-icon">🧴</div><h3>Tratamento</h3><p>Hidratação e cuidados capilares para manter seu cabelo sempre no ponto.</p><span class="svc-price">A partir de R$ 55</span></div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<div class="galeria" id="galeria">
+  <div class="galeria-strip">
+    <div class="galeria-img main">
+      <img src="imagens/maps-1.jpg" alt="Interior Augustos Barbershop" loading="lazy">
+    </div>
+    <div class="galeria-img">
+      <img src="imagens/insta-1.jpg" alt="Atendimento Augustos" loading="lazy">
+    </div>
+    <div class="galeria-img">
+      <img src="imagens/insta-3.jpg" alt="Barbeiro Augustos" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">5.0</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Avaliação máxima no Google Maps — de clientes reais de Contagem</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Venha nos <em>visitar</em></h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Augustos Barbershop</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>Av. João César de Oliveira, 6701</strong><br>Lojas 07/08 — Bairro Beatriz<br>Contagem, MG — 32040-000</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📞</div><div><p><strong>(31) 99158-9751</strong><br>WhatsApp e ligações</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📸</div><div><p><strong>@augustosbarber</strong><br>Siga no Instagram</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🕐</div><div><p><strong>Segunda a Sábado</strong><br>08h às 20h</p></div></div>
+      <div style="margin-top:28px;">
+        <a href="https://wa.me/5531991589751?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Augustos%20Barbershop." target="_blank" class="btn-primary">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🗺️</span>
+      <p style="font-size:.85rem; text-align:center; max-width:200px; color:var(--gray);">Av. João César de Oliveira, 6701<br>Beatriz — Contagem, MG</p>
+      <a href="https://www.google.com/maps/place/Augustos+Barbershop/@-19.9187887,-44.0772549,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">AUGUSTOS BARBERSHOP</span>
+  <p>© 2025 Augustos Barbershop — Contagem, MG</p>
+  <p><a href="https://wa.me/5531991589751">(31) 99158-9751</a></p>
+</footer>
+
+<a href="https://wa.me/5531991589751?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Augustos%20Barbershop." target="_blank" class="wa-btn" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
