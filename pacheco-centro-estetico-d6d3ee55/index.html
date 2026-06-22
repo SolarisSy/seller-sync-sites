@@ -491,7 +491,7 @@ footer a:hover { color: var(--gold); }
     </div>
   </div>
   <div class="hero-img">
-    <img src="imagens/maps-1.jpg" alt="Sala de tratamento do Pacheco Centro Estético — Jardim Europa, Goiânia" loading="eager">
+    <img src="../imagens/maps-1.jpg" alt="Sala de tratamento do Pacheco Centro Estético — Jardim Europa, Goiânia" loading="eager">
   </div>
 </div>
 
@@ -506,7 +506,7 @@ footer a:hover { color: var(--gold); }
 <section class="sobre" id="sobre">
   <div class="sobre-inner">
     <div class="sobre-img-wrap reveal">
-      <img src="imagens/maps-1.jpg" alt="Ambiente do Pacheco Centro Estético" loading="lazy">
+      <img src="../imagens/maps-1.jpg" alt="Ambiente do Pacheco Centro Estético" loading="lazy">
       <div class="img-badge">Jardim Europa · <span>Goiânia</span></div>
     </div>
     <div class="sobre-copy">
@@ -659,17 +659,31 @@ footer a:hover { color: var(--gold); }
 const hdr = document.getElementById('hdr');
 window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50), {passive:true});
 
-// Char reveal no headline
+// Char reveal no headline — opera em text nodes para nao corromper tags HTML
 (function() {
   const el = document.getElementById('heroTitle');
   if (!el) return;
-  const html = el.innerHTML;
   let charIdx = 0;
-  el.innerHTML = html.replace(/([^<>\s&])/g, (ch) => {
-    const delay = (0.3 + charIdx * 0.032).toFixed(3);
-    charIdx++;
-    return `<span class="char" style="animation-delay:${delay}s" aria-hidden="true">${ch}</span>`;
-  });
+  function processNode(node) {
+    if (node.nodeType === 3) {
+      const text = node.textContent;
+      const frag = document.createDocumentFragment();
+      for (const ch of text) {
+        if (/\s/.test(ch)) { frag.appendChild(document.createTextNode(ch)); continue; }
+        const sp = document.createElement('span');
+        sp.className = 'char';
+        sp.style.animationDelay = (0.3 + charIdx * 0.032).toFixed(3) + 's';
+        sp.setAttribute('aria-hidden', 'true');
+        sp.textContent = ch;
+        charIdx++;
+        frag.appendChild(sp);
+      }
+      node.parentNode.replaceChild(frag, node);
+    } else if (node.nodeType === 1) {
+      Array.from(node.childNodes).forEach(processNode);
+    }
+  }
+  Array.from(el.childNodes).forEach(processNode);
 })();
 
 // Reveal on scroll
