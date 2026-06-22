@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estelar Clinic — Estética Avançada & Harmonização Facial em São Luís</title>
+<meta name="description" content="Estelar Clinic — clínica de estética avançada e harmonização facial em São Luís/MA. Resultado natural, atendimento premium. Nota 4.9 no Google. Agende sua avaliação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* Tipografia */
+  --display:'Playfair Display',Georgia,serif;
+  --sans:'Manrope',system-ui,sans-serif;
+  --text-display:clamp(2.6rem,1.8rem + 4vw,5.4rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.4vw,3rem);
+  --text-h3:clamp(1.2rem,1rem + 1vw,1.65rem);
+  --text-body:clamp(0.94rem,0.88rem + 0.25vw,1.05rem);
+  --text-sm:clamp(0.78rem,0.72rem + 0.2vw,0.875rem);
+  --lh-display:1.04;--lh-heading:1.14;--lh-body:1.74;
+  --ls-display:-0.02em;--ls-overline:0.22em;
+
+  /* Superfície */
+  --bg-base:#f7f4ef;
+  --bg-surface:#fffdf9;
+  --bg-inset:#efe9e0;
+  --bg-dark:#160f2b;
+  --bg-darker:#0f0a1f;
+
+  /* Texto */
+  --text-primary:#1d1830;
+  --text-secondary:#4a4360;
+  --text-muted:#8a8298;
+  --text-inverse:#f3eefb;
+
+  /* Acento — ametista / roxo estelar */
+  --accent:#7a5bc0;
+  --accent-light:#9d80d8;
+  --accent-dark:#52399a;
+  --accent-subtle:rgba(122,91,192,0.10);
+  --accent-border:rgba(122,91,192,0.22);
+
+  /* Dourado champagne */
+  --gold:#c9a44c;
+  --gold-light:#e6c878;
+
+  /* Sombras 3 camadas */
+  --shadow-sm:0 1px 2px rgba(29,24,48,.05),0 2px 6px rgba(29,24,48,.05);
+  --shadow-md:0 2px 4px rgba(29,24,48,.05),0 8px 18px rgba(29,24,48,.07),0 20px 40px rgba(29,24,48,.05);
+  --shadow-lg:0 4px 8px rgba(29,24,48,.06),0 16px 32px rgba(29,24,48,.08),0 40px 80px rgba(29,24,48,.10);
+  --shadow-accent:0 8px 24px rgba(82,57,154,.30);
+  --shadow-accent-strong:0 14px 36px rgba(82,57,154,.42);
+
+  /* Ritmo */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:600px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  font-weight:400;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+
+/* ---- Overline ---- */
+.overline{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:var(--sans);font-size:0.7rem;font-weight:600;
+  letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.65}
+.overline.on-dark{color:var(--gold-light)}
+
+/* ---- Botões ---- */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:0.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-weight:700;font-size:0.8rem;letter-spacing:0.06em;
+  text-transform:uppercase;border-radius:50px;border:none;cursor:pointer;
+  box-shadow:var(--shadow-accent);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:0.95rem clamp(1.4rem,3vw,2rem);min-height:50px;
+  border:1px solid var(--accent-border);border-radius:50px;
+  font-weight:600;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;
+  color:var(--text-primary);background:transparent;cursor:pointer;
+  transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.22,1,.36,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+.btn-ghost.on-dark{color:var(--text-inverse);border-color:rgba(243,238,251,.28)}
+.btn-ghost.on-dark:hover{border-color:var(--gold-light);background:rgba(230,200,120,.08)}
+.btn-ico{width:17px;height:17px;flex:none}
+
+/* ---- Header ---- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(22,15,43,.92);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 rgba(201,164,76,.22);padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text-inverse)}
+.brand .mark{width:30px;height:30px;flex:none}
+.brand-name{font-family:var(--display);font-size:1.25rem;font-weight:500;letter-spacing:.01em;line-height:1}
+.brand-name small{display:block;font-family:var(--sans);font-size:.52rem;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-light);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.02em;color:rgba(243,238,251,.82);transition:color .25s ease}
+.nav-links a:hover{color:var(--gold-light)}
+.header-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:.6rem 1.2rem;border-radius:50px;font-size:.76rem;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.22,1,.36,1);
+  -webkit-tap-highlight-color:transparent;
+}
+.header-cta:hover{transform:translateY(-2px)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ---- Hero split ---- */
+.hero{
+  display:grid;grid-template-columns:5fr 6fr;min-height:100dvh;
+  background:var(--bg-darker);position:relative;
+}
+.hero-copy{
+  position:relative;z-index:3;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,12vh,9rem) clamp(1.6rem,5vw,4.5rem) clamp(3rem,6vh,5rem);
+  background:radial-gradient(120% 90% at 0% 18%,#221742 0%,#160f2b 48%,#0f0a1f 100%);
+  overflow:hidden;
+}
+.hero-copy::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.045;
+}
+/* brilho estelar */
+.hero-copy::after{
+  content:'';position:absolute;z-index:0;width:60%;aspect-ratio:1;
+  top:-18%;left:-12%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(157,128,216,.40),transparent 64%);
+  filter:blur(10px);
+}
+.hero-inner{position:relative;z-index:2;max-width:540px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+  font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);
+}
+.hero-eyebrow::before{content:'';width:26px;height:1px;background:currentColor;opacity:.6}
+.hero-title{
+  font-family:var(--display);font-weight:500;
+  font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:var(--ls-display);color:var(--text-inverse);
+  margin-bottom:26px;overflow:hidden;
+}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .9s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .line:nth-child(1) .word{animation-delay:.25s}
+.hero-title .line:nth-child(2) .word{animation-delay:.38s}
+.hero-title .line:nth-child(3) .word{animation-delay:.51s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  font-size:1.02rem;line-height:1.7;color:rgba(243,238,251,.74);
+  max-width:440px;margin-bottom:38px;
+  opacity:0;animation:fade-soft 1s ease .85s forwards;
+}
+@keyframes fade-soft{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fade-soft 1s ease 1s forwards}
+
+.hero-media{position:relative;overflow:hidden;background:#0f0a1f}
+.hero-media img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  animation:kb 26s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-media::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(110deg,rgba(15,10,31,.55) 0%,rgba(15,10,31,.08) 34%,transparent 60%);
+}
+.hero-badge{
+  position:absolute;z-index:4;left:clamp(1rem,3vw,2rem);bottom:clamp(1.5rem,4vw,2.6rem);
+  display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:16px;
+  background:rgba(255,255,255,.08);backdrop-filter:blur(13px) saturate(160%);
+  -webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 12px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.18);
+  opacity:0;animation:fade-soft 1s ease 1.25s forwards;
+}
+.hero-badge .stars{display:flex;gap:2px}
+.hero-badge .stars svg{width:15px;height:15px;color:var(--gold-light)}
+.hero-badge .b-num{font-family:var(--display);font-size:1.5rem;color:#fff;line-height:1}
+.hero-badge .b-label{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(243,238,251,.7);margin-top:4px}
+.hero-scroll{
+  position:absolute;z-index:4;right:clamp(1rem,3vw,2rem);bottom:clamp(1.5rem,4vw,2.6rem);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,238,251,.6);
+}
+.hero-scroll .ln{width:1px;height:40px;background:linear-gradient(var(--gold-light),transparent);animation:scrolln 2.2s ease-in-out infinite}
+@keyframes scrolln{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{order:-1;height:54vh;min-height:340px}
+  .hero-media img{position:relative}
+  .hero-scroll{display:none}
+}
+
+/* ---- Stats / count-up ---- */
+.stats{
+  background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  padding:clamp(3rem,6vw,4.6rem) clamp(1.5rem,6vw,5rem);
+}
+.stats::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.04;
+}
+.stats-grid{
+  position:relative;max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3rem);
+  text-align:center;
+}
+.stat{padding:0 8px}
+.stat-num{font-family:var(--display);font-size:clamp(2.6rem,1.8rem+3vw,4rem);font-weight:500;line-height:1;color:#fff;display:flex;align-items:baseline;justify-content:center;gap:2px}
+.stat-num .suffix{color:var(--gold-light);font-size:.6em}
+.stat-label{margin-top:14px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,238,251,.62)}
+.stat:not(:last-child){border-right:1px solid rgba(243,238,251,.10)}
+@media(max-width:680px){
+  .stats-grid{grid-template-columns:1fr;gap:2.4rem}
+  .stat:not(:last-child){border-right:none;border-bottom:1px solid rgba(243,238,251,.10);padding-bottom:2.2rem}
+}
+
+/* ---- Sobre / O espaço ---- */
+.about{
+  padding:var(--section-pad) clamp(1.5rem,6vw,5rem);
+  background:var(--bg-base);
+}
+.about-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;
+}
+.about-media{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.about-media img{width:100%;aspect-ratio:4/3.2;object-fit:cover}
+.about-media .tag{
+  position:absolute;left:18px;bottom:18px;
+  background:rgba(22,15,43,.78);backdrop-filter:blur(8px);color:var(--text-inverse);
+  padding:9px 16px;border-radius:10px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid rgba(230,200,120,.28);
+}
+.about-copy h2{font-family:var(--display);font-weight:500;font-size:var(--text-h2);color:var(--text-primary);margin-bottom:22px}
+.about-copy h2 em{font-style:italic;color:var(--accent)}
+.about-copy p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.about-points{list-style:none;margin-top:30px;display:grid;gap:16px}
+.about-points li{display:flex;gap:14px;align-items:flex-start;font-size:.95rem;color:var(--text-secondary)}
+.about-points svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:2px}
+@media(max-width:840px){
+  .about-grid{grid-template-columns:1fr;gap:2.6rem}
+  .about-media{order:-1}
+}
+
+/* ---- Procedimentos ---- */
+.services{
+  position:relative;
+  padding:calc(var(--section-pad) + 4vw) clamp(1.5rem,6vw,5rem) var(--section-pad);
+  background:var(--bg-inset);
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-3vw;
+}
+.svc-head{max-width:var(--content-max);margin:0 auto 56px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.svc-head h2{font-family:var(--display);font-weight:500;font-size:var(--text-h2);color:var(--text-primary);max-width:18ch}
+.svc-head h2 em{font-style:italic;color:var(--accent)}
+.svc-head p{color:var(--text-secondary);max-width:var(--prose-max);margin-top:16px}
+.svc-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards);
+}
+.svc-card{
+  background:var(--bg-surface);border:1px solid rgba(29,24,48,.06);border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease;
+}
+.svc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.svc-img{position:relative;height:200px;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.svc-card:hover .svc-img img{transform:scale(1.06)}
+.svc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(22,15,43,.4))}
+.svc-body{padding:26px 26px 30px}
+.svc-cat{font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:11px;display:block}
+.svc-body h3{font-family:var(--display);font-weight:500;font-size:var(--text-h3);color:var(--text-primary);margin-bottom:12px}
+.svc-body p{font-size:.9rem;color:var(--text-secondary);line-height:1.66}
+.svc-icon{
+  position:absolute;top:16px;left:16px;z-index:2;
+  width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:rgba(22,15,43,.55);backdrop-filter:blur(8px);border:1px solid rgba(230,200,120,.3);
+}
+.svc-icon svg{width:21px;height:21px;color:var(--gold-light)}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}.services{clip-path:polygon(0 2vw,100% 0,100% 100%,0 100%)}}
+
+/* ---- Prova social ---- */
+.proof{
+  position:relative;background:var(--bg-darker);color:var(--text-inverse);
+  padding:var(--section-pad) clamp(1.5rem,6vw,5rem);overflow:hidden;
+}
+.proof::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.045;
+}
+.proof::after{
+  content:'';position:absolute;z-index:0;width:46%;aspect-ratio:1;right:-10%;top:-10%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(122,91,192,.35),transparent 66%);filter:blur(8px);
+}
+.proof-grid{
+  position:relative;z-index:2;max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+}
+.proof-media{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.proof-media img{width:100%;aspect-ratio:4/4.6;object-fit:cover}
+.proof-copy h2{font-family:var(--display);font-weight:500;font-size:var(--text-h2);color:#fff;margin-bottom:24px;max-width:16ch}
+.proof-copy h2 em{font-style:italic;color:var(--gold-light)}
+.quote{
+  font-family:var(--display);font-style:italic;font-size:clamp(1.15rem,1rem+0.7vw,1.5rem);
+  line-height:1.5;color:var(--text-inverse);border-left:2px solid var(--gold);padding-left:22px;margin-bottom:26px;
+}
+.proof-rating{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.proof-rating .stars{display:flex;gap:3px}
+.proof-rating .stars svg{width:18px;height:18px;color:var(--gold-light)}
+.proof-rating .r{font-family:var(--display);font-size:1.4rem;color:#fff}
+.proof-rating .src{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,238,251,.55)}
+@media(max-width:840px){.proof-grid{grid-template-columns:1fr}.proof-media{order:-1;max-width:440px}}
+
+/* ---- Localização / CTA ---- */
+.contact{
+  padding:var(--section-pad) clamp(1.5rem,6vw,5rem);background:var(--bg-base);
+}
+.contact-card{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;
+  background:var(--bg-surface);border-radius:22px;border:1px solid rgba(29,24,48,.06);
+  box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.contact-copy{padding:clamp(2.2rem,5vw,4rem)}
+.contact-copy h2{font-family:var(--display);font-weight:500;font-size:var(--text-h2);color:var(--text-primary);margin-bottom:18px}
+.contact-copy h2 em{font-style:italic;color:var(--accent)}
+.contact-copy p{color:var(--text-secondary);margin-bottom:30px;max-width:46ch}
+.contact-info{list-style:none;display:grid;gap:18px;margin-bottom:34px}
+.contact-info li{display:flex;gap:14px;align-items:flex-start;font-size:.92rem;color:var(--text-secondary)}
+.contact-info svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:2px}
+.contact-info strong{color:var(--text-primary);font-weight:600}
+.contact-map{position:relative;min-height:340px;height:100%}
+.contact-map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.contact-map::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(22,15,43,.35),transparent 55%)}
+@media(max-width:840px){.contact-card{grid-template-columns:1fr}.contact-map{order:-1;min-height:240px}}
+
+/* ---- Footer ---- */
+footer{
+  background:var(--bg-darker);color:var(--text-inverse);
+  padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2.4rem;
+}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start}
+.foot-brand .brand-name{color:#fff}
+.foot-brand p{margin-top:16px;font-size:.88rem;color:rgba(243,238,251,.6);max-width:34ch}
+.foot-col h4{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:.88rem;color:rgba(243,238,251,.72);margin-bottom:9px;transition:color .25s ease}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:2.6rem auto 0;padding-top:1.8rem;border-top:1px solid rgba(243,238,251,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.76rem;color:rgba(243,238,251,.45)}
+
+/* ---- FAB ---- */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .25s cubic-bezier(.22,1,.36,1);
+}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(1.7);opacity:0}}
+
+/* ---- Reveal ---- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.svc-grid .reveal:nth-child(2){transition-delay:.07s}
+.svc-grid .reveal:nth-child(3){transition-delay:.14s}
+.svc-grid .reveal:nth-child(4){transition-delay:.07s}
+.svc-grid .reveal:nth-child(5){transition-delay:.14s}
+.svc-grid .reveal:nth-child(6){transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-media img,.hero-scroll .ln{animation:none}
+  .hero-title .word{animation:none;transform:none;opacity:1}
+  .hero-sub,.hero-actions,.hero-badge{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand" aria-label="Estelar Clinic">
+    <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="15" stroke="#e6c878" stroke-width="1.1"/>
+      <circle cx="20" cy="20" r="9.5" stroke="#9d80d8" stroke-width="1.1"/>
+      <path d="M20 5.5 L21.7 17.4 L33 20 L21.7 22.6 L20 34.5 L18.3 22.6 L7 20 L18.3 17.4 Z" fill="#e6c878"/>
+    </svg>
+    <span class="brand-name">Estelar<small>Clinic</small></span>
+  </a>
+  <nav class="nav-links" aria-label="Navegação">
+    <a href="#sobre">A Clínica</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#contato">Localização</a>
+  </nav>
+  <a class="header-cta" href="https://wa.me/5598982175595?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Estelar%20Clinic%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Estética Avançada · São Luís — MA</span>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Sua</span> <span class="word">beleza</span></span>
+        <span class="line"><span class="word">elevada</span> <span class="word">ao</span></span>
+        <span class="line"><span class="word"><em>nível&nbsp;estelar.</em></span></span>
+      </h1>
+      <p class="hero-sub">Harmonização facial e protocolos de estética avançada com foco em resultado natural — num espaço pensado para quem busca o cuidado mais refinado de São Luís.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5598982175595?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Estelar%20Clinic%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          Agendar pelo WhatsApp
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.04c0-4.54 3.7-8.23 8.25-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.23-8.25 8.23z"/></svg>
+        </a>
+        <a class="btn-ghost on-dark" href="#procedimentos">Ver procedimentos</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/maps-1.jpg" alt="Recepção da Estelar Clinic — ambiente moderno e acolhedor em São Luís">
+    <div class="hero-badge">
+      <div>
+        <span class="b-num">4.9</span>
+        <div class="stars" aria-label="4,9 de 5 estrelas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+        </div>
+      </div>
+      <div class="b-label">Avaliação<br>Google</div>
+    </div>
+    <div class="hero-scroll"><span>Role</span><span class="ln"></span></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-target="4.9" data-decimals="1">0</span></div>
+      <div class="stat-label">Nota no Google</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-target="500" data-decimals="0">0</span><span class="suffix">+</span></div>
+      <div class="stat-label">Atendimentos realizados</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-target="100" data-decimals="0">0</span><span class="suffix">%</span></div>
+      <div class="stat-label">Foco em resultado natural</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="about-grid">
+    <div class="about-media reveal">
+      <img src="imagens/maps-1.jpg" alt="Espaço da Estelar Clinic — recepção com design moderno e atendimento premium">
+      <span class="tag">O nosso espaço</span>
+    </div>
+    <div class="about-copy reveal">
+      <span class="overline">A Estelar Clinic</span>
+      <h2>Um espaço à altura do <em>cuidado que você merece</em>.</h2>
+      <p>Cada detalhe da Estelar Clinic foi pensado para que sua experiência comece bem antes do procedimento — do acolhimento na recepção ao protocolo planejado para o seu rosto. Aqui, estética avançada é sinônimo de naturalidade, segurança e bom gosto.</p>
+      <p>Nosso compromisso é simples: realçar a sua beleza com técnica, sem exageros. Resultados que parecem você — só que na sua melhor versão.</p>
+      <ul class="about-points">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Avaliação individual antes de cada protocolo — nada de pacote padrão.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Ambiente premium no Jardim Renascença, no Executive Lake.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Resultado natural como prioridade — beleza que respeita os seus traços.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="services" id="procedimentos">
+  <div class="svc-head reveal">
+    <span class="overline">Procedimentos</span>
+    <h2>Protocolos pensados para <em>realçar</em>, nunca disfarçar.</h2>
+    <p>Tecnologia, técnica e um olhar estético apurado para cada fase do seu cuidado facial e corporal.</p>
+  </div>
+  <div class="svc-grid">
+
+    <article class="svc-card reveal">
+      <div class="svc-img">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"/></svg></span>
+        <img src="imagens/web-portrait.jpg" alt="Harmonização facial — realce natural dos traços">
+      </div>
+      <div class="svc-body">
+        <span class="svc-cat">Facial</span>
+        <h3>Harmonização Facial</h3>
+        <p>Equilíbrio e proporção com toxina, preenchedores e bioestimuladores aplicados com precisão para um resultado discreto e elegante.</p>
+      </div>
+    </article>
+
+    <article class="svc-card reveal">
+      <div class="svc-img">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c4 4 6 7 6 10a6 6 0 1 1-12 0c0-3 2-6 6-10z" stroke-linejoin="round"/></svg></span>
+        <img src="imagens/web-facial.jpg" alt="Skincare e limpeza de pele profunda">
+      </div>
+      <div class="svc-body">
+        <span class="svc-cat">Pele</span>
+        <h3>Skincare &amp; Limpeza</h3>
+        <p>Protocolos de limpeza profunda, hidratação e revitalização que devolvem viço, textura e luminosidade à sua pele.</p>
+      </div>
+    </article>
+
+    <article class="svc-card reveal">
+      <div class="svc-img">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l7-7M14 4l6 6-9 9-6-6 9-9z" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4l1.5-1.5a2 2 0 0 1 3 3L17 7" stroke-linecap="round"/></svg></span>
+        <img src="imagens/web-glow.jpg" alt="Estética avançada — microagulhamento e bioestimulação">
+      </div>
+      <div class="svc-body">
+        <span class="svc-cat">Avançada</span>
+        <h3>Estética Avançada</h3>
+        <p>Microagulhamento, skinbooster e tecnologias de estímulo de colágeno para firmeza, rejuvenescimento e brilho duradouro.</p>
+      </div>
+    </article>
+
+    <article class="svc-card reveal">
+      <div class="svc-img">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z" stroke-linejoin="round"/></svg></span>
+        <img src="imagens/web-ambient.jpg" alt="Protocolos de relaxamento e bem-estar">
+      </div>
+      <div class="svc-body">
+        <span class="svc-cat">Bem-estar</span>
+        <h3>Relaxamento &amp; Corporal</h3>
+        <p>Massagens e protocolos corporais que cuidam do corpo e da mente — porque autoestima também é descanso.</p>
+      </div>
+    </article>
+
+    <article class="svc-card reveal">
+      <div class="svc-img">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <img src="imagens/web-radiant.jpg" alt="Avaliação personalizada de pele">
+      </div>
+      <div class="svc-body">
+        <span class="svc-cat">Diagnóstico</span>
+        <h3>Avaliação Personalizada</h3>
+        <p>Tudo começa com um diagnóstico atento do seu rosto e dos seus objetivos — para indicar só o que realmente faz sentido pra você.</p>
+      </div>
+    </article>
+
+    <article class="svc-card reveal">
+      <div class="svc-img">
+        <span class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.4 5.6L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.4z" stroke-linejoin="round"/></svg></span>
+        <img src="imagens/maps-1.jpg" alt="Experiência premium na Estelar Clinic">
+      </div>
+      <div class="svc-body">
+        <span class="svc-cat">Experiência</span>
+        <h3>Atendimento Premium</h3>
+        <p>Do agendamento ao pós-procedimento, um acompanhamento próximo e atencioso. Você cuida da sua beleza; nós cuidamos de cada detalhe.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="proof" id="resultados">
+  <div class="proof-grid">
+    <div class="proof-media reveal">
+      <img src="imagens/web-radiant.jpg" alt="Pele radiante e natural — resultado de cuidado contínuo">
+    </div>
+    <div class="proof-copy reveal">
+      <span class="overline on-dark">Resultados &amp; Reputação</span>
+      <h2>Quem conhece a Estelar, <em>volta</em>.</h2>
+      <p class="quote">"Atendimento impecável e resultado natural, exatamente como eu queria. A clínica é linda e me senti cuidada do início ao fim."</p>
+      <div class="proof-rating">
+        <div class="stars" aria-label="4,9 de 5 estrelas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2 6.8.9-5 4.7 1.3 6.8L12 17.8 5.9 20.6 7.2 13.8 2.2 9.1l6.8-.9z"/></svg>
+        </div>
+        <span class="r">4.9</span>
+        <span class="src">no Google</span>
+      </div>
+      <p style="color:rgba(243,238,251,.7);max-width:42ch;margin-top:6px">A nota que construímos atendendo cada cliente como única. Agora é a sua vez de viver essa experiência.</p>
+      <div style="margin-top:30px">
+        <a class="btn-primary" href="https://wa.me/5598982175595?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Estelar%20Clinic%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          Quero agendar minha avaliação
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.04c0-4.54 3.7-8.23 8.25-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.23-8.25 8.23z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="contact-card">
+    <div class="contact-copy reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Venha conhecer a <em>Estelar Clinic</em>.</h2>
+      <p>Estamos no Executive Lake, no Jardim Renascença — um dos endereços mais nobres de São Luís. Agende sua avaliação e descubra o cuidado que combina com você.</p>
+      <ul class="contact-info">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span><strong>Executive Lake</strong> — R. das Andirobas, 040, Sala 505<br>Jardim Renascença, São Luís — MA, 65075-040</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke-linejoin="round"/></svg>
+          <span><strong>(98) 98217-5595</strong> — WhatsApp</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>Atendimento</strong> — com hora marcada, de segunda a sábado</span>
+        </li>
+      </ul>
+      <a class="btn-primary" href="https://wa.me/5598982175595?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Estelar%20Clinic%20e%20gostaria%20de%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+        Falar no WhatsApp
+        <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.04c0-4.54 3.7-8.23 8.25-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.23-8.25 8.23z"/></svg>
+      </a>
+    </div>
+    <a class="contact-map" href="https://www.google.com/maps/place/Estelar+Clinic/@-2.5046793,-44.2960848,17z" target="_blank" rel="noopener" aria-label="Ver Estelar Clinic no Google Maps">
+      <img src="imagens/web-ambient.jpg" alt="Ambiente da Estelar Clinic">
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#top" class="brand">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="15" stroke="#e6c878" stroke-width="1.1"/>
+          <circle cx="20" cy="20" r="9.5" stroke="#9d80d8" stroke-width="1.1"/>
+          <path d="M20 5.5 L21.7 17.4 L33 20 L21.7 22.6 L20 34.5 L18.3 22.6 L7 20 L18.3 17.4 Z" fill="#e6c878"/>
+        </svg>
+        <span class="brand-name">Estelar<small>Clinic</small></span>
+      </a>
+      <p>Estética avançada e harmonização facial com resultado natural, em São Luís — MA.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#contato">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5598982175595" target="_blank" rel="noopener">WhatsApp (98) 98217-5595</a>
+      <p>Executive Lake — Sala 505</p>
+      <p>Jardim Renascença, São Luís — MA</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Estelar Clinic. Todos os direitos reservados.</span>
+    <span>São Luís — Maranhão</span>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="wa-fab" href="https://wa.me/5598982175595?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Estelar%20Clinic%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.34-.5.05-.97.23-3.27-.68-2.75-1.08-4.5-3.88-4.64-4.06-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.27c.25-.27.54-.34.72-.34l.52.01c.17.01.39-.06.61.47.24.55.81 1.92.88 2.06.07.14.12.3.02.48-.09.18-.14.3-.27.46l-.41.48c-.13.13-.27.28-.12.55.15.27.66 1.09 1.42 1.77.98.87 1.8 1.14 2.07 1.27.27.14.42.12.58-.07.16-.18.66-.77.84-1.04.18-.27.36-.22.61-.13.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34z"/></svg>
+</a>
+
+<script>
+// Header scroll
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Count-up
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const countObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,target=parseFloat(el.dataset.target),dec=parseInt(el.dataset.decimals,10);
+  countObs.unobserve(el);
+  if(reduce){el.textContent=target.toFixed(dec);return;}
+  const dur=1500,t0=performance.now();
+  const tick=now=>{
+    const p=Math.min((now-t0)/dur,1);
+    const eased=1-Math.pow(1-p,3);
+    el.textContent=(target*eased).toFixed(dec);
+    if(p<1)requestAnimationFrame(tick);else el.textContent=target.toFixed(dec);
+  };
+  requestAnimationFrame(tick);
+}),{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>countObs.observe(el));
+</script>
+</body>
+</html>
