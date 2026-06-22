@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Enface — Ortodontia e Harmonização Facial · Setor Bueno, Goiânia</title>
+<meta name="description" content="Clínica Enface: ortodontia e harmonização facial no Setor Bueno, Goiânia. Nota 4.9. Av. T-4, salas 1507 e 1508. Ligue agora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --bordeaux:      #6b1e2c;
+  --bordeaux-2:    #8a2638;
+  --bordeaux-3:    #4e1520;
+  --bordeaux-pale: #f5e8eb;
+  --bordeaux-subtle: rgba(107,30,44,.08);
+  --bordeaux-border: rgba(107,30,44,.20);
+
+  --marble:    #e8dfd0;
+  --marble-2:  #ddd3c2;
+  --cream:     #f9f7f4;
+  --white:     #ffffff;
+  --graphite:  #1c1c1e;
+  --graphite-2:#2e2e32;
+  --text-muted: #7a7068;
+
+  --gold:        #c9a066;
+  --gold-border: rgba(201,160,102,.22);
+
+  --bg-base:    #f9f7f4;
+  --bg-surface: #ffffff;
+
+  --text-display: clamp(3rem, 2rem + 4.5vw, 6rem);
+  --text-h2:      clamp(2rem, 1.3rem + 2.5vw, 3.2rem);
+  --text-body:    clamp(0.88rem, 0.8rem + 0.25vw, 1rem);
+  --lh-display:   0.98;
+  --lh-body:      1.75;
+  --ls-display:  -0.015em;
+  --ls-overline:  0.22em;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.04), 0 4px 10px rgba(0,0,0,.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.06), 0 16px 34px rgba(0,0,0,.08), 0 32px 64px rgba(107,30,44,.05);
+  --shadow-lg: 0 6px 16px rgba(0,0,0,.06), 0 26px 52px rgba(0,0,0,.09), 0 52px 104px rgba(107,30,44,.06);
+  --shadow-bx: 0 8px 24px rgba(107,30,44,.38), 0 2px 8px rgba(107,30,44,.22);
+
+  --section-pad: clamp(5rem, 9vw, 10rem);
+  --radius: 16px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg-base); color: var(--graphite); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* grain */
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px; opacity: 0.020;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.45s ease, box-shadow 0.45s ease;
+}
+header.scrolled {
+  background: rgba(78,21,32,.97);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(201,160,102,.15);
+}
+.logo {
+  font-family: 'Josefin Sans', sans-serif; font-size: 1.1rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; color: var(--white);
+}
+.logo span { display: block; font-size: 0.56rem; letter-spacing: 0.20em; font-weight: 300; color: rgba(255,255,255,.5); }
+nav a {
+  color: rgba(255,255,255,.45); text-decoration: none;
+  margin-left: 22px; font-size: 0.64rem;
+  letter-spacing: 0.14em; text-transform: uppercase; font-family: 'Josefin Sans', sans-serif;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--marble); }
+
+/* ── HERO — cinematic full-bleed ── */
+.hero {
+  position: relative; height: 100dvh; min-height: 600px;
+  display: grid; align-items: end; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('imagens/maps-1.jpg') center 30%/cover no-repeat;
+  animation: kb 26s ease-in-out infinite alternate; will-change: transform;
+}
+@keyframes kb { from{transform:scale(1)} to{transform:scale(1.06)} }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(108deg,
+      rgba(78,21,32,.95) 0%,
+      rgba(78,21,32,.80) 38%,
+      rgba(78,21,32,.40) 60%,
+      rgba(78,21,32,.10) 100%
+    );
+}
+.hero-overlay::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 10% 85%, rgba(107,30,44,.15) 0%, transparent 50%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vh,5.5rem);
+  max-width: 680px;
+}
+.overline {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.6rem; letter-spacing: var(--ls-overline);
+  text-transform: uppercase; color: var(--marble);
+  font-family: 'Josefin Sans', sans-serif; font-weight: 300;
+  margin-bottom: 20px;
+}
+.overline::before { content: ''; width: 28px; height: 1px; background: var(--marble); flex-shrink: 0; }
+
+/* Blur-fade hero title */
+.hero-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: var(--text-display); font-weight: 600;
+  line-height: var(--lh-display); letter-spacing: 0.02em;
+  text-transform: uppercase; color: var(--white);
+  max-width: 14ch; margin-bottom: 18px; text-wrap: balance;
+}
+.blur-line {
+  display: block;
+  opacity: 0; filter: blur(8px); transform: translateY(12px);
+  animation: blur-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.blur-line:nth-child(1) { animation-delay: 0.20s; }
+.blur-line:nth-child(2) { animation-delay: 0.40s; }
+.blur-line:nth-child(3) { animation-delay: 0.60s; }
+@keyframes blur-in {
+  from { opacity: 0; filter: blur(8px); transform: translateY(12px); }
+  to   { opacity: 1; filter: blur(0);   transform: none; }
+}
+
+.hero-sub {
+  font-size: var(--text-body); font-weight: 300; line-height: var(--lh-body);
+  color: rgba(255,255,255,.50); max-width: 400px; margin-bottom: 26px;
+  opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 0.85s forwards;
+}
+@keyframes fade-up {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:none; }
+}
+.hero-badge-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px;
+  opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 1.0s forwards;
+}
+.hero-badge {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,.08); backdrop-filter: blur(10px);
+  border: 1px solid rgba(232,223,208,.22); border-radius: 50px;
+  padding: 9px 16px;
+}
+.badge-num { font-family: 'Josefin Sans', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--marble); line-height: 1; }
+.badge-stars { font-size: 0.68rem; color: var(--gold); letter-spacing: 2px; display: block; }
+.badge-label { font-size: 0.56rem; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .1em; display: block; font-family: 'Josefin Sans', sans-serif; }
+.badge-text { font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+.hero-cta { opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 1.15s forwards; }
+
+/* ── BOTÕES ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.9rem 2rem; min-height: 48px;
+  background: linear-gradient(135deg, var(--bordeaux-2), var(--bordeaux-3));
+  color: white; font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600; font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; text-decoration: none;
+  border-radius: 50px; box-shadow: var(--shadow-bx);
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(107,30,44,.5); }
+.btn-primary:active { transform: translateY(-1px); }
+
+/* ── SOBRE ── */
+.sobre {
+  background: var(--bg-surface);
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+  padding: calc(var(--section-pad) + 5vw) clamp(1.5rem,6vw,5rem) var(--section-pad);
+  margin-top: -5vw;
+}
+.sobre-inner {
+  display: grid; grid-template-columns: 5fr 4fr;
+  gap: clamp(3rem,6vw,5rem); align-items: start;
+  max-width: 1200px; margin: 0 auto;
+}
+.sobre-copy h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: var(--text-h2); font-weight: 600; letter-spacing: 0.03em;
+  text-transform: uppercase; line-height: 1.05;
+  text-wrap: balance; margin-bottom: 14px;
+}
+.sobre-copy h2 em { font-style: italic; font-weight: 300; color: var(--bordeaux); text-transform: none; letter-spacing: 0; }
+.sobre-copy p { font-size: var(--text-body); font-weight: 300; color: var(--text-muted); line-height: var(--lh-body); margin-bottom: 14px; }
+.feature {
+  display: flex; gap: 14px; padding: 14px 0;
+  border-top: 1px solid rgba(107,30,44,.08); align-items: flex-start;
+}
+.feat-num { font-family: 'Josefin Sans', sans-serif; font-size: 1.4rem; font-weight: 600; color: rgba(107,30,44,.15); flex-shrink: 0; line-height: 1.2; width: 28px; }
+.feature p { font-size: 0.85rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; margin: 0; }
+.feature strong { color: var(--graphite); font-weight: 500; }
+.nota-pill {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--bordeaux-subtle); border: 1px solid var(--bordeaux-border);
+  border-radius: 50px; padding: 12px 22px; margin: 18px 0 26px;
+}
+.nota-pill .num { font-family: 'Josefin Sans', sans-serif; font-size: 2rem; font-weight: 600; color: var(--bordeaux); line-height: 1; }
+.nota-pill .stars { font-size: 0.74rem; color: var(--gold); letter-spacing: 3px; display: block; }
+.nota-pill .lbl { font-size: 0.62rem; color: var(--bordeaux); opacity: .65; text-transform: uppercase; letter-spacing: .1em; display: block; }
+
+/* sobre foto */
+.sobre-visual { position: relative; }
+.sobre-img-frame {
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg);
+}
+.sobre-img-frame img { width: 100%; display: block; transition: transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.sobre-img-frame:hover img { transform: scale(1.04); }
+.sobre-tag {
+  position: absolute; bottom: 16px; left: 16px;
+  background: rgba(78,21,32,.90); backdrop-filter: blur(10px);
+  border: 1px solid rgba(232,223,208,.2); border-radius: 50px;
+  padding: 8px 16px; font-size: 0.66rem; font-family: 'Josefin Sans', sans-serif;
+  color: rgba(255,255,255,.6); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.sobre-tag span { color: var(--marble); }
+
+/* ── SERVIÇOS ── */
+.servicos { background: var(--marble); padding: var(--section-pad) clamp(1.5rem,6vw,5rem); }
+.serv-header { max-width: 1200px; margin: 0 auto 3rem; }
+.serv-header h2 {
+  font-family: 'Josefin Sans', sans-serif; font-size: var(--text-h2);
+  font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.05;
+  text-wrap: balance;
+}
+.serv-header h2 em { font-style: italic; font-weight: 300; color: var(--bordeaux); text-transform: none; letter-spacing: 0; }
+.serv-header p { font-size: var(--text-body); font-weight: 300; color: var(--text-muted); line-height: var(--lh-body); max-width: 440px; margin-top: 10px; }
+.serv-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1rem,2.5vw,1.5rem); max-width: 1200px; margin: 0 auto;
+}
+.serv-card {
+  background: var(--bg-surface); border-radius: var(--radius);
+  padding: clamp(1.5rem,3vw,2.2rem); border: 1px solid rgba(107,30,44,.10);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.25s;
+}
+.serv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--bordeaux-border); }
+.serv-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--bordeaux-subtle); border: 1px solid var(--bordeaux-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; margin-bottom: 14px;
+}
+.serv-card h3 {
+  font-family: 'Josefin Sans', sans-serif; font-size: 1rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--graphite); margin-bottom: 9px;
+}
+.serv-card p { font-size: 0.83rem; font-weight: 300; color: var(--text-muted); line-height: 1.72; }
+
+/* ── FAIXA NOTA ── */
+.faixa {
+  background: var(--graphite); padding: clamp(4rem,7vw,7rem) clamp(1.5rem,6vw,5rem);
+  text-align: center; position: relative; overflow: hidden;
+}
+.faixa::before {
+  content: ''; position: absolute; top: -80px; right: 15%;
+  width: 450px; height: 450px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,30,44,.08) 0%, transparent 60%);
+}
+.count-wrap { display: flex; align-items: baseline; justify-content: center; gap: 2px; margin-bottom: 6px; }
+.count-num {
+  font-family: 'Josefin Sans', sans-serif; font-weight: 600;
+  font-size: clamp(5rem,12vw,10rem);
+  color: var(--bordeaux-2); line-height: 0.9; letter-spacing: -0.02em;
+}
+.count-dec { font-family: 'Josefin Sans', sans-serif; font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 600; color: var(--bordeaux-2); }
+.faixa-stars { font-size: 1.1rem; color: var(--gold); letter-spacing: 6px; margin-bottom: 8px; }
+.faixa-label { font-size: 0.66rem; letter-spacing: 0.20em; text-transform: uppercase; font-family: 'Josefin Sans', sans-serif; font-weight: 300; color: rgba(255,255,255,.3); margin-bottom: 24px; }
+.faixa-quote {
+  font-family: 'Josefin Sans', sans-serif; font-style: italic; font-weight: 300;
+  font-size: clamp(1.1rem,2vw,1.5rem); color: rgba(255,255,255,.5);
+  line-height: 1.5; max-width: 460px; margin: 0 auto 28px;
+  letter-spacing: 0.02em;
+}
+
+/* ── LOCALIZAÇÃO ── */
+.localizacao {
+  background: var(--bg-surface);
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+  padding: calc(var(--section-pad) + 4vw) clamp(1.5rem,6vw,5rem) var(--section-pad);
+  margin-top: -4vw;
+}
+.loc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,5rem); max-width: 1200px; margin: 0 auto; }
+.loc-copy h2 {
+  font-family: 'Josefin Sans', sans-serif; font-size: var(--text-h2);
+  font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.05;
+  text-wrap: balance; margin-bottom: 28px;
+}
+.loc-copy h2 em { font-style: italic; font-weight: 300; color: var(--bordeaux); text-transform: none; letter-spacing: 0; }
+.loc-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+.loc-icon {
+  width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%;
+  background: var(--bordeaux-subtle); border: 1px solid var(--bordeaux-border);
+  display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+}
+.loc-item p { font-size: 0.86rem; font-weight: 300; color: var(--text-muted); line-height: 1.72; }
+.loc-item strong { color: var(--graphite); font-weight: 500; }
+.map-box {
+  background: var(--marble); border-radius: var(--radius); min-height: 290px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; border: 1px solid var(--bordeaux-border);
+}
+.map-box p { font-size: 0.84rem; font-weight: 300; color: var(--text-muted); text-align: center; max-width: 200px; line-height: 1.6; }
+.map-box a {
+  background: linear-gradient(135deg, var(--bordeaux-2), var(--bordeaux-3));
+  color: white; padding: 10px 22px; border-radius: 50px;
+  text-decoration: none; font-weight: 500; font-size: 0.76rem;
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+.map-box a:hover { transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--graphite); padding: 26px clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 14px; border-top: 1px solid rgba(107,30,44,.18);
+}
+.footer-logo { font-family: 'Josefin Sans', sans-serif; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; font-size: 1rem; color: var(--marble); }
+footer p { font-size: 0.7rem; color: rgba(255,255,255,.28); }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--marble); }
+
+/* ── FAB telefone ── */
+.tel-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%; background: var(--bordeaux);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(107,30,44,.5);
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color: transparent;
+}
+.tel-fab:hover { transform: scale(1.1); }
+.tel-fab::before {
+  content: ''; position: absolute; inset: -7px; border-radius: 50%;
+  border: 2px solid rgba(107,30,44,.35);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.7);opacity:0} }
+.tel-fab svg { width: 22px; height: 22px; fill: white; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.in { opacity: 1; transform: none; }
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+.reveal:nth-child(6){transition-delay:.35s}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  header { padding: 16px 20px; } nav { display: none; }
+  .sobre { clip-path: none; padding-top: var(--section-pad); margin-top: 0; }
+  .sobre-inner { grid-template-columns: 1fr; }
+  .loc-inner { grid-template-columns: 1fr; }
+  .localizacao { clip-path: none; padding-top: var(--section-pad); margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blur-line { animation: none; opacity: 1; filter: none; transform: none; }
+  .hero-bg { animation: none; }
+  .hero-sub, .hero-badge-row, .hero-cta { animation: none; opacity: 1; }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .tel-fab::before { animation: none; }
+  body::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">
+    Enface
+    <span>Ortodontia · Harmonização Facial</span>
+  </a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#localizacao">Localização</a>
+    <a href="tel:+556232810929">Ligar</a>
+  </nav>
+</header>
+
+<!-- ── HERO CINEMATIC ── -->
+<div class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="overline">Ortodontia · Harmonização · Setor Bueno · Goiânia</div>
+    <h1 class="hero-title">
+      <span class="blur-line">Onde o</span>
+      <span class="blur-line">sorriso</span>
+      <span class="blur-line">perfeito</span>
+      <span class="blur-line" style="animation-delay:.78s">começa.</span>
+    </h1>
+    <p class="hero-sub">Ortodontia e harmonização facial em um só lugar — tratamentos que cuidam do seu sorriso e da beleza do seu rosto.</p>
+    <div class="hero-badge-row">
+      <div class="hero-badge">
+        <div class="badge-num">4.9</div>
+        <div>
+          <span class="badge-stars">★★★★★</span>
+          <span class="badge-label">Google Maps</span>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <span class="badge-text">Setor Bueno · Av. T-4</span>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="tel:+556232810929" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (62) 3281-0929
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- wave -->
+<div aria-hidden="true" style="display:block;line-height:0;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:clamp(36px,5vw,72px);display:block;">
+    <path d="M0,20 C480,64 960,0 1440,44 L1440,64 L0,64 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ── SOBRE ── -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-copy">
+      <div class="overline reveal" style="color:var(--bordeaux);">A Clínica</div>
+      <h2 class="reveal">Ortodontia e <em>harmonização</em><br>integradas</h2>
+      <p class="reveal">A Clínica Enface une duas especialidades complementares: ortodontia para um sorriso alinhado e harmonização facial para uma estética completa. Tudo no mesmo lugar, Setor Bueno.</p>
+      <p class="reveal">Av. T-4, salas 1507 e 1508 — estrutura dupla para atendimento especializado com conforto e qualidade.</p>
+      <div class="nota-pill reveal">
+        <div class="num">4.9</div>
+        <div>
+          <span class="stars">★★★★★</span>
+          <span class="lbl">Google Maps</span>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feat-num">01</div>
+        <p><strong>Especialidades integradas</strong><br>Ortodontia e harmonização facial no mesmo espaço — do alinhamento dental à estética facial.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feat-num">02</div>
+        <p><strong>Duas salas · Setor Bueno</strong><br>Salas 1507 e 1508, Av. T-4 — estrutura completa para atendimento simultâneo de qualidade.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="feat-num">03</div>
+        <p><strong>Nota 4.9 no Google</strong><br>Avaliação excelente construída com dedicação — uma das mais altas clínicas odontológicas da região.</p>
+      </div>
+      <div style="margin-top:28px" class="reveal">
+        <a href="tel:+556232810929" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Ligar Agora
+        </a>
+      </div>
+    </div>
+    <div class="sobre-visual reveal">
+      <div class="sobre-img-frame">
+        <img src="imagens/maps-1.jpg" alt="Consultório da Clínica Enface — Setor Bueno" loading="lazy">
+        <div class="sobre-tag">Setor Bueno · <span>Av. T-4</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVIÇOS ── -->
+<section class="servicos" id="servicos">
+  <div class="serv-header">
+    <div class="overline reveal" style="color:var(--bordeaux);">Serviços</div>
+    <h2 class="reveal">Do sorriso à <em>harmonia facial</em></h2>
+    <p class="reveal">Tratamentos completos para quem quer cuidar do sorriso e da beleza do rosto em um só lugar.</p>
+  </div>
+  <div class="serv-grid">
+    <div class="serv-card reveal">
+      <div class="serv-icon" aria-hidden="true">🦷</div>
+      <h3>Ortodontia</h3>
+      <p>Aparelhos e alinhadores para correção do alinhamento dental — sorriso equilibrado e saúde bucal de longo prazo.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon" aria-hidden="true">✨</div>
+      <h3>Harmonização Facial</h3>
+      <p>Botox, preenchimentos e procedimentos estéticos que complementam o sorriso com beleza natural de todo o rosto.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon" aria-hidden="true">💉</div>
+      <h3>Toxina Botulínica</h3>
+      <p>Botox para suavização de linhas de expressão e rejuvenescimento facial — resultado natural e seguro.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon" aria-hidden="true">💋</div>
+      <h3>Preenchimento Labial</h3>
+      <p>Definição e volume labial com ácido hialurônico — harmonia entre lábios e sorriso.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon" aria-hidden="true">🪥</div>
+      <h3>Clareamento Dental</h3>
+      <p>Procedimentos de clareamento dental para um sorriso mais branco e luminoso com segurança clínica.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon" aria-hidden="true">🔬</div>
+      <h3>Estética do Sorriso</h3>
+      <p>Lentes de contato dental, facetas e resinas — transformações do sorriso com resultado preciso e duradouro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAIXA NOTA ── -->
+<div class="faixa">
+  <div class="count-wrap reveal">
+    <span class="count-num" id="countNum" data-target="4">0</span>
+    <span class="count-dec">.9</span>
+  </div>
+  <div class="faixa-stars reveal">★★★★★</div>
+  <div class="faixa-label reveal">nota no Google Maps</div>
+  <p class="faixa-quote reveal">"Onde o sorriso perfeito começa.<br>Ortodontia e harmonização em um só lugar."</p>
+  <a href="tel:+556232810929" class="btn-primary reveal">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    (62) 3281-0929
+  </a>
+</div>
+
+<!-- ── LOCALIZAÇÃO ── -->
+<section class="localizacao" id="localizacao">
+  <div class="loc-inner">
+    <div>
+      <div class="overline reveal" style="color:var(--bordeaux);">Localização</div>
+      <h2 class="reveal">Setor Bueno,<br><em>Goiânia</em></h2>
+      <div class="loc-item reveal">
+        <div class="loc-icon" aria-hidden="true">📍</div>
+        <p><strong>Av. T-4 n° 619 — Salas 1507 e 1508</strong><br>Setor Bueno, Goiânia - GO · CEP 74230-035</p>
+      </div>
+      <div class="loc-item reveal">
+        <div class="loc-icon" aria-hidden="true">📞</div>
+        <p><strong>(62) 3281-0929</strong><br>Agendamentos por telefone</p>
+      </div>
+      <div class="loc-item reveal">
+        <div class="loc-icon" aria-hidden="true">🕐</div>
+        <p><strong>Segunda a Sexta</strong><br>Horário comercial · Conforme agendamento</p>
+      </div>
+      <div style="margin-top:28px" class="reveal">
+        <a href="tel:+556232810929" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Ligar Agora
+        </a>
+      </div>
+    </div>
+    <div class="map-box reveal">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--bordeaux)" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <p>Av. T-4, 619<br>Salas 1507/1508<br>Setor Bueno, Goiânia</p>
+      <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Enface-+Ortodontia+e+Harmoniza%C3%A7%C3%A3o+Facial/@-16.7129848,-49.2668087,17z" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Enface</span>
+  <p>© 2025 Clínica Enface — Ortodontia e Harmonização Facial · Setor Bueno, Goiânia, GO</p>
+  <p><a href="tel:+556232810929">(62) 3281-0929</a></p>
+</footer>
+
+<!-- FAB telefone (não WhatsApp) -->
+<a href="tel:+556232810929" class="tel-fab" aria-label="Ligar para a Clínica Enface">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50), {passive:true});
+
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+}), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+const countEl = document.getElementById('countNum');
+if(countEl) {
+  const co = new IntersectionObserver(([entry]) => {
+    if(!entry.isIntersecting) return;
+    co.disconnect();
+    let s = 0;
+    const t = setInterval(() => {
+      s++; countEl.textContent = s;
+      if(s >= parseInt(countEl.dataset.target, 10)) clearInterval(t);
+    }, 280);
+  }, { threshold: 0.5 });
+  co.observe(countEl);
+}
+</script>
+</body>
+</html>
