@@ -264,6 +264,7 @@ function selectLead(idx) {
     <div class="site-url-box">
       <span class="site-url-label">URL</span>
       <span class="site-url-text">${esc(l.siteUrl)}</span>
+      <button class="copy-btn" onclick="copyUrl('${esc(l.siteUrl)}',this)">Copiar</button>
     </div>
 
     <div class="contact-box">
