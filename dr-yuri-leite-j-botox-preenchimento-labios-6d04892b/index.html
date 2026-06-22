@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Yurí Leite — Botox & Preenchimento Labial · Setor Sul, Goiânia</title>
+<meta name="description" content="Dr. Yurí Leite — especialista em Botox e preenchimento labial no Setor Sul, Goiânia. Nota 5.0. Seven Odontologia, R. 87. WhatsApp (62) 98204-2464.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --black:       #0c0c0e;
+  --black-2:     #161618;
+  --black-3:     #1f1f22;
+  --black-border: rgba(255,255,255,.07);
+
+  --cream:       #f7f4ef;
+  --cream-2:     #ede9e2;
+  --cream-muted: rgba(247,244,239,.35);
+
+  --terra:       #c97a6b;
+  --terra-2:     #b56859;
+  --terra-pale:  rgba(201,122,107,.10);
+  --terra-border: rgba(201,122,107,.22);
+
+  --gray:        #717175;
+  --gray-light:  #a0a0a6;
+
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 8px 32px rgba(0,0,0,.14), 0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.20), 0 4px 16px rgba(0,0,0,.10);
+  --shadow-terra: 0 8px 28px rgba(201,122,107,.38), 0 2px 8px rgba(201,122,107,.20);
+
+  --section-pad: clamp(5rem,9vw,10rem);
+  --radius: 12px;
+
+  --text-display: clamp(4.5rem, 3rem + 5vw, 8rem);
+  --text-h2:      clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+  --text-body:    clamp(0.88rem, 0.8rem + 0.2vw, 1rem);
+  --lh-display:   0.88;
+  --ls-display:  -0.03em;
+  --ls-overline:  0.20em;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--cream); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px; opacity: 0.022;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 22px clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+header.scrolled { background: rgba(12,12,14,.97); backdrop-filter: blur(16px); border-color: var(--black-border); }
+.logo {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: 1.15rem; letter-spacing: 0.04em;
+  text-decoration: none; color: var(--cream);
+}
+.logo span { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.5rem; letter-spacing: 0.22em; font-weight: 400; color: var(--cream-muted); text-transform: uppercase; }
+nav a {
+  color: rgba(247,244,239,.3); text-decoration: none;
+  margin-left: 24px; font-size: 0.61rem; letter-spacing: 0.14em;
+  text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--cream); }
+
+/* ── HERO TIPOGRÁFICO ── */
+.hero {
+  min-height: 100dvh; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 clamp(1.5rem,7vw,6rem) clamp(3.5rem,8vh,6rem);
+  position: relative; overflow: hidden;
+}
+/* Monograma decorativo */
+.hero-mono {
+  position: absolute; right: -2vw; top: 50%; transform: translateY(-52%);
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: clamp(22rem,38vw,42rem); line-height: 1;
+  color: rgba(247,244,239,.025); pointer-events: none; user-select: none;
+  letter-spacing: -0.05em;
+}
+/* linha horizontal sutil */
+.hero-rule {
+  position: absolute; top: 50%; left: clamp(1.5rem,7vw,6rem); right: clamp(1.5rem,7vw,6rem);
+  height: 1px; background: rgba(247,244,239,.05); transform: translateY(-50%);
+}
+.hero-top {
+  position: absolute; top: clamp(5rem,10vh,8rem); left: clamp(1.5rem,7vw,6rem);
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.58rem; letter-spacing: var(--ls-overline); text-transform: uppercase;
+  color: var(--terra); font-family: 'DM Sans', sans-serif; font-weight: 500;
+}
+.hero-top::before { content: ''; width: 22px; height: 1px; background: var(--terra); flex-shrink: 0; }
+.hero-content { position: relative; z-index: 2; }
+.hero-title {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: var(--text-display); line-height: var(--lh-display); letter-spacing: var(--ls-display);
+  color: var(--cream); margin-bottom: 22px; text-wrap: balance; max-width: 15ch;
+}
+/* Char stagger */
+.ch {
+  display: inline-block;
+  opacity: 0; transform: translateY(18px) scale(0.97);
+  animation: ch-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes ch-rise {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-row {
+  display: flex; align-items: flex-end; gap: clamp(2rem,5vw,4rem); flex-wrap: wrap;
+}
+.hero-sub {
+  font-size: var(--text-body); font-weight: 300; line-height: 1.80;
+  color: var(--cream-muted); max-width: 360px;
+  opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 1.4s forwards;
+}
+@keyframes fade-up { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+.hero-badges {
+  display: flex; flex-direction: column; gap: 9px;
+  opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 1.55s forwards;
+}
+.badge {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--black-border); border-radius: 50px;
+  padding: 8px 16px; background: rgba(255,255,255,.02);
+}
+.badge-num { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.5rem; color: var(--terra); line-height: 1; }
+.badge-stars { font-size: 0.63rem; color: var(--terra); letter-spacing: 3px; display: block; }
+.badge-lbl { font-size: 0.5rem; color: rgba(247,244,239,.25); text-transform: uppercase; letter-spacing: .1em; display: block; }
+.badge-text { font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(247,244,239,.3); }
+.hero-cta { opacity: 0; animation: fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 1.7s forwards; }
+
+/* ── BOTÕES ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.95rem 2.2rem; min-height: 48px;
+  background: var(--terra); color: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; border-radius: 50px; box-shadow: var(--shadow-terra);
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(201,122,107,.55); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.95rem 2rem; min-height: 48px;
+  background: transparent; color: var(--cream);
+  border: 1px solid var(--black-border); border-radius: 50px;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.25s, background 0.25s;
+}
+.btn-ghost:hover { border-color: rgba(247,244,239,.25); background: rgba(247,244,239,.03); }
+
+/* ── RESULTADO (antes/depois) ── */
+.resultado {
+  background: var(--cream); color: var(--black);
+  clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 100%);
+  padding: calc(var(--section-pad) + 4vw) clamp(1.5rem,6vw,5rem) var(--section-pad);
+  margin-top: -4vw;
+}
+.res-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem,6vw,5rem); align-items: center;
+  max-width: 1100px; margin: 0 auto;
+}
+.res-copy { }
+.res-overline {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.58rem; letter-spacing: 0.20em; text-transform: uppercase;
+  color: var(--terra); font-family: 'DM Sans', sans-serif; font-weight: 500;
+  margin-bottom: 18px;
+}
+.res-overline::before { content: ''; width: 20px; height: 1px; background: var(--terra); }
+.res-copy h2 {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: var(--text-h2); letter-spacing: var(--ls-display); line-height: 0.92;
+  text-wrap: balance; margin-bottom: 16px;
+}
+.res-copy p { font-size: var(--text-body); font-weight: 300; color: #555; line-height: 1.80; margin-bottom: 14px; }
+.res-nota {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--black); border-radius: var(--radius); padding: 14px 20px;
+  margin: 18px 0 26px; border: 1px solid rgba(201,122,107,.20);
+}
+.res-nota .num { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 2.4rem; color: var(--terra); line-height: 1; }
+.res-nota .stars { font-size: 0.72rem; color: var(--terra); letter-spacing: 3px; display: block; }
+.res-nota .lbl { font-size: 0.55rem; color: rgba(247,244,239,.3); text-transform: uppercase; letter-spacing: .1em; display: block; }
+.res-foto { position: relative; }
+.res-frame {
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.res-frame img { width: 100%; display: block; }
+.antes-depois-label {
+  position: absolute; bottom: 12px; left: 12px; right: 12px;
+  display: flex; justify-content: space-between;
+}
+.ad-tag {
+  background: rgba(12,12,14,.82); backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,122,107,.25); border-radius: 50px;
+  padding: 5px 12px; font-size: 0.56rem;
+  color: rgba(247,244,239,.6); letter-spacing: 0.14em;
+  text-transform: uppercase; font-family: 'DM Sans', sans-serif;
+}
+.ad-tag span { color: var(--terra); }
+
+/* ── SERVIÇOS ── */
+.servicos {
+  background: var(--black-2);
+  padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+}
+.serv-header { max-width: 1100px; margin: 0 auto 3rem; }
+.serv-header h2 {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: var(--text-h2); letter-spacing: var(--ls-display); line-height: 0.92;
+  text-wrap: balance;
+}
+.serv-header p { font-size: var(--text-body); font-weight: 300; color: var(--cream-muted); line-height: 1.80; max-width: 380px; margin-top: 12px; }
+.serv-list { max-width: 1100px; margin: 0 auto; }
+.serv-item {
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 24px; align-items: center; padding: 22px 0;
+  border-bottom: 1px solid var(--black-border);
+  transition: background 0.2s;
+}
+.serv-item:first-child { border-top: 1px solid var(--black-border); }
+.serv-item:hover .serv-num { color: var(--terra); }
+.serv-num {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: 1.1rem; color: rgba(247,244,239,.12); width: 28px;
+  transition: color 0.25s;
+}
+.serv-info h3 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.4rem;
+  letter-spacing: -0.01em; color: var(--cream); margin-bottom: 3px;
+}
+.serv-info p { font-size: 0.82rem; font-weight: 300; color: var(--gray-light); line-height: 1.6; }
+.serv-arrow { color: var(--black-border); font-size: 1.1rem; transition: color 0.25s; }
+.serv-item:hover .serv-arrow { color: var(--terra); }
+
+/* ── FAIXA ESCURA ── */
+.faixa {
+  background: var(--black-3); padding: clamp(4rem,7vw,7rem) clamp(1.5rem,6vw,5rem);
+  text-align: center; position: relative; overflow: hidden;
+}
+.faixa-mono {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: clamp(14rem,28vw,26rem); line-height: 1; letter-spacing: -0.04em;
+  color: rgba(247,244,239,.012); pointer-events: none; user-select: none;
+}
+.faixa-num {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700; font-style: italic;
+  font-size: clamp(7rem,16vw,13rem);
+  color: var(--terra); line-height: 0.85; letter-spacing: -0.03em;
+  position: relative; z-index: 1; margin-bottom: 6px;
+}
+.faixa-stars { font-size: 1rem; color: var(--terra); letter-spacing: 6px; margin-bottom: 8px; position: relative; z-index: 1; }
+.faixa-label {
+  font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--cream-muted); margin-bottom: 24px; position: relative; z-index: 1;
+}
+.faixa-quote {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+  font-size: clamp(1.3rem,2.5vw,2rem); color: rgba(247,244,239,.4);
+  line-height: 1.45; max-width: 420px; margin: 0 auto 30px;
+  position: relative; z-index: 1;
+}
+.faixa-cta { position: relative; z-index: 1; }
+
+/* ── SOBRE ── */
+.sobre {
+  background: var(--cream); color: var(--black);
+  padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+}
+.sobre-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,5rem); align-items: start; }
+.sobre-overline {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.58rem; letter-spacing: 0.20em; text-transform: uppercase;
+  color: var(--terra); font-family: 'DM Sans', sans-serif; font-weight: 500; margin-bottom: 18px;
+}
+.sobre-overline::before { content: ''; width: 20px; height: 1px; background: var(--terra); }
+.sobre h2 {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: var(--text-h2); letter-spacing: var(--ls-display); line-height: 0.92;
+  text-wrap: balance; margin-bottom: 16px;
+}
+.sobre p { font-size: var(--text-body); font-weight: 300; color: #555; line-height: 1.80; margin-bottom: 14px; }
+.loc-block {
+  background: var(--black); border-radius: var(--radius); padding: 22px 24px;
+  margin: 20px 0 26px; border: 1px solid rgba(201,122,107,.15);
+}
+.loc-row { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.loc-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.loc-icon { width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: var(--terra-pale); border: 1px solid var(--terra-border); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+.loc-row p { font-size: 0.82rem; font-weight: 300; color: rgba(247,244,239,.45); line-height: 1.65; }
+.loc-row strong { color: var(--cream); font-weight: 500; }
+
+/* monoframe visual */
+.sobre-visual {
+  background: var(--black); border-radius: var(--radius); min-height: 320px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--black-border); position: relative; overflow: hidden;
+}
+.mono-big {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: clamp(7rem,16vw,14rem); color: rgba(247,244,239,.04); line-height: 1; letter-spacing: -0.04em; user-select: none;
+}
+.mono-badge {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--terra-border); border-radius: 50px;
+  padding: 8px 18px;
+}
+.mono-badge .mn { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.4rem; color: var(--terra); line-height: 1; }
+.mono-badge .ms { font-size: 0.6rem; color: var(--cream-muted); letter-spacing: 3px; display: block; }
+.mono-badge .ml { font-size: 0.5rem; color: rgba(247,244,239,.25); text-transform: uppercase; letter-spacing: .1em; display: block; }
+
+/* ── FOOTER ── */
+footer {
+  background: #080809; padding: 26px clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 14px; border-top: 1px solid var(--black-border);
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700;
+  font-size: 1.1rem; color: var(--cream);
+}
+footer p { font-size: 0.67rem; color: rgba(247,244,239,.18); }
+footer a { color: rgba(247,244,239,.28); text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--terra); }
+
+/* ── FAB ── */
+.wpp-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%; background: #25d366;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,.50);
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color: transparent;
+}
+.wpp-fab:hover { transform: scale(1.1); }
+.wpp-fab::before {
+  content: ''; position: absolute; inset: -7px; border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.4);
+  animation: ping 2.2s ease-out infinite;
+}
+@keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.7);opacity:0} }
+.wpp-fab svg { width: 24px; height: 24px; fill: white; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(28px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal.in { opacity:1; transform:none; }
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  header { padding: 16px 20px; } nav { display: none; }
+  .resultado { clip-path: none; padding-top: var(--section-pad); margin-top: 0; }
+  .res-inner { grid-template-columns: 1fr; }
+  .sobre-inner { grid-template-columns: 1fr; }
+  .hero { padding-bottom: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ch { animation: none; opacity: 1; transform: none; }
+  .hero-sub,.hero-badges,.hero-cta { animation: none; opacity: 1; }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .wpp-fab::before { animation: none; }
+  body::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">
+    Dr. Yurí Leite
+    <span>Botox · Preenchimento · Goiânia</span>
+  </a>
+  <nav>
+    <a href="#resultado">Resultado</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#sobre">Sobre</a>
+    <a href="https://wa.me/5562982042464" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
+</header>
+
+<!-- ── HERO TIPOGRÁFICO ── -->
+<div class="hero" id="home">
+  <div class="hero-mono" aria-hidden="true">YR</div>
+  <div class="hero-rule" aria-hidden="true"></div>
+  <div class="hero-top">Botox · Preenchimento Labial · Setor Sul · Goiânia</div>
+  <div class="hero-content">
+    <h1 class="hero-title" id="heroTitle"></h1>
+    <div class="hero-row">
+      <div>
+        <p class="hero-sub">Especialista em botox e preenchimento labial na Seven Odontologia, Setor Sul. Nota 5.0 perfeita no Google.</p>
+        <div class="hero-cta" style="margin-top:24px">
+          <a href="https://wa.me/5562982042464" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.938 1.397 5.617L0 24l6.548-1.375A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.99-1.364l-.358-.213-3.887.816.813-3.792-.234-.37A9.818 9.818 0 112 12 9.818 9.818 0 0112 21.818z"/></svg>
+            Agendar via WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="hero-badges">
+        <div class="badge">
+          <div class="badge-num">5.0</div>
+          <div>
+            <span class="badge-stars">★★★★★</span>
+            <span class="badge-lbl">Google Maps</span>
+          </div>
+        </div>
+        <div class="badge"><span class="badge-text">Seven Odonto · Setor Sul</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── RESULTADO ── -->
+<section class="resultado" id="resultado">
+  <div class="res-inner">
+    <div class="res-copy">
+      <div class="res-overline reveal">Resultado Real</div>
+      <h2 class="reveal">O resultado<br>fala por si.</h2>
+      <p class="reveal">Preenchimento labial que respeita a anatomia e entrega volume natural — sem exagero, sem artificialidade. O antes e o depois que você vê aqui é de paciente real atendido pelo Dr. Yurí.</p>
+      <p class="reveal">Botox e preenchimento com técnica precisa — cada procedimento pensado para o seu rosto, não para um padrão genérico.</p>
+      <div class="res-nota reveal">
+        <div class="num">5.0</div>
+        <div>
+          <span class="stars">★★★★★</span>
+          <span class="lbl">nota perfeita · Google Maps</span>
+        </div>
+      </div>
+      <a href="https://wa.me/5562982042464" target="_blank" rel="noopener" class="btn-primary reveal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.938 1.397 5.617L0 24l6.548-1.375A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.99-1.364l-.358-.213-3.887.816.813-3.792-.234-.37A9.818 9.818 0 112 12 9.818 9.818 0 0112 21.818z"/></svg>
+        Agendar Consulta
+      </a>
+    </div>
+    <div class="res-foto reveal">
+      <div class="res-frame">
+        <img src="imagens/maps-1.jpg" alt="Resultado de preenchimento labial — Dr. Yurí Leite" loading="lazy">
+        <div class="antes-depois-label">
+          <span class="ad-tag"><span>Antes</span></span>
+          <span class="ad-tag"><span>Depois</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVIÇOS ── -->
+<section class="servicos" id="servicos">
+  <div class="serv-header">
+    <div class="res-overline reveal">Procedimentos</div>
+    <h2 class="reveal">Técnica &amp;<br><em>precisão</em></h2>
+    <p class="reveal">Procedimentos estéticos faciais com foco em resultado natural e duradouro.</p>
+  </div>
+  <div class="serv-list">
+    <div class="serv-item reveal">
+      <span class="serv-num">01</span>
+      <div class="serv-info">
+        <h3>Toxina Botulínica (Botox)</h3>
+        <p>Suavização de linhas de expressão, lifting não cirúrgico — resultado natural, sem aparência congelada.</p>
+      </div>
+      <span class="serv-arrow" aria-hidden="true">→</span>
+    </div>
+    <div class="serv-item reveal">
+      <span class="serv-num">02</span>
+      <div class="serv-info">
+        <h3>Preenchimento Labial</h3>
+        <p>Definição, volume e contorno dos lábios com ácido hialurônico — para resultado proporcional e natural.</p>
+      </div>
+      <span class="serv-arrow" aria-hidden="true">→</span>
+    </div>
+    <div class="serv-item reveal">
+      <span class="serv-num">03</span>
+      <div class="serv-info">
+        <h3>Harmonização Facial</h3>
+        <p>Planejamento das proporções faciais — combinação de procedimentos para um resultado equilibrado.</p>
+      </div>
+      <span class="serv-arrow" aria-hidden="true">→</span>
+    </div>
+    <div class="serv-item reveal">
+      <span class="serv-num">04</span>
+      <div class="serv-info">
+        <h3>Preenchimento Facial</h3>
+        <p>Maçãs do rosto, olheiras, bigode chinês — contorno e rejuvenescimento com ácido hialurônico.</p>
+      </div>
+      <span class="serv-arrow" aria-hidden="true">→</span>
+    </div>
+    <div class="serv-item reveal">
+      <span class="serv-num">05</span>
+      <div class="serv-info">
+        <h3>Skinbooster</h3>
+        <p>Hidratação profunda com ácido hialurônico — pele mais luminosa, firme e rejuvenescida.</p>
+      </div>
+      <span class="serv-arrow" aria-hidden="true">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAIXA ── -->
+<div class="faixa">
+  <div class="faixa-mono" aria-hidden="true">YR</div>
+  <div class="faixa-num reveal">5.0</div>
+  <div class="faixa-stars reveal">★★★★★</div>
+  <div class="faixa-label reveal">nota perfeita · Google Maps</div>
+  <p class="faixa-quote reveal">"Botox &amp; lábios.<br>Técnica que o resultado comprova."</p>
+  <div class="faixa-cta reveal">
+    <a href="https://wa.me/5562982042464" target="_blank" rel="noopener" class="btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.898-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.938 1.397 5.617L0 24l6.548-1.375A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.99-1.364l-.358-.213-3.887.816.813-3.792-.234-.37A9.818 9.818 0 112 12 9.818 9.818 0 0112 21.818z"/></svg>
+      Agendar via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ── SOBRE ── -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div>
+      <div class="sobre-overline reveal">O Especialista</div>
+      <h2 class="reveal">Dr. Yurí<br><em>Leite</em></h2>
+      <p class="reveal">Especialista em botox e preenchimento labial com foco em resultado natural — procedimentos calibrados para cada rosto, sem exagero.</p>
+      <p class="reveal">Atende na Seven Odontologia, no Setor Sul de Goiânia — estrutura clínica completa para procedimentos estéticos faciais com conforto e segurança.</p>
+      <div class="loc-block reveal">
+        <div class="loc-row">
+          <div class="loc-icon" aria-hidden="true">📍</div>
+          <p><strong>Seven Odontologia</strong><br>R. 87, 215 — Setor Sul, Goiânia - GO</p>
+        </div>
+        <div class="loc-row">
+          <div class="loc-icon" aria-hidden="true">💬</div>
+          <p><strong>(62) 98204-2464</strong><br>WhatsApp para agendamentos</p>
+        </div>
+        <div class="loc-row">
+          <div class="loc-icon" aria-hidden="true">🕐</div>
+          <p><strong>Atendimento por agendamento</strong><br>Entre em contato para verificar disponibilidade</p>
+        </div>
+      </div>
+      <a href="https://wa.me/5562982042464" target="_blank" rel="noopener" class="btn-primary reveal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.938 1.397 5.617L0 24l6.548-1.375A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.99-1.364l-.358-.213-3.887.816.813-3.792-.234-.37A9.818 9.818 0 112 12 9.818 9.818 0 0112 21.818z"/></svg>
+        Agendar Consulta
+      </a>
+    </div>
+    <div class="sobre-visual reveal">
+      <div class="mono-big" aria-hidden="true">YR</div>
+      <div class="mono-badge">
+        <div class="mn">5.0</div>
+        <div>
+          <span class="ms">★★★★★</span>
+          <span class="ml">Google Maps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Dr. Yurí Leite</span>
+  <p>© 2025 Dr. Yurí Leite J — Botox · Preenchimento Labial · Setor Sul, Goiânia, GO</p>
+  <p><a href="https://wa.me/5562982042464" target="_blank" rel="noopener">(62) 98204-2464</a></p>
+</footer>
+
+<a href="https://wa.me/5562982042464" target="_blank" rel="noopener" class="wpp-fab" aria-label="Agendar com Dr. Yurí Leite via WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.938 1.397 5.617L0 24l6.548-1.375A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.99-1.364l-.358-.213-3.887.816.813-3.792-.234-.37A9.818 9.818 0 112 12 9.818 9.818 0 0112 21.818z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50), {passive:true});
+
+// char stagger hero
+const titleEl = document.getElementById('heroTitle');
+const text = 'Botox & lábios. Por Dr. Yurí.';
+let delay = 0.08;
+titleEl.innerHTML = text.split('').map(ch => {
+  if (ch === ' ') { delay += 0.01; return ' '; }
+  const d = delay.toFixed(3);
+  delay += 0.032;
+  return `<span class="ch" style="animation-delay:${d}s">${ch}</span>`;
+}).join('');
+
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+}), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
