@@ -55,6 +55,7 @@ const server = http.createServer((req, res) => {
       const next = Object.assign({}, cur);
       if ('msg' in patch) next.msg = !!patch.msg;
       if ('rej' in patch) next.rej = !!patch.rej;
+      if ('reanalise' in patch) next.reanalise = !!patch.reanalise;
       if ('reason' in patch) next.reason = String(patch.reason == null ? '' : patch.reason).slice(0, 2000);
       next.updatedAt = Date.now();
       status[slug] = next;

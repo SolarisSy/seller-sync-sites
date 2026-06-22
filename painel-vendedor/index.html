@@ -70,9 +70,14 @@ body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:fl
 .btn.warn{background:linear-gradient(135deg,#d97706,#b45309);box-shadow:0 4px 16px -4px rgba(217,119,6,.4)}
 .btn.warn:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(217,119,6,.5)}
 .btn.ghost-active{background:#1e2435;border-color:var(--acc);color:var(--acc)}
+.btn.info{background:linear-gradient(135deg,#0284c7,#0369a1);box-shadow:0 4px 16px -4px rgba(2,132,199,.4)}
+.btn.info:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(2,132,199,.5)}
+.btn.ok{background:linear-gradient(135deg,#16a34a,#15803d);box-shadow:0 4px 16px -4px rgba(22,163,74,.4)}
+.btn.ok:hover{transform:translateY(-2px);box-shadow:0 8px 20px -4px rgba(22,163,74,.5)}
 .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .dot.msg{background:#22c55e}
 .dot.rej{background:#ef4444}
+.dot.rev{background:#0ea5e9}
 /* FILTER BAR */
 .filter-bar{display:flex;gap:5px;padding:8px 12px;border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap}
 .filter-pill{font-size:11px;padding:4px 11px;border-radius:20px;border:1px solid var(--border);
@@ -81,6 +86,7 @@ body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:fl
 .filter-pill.on{background:var(--card);border-color:var(--acc);color:var(--txt)}
 .filter-pill.on.rej{border-color:#ef4444;color:#fca5a5}
 .filter-pill.on.msg{border-color:#22c55e;color:var(--acc)}
+.filter-pill.on.rev{border-color:#0ea5e9;color:#7dd3fc}
 /* STATS */
 .stats-bar{font-size:11px;color:var(--mut);padding:5px 16px 8px;display:flex;gap:12px;flex-shrink:0}
 /* REJECTED BANNER */
@@ -93,6 +99,12 @@ body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:fl
 .rej-note:focus{border-color:#ef4444}
 .rej-note::placeholder{color:var(--mut)}
 .rej-note-hint{font-size:11px;color:var(--acc);min-height:14px}
+/* RE-ANALISE BANNER */
+.rev-banner{background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.3);border-radius:10px;
+  padding:13px 15px;margin-bottom:20px;color:#7dd3fc;font-size:13px;display:flex;flex-direction:column;gap:8px}
+.rev-banner .rev-head{display:flex;align-items:center;gap:8px}
+.rev-banner .rev-prev{font-size:12px;color:var(--mut);line-height:1.5;background:#161a24;border-radius:7px;padding:8px 11px}
+.rev-banner .rev-prev b{color:#fca5a5}
 /* STATUS ACTIONS */
 .status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
@@ -166,6 +178,7 @@ pre.copy-text{padding:14px 16px;font:13px/1.7 var(--font);color:#c8d6f0;white-sp
     <button class="filter-pill on" data-filter="all" onclick="setFilter('all',this)">Todos</button>
     <button class="filter-pill msg" data-filter="msg" onclick="setFilter('msg',this)">✉ Enviados</button>
     <button class="filter-pill rej" data-filter="rej" onclick="setFilter('rej',this)">✗ Reprovados</button>
+    <button class="filter-pill rev" data-filter="reanalise" onclick="setFilter('reanalise',this)">↻ Re-análise</button>
     <button class="filter-pill" data-filter="pending" onclick="setFilter('pending',this)">Pendentes</button>
   </div>
   <div class="stats-bar" id="statsBar"></div>
@@ -198,6 +211,7 @@ function renderSidebar(leads) {
       : l.category.includes('saúde')||l.category.includes('stética') ? '✨' : '🏢';
     const st = getState(l.slug);
     const dot = st.rej ? `<span class="dot rej" title="Site reprovado"></span>`
+               : st.reanalise ? `<span class="dot rev" title="Em re-análise"></span>`
                : st.msg ? `<span class="dot msg" title="Mensagem enviada"></span>` : '';
     return `<div class="lead-item" data-idx="${l._idx}" onclick="selectLead(${l._idx})">
       ${thumb}
@@ -260,21 +274,32 @@ function selectLead(idx) {
     </div>
 
     ${st.rej ? `<div class="rej-banner">
-      <div class="rej-head">✗ <strong>Site reprovado</strong> — marcado para revisão e melhoria.</div>
+      <div class="rej-head">✗ <strong>Site reprovado</strong> — ajuste o site e depois envie para re-análise.</div>
       <div class="rej-note-label">Motivo da reprovação — o que precisa melhorar? (todos os vendedores veem)</div>
       <textarea class="rej-note" id="rejNote" placeholder="Ex.: hero com foto ruim, faltou WhatsApp, cores destoam da marca..."
         onfocus="editingReason=true"
         onblur="editingReason=false; saveReason('${esc(l.slug)}', this.value)">${esc(st.reason||'')}</textarea>
       <div class="rej-note-hint" id="rejNoteHint"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+        <button class="btn info" onclick="sendToReanalise('${esc(l.slug)}')">↻ Enviar para re-análise</button>
+        <button class="btn ghost" onclick="undoReject('${esc(l.slug)}')">Desfazer reprovação</button>
+      </div>
+    </div>` : ''}
+
+    ${st.reanalise ? `<div class="rev-banner">
+      <div class="rev-head">↻ <strong>Em re-análise</strong> — ajustado, aguardando nova avaliação.</div>
+      ${st.reason ? `<div class="rev-prev"><b>Motivo original da reprovação:</b> ${esc(st.reason)}</div>` : ''}
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+        <button class="btn ok" onclick="approveLead('${esc(l.slug)}')">✓ Aprovar</button>
+        <button class="btn danger" onclick="rejectAgain('${esc(l.slug)}')">✗ Reprovar de novo</button>
+      </div>
     </div>` : ''}
 
     <div class="status-actions">
       <button id="btnMsg" class="btn ${st.msg?'warn':'ghost'}" onclick="toggleMsg('${esc(l.slug)}')">
         ${st.msg ? '✉ Mensagem enviada' : '✉ Marcar mensagem enviada'}
       </button>
-      <button id="btnRej" class="btn ${st.rej?'danger':'ghost'}" onclick="toggleReject('${esc(l.slug)}')">
-        ${st.rej ? '✗ Reprovado' : '✗ Reprovar site'}
-      </button>
+      ${(!st.rej && !st.reanalise) ? `<button id="btnRej" class="btn ghost" onclick="reject('${esc(l.slug)}')">✗ Reprovar site</button>` : ''}
     </div>
 
     <div class="site-url-box">
@@ -366,8 +391,13 @@ async function patchState(slug, patch) {
   }
 }
 
-function toggleMsg(slug)    { patchState(slug, { msg: !getState(slug).msg }); }
-function toggleReject(slug) { patchState(slug, { rej: !getState(slug).rej }); }
+function toggleMsg(slug)       { patchState(slug, { msg: !getState(slug).msg }); }
+// Esteira de qualidade: reprovado → (ajuste) → re-análise → aprovado
+function reject(slug)          { patchState(slug, { rej: true,  reanalise: false }); }       // reprova
+function undoReject(slug)      { patchState(slug, { rej: false, reanalise: false }); }        // desfaz reprovação
+function sendToReanalise(slug) { patchState(slug, { rej: false, reanalise: true }); }         // ajustei → re-análise
+function rejectAgain(slug)     { patchState(slug, { rej: true,  reanalise: false }); }         // reprova de novo
+function approveLead(slug)     { patchState(slug, { rej: false, reanalise: false, reason: '' }); } // aprovado, limpa
 
 // ── FILTERS ───────────────────────────────────────────────────────
 let activeFilter = 'all';
@@ -387,7 +417,8 @@ function applyFilter() {
     if (!matchQ) return false;
     if (activeFilter === 'msg') return st.msg;
     if (activeFilter === 'rej') return st.rej;
-    if (activeFilter === 'pending') return !st.msg && !st.rej;
+    if (activeFilter === 'reanalise') return st.reanalise;
+    if (activeFilter === 'pending') return !st.msg && !st.rej && !st.reanalise;
     return true;
   });
 }
@@ -396,11 +427,13 @@ function updateStats() {
   const all = getStates();
   const msgCount = LEADS.filter(l => all[l.slug]?.msg).length;
   const rejCount = LEADS.filter(l => all[l.slug]?.rej).length;
+  const revCount = LEADS.filter(l => all[l.slug]?.reanalise).length;
   const bar = document.getElementById('statsBar');
   if (bar) bar.innerHTML = [
     msgCount ? `<span style="color:var(--acc)">✉ ${msgCount} enviados</span>` : '',
     rejCount ? `<span style="color:#ef4444">✗ ${rejCount} reprovados</span>` : '',
-    (!msgCount && !rejCount) ? '<span>Nenhum status ainda</span>' : '',
+    revCount ? `<span style="color:#7dd3fc">↻ ${revCount} re-análise</span>` : '',
+    (!msgCount && !rejCount && !revCount) ? '<span>Nenhum status ainda</span>' : '',
   ].filter(Boolean).join('<span style="opacity:.3">·</span>');
 }
 
