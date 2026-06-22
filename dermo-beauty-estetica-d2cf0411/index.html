@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dermo Beauty Estética — Goiânia</title>
+<meta name="description" content="Clínica de dermatoestética no Setor Oeste, Goiânia. Nota 5.0. Tratamentos de pele e beleza. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --lavender: #9b7ec1;
+    --lavender-deep: #7056a0;
+    --lavender-light: #c4a8e8;
+    --lavender-pale: #f2ecff;
+    --cream: #faf8f5;
+    --warm-gray: #8a8480;
+    --gold: #c9a84c;
+    --gold-light: #e0c46e;
+    --white: #ffffff;
+    --charcoal: #2c2c2c;
+    --gray: #7a7470;
+    --radius: 14px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--charcoal); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* ── HEADER ── */
+  header { position:fixed; top:0; left:0; right:0; z-index:100; padding:18px 48px; display:flex; align-items:center; justify-content:space-between; transition:background .35s, box-shadow .35s; }
+  header.scrolled { background:rgba(44,44,44,.97); backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(155,126,193,.2); }
+  .logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; letter-spacing:.08em; text-decoration:none; color:var(--white); }
+  .logo em { font-style:italic; color:var(--lavender-light); }
+  nav a { color:rgba(255,255,255,.6); text-decoration:none; margin-left:24px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; transition:color .2s; }
+  nav a:hover { color:var(--gold); }
+
+  /* ── HERO SPLIT ── */
+  .hero { display:grid; grid-template-columns:1fr 1fr; min-height:100vh; }
+  .hero-copy { background:linear-gradient(150deg,var(--lavender-deep) 0%,var(--lavender) 60%,#b090d0 100%); display:flex; flex-direction:column; justify-content:center; padding:120px 7% 80px; position:relative; overflow:hidden; }
+  .hero-copy::before { content:''; position:absolute; top:-80px; right:-80px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,.07); }
+  .hero-copy::after { content:''; position:absolute; bottom:-60px; left:-60px; width:240px; height:240px; border-radius:50%; background:rgba(255,255,255,.05); }
+  .eyebrow { display:flex; align-items:center; gap:12px; font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-light); margin-bottom:20px; position:relative; z-index:1; }
+  .eyebrow::before { content:''; width:28px; height:1px; background:var(--gold-light); }
+  h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,4.5vw,4.4rem); font-weight:300; line-height:1.07; color:var(--white); margin-bottom:18px; position:relative; z-index:1; }
+  h1 em { font-style:italic; color:var(--gold-light); }
+  .hero-sub { font-size:.87rem; color:rgba(255,255,255,.65); line-height:1.9; margin-bottom:28px; max-width:400px; font-weight:300; position:relative; z-index:1; }
+  .rating-row { display:flex; align-items:center; gap:14px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:50px; padding:10px 18px; margin-bottom:30px; width:fit-content; position:relative; z-index:1; }
+  .rating-row .num { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:300; color:var(--gold-light); line-height:1; }
+  .rating-row .stars { font-size:.75rem; color:var(--gold-light); letter-spacing:2px; }
+  .rating-row .lbl { font-size:.65rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.1em; }
+  .hero-img { position:relative; overflow:hidden; }
+  .hero-img img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; animation:kb 26s ease-in-out infinite alternate; }
+  @keyframes kb { from{transform:scale(1)} to{transform:scale(1.05)} }
+
+  /* BTNs */
+  .btn-gold { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--charcoal); font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 28px; border-radius:50px; text-decoration:none; box-shadow:0 6px 24px rgba(201,168,76,.35); transition:transform .2s, box-shadow .2s; position:relative; z-index:1; }
+  .btn-gold:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(201,168,76,.5); }
+  .btn-ghost { display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,.7); border:1px solid rgba(255,255,255,.25); padding:12px 22px; border-radius:50px; text-decoration:none; font-size:.78rem; margin-left:10px; transition:border-color .2s; position:relative; z-index:1; }
+  .btn-ghost:hover { border-color:var(--gold-light); color:var(--gold-light); }
+  .btn-lavender { display:inline-flex; align-items:center; gap:9px; background:linear-gradient(135deg,var(--lavender),var(--lavender-deep)); color:var(--white); font-weight:500; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 28px; border-radius:50px; text-decoration:none; box-shadow:0 6px 20px rgba(155,126,193,.35); transition:transform .2s; }
+  .btn-lavender:hover { transform:translateY(-3px); }
+
+  /* ── SECTIONS ── */
+  section { padding:92px 8%; }
+  .section-label { display:flex; align-items:center; gap:10px; font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--lavender); margin-bottom:10px; }
+  .section-label::after { content:''; height:1px; background:rgba(155,126,193,.3); width:36px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.5vw,2.9rem); font-weight:300; line-height:1.1; margin-bottom:12px; }
+  h2 em { font-style:italic; color:var(--lavender); }
+  .lead-p { color:var(--gray); max-width:500px; margin-bottom:48px; line-height:1.88; font-weight:300; font-size:.87rem; }
+
+  /* ── SOBRE ── */
+  .sobre { background:var(--white); }
+  .sobre-inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .sobre-img-wrap { border-radius:var(--radius); overflow:hidden; box-shadow:0 24px 56px rgba(155,126,193,.18); position:relative; }
+  .sobre-img-wrap img { width:100%; display:block; transition:transform .6s; }
+  .sobre-img-wrap:hover img { transform:scale(1.03); }
+  .sobre-copy p { font-size:.87rem; color:var(--gray); line-height:1.9; margin-bottom:14px; }
+  .nota-badge { display:inline-flex; align-items:center; gap:14px; background:var(--lavender-pale); border:1px solid rgba(155,126,193,.2); border-radius:50px; padding:12px 20px; margin:18px 0 26px; }
+  .nota-badge .num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; color:var(--lavender); line-height:1; }
+  .nota-badge .stars { font-size:.78rem; color:var(--lavender); letter-spacing:3px; }
+  .nota-badge .lbl { font-size:.68rem; color:var(--lavender); opacity:.7; text-transform:uppercase; letter-spacing:.1em; }
+  .feature { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-top:1px solid rgba(155,126,193,.1); }
+  .feature-icon { font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+  .feature p { font-size:.83rem; color:var(--gray); line-height:1.65; margin:0; }
+  .feature strong { color:var(--charcoal); }
+
+  /* ── PROCEDIMENTOS ── */
+  .procedimentos { background:var(--lavender-pale); }
+  .proc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
+  .proc-card { background:var(--white); border-radius:var(--radius); padding:28px 24px; border:1px solid rgba(155,126,193,.1); transition:transform .3s, box-shadow .3s, border-color .3s; }
+  .proc-card:hover { transform:translateY(-5px); box-shadow:0 16px 36px rgba(155,126,193,.15); border-color:rgba(155,126,193,.35); }
+  .proc-num { font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:300; color:rgba(155,126,193,.2); line-height:1; margin-bottom:10px; }
+  .proc-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--charcoal); margin-bottom:8px; }
+  .proc-card p { font-size:.82rem; color:var(--gray); line-height:1.72; }
+  .proc-tag { display:inline-block; margin-top:12px; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--lavender); border-bottom:1px solid rgba(155,126,193,.3); padding-bottom:2px; }
+
+  /* ── RATING ── */
+  .rating-strip { background:linear-gradient(135deg,var(--lavender-deep),var(--lavender)); padding:56px 8%; text-align:center; }
+  .rating-strip .big { font-family:'Cormorant Garamond',serif; font-size:7rem; font-weight:300; color:var(--white); line-height:1; }
+  .rating-strip .stars-lg { font-size:1.4rem; color:var(--gold-light); letter-spacing:6px; margin:6px 0 10px; }
+  .rating-strip p { color:rgba(255,255,255,.6); font-size:.86rem; }
+
+  /* ── LOCALIZAÇÃO ── */
+  .localizacao { background:var(--white); }
+  .loc-grid { display:grid; grid-template-columns:1fr 1fr; gap:52px; }
+  .loc-info h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:var(--charcoal); margin-bottom:24px; }
+  .loc-item { display:flex; gap:14px; margin-bottom:18px; }
+  .loc-icon { font-size:1rem; flex-shrink:0; margin-top:2px; }
+  .loc-item p { font-size:.86rem; color:var(--gray); line-height:1.72; }
+  .loc-item strong { color:var(--charcoal); }
+  .map-box { background:var(--lavender-pale); border-radius:var(--radius); height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid rgba(155,126,193,.15); color:var(--gray); }
+  .map-box a { background:linear-gradient(135deg,var(--lavender),var(--lavender-deep)); color:#fff; padding:11px 22px; border-radius:50px; text-decoration:none; font-size:.8rem; }
+
+  /* ── FOOTER ── */
+  footer { background:var(--charcoal); padding:28px 8%; display:flex; align-items:center; justify-content:space-between; border-top:1px solid rgba(155,126,193,.15); flex-wrap:wrap; gap:12px; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--gold); }
+  footer p { font-size:.74rem; color:rgba(255,255,255,.3); }
+  footer a { color:var(--lavender-light); text-decoration:none; }
+
+  /* ── WA FAB ── */
+  .wa-btn { position:fixed; bottom:26px; right:26px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 6px 22px rgba(37,211,102,.4); transition:transform .2s; }
+  .wa-btn:hover { transform:scale(1.1); }
+  .wa-btn::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.35); animation:ping 2s ease-out infinite; }
+  @keyframes ping { 0%{transform:scale(1);opacity:.8} 100%{transform:scale(1.6);opacity:0} }
+  .wa-btn svg { width:26px; height:26px; fill:white; }
+
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s, transform .65s; }
+  .reveal.in { opacity:1; transform:none; }
+  .reveal:nth-child(2){transition-delay:.1s}.reveal:nth-child(3){transition-delay:.2s}.reveal:nth-child(4){transition-delay:.3s}
+
+  @media(max-width:900px) {
+    header{padding:14px 20px;} nav{display:none;}
+    .hero{grid-template-columns:1fr; min-height:auto;}
+    .hero-img{height:60vw;}
+    .sobre-inner,.loc-grid{grid-template-columns:1fr;}
+    section{padding:64px 6%;}
+    .btn-ghost{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-img img{animation:none;}.reveal{transition:none;opacity:1;transform:none;}.wa-btn::before{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo"><em>Dermo Beauty</em> Estética</a>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5562993030434" target="_blank">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO SPLIT -->
+<div class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">Dermatoestética · Setor Oeste · Goiânia</div>
+    <h1>Sua pele,<br>nossa<br><em>especialidade.</em></h1>
+    <p class="hero-sub">Tratamentos estéticos com base dermocosmetológica — para quem quer resultado visível, duradouro e seguro.</p>
+    <div class="rating-row">
+      <div class="num">5.0</div>
+      <div><div class="stars">★★★★★</div><div class="lbl">Google Maps</div></div>
+    </div>
+    <div>
+      <a href="https://wa.me/5562993030434?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20procedimento%20na%20Dermo%20Beauty." target="_blank" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar Agora
+      </a>
+      <a href="#sobre" class="btn-ghost">Conhecer a Clínica</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/maps-1.jpg" alt="Sala de tratamento Dermo Beauty Estética — Goiânia" loading="eager">
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-img-wrap reveal">
+      <img src="imagens/maps-1.jpg" alt="Ambiente da Dermo Beauty Estética" loading="lazy">
+    </div>
+    <div class="reveal">
+      <div class="section-label">A Clínica</div>
+      <h2>Dermo Beauty —<br><em>pele que transforma</em></h2>
+      <p>A Dermo Beauty foi criada para quem não aceita resultado mediano. Com base dermocosmetológica, cada tratamento é planejado para a sua pele — não para a pele de qualquer um.</p>
+      <p>Ambiente projetado com cuidado, equipamentos modernos e protocolos atualizados. Setor Oeste, Goiânia.</p>
+      <div class="nota-badge">
+        <div class="num">5.0</div>
+        <div><div class="stars">★★★★★</div><div class="lbl">Google Maps</div></div>
+      </div>
+      <div class="feature"><div class="feature-icon">🔬</div><p><strong>Base dermocosmetológica</strong><br>Protocolos baseados em evidências, com ativos dermocosméticos de alta performance.</p></div>
+      <div class="feature"><div class="feature-icon">📍</div><p><strong>Setor Oeste, Goiânia</strong><br>R. R 17, 176 — ambiente clínico confortável e acolhedor.</p></div>
+      <div style="margin-top:24px;">
+        <a href="https://wa.me/5562993030434?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20procedimento." target="_blank" class="btn-lavender">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="procedimentos" id="procedimentos">
+  <div class="section-label">Nossos serviços</div>
+  <h2>Procedimentos <em>Dermo Beauty</em></h2>
+  <p class="lead-p">Tratamentos faciais e corporais com tecnologia e dermocosméticos de alta eficácia.</p>
+  <div class="proc-grid">
+    <div class="proc-card reveal"><div class="proc-num">01</div><h3>Limpeza de Pele Profunda</h3><p>Higienização com extração + protocolos calmantes e hidratantes. Pele limpa, uniforme e radiante.</p><span class="proc-tag">Base facial</span></div>
+    <div class="proc-card reveal"><div class="proc-num">02</div><h3>Peeling Químico</h3><p>Renovação celular com ácidos selecionados para manchas, acne e irregularidades de textura.</p><span class="proc-tag">Renovação</span></div>
+    <div class="proc-card reveal"><div class="proc-num">03</div><h3>Microagulhamento</h3><p>Indução de colágeno com microagulhas — reduz poros, cicatrizes e rugas com resultados progressivos.</p><span class="proc-tag">Anti-aging</span></div>
+    <div class="proc-card reveal"><div class="proc-num">04</div><h3>Hidratação & Revitalização</h3><p>Protocolos de hidratação com ativos dermocosméticos. Firmeza, luminosidade e proteção imediatas.</p><span class="proc-tag">Luminosidade</span></div>
+    <div class="proc-card reveal"><div class="proc-num">05</div><h3>Estética Corporal</h3><p>Drenagem, redução de medidas, criolipólise e tratamentos anticelulite com tecnologia avançada.</p><span class="proc-tag">Corporal</span></div>
+    <div class="proc-card reveal"><div class="proc-num">06</div><h3>Depilação</h3><p>Cera quente, cera fria e depilação a laser. Conforto, higiene e resultado duradouro.</p><span class="proc-tag">Duradouro</span></div>
+  </div>
+</section>
+
+<!-- RATING -->
+<div class="rating-strip">
+  <div class="big">5.0</div>
+  <div class="stars-lg">★★★★★</div>
+  <p>Nota perfeita no Google Maps — de clientes que confiam na Dermo Beauty</p>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="section-label">Onde estamos</div>
+  <h2>Setor <em>Oeste</em>, Goiânia</h2>
+  <div class="loc-grid">
+    <div class="loc-info">
+      <h3>Dermo Beauty Estética</h3>
+      <div class="loc-item"><div class="loc-icon">📍</div><div><p><strong>R. R 17, 176 — Qd. R15</strong><br>Setor Oeste, Goiânia - GO<br>CEP 74125-170</p></div></div>
+      <div class="loc-item"><div class="loc-icon">📞</div><div><p><strong>(62) 99303-0434</strong><br>WhatsApp e ligações</p></div></div>
+      <div class="loc-item"><div class="loc-icon">🕐</div><div><p><strong>Segunda a Sábado</strong><br>09h às 19h · Conforme agendamento</p></div></div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://wa.me/5562993030434?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20procedimento%20na%20Dermo%20Beauty." target="_blank" class="btn-gold">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-box">
+      <span style="font-size:2.2rem;">🗺️</span>
+      <p style="font-size:.85rem;text-align:center;max-width:200px;color:var(--gray);">R. R 17, 176 — Setor Oeste<br>Goiânia, GO</p>
+      <a href="https://www.google.com/maps/place/Dermo+Beauty+Est%C3%A9tica/@-16.685671,-49.2749536,17z" target="_blank" rel="noopener">Abrir no Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Dermo Beauty</span>
+  <p>© 2025 Dermo Beauty Estética — Goiânia, GO</p>
+  <p><a href="https://wa.me/5562993030434">(62) 99303-0434</a></p>
+</footer>
+
+<a href="https://wa.me/5562993030434?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20procedimento%20na%20Dermo%20Beauty." target="_blank" class="wa-btn" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 50));
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
