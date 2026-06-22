@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Lara Castro · Harmonização Facial em São Luís</title>
+<meta name="description" content="Harmonização facial com naturalidade e técnica na Ponta D'Areia, São Luís. Dra. Lara Castro — biomédica esteta, CRBM 12974. Avaliação pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfícies */
+  --bg-base:#0d1512;
+  --bg-surface:#101d18;
+  --bg-deep:#0a100d;
+  --bg-light:#f4f1ea;
+  --bg-light-inset:#ece6da;
+
+  /* texto */
+  --t-inverse:#f1ece1;
+  --t-inverse-soft:rgba(241,236,225,.72);
+  --t-inverse-muted:rgba(241,236,225,.48);
+  --t-primary:#1a201d;
+  --t-secondary:#42504a;
+  --t-muted:#8a948e;
+
+  /* marca + metálico */
+  --em:#1f5d4c;
+  --em-dark:#143f33;
+  --gold:#c9a86a;
+  --gold-light:#e3c98c;
+  --gold-subtle:rgba(201,168,106,.12);
+  --gold-border:rgba(201,168,106,.26);
+
+  --shadow-md:0 2px 4px rgba(0,0,0,.18),0 8px 22px rgba(0,0,0,.22),0 24px 48px rgba(0,0,0,.20);
+  --shadow-lg:0 6px 12px rgba(0,0,0,.22),0 20px 44px rgba(0,0,0,.28),0 48px 90px rgba(0,0,0,.30);
+  --shadow-gold:0 10px 30px rgba(31,93,76,.28),0 4px 12px rgba(20,63,51,.30);
+
+  --text-display:clamp(2.9rem,1.9rem + 4.6vw,6rem);
+  --text-h2:clamp(2rem,1.3rem + 2.7vw,3.3rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.9rem + .25vw,1.05rem);
+  --text-sm:clamp(.8rem,.74rem + .2vw,.9rem);
+
+  --lh-display:1.02; --lh-heading:1.12; --lh-body:1.78;
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1220px; --prose-max:62ch;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-base);
+  color:var(--t-inverse);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Fraunces',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400;line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--bg-deep)}
+
+.wrap{max-width:var(--content-max);margin:0 auto}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem);position:relative}
+
+/* overline */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
+}
+.overline::before{content:'';width:32px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* grain */
+.grain::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px;opacity:.045;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  border-radius:2px;cursor:pointer;
+  transition:transform .35s var(--ease),box-shadow .35s ease,background .35s ease,color .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--em),var(--em-dark));
+  color:var(--t-inverse);box-shadow:var(--shadow-gold);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(31,93,76,.4)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--t-inverse);
+  border:1px solid var(--gold-border);
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn .ico{width:17px;height:17px;flex:none}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(10,16,13,.92);backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--gold-border);padding:14px clamp(1.5rem,5vw,4rem);
+}
+.brand{font-family:'Fraunces',serif;font-size:1.18rem;letter-spacing:.02em;display:flex;flex-direction:column;line-height:1}
+.brand small{font-family:'Syne',sans-serif;font-size:.55rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:600}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.lnk{font-family:'Syne',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t-inverse-soft);font-weight:600;transition:color .3s ease}
+.nav a.lnk:hover{color:var(--gold)}
+.nav .btn{padding:.7rem 1.4rem;min-height:42px}
+@media(max-width:860px){.nav a.lnk{display:none}}
+
+/* ── HERO ── */
+.hero{
+  display:grid;grid-template-columns:45fr 55fr;
+  min-height:100dvh;position:relative;overflow:hidden;
+  background:var(--bg-base);
+}
+.hero-copy{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(7rem,12vh,9rem) clamp(1.5rem,5vw,4.5rem) clamp(3rem,7vh,5rem);
+  position:relative;z-index:3;background:var(--bg-base);
+}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:-.02em;max-width:13ch;margin:6px 0 26px;font-weight:380;
+}
+.hero-title .ln{display:block;overflow:hidden}
+.hero-title .w{display:inline-block;transform:translateY(110%);opacity:0;animation:wup .9s var(--ease) forwards}
+.hero-title em{font-style:italic;color:var(--gold);font-weight:300}
+.hero-title .ln:nth-child(1) .w{animation-delay:.25s}
+.hero-title .ln:nth-child(2) .w{animation-delay:.4s}
+.hero-title .ln:nth-child(3) .w{animation-delay:.55s}
+@keyframes wup{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:var(--t-inverse-soft);max-width:46ch;font-size:1.02rem;margin-bottom:34px;opacity:0;animation:fin 1s var(--ease) .75s forwards}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fin 1s var(--ease) .9s forwards}
+@keyframes fin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.hero-media{position:relative;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 22%;animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-media::before{content:'';position:absolute;inset:0;z-index:2;
+  background:linear-gradient(100deg,var(--bg-base) 0%,rgba(13,21,18,.35) 22%,transparent 50%);}
+.hero-media::after{content:'';position:absolute;inset:0;z-index:3;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px;opacity:.05;pointer-events:none;}
+/* badge nota */
+.hero-badge{
+  position:absolute;left:clamp(1.5rem,5vw,4.5rem);bottom:clamp(2rem,5vh,3.2rem);z-index:5;
+  display:flex;align-items:center;gap:14px;
+  padding:14px 20px;border-radius:3px;
+  background:rgba(16,29,24,.55);backdrop-filter:blur(12px) saturate(150%);
+  border:1px solid var(--gold-border);
+  box-shadow:0 8px 28px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);
+  opacity:0;animation:fin 1s var(--ease) 1.15s forwards;
+}
+.hero-badge .stars{display:flex;gap:2px}
+.hero-badge .stars svg{width:14px;height:14px;fill:var(--gold)}
+.hero-badge b{font-family:'Fraunces',serif;font-size:1.5rem;line-height:1;font-weight:400}
+.hero-badge span{font-size:.72rem;color:var(--t-inverse-soft);line-height:1.3;display:block}
+.scroll-hint{position:absolute;right:clamp(1.5rem,4vw,3rem);bottom:1.8rem;z-index:5;font-family:'Syne',sans-serif;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--t-inverse-muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:10px}
+.scroll-hint::after{content:'';width:1px;height:42px;background:linear-gradient(var(--gold),transparent)}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-media{height:78vw;min-height:340px;order:-1}
+  .hero-media img{animation:none;object-position:center 18%}
+  .hero-media::before{background:linear-gradient(180deg,transparent 45%,var(--bg-base) 100%)}
+  .hero-copy{padding-top:5.5rem}
+  .scroll-hint{display:none}
+  .hero-badge{left:1.4rem;bottom:auto;top:auto;position:absolute;bottom:1.4rem}
+}
+
+/* ── SOBRE ── */
+.about{background:var(--bg-light);color:var(--t-primary)}
+.about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(2.5rem,5vw,5rem);align-items:center}
+.about-img{position:relative}
+.about-img .main{border-radius:3px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;width:100%}
+.about-img .accent{
+  position:absolute;right:-22px;bottom:-30px;width:46%;aspect-ratio:3/4;object-fit:cover;
+  border-radius:3px;border:5px solid var(--bg-light);box-shadow:var(--shadow-md);
+}
+.about-img::before{content:'';position:absolute;left:-20px;top:-20px;width:60%;height:60%;border:1px solid var(--gold-border);border-radius:3px;z-index:-1}
+.about h2{font-size:var(--text-h2);color:var(--t-primary);max-width:15ch;margin-bottom:22px;letter-spacing:-.015em}
+.about h2 em{font-style:italic;color:var(--em)}
+.about p{color:var(--t-secondary);max-width:var(--prose-max);margin-bottom:18px;font-size:1.02rem}
+.about .sig{margin-top:14px;display:flex;align-items:center;gap:16px}
+.about .sig b{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400}
+.about .sig small{font-family:'Syne',sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.about .sig .line{width:46px;height:1px;background:var(--gold)}
+.credos{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.credos .c{display:flex;align-items:center;gap:9px;font-size:.82rem;color:var(--t-secondary);font-weight:400}
+.credos .c svg{width:18px;height:18px;stroke:var(--em);fill:none;stroke-width:1.5;flex:none}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}.about-img{max-width:440px;margin:0 auto}.about-img .accent{width:42%}}
+
+/* ── PROCEDIMENTOS ── */
+.proc{background:var(--bg-surface)}
+.proc-head{max-width:640px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head h2{font-size:var(--text-h2);letter-spacing:-.015em;max-width:16ch}
+.proc-head h2 em{font-style:italic;color:var(--gold)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(1rem,2vw,1.4rem)}
+.pcard{
+  padding:34px 30px;border-radius:3px;
+  background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.06);
+  transition:transform .4s var(--ease),box-shadow .4s ease,border-color .35s ease,background .35s ease;
+}
+.pcard:hover{transform:translateY(-7px);border-color:var(--gold-border);box-shadow:var(--shadow-md);background:linear-gradient(160deg,rgba(201,168,106,.06),rgba(255,255,255,.01))}
+.pcard .ic{width:42px;height:42px;margin-bottom:20px;color:var(--gold)}
+.pcard .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.3}
+.pcard h3{font-size:var(--text-h3);margin-bottom:10px;font-weight:420}
+.pcard p{color:var(--t-inverse-soft);font-size:.92rem;line-height:1.65}
+.pcard .ov{font-family:'Syne',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;display:block}
+
+/* ── RESULTADOS ── */
+.results{background:var(--bg-deep);position:relative}
+.results-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2.5rem,5vw,3.6rem)}
+.results-head h2{font-size:var(--text-h2);letter-spacing:-.015em;max-width:14ch}
+.results-head h2 em{font-style:italic;color:var(--gold)}
+.results-head .note{text-align:right;flex:none}
+.results-head .note b{font-family:'Fraunces',serif;font-size:clamp(2.6rem,6vw,3.6rem);display:block;line-height:1;font-weight:400}
+.results-head .note span{font-family:'Syne',sans-serif;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.8rem,1.8vw,1.3rem)}
+.res-grid figure{position:relative;border-radius:3px;overflow:hidden;box-shadow:var(--shadow-md)}
+.res-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .8s var(--ease)}
+.res-grid figure:hover img{transform:scale(1.05)}
+.res-grid figure::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,16,13,.65));pointer-events:none}
+.res-grid figcaption{position:absolute;left:16px;bottom:14px;z-index:2;font-family:'Syne',sans-serif;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t-inverse);font-weight:600}
+.res-grid figcaption::before{content:'';display:inline-block;width:22px;height:1px;background:var(--gold);margin-right:9px;vertical-align:middle}
+@media(max-width:760px){.res-grid{grid-template-columns:1fr 1fr}.res-grid figure:last-child{grid-column:span 2;aspect-ratio:auto}.res-grid figure:last-child img{aspect-ratio:16/10}}
+
+/* ── FILOSOFIA ── */
+.philo{background:var(--em-dark);position:relative;overflow:hidden}
+.philo .wrap{max-width:880px;text-align:center;position:relative;z-index:2}
+.philo .quote{font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(1.7rem,1.1rem + 2.8vw,3.1rem);line-height:1.28;letter-spacing:-.01em;}
+.philo .quote em{font-style:italic;color:var(--gold-light);font-weight:300}
+.philo .by{margin-top:30px;font-family:'Syne',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
+.philo::before{content:'';position:absolute;font-family:'Fraunces',serif;top:-2rem;left:50%;transform:translateX(-50%);font-size:14rem;color:rgba(201,168,106,.1);line-height:1;content:'“'}
+
+/* ── CONTATO ── */
+.contact{background:var(--bg-light);color:var(--t-primary)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:center}
+.contact h2{font-size:var(--text-h2);color:var(--t-primary);max-width:14ch;letter-spacing:-.015em;margin-bottom:20px}
+.contact h2 em{font-style:italic;color:var(--em)}
+.contact p{color:var(--t-secondary);max-width:48ch;margin-bottom:30px}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:22px;margin-bottom:34px}
+.info-list li{display:flex;gap:16px;align-items:flex-start}
+.info-list .ic{width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--em);}
+.info-list .ic svg{width:17px;height:17px;stroke:var(--bg-light);fill:none;stroke-width:1.6}
+.info-list .tt{font-family:'Syne',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;display:block;margin-bottom:3px}
+.info-list .vv{color:var(--t-primary);font-weight:400;font-size:1rem;line-height:1.4}
+.info-list .vv small{display:block;color:var(--t-muted);font-size:.84rem}
+.contact-media{position:relative}
+.contact-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;box-shadow:var(--shadow-lg)}
+.contact-media .tag{position:absolute;left:18px;bottom:18px;background:rgba(13,21,18,.6);backdrop-filter:blur(10px);border:1px solid var(--gold-border);padding:10px 16px;border-radius:3px;font-family:'Syne',sans-serif;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t-inverse);font-weight:600}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}.contact-media{max-width:440px;margin:0 auto;order:-1}}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-deep);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem;border-top:1px solid rgba(255,255,255,.06)}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;margin-bottom:2.6rem}
+.foot-brand{font-family:'Fraunces',serif;font-size:1.5rem}
+.foot-brand small{display:block;font-family:'Syne',sans-serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:7px;font-weight:600}
+.foot-soc{display:flex;gap:14px}
+.foot-soc a{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold-border);display:grid;place-items:center;transition:background .3s ease,border-color .3s ease,transform .3s ease}
+.foot-soc a:hover{background:var(--em);border-color:var(--em);transform:translateY(-3px)}
+.foot-soc svg{width:18px;height:18px;fill:var(--t-inverse-soft)}
+.foot-soc a:hover svg{fill:var(--t-inverse)}
+.foot-bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.06);font-size:.74rem;color:var(--t-inverse-muted)}
+.foot-bot a:hover{color:var(--gold)}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.44);transition:transform .25s var(--ease)}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+.reveal:nth-child(6){transition-delay:.35s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .hero-media img{animation:none!important}
+  .hero-title .w,.hero-sub,.hero-cta,.hero-badge{animation:none!important;opacity:1!important;transform:none!important}
+  .reveal{transition:none!important;opacity:1!important;transform:none!important}
+  .wa-fab::before{animation:none!important}
+  .res-grid img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">Lara Castro<small>Harmonização Facial</small></a>
+  <nav class="nav">
+    <a href="#sobre" class="lnk">A Doutora</a>
+    <a href="#proc" class="lnk">Procedimentos</a>
+    <a href="#resultados" class="lnk">Resultados</a>
+    <a href="#contato" class="lnk">Localização</a>
+    <a class="btn btn-primary" href="https://wa.me/5598981931334?text=Ol%C3%A1%2C%20Dra.%20Lara!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero grain" id="top">
+  <div class="hero-copy">
+    <span class="overline">Harmonização Facial · São Luís</span>
+    <h1 class="hero-title">
+      <span class="ln"><span class="w">Realce</span></span>
+      <span class="ln"><span class="w">o que</span></span>
+      <span class="ln"><span class="w"><em>já é seu.</em></span></span>
+    </h1>
+    <p class="hero-sub">Harmonização facial com naturalidade e técnica, no coração da Ponta D'Areia. Cada traço respeitado — cada resultado, o seu próprio rosto em sua melhor versão.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/5598981931334?text=Ol%C3%A1%2C%20Dra.%20Lara!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.84C0 5.31 5.34 0 11.9 0a11.82 11.82 0 018.41 3.49 11.74 11.74 0 013.48 8.36c0 6.53-5.34 11.84-11.9 11.84a11.94 11.94 0 01-5.7-1.45L.06 24zM6.6 20.13l.36.21a9.88 9.88 0 005.03 1.38 9.87 9.87 0 009.9-9.86 9.78 9.78 0 00-2.9-6.97A9.83 9.83 0 0011.9 1.99a9.87 9.87 0 00-9.9 9.85 9.8 9.8 0 001.5 5.25l.24.38-1 3.63 3.86-1.01z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn btn-ghost" href="#resultados">Ver resultados</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/maps-1.jpg" alt="Dra. Lara Castro, biomédica esteta em São Luís">
+    <div class="hero-badge">
+      <div>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 .6l3.7 7.4 8.3 1.2-6 5.8 1.4 8.2L12 19l-7.4 3.9 1.4-8.2-6-5.8 8.3-1.2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .6l3.7 7.4 8.3 1.2-6 5.8 1.4 8.2L12 19l-7.4 3.9 1.4-8.2-6-5.8 8.3-1.2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .6l3.7 7.4 8.3 1.2-6 5.8 1.4 8.2L12 19l-7.4 3.9 1.4-8.2-6-5.8 8.3-1.2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .6l3.7 7.4 8.3 1.2-6 5.8 1.4 8.2L12 19l-7.4 3.9 1.4-8.2-6-5.8 8.3-1.2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .6l3.7 7.4 8.3 1.2-6 5.8 1.4 8.2L12 19l-7.4 3.9 1.4-8.2-6-5.8 8.3-1.2z"/></svg>
+        </div>
+        <span>Avaliação <b style="font-size:.95rem">5,0</b> no Google</span>
+      </div>
+    </div>
+    <div class="scroll-hint">Role para descobrir</div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-img reveal">
+      <img class="main" src="imagens/insta-2.jpg" alt="Estética facial — resultado luminoso">
+      <img class="accent" src="imagens/insta-8.jpg" alt="Dra. Lara Castro em palestra na universidade">
+    </div>
+    <div class="about-copy">
+      <span class="overline reveal">A Doutora</span>
+      <h2 class="reveal">Técnica que respeita <em>a sua identidade.</em></h2>
+      <p class="reveal">Sou a Dra. Lara Castro, biomédica esteta em São Luís. Acredito que harmonização não é padronizar rostos — é entender o seu, e devolver a ele equilíbrio, frescor e confiança, sem nunca parecer "feito".</p>
+      <p class="reveal">Cada protocolo nasce de uma avaliação cuidadosa: anatomia, proporção e o que faz sentido para você. O resultado certo é aquele em que as pessoas notam que você está bem — não o que você fez.</p>
+      <div class="credos reveal">
+        <span class="c"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Biomédica esteta · CRBM 12974</span>
+        <span class="c"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Protocolos seguros e individuais</span>
+        <span class="c"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 9l7-7 7 7"/></svg>Atuação acadêmica e científica</span>
+      </div>
+      <div class="sig reveal">
+        <span class="line"></span><b>Dra. Lara Castro</b><small>São Luís — MA</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc grain" id="proc">
+  <div class="wrap">
+    <div class="proc-head">
+      <span class="overline reveal">O que fazemos</span>
+      <h2 class="reveal">Procedimentos pensados para <em>realçar, nunca mascarar.</em></h2>
+    </div>
+    <div class="proc-grid">
+      <article class="pcard reveal">
+        <div class="ic"><svg viewBox="0 0 48 48"><path d="M24 6c8 4 14 9 14 18 0 9-6 15-14 18-8-3-14-9-14-18 0-9 6-14 14-18z"/><path d="M16 26c4 3 12 3 16 0"/></svg></div>
+        <span class="ov">Contorno</span>
+        <h3>Contorno Facial</h3>
+        <p>Definição de mandíbula, mento e ângulos para um perfil mais elegante e harmônico.</p>
+      </article>
+      <article class="pcard reveal">
+        <div class="ic"><svg viewBox="0 0 48 48"><path d="M10 24c5-7 23-7 28 0-5 7-23 7-28 0z"/><path d="M16 24c3 4 13 4 16 0"/></svg></div>
+        <span class="ov">Lábios</span>
+        <h3>Lábios Naturais</h3>
+        <p>Volume e contorno sutis que valorizam o sorriso respeitando a sua expressão.</p>
+      </article>
+      <article class="pcard reveal">
+        <div class="ic"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="6"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M37 11l-4 4M15 33l-4 4"/></svg></div>
+        <span class="ov">Bioestímulo</span>
+        <h3>Bioestimuladores</h3>
+        <p>Estímulo natural de colágeno: firmeza e qualidade de pele que evoluem com o tempo.</p>
+      </article>
+      <article class="pcard reveal">
+        <div class="ic"><svg viewBox="0 0 48 48"><path d="M24 8c2 6 8 9 8 16a8 8 0 11-16 0c0-7 6-10 8-16z"/></svg></div>
+        <span class="ov">Hidratação</span>
+        <h3>Skinbooster</h3>
+        <p>Hidratação profunda e viço para uma pele descansada, luminosa e renovada.</p>
+      </article>
+      <article class="pcard reveal">
+        <div class="ic"><svg viewBox="0 0 48 48"><path d="M12 30c4-8 8-12 12-12s8 4 12 12"/><path d="M12 30c4 4 20 4 24 0"/><path d="M24 12v6"/></svg></div>
+        <span class="ov">Expressão</span>
+        <h3>Toxina Botulínica</h3>
+        <p>Suavização de linhas de expressão preservando a naturalidade do seu olhar.</p>
+      </article>
+      <article class="pcard reveal">
+        <div class="ic"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="11"/><path d="M30 30l8 8"/></svg></div>
+        <span class="ov">Início</span>
+        <h3>Avaliação Personalizada</h3>
+        <p>Antes de qualquer procedimento, um plano feito para o seu rosto e o seu objetivo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="results grain" id="resultados">
+  <div class="wrap">
+    <div class="results-head">
+      <div>
+        <span class="overline reveal">Resultados reais</span>
+        <h2 class="reveal">O antes e depois <em>fala por si.</em></h2>
+      </div>
+      <div class="note reveal"><b>5,0</b><span>Pacientes satisfeitas no Google</span></div>
+    </div>
+    <div class="res-grid">
+      <figure class="reveal"><img src="imagens/insta-4.jpg" alt="Antes e depois — contorno facial"><figcaption>Contorno facial</figcaption></figure>
+      <figure class="reveal"><img src="imagens/insta-5.jpg" alt="Antes e depois — harmonização"><figcaption>Harmonização</figcaption></figure>
+      <figure class="reveal"><img src="imagens/insta-3.jpg" alt="Antes e depois — definição"><figcaption>Definição de perfil</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FILOSOFIA -->
+<section class="philo grain">
+  <div class="wrap">
+    <p class="quote reveal">Não é sobre mudar o seu rosto. É sobre <em>se sentir ainda melhor</em> com ele.</p>
+    <p class="by reveal">— Dra. Lara Castro</p>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap contact-grid">
+    <div class="contact-copy">
+      <span class="overline reveal">Localização &amp; Contato</span>
+      <h2 class="reveal">Sua avaliação na <em>Ponta D'Areia.</em></h2>
+      <p class="reveal">Atendimento individual, com hora marcada, em um dos endereços mais nobres de São Luís. Comece pelo WhatsApp — respondo pessoalmente.</p>
+      <ul class="info-list">
+        <li class="reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span><span class="tt">Endereço</span><span class="vv">Av. Maestro João Nunes / Av. Ana Jansen, 9 — Torre II, Sala 406<small>Ponta D'Areia, São Luís — MA</small></span></span>
+        </li>
+        <li class="reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+          <span><span class="tt">WhatsApp</span><span class="vv">(98) 98193-1334<small>Resposta rápida, sem compromisso</small></span></span>
+        </li>
+        <li class="reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <span><span class="tt">Instagram</span><span class="vv">@dra.laracastro<small>Acompanhe resultados e novidades</small></span></span>
+        </li>
+      </ul>
+      <a class="btn btn-primary reveal" href="https://wa.me/5598981931334?text=Ol%C3%A1%2C%20Dra.%20Lara!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.84C0 5.31 5.34 0 11.9 0a11.82 11.82 0 018.41 3.49 11.74 11.74 0 013.48 8.36c0 6.53-5.34 11.84-11.9 11.84a11.94 11.94 0 01-5.7-1.45L.06 24zM6.6 20.13l.36.21a9.88 9.88 0 005.03 1.38 9.87 9.87 0 009.9-9.86 9.78 9.78 0 00-2.9-6.97A9.83 9.83 0 0011.9 1.99a9.87 9.87 0 00-9.9 9.85 9.8 9.8 0 001.5 5.25l.24.38-1 3.63 3.86-1.01z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+    <div class="contact-media reveal">
+      <img src="imagens/web-texture.jpg" alt="Procedimento estético facial">
+      <span class="tag">Ponta D'Areia · São Luís</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">Dra. Lara Castro<small>Harmonização Facial · São Luís</small></div>
+      <div class="foot-soc">
+        <a href="https://www.instagram.com/dra.laracastro/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1018.75 12 6.76 6.76 0 0012 5.25zm0 11.13A4.38 4.38 0 1116.38 12 4.38 4.38 0 0112 16.38zm6.97-11.4a1.58 1.58 0 11-1.57-1.58 1.58 1.58 0 011.57 1.58z"/></svg>
+        </a>
+        <a href="https://wa.me/5598981931334" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.84C0 5.31 5.34 0 11.9 0a11.82 11.82 0 018.41 3.49 11.74 11.74 0 013.48 8.36c0 6.53-5.34 11.84-11.9 11.84a11.94 11.94 0 01-5.7-1.45L.06 24zM6.6 20.13l.36.21a9.88 9.88 0 005.03 1.38 9.87 9.87 0 009.9-9.86 9.78 9.78 0 00-2.9-6.97A9.83 9.83 0 0011.9 1.99a9.87 9.87 0 00-9.9 9.85 9.8 9.8 0 001.5 5.25l.24.38-1 3.63 3.86-1.01z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Dra. Lara Castro — Harmonização Facial. Todos os direitos reservados.</span>
+      <span>Ponta D'Areia · São Luís — MA · <a href="https://wa.me/5598981931334" target="_blank" rel="noopener">(98) 98193-1334</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598981931334?text=Ol%C3%A1%2C%20Dra.%20Lara!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.84C0 5.31 5.34 0 11.9 0a11.82 11.82 0 018.41 3.49 11.74 11.74 0 013.48 8.36c0 6.53-5.34 11.84-11.9 11.84a11.94 11.94 0 01-5.7-1.45L.06 24zM6.6 20.13l.36.21a9.88 9.88 0 005.03 1.38 9.87 9.87 0 009.9-9.86 9.78 9.78 0 00-2.9-6.97A9.83 9.83 0 0011.9 1.99a9.87 9.87 0 00-9.9 9.85 9.8 9.8 0 001.5 5.25l.24.38-1 3.63 3.86-1.01zm11.79-5.38c-.16-.27-.59-.43-1.23-.75-.64-.32-3.79-1.87-4.38-2.08-.59-.21-1.02-.32-1.45.32-.43.64-1.66 2.08-2.03 2.51-.37.43-.75.48-1.39.16-.64-.32-2.7-.99-5.14-3.17-1.9-1.69-3.18-3.78-3.55-4.42-.37-.64-.04-.98.28-1.3.29-.29.64-.75.96-1.12.32-.37.43-.64.64-1.07.21-.43.11-.8-.05-1.12-.16-.32-1.45-3.49-1.98-4.78-.52-1.25-1.05-1.08-1.45-1.1l-1.23-.02c-.43 0-1.12.16-1.71.8-.59.64-2.24 2.19-2.24 5.34s2.3 6.19 2.62 6.62c.32.43 4.51 6.89 10.94 9.66 1.53.66 2.72 1.05 3.65 1.35 1.53.49 2.93.42 4.03.25 1.23-.18 3.79-1.55 4.32-3.04.53-1.49.53-2.77.37-3.04z"/></svg>
+</a>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>50)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver'in window)){
+    els.forEach(function(e){e.classList.add('in')});
+  }else{
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})
+    },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){obs.observe(e)});
+  }
+})();
+</script>
+</body>
+</html>
