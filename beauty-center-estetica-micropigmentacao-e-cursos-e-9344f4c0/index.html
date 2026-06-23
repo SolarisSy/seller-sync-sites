@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Center · Micropigmentação, Sobrancelhas & Cílios — São Luís</title>
+<meta name="description" content="O olhar que fala por você. Micropigmentação, design de sobrancelhas e extensão de cílios de alta estética em São Luís. Beauty Center · nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Superfície ── */
+  --bg-base:#f6f0ea;
+  --bg-surface:#fbf7f2;
+  --bg-inset:#ece2d8;
+  --bg-dark:#2a1622;
+
+  /* ── Texto ── */
+  --text-primary:#241019;
+  --text-secondary:#5a4750;
+  --text-muted:#9a8a90;
+  --text-inverse:#f6ece6;
+
+  /* ── Acento ameixa + dourado ── */
+  --accent:#6e3050;
+  --accent-dark:#4d1f38;
+  --accent-subtle:rgba(110,48,80,.10);
+  --accent-border:rgba(110,48,80,.20);
+  --gold:#c4a05a;
+  --gold-light:#e2c585;
+
+  /* ── Tipografia fluida ── */
+  --text-display:clamp(2.9rem,2rem + 4.4vw,6rem);
+  --text-h2:clamp(2rem,1.4rem + 2.6vw,3.3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(0.94rem,0.86rem + 0.3vw,1.05rem);
+  --text-sm:clamp(0.78rem,0.72rem + 0.2vw,0.875rem);
+  --lh-display:1.04;
+  --lh-heading:1.14;
+  --lh-body:1.74;
+  --ls-display:-0.015em;
+
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(42,22,34,.05),0 2px 6px rgba(42,22,34,.05);
+  --shadow-md:0 2px 4px rgba(42,22,34,.05),0 8px 18px rgba(42,22,34,.08),0 20px 40px rgba(42,22,34,.06);
+  --shadow-lg:0 4px 8px rgba(42,22,34,.05),0 16px 32px rgba(42,22,34,.08),0 40px 80px rgba(42,22,34,.10);
+  --shadow-accent:0 8px 24px rgba(110,48,80,.30);
+  --shadow-accent-strong:0 14px 34px rgba(110,48,80,.42);
+
+  /* ── Ritmo ── */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1180px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  line-height:var(--lh-heading);
+  letter-spacing:var(--ls-display);
+  font-optical-sizing:auto;
+  text-wrap:balance;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ── Overline ── */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Nunito Sans',sans-serif;
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+}
+.overline::before{content:'';width:30px;height:1px;background:var(--gold)}
+.overline.center{justify-content:center}
+.overline.center::after{content:'';width:30px;height:1px;background:var(--gold)}
+.overline.light{color:var(--gold-light)}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:0.95rem clamp(1.6rem,3vw,2.4rem);
+  min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:var(--text-inverse);
+  font-family:'Nunito Sans',sans-serif;
+  font-weight:600;font-size:0.8rem;letter-spacing:0.06em;
+  text-transform:uppercase;border-radius:50px;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s var(--ease),box-shadow .3s ease;
+  will-change:transform;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Nunito Sans',sans-serif;
+  font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--text-inverse);padding-bottom:4px;
+  border-bottom:1px solid rgba(226,197,133,.5);
+  transition:border-color .3s ease,gap .3s var(--ease);
+}
+.btn-ghost:hover{border-color:var(--gold-light);gap:15px}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(42,22,34,.94);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 1px 0 rgba(196,160,90,.22);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;flex-direction:column;line-height:1;color:var(--text-inverse)}
+.brand b{font-family:'Playfair Display',serif;font-weight:600;font-size:1.32rem;letter-spacing:.01em}
+.brand span{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-light);margin-top:5px}
+.nav{display:flex;gap:34px;align-items:center}
+.nav a.lnk{
+  font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;
+  color:var(--text-inverse);opacity:.82;transition:opacity .25s ease,color .25s ease;
+}
+.nav a.lnk:hover{opacity:1;color:var(--gold-light)}
+.nav-cta{
+  font-size:0.74rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:600;
+  color:var(--bg-dark);background:var(--gold);
+  padding:0.6rem 1.2rem;border-radius:50px;
+  transition:transform .25s var(--ease),background .25s ease;
+}
+.nav-cta:hover{transform:translateY(-2px);background:var(--gold-light)}
+@media(max-width:780px){.nav a.lnk{display:none}}
+
+/* ── HERO editorial ── */
+.hero{
+  position:relative;min-height:100dvh;
+  display:grid;align-items:end;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/web-gaze.jpg') center 28%/cover no-repeat;
+  animation:kb 26s ease-in-out infinite alternate;
+  z-index:0;
+}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(118deg,rgba(42,22,34,.86) 0%,rgba(42,22,34,.42) 42%,rgba(77,31,56,.18) 70%,rgba(110,48,80,.30) 100%),
+    linear-gradient(0deg,rgba(20,9,16,.78) 0%,transparent 40%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:190px;opacity:.06;
+}
+.hero-content{
+  position:relative;z-index:2;
+  width:100%;max-width:var(--content-max);margin:0 auto;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3.4rem,7vh,6rem);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:0.72rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:26px;
+}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold-light)}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  color:var(--text-inverse);font-weight:400;
+  max-width:15ch;margin-bottom:26px;
+}
+.hero-title em{font-style:italic;color:var(--gold-light);font-weight:500}
+.hero-title .word{display:inline-block;will-change:filter,opacity,transform}
+.hero-sub{
+  font-size:clamp(1rem,0.92rem + 0.4vw,1.18rem);
+  color:rgba(246,236,230,.85);max-width:46ch;
+  margin-bottom:38px;line-height:1.6;
+}
+.hero-actions{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.hero-rating{
+  position:absolute;top:clamp(6rem,16vh,9rem);right:clamp(1.5rem,6vw,5rem);z-index:2;
+  display:flex;flex-direction:column;align-items:flex-end;gap:6px;
+  padding:18px 22px;border-radius:16px;
+  background:rgba(246,236,230,.08);
+  backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(226,197,133,.22);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),0 12px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.14);
+}
+.hero-rating .num{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--text-inverse);line-height:1}
+.hero-rating .stars{display:flex;gap:3px}
+.hero-rating .stars svg{width:13px;height:13px;fill:var(--gold-light)}
+.hero-rating small{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,236,230,.7)}
+@media(max-width:560px){.hero-rating{display:none}}
+
+@keyframes blur-fade{
+  from{opacity:0;filter:blur(14px);transform:translateY(16px)}
+  to{opacity:1;filter:blur(0);transform:translateY(0)}
+}
+.bf{opacity:0;animation:blur-fade .9s var(--ease) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title .word:nth-child(2){animation-delay:.37s}
+.hero-title .word:nth-child(3){animation-delay:.49s}
+.hero-title .word:nth-child(4){animation-delay:.61s}
+.hero-title .word:nth-child(5){animation-delay:.73s}
+.hero-title .word:nth-child(6){animation-delay:.85s}
+.hero-eyebrow.bf{animation-delay:.05s}
+.hero-sub.bf{animation-delay:.95s}
+.hero-actions.bf{animation-delay:1.08s}
+
+/* ── Sections ── */
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.lead-p{max-width:var(--prose-max);color:var(--text-secondary);font-size:var(--text-body)}
+
+/* ── Sobre ── */
+.about{background:var(--bg-base)}
+.about-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.about h2{font-size:var(--text-h2);margin-bottom:24px;max-width:16ch}
+.about h2 em{font-style:italic;color:var(--accent)}
+.about p+p{margin-top:18px}
+.about-media{position:relative}
+.about-media img{width:100%;border-radius:6px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover}
+.about-media .frame{
+  position:absolute;inset:18px -18px -18px 18px;
+  border:1px solid var(--gold);border-radius:6px;z-index:-1;
+}
+.about-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:40px;flex-wrap:wrap}
+.stat .k{font-family:'Playfair Display',serif;font-size:2.3rem;color:var(--accent);line-height:1}
+.stat .l{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr;gap:3rem}.about-media{order:-1;max-width:480px}}
+
+/* ── Procedimentos ── */
+.serv{
+  background:var(--bg-inset);position:relative;
+  clip-path:polygon(0 2.5vw,100% 0,100% 100%,0 100%);
+  padding-top:calc(var(--section-pad) + 2.5vw);
+}
+.serv-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-head h2{font-size:var(--text-h2)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(110,48,80,.08);
+  border-radius:8px;padding:clamp(1.7rem,3vw,2.4rem);
+  box-shadow:var(--shadow-sm);
+  transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-ic{
+  width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;margin-bottom:22px;
+  background:var(--accent-subtle);
+}
+.serv-ic svg{width:23px;height:23px;stroke:var(--accent);stroke-width:1.4;fill:none}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:11px}
+.serv-card p{font-size:0.92rem;color:var(--text-secondary);line-height:1.62}
+.serv-card .tag{
+  display:inline-block;margin-top:18px;font-size:0.68rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--gold);font-weight:600;
+}
+
+/* ── Galeria ── */
+.gallery{background:var(--bg-base)}
+.gallery-head{text-align:center;max-width:var(--prose-max);margin:0 auto clamp(2.5rem,5vw,3.5rem)}
+.gallery-head h2{font-size:var(--text-h2)}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:clamp(150px,18vw,230px);gap:14px;
+}
+.g-item{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm)}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);filter:saturate(.98)}
+.g-item:hover img{transform:scale(1.07)}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+@media(max-width:760px){.gallery-grid{grid-template-columns:repeat(2,1fr)}.g-wide{grid-column:span 2}.g-tall{grid-row:span 1}}
+
+/* ── Academy (dark ameixa) ── */
+.academy{
+  position:relative;background:var(--bg-dark);color:var(--text-inverse);
+  overflow:hidden;
+}
+.academy::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:190px;opacity:.05;
+}
+.academy::after{
+  content:'';position:absolute;top:-30%;right:-12%;width:55%;height:160%;z-index:0;
+  background:radial-gradient(circle,rgba(110,48,80,.55),transparent 62%);
+}
+.academy-grid{position:relative;z-index:1;display:grid;grid-template-columns:0.95fr 1.05fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.academy h2{font-size:var(--text-h2);color:var(--text-inverse);margin-bottom:22px;max-width:15ch}
+.academy h2 em{font-style:italic;color:var(--gold-light)}
+.academy p{color:rgba(246,236,230,.78);max-width:48ch;margin-bottom:16px}
+.academy-media{position:relative}
+.academy-media img{width:100%;border-radius:6px;aspect-ratio:5/4;object-fit:cover;box-shadow:var(--shadow-lg)}
+.academy-list{list-style:none;margin:26px 0 34px;display:flex;flex-direction:column;gap:13px}
+.academy-list li{display:flex;align-items:center;gap:13px;font-size:0.95rem;color:rgba(246,236,230,.9)}
+.academy-list svg{width:18px;height:18px;stroke:var(--gold-light);stroke-width:1.6;fill:none;flex-shrink:0}
+@media(max-width:840px){.academy-grid{grid-template-columns:1fr;gap:2.5rem}.academy-media{order:-1;max-width:520px}}
+
+/* ── Localização ── */
+.loc{background:var(--bg-inset)}
+.loc-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.loc-media{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.loc-media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.loc-badge{
+  position:absolute;left:18px;bottom:18px;
+  font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+  color:var(--text-inverse);background:rgba(42,22,34,.66);
+  backdrop-filter:blur(8px);padding:8px 14px;border-radius:50px;
+  border:1px solid rgba(226,197,133,.28);
+}
+.loc h2{font-size:var(--text-h2);margin-bottom:22px;max-width:14ch}
+.loc-info{display:flex;flex-direction:column;gap:20px;margin:28px 0 34px}
+.loc-row{display:flex;gap:15px;align-items:flex-start}
+.loc-row svg{width:21px;height:21px;stroke:var(--accent);stroke-width:1.5;fill:none;flex-shrink:0;margin-top:2px}
+.loc-row b{display:block;font-family:'Nunito Sans';font-weight:600;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.loc-row span{color:var(--text-secondary);font-size:0.98rem}
+@media(max-width:840px){.loc-grid{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ── CTA final ── */
+.cta{
+  position:relative;background:var(--accent-dark);color:var(--text-inverse);
+  text-align:center;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:radial-gradient(circle at 50% 120%,rgba(196,160,90,.28),transparent 60%);
+}
+.cta .wrap{position:relative;z-index:1}
+.cta h2{font-size:var(--text-h2);max-width:18ch;margin:0 auto 20px;color:var(--text-inverse)}
+.cta h2 em{font-style:italic;color:var(--gold-light)}
+.cta p{max-width:44ch;margin:0 auto 36px;color:rgba(246,236,230,.82)}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark);color:rgba(246,236,230,.7);padding:46px clamp(1.5rem,6vw,5rem) 40px}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot-brand b{font-family:'Playfair Display',serif;font-weight:600;font-size:1.2rem;color:var(--text-inverse)}
+.foot-brand span{display:block;font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-light);margin-top:5px}
+.foot-grid p{font-size:0.8rem}
+.foot-wa{display:inline-flex;align-items:center;gap:9px;color:var(--gold-light);font-weight:600;font-size:0.88rem}
+.foot-wa svg{width:17px;height:17px;fill:var(--gold-light)}
+
+/* ── WA FAB ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);
+  transition:transform .2s var(--ease);
+}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{
+  content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.2s ease-out infinite;
+}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg{animation:none}
+  .reveal,.bf,.hero-title .word,.g-item img{transition:none;animation:none;opacity:1;transform:none;filter:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="brand" href="#top">
+    <b>Beauty Center</b>
+    <span>Estética do Olhar</span>
+  </a>
+  <nav class="nav">
+    <a class="lnk" href="#sobre">Sobre</a>
+    <a class="lnk" href="#procedimentos">Procedimentos</a>
+    <a class="lnk" href="#academy">Academy</a>
+    <a class="lnk" href="#localizacao">Onde estamos</a>
+    <a class="nav-cta" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Beauty%20Center." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="Olhar feminino com sobrancelhas e cílios em destaque"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-rating">
+    <span class="stars" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+    </span>
+    <span class="num">5,0</span>
+    <small>Avaliação · Google</small>
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow bf">São Luís · Maranhão</span>
+    <h1 class="hero-title">
+      <span class="word bf">O</span>
+      <span class="word bf">olhar</span>
+      <span class="word bf">que</span>
+      <span class="word bf"><em>fala</em></span>
+      <span class="word bf">por</span>
+      <span class="word bf">você.</span>
+    </h1>
+    <p class="hero-sub bf">Micropigmentação, design de sobrancelhas e extensão de cílios de alta estética. Acorde pronta — todos os dias.</p>
+    <div class="hero-actions bf">
+      <a class="btn-primary" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Beauty%20Center." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.61z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <div class="overline">A casa do olhar em São Luís</div>
+      <h2>Um centro feito para <em>realçar</em> a sua beleza natural.</h2>
+      <p class="lead-p">No Beauty Center, sobrancelha e cílios não são detalhe — são assinatura. Cada procedimento é desenhado para o seu rosto, com técnica, higiene e um acabamento que dura semanas no espelho.</p>
+      <p class="lead-p">É por isso que somos referência de estética do olhar na cidade: clientes que chegam por indicação e voltam porque o resultado fala por elas. Nota máxima no Google não é sorte — é cuidado em cada agendamento.</p>
+      <div class="about-stats">
+        <div class="stat"><div class="k">5,0</div><div class="l">Nota no Google</div></div>
+        <div class="stat"><div class="k">+4</div><div class="l">Especialidades do olhar</div></div>
+        <div class="stat"><div class="k">100%</div><div class="l">Foco no seu rosto</div></div>
+      </div>
+    </div>
+    <div class="about-media reveal">
+      <img src="imagens/web-brow2.jpg" alt="Close editorial de olhar com cílios e sobrancelhas trabalhadas" loading="lazy">
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="serv" id="procedimentos">
+  <div class="wrap">
+    <div class="serv-head reveal">
+      <div class="overline">Procedimentos</div>
+      <h2>A estética do olhar, do design ao acabamento.</h2>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Micropigmentação</h3>
+        <p>Sobrancelhas perfeitas que resistem ao tempo e à rotina. Técnica fio a fio e shadow, no formato que valoriza o seu rosto.</p>
+        <span class="tag">Resultado de longa duração</span>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24"><path d="M3 14c3-4 6-6 9-6s6 2 9 6"/><path d="M7 13v3M12 13v4M17 13v3"/></svg></div>
+        <h3>Design de Sobrancelhas</h3>
+        <p>Mapeamento e correção do formato com visagismo. A moldura certa que harmoniza o olhar e abre a expressão.</p>
+        <span class="tag">Sob medida pro seu rosto</span>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24"><path d="M2 12c4-5 16-5 20 0"/><path d="M5 12c0 3 2 5 4 5M19 12c0 3-2 5-4 5"/><path d="M12 13v6"/></svg></div>
+        <h3>Extensão de Cílios</h3>
+        <p>Volume e curvatura sob medida — do efeito natural ao mega volume. Olhar marcante sem precisar de máscara todo dia.</p>
+        <span class="tag">Acorde pronta</span>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10a1 1 0 010 .01M15 10a1 1 0 010 .01M8.5 15c1.5 1.5 5.5 1.5 7 0"/></svg></div>
+        <h3>Estética Facial</h3>
+        <p>Limpeza de pele e tratamentos que preparam a pele e elevam o resultado do olhar. Autoestima de dentro pra fora.</p>
+        <span class="tag">Pele renovada</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <div class="overline center">Nosso trabalho</div>
+      <h2>Detalhes que fazem o olhar.</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g-tall g-wide reveal"><img src="imagens/web-brow2.jpg" alt="Olhar com maquiagem editorial e cílios definidos" loading="lazy"></div>
+      <div class="g-item reveal"><img src="imagens/web-microblading.jpg" alt="Procedimento de sobrancelha sendo realizado" loading="lazy"></div>
+      <div class="g-item reveal"><img src="imagens/web-brow-detail.jpg" alt="Materiais de maquiagem em tons nude e dourado" loading="lazy"></div>
+      <div class="g-item g-wide reveal"><img src="imagens/web-treatment.jpg" alt="Tratamento facial em ambiente de estética" loading="lazy"></div>
+      <div class="g-item reveal"><img src="imagens/web-face-detail.jpg" alt="Pincéis e pós faciais em tons nude" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMY -->
+<section class="academy" id="academy">
+  <div class="wrap academy-grid">
+    <div class="academy-media reveal">
+      <img src="imagens/web-brow-detail.jpg" alt="Kit profissional de estética em tons nude e dourado" loading="lazy">
+    </div>
+    <div class="academy-copy reveal">
+      <div class="overline light">Beauty Center Academy</div>
+      <h2>Mais que um centro: uma <em>escola</em> do olhar.</h2>
+      <p>Quem domina a técnica também ensina. Na nossa academy, formamos profissionais que querem viver da estética do olhar com método e segurança.</p>
+      <ul class="academy-list">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg> Cursos de micropigmentação e design</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg> Extensão de cílios do básico ao avançado</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg> Prática supervisionada e certificado</li>
+      </ul>
+      <a class="btn-ghost" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20da%20Beauty%20Center%20Academy." target="_blank" rel="noopener">Quero saber dos cursos</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="loc" id="localizacao">
+  <div class="wrap loc-grid">
+    <div class="loc-media reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada do Beauty Center em São Luís — MA" loading="lazy">
+      <span class="loc-badge">Nossa casa · São Luís</span>
+    </div>
+    <div class="loc-copy reveal">
+      <div class="overline">Onde nos encontrar</div>
+      <h2>Venha viver a sua melhor versão.</h2>
+      <div class="loc-info">
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-5.7 7-11a7 7 0 10-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><b>Endereço</b><span>R. A, Q 11 - N 2 — Maranhão Novo, São Luís - MA, 65061-310</span></div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.69 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0122 16.92z"/></svg>
+          <div><b>WhatsApp</b><span>(98) 98464-1410</span></div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Atendimento</b><span>Com hora marcada — garanta o seu horário</span></div>
+        </div>
+      </div>
+      <a class="btn-primary" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Beauty%20Center." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.61z"/></svg>
+        Agendar avaliação
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="wrap">
+    <div class="overline center light reveal" style="justify-content:center">O seu olhar merece</div>
+    <h2 class="reveal">Pronta para acordar <em>impecável</em> todos os dias?</h2>
+    <p class="reveal">Chame a gente no WhatsApp, conte o que você sonha pro seu olhar e a gente desenha o procedimento ideal pra você.</p>
+    <div class="reveal">
+      <a class="btn-primary" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Beauty%20Center." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.61z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <b>Beauty Center</b>
+      <span>Estética do Olhar · São Luís — MA</span>
+    </div>
+    <p>R. A, Q 11 - N 2 — Maranhão Novo · Atendimento com hora marcada</p>
+    <a class="foot-wa" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Beauty%20Center." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.61z"/></svg>
+      (98) 98464-1410
+    </a>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598984641410?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Beauty%20Center." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.488-.61z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
