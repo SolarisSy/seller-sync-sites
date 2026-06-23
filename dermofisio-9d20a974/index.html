@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DermoFisio — Estética Dermato-Funcional em São Luís | Fisioterapia Estética</title>
+<meta name="description" content="DermoFisio — fisioterapia dermato-funcional em São Luís (Fátima). Drenagem, massagem modeladora, pós-operatório e tratamentos faciais com base científica. Nota 4,7 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Superfície ── */
+  --bg-base:#f7f9fb;
+  --bg-surface:#ffffff;
+  --bg-inset:#eef3f7;
+  --bg-dark:#0d1b29;
+  --bg-dark-2:#0a151f;
+
+  /* ── Texto ── */
+  --text-primary:#0f2030;
+  --text-secondary:#3f5366;
+  --text-muted:#8295a6;
+  --text-inverse:#eaf3fa;
+
+  /* ── Marca + acento ── */
+  --accent:#1d7fc4;
+  --accent-dark:#155f96;
+  --accent-subtle:rgba(29,127,196,.08);
+  --accent-border:rgba(29,127,196,.20);
+  --aqua:#2dd4bf;
+  --aqua-soft:rgba(45,212,191,.14);
+
+  /* ── Sombras (3 camadas) ── */
+  --shadow-sm:0 1px 2px rgba(13,27,41,.04),0 2px 6px rgba(13,27,41,.05);
+  --shadow-md:0 2px 4px rgba(13,27,41,.04),0 8px 18px rgba(13,27,41,.07),0 20px 40px rgba(13,27,41,.05);
+  --shadow-lg:0 4px 8px rgba(13,27,41,.05),0 16px 32px rgba(13,27,41,.08),0 40px 80px rgba(13,27,41,.10);
+  --shadow-accent:0 8px 22px rgba(29,127,196,.30);
+  --shadow-accent-strong:0 14px 34px rgba(29,127,196,.40);
+
+  /* ── Tipografia fluida ── */
+  --text-display:clamp(2.7rem,1.9rem + 4vw,5.2rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .25vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.02;--lh-heading:1.12;--lh-body:1.72;
+  --ls-display:-.02em;
+
+  /* ── Ritmo ── */
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1200px;--prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,1.8rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:var(--bg-base);color:var(--text-primary);
+  font-size:var(--text-body);line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading)}
+.serif{font-family:'Fraunces',Georgia,serif;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* ── Overline ── */
+.overline{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:700;color:var(--accent);margin-bottom:16px;
+}
+.overline::before{content:'';width:28px;height:1px;background:currentColor}
+.overline.aqua{color:var(--accent-dark)}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.1rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.05em;
+  text-transform:uppercase;border-radius:50px;border:none;cursor:pointer;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s var(--ease),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:.9rem 1.6rem;min-height:50px;
+  border:1px solid var(--accent-border);border-radius:50px;
+  font-weight:600;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--text-primary);
+  transition:border-color .25s ease,background .25s ease,transform .25s var(--ease);
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(247,249,251,.88);backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 var(--accent-border);padding-top:13px;padding-bottom:13px;
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.18rem;letter-spacing:-.01em}
+.logo .mark{
+  width:34px;height:34px;border-radius:9px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  display:grid;place-items:center;box-shadow:var(--shadow-sm);
+}
+.logo .mark svg{width:19px;height:19px}
+.logo b{color:var(--accent)}
+.nav-links{display:none;gap:34px;font-size:.9rem;font-weight:500;color:var(--text-secondary)}
+.nav-links a{transition:color .2s ease;position:relative}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{display:none}
+@media(min-width:900px){.nav-links{display:flex}.nav-cta{display:inline-flex}}
+
+/* ── HERO split ── */
+.hero{
+  position:relative;min-height:100dvh;display:grid;
+  grid-template-columns:1fr;align-items:stretch;overflow:hidden;
+}
+@media(min-width:980px){.hero{grid-template-columns:1.05fr .95fr}}
+.hero-copy{
+  position:relative;z-index:3;
+  padding:clamp(7rem,14vh,9rem) clamp(1.5rem,6vw,5rem) clamp(3rem,7vh,5rem);
+  display:flex;flex-direction:column;justify-content:center;
+  background:
+    radial-gradient(120% 90% at 0% 0%,rgba(29,127,196,.06),transparent 55%),
+    var(--bg-base);
+}
+.hero-copy::before{ /* malha técnica sutil */
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--accent-border) 1px,transparent 1px),linear-gradient(90deg,var(--accent-border) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(70% 60% at 18% 38%,#000,transparent 75%);
+  mask-image:radial-gradient(70% 60% at 18% 38%,#000,transparent 75%);
+}
+.hero-copy>*{position:relative}
+.hero h1{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:var(--ls-display);font-weight:800;max-width:14ch;margin-bottom:1.4rem;
+}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .85s var(--ease) forwards}
+.hero h1 .word:nth-child(1){animation-delay:.15s}
+.hero h1 .word:nth-child(2){animation-delay:.24s}
+.hero h1 .word:nth-child(3){animation-delay:.33s}
+.hero h1 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--accent)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero .lede{
+  font-size:clamp(1rem,.93rem + .35vw,1.18rem);color:var(--text-secondary);
+  max-width:46ch;margin-bottom:2.2rem;opacity:0;animation:fade-in .9s var(--ease) .55s forwards;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fade-in .9s var(--ease) .7s forwards}
+@keyframes fade-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* hero stat strip */
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3rem);margin-top:clamp(2.5rem,5vh,3.5rem);
+  padding-top:clamp(1.6rem,3vh,2.2rem);border-top:1px solid var(--accent-border);
+  opacity:0;animation:fade-in .9s var(--ease) .85s forwards;
+}
+.hstat .num{font-family:'Fraunces',serif;font-size:clamp(1.9rem,1.4rem + 1.6vw,2.6rem);font-weight:500;color:var(--text-primary);line-height:1;display:flex;align-items:baseline;gap:3px}
+.hstat .num .suf{font-size:.5em;color:var(--accent);font-family:'Manrope',sans-serif;font-weight:700}
+.hstat .lbl{font-size:.74rem;letter-spacing:.04em;color:var(--text-muted);text-transform:uppercase;margin-top:7px;font-weight:600}
+
+/* hero media */
+.hero-media{position:relative;min-height:46vh;overflow:hidden}
+@media(min-width:980px){.hero-media{min-height:100dvh}}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(13,27,41,.34) 0%,transparent 38%),linear-gradient(0deg,rgba(13,27,41,.28),transparent 40%)}
+.hero-media::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05}
+.media-badge{
+  position:absolute;left:clamp(1rem,3vw,1.8rem);bottom:clamp(1rem,3vw,1.8rem);z-index:3;
+  display:flex;align-items:center;gap:13px;padding:13px 18px;border-radius:16px;
+  background:rgba(255,255,255,.10);backdrop-filter:blur(13px) saturate(160%);-webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:0 2px 4px rgba(0,0,0,.10),0 10px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.22);
+  color:#fff;
+}
+.media-badge .stars{display:flex;gap:2px}
+.media-badge .stars svg{width:14px;height:14px;color:var(--aqua)}
+.media-badge .mb-num{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:500;line-height:1}
+.media-badge .mb-txt{font-size:.72rem;letter-spacing:.03em;opacity:.92}
+
+/* ── SOBRE ── */
+.about{background:var(--bg-surface);position:relative}
+.about-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
+@media(min-width:900px){.about-grid{grid-template-columns:.95fr 1.05fr}}
+.about h2{font-size:var(--text-h2);font-weight:700;letter-spacing:-.01em;margin-bottom:1.3rem;max-width:16ch}
+.about h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.about p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:1.1rem}
+.about-figure{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.about-figure img{width:100%;height:100%;object-fit:cover}
+.about-tag{
+  position:absolute;right:18px;top:18px;display:flex;align-items:center;gap:8px;
+  padding:9px 14px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  background:rgba(255,255,255,.14);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.22);color:#fff;
+}
+.about-tag span{width:7px;height:7px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 4px var(--aqua-soft)}
+.cred-list{list-style:none;margin-top:1.6rem;display:grid;gap:14px}
+.cred-list li{display:flex;gap:13px;align-items:flex-start;font-size:.96rem;color:var(--text-secondary)}
+.cred-list .ic{flex:none;width:26px;height:26px;border-radius:8px;background:var(--accent-subtle);display:grid;place-items:center;margin-top:1px}
+.cred-list .ic svg{width:15px;height:15px;color:var(--accent)}
+.cred-list b{color:var(--text-primary);font-weight:700}
+
+/* ── PROCEDIMENTOS ── */
+.proc{background:var(--bg-inset);position:relative}
+.proc-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.proc-head h2{font-size:var(--text-h2);font-weight:700;letter-spacing:-.01em;margin-bottom:1rem}
+.proc-head h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.proc-head p{color:var(--text-secondary)}
+.proc-grid{display:grid;grid-template-columns:1fr;gap:var(--gap-cards)}
+@media(min-width:640px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.proc-grid{grid-template-columns:1fr 1fr 1fr}}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(13,27,41,.06);border-radius:18px;
+  padding:clamp(1.6rem,3vw,2.1rem);box-shadow:var(--shadow-sm);
+  transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-ic{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;margin-bottom:1.2rem;
+  background:linear-gradient(135deg,var(--accent-subtle),var(--aqua-soft));border:1px solid var(--accent-border)}
+.serv-ic svg{width:24px;height:24px;color:var(--accent);stroke-width:1.6}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;margin-bottom:.6rem;letter-spacing:-.01em}
+.serv-card p{font-size:.94rem;color:var(--text-secondary);line-height:1.62}
+.serv-card .tagline{display:inline-block;margin-top:1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+
+/* ── DIFERENCIAIS (dark) ── */
+.why{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden;
+  clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.why::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:210px;opacity:.045}
+.why::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,212,191,.16),transparent 65%);top:-180px;right:-120px;pointer-events:none}
+.why .wrap{position:relative;z-index:2}
+.why .overline{color:var(--aqua)}
+.why h2{font-size:var(--text-h2);font-weight:700;letter-spacing:-.01em;max-width:18ch;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.why h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--aqua)}
+.why-grid{display:grid;grid-template-columns:1fr;gap:clamp(1.4rem,3vw,2.4rem)}
+@media(min-width:760px){.why-grid{grid-template-columns:1fr 1fr}}
+.why-item{display:flex;gap:18px;align-items:flex-start;padding-bottom:1.4rem;border-bottom:1px solid rgba(255,255,255,.10)}
+.why-item .n{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--aqua);flex:none;width:40px;font-weight:500}
+.why-item h3{font-size:1.18rem;font-weight:700;margin-bottom:.4rem}
+.why-item p{font-size:.93rem;color:rgba(234,243,250,.72);line-height:1.6}
+
+/* ── PROVA / NÚMEROS ── */
+.proof{background:var(--bg-surface)}
+.proof-grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3rem);align-items:center}
+@media(min-width:860px){.proof-grid{grid-template-columns:auto 1fr}}
+.proof-stats{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,2.6rem)}
+.pstat{padding:1.4rem 1.6rem;border-radius:16px;background:var(--bg-base);border:1px solid rgba(13,27,41,.05);box-shadow:var(--shadow-sm);text-align:left}
+.pstat .num{font-family:'Fraunces',serif;font-size:clamp(2.2rem,1.6rem + 2vw,3.1rem);font-weight:500;line-height:1;color:var(--accent);display:flex;align-items:baseline;gap:2px}
+.pstat .num .suf{font-family:'Manrope',sans-serif;font-size:.42em;font-weight:700;color:var(--aqua)}
+.pstat .lbl{font-size:.78rem;letter-spacing:.03em;color:var(--text-muted);text-transform:uppercase;margin-top:9px;font-weight:600}
+.proof-quote{max-width:38ch}
+.proof-quote .overline{margin-bottom:14px}
+.proof-quote h2{font-family:'Fraunces',serif;font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);font-weight:400;line-height:1.25;letter-spacing:-.01em;color:var(--text-primary)}
+.proof-quote h2 b{font-weight:600;color:var(--accent)}
+.proof-quote p{margin-top:1.2rem;color:var(--text-secondary);font-size:.96rem}
+
+/* ── LOCALIZAÇÃO / CTA ── */
+.loc{background:var(--bg-inset)}
+.loc-grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);align-items:stretch}
+@media(min-width:900px){.loc-grid{grid-template-columns:1.05fr .95fr}}
+.loc-info h2{font-size:var(--text-h2);font-weight:700;letter-spacing:-.01em;margin-bottom:1.2rem;max-width:15ch}
+.loc-info h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.loc-info p{color:var(--text-secondary);max-width:48ch;margin-bottom:1.8rem}
+.loc-list{list-style:none;display:grid;gap:16px;margin-bottom:2rem}
+.loc-list li{display:flex;gap:14px;align-items:flex-start}
+.loc-list .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--bg-surface);border:1px solid var(--accent-border);display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+.loc-list .ic svg{width:19px;height:19px;color:var(--accent)}
+.loc-list .lab{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700}
+.loc-list .val{font-weight:600;color:var(--text-primary);margin-top:2px}
+.loc-figure{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:300px}
+.loc-figure img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.loc-figure .pin{position:absolute;left:18px;bottom:18px;display:flex;align-items:center;gap:9px;padding:10px 15px;border-radius:50px;
+  background:rgba(13,27,41,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:.8rem;font-weight:600}
+.loc-figure .pin svg{width:15px;height:15px;color:var(--aqua)}
+
+/* CTA band */
+.cta-band{position:relative;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;overflow:hidden;text-align:center}
+.cta-band::after{content:'';position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.22),transparent 60%);top:-200px;left:-120px;pointer-events:none}
+.cta-band .wrap{position:relative;z-index:2;max-width:720px}
+.cta-band .overline{color:rgba(255,255,255,.85);justify-content:center}
+.cta-band .overline::before{background:rgba(255,255,255,.7)}
+.cta-band h2{font-size:var(--text-h2);font-weight:700;letter-spacing:-.01em;margin-bottom:1rem}
+.cta-band h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400}
+.cta-band p{color:rgba(255,255,255,.86);max-width:46ch;margin:0 auto 2.2rem}
+.cta-band .btn-light{
+  display:inline-flex;align-items:center;gap:11px;background:#fff;color:var(--accent-dark);
+  padding:1.05rem clamp(1.8rem,3.5vw,2.6rem);min-height:54px;border-radius:50px;font-weight:800;font-size:.85rem;
+  letter-spacing:.04em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);
+  transition:transform .3s var(--ease),box-shadow .3s ease;touch-action:manipulation;
+}
+.cta-band .btn-light:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.cta-band .btn-light svg{width:20px;height:20px;color:#25D366}
+
+/* footer */
+footer{background:var(--bg-dark-2);color:rgba(234,243,250,.6);padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start;max-width:var(--content-max);margin:0 auto;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-grid .logo{color:#fff}
+.foot-grid .logo b{color:var(--aqua)}
+.foot-col{font-size:.88rem;line-height:1.9}
+.foot-col strong{display:block;color:#fff;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.foot-col a:hover{color:var(--aqua)}
+.foot-bot{max-width:var(--content-max);margin:0 auto;padding-top:1.6rem;font-size:.78rem;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>.reveal:nth-child(2){transition-delay:.06s}
+.stagger>.reveal:nth-child(3){transition-delay:.12s}
+.stagger>.reveal:nth-child(4){transition-delay:.18s}
+.stagger>.reveal:nth-child(5){transition-delay:.24s}
+.stagger>.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-media img,.hero h1 .word,.hero .lede,.hero-actions,.hero-stats{animation:none!important;opacity:1!important;transform:none!important}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  *{animation-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="logo" aria-label="DermoFisio — início">
+    <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-4.3-9-9A5 5 0 0 1 12 6a5 5 0 0 1 9 6c-2.5 4.7-9 9-9 9Z"/><path d="M3.5 12h4l1.5-3 2.5 6 1.5-3h4"/></svg>
+    </span>
+    Dermo<b>Fisio</b>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A clínica</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#diferenciais">Por que nós</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+  <a class="btn-primary nav-cta" href="https://wa.me/5598987332198?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20DermoFisio%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38h.01c5.45 0 9.89-4.43 9.9-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.07 2c-5.46 0-9.9 4.43-9.9 9.88a9.82 9.82 0 0 0 1.51 5.26l.24.38-1 3.63 3.68-.96zM17.5 14.3c-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97-.47-.15-.67.15-.77.96-.94 1.16-.35.22-.64.07a8.1 8.1 0 0 1-2.39-1.47 8.96 8.96 0 0 1-1.65-2.06c-.17-.3 0-.45.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.46 1.06 2.86 1.21 3.06c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
+    Agendar
+  </a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="overline">Fisioterapia Dermato-Funcional · São Luís — MA</span>
+      <h1>
+        <span class="line"><span class="word">Estética</span></span>
+        <span class="line"><span class="word">com base</span></span>
+        <span class="line"><span class="word"><em>científica.</em></span></span>
+      </h1>
+      <p class="lede">Drenagem, massagem modeladora, pós-operatório e tratamentos faciais conduzidos por quem entende de fisiologia. Resultado real, cuidado clínico — no coração de São Luís.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5598987332198?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20DermoFisio%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38h.01c5.45 0 9.89-4.43 9.9-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.07 2c-5.46 0-9.9 4.43-9.9 9.88a9.82 9.82 0 0 0 1.51 5.26l.24.38-1 3.63 3.68-.96zM17.5 14.3c-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97-.47-.15-.67.15-.77.96-.94 1.16-.35.22-.64.07a8.1 8.1 0 0 1-2.39-1.47 8.96 8.96 0 0 1-1.65-2.06c-.17-.3 0-.45.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.46 1.06 2.86 1.21 3.06c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="num"><span data-count="4.7" data-dec="1">0,0</span></div>
+          <div class="lbl">Nota no Google</div>
+        </div>
+        <div class="hstat">
+          <div class="num"><span data-count="8" >0</span><span class="suf">+</span></div>
+          <div class="lbl">Procedimentos</div>
+        </div>
+        <div class="hstat">
+          <div class="num"><span data-count="100">0</span><span class="suf">%</span></div>
+          <div class="lbl">Base fisioterápica</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="imagens/web-skincare.jpg" alt="Profissional do DermoFisio aplicando tratamento facial em cliente" loading="eager">
+      <div class="media-badge">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.8 6 20.3 7.3 13.6l-5-4.6 6.8-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.8 6 20.3 7.3 13.6l-5-4.6 6.8-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.8 6 20.3 7.3 13.6l-5-4.6 6.8-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.8 6 20.3 7.3 13.6l-5-4.6 6.8-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.8 6 20.3 7.3 13.6l-5-4.6 6.8-.8z"/></svg>
+        </div>
+        <div>
+          <div class="mb-num">4,7</div>
+          <div class="mb-txt">Avaliação no Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="overline">A clínica</span>
+        <h2>Não é estética comum. É <em>fisioterapia aplicada</em> ao seu corpo.</h2>
+        <p>O DermoFisio nasceu para tratar a estética com o rigor de quem estudou o corpo de verdade. A dermato-funcional vai além do relaxamento: é ciência aplicada à pele, à musculatura e à circulação, com protocolo individual e acompanhamento de resultado.</p>
+        <p>Por isso quem busca redução de medidas, recuperação pós-cirúrgica ou revitalização facial em São Luís confia aqui — e nos dá 4,7 no Google.</p>
+        <ul class="cred-list">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Avaliação individual</b> antes de qualquer protocolo — nada de pacote genérico.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Conduta fisioterápica</b>, base anatômica e fisiológica em cada técnica.</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Resultado acompanhado</b> sessão a sessão, com ajuste ao seu objetivo.</span></li>
+        </ul>
+      </div>
+      <figure class="about-figure reveal">
+        <img src="imagens/web-treatment.jpg" alt="Procedimento estético facial em andamento no DermoFisio">
+        <div class="about-tag"><span></span>Atendimento clínico</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROCEDIMENTOS -->
+  <section class="proc" id="procedimentos">
+    <div class="wrap">
+      <div class="proc-head reveal">
+        <span class="overline">Procedimentos</span>
+        <h2>Protocolos para <em>corpo e face</em>, conduzidos com técnica.</h2>
+        <p>Da drenagem ao pós-operatório, cada tratamento é definido depois de avaliar o seu caso. Veja o que cuidamos no DermoFisio.</p>
+      </div>
+      <div class="proc-grid stagger">
+
+        <article class="serv-card reveal">
+          <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 6-4 9 0s6 4 9 0"/><path d="M3 17c3-4 6-4 9 0s6 4 9 0"/></svg></div>
+          <h3>Drenagem linfática</h3>
+          <p>Estímulo manual do sistema linfático para reduzir inchaço, retenção e dar leveza ao corpo — técnica precisa, sem agredir.</p>
+          <span class="tagline">Desinche · Circulação</span>
+        </article>
+
+        <article class="serv-card reveal">
+          <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c2-5 4-7 8-7s6 2 8 7"/><circle cx="12" cy="6" r="2.5"/></svg></div>
+          <h3>Massagem modeladora</h3>
+          <p>Movimentos firmes e direcionados para modelar o contorno corporal, ativar a circulação e trabalhar a gordura localizada.</p>
+          <span class="tagline">Contorno · Medidas</span>
+        </article>
+
+        <article class="serv-card reveal">
+          <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-10a4.5 4.5 0 0 1 9-2 4.5 4.5 0 0 1 9 2c-2 5.5-9 10-9 10Z"/></svg></div>
+          <h3>Recuperação pós-operatória</h3>
+          <p>Acompanhamento dermato-funcional no pós-cirúrgico: reduz edema, previne fibrose e acelera a recuperação com segurança.</p>
+          <span class="tagline">Pós-cirúrgico · Cuidado</span>
+        </article>
+
+        <article class="serv-card reveal">
+          <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="7"/><path d="M9 11a3 3 0 0 1 6 0"/><path d="M12 2v2M12 18v4"/></svg></div>
+          <h3>Revitalização facial</h3>
+          <p>Protocolos para viço, firmeza e textura da pele do rosto — limpeza profunda, estímulo de colágeno e cuidado contínuo.</p>
+          <span class="tagline">Pele · Viço</span>
+        </article>
+
+        <article class="serv-card reveal">
+          <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7"/><path d="M9 11v6M15 11v6"/></svg></div>
+          <h3>Tratamento de flacidez</h3>
+          <p>Técnicas para firmeza de pele e tônus muscular, combatendo a flacidez de corpo e face com estímulo direcionado.</p>
+          <span class="tagline">Firmeza · Tônus</span>
+        </article>
+
+        <article class="serv-card reveal">
+          <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+          <h3>Avaliação personalizada</h3>
+          <p>Antes de tudo, um diagnóstico do seu caso para montar o protocolo certo. É aqui que começa todo resultado.</p>
+          <span class="tagline">Diagnóstico · Plano</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="why" id="diferenciais">
+    <div class="wrap">
+      <span class="overline">Por que o DermoFisio</span>
+      <h2 class="reveal">O cuidado de uma <em>clínica</em>, a técnica de quem entende fisiologia.</h2>
+      <div class="why-grid stagger">
+        <div class="why-item reveal"><span class="n">01</span><div><h3>Base científica real</h3><p>Cada técnica tem fundamento anatômico e fisiológico — não improviso. É dermato-funcional de verdade.</p></div></div>
+        <div class="why-item reveal"><span class="n">02</span><div><h3>Protocolo individual</h3><p>Seu corpo, seu objetivo, seu plano. Avaliamos antes e ajustamos a cada sessão.</p></div></div>
+        <div class="why-item reveal"><span class="n">03</span><div><h3>Resultado acompanhado</h3><p>Você vê a evolução. Medimos, comparamos e mantemos você no caminho do resultado.</p></div></div>
+        <div class="why-item reveal"><span class="n">04</span><div><h3>Ambiente clínico e discreto</h3><p>Atendimento reservado, higiene e conforto — do pós-operatório à revitalização facial.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA -->
+  <section class="proof">
+    <div class="wrap proof-grid">
+      <div class="proof-stats reveal stagger">
+        <div class="pstat reveal"><div class="num"><span data-count="4.7" data-dec="1">0,0</span></div><div class="lbl">Nota no Google</div></div>
+        <div class="pstat reveal"><div class="num"><span data-count="8">0</span><span class="suf">+</span></div><div class="lbl">Procedimentos</div></div>
+        <div class="pstat reveal"><div class="num"><span data-count="100">0</span><span class="suf">%</span></div><div class="lbl">Conduta fisioterápica</div></div>
+        <div class="pstat reveal"><div class="num"><span data-count="1">0</span></div><div class="lbl">Endereço fixo em Fátima</div></div>
+      </div>
+      <div class="proof-quote reveal">
+        <span class="overline">Reputação</span>
+        <h2>Quem trata aqui <b>recomenda</b>. É por isso que somos referência em dermato-funcional na região.</h2>
+        <p>A nota 4,7 no Google é construída sessão a sessão — com resultado, cuidado e atendimento próximo. Venha conferir por que tantas clientes confiam no DermoFisio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="loc" id="localizacao">
+    <div class="wrap loc-grid">
+      <div class="loc-info reveal">
+        <span class="overline">Localização &amp; contato</span>
+        <h2>Fácil de chegar, <em>no bairro Fátima.</em></h2>
+        <p>Estamos em São Luís — MA, com atendimento por agendamento. Marque sua avaliação direto pelo WhatsApp e escolha o melhor horário.</p>
+        <ul class="loc-list">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><div class="lab">Endereço</div><div class="val">R. Armando Vieira Silva, 43 — Fátima, São Luís - MA</div></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></span><div><div class="lab">WhatsApp</div><div class="val">(98) 98733-2198</div></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><div class="lab">Atendimento</div><div class="val">Por agendamento</div></div></li>
+        </ul>
+        <a class="btn-primary" href="https://wa.me/5598987332198?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20DermoFisio%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38h.01c5.45 0 9.89-4.43 9.9-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.07 2c-5.46 0-9.9 4.43-9.9 9.88a9.82 9.82 0 0 0 1.51 5.26l.24.38-1 3.63 3.68-.96zM17.5 14.3c-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97-.47-.15-.67.15-.77.96-.94 1.16-.35.22-.64.07a8.1 8.1 0 0 1-2.39-1.47 8.96 8.96 0 0 1-1.65-2.06c-.17-.3 0-.45.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.46 1.06 2.86 1.21 3.06c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <figure class="loc-figure reveal">
+        <img src="imagens/web-body.jpg" alt="Sessão de massagem modeladora no DermoFisio em São Luís">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>Fátima · São Luís — MA</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <span class="overline">Sua avaliação</span>
+      <h2 class="reveal">Pronta para o <em>seu resultado?</em></h2>
+      <p class="reveal">Agende uma avaliação no DermoFisio e descubra o protocolo certo para o seu objetivo. É rápido, é pelo WhatsApp, e o primeiro passo é uma conversa.</p>
+      <a class="btn-light reveal" href="https://wa.me/5598987332198?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20DermoFisio%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38h.01c5.45 0 9.89-4.43 9.9-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.07 2c-5.46 0-9.9 4.43-9.9 9.88a9.82 9.82 0 0 0 1.51 5.26l.24.38-1 3.63 3.68-.96zM17.5 14.3c-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97-.47-.15-.67.15-.77.96-.94 1.16-.35.22-.64.07a8.1 8.1 0 0 1-2.39-1.47 8.96 8.96 0 0 1-1.65-2.06c-.17-.3 0-.45.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.46 1.06 2.86 1.21 3.06c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
+        Agendar minha avaliação
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <a href="#top" class="logo">
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-4.3-9-9A5 5 0 0 1 12 6a5 5 0 0 1 9 6c-2.5 4.7-9 9-9 9Z"/><path d="M3.5 12h4l1.5-3 2.5 6 1.5-3h4"/></svg></span>
+        Dermo<b>Fisio</b>
+      </a>
+      <p style="margin-top:14px;max-width:34ch;font-size:.88rem">Fisioterapia dermato-funcional e estética avançada em São Luís — MA.</p>
+    </div>
+    <div class="foot-col">
+      <strong>Navegação</strong>
+      <a href="#sobre">A clínica</a><br>
+      <a href="#procedimentos">Procedimentos</a><br>
+      <a href="#diferenciais">Por que nós</a><br>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <strong>Contato</strong>
+      R. Armando Vieira Silva, 43<br>
+      Fátima · São Luís — MA<br>
+      <a href="https://wa.me/5598987332198" target="_blank" rel="noopener">WhatsApp (98) 98733-2198</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© <span id="yr">2026</span> DermoFisio · Todos os direitos reservados.</span>
+    <span>São Luís — Maranhão</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598987332198?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20DermoFisio%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38h.01c5.45 0 9.89-4.43 9.9-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.07 2c-5.46 0-9.9 4.43-9.9 9.88a9.82 9.82 0 0 0 1.51 5.26l.24.38-1 3.63 3.68-.96zM17.5 14.3c-.07-.12-.27-.2-.57-.35s-1.76-.87-2.03-.97-.47-.15-.67.15-.77.96-.94 1.16-.35.22-.64.07a8.1 8.1 0 0 1-2.39-1.47 8.96 8.96 0 0 1-1.65-2.06c-.17-.3 0-.45.13-.6.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5l-.57-.02c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.46 1.06 2.86 1.21 3.06c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42z"/></svg>
+</a>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // header sticky
+  var hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', function(){ hdr.classList.toggle('scrolled', window.scrollY > 50); }, {passive:true});
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // count-up
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    if(reduce){ el.textContent = fmt(target, dec); return; }
+    var dur = 1500, start = null;
+    function fmt(v, d){ return v.toFixed(d).replace('.', ','); }
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start)/dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * eased, dec);
+      if(p < 1) requestAnimationFrame(step); else el.textContent = fmt(target, dec);
+    }
+    requestAnimationFrame(step);
+  }
+  function fmt(v, d){ return v.toFixed(d).replace('.', ','); }
+
+  // reveal + trigger count-up
+  var counted = new WeakSet();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.querySelectorAll('[data-count]').forEach(function(c){
+          if(!counted.has(c)){ counted.add(c); countUp(c); }
+        });
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // hero stats count immediately (above fold, not .reveal)
+  document.querySelectorAll('.hero-stats [data-count]').forEach(function(c){
+    if(!counted.has(c)){ counted.add(c); setTimeout(function(){ countUp(c); }, 900); }
+  });
+</script>
+</body>
+</html>
