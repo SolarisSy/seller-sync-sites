@@ -234,10 +234,14 @@ function renderSidebar(leads) {
   }).join('');
 }
 
-function selectLead(idx) {
+function selectLead(idx, keepScroll) {
   document.querySelectorAll('.lead-item').forEach(el => el.classList.remove('active'));
   const el = document.querySelector(`[data-idx="${idx}"]`);
   if (el) el.classList.add('active');
+
+  const mainEl = document.getElementById('main');
+  const prevMainScroll = mainEl ? mainEl.scrollTop : 0;
+  const prevDetailScroll = document.getElementById('detail').scrollTop;
 
   const l = LEADS[idx];
   currentIdx = idx;
@@ -343,8 +347,18 @@ function selectLead(idx) {
     ${l.copy.length ? `<div class="section-title">Copy de venda — clique para copiar</div><div class="copy-blocks">${copyBlocks}</div>` : ''}
   `;
 
-  detail.scrollTop = 0;
-  document.getElementById('main').scrollTop = 0;
+  lastDetailSlug = l.slug;
+  lastDetailSig = JSON.stringify(getState(l.slug));
+
+  if (keepScroll) {
+    // re-render disparado pelo polling: preserva onde o vendedor estava lendo
+    detail.scrollTop = prevDetailScroll;
+    if (mainEl) mainEl.scrollTop = prevMainScroll;
+  } else {
+    // clique do usuario num lead: vai pro topo
+    detail.scrollTop = 0;
+    if (mainEl) mainEl.scrollTop = 0;
+  }
 }
 
 function copyBlock(btn, leadIdx, blockIdx) {
@@ -370,6 +384,8 @@ function copyUrl(url, btn) {
 let STATUS = {};
 let currentIdx = null;
 let editingReason = false;   // trava o re-render do detalhe enquanto digita o motivo
+let lastDetailSlug = null;   // qual lead esta renderizado no detalhe
+let lastDetailSig = null;    // assinatura do status do lead renderizado (evita re-render a toa)
 const API = '/api/status';
 
 function getStates() { return STATUS; }
@@ -378,7 +394,12 @@ function getState(slug) { return STATUS[slug] || {}; }
 function refreshUI() {
   renderSidebar(applyFilter());
   // nao re-renderiza o detalhe se o vendedor esta escrevendo o motivo (perderia o texto/foco)
-  if (currentIdx != null && !editingReason) selectLead(currentIdx);
+  if (currentIdx == null || editingReason) return;
+  const slug = LEADS[currentIdx].slug;
+  const sig = JSON.stringify(getState(slug));
+  // so re-renderiza o detalhe se MUDOU o status deste lead (evita scroll-jump e flicker das imagens no polling)
+  if (slug === lastDetailSlug && sig === lastDetailSig) return;
+  selectLead(currentIdx, true);
 }
 
 async function saveReason(slug, text) {
