@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Ana Carolina Santos — Harmonização Facial Avançada | São Luís - MA</title>
+<meta name="description" content="Harmonização facial que respeita os seus traços. Dra. Ana Carolina Santos — clínica no Jardim Renascença, São Luís - MA. Naturalidade, técnica e resultado. Agende sua avaliação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── CAMADA 1: Superfície ── */
+  --bg-base:#f7f3ec;        /* marfim */
+  --bg-surface:#fffdf9;
+  --bg-inset:#efe8dd;
+  --bg-dark:#211c2e;        /* lavanda profundo quase-preto */
+
+  /* ── CAMADA 2: Texto ── */
+  --text-primary:#2a2535;
+  --text-secondary:#544c61;
+  --text-muted:#928aa0;
+  --text-inverse:#f7f3ec;
+
+  /* ── CAMADA 3: Acento + Marca (lilás é a assinatura) ── */
+  --accent:#9b82c9;
+  --accent-dark:#6e5aa0;
+  --accent-deep:#54447e;
+  --accent-subtle:rgba(155,130,201,.10);
+  --accent-border:rgba(155,130,201,.22);
+
+  --gold:#c9a86a;
+  --gold-light:#e0c68a;
+
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(42,37,53,.05),0 2px 6px rgba(42,37,53,.05);
+  --shadow-md:0 2px 4px rgba(42,37,53,.05),0 8px 18px rgba(84,68,126,.08),0 20px 40px rgba(84,68,126,.06);
+  --shadow-lg:0 4px 8px rgba(42,37,53,.05),0 16px 32px rgba(84,68,126,.09),0 40px 80px rgba(84,68,126,.12);
+  --shadow-accent:0 8px 24px rgba(110,90,160,.30);
+  --shadow-accent-strong:0 14px 34px rgba(110,90,160,.42);
+
+  /* ── Tipografia fluida ── */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(2rem,1.4rem + 2.6vw,3.2rem);
+  --text-h3:clamp(1.35rem,1.05rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04;--lh-heading:1.14;--lh-body:1.75;
+  --ls-display:-0.015em;--ls-overline:.2em;
+
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1180px;--prose-max:660px;
+  --gap-cards:clamp(1rem,2.4vw,1.8rem);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);font-weight:400}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* ── Grain ── */
+.grain::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;mix-blend-mode:overlay;
+}
+
+/* ── Overline ── */
+.overline{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:'Jost',sans-serif;font-weight:500;
+  font-size:.7rem;letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--accent-dark);margin-bottom:1.1rem;
+}
+.overline::before{content:'';width:30px;height:1px;background:var(--gold)}
+.overline.center{justify-content:center}
+
+/* ── Reveal: blur-fade (assinatura) ── */
+.reveal{opacity:0;transform:translateY(30px);filter:blur(8px);
+  transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease)}
+.reveal.in{opacity:1;transform:none;filter:blur(0)}
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+.reveal:nth-child(6){transition-delay:.35s}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Jost',sans-serif;font-weight:500;
+  font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .35s var(--ease),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  color:var(--text-primary);padding-bottom:5px;border-bottom:1px solid var(--accent-border);
+  transition:border-color .3s ease,color .3s ease;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(247,243,236,.86);backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 var(--accent-border);padding-top:13px;padding-bottom:13px;
+}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .b-name{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;letter-spacing:.01em;color:var(--text-primary)}
+.brand .b-sub{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-dark);margin-top:4px;font-weight:500}
+header nav{display:flex;gap:30px;align-items:center}
+header nav a.nav-link{font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);transition:color .3s ease}
+header nav a.nav-link:hover{color:var(--accent-dark)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.2rem;border:1px solid var(--accent-border);border-radius:50px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--accent-dark);transition:background .3s ease,border-color .3s ease}
+.nav-cta:hover{background:var(--accent-subtle);border-color:var(--accent)}
+.nav-cta svg{width:14px;height:14px}
+@media(max-width:860px){header nav a.nav-link{display:none}}
+
+/* ── HERO (split assimétrico 42/58) ── */
+.hero{position:relative;display:grid;grid-template-columns:42fr 58fr;min-height:100dvh}
+.hero-copy{
+  position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,12vh,9rem) clamp(1.6rem,4.5vw,4.5rem) clamp(3rem,6vh,5rem);
+  background:
+    radial-gradient(120% 90% at 0% 0%,rgba(155,130,201,.16),transparent 60%),
+    radial-gradient(120% 80% at 100% 100%,rgba(201,168,106,.12),transparent 55%),
+    var(--bg-base);
+}
+.hero-copy .overline{margin-bottom:1.4rem}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  font-weight:400;max-width:13ch;margin-bottom:1.6rem;color:var(--text-primary);
+  overflow:hidden;
+}
+.hero-title em{font-style:italic;color:var(--accent-dark)}
+.hero-title .word{display:inline-block;transform:translateY(115%);opacity:0;
+  animation:word-up .9s var(--ease) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title .word:nth-child(5){animation-delay:.63s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-lead{font-size:1.08rem;color:var(--text-secondary);max-width:38ch;margin-bottom:2.3rem;
+  opacity:0;animation:fade-in 1s var(--ease) .8s forwards}
+.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  opacity:0;animation:fade-in 1s var(--ease) .95s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-media{position:relative;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:22% center;
+  animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-media::after{content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(115deg,var(--bg-base) 0%,rgba(247,243,236,.12) 14%,transparent 32%),
+    linear-gradient(200deg,transparent 45%,rgba(110,90,160,.22) 100%)}
+.hero-badge{
+  position:absolute;left:clamp(1.4rem,3vw,2.6rem);bottom:clamp(1.4rem,3vw,2.6rem);z-index:3;
+  display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:16px;
+  background:rgba(33,28,46,.42);backdrop-filter:blur(13px) saturate(160%);
+  -webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 12px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0;animation:fade-in 1s var(--ease) 1.2s forwards;
+}
+.hero-badge .stars{display:flex;gap:2px}
+.hero-badge .stars svg{width:15px;height:15px;color:var(--gold-light)}
+.hero-badge .bt{color:#fff;line-height:1.25}
+.hero-badge .bt strong{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;display:block}
+.hero-badge .bt span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.scroll-hint{position:absolute;left:clamp(1.6rem,4.5vw,4.5rem);bottom:2rem;z-index:3;
+  font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-muted);
+  display:flex;align-items:center;gap:10px;opacity:0;animation:fade-in 1s var(--ease) 1.4s forwards}
+.scroll-hint::before{content:'';width:34px;height:1px;background:var(--accent);
+  animation:scroll-line 2.4s var(--ease) infinite}
+@keyframes scroll-line{0%,100%{transform:scaleX(.4);opacity:.5;transform-origin:left}50%{transform:scaleX(1);opacity:1;transform-origin:left}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{height:62vw;min-height:340px;order:-1}
+  .hero-media img{object-position:center 24%}
+  .hero-media::after{background:linear-gradient(0deg,var(--bg-base) 0%,transparent 36%)}
+  .scroll-hint{display:none}
+  .hero-copy{padding-top:6.5rem}
+}
+
+/* ── SOBRE ── */
+.about{position:relative;background:var(--bg-surface)}
+.about-grid{max-width:var(--content-max);margin:0 auto;display:grid;
+  grid-template-columns:5fr 6fr;gap:clamp(2.4rem,5vw,5rem);align-items:center}
+.about-photo{position:relative}
+.about-photo .frame{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.about-photo .frame img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left center}
+.about-photo .tag{
+  position:absolute;right:-14px;bottom:-22px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:18px 24px;border-radius:6px;box-shadow:var(--shadow-md);max-width:230px;overflow:hidden;
+}
+.about-photo .tag .grain::before{opacity:.07}
+.about-photo .tag .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:1;color:var(--gold-light);font-weight:500}
+.about-photo .tag .lbl{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.78);margin-top:6px}
+.about-deco{position:absolute;left:-26px;top:-26px;width:90px;height:90px;border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+.about-text h2{font-size:var(--text-h2);font-weight:400;margin-bottom:1.4rem;max-width:16ch}
+.about-text h2 em{font-style:italic;color:var(--accent-dark)}
+.about-text p{color:var(--text-secondary);margin-bottom:1.2rem;max-width:var(--prose-max)}
+.about-text .sign{margin-top:1.8rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--accent-dark)}
+.about-text .sign span{display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr;gap:3.4rem}.about-photo{max-width:480px}.about-photo .tag{right:14px}}
+
+/* ── PROCEDIMENTOS ── */
+.proc{position:relative;background:var(--bg-inset)}
+.proc-head{max-width:var(--content-max);margin:0 auto 3.4rem;text-align:center}
+.proc-head h2{font-size:var(--text-h2);font-weight:400;max-width:18ch;margin:0 auto}
+.proc-head h2 em{font-style:italic;color:var(--accent-dark)}
+.proc-head p{color:var(--text-secondary);max-width:52ch;margin:1rem auto 0}
+.proc-grid{max-width:var(--content-max);margin:0 auto;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.proc-card{
+  background:var(--bg-surface);border:1px solid rgba(155,130,201,.12);border-radius:8px;
+  padding:clamp(1.7rem,2.6vw,2.4rem);box-shadow:var(--shadow-sm);
+  transition:transform .4s var(--ease),box-shadow .4s ease,border-color .3s ease;
+}
+.proc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.proc-ico{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:var(--accent-subtle);margin-bottom:1.3rem}
+.proc-ico svg{width:23px;height:23px;color:var(--accent-dark);stroke-width:1.4}
+.proc-card .pcat{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:.5rem}
+.proc-card h3{font-size:var(--text-h3);font-weight:500;margin-bottom:.6rem}
+.proc-card p{color:var(--text-secondary);font-size:.95rem}
+@media(max-width:880px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+
+/* ── RESULTADOS (galeria) ── */
+.results{position:relative;background:var(--bg-dark);color:var(--text-inverse)}
+.results .proc-head h2{color:var(--text-inverse)}
+.results .proc-head h2 em{color:var(--gold-light)}
+.results .proc-head p{color:rgba(247,243,236,.7)}
+.results .overline{color:var(--gold-light)}
+.results .overline::before{background:var(--gold)}
+.res-grid{max-width:var(--content-max);margin:0 auto;display:grid;
+  grid-template-columns:repeat(2,1fr);gap:var(--gap-cards)}
+.res-item{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md);
+  border:1px solid rgba(255,255,255,.06)}
+.res-item img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .7s var(--ease)}
+.res-item:hover img{transform:scale(1.04)}
+.res-item .cap{position:absolute;left:0;right:0;bottom:0;padding:18px;
+  background:linear-gradient(0deg,rgba(20,16,30,.9),transparent);z-index:2}
+.res-item .cap span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light)}
+.res-item .cap strong{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.25rem;color:#fff;margin-top:3px}
+.res-note{max-width:var(--content-max);margin:2.2rem auto 0;text-align:center;
+  font-size:.78rem;letter-spacing:.04em;color:rgba(247,243,236,.55)}
+@media(max-width:620px){.res-grid{grid-template-columns:1fr}}
+
+/* ── DIVISA (diferenciais) ── */
+.values{position:relative;background:var(--bg-base)}
+.val-grid{max-width:var(--content-max);margin:0 auto;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:clamp(1.6rem,3.5vw,3rem)}
+.val-item{text-align:left}
+.val-item .vnum{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gold);letter-spacing:.1em}
+.val-item h3{font-size:1.5rem;font-weight:500;margin:.7rem 0 .5rem}
+.val-item p{color:var(--text-secondary);font-size:.95rem;max-width:34ch}
+.val-item .vline{width:40px;height:1px;background:var(--accent);margin-top:1rem}
+@media(max-width:760px){.val-grid{grid-template-columns:1fr;gap:2.4rem}}
+
+/* ── LOCALIZAÇÃO / CTA ── */
+.cta{position:relative;background:linear-gradient(135deg,var(--accent-deep),var(--bg-dark));color:var(--text-inverse);overflow:hidden}
+.cta-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:clamp(2.4rem,5vw,5rem);align-items:center;position:relative;z-index:2}
+.cta .overline{color:var(--gold-light)}
+.cta .overline::before{background:var(--gold)}
+.cta h2{font-size:var(--text-h2);font-weight:400;max-width:15ch;margin-bottom:1.3rem}
+.cta h2 em{font-style:italic;color:var(--gold-light)}
+.cta p{color:rgba(247,243,236,.82);max-width:46ch;margin-bottom:2rem}
+.cta-info{display:flex;flex-direction:column;gap:18px}
+.cta-info .row{display:flex;gap:14px;align-items:flex-start}
+.cta-info .row svg{width:20px;height:20px;color:var(--gold-light);flex-shrink:0;margin-top:3px;stroke-width:1.5}
+.cta-info .row .t{font-size:.95rem;color:rgba(247,243,236,.9)}
+.cta-info .row .t b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.2rem;color:#fff;margin-bottom:2px}
+.cta-card{background:rgba(247,243,236,.07);border:1px solid rgba(255,255,255,.13);border-radius:14px;
+  padding:clamp(1.8rem,3vw,2.6rem);backdrop-filter:blur(10px);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 18px 40px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.14)}
+.cta-card h3{font-size:1.7rem;font-weight:500;margin-bottom:.6rem}
+.cta-card p{font-size:.92rem;color:rgba(247,243,236,.78);margin-bottom:1.6rem}
+.cta-card .btn-primary{width:100%;justify-content:center}
+.cta-card .ig{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:1.1rem;font-size:.76rem;letter-spacing:.06em;color:rgba(247,243,236,.7)}
+.cta-card .ig svg{width:16px;height:16px}
+.cta-deco{position:absolute;right:-80px;top:-80px;width:340px;height:340px;border:1px solid rgba(255,255,255,.08);border-radius:50%;z-index:1}
+.cta-deco.two{right:-40px;top:-40px;width:260px;height:260px}
+@media(max-width:840px){.cta-grid{grid-template-columns:1fr;gap:2.6rem}}
+
+/* ── WAVE divider ── */
+.wave{display:block;line-height:0;margin-bottom:-1px}
+.wave svg{width:100%;height:clamp(34px,5vw,72px)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2rem;position:relative}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:2.4rem;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .fb-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500}
+.foot-brand .fb-sub{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);margin-top:5px}
+.foot-brand p{color:rgba(247,243,236,.6);font-size:.86rem;max-width:32ch;margin-top:1rem}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;color:rgba(247,243,236,.8);transition:color .3s ease}
+.foot-links a:hover{color:var(--gold-light)}
+.foot-links a svg{width:16px;height:16px;flex-shrink:0}
+.foot-bottom{max-width:var(--content-max);margin:2.6rem auto 0;padding-top:1.6rem;border-top:1px solid rgba(247,243,236,.1);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.72rem;color:rgba(247,243,236,.45);letter-spacing:.04em}
+
+/* ── FAB WhatsApp ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.42);transition:transform .25s var(--ease)}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reduced motion ── */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-media img{animation:none}
+  .reveal,.hero-title .word,.hero-lead,.hero-actions,.hero-badge,.scroll-hint{
+    transition:none!important;animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+  .wa-fab::before{animation:none}
+  .scroll-hint::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="b-name">Dra. Ana Carolina</span>
+    <span class="b-sub">Harmonização Facial</span>
+  </a>
+  <nav>
+    <a href="#sobre" class="nav-link">A Dra.</a>
+    <a href="#procedimentos" class="nav-link">Procedimentos</a>
+    <a href="#resultados" class="nav-link">Resultados</a>
+    <a href="#contato" class="nav-link">Contato</a>
+    <a class="nav-cta" href="https://wa.me/5598970043648?text=Ol%C3%A1%2C%20Dra.%20Ana%20Carolina!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<main id="top">
+<section class="hero" aria-label="Apresentação">
+  <div class="hero-copy">
+    <span class="overline">Harmonização Facial · São Luís - MA</span>
+    <h1 class="hero-title">
+      <span class="word">A</span>
+      <span class="word">beleza</span>
+      <span class="word">que</span>
+      <span class="word"><em>respeita</em></span>
+      <span class="word">você.</span>
+    </h1>
+    <p class="hero-lead">Harmonização facial com naturalidade e precisão — realçar os seus traços, nunca apagá-los. Resultado que parece você, no seu melhor.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5598970043648?text=Ol%C3%A1%2C%20Dra.%20Ana%20Carolina!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="hero-media grain">
+    <img src="imagens/maps-1.jpg" alt="Dra. Ana Carolina Santos — especialista em harmonização facial avançada em São Luís" fetchpriority="high">
+    <div class="hero-badge">
+      <span class="stars" aria-label="Nota 5 estrelas">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+      </span>
+      <span class="bt"><strong>5,0</strong><span>Avaliação no Google</span></span>
+    </div>
+  </div>
+  <span class="scroll-hint">Conheça</span>
+</section>
+
+<!-- SOBRE -->
+<section class="about grain" id="sobre">
+  <div class="about-grid">
+    <div class="about-photo reveal">
+      <span class="about-deco"></span>
+      <div class="frame">
+        <img src="imagens/maps-1.jpg" alt="Dra. Ana Carolina Santos em sua clínica de harmonização facial">
+      </div>
+      <div class="tag grain">
+        <span class="num">+10</span>
+        <span class="lbl">anos dedicados à face</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="overline reveal">A profissional</span>
+      <h2 class="reveal">Dra. Ana Carolina Santos, o olhar de quem entende <em>de naturalidade.</em></h2>
+      <p class="reveal">Na harmonização facial, técnica sem sensibilidade estética vira excesso. O trabalho da Dra. Ana Carolina nasce do oposto: estudar cada rosto, entender o que já é belo nele e potencializar — sem máscara, sem rigidez, sem aquele resultado igual em todo mundo.</p>
+      <p class="reveal">Da rinomodelação ao preenchimento labial, do contorno de mandíbula ao rejuvenescimento com laser, cada protocolo é desenhado para o seu rosto. O resultado é simples de reconhecer: as pessoas notam que você está bem, mas não conseguem dizer exatamente o quê.</p>
+      <div class="sign reveal">Ana Carolina Santos<span>Harmonização Facial Avançada · São Luís - MA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc grain" id="procedimentos">
+  <div class="proc-head">
+    <span class="overline center reveal">Procedimentos</span>
+    <h2 class="reveal">Protocolos desenhados para realçar, <em>nunca padronizar.</em></h2>
+    <p class="reveal">Cada procedimento começa por uma avaliação individual. Você só faz o que o seu rosto realmente pede.</p>
+  </div>
+  <div class="proc-grid">
+    <article class="proc-card reveal">
+      <div class="proc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21c4-3 7-6 7-10a7 7 0 0 0-14 0c0 4 3 7 7 10z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4"/></svg></div>
+      <span class="pcat">Contorno</span>
+      <h3>Preenchimento Labial</h3>
+      <p>Lábios definidos, hidratados e com proporção natural. Volume na medida certa, sem aquele aspecto artificial.</p>
+    </article>
+    <article class="proc-card reveal">
+      <div class="proc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 16c2-5 4-8 7-11 1 3 1 6-1 9m-6 2c4 1 8 0 11-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="pcat">Perfil</span>
+      <h3>Rinomodelação</h3>
+      <p>Harmonização do nariz sem cirurgia. Pequenos ajustes de ponta e dorso que reequilibram todo o perfil.</p>
+    </article>
+    <article class="proc-card reveal">
+      <div class="proc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 9c2-1 5-1.5 8-1.5S18 8 20 9M4 9v4c2 3 5 5 8 5s6-2 8-5V9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="pcat">Estrutura</span>
+      <h3>Contorno de Mandíbula</h3>
+      <p>Definição do terço inferior e ângulo da face. Mais contorno, menos papada, traços mais elegantes.</p>
+    </article>
+    <article class="proc-card reveal">
+      <div class="proc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"/></svg></div>
+      <span class="pcat">Pele</span>
+      <h3>Laser CO₂ Fracionado</h3>
+      <p>Rejuvenescimento e textura de pele: estimula colágeno, suaviza linhas finas e devolve viço ao rosto.</p>
+    </article>
+    <article class="proc-card reveal">
+      <div class="proc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3c3 2 5 5 5 9a5 5 0 0 1-10 0c0-4 2-7 5-9z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="pcat">Sustentação</span>
+      <h3>Lifting com Bioestimulador</h3>
+      <p>Firmeza e sustentação do terço médio. Trabalha o colágeno para um efeito lifting gradual e durável.</p>
+    </article>
+    <article class="proc-card reveal">
+      <div class="proc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 9c0-2 1.3-3 3-3s3 1 3 3M7 13c1.4 1.8 3 2.6 5 2.6s3.6-.8 5-2.6" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <span class="pcat">Expressão</span>
+      <h3>Toxina Botulínica</h3>
+      <p>Suaviza linhas de expressão preservando a naturalidade. Você continua expressando — só sem as marcas.</p>
+    </article>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path d="M0,40 C480,76 960,4 1440,40 L1440,72 L0,72 Z" fill="var(--bg-dark)"/></svg></div>
+<section class="results grain" id="resultados">
+  <div class="proc-head">
+    <span class="overline center reveal">Resultados reais</span>
+    <h2 class="reveal">Antes e depois de quem confiou <em>no detalhe.</em></h2>
+    <p class="reveal">Casos reais de pacientes da clínica. A diferença está na sutileza — natural o suficiente para ninguém perceber o procedimento, só o resultado.</p>
+  </div>
+  <div class="res-grid">
+    <figure class="res-item reveal">
+      <img src="imagens/insta-1.jpg" alt="Antes e depois de harmonização facial — rejuvenescimento e suavização de linhas">
+      <figcaption class="cap"><span>Frontal</span><strong>Rejuvenescimento de face</strong></figcaption>
+    </figure>
+    <figure class="res-item reveal">
+      <img src="imagens/insta-3.jpg" alt="Antes e depois de rinomodelação e preenchimento labial em perfil">
+      <figcaption class="cap"><span>Perfil</span><strong>Rinomodelação + lábios</strong></figcaption>
+    </figure>
+    <figure class="res-item reveal">
+      <img src="imagens/insta-2.jpg" alt="Antes e depois de contorno facial e definição de mandíbula">
+      <figcaption class="cap"><span>Contorno</span><strong>Definição do terço inferior</strong></figcaption>
+    </figure>
+    <figure class="res-item reveal">
+      <img src="imagens/insta-7.jpg" alt="Antes e depois de harmonização facial com melhora de pele e contorno">
+      <figcaption class="cap"><span>Pele &amp; contorno</span><strong>Glow e harmonia</strong></figcaption>
+    </figure>
+  </div>
+  <p class="res-note">Imagens reais de pacientes — resultados podem variar conforme cada rosto e avaliação individual.</p>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="values grain">
+  <div class="proc-head">
+    <span class="overline center reveal">Por que a Dra. Ana Carolina</span>
+    <h2 class="reveal" style="font-size:var(--text-h2);font-weight:400;max-width:18ch;margin:0 auto">Três princípios que guiam <em>cada agulha.</em></h2>
+  </div>
+  <div class="val-grid">
+    <div class="val-item reveal">
+      <span class="vnum">01</span>
+      <h3>Naturalidade primeiro</h3>
+      <p>O objetivo nunca é "ficar feito". É ficar você — descansada, harmônica, no seu melhor. Menos é mais.</p>
+      <span class="vline"></span>
+    </div>
+    <div class="val-item reveal">
+      <span class="vnum">02</span>
+      <h3>Avaliação individual</h3>
+      <p>Nenhum protocolo de prateleira. Cada rosto é estudado antes de qualquer aplicação, com um plano só seu.</p>
+      <span class="vline"></span>
+    </div>
+    <div class="val-item reveal">
+      <span class="vnum">03</span>
+      <h3>Segurança e técnica</h3>
+      <p>Produtos de procedência, ambiente próprio na clínica e mão experiente. Confiança em cada etapa.</p>
+      <span class="vline"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTATO -->
+<section class="cta grain" id="contato">
+  <span class="cta-deco" aria-hidden="true"></span>
+  <span class="cta-deco two" aria-hidden="true"></span>
+  <div class="cta-grid">
+    <div class="cta-left">
+      <span class="overline reveal">Agende sua avaliação</span>
+      <h2 class="reveal">O seu rosto merece um plano <em>feito para ele.</em></h2>
+      <p class="reveal">A avaliação é o ponto de partida: entender o que você deseja e o que o seu rosto pede. A partir dela, desenhamos o protocolo ideal — com clareza, sem pressa e sem exageros.</p>
+      <div class="cta-info">
+        <div class="row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21c4-4 7-7 7-11a7 7 0 0 0-14 0c0 4 3 7 7 11z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="t"><b>Michelangelo Office — Sala 602</b>Av. do Vale, 8A · Jardim Renascença · São Luís - MA</span>
+        </div>
+        <div class="row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l-1 4a16 16 0 0 1-14-13z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="t"><b>(98) 97004-3648</b>WhatsApp · atendimento e agendamentos</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-card grain reveal">
+      <h3>Vamos conversar?</h3>
+      <p>Fale agora pelo WhatsApp e agende a sua avaliação de harmonização facial.</p>
+      <a class="btn-primary" href="https://wa.me/5598970043648?text=Ol%C3%A1%2C%20Dra.%20Ana%20Carolina!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a class="ig" href="https://www.instagram.com/draanacarolinasantos/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        @draanacarolinasantos
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="grain">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="fb-name">Dra. Ana Carolina Santos</div>
+      <div class="fb-sub">Harmonização Facial Avançada</div>
+      <p>Naturalidade, técnica e cuidado para realçar o que já é belo em você.</p>
+    </div>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/draanacarolinasantos/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+        @draanacarolinasantos
+      </a>
+      <a href="https://wa.me/5598970043648?text=Ol%C3%A1%2C%20Dra.%20Ana%20Carolina!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+        (98) 97004-3648
+      </a>
+      <a href="https://www.google.com/maps/place/Dra+Ana+Carolina+Santos+-+Harmoniza%C3%A7%C3%A3o+Facial/@-2.4999417,-44.2885824,17z" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4-4 7-7 7-11a7 7 0 0 0-14 0c0 4 3 7 7 11z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Jardim Renascença · São Luís - MA
+      </a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Dra. Ana Carolina Santos · Harmonização Facial</span>
+    <span>Jardim Renascença · São Luís - MA</span>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="wa-fab" href="https://wa.me/5598970043648?text=Ol%C3%A1%2C%20Dra.%20Ana%20Carolina!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-5.9a11.4 11.4 0 1 1 4.3 4.2L.5 23.5zM6.6 19.9l.4.2a9.5 9.5 0 1 0-3.2-3.2l.2.4-.9 3.5 3.5-.9zM17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+// Header sticky
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+// Reveal blur-fade
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
