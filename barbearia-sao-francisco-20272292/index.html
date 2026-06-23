@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia São Francisco — Corte & Barba em São Luís, MA</title>
+<meta name="description" content="Barbearia São Francisco, no Jardim São Francisco em São Luís - MA. Tradição na navalha, nota 4.7 no Google. Agende seu corte ou barba pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#f4ede1;
+  --bg-surface:#fbf6ec;
+  --bg-inset:#e8ddc9;
+  --bg-dark:#171210;
+  --bg-dark-2:#211a15;
+
+  /* Texto */
+  --text-primary:#1d1611;
+  --text-secondary:#4a3f35;
+  --text-muted:#8c8175;
+  --text-inverse:#f4ede1;
+
+  /* Marca (couro) + acento (latão/brass) */
+  --leather:#6b3f25;
+  --leather-dark:#4a2a18;
+  --brass:#b88a3e;
+  --brass-light:#d8af5e;
+  --brass-subtle:rgba(184,138,62,.12);
+  --brass-border:rgba(184,138,62,.28);
+
+  --shadow-sm:0 1px 2px rgba(40,25,12,.05),0 2px 6px rgba(40,25,12,.06);
+  --shadow-md:0 2px 4px rgba(40,25,12,.05),0 8px 18px rgba(40,25,12,.09),0 20px 40px rgba(40,25,12,.07);
+  --shadow-lg:0 4px 8px rgba(40,25,12,.06),0 16px 32px rgba(40,25,12,.10),0 40px 80px rgba(40,25,12,.14);
+  --shadow-brass:0 8px 24px rgba(184,138,62,.32);
+  --shadow-brass-strong:0 14px 38px rgba(184,138,62,.45);
+
+  --text-display:clamp(2.9rem,2rem + 4.4vw,6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:.98;--lh-heading:1.1;--lh-body:1.75;
+  --ls-display:-0.01em;
+
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1180px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.4vw,1.8rem);
+
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{
+  font-family:'Oswald',sans-serif;
+  font-optical-sizing:auto;
+  text-wrap:balance;
+  letter-spacing:var(--ls-display);
+  text-transform:uppercase;
+}
+
+.wrap{max-width:var(--content-max);margin:0 auto;width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* ── Overline ── */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+  font-size:.7rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:18px;
+}
+.overline::before{content:'';width:34px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* ── Buttons ── */
+.btn{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:.92rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  border-radius:4px;cursor:pointer;border:none;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:transform .3s var(--ease),box-shadow .3s ease,background .3s ease;
+  will-change:transform;
+}
+.btn svg{width:19px;height:19px;flex:0 0 auto}
+.btn-primary{
+  background:linear-gradient(135deg,var(--brass),#9a6f2c);
+  color:#1d1611;box-shadow:var(--shadow-brass);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-brass-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--text-inverse);
+  border:1px solid rgba(244,237,225,.35);
+}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass-light);transform:translateY(-2px)}
+
+/* ── Grain ── */
+.grain::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;
+}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(23,18,16,.94);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--brass-border);padding-top:13px;padding-bottom:13px;
+}
+.brand{display:flex;align-items:center;gap:13px;color:var(--text-inverse)}
+.brand .mark{
+  width:42px;height:42px;border:1.5px solid var(--brass);border-radius:50%;
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.brand .mark svg{width:22px;height:22px;color:var(--brass-light)}
+.brand-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.02rem;letter-spacing:.04em;line-height:1.05;text-transform:uppercase}
+.brand-name span{display:block;font-size:.62rem;letter-spacing:.26em;color:var(--brass-light);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{
+  font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;
+  letter-spacing:.04em;color:rgba(244,237,225,.82);transition:color .25s;
+}
+.nav-links a:hover{color:var(--brass-light)}
+.nav-cta{
+  font-family:'Oswald',sans-serif!important;text-transform:uppercase;
+  padding:9px 20px;border:1px solid var(--brass);border-radius:3px;
+  color:var(--brass-light)!important;letter-spacing:.08em!important;
+  transition:background .25s,color .25s;
+}
+.nav-cta:hover{background:var(--brass);color:#1d1611!important}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ── Hero ── */
+.hero{
+  position:relative;height:100dvh;min-height:620px;
+  display:grid;align-items:end;overflow:hidden;background:var(--bg-dark);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/web-hero-interior.jpg') center/cover no-repeat;
+  animation:kb 26s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(155deg,rgba(23,18,16,.30) 28%,rgba(23,18,16,.74) 70%,rgba(23,18,16,.95) 100%);
+}
+.hero-content{
+  position:relative;z-index:3;width:100%;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:34px;flex-wrap:wrap;
+}
+.hero-text{max-width:760px}
+.hero-title{
+  color:var(--text-inverse);font-weight:700;
+  font-size:var(--text-display);line-height:var(--lh-display);
+  margin:14px 0 22px;overflow:hidden;
+}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{
+  display:inline-block;transform:translateY(112%);opacity:0;
+  animation:word-up .9s var(--ease) forwards;
+}
+.hero-title em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--brass-light);letter-spacing:0}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .l2 .word{animation-delay:.5s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  font-size:clamp(1rem,.9rem + .4vw,1.18rem);color:rgba(244,237,225,.86);
+  max-width:46ch;margin-bottom:30px;opacity:0;animation:fade-in 1s var(--ease) .85s forwards;
+}
+@keyframes fade-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s var(--ease) 1s forwards}
+.hero-aside{opacity:0;animation:fade-in 1s var(--ease) 1.15s forwards}
+.rating-card{
+  display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:8px;
+  background:rgba(244,237,225,.08);
+  backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);
+  border:1px solid rgba(244,237,225,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 10px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.16);
+}
+.rating-num{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.5rem;color:var(--brass-light);line-height:1}
+.rating-card .stars{display:flex;gap:2px;margin-bottom:4px}
+.rating-card .stars svg{width:15px;height:15px;color:var(--brass-light)}
+.rating-card .lbl{font-size:.72rem;letter-spacing:.04em;color:rgba(244,237,225,.78);text-transform:uppercase}
+.scroll-hint{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(244,237,225,.6);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  animation:fade-in 1s var(--ease) 1.4s forwards;opacity:0;
+}
+.scroll-hint .ln{width:1px;height:34px;background:linear-gradient(rgba(244,237,225,.5),transparent);animation:slide-down 2s ease-in-out infinite}
+@keyframes slide-down{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.1%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:640px){.scroll-hint{display:none}}
+
+/* ── Strip ── */
+.strip{background:var(--bg-dark-2);position:relative;padding:clamp(2.2rem,4vw,3rem) clamp(1.5rem,6vw,5rem)}
+.strip-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;
+}
+.strip-item{color:var(--text-inverse)}
+.strip-item .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(1.8rem,1.2rem+2vw,2.6rem);color:var(--brass-light);line-height:1}
+.strip-item .cap{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,237,225,.65);margin-top:8px}
+.strip-item+.strip-item{border-left:1px solid rgba(244,237,225,.1)}
+@media(max-width:600px){.strip-grid{grid-template-columns:1fr;gap:18px}.strip-item+.strip-item{border-left:none;border-top:1px solid rgba(244,237,225,.1);padding-top:18px}}
+
+/* ── Sobre ── */
+.about{background:var(--bg-base)}
+.about-grid{
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+}
+.about-imgwrap{position:relative}
+.about-imgwrap img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;box-shadow:var(--shadow-lg)}
+.about-imgwrap .tag{
+  position:absolute;bottom:-22px;left:-18px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:18px 24px;border-radius:6px;box-shadow:var(--shadow-md);border-left:3px solid var(--brass);
+}
+.about-imgwrap .tag b{font-family:'Oswald',sans-serif;display:block;font-size:1.5rem;color:var(--brass-light);line-height:1}
+.about-imgwrap .tag span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,237,225,.7)}
+.about h2{font-size:var(--text-h2);font-weight:600;line-height:var(--lh-heading);margin-bottom:22px;color:var(--text-primary)}
+.about h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--leather);letter-spacing:0}
+.about p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.about .sig{margin-top:26px;font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--leather)}
+.about .sig span{display:block;font-family:'Inter';font-style:normal;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:3.5rem}.about-imgwrap{max-width:440px}}
+
+/* ── Serviços ── */
+.services{background:var(--bg-inset);position:relative}
+.services-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.services-head h2{font-size:var(--text-h2);font-weight:600;line-height:var(--lh-heading);color:var(--text-primary)}
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(107,63,37,.1);border-radius:8px;
+  padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--brass-border);border-color:var(--brass-border)}
+.serv-icon{width:46px;height:46px;border-radius:50%;background:var(--brass-subtle);display:grid;place-items:center;color:var(--leather)}
+.serv-icon svg{width:24px;height:24px}
+.serv-card h3{font-size:var(--text-h3);font-weight:600;color:var(--text-primary)}
+.serv-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.65}
+.serv-price{margin-top:auto;padding-top:14px;display:flex;align-items:baseline;gap:7px;border-top:1px solid rgba(107,63,37,.1)}
+.serv-price .from{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.4rem;color:var(--leather)}
+@media(max-width:680px){.serv-grid{grid-template-columns:1fr}}
+
+/* ── Galeria ── */
+.gallery{background:var(--bg-dark);position:relative}
+.gallery .overline,.gallery .g-head h2{color:var(--text-inverse)}
+.gallery .overline{color:var(--brass-light)}
+.g-head{max-width:var(--prose-max);margin-bottom:clamp(2.2rem,4vw,3rem)}
+.g-head h2{font-size:var(--text-h2);font-weight:600;color:var(--text-inverse)}
+.g-head p{color:rgba(244,237,225,.7);margin-top:14px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;position:relative;z-index:2}
+.g-item{overflow:hidden;border-radius:6px;position:relative}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.g-item:hover img{transform:scale(1.07)}
+.g-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(23,18,16,.4),transparent 50%);opacity:0;transition:opacity .4s}
+.g-item:hover::after{opacity:1}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+@media(max-width:780px){.g-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.g-wide{grid-column:span 2}}
+
+/* ── Prova / nota ── */
+.proof{background:var(--bg-base);text-align:center}
+.proof .quote{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.5rem,1.1rem+1.8vw,2.4rem);line-height:1.35;
+  max-width:18ch;margin:0 auto 30px;color:var(--text-primary);text-wrap:balance;
+}
+.proof .quote em{color:var(--leather);font-style:italic}
+.proof-rating{display:inline-flex;align-items:center;gap:16px;padding:16px 26px;background:var(--bg-surface);border:1px solid var(--brass-border);border-radius:50px;box-shadow:var(--shadow-sm)}
+.proof-rating .stars{display:flex;gap:3px}
+.proof-rating .stars svg{width:18px;height:18px;color:var(--brass)}
+.proof-rating .pr-num{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.6rem;color:var(--leather);line-height:1}
+.proof-rating .pr-lbl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-align:left}
+
+/* ── Localização ── */
+.location{background:var(--bg-dark);position:relative;overflow:hidden}
+.loc-grid{display:grid;grid-template-columns:6fr 5fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
+.loc-info .overline{color:var(--brass-light)}
+.loc-info h2{font-size:var(--text-h2);font-weight:600;color:var(--text-inverse);line-height:var(--lh-heading);margin-bottom:26px}
+.loc-info h2 em{font-family:'Fraunces',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--brass-light);letter-spacing:0}
+.loc-list{list-style:none;margin-bottom:34px}
+.loc-list li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(244,237,225,.1);align-items:flex-start}
+.loc-list .ic{width:38px;height:38px;flex:0 0 auto;border-radius:50%;border:1px solid var(--brass-border);display:grid;place-items:center;color:var(--brass-light)}
+.loc-list .ic svg{width:18px;height:18px}
+.loc-list .lt{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);margin-bottom:3px}
+.loc-list .lv{color:rgba(244,237,225,.88);font-size:.98rem;line-height:1.5}
+.loc-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;box-shadow:var(--shadow-lg);border:1px solid rgba(244,237,225,.1)}
+.loc-photo .cap{margin-top:12px;font-size:.72rem;letter-spacing:.04em;color:rgba(244,237,225,.5);text-align:center;font-style:italic}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr;gap:3rem}.loc-photo{max-width:420px;margin:0 auto}}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark-2);color:rgba(244,237,225,.6);padding:clamp(2.5rem,5vw,3.5rem) clamp(1.5rem,6vw,5rem);text-align:center;border-top:1px solid rgba(244,237,225,.08)}
+footer .fbrand{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.1rem;color:var(--text-inverse);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+footer .fbrand span{color:var(--brass-light)}
+footer p{font-size:.82rem}
+footer .fnote{margin-top:14px;font-size:.72rem;color:rgba(244,237,225,.4)}
+
+/* ── WA FAB ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:60px;height:60px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .25s var(--ease);
+}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.about-imgwrap img,.g-item img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-aside,.scroll-hint{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .wa-fab::before,.scroll-hint .ln{animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="grain">
+
+<!-- HEADER -->
+<header id="hdr">
+  <a class="brand" href="#top">
+    <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l7 7M14.5 5.5L21 12M3 18l7-7M14.5 18.5L21 12"/><circle cx="5.5" cy="5.5" r="2.5"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>
+    </span>
+    <span class="brand-name">Barbearia São Francisco<span>São Luís — MA</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A Casa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Cortes</a>
+    <a href="#local">Onde Estamos</a>
+    <a class="nav-cta" href="https://wa.me/5598996039478?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Barbearia%20S%C3%A3o%20Francisco%20e%20quero%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero grain" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="overline" style="color:var(--brass-light)">Tradição na navalha · Jardim São Francisco</div>
+      <h1 class="hero-title">
+        <span class="line l1"><span class="word">Corte</span> <span class="word">de</span> <span class="word"><em>respeito.</em></span></span>
+        <span class="line l2"><span class="word">Toda</span> <span class="word">vez.</span></span>
+      </h1>
+      <p class="hero-sub">A barbearia que o seu bairro confia há anos — couro, navalha e acabamento de quem leva a sério. Agora a um toque de quem ainda não te conhece.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5598996039478?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Barbearia%20S%C3%A3o%20Francisco%20e%20quero%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar no WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <div class="rating-card">
+        <span class="rating-num">4.7</span>
+        <div>
+          <div class="stars" aria-label="4.7 de 5 estrelas">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <div class="lbl">Avaliação no Google</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span class="ln"></span>Role</div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-grid">
+    <div class="strip-item reveal"><div class="num">4.7★</div><div class="cap">Nota no Google</div></div>
+    <div class="strip-item reveal"><div class="num">100%</div><div class="cap">Corte &amp; barba na régua</div></div>
+    <div class="strip-item reveal"><div class="num">Direto</div><div class="cap">Agende pelo WhatsApp</div></div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-imgwrap reveal">
+      <img src="imagens/web-tools.jpg" alt="Cadeira de barbeiro em couro marrom com acabamento em latão">
+      <div class="tag"><b>São Francisco</b><span>Couro · Navalha · Latão</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="overline">A Casa</div>
+      <h2>Aqui o corte tem <em>assinatura</em> — e o cliente volta.</h2>
+      <p>No Jardim São Francisco, em São Luís, a Barbearia São Francisco é referência de quem gosta de sair da cadeira com o visual no ponto. Corte na régua, barba feita com calma e aquele acabamento que faz diferença na semana inteira.</p>
+      <p>Sem pressa, sem enrolação. Atendimento de barbeiro de verdade, do jeito que o cliente espera quando o assunto é a própria imagem. É essa a constância que garantiu a nota 4.7 no Google.</p>
+      <div class="sig">Felipe — Barbearia São Francisco<span>O barbeiro da casa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="services-head reveal">
+      <div class="overline">O que fazemos</div>
+      <h2>Serviços com mão de quem entende</h2>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+        </span>
+        <h3>Corte Masculino</h3>
+        <p>Tesoura, máquina e degradê feito com capricho. Sai com o visual alinhado e definido pra durar.</p>
+        <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 25</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20l1.5-1.5c.5.2 1 .3 1.5.3 3 0 5-2 5-5 0-1.5.5-3.5 2-4.5 1.5-1 2.5-2.5 2.5-4.3z"/><path d="M9 11v.01M13 11v.01"/></svg>
+        </span>
+        <h3>Barba &amp; Navalha</h3>
+        <p>Toalha quente, desenho e navalha. A barba sai modelada, hidratada e com aquele acabamento limpo.</p>
+        <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 20</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.2"/></svg>
+        </span>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo num só horário: corte alinhado mais barba na navalha. Você sai pronto pra semana.</p>
+        <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 40</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 9.5-9.5a2.1 2.1 0 00-3-3L5 16l-1 4z"/><path d="M13.5 6.5l3 3"/></svg>
+        </span>
+        <h3>Acabamento &amp; Pézinho</h3>
+        <p>Aquele retoque na linha, pézinho e contorno pra manter o corte impecável entre uma visita e outra.</p>
+        <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 15</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery grain" id="galeria">
+  <div class="wrap">
+    <div class="g-head reveal">
+      <div class="overline">Nossos cortes</div>
+      <h2>O resultado fala por si</h2>
+      <p>Degradê, barba na navalha, acabamento na régua. É esse padrão que faz o cliente voltar e indicar.</p>
+    </div>
+    <div class="g-grid">
+      <div class="g-item g-tall g-wide reveal"><img src="imagens/web-cut1.jpg" alt="Acabamento de corte masculino com navalha" loading="lazy"></div>
+      <div class="g-item reveal"><img src="imagens/web-cut2.jpg" alt="Degradê masculino em andamento" loading="lazy"></div>
+      <div class="g-item reveal"><img src="imagens/web-chair.jpg" alt="Barba sendo aparada com tesoura" loading="lazy"></div>
+      <div class="g-item g-wide reveal"><img src="imagens/web-beard.jpg" alt="Atendimento de barbeiro finalizando o corte" loading="lazy"></div>
+      <div class="g-item g-tall reveal"><img src="imagens/web-tools.jpg" alt="Cadeira de barbeiro de couro marrom" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA -->
+<section class="proof">
+  <div class="wrap reveal">
+    <div class="overline center">Reputação real</div>
+    <p class="quote">Quem senta na cadeira da <em>São Francisco</em> sai cliente.</p>
+    <div class="proof-rating">
+      <span class="pr-num">4.7</span>
+      <div class="stars" aria-label="4.7 de 5 estrelas">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      </div>
+      <div class="pr-lbl">Avaliação<br>no Google</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="location grain" id="local">
+  <div class="wrap loc-grid">
+    <div class="loc-info reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Passa lá. Ou já <em>chama no zap.</em></h2>
+      <ul class="loc-list">
+        <li>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="lt">Endereço</div><div class="lv">R. Um, 501 — Sala 01<br>Jardim São Francisco, São Luís — MA</div></div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="lt">Horário</div><div class="lv">Seg a Sáb · 09h às 19h</div></div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <div><div class="lt">WhatsApp</div><div class="lv">(98) 99603-9478</div></div>
+        </li>
+      </ul>
+      <a class="btn btn-primary" href="https://wa.me/5598996039478?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Barbearia%20S%C3%A3o%20Francisco%20e%20quero%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Marcar meu horário
+      </a>
+    </div>
+    <div class="loc-photo reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada da Barbearia São Francisco no Jardim São Francisco, São Luís">
+      <div class="cap">Nossa casa, no Jardim São Francisco.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fbrand">Barbearia São <span>Francisco</span></div>
+  <p>Jardim São Francisco · São Luís — MA · (98) 99603-9478</p>
+  <p class="fnote">Seg a Sáb · 09h às 19h · Avaliação 4.7 no Google</p>
+</footer>
+
+<!-- WA FAB -->
+<a class="wa-fab" href="https://wa.me/5598996039478?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Barbearia%20S%C3%A3o%20Francisco%20e%20quero%20marcar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+// Header scroll
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
