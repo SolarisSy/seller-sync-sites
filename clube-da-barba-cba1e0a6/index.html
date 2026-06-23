@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clube da Barba — Barbearia Bar | Jardim Renascença, São Luís</title>
+<meta name="description" content="O clube dos homens que levam o cuidado a sério. Corte, barba e ambiente de bar exclusivo no Jardim Renascença, São Luís. Agende pelo WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  /* ── Superfície (4 níveis) ── */
+  --bg-base:    #0c1018;   /* azul-meia-noite quase preto */
+  --bg-surface: #0f1422;
+  --bg-inset:   #11192b;   /* navy profundo */
+  --bg-dark:    #080b12;
+
+  /* ── Texto ── */
+  --text-primary:   #efe7d6;   /* creme */
+  --text-secondary: #bdb6a8;
+  --text-muted:     #8a8576;
+  --text-inverse:   #0c1018;
+
+  /* ── Acento + Marca ── */
+  --gold:        #c9a14a;
+  --gold-light:  #e2c477;
+  --gold-dark:   #a8823a;
+  --gold-subtle: rgba(201,161,74,.10);
+  --gold-border: rgba(201,161,74,.22);
+  --navy-line:   rgba(226,196,119,.16);
+
+  /* ── Sombras (3 camadas) ── */
+  --shadow-md:
+    0 2px 4px rgba(0,0,0,.30),
+    0 8px 18px rgba(0,0,0,.34),
+    0 20px 44px rgba(0,0,0,.30);
+  --shadow-lg:
+    0 4px 8px rgba(0,0,0,.32),
+    0 16px 34px rgba(0,0,0,.40),
+    0 44px 88px rgba(0,0,0,.45);
+  --shadow-gold:
+    0 6px 22px rgba(201,161,74,.28),
+    0 2px 6px rgba(201,161,74,.20);
+  --shadow-gold-strong:
+    0 12px 34px rgba(201,161,74,.40),
+    0 4px 10px rgba(201,161,74,.28);
+
+  /* ── Tipografia fluida ── */
+  --text-display: clamp(2.7rem, 1.9rem + 4vw, 5.6rem);
+  --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3.1rem);
+  --text-h3:      clamp(1.25rem, 1rem + 1.1vw, 1.7rem);
+  --text-body:    clamp(0.95rem, 0.88rem + 0.3vw, 1.05rem);
+  --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+  --lh-display: 1.04;
+  --lh-heading: 1.14;
+  --lh-body:    1.74;
+  --ls-display: 0.02em;
+  --ls-overline:0.22em;
+
+  /* ── Espaço ── */
+  --section-pad: clamp(5rem, 9vw, 10rem);
+  --content-max: 1180px;
+  --prose-max:   640px;
+  --gap-cards:   clamp(1rem, 2.4vw, 1.8rem);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{
+  font-family:'Cinzel',serif;
+  font-optical-sizing:auto;
+  text-wrap:balance;
+  letter-spacing:var(--ls-display);
+  line-height:var(--lh-heading);
+  font-weight:600;
+}
+
+.wrap{max-width:var(--content-max);margin:0 auto}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+  font-size:0.7rem;font-weight:500;
+  letter-spacing:var(--ls-overline);
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+.overline::before{content:'';width:34px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.overline.center{justify-content:center}
+.overline.center::after{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+
+.eyebrow-serif{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(1.15rem,0.9rem+1vw,1.6rem);
+  color:var(--gold-light);
+  font-weight:400;
+}
+
+/* ─────────── Grain ─────────── */
+.grain::before{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:0.055;mix-blend-mode:overlay;
+}
+
+/* ─────────── Header ─────────── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(8,11,18,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--gold-border);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .crest{width:30px;height:30px;flex:none}
+.brand .crest path,.brand .crest line{stroke:var(--gold);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.brand .name{
+  font-family:'Cinzel',serif;font-weight:600;
+  font-size:0.98rem;letter-spacing:0.16em;color:var(--text-primary);
+  line-height:1;
+}
+.brand .name small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;letter-spacing:.04em;font-size:.72rem;color:var(--gold-light);margin-top:3px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);transition:color .3s ease;font-weight:400}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:.6rem 1.3rem;border:1px solid var(--gold-border);border-radius:50px;
+  font-size:.72rem!important;letter-spacing:.12em;color:var(--gold-light)!important;
+  transition:background .3s ease,border-color .3s ease,color .3s ease;
+}
+.nav-cta:hover{background:var(--gold-subtle);border-color:var(--gold)}
+@media(max-width:840px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ─────────── Botão ─────────── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-dark));
+  color:#1a1208;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+  border-radius:50px;border:none;cursor:pointer;
+  box-shadow:var(--shadow-gold);
+  transition:transform .35s var(--ease),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px;fill:#1a1208}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem 1.8rem;min-height:50px;
+  border:1px solid var(--gold-border);border-radius:50px;
+  color:var(--text-primary);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;
+  transition:border-color .3s ease,background .3s ease,color .3s ease;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);background:var(--gold-subtle)}
+.btn-ghost svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.5}
+
+/* ─────────── Hero ─────────── */
+.hero{
+  position:relative;height:100dvh;min-height:620px;
+  display:grid;align-items:end;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/web-hero.jpg') center 30%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(160deg, rgba(12,16,24,.62) 0%, rgba(12,16,24,.30) 38%, rgba(8,11,18,.80) 78%, rgba(8,11,18,.97) 100%),
+    radial-gradient(120% 90% at 80% 10%, rgba(17,25,43,.25), transparent 60%);
+}
+.hero-content{
+  position:relative;z-index:3;
+  padding:0 clamp(1.5rem,6vw,5.5rem) clamp(3rem,7vw,5.5rem);
+  max-width:920px;
+}
+.hero .eyebrow-serif{display:block;margin-bottom:14px;opacity:0;animation:fade-soft .9s var(--ease) .15s forwards}
+.hero-title{
+  font-family:'Cinzel',serif;font-weight:700;
+  font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:.01em;max-width:15ch;color:#fff;
+  text-shadow:0 2px 30px rgba(0,0,0,.5);
+}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .line span{
+  display:block;
+  clip-path:inset(0 100% 0 0);
+  transform:translateY(.18em);
+  animation:line-reveal 1s var(--ease) forwards;
+}
+.hero-title .line:nth-child(1) span{animation-delay:.30s}
+.hero-title .line:nth-child(2) span{animation-delay:.46s}
+.hero-title .line:nth-child(3) span{animation-delay:.62s}
+.hero-title em{font-style:normal;color:var(--gold-light)}
+@keyframes line-reveal{to{clip-path:inset(0 0 0 0);transform:translateY(0)}}
+@keyframes fade-soft{to{opacity:1}}
+.hero-sub{
+  margin-top:26px;max-width:46ch;color:var(--text-secondary);
+  font-size:clamp(1rem,.92rem+.4vw,1.18rem);font-weight:300;line-height:1.7;
+  opacity:0;animation:fade-soft 1s var(--ease) .9s forwards;
+}
+.hero-actions{
+  margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;
+  opacity:0;animation:fade-soft 1s var(--ease) 1.05s forwards;
+}
+.hero-rating{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:.7rem 1.1rem;border-radius:50px;
+  background:rgba(239,231,214,.05);
+  backdrop-filter:blur(10px) saturate(150%);-webkit-backdrop-filter:blur(10px) saturate(150%);
+  border:1px solid rgba(239,231,214,.12);
+  box-shadow:0 2px 6px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.08);
+}
+.hero-rating .stars{display:flex;gap:2px}
+.hero-rating .stars svg{width:15px;height:15px;fill:var(--gold-light)}
+.hero-rating b{font-family:'Cinzel',serif;font-size:.95rem;color:var(--text-primary);font-weight:600}
+.hero-rating small{font-size:.72rem;color:var(--text-muted);letter-spacing:.04em}
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--text-muted);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  opacity:0;animation:fade-soft 1s ease 1.6s forwards;
+}
+.scroll-hint .mouse{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
+.scroll-hint .mouse::after{content:'';position:absolute;top:0;left:0;width:100%;height:40%;background:var(--gold-light);animation:scrolldot 2s ease-in-out infinite}
+@keyframes scrolldot{0%{transform:translateY(-100%)}100%{transform:translateY(250%)}}
+
+/* ─────────── Reveal ─────────── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>.reveal:nth-child(2){transition-delay:.07s}
+.stagger>.reveal:nth-child(3){transition-delay:.14s}
+.stagger>.reveal:nth-child(4){transition-delay:.21s}
+.stagger>.reveal:nth-child(5){transition-delay:.28s}
+.stagger>.reveal:nth-child(6){transition-delay:.35s}
+
+/* ─────────── Experiência ─────────── */
+.experience{position:relative;background:var(--bg-inset);overflow:hidden}
+.exp-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.exp-copy h2{font-size:var(--text-h2);margin-bottom:22px}
+.exp-copy h2 em{font-style:normal;color:var(--gold-light)}
+.exp-copy p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px;font-weight:300}
+.exp-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.exp-stat .num{font-family:'Cinzel',serif;font-size:clamp(1.8rem,1.3rem+1.5vw,2.6rem);color:var(--gold-light);font-weight:600;line-height:1}
+.exp-stat .lbl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:8px}
+.exp-media{position:relative}
+.exp-media img{width:100%;height:clamp(360px,52vw,540px);object-fit:cover;border-radius:4px;box-shadow:var(--shadow-lg);filter:saturate(.95) contrast(1.03)}
+.exp-media .frame{position:absolute;inset:14px;border:1px solid var(--gold-border);border-radius:4px;pointer-events:none;z-index:2}
+.exp-media .tag{
+  position:absolute;left:-1px;bottom:34px;z-index:3;
+  background:linear-gradient(135deg,var(--bg-dark),var(--bg-inset));
+  border:1px solid var(--gold-border);border-left:2px solid var(--gold);
+  padding:14px 20px;box-shadow:var(--shadow-md);max-width:230px;
+}
+.exp-media .tag .t{font-family:'Cinzel',serif;color:var(--gold-light);font-size:.82rem;letter-spacing:.1em;margin-bottom:4px}
+.exp-media .tag .s{font-size:.74rem;color:var(--text-muted);line-height:1.5}
+@media(max-width:860px){.exp-grid{grid-template-columns:1fr}.exp-media{order:-1}}
+
+/* divisor dourado fino */
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-border),transparent);margin:0 auto;max-width:var(--content-max)}
+
+/* ─────────── Serviços ─────────── */
+.services{position:relative;background:var(--bg-base);text-align:center}
+.services .overline{margin-bottom:18px}
+.services>.wrap>h2{font-size:var(--text-h2);margin-bottom:14px;text-align:center}
+.services .lead{color:var(--text-secondary);max-width:50ch;margin:0 auto 56px;text-align:center;font-weight:300}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:var(--gap-cards);text-align:left}
+.serv-card{
+  position:relative;padding:clamp(1.6rem,3vw,2.2rem);
+  background:linear-gradient(180deg,var(--bg-surface),var(--bg-base));
+  border:1px solid rgba(239,231,214,.07);border-radius:6px;overflow:hidden;
+  transition:transform .4s var(--ease),box-shadow .4s ease,border-color .3s ease;
+}
+.serv-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.serv-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md);border-color:var(--gold-border)}
+.serv-card:hover::after{transform:scaleX(1)}
+.serv-icon{width:46px;height:46px;margin-bottom:22px}
+.serv-icon svg{width:100%;height:100%;stroke:var(--gold-light);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:11px;color:var(--text-primary)}
+.serv-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.65;font-weight:300}
+.serv-card .price{margin-top:18px;display:flex;align-items:baseline;gap:6px;font-family:'Cinzel',serif;color:var(--gold-light);font-size:1.05rem}
+.serv-card .price small{font-size:.7rem;color:var(--text-muted);font-family:'Inter';letter-spacing:.08em;text-transform:uppercase}
+
+/* ─────────── Galeria ─────────── */
+.gallery{position:relative;background:var(--bg-dark)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,230px);gap:14px;margin-top:8px}
+.gal-grid figure{position:relative;overflow:hidden;border-radius:4px;border:1px solid rgba(239,231,214,.06)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .5s ease;filter:saturate(.9) brightness(.92)}
+.gal-grid figure:hover img{transform:scale(1.07);filter:saturate(1) brightness(1)}
+.gal-grid figure::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,11,18,.55),transparent 55%);opacity:.7;transition:opacity .4s ease}
+.gal-grid figure:hover::after{opacity:.35}
+.gal-grid .g-wide{grid-column:span 2}
+.gal-grid .g-tall{grid-row:span 2}
+@media(max-width:780px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid .g-tall{grid-row:span 1}}
+
+/* ─────────── Localização ─────────── */
+.location{position:relative;background:var(--bg-inset);overflow:hidden}
+.loc-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.loc-media{position:relative}
+.loc-media img{width:100%;height:clamp(340px,46vw,500px);object-fit:cover;border-radius:4px;box-shadow:var(--shadow-lg)}
+.loc-media .frame{position:absolute;inset:14px;border:1px solid var(--gold-border);pointer-events:none}
+.loc-media .badge{
+  position:absolute;right:-1px;top:30px;z-index:3;
+  background:rgba(8,11,18,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--gold-border);padding:10px 16px;
+  font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;color:var(--gold-light);
+}
+.loc-copy h2{font-size:var(--text-h2);margin-bottom:22px}
+.loc-info{margin:28px 0;display:flex;flex-direction:column;gap:18px}
+.loc-row{display:flex;gap:15px;align-items:flex-start}
+.loc-row .ic{width:22px;height:22px;flex:none;margin-top:2px}
+.loc-row .ic svg{width:100%;height:100%;stroke:var(--gold-light);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.loc-row .txt strong{display:block;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.1em;color:var(--text-primary);margin-bottom:3px;font-weight:600}
+.loc-row .txt span{font-size:.92rem;color:var(--text-secondary);font-weight:300}
+.loc-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr}.loc-media{order:-1}}
+
+/* ─────────── CTA final ─────────── */
+.final-cta{position:relative;text-align:center;background:var(--bg-dark);overflow:hidden}
+.final-cta::after{content:'';position:absolute;inset:0;background:radial-gradient(70% 100% at 50% 120%,rgba(201,161,74,.14),transparent 70%);z-index:0}
+.final-cta .wrap{position:relative;z-index:2;max-width:760px}
+.final-cta .eyebrow-serif{display:block;margin-bottom:18px}
+.final-cta h2{font-size:clamp(2.1rem,1.5rem+2.6vw,3.6rem);margin-bottom:24px;color:#fff}
+.final-cta h2 em{font-style:normal;color:var(--gold-light)}
+.final-cta p{color:var(--text-secondary);max-width:48ch;margin:0 auto 38px;font-weight:300}
+
+/* ─────────── Footer ─────────── */
+footer{background:var(--bg-base);padding:clamp(2.5rem,5vw,3.5rem) clamp(1.5rem,6vw,5rem);border-top:1px solid rgba(239,231,214,.07)}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot-grid .brand .name{font-size:.9rem}
+footer .copy{font-size:.74rem;color:var(--text-muted);letter-spacing:.04em}
+footer .copy a{color:var(--gold-light)}
+
+/* ─────────── WhatsApp FAB ─────────── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.42);
+  transition:transform .25s var(--ease);
+}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(1.7);opacity:0}}
+
+/* ─────────── Reduced motion ─────────── */
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.exp-media img{animation:none}
+  .reveal,.hero-title .line span,.hero .eyebrow-serif,.hero-sub,.hero-actions,.scroll-hint{animation:none!important;transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}
+  .wa-fab::before,.scroll-hint .mouse::after{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="grain">
+
+<!-- ─── Header ─── -->
+<header id="hdr">
+  <a class="brand" href="#top" aria-label="Clube da Barba — início">
+    <svg class="crest" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 2 L27 6 V15 C27 23 22 28 16 30 C10 28 5 23 5 15 V6 Z"/>
+      <path d="M11 13 C13 16 19 16 21 13"/>
+      <line x1="16" y1="8" x2="16" y2="11"/>
+      <path d="M12 20 C14 22 18 22 20 20"/>
+    </svg>
+    <span class="name">Clube da Barba<small>Barbearia Bar</small></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#experiencia">A Experiência</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#ambiente">Ambiente</a>
+    <a href="#localizacao">Onde Estamos</a>
+    <a class="nav-cta" href="https://wa.me/5598991400770?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Clube%20da%20Barba%20e%20quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- ─── Hero ─── -->
+<section class="hero grain" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="eyebrow-serif">Jardim Renascença · São Luís — MA</span>
+    <h1 class="hero-title">
+      <span class="line"><span>O clube dos homens</span></span>
+      <span class="line"><span>que levam o cuidado</span></span>
+      <span class="line"><span><em>a sério.</em></span></span>
+    </h1>
+    <p class="hero-sub">Corte na navalha, barba desenhada e o ambiente de um bar exclusivo. Aqui você não marca um horário — você entra para um clube.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5598991400770?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Clube%20da%20Barba%20e%20quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.745-.982-.667-1.273z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <div class="hero-rating">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.3 3.2L7 14.2 2 9.4l7-.9z"/></svg>
+        </span>
+        <b>4,6</b><small>no&nbsp;Google</small>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span class="mouse"></span>Role</div>
+</section>
+
+<!-- ─── A Experiência ─── -->
+<section class="experience grain" id="experiencia">
+  <div class="wrap exp-grid">
+    <div class="exp-copy reveal">
+      <span class="overline">A Experiência</span>
+      <h2>Aqui não é só corte.<br>É o seu <em>ritual.</em></h2>
+      <p>Cadeira reclinada, toalha quente, navalha afiada e a calma de um ambiente pensado para o homem que sabe o que quer. No Clube da Barba, cada detalhe existe para que você saia daqui inteiro — não só aparado.</p>
+      <p>Mais do que uma barbearia, um ponto de encontro com clima de bar exclusivo no coração do Jardim Renascença. Você senta como cliente e sai como membro.</p>
+      <div class="exp-stats">
+        <div class="exp-stat"><div class="num">4,6</div><div class="lbl">Nota no Google</div></div>
+        <div class="exp-stat"><div class="num">100%</div><div class="lbl">Atendimento na navalha</div></div>
+        <div class="exp-stat"><div class="num">Bar</div><div class="lbl">Ambiente exclusivo</div></div>
+      </div>
+    </div>
+    <div class="exp-media reveal">
+      <img src="imagens/web-interior.jpg" alt="Interior do Clube da Barba: cadeiras clássicas, parede de tijolo e iluminação quente" loading="lazy" />
+      <span class="frame" aria-hidden="true"></span>
+      <div class="tag">
+        <div class="t">Clima de club</div>
+        <div class="s">Ambiente reservado, pensado para o seu momento.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ─── Serviços ─── -->
+<section class="services grain" id="servicos">
+  <div class="wrap">
+    <span class="overline center">Nossos Serviços</span>
+    <h2>O cuidado, em cada traço</h2>
+    <p class="lead">Trabalho de barbeiro de verdade: precisão na máquina, acabamento na tesoura e o desenho da barba na navalha quente.</p>
+    <div class="serv-grid stagger">
+
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="13" cy="34" r="6"/><circle cx="35" cy="34" r="6"/><path d="M17 30 L40 9"/><path d="M31 30 L8 9"/><path d="M24 24 L30 18"/></svg></div>
+        <h3>Corte de Cabelo</h3>
+        <p>Do clássico ao moderno, com máquina, tesoura e acabamento na navalha. Um corte feito para o formato do seu rosto.</p>
+        <div class="price">a partir de R$&nbsp;45 <small>· 40 min</small></div>
+      </article>
+
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 8 C12 22 16 30 24 30 C32 30 36 22 36 8"/><path d="M16 30 C16 36 20 40 24 40 C28 40 32 36 32 30"/><path d="M24 30 L24 40"/></svg></div>
+        <h3>Barba na Navalha</h3>
+        <p>Toalha quente, óleo, desenho e finalização. A barba alinhada do jeito que valoriza o seu visual e dura a semana toda.</p>
+        <div class="price">a partir de R$&nbsp;40 <small>· 30 min</small></div>
+      </article>
+
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L24 20"/><circle cx="24" cy="27" r="7"/><path d="M14 42 C14 36 18 33 24 33 C30 33 34 36 34 42"/><path d="M18 9 L30 9"/></svg></div>
+        <h3>Combo Corte + Barba</h3>
+        <p>A experiência completa do Clube: cabelo e barba em uma única sessão, com mais tempo, mais cuidado e o melhor preço.</p>
+        <div class="price">a partir de R$&nbsp;75 <small>· 70 min</small></div>
+      </article>
+
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 18 C10 12 16 10 24 10 C32 10 38 12 38 18"/><path d="M14 18 L14 30 C14 36 18 40 24 40 C30 40 34 36 34 30 L34 18"/><path d="M19 24 L29 24"/></svg></div>
+        <h3>Cuidados &amp; Acabamento</h3>
+        <p>Sobrancelha, pézinho, hidratação e tratamentos que dão o toque final. Os detalhes que separam o arrumado do impecável.</p>
+        <div class="price">sob consulta <small>· no WhatsApp</small></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Galeria / Ambiente ─── -->
+<section class="gallery grain" id="ambiente">
+  <div class="wrap">
+    <span class="overline">O Ambiente</span>
+    <h2 class="reveal" style="font-size:var(--text-h2);margin-bottom:8px">Onde o tempo passa devagar</h2>
+    <div class="gal-grid stagger">
+      <figure class="g-wide g-tall reveal"><img src="imagens/web-cut.jpg" alt="Acabamento de corte com pente e precisão" loading="lazy" /></figure>
+      <figure class="reveal"><img src="imagens/web-tools.jpg" alt="Barbeiro trabalhando com pente e tesoura" loading="lazy" /></figure>
+      <figure class="reveal"><img src="imagens/web-beard.jpg" alt="Fade sendo feito em ambiente de tijolo" loading="lazy" /></figure>
+      <figure class="g-wide reveal"><img src="imagens/web-chair.jpg" alt="Atendimento na cadeira em ambiente quente do clube" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Localização ─── -->
+<section class="location grain" id="localizacao">
+  <div class="wrap loc-grid">
+    <div class="loc-media reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada do Clube da Barba — Barbearia Bar, Jardim Renascença" loading="lazy" />
+      <span class="frame" aria-hidden="true"></span>
+      <span class="badge">Nossa casa</span>
+    </div>
+    <div class="loc-copy reveal">
+      <span class="overline">Onde Estamos</span>
+      <h2>No coração do Jardim Renascença</h2>
+      <div class="loc-info">
+        <div class="loc-row">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+          <span class="txt"><strong>Endereço</strong><span>R. das Gardênias, 1 — Jardim Renascença, São Luís — MA, 65075-080</span></span>
+        </div>
+        <div class="loc-row">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L20 13l-1 4h-3A13 13 0 015 6z"/></svg></span>
+          <span class="txt"><strong>Contato</strong><span>(98) 99140-0770</span></span>
+        </div>
+        <div class="loc-row">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+          <span class="txt"><strong>Atendimento</strong><span>Seg a Sáb — agende seu horário pelo WhatsApp</span></span>
+        </div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn-primary" href="https://wa.me/5598991400770?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Clube%20da%20Barba%20e%20quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.745-.982-.667-1.273z"/></svg>
+          Agendar agora
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Clube+da+Barba/@-2.5007395,-44.2928787,17z/data=!4m6!3m5!1s0x7f68c2e47dc6787:0x26533427cba1e0a6!8m2!3d-2.5007395!4d-44.2928787" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Como chegar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA final ─── -->
+<section class="final-cta grain">
+  <div class="wrap">
+    <span class="eyebrow-serif">Sua cadeira está reservada</span>
+    <h2 class="reveal">Entre para o <em>Clube.</em></h2>
+    <p class="reveal">Escolha seu dia, escolha seu horário. Em uma mensagem você garante o atendimento — sem app, sem fila, direto com a gente.</p>
+    <a class="btn-primary reveal" href="https://wa.me/5598991400770?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Clube%20da%20Barba%20e%20quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.745-.982-.667-1.273z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="foot-grid">
+    <div class="brand">
+      <svg class="crest" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 2 L27 6 V15 C27 23 22 28 16 30 C10 28 5 23 5 15 V6 Z"/>
+        <path d="M11 13 C13 16 19 16 21 13"/>
+        <line x1="16" y1="8" x2="16" y2="11"/>
+        <path d="M12 20 C14 22 18 22 20 20"/>
+      </svg>
+      <span class="name">Clube da Barba<small>Barbearia Bar · São Luís — MA</small></span>
+    </div>
+    <p class="copy">R. das Gardênias, 1 — Jardim Renascença · <a href="https://wa.me/5598991400770" target="_blank" rel="noopener">(98) 99140-0770</a></p>
+  </div>
+</footer>
+
+<!-- ─── WhatsApp FAB ─── -->
+<a class="wa-fab" href="https://wa.me/5598991400770?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Clube%20da%20Barba%20e%20quero%20agendar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Agendar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.745-.982-.667-1.273z"/></svg>
+</a>
+
+<script>
+// Header sticky
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
