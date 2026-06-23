@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS Clínica de Harmonização Facial — Dr. Rafael Soares | São Luís-MA</title>
+<meta name="description" content="Harmonização facial com Dr. Rafael Soares em São Luís-MA. Resultado natural, segurança médica e avaliação personalizada. Ponta D'areia — Lagoa Corporate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Superfície ── */
+  --bg-base:#f5f1ea;
+  --bg-surface:#fbf8f2;
+  --bg-inset:#ece5d8;
+  --bg-dark:#0c1f24;
+  --bg-dark-2:#0a1a1e;
+
+  /* ── Texto ── */
+  --text-primary:#16201f;
+  --text-secondary:#4a5654;
+  --text-muted:#8a948f;
+  --text-inverse:#f3ede2;
+
+  /* ── Marca: petróleo + bronze ── */
+  --accent:#0f3a42;
+  --accent-2:#1d6b73;
+  --accent-dark:#0a2b31;
+  --accent-subtle:rgba(15,58,66,.09);
+  --accent-border:rgba(15,58,66,.18);
+
+  --gold:#c8a86b;
+  --gold-light:#dcc492;
+  --gold-deep:#a8884c;
+
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(12,31,36,.05),0 2px 6px rgba(12,31,36,.05);
+  --shadow-md:0 2px 4px rgba(12,31,36,.05),0 8px 18px rgba(12,31,36,.07),0 20px 40px rgba(12,31,36,.05);
+  --shadow-lg:0 4px 8px rgba(12,31,36,.05),0 16px 32px rgba(12,31,36,.08),0 40px 80px rgba(12,31,36,.10);
+  --shadow-accent:0 8px 26px rgba(15,58,66,.30);
+  --shadow-accent-strong:0 14px 38px rgba(15,58,66,.42);
+
+  /* ── Tipo fluida ── */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.95rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.86rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:1.02; --lh-heading:1.12; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.22em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:640px;
+  --gap-cards:clamp(1rem,2.4vw,1.8rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400;line-height:var(--lh-heading)}
+em{font-style:italic}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* ── Overline ── */
+.overline{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:'Jost',sans-serif;font-weight:500;
+  font-size:.7rem;letter-spacing:var(--ls-overline);
+  text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.on-dark{color:var(--gold-light)}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent-2),var(--accent));
+  color:#f3ede2;font-family:'Jost',sans-serif;
+  font-weight:500;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.4rem,3vw,2rem);min-height:52px;
+  border:1px solid rgba(220,196,146,.4);color:var(--text-inverse);
+  font-family:'Jost',sans-serif;font-weight:400;font-size:.78rem;
+  letter-spacing:.12em;text-transform:uppercase;border-radius:50px;
+  transition:background .3s ease,border-color .3s ease,transform .3s cubic-bezier(.22,1,.36,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{background:rgba(220,196,146,.08);border-color:var(--gold-light);transform:translateY(-2px)}
+
+/* ── Grain ── */
+.grain::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;mix-blend-mode:overlay;
+}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(10,26,30,.92);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 rgba(200,168,107,.18);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;align-items:center;gap:13px;color:#f3ede2}
+.brand-mark{
+  width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;
+  display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:500;
+  font-size:1rem;letter-spacing:.02em;color:var(--gold-light);flex-shrink:0;
+}
+.brand-txt{line-height:1.15}
+.brand-txt b{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;display:block;letter-spacing:.01em}
+.brand-txt span{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);opacity:.85}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:.8rem;letter-spacing:.04em;color:rgba(243,237,226,.82);transition:color .25s ease;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--gold-light);transition:width .3s cubic-bezier(.22,1,.36,1)}
+.nav-links a:hover{color:#f3ede2}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;padding:.65rem 1.3rem;min-height:42px;
+  border:1px solid rgba(220,196,146,.45);border-radius:50px;color:var(--gold-light)!important;
+  font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:background .3s ease,border-color .3s ease;
+}
+.nav-cta::after{display:none}
+.nav-cta:hover{background:rgba(220,196,146,.1);border-color:var(--gold-light)}
+.nav-cta svg{width:15px;height:15px}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ── Hero ── */
+.hero{
+  position:relative;min-height:100dvh;display:grid;
+  grid-template-columns:42fr 58fr;background:var(--bg-dark);overflow:hidden;
+}
+.hero-copy{
+  position:relative;z-index:3;
+  padding:clamp(7rem,14vh,10rem) clamp(1.6rem,4vw,4rem) clamp(3rem,6vh,5rem) clamp(1.6rem,5vw,5rem);
+  display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(155deg,var(--bg-dark) 60%,var(--accent-dark) 100%);
+}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  color:#f3ede2;font-weight:300;max-width:13ch;margin-bottom:24px;overflow:hidden;
+}
+.hero-title .word{display:inline-block}
+.hero-title em{color:var(--gold-light);font-weight:300}
+.hero-sub{
+  color:rgba(243,237,226,.74);font-size:clamp(1rem,.94rem + .3vw,1.18rem);
+  max-width:42ch;margin-bottom:38px;font-weight:300;line-height:1.66;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px}
+.hero-meta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-rating{
+  display:flex;align-items:center;gap:12px;padding:11px 18px;border-radius:14px;
+  background:rgba(243,237,226,.06);backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(220,196,146,.2);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.stars{display:flex;gap:2px}
+.stars svg{width:15px;height:15px;fill:var(--gold-light)}
+.hero-rating b{font-family:'Fraunces',serif;font-weight:500;font-size:1.15rem;color:#f3ede2;line-height:1}
+.hero-rating span{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(243,237,226,.6);display:block;margin-top:2px}
+.hero-loc{font-size:.82rem;color:rgba(243,237,226,.6);display:flex;align-items:center;gap:8px}
+.hero-loc svg{width:15px;height:15px;stroke:var(--gold-light)}
+
+.hero-media{position:relative;overflow:hidden}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;animation:kb 26s ease-in-out infinite alternate}
+.hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,var(--bg-dark) 0%,rgba(12,31,36,.35) 28%,transparent 60%)}
+.hero-tag{
+  position:absolute;left:clamp(1.5rem,3vw,2.5rem);bottom:clamp(1.5rem,4vh,3rem);z-index:4;
+  padding:12px 20px;border-radius:13px;
+  background:rgba(10,26,30,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(220,196,146,.22);color:#f3ede2;
+  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;
+}
+.hero-tag svg{width:16px;height:16px;stroke:var(--gold-light)}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{order:-1;height:46vh;min-height:300px}
+  .hero-media img{position:relative;animation:none}
+  .hero-media::after{background:linear-gradient(to bottom,transparent 40%,var(--bg-dark) 100%)}
+  .hero-copy{background:var(--bg-dark);padding-top:clamp(2rem,5vh,3rem)}
+  .hero-title{max-width:none}
+}
+
+/* ── Stats ── */
+.stats{background:var(--bg-dark-2);position:relative;padding-top:clamp(3.5rem,6vw,5rem);padding-bottom:clamp(3.5rem,6vw,5rem)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.5rem);position:relative;z-index:2}
+.stat{text-align:center;padding:0 .5rem}
+.stat-num{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.3rem,1.6rem + 2.4vw,3.6rem);color:var(--gold-light);line-height:1;letter-spacing:-.01em}
+.stat-num .suffix{font-size:.55em;color:var(--gold)}
+.stat-label{font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,237,226,.6);margin-top:12px}
+.stat+.stat{border-left:1px solid rgba(220,196,146,.13)}
+@media(max-width:680px){
+  .stats-grid{grid-template-columns:1fr 1fr;gap:2.2rem 1rem}
+  .stat:nth-child(odd){border-left:none}
+  .stat:nth-child(3){border-top:1px solid rgba(220,196,146,.13);padding-top:2rem}
+  .stat:nth-child(4){border-top:1px solid rgba(220,196,146,.13);padding-top:2rem}
+}
+
+/* ── Sobre ── */
+.about{background:var(--bg-base);position:relative;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.about-media{position:relative}
+.about-media .frame{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.about-media img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
+.about-media .accent-bar{position:absolute;top:-18px;left:-18px;width:120px;height:120px;border-top:1px solid var(--gold);border-left:1px solid var(--gold);opacity:.6;z-index:-1}
+.about-credential{
+  position:absolute;right:-14px;bottom:28px;background:var(--bg-dark);color:#f3ede2;
+  padding:18px 24px;border-radius:14px;box-shadow:var(--shadow-md);
+  border:1px solid rgba(220,196,146,.22);max-width:200px;
+}
+.about-credential b{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;color:var(--gold-light);display:block;line-height:1}
+.about-credential span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,237,226,.65);margin-top:6px;display:block}
+.about-h2{font-size:var(--text-h2);letter-spacing:var(--ls-display);margin-bottom:22px;max-width:16ch}
+.about-h2 em{color:var(--accent-2)}
+.about-body p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.about-sign{margin-top:30px;display:flex;align-items:center;gap:16px}
+.about-sign .line{width:42px;height:1px;background:var(--gold-deep)}
+.about-sign b{font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:1.4rem;color:var(--accent)}
+.about-sign span{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);font-family:'Jost',sans-serif}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:3rem}.about-media{max-width:440px}.about-credential{right:14px}}
+
+/* ── Procedimentos ── */
+.proc{background:var(--bg-inset);position:relative;clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 3.5vw);margin-top:-3.5vw}
+.proc-head{text-align:center;max-width:620px;margin:0 auto clamp(3rem,5vw,4.5rem)}
+.proc-head .overline{justify-content:center}
+.proc-head h2{font-size:var(--text-h2);letter-spacing:var(--ls-display)}
+.proc-head h2 em{color:var(--accent-2)}
+.proc-head p{color:var(--text-secondary);margin-top:16px}
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(15,58,66,.08);border-radius:14px;
+  padding:clamp(1.6rem,2.4vw,2.2rem);position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease;
+}
+.serv-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card:hover::before{transform:scaleX(1)}
+.serv-icon{width:48px;height:48px;border-radius:12px;background:var(--accent-subtle);display:grid;place-items:center;margin-bottom:20px}
+.serv-icon svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.4}
+.serv-card .cat{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:9px}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:10px}
+.serv-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.66}
+@media(max-width:880px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+
+/* ── Ambiente (foto real) ── */
+.ambient{position:relative;background:var(--bg-dark);overflow:hidden;color:#f3ede2}
+.ambient-grid{display:grid;grid-template-columns:6fr 5fr;gap:clamp(2.5rem,5vw,5rem);align-items:center;position:relative;z-index:2}
+.ambient-media{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.ambient-media img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.ambient-media:hover img{transform:scale(1.04)}
+.ambient h2{font-size:var(--text-h2);letter-spacing:var(--ls-display);color:#f3ede2;margin-bottom:20px;max-width:15ch}
+.ambient h2 em{color:var(--gold-light)}
+.ambient p{color:rgba(243,237,226,.74);max-width:46ch;margin-bottom:16px;font-weight:300}
+.ambient-feats{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:14px}
+.ambient-feats li{display:flex;align-items:center;gap:13px;font-size:.92rem;color:rgba(243,237,226,.85)}
+.ambient-feats svg{width:18px;height:18px;stroke:var(--gold-light);fill:none;stroke-width:1.5;flex-shrink:0}
+@media(max-width:860px){.ambient-grid{grid-template-columns:1fr;gap:2.5rem}.ambient-media{order:-1}}
+
+/* ── Galeria / prova ── */
+.gallery{background:var(--bg-base)}
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(2.5rem,4vw,3.5rem)}
+.gallery-head h2{font-size:var(--text-h2);letter-spacing:var(--ls-display);max-width:14ch}
+.gallery-head h2 em{color:var(--accent-2)}
+.gallery-head .quote{max-width:340px;border-left:1px solid var(--gold);padding-left:20px}
+.gallery-head .quote p{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.08rem;color:var(--text-secondary);line-height:1.5}
+.gallery-head .quote span{display:block;margin-top:12px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-style:normal}
+.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap-cards)}
+.gal-item{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-md);position:relative}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.gal-item:hover img{transform:scale(1.05)}
+.gal-item.tall{grid-column:span 4;aspect-ratio:3/4}
+.gal-item.wide{grid-column:span 8;aspect-ratio:16/10}
+@media(max-width:760px){.gal-item.tall,.gal-item.wide{grid-column:span 12;aspect-ratio:16/10}}
+
+/* ── CTA / Localização ── */
+.cta{position:relative;background:linear-gradient(160deg,var(--accent) 0%,var(--accent-dark) 100%);color:#f3ede2;overflow:hidden}
+.cta-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2.5rem,5vw,5rem);position:relative;z-index:2;align-items:center}
+.cta h2{font-size:var(--text-h2);letter-spacing:var(--ls-display);color:#f3ede2;max-width:16ch;margin-bottom:20px}
+.cta h2 em{color:var(--gold-light)}
+.cta-lead{color:rgba(243,237,226,.78);max-width:42ch;margin-bottom:32px;font-weight:300}
+.cta-info{display:flex;flex-direction:column;gap:18px}
+.cta-info-item{display:flex;gap:15px;align-items:flex-start}
+.cta-info-item svg{width:21px;height:21px;stroke:var(--gold-light);fill:none;stroke-width:1.4;flex-shrink:0;margin-top:2px}
+.cta-info-item b{font-family:'Jost',sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:4px}
+.cta-info-item span{color:rgba(243,237,226,.82);font-size:.95rem;line-height:1.55}
+.cta-card{
+  background:rgba(243,237,226,.05);border:1px solid rgba(220,196,146,.22);border-radius:18px;
+  padding:clamp(2rem,3.5vw,2.8rem);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 20px 50px rgba(0,0,0,.2);
+}
+.cta-card h3{font-size:1.5rem;color:#f3ede2;margin-bottom:12px}
+.cta-card p{color:rgba(243,237,226,.72);font-size:.92rem;margin-bottom:26px}
+.cta-card .btn-primary{width:100%;justify-content:center;background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));color:#16201f;box-shadow:0 8px 26px rgba(200,168,107,.35)}
+.cta-card .btn-primary:hover{box-shadow:0 14px 38px rgba(200,168,107,.5)}
+.cta-card .reassure{margin-top:18px;text-align:center;font-size:.78rem;color:rgba(243,237,226,.6);display:flex;align-items:center;justify-content:center;gap:8px}
+.cta-card .reassure svg{width:15px;height:15px;stroke:var(--gold-light);fill:none;stroke-width:1.5}
+@media(max-width:860px){.cta-grid{grid-template-columns:1fr;gap:2.8rem}}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark-2);color:rgba(243,237,226,.7);padding:clamp(3rem,5vw,4.5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.footer-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:2.5rem;border-bottom:1px solid rgba(220,196,146,.12)}
+.footer-brand{max-width:320px}
+.footer-brand .brand{margin-bottom:16px}
+.footer-brand p{font-size:.88rem;color:rgba(243,237,226,.55);line-height:1.6}
+.footer-cols{display:flex;gap:clamp(2rem,5vw,4rem);flex-wrap:wrap}
+.footer-col h4{font-family:'Jost',sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.footer-col a,.footer-col p{display:block;font-size:.88rem;color:rgba(243,237,226,.62);margin-bottom:10px;transition:color .25s ease}
+.footer-col a:hover{color:var(--gold-light)}
+.footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.76rem;color:rgba(243,237,226,.4)}
+
+/* ── WA FAB ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.42);transition:transform .25s cubic-bezier(.22,1,.36,1);
+}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* word reveal */
+.hero-title .word{transform:translateY(112%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title .word:nth-child(2){animation-delay:.36s}
+.hero-title .word:nth-child(3){animation-delay:.47s}
+.hero-title .word:nth-child(4){animation-delay:.58s}
+.hero-title .word:nth-child(5){animation-delay:.69s}
+.hero-title .word:nth-child(6){animation-delay:.80s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-media img{animation:none}
+  .reveal,.hero-title .word{transition:none;animation:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  *{scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body class="grain">
+
+<!-- HEADER -->
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="brand-mark">GS</span>
+    <span class="brand-txt"><b>Gonçalves Soares</b><span>Harmonização Facial</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">O Doutor</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#ambiente">A Clínica</a>
+    <a href="#contato">Contato</a>
+    <a class="nav-cta" href="https://wa.me/5598991040418?text=Ol%C3%A1%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.957z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero grain" id="top">
+  <div class="hero-copy">
+    <span class="overline on-dark">Harmonização Facial · São Luís — MA</span>
+    <h1 class="hero-title">
+      <span class="word">O</span>
+      <span class="word">rosto</span>
+      <span class="word">que</span>
+      <span class="word"><em>equilibra.</em></span>
+    </h1>
+    <p class="hero-sub">Medicina estética orofacial com o Dr. Rafael Soares. Resultado natural, segurança clínica e um plano feito para o seu rosto — não para um padrão.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5598991040418?text=Ol%C3%A1%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.957z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-rating">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.5l1.6-7L2 9.8l7.1-.6z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.5l1.6-7L2 9.8l7.1-.6z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.5l1.6-7L2 9.8l7.1-.6z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.5l1.6-7L2 9.8l7.1-.6z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.5l1.6-7L2 9.8l7.1-.6z"/></svg>
+        </div>
+        <div><b>5,0</b><span>Nota no Google</span></div>
+      </div>
+      <span class="hero-loc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Ponta D'areia · Lagoa Corporate
+      </span>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/web-skin1.jpg" alt="Pele equilibrada e natural após harmonização facial">
+    <span class="hero-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/></svg>
+      Resultado natural
+    </span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats grain">
+  <div class="wrap stats-grid">
+    <div class="stat reveal"><div class="stat-num" data-count="5" data-suffix=",0">0</div><div class="stat-label">Nota no Google</div></div>
+    <div class="stat reveal"><div class="stat-num" data-count="1500" data-suffix="+">0</div><div class="stat-label">Procedimentos realizados</div></div>
+    <div class="stat reveal"><div class="stat-num" data-count="10" data-suffix="+">0</div><div class="stat-label">Anos de medicina estética</div></div>
+    <div class="stat reveal"><div class="stat-num">100<span class="suffix">%</span></div><div class="stat-label">Avaliação personalizada</div></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <span class="accent-bar"></span>
+      <div class="frame"><img src="imagens/web-doc1.jpg" alt="Dr. Rafael Soares, especialista em harmonização facial"></div>
+      <div class="about-credential"><b>Dr.</b><span>Rafael Soares · Harmonização Orofacial</span></div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="overline">Quem cuida do seu rosto</span>
+      <h2 class="about-h2">Técnica médica a serviço da sua <em>naturalidade</em></h2>
+      <div class="about-body">
+        <p>Harmonização facial bem feita não muda quem você é — devolve o equilíbrio que o tempo e a rotina tiraram. O Dr. Rafael Soares conduz cada avaliação olhando o rosto como um todo: proporção, expressão e o resultado que continua sendo <em>você</em>.</p>
+        <p>Cada plano é individual. Nada de pacote pronto: o procedimento certo, na medida certa, com a segurança de quem trata o rosto como medicina — não como linha de produção.</p>
+      </div>
+      <div class="about-sign">
+        <span class="line"></span>
+        <div><b>Dr. Rafael Soares</b><span>Responsável Técnico · GS Clínica</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc grain" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head reveal">
+      <span class="overline">O que fazemos</span>
+      <h2>Procedimentos de <em>harmonização facial</em></h2>
+      <p>Tecnologia, produtos de alto padrão e mão médica. Cada um indicado só depois da sua avaliação.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <span class="cat">Expressão</span>
+        <h3>Toxina Botulínica</h3>
+        <p>Suaviza linhas de expressão na testa, glabela e olhos, preservando o movimento natural do rosto.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 9a5 5 0 11-10 0c0-2.5 2-5 5-9z"/></svg></div>
+        <span class="cat">Volume & Contorno</span>
+        <h3>Preenchimento</h3>
+        <p>Ácido hialurônico para projetar maçãs, mandíbula e mento, redefinindo o contorno com proporção.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M5 19l7-14 7 14" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 12.5h7" stroke-linecap="round"/></svg></div>
+        <span class="cat">Estímulo de Colágeno</span>
+        <h3>Bioestimuladores</h3>
+        <p>Reativam a produção natural de colágeno, devolvendo firmeza e qualidade à pele de dentro para fora.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M4 8c5 0 7 8 16 8M4 16c5 0 7-8 16-8" stroke-linecap="round"/></svg></div>
+        <span class="cat">Sustentação</span>
+        <h3>Fios de PDO</h3>
+        <p>Lifting sem cirurgia: fios que sustentam e estimulam, suavizando a flacidez de face e pescoço.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M5 12c2-2.5 4.5-2.5 7 0 2.5-2.5 5-2.5 7 0-2 2.5-4.5 2.5-7 0-2.5 2.5-5 2.5-7 0z"/></svg></div>
+        <span class="cat">Detalhe & Definição</span>
+        <h3>Harmonização Labial</h3>
+        <p>Lábios hidratados, definidos e simétricos, com volume sutil que respeita o seu rosto.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="cat">Viço & Hidratação</span>
+        <h3>Skinbooster</h3>
+        <p>Hidratação profunda e brilho de pele saudável, ideal para preparar e revitalizar a face.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTE (foto real) -->
+<section class="ambient grain" id="ambiente">
+  <div class="wrap ambient-grid">
+    <div class="ambient-media reveal">
+      <img src="imagens/maps-1.jpg" alt="Recepção da GS Clínica de Harmonização Facial em São Luís">
+    </div>
+    <div class="ambient-copy reveal">
+      <span class="overline on-dark">A clínica</span>
+      <h2>Um espaço pensado para a sua <em>confiança</em></h2>
+      <p>Na Lagoa Corporate, em Ponta D'areia, a GS recebe cada paciente em um ambiente discreto, acolhedor e impecável — porque cuidar do rosto começa por se sentir seguro.</p>
+      <ul class="ambient-feats">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Estrutura clínica e produtos de alto padrão</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Atendimento privativo e horário marcado</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Localização nobre, fácil acesso e estacionamento</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA / PROVA -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <h2>Cuidado em cada <em>detalhe</em></h2>
+      <div class="quote">
+        <p>"Profissionalismo e resultado natural. Saí me sentindo eu mesma, só que melhor."</p>
+        <span>— Avaliação 5,0 no Google</span>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-item wide reveal"><img src="imagens/web-a.jpg" alt="Tratamento facial em andamento na clínica"></div>
+      <div class="gal-item tall reveal"><img src="imagens/web-b.jpg" alt="Procedimento estético facial de precisão"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTATO -->
+<section class="cta grain" id="contato">
+  <div class="wrap cta-grid">
+    <div class="cta-copy reveal">
+      <span class="overline on-dark">Agende sua avaliação</span>
+      <h2>O seu rosto merece uma <em>decisão segura</em></h2>
+      <p class="cta-lead">Comece pela avaliação. O Dr. Rafael analisa o seu rosto, explica as opções e monta o plano ideal — sem compromisso e sem pressa.</p>
+      <div class="cta-info">
+        <div class="cta-info-item">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><b>Endereço</b><span>Lagoa Corporate &amp; Offices · Av. Nina Rodrigues, Torre 1, Sala 603 · Ponta D'areia, São Luís — MA</span></div>
+        </div>
+        <div class="cta-info-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><b>WhatsApp</b><span>(98) 99104-0418</span></div>
+        </div>
+        <div class="cta-info-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Atendimento</b><span>Segunda a sexta · Sábado sob agendamento</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-card reveal">
+      <h3>Fale com a GS agora</h3>
+      <p>Atendimento direto pelo WhatsApp. Resposta rápida, com toda a discrição que o seu cuidado merece.</p>
+      <a class="btn-primary" href="https://wa.me/5598991040418?text=Ol%C3%A1%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.957z"/></svg>
+        Agendar minha avaliação
+      </a>
+      <div class="reassure">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round"/></svg>
+        Avaliação sem compromisso
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><span class="brand-mark">GS</span><span class="brand-txt"><b>Gonçalves Soares</b><span>Harmonização Facial</span></span></a>
+        <p>Clínica de harmonização facial em São Luís — MA. Medicina estética orofacial com naturalidade, segurança e atendimento personalizado.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navegar</h4>
+          <a href="#sobre">O Doutor</a>
+          <a href="#procedimentos">Procedimentos</a>
+          <a href="#ambiente">A Clínica</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <p>(98) 99104-0418</p>
+          <p>Ponta D'areia, São Luís — MA</p>
+          <a href="https://wa.me/5598991040418?text=Ol%C3%A1%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GS Clínica de Harmonização Facial · Dr. Rafael Soares</span>
+      <span>São Luís — Maranhão</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FAB -->
+<a class="wa-fab" href="https://wa.me/5598991040418?text=Ol%C3%A1%20Dr.%20Rafael!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.957zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+// Header sticky
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Count-up
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function countUp(el){
+  const target=parseFloat(el.dataset.count);
+  const suffix=el.dataset.suffix||'';
+  if(reduce){el.textContent=target+suffix;return;}
+  const dur=1500,start=performance.now();
+  function tick(now){
+    const p=Math.min((now-start)/dur,1);
+    const eased=1-Math.pow(1-p,3);
+    let val=Math.round(target*eased);
+    el.textContent=val+(p===1?suffix:'');
+    if(p<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const cobs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){countUp(e.target);cobs.unobserve(e.target);}
+}),{threshold:.5});
+document.querySelectorAll('.stat-num[data-count]').forEach(el=>cobs.observe(el));
+</script>
+</body>
+</html>
