@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Priscilla Nunes · Harmonização Facial em São Luís, MA</title>
+<meta name="description" content="Harmonização facial natural e acolhedora com a Dra. Priscilla Nunes — cirurgiã-dentista especialista em face. Renascença II, São Luís. Avaliação pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Superfície ── */
+  --bg-base:#f7f0e8;
+  --bg-surface:#fdfaf5;
+  --bg-inset:#efe5d8;
+  --bg-dark:#3a2620;
+  --bg-dark-2:#2c1c18;
+
+  /* ── Texto ── */
+  --text-primary:#2c2019;
+  --text-secondary:#5c4d42;
+  --text-muted:#8f7d6e;
+  --text-inverse:#f4e9dc;
+
+  /* ── Acento (terracota / argila) ── */
+  --accent:#b5623f;
+  --accent-dark:#8f4a2e;
+  --accent-subtle:rgba(181,98,63,.10);
+  --accent-border:rgba(181,98,63,.22);
+  --gold:#b8895a;
+  --gold-light:#d4a978;
+
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(58,38,32,.05),0 2px 6px rgba(58,38,32,.05);
+  --shadow-md:0 2px 4px rgba(58,38,32,.05),0 8px 18px rgba(58,38,32,.08),0 20px 40px rgba(58,38,32,.05);
+  --shadow-lg:0 4px 8px rgba(58,38,32,.05),0 16px 32px rgba(58,38,32,.08),0 40px 80px rgba(58,38,32,.10);
+  --shadow-accent:0 8px 24px rgba(181,98,63,.30);
+  --shadow-accent-strong:0 14px 34px rgba(181,98,63,.42);
+
+  /* ── Tipografia fluida ── */
+  --text-display:clamp(2.8rem,2rem + 4.6vw,5.4rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.35rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .25vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04;--lh-heading:1.14;--lh-body:1.74;
+  --ls-display:-.015em;
+
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1180px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.4vw,1.8rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400;letter-spacing:var(--ls-display);line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ── Overline ── */
+.overline{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:'Inter',sans-serif;
+  font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .35s var(--ease),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px;flex-shrink:0}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-inverse);padding:.5rem 0;
+  border-bottom:1px solid var(--accent-border);
+  transition:border-color .3s ease,gap .3s var(--ease);
+}
+.btn-ghost:hover{border-color:var(--accent);gap:14px}
+.btn-ghost svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.btn-ghost:hover svg{transform:translateX(3px)}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.4rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(44,28,24,.94);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--accent-border);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;flex-direction:column;line-height:1.15}
+.brand .b-name{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:500;color:var(--text-inverse);letter-spacing:.01em}
+.brand .b-sub{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+header.scrolled .brand .b-name{color:#fff}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-inverse);padding:.6rem 1.2rem;border:1px solid rgba(244,233,220,.28);border-radius:50px;
+  transition:background .3s ease,border-color .3s ease,color .3s ease;
+}
+.nav-cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.nav-cta svg{width:15px;height:15px}
+@media(max-width:620px){.nav-cta span{display:none}.nav-cta{padding:.6rem;width:42px;height:42px;justify-content:center}}
+
+/* ══ HERO SPLIT ══ */
+.hero{display:grid;grid-template-columns:1.02fr 1fr;min-height:100dvh;position:relative}
+.hero-copy{
+  position:relative;background:var(--bg-dark);color:var(--text-inverse);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,11vw,8rem) clamp(1.6rem,5vw,5rem) clamp(3rem,6vw,5rem);
+  overflow:hidden;z-index:2;
+}
+.hero-copy::before{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.hero-copy>*{position:relative;z-index:2}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);font-weight:300;
+  max-width:13ch;margin-bottom:26px;
+}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .word{display:inline-block;will-change:transform,filter}
+.hero-sub{
+  font-size:var(--text-body);color:rgba(244,233,220,.78);max-width:46ch;
+  margin-bottom:36px;font-weight:300;
+}
+.hero-actions{display:flex;align-items:center;gap:clamp(1rem,3vw,2rem);flex-wrap:wrap}
+.hero-rating{display:flex;align-items:center;gap:12px;margin-top:42px}
+.hero-rating .stars{display:flex;gap:3px}
+.hero-rating .stars svg{width:16px;height:16px;fill:var(--gold-light)}
+.hero-rating .r-text{font-size:.78rem;color:rgba(244,233,220,.6);letter-spacing:.02em}
+.hero-rating .r-text b{color:var(--text-inverse);font-weight:500}
+
+.hero-media{position:relative;overflow:hidden;background:var(--bg-inset)}
+.hero-media img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;
+  animation:kb 26s ease-in-out infinite alternate;
+}
+.hero-media::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(115deg,rgba(58,38,32,.55) 0%,transparent 32%);
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-tag{
+  position:absolute;left:0;bottom:clamp(1.6rem,4vw,3rem);z-index:3;
+  background:rgba(253,250,245,.10);backdrop-filter:blur(13px) saturate(160%);-webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.18);border-left:3px solid var(--accent);
+  box-shadow:0 2px 4px rgba(0,0,0,.10),0 10px 28px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.18);
+  padding:14px 22px 14px 20px;border-radius:0 14px 14px 0;max-width:280px;
+}
+.hero-tag .t-k{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+.hero-tag .t-v{font-family:'Cormorant Garamond',serif;font-size:1.18rem;color:#fff;line-height:1.25;margin-top:3px}
+
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{height:62vw;min-height:340px;order:-1}
+  .hero-media img{animation:none;object-position:center 22%}
+  .hero-copy{padding-top:clamp(7rem,18vw,9rem)}
+  .hero-tag{display:none}
+}
+
+/* ══ Seções ══ */
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.sec-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head h2{font-size:var(--text-h2);font-weight:300;color:var(--text-primary)}
+.sec-head h2 em{font-style:italic;color:var(--accent)}
+.sec-head p{margin-top:18px;color:var(--text-secondary)}
+
+/* ── Sobre ── */
+.about{background:var(--bg-base);position:relative}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2.2rem,5vw,5rem);align-items:center}
+.about-media{position:relative}
+.about-media .frame{
+  position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);
+  aspect-ratio:4/5;
+}
+.about-media .frame img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.about-media .accent-bar{
+  position:absolute;left:-14px;top:34px;bottom:34px;width:6px;border-radius:6px;
+  background:linear-gradient(var(--accent),var(--gold));z-index:-1;
+}
+.about-quote{
+  position:absolute;right:clamp(-8px,-1vw,-22px);bottom:26px;
+  background:var(--bg-dark);color:var(--text-inverse);
+  padding:18px 22px;border-radius:14px;max-width:230px;box-shadow:var(--shadow-md);
+}
+.about-quote .q-mark{font-family:'Cormorant Garamond',serif;font-size:2.4rem;line-height:.4;color:var(--gold-light);display:block;height:18px}
+.about-quote p{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-style:italic;line-height:1.32}
+.about-text h2{font-size:var(--text-h2);font-weight:300;margin-bottom:22px}
+.about-text h2 em{font-style:italic;color:var(--accent)}
+.about-text p{color:var(--text-secondary);margin-bottom:18px;max-width:48ch}
+.about-creds{display:flex;gap:clamp(1.4rem,4vw,3rem);margin-top:30px;flex-wrap:wrap}
+.cred .c-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--accent);line-height:1;font-weight:500}
+.cred .c-l{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr}.about-media{max-width:420px;margin:0 auto}}
+
+/* ── Procedimentos ── */
+.proc{background:var(--bg-inset);position:relative}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--gap-cards)}
+.proc-card{
+  background:var(--bg-surface);border:1px solid rgba(58,38,32,.06);border-radius:16px;
+  padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-sm);
+  transition:transform .4s var(--ease),box-shadow .4s ease,border-color .3s ease;
+}
+.proc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.proc-ico{
+  width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:var(--accent-subtle);color:var(--accent);margin-bottom:20px;
+}
+.proc-ico svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.4}
+.proc-card h3{font-size:var(--text-h3);font-weight:500;margin-bottom:10px}
+.proc-card p{font-size:var(--text-sm);color:var(--text-secondary);line-height:1.66}
+.proc-feature{
+  grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow-md);background:var(--bg-dark);color:var(--text-inverse);min-height:280px;
+}
+.proc-feature .pf-img{position:relative;overflow:hidden}
+.proc-feature .pf-img img{width:100%;height:100%;object-fit:cover;min-height:240px}
+.proc-feature .pf-body{padding:clamp(2rem,4vw,3rem);display:flex;flex-direction:column;justify-content:center}
+.proc-feature .pf-body .overline{color:var(--gold-light)}
+.proc-feature .pf-body h3{font-size:clamp(1.7rem,1.2rem + 1.6vw,2.4rem);font-weight:300;color:#fff;margin-bottom:14px}
+.proc-feature .pf-body p{color:rgba(244,233,220,.78);font-size:var(--text-sm);max-width:42ch}
+@media(max-width:680px){.proc-feature{grid-template-columns:1fr}.proc-feature .pf-img{order:-1;min-height:220px}}
+
+/* ── Filosofia (dark editorial) ── */
+.philo{position:relative;background:var(--bg-dark-2);color:var(--text-inverse);overflow:hidden}
+.philo::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.philo-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2.4rem,6vw,6rem);align-items:center}
+.philo-text .overline{color:var(--gold-light)}
+.philo-text h2{font-size:var(--text-h2);font-weight:300;color:#fff;margin-bottom:24px;max-width:15ch}
+.philo-text h2 em{font-style:italic;color:var(--gold-light)}
+.philo-text p{color:rgba(244,233,220,.78);max-width:48ch;margin-bottom:18px}
+.philo-media{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:1/1}
+.philo-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.philo-media .pm-glow{position:absolute;inset:0;background:linear-gradient(160deg,transparent 50%,rgba(44,28,24,.5));pointer-events:none}
+@media(max-width:840px){.philo-grid{grid-template-columns:1fr}.philo-media{max-width:440px;margin:0 auto;order:-1}}
+
+/* ── Prova social / faixa ── */
+.proof{background:var(--bg-base);text-align:center}
+.proof .overline{justify-content:center}
+.proof h2{font-size:var(--text-h2);font-weight:300;max-width:18ch;margin:0 auto 10px}
+.proof h2 em{font-style:italic;color:var(--accent)}
+.proof .p-stars{display:flex;justify-content:center;gap:6px;margin:24px 0 14px}
+.proof .p-stars svg{width:26px;height:26px;fill:var(--gold)}
+.proof .p-note{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--text-secondary);font-style:italic}
+.proof .p-note b{font-weight:500;color:var(--accent);font-style:normal}
+
+/* ── Localização / CTA ── */
+.contact{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.contact::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n3)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2.4rem,6vw,5rem);align-items:center}
+.contact-text h2{font-size:var(--text-h2);font-weight:300;color:#fff;margin-bottom:20px;max-width:14ch}
+.contact-text h2 em{font-style:italic;color:var(--gold-light)}
+.contact-text p{color:rgba(244,233,220,.76);max-width:42ch;margin-bottom:32px}
+.contact-actions{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:22px}
+.info-item{display:flex;gap:16px;align-items:flex-start}
+.info-item .ii-ico{
+  flex-shrink:0;width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:rgba(244,233,220,.08);border:1px solid rgba(244,233,220,.14);color:var(--gold-light);
+}
+.info-item .ii-ico svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.5}
+.info-item .ii-k{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);font-weight:500;margin-bottom:4px}
+.info-item .ii-v{font-size:var(--text-sm);color:var(--text-inverse);line-height:1.55}
+.info-item a.ii-v:hover{color:var(--gold-light)}
+@media(max-width:840px){.contact-grid{grid-template-columns:1fr}}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark-2);color:rgba(244,233,220,.5);text-align:center;padding:38px 1.5rem;font-size:.74rem;letter-spacing:.02em}
+footer .f-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text-inverse);margin-bottom:6px}
+footer a{color:var(--gold-light)}
+
+/* ── WA FAB ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .25s var(--ease);
+}
+.wa-fab:hover{transform:scale(1.09)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}
+.reveal.d4{transition-delay:.28s}.reveal.d5{transition-delay:.35s}
+
+/* ── Hero word reveal (blur-fade + slide) ── */
+.hero-title .word{opacity:0;transform:translateY(36px);filter:blur(8px);animation:wordIn .9s var(--ease) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title .word:nth-child(2){animation-delay:.37s}
+.hero-title .word:nth-child(3){animation-delay:.49s}
+.hero-title .word:nth-child(4){animation-delay:.61s}
+.hero-title .word:nth-child(5){animation-delay:.73s}
+@keyframes wordIn{to{opacity:1;transform:none;filter:blur(0)}}
+.hero-sub,.hero-actions,.hero-rating{opacity:0;transform:translateY(18px);animation:fadeUp .9s var(--ease) forwards}
+.hero-sub{animation-delay:.82s}.hero-actions{animation-delay:.94s}.hero-rating{animation-delay:1.06s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-media img{animation:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .hero-title .word,.hero-sub,.hero-actions,.hero-rating{animation:none;opacity:1;transform:none;filter:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="brand" href="#top">
+    <span class="b-name">Dra. Priscilla Nunes</span>
+    <span class="b-sub">Harmonização Facial</span>
+  </a>
+  <a class="nav-cta" href="https://wa.me/5598992120222?text=Ol%C3%A1%20Dra.%20Priscilla!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+    <span>Agendar</span>
+  </a>
+</header>
+
+<main id="top">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="overline">Renascença II · São Luís — MA</span>
+      <h1 class="hero-title">
+        <span class="word">Realce</span>
+        <span class="word">a</span>
+        <span class="word">sua</span>
+        <span class="word"><em>beleza</em></span>
+        <span class="word">natural.</span>
+      </h1>
+      <p class="hero-sub">Harmonização facial acolhedora, segura e personalizada — pela mão de quem entende profundamente da sua face. Resultado que parece você, só que mais leve.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5598992120222?text=Ol%C3%A1%20Dra.%20Priscilla!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn-ghost" href="#procedimentos">
+          Ver procedimentos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+        </span>
+        <span class="r-text"><b>5,0</b> de avaliação no Google</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="imagens/maps-1.jpg" alt="Dra. Priscilla Nunes em seu consultório de harmonização facial em São Luís">
+      <div class="hero-tag">
+        <div class="t-k">Especialista em face</div>
+        <div class="t-v">Dra. Priscilla Nunes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SOBRE ══ -->
+  <section class="about" id="sobre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <span class="accent-bar"></span>
+          <div class="frame">
+            <img src="imagens/maps-1.jpg" alt="Dra. Priscilla Nunes, cirurgiã-dentista especialista em harmonização orofacial">
+          </div>
+          <div class="about-quote">
+            <span class="q-mark">&ldquo;</span>
+            <p>Harmonizar é revelar — nunca transformar em outra pessoa.</p>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="overline">Quem cuida de você</span>
+          <h2>Dra. Priscilla Nunes — <em>conhecimento técnico</em> a serviço da sua beleza</h2>
+          <p>Cirurgiã-dentista especialista em harmonização orofacial, a Dra. Priscilla une o domínio profundo da anatomia da face a um olhar estético atento e delicado. Cada plano é pensado para os seus traços — para que o resultado seja natural, equilibrado e fiel a quem você é.</p>
+          <p>Em um ambiente acolhedor no coração do Renascença, em São Luís, o atendimento começa por escutar. Antes de qualquer procedimento, uma avaliação cuidadosa para entender o que você deseja e o que, de fato, vai valorizar o seu rosto.</p>
+          <div class="about-creds">
+            <div class="cred"><div class="c-n">5,0</div><div class="c-l">Avaliação no Google</div></div>
+            <div class="cred"><div class="c-n">100%</div><div class="c-l">Plano personalizado</div></div>
+            <div class="cred"><div class="c-n">Renascença</div><div class="c-l">Localização premium</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROCEDIMENTOS ══ -->
+  <section class="proc" id="procedimentos">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="overline">O que fazemos</span>
+        <h2>Procedimentos pensados para um resultado <em>natural</em></h2>
+        <p>Tecnologia, técnica e bom senso estético em cada protocolo — sempre com avaliação individual antes de qualquer aplicação.</p>
+      </div>
+      <div class="proc-grid">
+
+        <div class="proc-feature reveal">
+          <div class="pf-img"><img src="imagens/web-a.jpg" alt="Tratamento facial com máscara de argila terracota"></div>
+          <div class="pf-body">
+            <span class="overline">Assinatura da clínica</span>
+            <h3>Harmonização facial completa</h3>
+            <p>Um plano sob medida que equilibra contornos, suaviza expressões e devolve viço — respeitando a sua identidade. Você continua sendo você, com a melhor versão dos seus traços.</p>
+          </div>
+        </div>
+
+        <div class="proc-card reveal d1">
+          <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M12 3c4 4 6 7 6 10a6 6 0 01-12 0c0-3 2-6 6-10z"/></svg></div>
+          <h3>Preenchimento labial</h3>
+          <p>Lábios mais definidos e hidratados, com volume na medida certa. O famoso resultado natural, sem exageros.</p>
+        </div>
+
+        <div class="proc-card reveal d2">
+          <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
+          <h3>Toxina botulínica</h3>
+          <p>Suavização de linhas de expressão na testa, glabela e ao redor dos olhos — para um rosto descansado e leve.</p>
+        </div>
+
+        <div class="proc-card reveal d3">
+          <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-9-9a5 5 0 019-3 5 5 0 019 3c-2 4-9 9-9 9z"/></svg></div>
+          <h3>Bioestimulador de colágeno</h3>
+          <p>Estímulo natural à produção de colágeno: firmeza, sustentação e qualidade de pele que melhoram com o tempo.</p>
+        </div>
+
+        <div class="proc-card reveal d4">
+          <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M9 4h11v11M4 9v11h11"/></svg></div>
+          <h3>Fios de sustentação</h3>
+          <p>Efeito lifting sem cirurgia. Reposiciona e sustenta os tecidos para um contorno mais definido e jovem.</p>
+        </div>
+
+        <div class="proc-card reveal d5">
+          <div class="proc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+          <h3>Skinbooster &amp; hidratação</h3>
+          <p>Hidratação profunda e luminosidade. Pele viçosa, uniforme e saudável de dentro para fora.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FILOSOFIA ══ -->
+  <section class="philo">
+    <div class="wrap">
+      <div class="philo-grid">
+        <div class="philo-text reveal">
+          <span class="overline">Nossa filosofia</span>
+          <h2>Menos é mais. <em>Sempre.</em></h2>
+          <p>Acreditamos na beleza que não se anuncia — aquela em que ninguém percebe o procedimento, só notam que você está bem. Harmonização não é mudar o seu rosto; é trazer leveza, equilíbrio e confiança ao que já é seu.</p>
+          <p>Por isso cada avaliação é honesta. Indicamos só o que realmente vai te valorizar, no seu tempo, com segurança e acompanhamento. O melhor resultado é aquele em que você se reconhece no espelho — e gosta ainda mais.</p>
+        </div>
+        <div class="philo-media reveal d2">
+          <img src="imagens/web-glow.jpg" alt="Resultado natural de harmonização facial — pele luminosa em tons quentes">
+          <span class="pm-glow"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROVA SOCIAL ══ -->
+  <section class="proof">
+    <div class="wrap reveal">
+      <span class="overline center">Confiança que se nota</span>
+      <h2>Quem passa pela clínica, <em>volta</em> — e indica</h2>
+      <div class="p-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2 7.3 13.5 2.3 8.9l6.8-.7z"/></svg>
+      </div>
+      <p class="p-note">Nota <b>5,0</b> de avaliação no Google · Renascença II, São Luís</p>
+    </div>
+  </section>
+
+  <!-- ══ CONTATO ══ -->
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-text reveal">
+          <span class="overline">Vamos conversar</span>
+          <h2>Sua avaliação começa com <em>uma mensagem</em></h2>
+          <p>Conte o que você gostaria de melhorar. A Dra. Priscilla avalia, explica e monta um plano sob medida — sem pressa e sem compromisso. O primeiro passo é só chamar no WhatsApp.</p>
+          <div class="contact-actions">
+            <a class="btn-primary" href="https://wa.me/5598992120222?text=Ol%C3%A1%20Dra.%20Priscilla!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+              Agendar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="reveal d2">
+          <ul class="info-list">
+            <li class="info-item">
+              <span class="ii-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><div class="ii-k">Endereço</div><div class="ii-v">Ed. Monumental Shopping, sala 443<br>Renascença II · São Luís — MA</div></div>
+            </li>
+            <li class="info-item">
+              <span class="ii-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+              <div><div class="ii-k">WhatsApp</div><a class="ii-v" href="https://wa.me/5598992120222?text=Ol%C3%A1%20Dra.%20Priscilla!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">(98) 99212-0222</a></div>
+            </li>
+            <li class="info-item">
+              <span class="ii-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <div><div class="ii-k">Atendimento</div><div class="ii-v">Com hora marcada<br>Avaliação individual</div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="f-brand">Dra. Priscilla Nunes</div>
+  Harmonização Facial · Renascença II, São Luís — MA<br>
+  <a href="https://wa.me/5598992120222?text=Ol%C3%A1%20Dra.%20Priscilla!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">(98) 99212-0222</a>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598992120222?text=Ol%C3%A1%20Dra.%20Priscilla!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
