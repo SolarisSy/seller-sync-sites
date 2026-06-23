@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Scarlett Sampaio · Harmonização Facial em São Luís</title>
+<meta name="description" content="Harmonização facial em São Luís - MA com a Dra. Scarlett Sampaio. Preenchimento labial, rinomodelação, toxina e bioestimuladores. Nota 5,0. Agende sua avaliação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfície */
+  --bg-base:#f7f3ee; --bg-surface:#fffdfa; --bg-inset:#efe7dd;
+  --bg-dark:#1c060c; --bg-wine:#3a0d18;
+  /* texto */
+  --text-primary:#211013; --text-secondary:#5a4a4d; --text-muted:#9a8a8d; --text-inverse:#f5ece9;
+  /* marca */
+  --accent:#8e1d2e; --accent-bright:#b32639; --accent-dark:#6d1322;
+  --accent-subtle:rgba(142,29,46,.10); --accent-border:rgba(142,29,46,.22);
+  /* metálico */
+  --rose:#c08a6a; --rose-light:#d8a98a;
+  /* sombras */
+  --shadow-sm:0 1px 2px rgba(40,8,16,.05),0 2px 6px rgba(40,8,16,.05);
+  --shadow-md:0 2px 4px rgba(40,8,16,.05),0 8px 18px rgba(40,8,16,.07),0 20px 40px rgba(40,8,16,.05);
+  --shadow-lg:0 4px 8px rgba(40,8,16,.05),0 16px 32px rgba(40,8,16,.07),0 40px 80px rgba(40,8,16,.10);
+  --shadow-accent:0 10px 30px rgba(142,29,46,.30);
+  --shadow-accent-strong:0 16px 44px rgba(142,29,46,.42);
+  /* escala fluida */
+  --text-display:clamp(2.7rem,1.9rem+4.2vw,5.6rem);
+  --text-h2:clamp(1.95rem,1.3rem+2.6vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem+1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem+.3vw,1.06rem);
+  --text-sm:clamp(.78rem,.72rem+.2vw,.875rem);
+  --lh-display:1.02; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg-base);color:var(--text-primary);
+  font-size:var(--text-body);line-height:var(--lh-body);
+  font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);font-weight:400}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* overline */
+.overline{display:flex;align-items:center;gap:11px;font-family:'Inter';font-size:.7rem;font-weight:600;
+  letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+.section-dark .overline{color:var(--rose-light)}
+
+/* botões */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent-bright),var(--accent-dark));
+  color:#fff;font-family:'Inter';font-weight:600;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;font-family:'Inter';font-weight:500;
+  font-size:.82rem;letter-spacing:.04em;color:var(--text-inverse);
+  border:1px solid rgba(245,236,233,.3);padding:.85rem 1.6rem;border-radius:50px;min-height:48px;
+  transition:border-color .3s ease,background .3s ease;touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--rose-light);background:rgba(192,138,106,.12)}
+
+/* ── HEADER ── */
+header{position:fixed;inset:0 0 auto 0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(1.5rem,5vw,4rem);transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(28,6,12,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 rgba(192,138,106,.22);padding-top:13px;padding-bottom:13px}
+.brand{font-family:'Fraunces';font-size:1.18rem;font-weight:500;letter-spacing:.01em;color:var(--text-inverse)}
+.brand b{color:var(--accent-bright);font-weight:600}
+header.scrolled .brand b{color:var(--rose-light)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.82rem;font-weight:400;letter-spacing:.03em;color:var(--text-inverse);opacity:.85;transition:opacity .25s}
+.nav-links a:hover{opacity:1}
+.nav-links a:not(.head-cta)::after{content:'';display:block;height:1px;background:var(--rose-light);width:0;transition:width .3s cubic-bezier(.22,1,.36,1);margin-top:3px}
+.nav-links a:not(.head-cta):hover::after{width:100%}
+.head-cta{border:1px solid rgba(245,236,233,.35);padding:.5rem 1.1rem;border-radius:50px;opacity:1!important}
+.head-cta:hover{background:var(--accent);border-color:var(--accent)}
+@media(max-width:760px){.nav-links a:not(.head-cta){display:none}}
+
+/* ── HERO ── */
+.hero{position:relative;display:grid;grid-template-columns:1.05fr 1fr;min-height:100dvh;overflow:hidden}
+.hero-copy{position:relative;z-index:3;background:linear-gradient(155deg,var(--bg-wine),var(--bg-dark) 78%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,12vh,9rem) clamp(1.5rem,5vw,4.5rem) clamp(3rem,6vh,5rem)}
+.hero-copy::before{content:'';position:absolute;inset:0;opacity:.05;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-copy>*{position:relative;z-index:2}
+.hero-overline{color:var(--rose-light)}
+.hero h1{font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  color:var(--text-inverse);font-weight:300;max-width:13ch;margin:.2rem 0 1.3rem}
+.hero h1 em{font-style:italic;color:var(--accent-bright);font-weight:400}
+.hero h1 .ch{display:inline-block;opacity:0;transform:translateY(.5em) rotate(3deg);
+  animation:chIn .7s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes chIn{to{opacity:1;transform:none}}
+.hero-sub{color:var(--text-inverse);opacity:.82;max-width:42ch;font-size:1.02rem;font-weight:300;margin-bottom:2.1rem;
+  opacity:0;animation:fadeUp .9s cubic-bezier(.22,1,.36,1) 1.05s forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s cubic-bezier(.22,1,.36,1) 1.25s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-rating{display:flex;align-items:center;gap:13px;margin-top:2.6rem;padding-top:2rem;
+  border-top:1px solid rgba(245,236,233,.14);opacity:0;animation:fadeUp .9s cubic-bezier(.22,1,.36,1) 1.45s forwards}
+.stars{display:flex;gap:3px}.stars svg{width:17px;height:17px;fill:var(--rose-light)}
+.hero-rating .rt{font-family:'Fraunces';font-size:1.55rem;color:var(--text-inverse);line-height:1}
+.hero-rating .rl{font-size:.76rem;color:var(--text-inverse);opacity:.7;letter-spacing:.04em}
+.hero-img{position:relative;overflow:hidden;background:var(--bg-wine)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 18%;
+  animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-img::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(28,6,12,.55) 0%,rgba(28,6,12,.12) 30%,transparent 60%)}
+.hero-badge{position:absolute;left:0;bottom:clamp(1.5rem,5vh,3rem);z-index:4;
+  background:rgba(28,6,12,.55);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);
+  border:1px solid rgba(245,236,233,.16);border-left:none;border-radius:0 14px 14px 0;
+  padding:.95rem 1.4rem .95rem clamp(1.5rem,5vw,4.5rem);transform:translateX(-100%);
+  box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.hero-badge .t{font-family:'Fraunces';font-size:.98rem;color:var(--text-inverse);font-style:italic}
+.hero-badge .s{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rose-light);margin-top:2px}
+.hero-img.in .hero-badge{transform:none;transition:transform 1s cubic-bezier(.22,1,.36,1) .6s}
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:62vw;min-height:340px;order:-1}
+  .hero-img img{object-position:center 22%}
+  .hero-copy{padding-top:clamp(5rem,16vh,7rem)}
+}
+
+/* ── SOBRE ── */
+.about{background:var(--bg-base);position:relative}
+.about-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.about-img-wrap{position:relative}
+.about-img-wrap img{width:100%;border-radius:6px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;object-position:center 40%}
+.about-img-wrap::before{content:'';position:absolute;inset:-14px -14px auto auto;width:60%;height:55%;
+  border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+.about-sig{position:absolute;right:-8px;bottom:24px;background:var(--bg-wine);color:var(--text-inverse);
+  padding:1rem 1.4rem;border-radius:6px;box-shadow:var(--shadow-md);max-width:200px}
+.about-sig .n{font-family:'Fraunces';font-style:italic;font-size:1.1rem;color:var(--rose-light)}
+.about-sig .r{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:3px}
+.about h2{font-size:var(--text-h2);font-weight:300;letter-spacing:-.01em;margin-bottom:1.2rem;max-width:16ch}
+.about h2 em{font-style:italic;color:var(--accent)}
+.about p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:1.1rem}
+.about-marks{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.8rem}
+.mark{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;letter-spacing:.02em;
+  color:var(--text-secondary);background:var(--bg-surface);border:1px solid var(--accent-border);
+  padding:.55rem 1rem;border-radius:50px;box-shadow:var(--shadow-sm)}
+.mark svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:1.6}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr}.about-img-wrap{max-width:380px;margin:0 auto}}
+
+/* ── PROCEDIMENTOS ── */
+.proc{background:var(--bg-inset);position:relative;
+  clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%);
+  padding-top:calc(var(--section-pad) + 3.5vw);margin-top:-3.5vw}
+.proc-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,3.8rem)}
+.proc-head h2{font-size:var(--text-h2);font-weight:300;letter-spacing:-.01em;margin-bottom:.8rem}
+.proc-head h2 em{font-style:italic;color:var(--accent)}
+.proc-head p{color:var(--text-secondary)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:var(--gap-cards)}
+.proc-card{background:var(--bg-surface);border:1px solid rgba(142,29,46,.08);border-radius:8px;
+  padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.proc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.proc-ico{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:var(--accent-subtle);margin-bottom:1.2rem}
+.proc-ico svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.proc-card h3{font-size:var(--text-h3);font-weight:400;margin-bottom:.5rem}
+.proc-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.65}
+.proc-num{font-family:'Fraunces';font-style:italic;font-size:.82rem;color:var(--rose);float:right;margin-top:-.3rem}
+
+/* ── RESULTADOS ── */
+.results{background:linear-gradient(165deg,var(--bg-wine),var(--bg-dark));color:var(--text-inverse);position:relative;overflow:hidden}
+.results::before{content:'';position:absolute;inset:0;opacity:.055;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.results .wrap{position:relative;z-index:1}
+.results-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(2.2rem,4vw,3.4rem)}
+.results-head h2{font-size:var(--text-h2);font-weight:300;letter-spacing:-.01em;max-width:14ch}
+.results-head h2 em{font-style:italic;color:var(--rose-light)}
+.results-rating{text-align:right}
+.results-rating .rt{font-family:'Fraunces';font-size:2.6rem;line-height:1;color:var(--rose-light)}
+.results-rating .stars{justify-content:flex-end;margin:6px 0 4px}
+.results-rating .rl{font-size:.74rem;letter-spacing:.05em;opacity:.72}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards)}
+.shot{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);
+  border:1px solid rgba(245,236,233,.08)}
+.shot img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot .tag{position:absolute;left:14px;bottom:14px;background:rgba(28,6,12,.6);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(245,236,233,.14);
+  padding:.4rem .85rem;border-radius:50px;font-size:.74rem;letter-spacing:.04em;color:var(--text-inverse)}
+.gallery .wide{grid-column:span 1}
+@media(min-width:760px){.gallery .wide{grid-column:span 2}.gallery .wide img{aspect-ratio:auto;height:100%;max-height:520px}}
+
+/* ── EXPERIÊNCIA ── */
+.exp{background:var(--bg-base)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.4rem);align-items:stretch}
+.exp-text{display:flex;flex-direction:column;justify-content:center;padding-right:clamp(0,2vw,2rem)}
+.exp-text h2{font-size:var(--text-h2);font-weight:300;letter-spacing:-.01em;margin-bottom:1.1rem;max-width:15ch}
+.exp-text h2 em{font-style:italic;color:var(--accent)}
+.exp-text p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:1rem}
+.exp-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;min-height:clamp(320px,42vw,480px)}
+.exp-mosaic img{width:100%;height:100%;object-fit:cover;border-radius:7px;box-shadow:var(--shadow-md)}
+.exp-mosaic .tall{grid-row:span 2}
+@media(max-width:840px){.exp-grid{grid-template-columns:1fr}.exp-text{padding-right:0}}
+
+/* ── LOCALIZAÇÃO / CTA ── */
+.contact{background:var(--bg-inset);position:relative;
+  clip-path:polygon(0 0,100% 3.5vw,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 3.5vw)}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.contact h2{font-size:var(--text-h2);font-weight:300;letter-spacing:-.01em;margin-bottom:1rem;max-width:15ch}
+.contact h2 em{font-style:italic;color:var(--accent)}
+.contact p{color:var(--text-secondary);max-width:46ch;margin-bottom:1.8rem}
+.info-list{list-style:none;margin-bottom:2.1rem}
+.info-list li{display:flex;gap:14px;align-items:flex-start;padding:.85rem 0;border-bottom:1px solid var(--accent-border)}
+.info-list li:last-child{border-bottom:none}
+.info-list svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:2px}
+.info-list .lab{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1px}
+.info-list .val{font-size:.96rem;color:var(--text-primary)}
+.contact-card{background:linear-gradient(160deg,var(--bg-wine),var(--bg-dark));color:var(--text-inverse);
+  border-radius:12px;padding:clamp(2rem,4vw,3rem);box-shadow:var(--shadow-lg);text-align:center;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;inset:0;opacity:.06;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.contact-card>*{position:relative}
+.contact-card .ov{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-light);margin-bottom:.8rem}
+.contact-card h3{font-family:'Fraunces';font-weight:300;font-size:1.7rem;font-style:italic;margin-bottom:.6rem}
+.contact-card p{color:var(--text-inverse);opacity:.8;max-width:none;margin:0 auto 1.8rem;font-size:.94rem}
+.contact-card .btn-primary{background:#fff;color:var(--accent-dark)}
+.contact-card .btn-primary svg{fill:var(--accent-dark);stroke:none}
+@media(max-width:840px){.contact-grid{grid-template-columns:1fr}}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(2.5rem,5vw,3.5rem) clamp(1.5rem,6vw,5rem)}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot-brand{font-family:'Fraunces';font-size:1.15rem}
+.foot-brand b{color:var(--rose-light);font-weight:500}
+.foot-meta{font-size:.78rem;opacity:.6;text-align:right;line-height:1.7}
+.foot-meta a{color:var(--rose-light)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .25s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .hero-img img,.hero-bg{animation:none}
+  .hero h1 .ch,.hero-sub,.hero-actions,.hero-rating{animation:none;opacity:1;transform:none}
+  .hero-img.in .hero-badge{transition:none;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  .shot:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">Dra. <b>Scarlett</b> Sampaio</a>
+  <nav class="nav-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#contato">Contato</a>
+    <a class="head-cta" href="https://wa.me/5598991678727?text=Ol%C3%A1%20Dra.%20Scarlett!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <span class="overline hero-overline">Harmonização Facial · São Luís — MA</span>
+    <h1 id="heroTitle"></h1>
+    <p class="hero-sub">Técnica, sensibilidade e assinatura própria. Cada procedimento é pensado para realçar a sua beleza natural — com naturalidade e elegância.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5598991678727?text=Ol%C3%A1%20Dra.%20Scarlett!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+        Agendar minha avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+    <div class="hero-rating">
+      <span class="rt">5,0</span>
+      <div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <div class="rl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img" id="heroImg">
+    <img src="imagens/maps-4.jpg" alt="Dra. Scarlett Sampaio em seu consultório de harmonização facial">
+    <div class="hero-badge">
+      <div class="t">Dra. Scarlett Sampaio</div>
+      <div class="s">Harmonização Facial</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-img-wrap reveal">
+      <img src="imagens/web-glow.jpg" alt="Detalhe de cuidado e beleza, na assinatura escarlate da marca">
+      <div class="about-sig">
+        <div class="n">Scarlett</div>
+        <div class="r">A sua assinatura</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="reveal"><span class="overline">A profissional</span></div>
+      <h2 class="reveal">Beleza com <em>assinatura própria</em>, do diagnóstico ao resultado.</h2>
+      <p class="reveal">A Dra. Scarlett Sampaio dedica a harmonização facial a um propósito simples: realçar a beleza que já é sua, com naturalidade. Cada avaliação começa por entender o seu rosto, a sua expressão e o que faz sentido para você — nunca um molde pronto.</p>
+      <p class="reveal">É essa leitura individual, somada à técnica e ao cuidado em cada detalhe, que se traduz em resultados elegantes e em uma nota 5,0 conquistada paciente a paciente, aqui em São Luís.</p>
+      <div class="about-marks reveal">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Avaliação individual</span>
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>Resultado natural</span>
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg>Protocolo seguro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <span class="overline">Procedimentos</span>
+      <h2>Cada técnica a serviço da <em>sua harmonia</em>.</h2>
+      <p>Protocolos modernos de harmonização facial, sempre personalizados ao seu rosto e ao resultado que você deseja.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-card reveal">
+        <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3-7-6-7-10a7 7 0 0114 0c0 4-3 7-7 10z"/><path d="M9 11c1 1 2 1.4 3 1.4S14 12 15 11"/></svg></div>
+        <span class="proc-num">01</span>
+        <h3>Preenchimento labial</h3>
+        <p>Volume e contorno na medida certa, com lábios definidos e naturais — respeitando a proporção do seu sorriso.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M12 3c0 4-2 6-2 9a2 2 0 004 0c0-3-2-5-2-9z"/><path d="M9 17c1 1.5 5 1.5 6 0"/></svg></div>
+        <span class="proc-num">02</span>
+        <h3>Rinomodelação</h3>
+        <p>Refinamento do nariz sem cirurgia: pequenos ajustes que equilibram o perfil e harmonizam o rosto inteiro.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M4 8c4-2 12-2 16 0"/><path d="M5 13c3.5-1.5 10.5-1.5 14 0"/><path d="M7 17c2.5-1 7.5-1 10 0"/></svg></div>
+        <span class="proc-num">03</span>
+        <h3>Toxina botulínica</h3>
+        <p>Suavização de linhas de expressão na testa, glabela e olhos — uma face descansada, sem perder a naturalidade.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <span class="proc-num">04</span>
+        <h3>Bioestimuladores</h3>
+        <p>Estímulo natural de colágeno para firmeza e qualidade da pele, com resultado progressivo e duradouro.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M7 20c-2-2-3-5-3-8a8 8 0 0116 0c0 3-1 6-3 8"/><path d="M9 13a3 3 0 016 0"/><circle cx="12" cy="9" r="1"/></svg></div>
+        <span class="proc-num">05</span>
+        <h3>Skinbooster &amp; hidratação</h3>
+        <p>Hidratação profunda e viço para a pele, devolvendo luminosidade e um aspecto saudável de dentro para fora.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-ico"><svg viewBox="0 0 24 24"><path d="M12 4c4 0 7 3 7 7 0 4-3 9-7 9s-7-5-7-9c0-4 3-7 7-7z"/><path d="M9 10h6M9 13h6"/></svg></div>
+        <span class="proc-num">06</span>
+        <h3>Full Face</h3>
+        <p>Plano completo e personalizado que combina técnicas para harmonizar o conjunto do rosto com equilíbrio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="results section-dark" id="resultados">
+  <div class="wrap">
+    <div class="results-head">
+      <div>
+        <span class="overline">Resultados reais</span>
+        <h2 class="reveal">O cuidado que <em>aparece no espelho</em>.</h2>
+      </div>
+      <div class="results-rating reveal">
+        <div class="rt">5,0</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <div class="rl">Pacientes no Google</div>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="shot wide reveal">
+        <img src="imagens/maps-1.jpg" alt="Antes e depois de preenchimento labial">
+        <span class="tag">Preenchimento labial · antes e depois</span>
+      </div>
+      <div class="shot reveal">
+        <img src="imagens/maps-2.jpg" alt="Antes e depois de rinomodelação">
+        <span class="tag">Rinomodelação</span>
+      </div>
+      <div class="shot reveal">
+        <img src="imagens/web-facial-treat.jpg" alt="Procedimento estético facial em andamento">
+        <span class="tag">Cuidado em cada detalhe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="exp">
+  <div class="wrap exp-grid">
+    <div class="exp-text">
+      <div class="reveal"><span class="overline">A experiência</span></div>
+      <h2 class="reveal">Um atendimento <em>do seu tempo</em>, do começo ao fim.</h2>
+      <p class="reveal">Da primeira conversa ao acompanhamento depois do procedimento, você é acolhida com atenção e privacidade. Um espaço pensado para que você se sinta à vontade — e segura de cada escolha.</p>
+      <p class="reveal">Aqui, a pressa não entra. O tempo é dedicado a entender o que você quer, explicar cada etapa e cuidar para que o resultado seja exatamente o que combinamos.</p>
+    </div>
+    <div class="exp-mosaic reveal">
+      <img class="tall" src="imagens/web-face-clean.jpg" alt="Tratamento facial cuidadoso">
+      <img src="imagens/web-spa-detail.jpg" alt="Ambiente de relaxamento e cuidado">
+      <img src="imagens/web-petals.jpg" alt="Detalhe em vermelho escarlate, a assinatura da marca">
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="overline">Localização &amp; contato</span>
+      <h2 class="reveal">A sua avaliação começa com <em>uma conversa</em>.</h2>
+      <p class="reveal">Atendimento em São Luís, com hora marcada. Fale com a Dra. Scarlett pelo WhatsApp e agende a sua avaliação personalizada.</p>
+      <ul class="info-list reveal">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><div class="lab">Endereço</div><div class="val">Av. São Luís Rei de França, 1872 — Sala 102, Olho D'Água, São Luís — MA</div></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          <div><div class="lab">WhatsApp</div><div class="val">(98) 99167-8727</div></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="lab">Atendimento</div><div class="val">Com hora marcada · agende pelo WhatsApp</div></div>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-card reveal">
+      <div class="ov">Vagas com hora marcada</div>
+      <h3>Pronta para se ver no espelho?</h3>
+      <p>Mande uma mensagem agora e a Dra. Scarlett te orienta sobre o procedimento ideal para você.</p>
+      <a class="btn-primary" href="https://wa.me/5598991678727?text=Ol%C3%A1%20Dra.%20Scarlett!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+        Agendar minha avaliação
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">Dra. <b>Scarlett</b> Sampaio</div>
+    <div class="foot-meta">
+      Harmonização Facial · São Luís — MA<br>
+      <a href="https://wa.me/5598991678727" target="_blank" rel="noopener">(98) 99167-8727</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598991678727?text=Ol%C3%A1%20Dra.%20Scarlett!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+// char-stagger headline
+(function(){
+  var title=document.getElementById('heroTitle');
+  // markup: "A arte de revelar a sua <em>melhor versão</em>."
+  var html='A arte de revelar a sua <em>melhor versão.</em>';
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){title.innerHTML=html;return;}
+  var tmp=document.createElement('div');tmp.innerHTML=html;
+  var i=0;
+  function build(node,parent){
+    node.childNodes.forEach(function(n){
+      if(n.nodeType===3){
+        n.textContent.split('').forEach(function(c){
+          if(c===' '){parent.appendChild(document.createTextNode(' '));return;}
+          var s=document.createElement('span');s.className='ch';s.textContent=c;
+          s.style.animationDelay=(0.25+i*0.028)+'s';i++;parent.appendChild(s);
+        });
+      }else{
+        var el=document.createElement(n.tagName);
+        build(n,el);parent.appendChild(el);
+      }
+    });
+  }
+  build(tmp,title);
+})();
+
+// header scrolled
+var hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>50);},{passive:true});
+
+// hero badge reveal
+window.addEventListener('load',function(){
+  var hi=document.getElementById('heroImg');if(hi)hi.classList.add('in');
+});
+
+// reveal-on-scroll
+var obs=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
