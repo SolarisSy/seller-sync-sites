@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sr. Guimarães Barbearia — São Luís, MA · Corte & Barba de Cavalheiro</title>
+<meta name="description" content="Barbearia de cavalheiro em São Luís (MA). Corte, barba e acabamento com a precisão de quem leva o ofício a sério. Nota 4,9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Camada 1: Superfície ── */
+  --bg-base:#f4efe6;
+  --bg-surface:#faf6ee;
+  --bg-inset:#ebe3d6;
+  --bg-dark:#12100d;
+  --bg-darker:#0b0a08;
+  /* ── Camada 2: Texto ── */
+  --text-primary:#1c1813;
+  --text-secondary:#4a4035;
+  --text-muted:#8a7d6c;
+  --text-inverse:#f4efe6;
+  /* ── Camada 3: Acento + Marca ── */
+  --accent:#a6794a;        /* tan quente */
+  --accent-dark:#8a5f35;
+  --accent-subtle:rgba(166,121,74,.10);
+  --accent-border:rgba(166,121,74,.22);
+  --gold:#c6a86b;          /* dourado champanhe */
+  --gold-light:#dcc28b;
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(28,24,19,.05),0 2px 6px rgba(28,24,19,.05);
+  --shadow-md:0 2px 4px rgba(28,24,19,.05),0 8px 18px rgba(28,24,19,.08),0 20px 40px rgba(28,24,19,.05);
+  --shadow-lg:0 4px 8px rgba(28,24,19,.05),0 16px 32px rgba(28,24,19,.08),0 40px 80px rgba(28,24,19,.10);
+  --shadow-accent:0 8px 24px rgba(166,121,74,.28);
+  --shadow-accent-strong:0 14px 38px rgba(166,121,74,.40);
+  /* ── Tipografia fluida ── */
+  --text-display:clamp(2.9rem,2rem + 4.4vw,6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.02;--lh-heading:1.12;--lh-body:1.74;
+  /* ── Spacing ── */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1180px;
+  --prose-max:640px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-optical-sizing:auto;text-wrap:balance;font-weight:500;letter-spacing:-.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* ── Overline ── */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;font-weight:500;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+}
+.overline::before{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+.overline.center::after{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(11,10,8,.92);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 1px 0 rgba(198,168,107,.18);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{font-family:'Playfair Display',serif;color:var(--text-inverse);line-height:1}
+.brand .b-top{display:block;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-family:'Inter',sans-serif;font-weight:500;margin-bottom:3px}
+.brand .b-name{font-size:1.18rem;letter-spacing:.06em;font-weight:600}
+.nav{display:flex;gap:34px;align-items:center}
+.nav a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(244,239,230,.72);font-weight:400;transition:color .25s ease}
+.nav a:hover{color:var(--gold)}
+.nav .nav-cta{
+  border:1px solid rgba(198,168,107,.45);color:var(--gold);
+  padding:9px 20px;border-radius:50px;transition:background .3s ease,color .3s ease;
+}
+.nav .nav-cta:hover{background:var(--gold);color:var(--bg-darker)}
+@media(max-width:840px){.nav a:not(.nav-cta){display:none}}
+
+/* ── Hero ── */
+.hero{
+  position:relative;height:100dvh;min-height:620px;
+  display:grid;align-items:end;overflow:hidden;
+  background:var(--bg-darker);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/insta-4.jpg') center 30%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(165deg,rgba(11,10,8,.30) 0%,rgba(11,10,8,.10) 38%,rgba(11,10,8,.70) 78%,rgba(11,10,8,.94) 100%),
+    linear-gradient(to right,rgba(11,10,8,.55),transparent 55%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:220px;opacity:.06;
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3.2rem,7vw,5.5rem);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;width:100%;
+}
+.hero-main{max-width:760px}
+.hero-eyebrow{
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:22px;display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold);opacity:.7}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  color:var(--text-inverse);font-weight:500;letter-spacing:-.015em;
+  overflow:hidden;
+}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title .line:nth-child(2) .word{animation-delay:.4s}
+.hero-title em{font-family:'Cormorant',serif;font-style:italic;font-weight:500;color:var(--gold-light)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  margin-top:24px;max-width:480px;color:rgba(244,239,230,.84);
+  font-size:1.05rem;font-weight:300;line-height:1.66;
+  opacity:0;animation:fade-in 1s ease .9s forwards;
+}
+.hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1.05s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-aside{display:flex;flex-direction:column;gap:14px;align-items:flex-end;opacity:0;animation:fade-in 1s ease 1.2s forwards}
+.glass-badge{
+  background:rgba(244,239,230,.08);
+  backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(244,239,230,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(244,239,230,.18);
+  border-radius:14px;padding:16px 22px;color:var(--text-inverse);text-align:right;min-width:170px;
+}
+.glass-badge .stars{color:var(--gold);font-size:.95rem;letter-spacing:2px;display:flex;gap:3px;justify-content:flex-end;margin-bottom:5px}
+.glass-badge .rate{font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1}
+.glass-badge .rate span{font-size:.78rem;color:rgba(244,239,230,.6);font-family:'Inter',sans-serif}
+.glass-badge .src{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,230,.55);margin-top:6px}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(244,239,230,.5);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
+.scroll-hint .ln{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:680px){.hero-aside{display:none}}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fbf7ef;font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:none;cursor:pointer;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px;flex-shrink:0}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.4rem,3vw,2rem);min-height:52px;
+  border:1px solid rgba(244,239,230,.32);color:var(--text-inverse);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;transition:background .3s ease,border-color .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{background:rgba(244,239,230,.08);border-color:rgba(244,239,230,.55)}
+.btn-ghost svg{width:17px;height:17px}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+
+/* ── Sobre ── */
+.about{background:var(--bg-base);position:relative;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.about-figure{position:relative}
+.about-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg);filter:grayscale(.12) contrast(1.02)}
+.about-figure::after{content:'';position:absolute;inset:14px;border:1px solid var(--accent-border);border-radius:6px;pointer-events:none;transform:translate(18px,18px);z-index:-1;background:var(--bg-inset)}
+.about-mono{position:absolute;bottom:-26px;left:-22px;background:var(--bg-dark);color:var(--text-inverse);padding:20px 26px;border-radius:6px;box-shadow:var(--shadow-md);max-width:200px}
+.about-mono .num{font-family:'Playfair Display',serif;font-size:2.4rem;line-height:1;color:var(--gold)}
+.about-mono .lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,230,.6);margin-top:6px}
+.about-copy h2{font-size:var(--text-h2);line-height:var(--lh-heading);margin-bottom:22px}
+.about-copy h2 em{font-family:'Cormorant',serif;font-style:italic;color:var(--accent);font-weight:500}
+.about-copy p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px;font-size:1.02rem}
+.about-sign{margin-top:30px;display:flex;align-items:center;gap:16px}
+.about-sign .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--accent-border),transparent);max-width:120px}
+.about-sign .name{font-family:'Cormorant',serif;font-style:italic;font-size:1.5rem;color:var(--text-primary)}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:4rem}.about-figure{max-width:440px}.about-mono{left:auto;right:-10px}}
+
+/* ── Serviços ── */
+.services{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.services::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:220px;opacity:.05}
+.services .wrap{position:relative;z-index:1}
+.services .overline{color:var(--gold)}
+.sec-head{max-width:620px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head h2{font-size:var(--text-h2);line-height:var(--lh-heading);color:var(--text-inverse)}
+.sec-head h2 em{font-family:'Cormorant',serif;font-style:italic;color:var(--gold);font-weight:500}
+.sec-head p{color:rgba(244,239,230,.66);margin-top:16px;font-weight:300}
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-cards)}
+.serv-card{
+  background:rgba(244,239,230,.035);border:1px solid rgba(244,239,230,.09);
+  border-radius:8px;padding:clamp(1.6rem,3vw,2.4rem);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease,background .3s ease;
+}
+.serv-card:hover{transform:translateY(-6px);background:rgba(244,239,230,.055);border-color:var(--accent-border);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.serv-card .ic{width:40px;height:40px;flex-shrink:0;color:var(--gold);margin-bottom:18px}
+.serv-card .ic svg{width:40px;height:40px;stroke:currentColor;stroke-width:1.2;fill:none}
+.serv-body{flex:1}
+.serv-card h3{font-size:1.32rem;color:var(--text-inverse);margin-bottom:8px;font-weight:500}
+.serv-card p{font-size:.92rem;color:rgba(244,239,230,.6);font-weight:300;line-height:1.6}
+.serv-price{font-family:'Cormorant',serif;font-size:1.6rem;color:var(--gold);white-space:nowrap;line-height:1}
+.serv-price small{display:block;font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,230,.45);margin-bottom:4px;text-align:right}
+@media(max-width:680px){.serv-grid{grid-template-columns:1fr}}
+
+/* ── Galeria ── */
+.gallery{background:var(--bg-inset)}
+.gallery .overline{color:var(--accent)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:clamp(2rem,4vw,3rem)}
+.gal-grid figure{overflow:hidden;border-radius:6px;position:relative;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1);filter:grayscale(.1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid figure::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(11,10,8,.35));opacity:0;transition:opacity .4s ease}
+.gal-grid figure:hover::after{opacity:1}
+.gal-tall{grid-row:span 2}
+.gal-wide{grid-column:span 2}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}.gal-wide{grid-column:span 2}.gal-tall{grid-row:span 1}}
+
+/* ── Citação / prova ── */
+.quote{background:var(--bg-base);text-align:center}
+.quote .wrap{max-width:820px}
+.quote .mark{font-family:'Playfair Display',serif;font-size:5rem;line-height:.6;color:var(--accent-subtle);color:var(--accent);opacity:.22;margin-bottom:-10px}
+.quote blockquote{font-family:'Cormorant',serif;font-size:clamp(1.5rem,1.1rem + 1.8vw,2.5rem);font-style:italic;line-height:1.4;color:var(--text-primary);font-weight:400}
+.quote blockquote em{color:var(--accent);font-style:italic;not-italic:false}
+.quote .stars{color:var(--gold);font-size:1.1rem;letter-spacing:4px;margin:28px 0 10px;display:flex;justify-content:center;gap:4px}
+.quote .cap{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)}
+
+/* ── Localização ── */
+.location{background:var(--bg-darker);color:var(--text-inverse);position:relative;overflow:hidden;padding-bottom:clamp(4rem,8vw,8rem)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.location .overline{color:var(--gold)}
+.loc-copy h2{font-size:var(--text-h2);line-height:var(--lh-heading);color:var(--text-inverse);margin-bottom:24px}
+.loc-copy h2 em{font-family:'Cormorant',serif;font-style:italic;color:var(--gold);font-weight:500}
+.loc-list{margin:30px 0;display:flex;flex-direction:column;gap:22px}
+.loc-item{display:flex;gap:16px;align-items:flex-start}
+.loc-item .ic{width:22px;height:22px;flex-shrink:0;margin-top:3px;color:var(--gold)}
+.loc-item .ic svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.4;fill:none}
+.loc-item .lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,230,.5);margin-bottom:3px}
+.loc-item .val{color:rgba(244,239,230,.92);font-weight:400}
+.loc-item a.val:hover{color:var(--gold)}
+.loc-figure{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.loc-figure img{width:100%;height:100%;object-fit:cover;object-position:top}
+.loc-figure::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(11,10,8,.4))}
+@media(max-width:820px){.loc-grid{grid-template-columns:1fr;gap:3rem}.loc-figure{max-width:440px;order:-1}}
+
+/* ── Footer ── */
+footer{background:var(--bg-darker);color:rgba(244,239,230,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem;border-top:1px solid rgba(198,168,107,.14)}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.foot-brand .b-top{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px}
+.foot-brand .b-name{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text-inverse);letter-spacing:.04em;font-weight:600}
+.foot-brand p{font-size:.84rem;margin-top:10px;max-width:280px;line-height:1.6}
+.foot-social{display:flex;gap:14px;align-items:center}
+.foot-social a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(244,239,230,.18);display:flex;align-items:center;justify-content:center;transition:border-color .3s ease,background .3s ease;color:rgba(244,239,230,.8)}
+.foot-social a:hover{border-color:var(--gold);background:rgba(198,168,107,.12);color:var(--gold)}
+.foot-social a svg{width:19px;height:19px}
+.foot-bottom{max-width:var(--content-max);margin:2.5rem auto 0;padding-top:1.6rem;border-top:1px solid rgba(244,239,230,.08);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.74rem;letter-spacing:.04em;color:rgba(244,239,230,.45)}
+.foot-bottom .ig{color:var(--gold)}
+
+/* ── WhatsApp FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reduced motion ── */
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg{animation:none}
+  .hero-title .word{animation:none;transform:none;opacity:1}
+  .hero-sub,.hero-actions,.hero-aside{animation:none;opacity:1}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before,.scroll-hint .ln{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="b-top">Barbearia</span>
+    <span class="b-name">Sr. Guimarães</span>
+  </a>
+  <nav class="nav">
+    <a href="#sobre">A Casa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Trabalhos</a>
+    <a href="#local">Onde Estamos</a>
+    <a class="nav-cta" href="https://wa.me/5598986020870?text=Ol%C3%A1%2C%20Sr.%20Guimar%C3%A3es!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-main">
+      <p class="hero-eyebrow">São Luís · Maranhão · desde sempre, no capricho</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">O</span> <span class="word">corte</span> <span class="word">é</span> <span class="word">ritual.</span></span>
+        <span class="line"><span class="word"><em>A barba,</em></span> <span class="word"><em>assinatura.</em></span></span>
+      </h1>
+      <p class="hero-sub">Barbearia de cavalheiro em São Luís. Mãos firmes, navalha certeira e o cuidado de quem trata cada visita como um clássico atemporal.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5598986020870?text=Ol%C3%A1%2C%20Sr.%20Guimar%C3%A3es!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20corte." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.736-.981zm5.176-3.611c-.275-.137-1.627-.803-1.879-.895-.252-.092-.435-.137-.618.138-.183.275-.71.894-.871 1.078-.16.183-.32.206-.595.069-.275-.138-1.161-.428-2.212-1.365-.818-.73-1.37-1.631-1.531-1.906-.16-.275-.017-.423.121-.56.124-.123.275-.32.413-.48.137-.16.183-.275.275-.458.092-.183.046-.343-.023-.48-.069-.138-.618-1.49-.847-2.04-.224-.535-.45-.463-.618-.471l-.527-.01c-.183 0-.48.069-.73.343-.252.275-.96.939-.96 2.29 0 1.352.984 2.658 1.121 2.843.137.183 1.936 2.957 4.692 4.146.656.283 1.168.451 1.566.578.659.21 1.258.18 1.732.109.529-.079 1.627-.665 1.856-1.307.229-.642.229-1.193.16-1.307-.068-.114-.252-.183-.527-.32z"/></svg>
+          Agendar no WhatsApp
+        </a>
+        <a class="btn-ghost" href="#servicos">
+          Ver serviços
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <div class="glass-badge">
+        <div class="stars" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rate">4,9 <span>/ 5,0</span></div>
+        <div class="src">Avaliação Google</div>
+      </div>
+    </aside>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span class="ln"></span>Role</div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-figure reveal">
+      <img src="imagens/maps-1.jpg" alt="Interior da Barbearia Sr. Guimarães em São Luís, barbeiro atendendo cliente">
+      <div class="about-mono">
+        <div class="num">4,9</div>
+        <div class="lbl">Nota dos clientes no Google</div>
+      </div>
+    </div>
+    <div class="about-copy">
+      <p class="overline reveal">A Casa</p>
+      <h2 class="reveal">Uma barbearia que entende o<br><em>tempo do cavalheiro</em>.</h2>
+      <p class="reveal">No Sr. Guimarães, sentar na cadeira é pausar o dia. Aqui o corte não tem pressa: tem técnica, conversa boa e o acabamento que faz diferença na hora do espelho.</p>
+      <p class="reveal">Da máquina à navalha, cada etapa é feita por quem domina o ofício. Por isso clientes de São Francisco e de toda São Luís voltam — e indicam.</p>
+      <div class="about-sign reveal">
+        <span class="rule"></span>
+        <span class="name">Sr. Guimarães</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="overline reveal">O Ofício</p>
+      <h2 class="reveal">Serviços feitos com <em>capricho de mestre</em>.</h2>
+      <p class="reveal">Do clássico ao detalhe, cada serviço pensado para você sair impecável. Valores de referência — confirme o seu pelo WhatsApp.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="serv-body">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M6 18L18 6M3 5a2 2 0 100-.001M3 19a2 2 0 100-.001" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4.5" cy="5.5" r="2.5"/><circle cx="4.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Corte Clássico</h3>
+          <p>Tesoura e máquina, degradê limpo e finalização sob medida para o seu estilo.</p>
+        </div>
+        <div class="serv-price"><small>a partir de</small>R$ 35</div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-body">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4c2 5 4 8 8 8s6-3 8-8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12v8M9 20h6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Barba Modelada</h3>
+          <p>Navalha, toalha quente e desenho preciso. A barba de respeito que vira sua marca.</p>
+        </div>
+        <div class="serv-price"><small>a partir de</small>R$ 30</div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-body">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Combo Cavalheiro</h3>
+          <p>Corte + barba na mesma visita, com o acabamento completo. O ritual por inteiro.</p>
+        </div>
+        <div class="serv-price"><small>a partir de</small>R$ 55</div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-body">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 21V9l7-5 7 5v12" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Acabamento & Sobrancelha</h3>
+          <p>Pezinho, contorno e ajuste fino. O detalhe que mantém o visual sempre alinhado.</p>
+        </div>
+        <div class="serv-price"><small>a partir de</small>R$ 15</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <p class="overline center reveal" style="justify-content:center">Trabalhos</p>
+    <div class="sec-head reveal" style="text-align:center;margin:0 auto;max-width:560px">
+      <h2 style="font-size:var(--text-h2)">O resultado fala <em style="font-family:'Cormorant',serif;font-style:italic;color:var(--accent)">por si</em>.</h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal-tall reveal"><img src="imagens/insta-4.jpg" alt="Barba sendo aparada na Barbearia Sr. Guimarães" loading="lazy"></figure>
+      <figure class="gal-wide reveal"><img src="imagens/insta-7.jpg" alt="Barbeiro do Sr. Guimarães finalizando corte com pente e tesoura" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-1.jpg" alt="Clientes satisfeitos na Barbearia Sr. Guimarães" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/maps-1.jpg" alt="Ambiente interno da barbearia" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CITAÇÃO -->
+<section class="quote">
+  <div class="wrap">
+    <div class="mark reveal" aria-hidden="true">&ldquo;</div>
+    <blockquote class="reveal">Não é só um corte de cabelo — é <em>cuidar de quem você é</em>. Saí de lá com a sensação de quem foi bem atendido do começo ao fim.</blockquote>
+    <div class="stars reveal" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <p class="cap reveal">Clientes · Avaliação 4,9 no Google</p>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="location" id="local">
+  <div class="wrap loc-grid">
+    <div class="loc-copy">
+      <p class="overline reveal">Onde Estamos</p>
+      <h2 class="reveal">Venha conhecer <em>a casa</em>.</h2>
+      <div class="loc-list">
+        <div class="loc-item reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><div class="lbl">Endereço</div><div class="val">Av. Castelo Branco, Loja 2 — São Francisco<br>São Luís — MA, 65076-090</div></div>
+        </div>
+        <div class="loc-item reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke-linejoin="round"/></svg></span>
+          <div><div class="lbl">WhatsApp</div><a class="val" href="https://wa.me/5598986020870?text=Ol%C3%A1%2C%20Sr.%20Guimar%C3%A3es!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">(98) 98602-0870</a></div>
+        </div>
+        <div class="loc-item reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg></span>
+          <div><div class="lbl">Atendimento</div><div class="val">Seg a Sáb · com hora marcada</div></div>
+        </div>
+      </div>
+      <a class="btn-primary reveal" href="https://wa.me/5598986020870?text=Ol%C3%A1%2C%20Sr.%20Guimar%C3%A3es!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.736-.981zm5.176-3.611c-.275-.137-1.627-.803-1.879-.895-.252-.092-.435-.137-.618.138-.183.275-.71.894-.871 1.078-.16.183-.32.206-.595.069-.275-.138-1.161-.428-2.212-1.365-.818-.73-1.37-1.631-1.531-1.906-.16-.275-.017-.423.121-.56.124-.123.275-.32.413-.48.137-.16.183-.275.275-.458.092-.183.046-.343-.023-.48-.069-.138-.618-1.49-.847-2.04-.224-.535-.45-.463-.618-.471l-.527-.01c-.183 0-.48.069-.73.343-.252.275-.96.939-.96 2.29 0 1.352.984 2.658 1.121 2.843.137.183 1.936 2.957 4.692 4.146.656.283 1.168.451 1.566.578.659.21 1.258.18 1.732.109.529-.079 1.627-.665 1.856-1.307.229-.642.229-1.193.16-1.307-.068-.114-.252-.183-.527-.32z"/></svg>
+        Falar e agendar
+      </a>
+    </div>
+    <figure class="loc-figure reveal">
+      <img src="imagens/insta-8.jpg" alt="Fachada da Barbearia Sr. Guimarães em São Luís, MA" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="b-top">Barbearia</div>
+      <div class="b-name">Sr. Guimarães</div>
+      <p>Corte, barba e acabamento de cavalheiro em São Luís — MA. No capricho, sempre.</p>
+    </div>
+    <div class="foot-social">
+      <a href="https://instagram.com/barbeariasrguimaraes" target="_blank" rel="noopener" aria-label="Instagram @barbeariasrguimaraes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://wa.me/5598986020870?text=Ol%C3%A1%2C%20Sr.%20Guimar%C3%A3es!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.736-.981zm5.176-3.611c-.275-.137-1.627-.803-1.879-.895-.252-.092-.435-.137-.618.138-.183.275-.71.894-.871 1.078-.16.183-.32.206-.595.069-.275-.138-1.161-.428-2.212-1.365-.818-.73-1.37-1.631-1.531-1.906-.16-.275-.017-.423.121-.56.124-.123.275-.32.413-.48.137-.16.183-.275.275-.458.092-.183.046-.343-.023-.48-.069-.138-.618-1.49-.847-2.04-.224-.535-.45-.463-.618-.471l-.527-.01c-.183 0-.48.069-.73.343-.252.275-.96.939-.96 2.29 0 1.352.984 2.658 1.121 2.843.137.183 1.936 2.957 4.692 4.146.656.283 1.168.451 1.566.578.659.21 1.258.18 1.732.109.529-.079 1.627-.665 1.856-1.307.229-.642.229-1.193.16-1.307-.068-.114-.252-.183-.527-.32z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Sr. Guimarães Barbearia · São Luís — MA</span>
+    <span>Instagram <a class="ig" href="https://instagram.com/barbeariasrguimaraes" target="_blank" rel="noopener">@barbeariasrguimaraes</a></span>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/5598986020870?text=Ol%C3%A1%2C%20Sr.%20Guimar%C3%A3es!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.736-.981zm5.176-3.611c-.275-.137-1.627-.803-1.879-.895-.252-.092-.435-.137-.618.138-.183.275-.71.894-.871 1.078-.16.183-.32.206-.595.069-.275-.138-1.161-.428-2.212-1.365-.818-.73-1.37-1.631-1.531-1.906-.16-.275-.017-.423.121-.56.124-.123.275-.32.413-.48.137-.16.183-.275.275-.458.092-.183.046-.343-.023-.48-.069-.138-.618-1.49-.847-2.04-.224-.535-.45-.463-.618-.471l-.527-.01c-.183 0-.48.069-.73.343-.252.275-.96.939-.96 2.29 0 1.352.984 2.658 1.121 2.843.137.183 1.936 2.957 4.692 4.146.656.283 1.168.451 1.566.578.659.21 1.258.18 1.732.109.529-.079 1.627-.665 1.856-1.307.229-.642.229-1.193.16-1.307-.068-.114-.252-.183-.527-.32z"/></svg>
+</a>
+
+<script>
+  // Header sticky
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  // Reveal on scroll
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
