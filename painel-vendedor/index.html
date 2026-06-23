@@ -105,6 +105,15 @@ body{font:15px/1.55 var(--font);background:var(--bg);color:var(--txt);display:fl
 .rev-banner .rev-head{display:flex;align-items:center;gap:8px}
 .rev-banner .rev-prev{font-size:12px;color:var(--mut);line-height:1.5;background:#161a24;border-radius:7px;padding:8px 11px}
 .rev-banner .rev-prev b{color:#fca5a5}
+/* PREVIEW (imagem do site p/ mandar pro cliente) */
+.preview-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:22px}
+.preview-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;flex-wrap:wrap;gap:8px}
+.preview-head .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.09em;font-weight:700}
+.preview-actions{display:flex;gap:8px;flex-wrap:wrap}
+.preview-frame{max-height:560px;overflow-y:auto;border-radius:8px;border:1px solid var(--border);background:#0a0c10}
+.preview-frame::-webkit-scrollbar{width:8px}.preview-frame::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.preview-img{width:100%;display:block}
+.preview-loading{padding:40px;text-align:center;color:var(--mut);font-size:13px}
 /* STATUS ACTIONS */
 .status-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
@@ -270,6 +279,20 @@ function selectLead(idx) {
         <a class="btn" href="${esc(l.siteUrl)}" target="_blank">🔗 Abrir site ao vivo</a>
         <button class="btn ghost" onclick="copyUrl('${esc(l.siteUrl)}',this)">📋 Copiar link</button>
         ${l.mapsUrl ? `<a class="btn ghost" href="${esc(l.mapsUrl)}" target="_blank">📍 Google Maps</a>` : ''}
+      </div>
+    </div>
+
+    <div class="preview-box">
+      <div class="preview-head">
+        <span class="lbl">📸 Prévia do site — mande pro cliente</span>
+        <div class="preview-actions">
+          <a class="btn" href="/previews/${esc(l.slug)}.jpg" download="previa-${esc(l.slug)}.jpg">⬇ Baixar prévia</a>
+          <a class="btn ghost" href="/previews/${esc(l.slug)}.jpg" target="_blank">Abrir imagem</a>
+        </div>
+      </div>
+      <div class="preview-frame">
+        <img class="preview-img" src="/previews/${esc(l.slug)}.jpg" alt="Prévia do site ${esc(l.name)}" loading="lazy"
+          onerror="this.parentElement.innerHTML='<div class=\\'preview-loading\\'>Prévia ainda não gerada para este site.</div>'">
       </div>
     </div>
 
