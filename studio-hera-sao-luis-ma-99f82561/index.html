@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studio HERA — Estética Avançada em São Luís</title>
+<meta name="description" content="Studio HERA — estética avançada no coração de São Luís-MA. Cílios, sobrancelhas, pele e make com o cuidado de quem busca a perfeição. Nota 5,0 no Google." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Superfície ── */
+  --bg-base:#f4efe7;
+  --bg-surface:#fbf8f2;
+  --bg-inset:#ece3d6;
+  --bg-dark:#0e2b27;
+  --teal:#163f3a;
+  --teal-dark:#0e2b27;
+
+  /* ── Texto ── */
+  --text-primary:#23201b;
+  --text-secondary:#5a534a;
+  --text-muted:#9a9082;
+  --text-inverse:#f4efe7;
+
+  /* ── Acento / Marca ── */
+  --accent:#163f3a;
+  --accent-dark:#0e2b27;
+  --accent-subtle:rgba(22,63,58,.08);
+  --accent-border:rgba(22,63,58,.18);
+  --gold:#b8924a;
+  --gold-light:#d9b873;
+  --gold-subtle:rgba(184,146,74,.12);
+
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(35,32,27,.05),0 2px 6px rgba(35,32,27,.05);
+  --shadow-md:0 2px 4px rgba(35,32,27,.04),0 8px 18px rgba(35,32,27,.07),0 20px 40px rgba(35,32,27,.05);
+  --shadow-lg:0 4px 8px rgba(35,32,27,.04),0 16px 32px rgba(35,32,27,.07),0 40px 80px rgba(35,32,27,.09);
+  --shadow-gold:0 10px 30px rgba(184,146,74,.28);
+  --shadow-gold-strong:0 16px 44px rgba(184,146,74,.42);
+
+  /* ── Tipografia fluida ── */
+  --text-display:clamp(2.9rem,2rem + 5vw,6rem);
+  --text-h2:clamp(2rem,1.4rem + 2.6vw,3.2rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(0.95rem,0.88rem + 0.3vw,1.05rem);
+  --text-sm:clamp(0.8rem,0.74rem + 0.2vw,0.9rem);
+
+  --lh-display:1.04;
+  --lh-heading:1.14;
+  --lh-body:1.78;
+  --ls-display:-0.01em;
+  --ls-overline:0.28em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1240px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.4vw,2rem);
+
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400}
+
+/* ── Overline ── */
+.overline{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+  font-size:.7rem;font-weight:500;
+  letter-spacing:var(--ls-overline);
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.2rem;
+}
+.overline::before{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.4rem);
+  min-height:52px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:#1c150a;
+  font-family:'Inter',sans-serif;
+  font-weight:600;font-size:.78rem;letter-spacing:.13em;
+  text-transform:uppercase;
+  border-radius:2px;
+  box-shadow:var(--shadow-gold);
+  transition:transform .35s var(--ease),box-shadow .35s ease;
+  will-change:transform;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.5rem,3vw,2.2rem);
+  min-height:52px;
+  font-family:'Inter',sans-serif;
+  font-weight:500;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-inverse);
+  border:1px solid rgba(217,184,115,.4);
+  border-radius:2px;
+  transition:border-color .35s ease,background .35s ease,color .35s ease;
+  touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--gold-light);background:rgba(217,184,115,.1)}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:22px clamp(1.4rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(14,43,39,.94);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 1px 0 rgba(184,146,74,.22);
+  padding-top:15px;padding-bottom:15px;
+}
+.brand{display:flex;align-items:baseline;gap:.55rem;color:var(--text-inverse)}
+.brand .mark{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase}
+.brand .sub{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+nav.top{display:flex;align-items:center;gap:2.4rem}
+nav.top a{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,231,.85);font-weight:400;transition:color .3s ease}
+nav.top a:hover{color:var(--gold-light)}
+nav.top .nav-links{display:flex;gap:2.2rem}
+@media(max-width:860px){nav.top .nav-links{display:none}}
+
+/* ── HERO split ── */
+.hero{
+  position:relative;
+  display:grid;
+  grid-template-columns:5fr 6fr;
+  min-height:100dvh;
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+}
+.hero-copy{
+  position:relative;
+  background:var(--teal);
+  color:var(--text-inverse);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(7rem,12vh,9rem) clamp(1.6rem,5vw,4.5rem) clamp(3rem,7vh,5rem);
+  overflow:hidden;
+  z-index:2;
+}
+.hero-copy::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;z-index:0;
+}
+.hero-copy::after{
+  content:'';position:absolute;top:-30%;right:-25%;
+  width:60%;height:90%;
+  background:radial-gradient(circle,rgba(184,146,74,.14),transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero-copy > *{position:relative;z-index:1}
+.hero-title{
+  font-size:var(--text-display);
+  line-height:var(--lh-display);
+  letter-spacing:var(--ls-display);
+  font-weight:400;
+  max-width:13ch;
+  margin-bottom:1.6rem;
+}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .word{display:inline-block;will-change:transform,filter,opacity}
+.hero-sub{
+  font-family:'Inter',sans-serif;
+  font-size:var(--text-body);
+  color:rgba(244,239,231,.78);
+  max-width:42ch;
+  font-weight:300;
+  margin-bottom:2.4rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.hero-loc{
+  margin-top:2.6rem;display:flex;align-items:center;gap:10px;
+  font-size:.78rem;letter-spacing:.05em;color:rgba(244,239,231,.6);
+}
+.hero-loc svg{width:15px;height:15px;color:var(--gold-light);flex:none}
+
+.hero-media{position:relative;overflow:hidden;min-height:52vh}
+.hero-media img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+  animation:kb 26s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-media::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(22,63,58,.35) 0%,transparent 35%);
+}
+.badge-rating{
+  position:absolute;left:clamp(1.2rem,3vw,2.4rem);bottom:clamp(1.2rem,3vw,2.4rem);
+  z-index:3;
+  display:flex;align-items:center;gap:13px;
+  padding:14px 20px;border-radius:3px;
+  background:rgba(251,248,242,.1);
+  backdrop-filter:blur(14px) saturate(160%);
+  -webkit-backdrop-filter:blur(14px) saturate(160%);
+  border:1px solid rgba(244,239,231,.18);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.2);
+  color:var(--text-inverse);
+}
+.badge-rating .num{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1;font-weight:500;color:var(--gold-light)}
+.badge-rating .stars{display:flex;gap:2px;margin-bottom:3px}
+.badge-rating .stars svg{width:12px;height:12px;color:var(--gold-light)}
+.badge-rating .lbl{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,231,.8)}
+
+/* ── Sections base ── */
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.section-head{max-width:var(--prose-max)}
+.section-head h2{font-size:var(--text-h2);line-height:var(--lh-heading);color:var(--text-primary);margin-bottom:1.1rem}
+.section-head h2 em{font-style:italic;color:var(--gold)}
+.section-head p{color:var(--text-secondary);font-weight:300}
+
+/* ── Manifesto / Sobre ── */
+.about{background:var(--bg-surface);position:relative}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:3rem}}
+.about-copy h2{font-size:var(--text-h2);line-height:var(--lh-heading);margin-bottom:1.5rem}
+.about-copy h2 em{font-style:italic;color:var(--gold)}
+.about-copy p{color:var(--text-secondary);margin-bottom:1.2rem;font-weight:300}
+.about-copy p:last-of-type{margin-bottom:0}
+.about-stats{display:flex;gap:clamp(1.6rem,4vw,3rem);margin-top:2.6rem;flex-wrap:wrap}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:1;color:var(--teal);font-weight:500}
+.stat .n em{font-style:italic;color:var(--gold)}
+.stat .l{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-top:.5rem}
+.about-media{position:relative}
+.about-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;box-shadow:var(--shadow-lg)}
+.about-media .frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);border-radius:3px;z-index:-1}
+
+/* ── Procedimentos ── */
+.services{background:var(--bg-inset)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:var(--gap-cards);margin-top:3.2rem}
+.serv-card{
+  background:var(--bg-surface);
+  padding:clamp(1.8rem,3vw,2.6rem);
+  border:1px solid rgba(35,32,27,.06);
+  border-radius:3px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .4s var(--ease),box-shadow .4s ease,border-color .3s ease;
+  position:relative;overflow:hidden;
+}
+.serv-card::after{
+  content:'';position:absolute;left:0;top:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);
+}
+.serv-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md),0 0 0 1px var(--gold-subtle);border-color:var(--gold-subtle)}
+.serv-card:hover::after{transform:scaleX(1)}
+.serv-icon{width:42px;height:42px;color:var(--teal);margin-bottom:1.4rem}
+.serv-icon svg{width:100%;height:100%;stroke-width:1.1}
+.serv-card .cat{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;font-weight:500}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:.7rem;font-weight:500;color:var(--text-primary)}
+.serv-card p{font-size:.92rem;color:var(--text-secondary);font-weight:300;line-height:1.7}
+
+/* ── Faixa editorial escura (diagonal) ── */
+.feature{
+  position:relative;
+  background:var(--teal-dark);
+  color:var(--text-inverse);
+  clip-path:polygon(0 0,100% 4vw,100% 100%,0 calc(100% - 4vw));
+  margin:-3vw 0;
+  padding:calc(var(--section-pad) + 4vw) clamp(1.5rem,6vw,5rem);
+  overflow:hidden;
+}
+.feature::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;pointer-events:none;
+}
+.feature-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:center;max-width:var(--content-max);margin:0 auto}
+@media(max-width:860px){.feature-grid{grid-template-columns:1fr;gap:2.5rem}}
+.feature-media img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:3px;box-shadow:var(--shadow-lg)}
+.feature-copy .overline{color:var(--gold-light)}
+.feature-copy h2{font-size:var(--text-h2);line-height:var(--lh-heading);margin-bottom:1.3rem;color:var(--text-inverse)}
+.feature-copy h2 em{font-style:italic;color:var(--gold-light)}
+.feature-copy p{color:rgba(244,239,231,.74);font-weight:300;margin-bottom:1rem}
+.feature-quote{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.3rem,1rem + 1.4vw,1.85rem);
+  line-height:1.5;color:var(--gold-light);
+  border-left:2px solid rgba(184,146,74,.5);padding-left:1.4rem;margin-top:1.8rem;
+}
+
+/* ── Galeria ── */
+.gallery{background:var(--bg-surface)}
+.gal-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:11vw;gap:clamp(.6rem,1.4vw,1.1rem);margin-top:3rem}
+.gal-grid figure{overflow:hidden;border-radius:3px;position:relative}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.g1{grid-column:span 3;grid-row:span 2}
+.g2{grid-column:span 3;grid-row:span 1}
+.g3{grid-column:span 3;grid-row:span 1}
+.g4{grid-column:span 2;grid-row:span 1}
+.g5{grid-column:span 2;grid-row:span 1}
+.g6{grid-column:span 2;grid-row:span 1}
+@media(max-width:760px){
+  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw}
+  .g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 1;grid-row:span 1}
+  .g1{grid-column:span 2}
+}
+
+/* ── Pilares / experiência ── */
+.pillars{background:var(--bg-base)}
+.pil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(2rem,4vw,3.5rem);margin-top:3.4rem}
+.pil{text-align:left}
+.pil .num{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);letter-spacing:.15em;border-bottom:1px solid var(--gold-subtle);padding-bottom:.9rem;margin-bottom:1.3rem;display:block}
+.pil h3{font-size:var(--text-h3);font-weight:500;margin-bottom:.7rem}
+.pil p{color:var(--text-secondary);font-weight:300;font-size:.95rem}
+
+/* ── CTA / Localização ── */
+.contact{
+  background:var(--teal);color:var(--text-inverse);position:relative;overflow:hidden;
+  text-align:center;
+}
+.contact::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;
+}
+.contact > *{position:relative}
+.contact .overline{color:var(--gold-light)}
+.contact h2{font-size:var(--text-h2);line-height:var(--lh-heading);margin:0 auto 1.3rem;max-width:16ch;color:var(--text-inverse)}
+.contact h2 em{font-style:italic;color:var(--gold-light)}
+.contact p{color:rgba(244,239,231,.74);max-width:46ch;margin:0 auto 2.4rem;font-weight:300}
+.contact-info{display:flex;justify-content:center;gap:clamp(1.6rem,5vw,4rem);flex-wrap:wrap;margin-top:3.4rem;padding-top:3rem;border-top:1px solid rgba(244,239,231,.12)}
+.ci{display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(244,239,231,.85)}
+.ci svg{width:22px;height:22px;color:var(--gold-light)}
+.ci .t{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light)}
+.ci .v{font-size:.92rem;font-weight:300}
+
+/* ── Footer ── */
+footer{background:var(--teal-dark);color:rgba(244,239,231,.6);padding:2.6rem clamp(1.5rem,6vw,5rem);text-align:center}
+footer .brand{justify-content:center;margin-bottom:.8rem}
+footer .fline{font-size:.74rem;letter-spacing:.05em}
+footer .fline a{color:var(--gold-light)}
+
+/* ── FAB WhatsApp ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.42);
+  transition:transform .25s var(--ease);
+}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab::before{
+  content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.4s ease-out infinite;
+}
+@keyframes pulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+.reveal:nth-child(6){transition-delay:.35s}
+
+/* ── Reduced motion ── */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-media img{animation:none}
+  .reveal,.hero-title .word{transition:none;opacity:1;transform:none;filter:none;animation:none}
+  .wa-fab::before{animation:none}
+  *{transition-duration:.001ms !important;animation-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="mark">Hera</span>
+    <span class="sub">Studio</span>
+  </a>
+  <nav class="top">
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a href="https://wa.me/5598981296879?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Studio%20HERA%20e%20quero%20agendar%20um%20hor%C3%A1rio." class="btn-ghost" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <span class="overline">Estética Avançada · São Luís — MA</span>
+    <h1 class="hero-title">
+      <span class="word">A</span>
+      <span class="word">beleza</span>
+      <span class="word">tratada</span>
+      <span class="word">como</span>
+      <span class="word"><em>arte.</em></span>
+    </h1>
+    <p class="hero-sub">No coração de São Luís, o Studio HERA cuida de cílios, sobrancelhas e pele com o rigor de quem busca a perfeição — e o nome de uma deusa.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5598981296879?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Studio%20HERA%20e%20quero%20agendar%20um%20hor%C3%A1rio." class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.927zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#procedimentos" class="btn-ghost">Ver procedimentos</a>
+    </div>
+    <div class="hero-loc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      R. Dr. Brasílio Sá, 822 — Centro, São Luís
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/maps-1.jpg" alt="Detalhe de extensão de cílios e design de sobrancelha realizado no Studio HERA" />
+    <div class="badge-rating">
+      <div class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+      </div>
+      <div>
+        <span class="lbl">Nota no Google</span>
+      </div>
+      <span class="num">5,0</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE / MANIFESTO -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="overline">O Estúdio</span>
+      <h2>Cada detalhe pensado para revelar a sua <em>melhor versão.</em></h2>
+      <p>O Studio HERA nasceu da ideia de que beleza não se improvisa — se constrói com técnica, sensibilidade e tempo. Aqui, cada cílio, cada fio de sobrancelha e cada pele recebe o cuidado de quem entende que o resultado fica no rosto de quem confiou.</p>
+      <p>É essa entrega que sustenta a nota máxima de quem já passou por nossas mãos. Um padrão que não abre exceção: o seu melhor, sempre.</p>
+      <div class="about-stats">
+        <div class="stat"><span class="n">5<em>,0</em></span><div class="l">Nota no Google</div></div>
+        <div class="stat"><span class="n">100<em>%</em></span><div class="l">Foco no detalhe</div></div>
+        <div class="stat"><span class="n">São <em>Luís</em></span><div class="l">Centro · MA</div></div>
+      </div>
+    </div>
+    <div class="about-media reveal">
+      <img src="imagens/web-facial-1.jpg" alt="Procedimento facial cuidadoso em ambiente de estética premium" />
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="services" id="procedimentos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="overline">Procedimentos</span>
+      <h2>Beleza completa, <em>do olhar à pele.</em></h2>
+      <p>Técnicas modernas e mãos experientes para realçar o que já é seu — com naturalidade e sofisticação.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M6 30c6-9 30-9 36 0"/><path d="M24 30v-6M14 31l-2-6M34 31l2-6M19 30l-1-6M29 30l1-6"/></svg></div>
+        <span class="cat">Olhar</span>
+        <h3>Extensão de Cílios</h3>
+        <p>Fio a fio, volume russo ou efeito natural — cílios desenhados para o formato do seu olho, com curvatura que dura.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M9 22c8-7 22-7 30 0"/><path d="M13 21l-2 4M21 19l-1 5M27 19l1 5M35 21l2 4"/></svg></div>
+        <span class="cat">Moldura</span>
+        <h3>Design de Sobrancelhas</h3>
+        <p>Mapeamento, henna e laminação para uma sobrancelha que harmoniza o rosto e valoriza a expressão.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="24" cy="24" r="13"/><path d="M24 16a8 8 0 00-8 8M24 11v3M24 34v3"/></svg></div>
+        <span class="cat">Pele</span>
+        <h3>Limpeza & Skincare</h3>
+        <p>Protocolos faciais que limpam, tratam e devolvem o viço — pele renovada, leve e com aquele brilho saudável.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M14 34l16-16 4 4-16 16-5 1z"/><path d="M30 18l4-4 4 4-4 4"/></svg></div>
+        <span class="cat">Make</span>
+        <h3>Maquiagem Profissional</h3>
+        <p>Da make do dia a dia ao grande evento: acabamento impecável que respeita os seus traços e o momento.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA EDITORIAL -->
+<section class="feature">
+  <div class="feature-grid">
+    <div class="feature-media reveal">
+      <img src="imagens/web-products-1.jpg" alt="Ritual de cuidado com óleos e ambiente acolhedor no Studio HERA" />
+    </div>
+    <div class="feature-copy reveal">
+      <span class="overline">A Experiência</span>
+      <h2>Um ritual, não <em>uma pressa.</em></h2>
+      <p>No Studio HERA, cuidar de você é um momento — não uma tarefa. Ambiente tranquilo, escuta atenta e um atendimento que entende o que você quer antes mesmo de começar.</p>
+      <p class="feature-quote">"Você merece sair daqui se sentindo exatamente como imaginava — e um pouco mais."</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="overline">Galeria</span>
+      <h2>O resultado <em>fala por nós.</em></h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="g1 reveal"><img src="imagens/maps-1.jpg" alt="Close de cílios e sobrancelha desenhados no Studio HERA"></figure>
+      <figure class="g2 reveal"><img src="imagens/web-treatment-1.jpg" alt="Tratamento facial em andamento"></figure>
+      <figure class="g3 reveal"><img src="imagens/web-facial-2.jpg" alt="Ambiente do estúdio com acabamento em mármore"></figure>
+      <figure class="g4 reveal"><img src="imagens/web-facial-1.jpg" alt="Aplicação de máscara facial"></figure>
+      <figure class="g5 reveal"><img src="imagens/web-portrait-1.jpg" alt="Detalhe de produtos e pincéis de maquiagem"></figure>
+      <figure class="g6 reveal"><img src="imagens/web-products-1.jpg" alt="Óleos e ritual de cuidado"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="overline">Por que o HERA</span>
+      <h2>Três motivos para <em>confiar o seu rosto.</em></h2>
+    </div>
+    <div class="pil-grid">
+      <div class="pil reveal">
+        <span class="num">01</span>
+        <h3>Técnica que dura</h3>
+        <p>Resultado bonito é só metade. O nosso fica bonito por mais tempo, porque é feito do jeito certo — sem atalhos.</p>
+      </div>
+      <div class="pil reveal">
+        <span class="num">02</span>
+        <h3>Atendimento próximo</h3>
+        <p>Você é ouvida antes de ser atendida. A gente molda o procedimento ao seu rosto e ao seu estilo, nunca o contrário.</p>
+      </div>
+      <div class="pil reveal">
+        <span class="num">03</span>
+        <h3>Padrão nota 5,0</h3>
+        <p>A nota máxima no Google não é sorte: é o nível que entregamos em cada agendamento, sem exceção.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO / CTA -->
+<section class="contact" id="contato">
+  <div class="wrap">
+    <span class="overline center reveal">Agende seu horário</span>
+    <h2 class="reveal">Seu próximo <em>elogio</em> começa aqui.</h2>
+    <p class="reveal">Fale com a gente agora mesmo pelo WhatsApp. Respondemos rápido e encontramos o melhor horário para você.</p>
+    <div class="reveal">
+      <a href="https://wa.me/5598981296879?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Studio%20HERA%20e%20quero%20agendar%20um%20hor%C3%A1rio." class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.927zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar no WhatsApp
+      </a>
+    </div>
+    <div class="contact-info">
+      <div class="ci reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="t">Endereço</span>
+        <span class="v">R. Dr. Brasílio Sá, 822 — Centro</span>
+      </div>
+      <div class="ci reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="t">WhatsApp</span>
+        <span class="v">(98) 98129-6879</span>
+      </div>
+      <div class="ci reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="t">Atendimento</span>
+        <span class="v">Com hora marcada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand"><span class="mark">Hera</span><span class="sub">Studio</span></div>
+  <p class="fline">Estética Avançada · São Luís — MA · <a href="https://wa.me/5598981296879" target="_blank" rel="noopener">(98) 98129-6879</a></p>
+</footer>
+
+<!-- FAB -->
+<a class="wa-fab" href="https://wa.me/5598981296879?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Studio%20HERA%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.927zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+// Header sticky
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Hero blur-fade headline (respects reduced motion)
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const words=document.querySelectorAll('.hero-title .word');
+if(reduce){
+  words.forEach(w=>{w.style.opacity=1;w.style.filter='none';w.style.transform='none';});
+}else{
+  words.forEach((w,i)=>{
+    w.style.opacity='0';
+    w.style.filter='blur(14px)';
+    w.style.transform='translateY(20px)';
+    w.style.transition='opacity .9s cubic-bezier(0.22,1,0.36,1),filter .9s cubic-bezier(0.22,1,0.36,1),transform .9s cubic-bezier(0.22,1,0.36,1)';
+    w.style.transitionDelay=(0.25+i*0.11)+'s';
+  });
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    words.forEach(w=>{w.style.opacity='1';w.style.filter='blur(0)';w.style.transform='none';});
+  }));
+}
+</script>
+</body>
+</html>
