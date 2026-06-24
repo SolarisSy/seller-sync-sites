@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clínica Gina Estética em Potengi, Natal/RN — Limpeza de Pele Profunda, Criolipólise, Depilação a Laser e muito mais. Nota 4,8 no Google. Agende agora pelo WhatsApp.">
+  <title>Clínica Gina Estética — Potengi, Natal/RN</title>
+
+  <!-- Google Fonts: Playfair Display + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────────────── */
+    :root {
+      /* Surface */
+      --bg-base:     #faf7f5;
+      --bg-surface:  #ffffff;
+      --bg-inset:    #f3ece6;
+      --bg-dark:     #1c1018;
+
+      /* Texto */
+      --text-primary:   #2b2328;
+      --text-secondary: #5a4a52;
+      --text-muted:     #9a8a92;
+      --text-inverse:   #faf7f5;
+
+      /* Marca — magenta âncora da blusa da Gina */
+      --accent:          #c2185b;
+      --accent-dark:     #b81e6a;
+      --accent-subtle:   rgba(194,24,91,0.09);
+      --accent-border:   rgba(194,24,91,0.22);
+      --shadow-accent:   0 6px 24px rgba(194,24,91,0.28), 0 2px 8px rgba(194,24,91,0.16);
+      --shadow-accent-strong: 0 10px 32px rgba(194,24,91,0.38), 0 4px 12px rgba(194,24,91,0.22);
+
+      /* Acento dourado secundário */
+      --gold:        #c9a84c;
+      --gold-light:  #e0c068;
+
+      /* Sombras 3 camadas */
+      --shadow-sm:
+        0 1px 2px rgba(0,0,0,.04),
+        0 2px 6px rgba(0,0,0,.04);
+      --shadow-md:
+        0 2px 4px rgba(0,0,0,.04),
+        0 8px 18px rgba(0,0,0,.06),
+        0 20px 40px rgba(0,0,0,.04);
+      --shadow-lg:
+        0 4px 8px rgba(0,0,0,.04),
+        0 16px 32px rgba(0,0,0,.07),
+        0 40px 80px rgba(0,0,0,.08);
+
+      /* Tipografia */
+      --text-display: clamp(2.8rem, 2rem + 4vw, 5.2rem);
+      --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3rem);
+      --text-h3:      clamp(1.2rem, 0.95rem + 1.1vw, 1.75rem);
+      --text-body:    clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
+      --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+
+      --lh-display: 1.03;
+      --lh-heading: 1.14;
+      --lh-body:    1.74;
+      --ls-display:  -0.02em;
+      --ls-overline: 0.16em;
+
+      /* Espaçamento */
+      --section-pad: clamp(5rem, 9vw, 10rem);
+      --content-max: 1200px;
+      --prose-max:   660px;
+      --gap-cards:   clamp(1rem, 2.5vw, 1.75rem);
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: var(--text-body);
+      line-height: var(--lh-body);
+      color: var(--text-primary);
+      background: var(--bg-base);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-optical-sizing: auto;
+      text-wrap: balance;
+      line-height: var(--lh-heading);
+      letter-spacing: var(--ls-display);
+    }
+
+    /* ─────────────────────────────────────────────────
+       OVERLINE LABEL
+    ───────────────────────────────────────────────── */
+    .overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: var(--ls-overline);
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .overline::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────────────
+       BOTÕES PREMIUM
+    ───────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.88rem clamp(1.5rem,3vw,2.2rem);
+      min-height: 48px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      box-shadow: var(--shadow-accent);
+      transition:
+        transform  0.3s cubic-bezier(0.23,1,0.32,1),
+        box-shadow 0.3s ease;
+      will-change: transform;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-accent-strong);
+    }
+    .btn-primary:active { transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.82rem clamp(1.4rem,2.5vw,2rem);
+      min-height: 48px;
+      background: transparent;
+      color: var(--accent);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      border: 1.5px solid var(--accent-border);
+      transition:
+        background 0.28s ease,
+        border-color 0.28s ease,
+        transform 0.28s cubic-bezier(0.23,1,0.32,1);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-outline:hover {
+      background: var(--accent-subtle);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.7rem 1.4rem;
+      min-height: 44px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      transition:
+        background 0.28s ease,
+        transform  0.28s cubic-bezier(0.23,1,0.32,1);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-ghost-light:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-2px);
+    }
+
+    /* ─────────────────────────────────────────────────
+       HEADER STICKY
+    ───────────────────────────────────────────────── */
+    #hdr {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px clamp(1.5rem,5vw,4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.3s ease;
+    }
+    #hdr.scrolled {
+      background: rgba(28,16,24,0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(194,24,91,0.25), 0 4px 24px rgba(0,0,0,0.2);
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1rem, 0.85rem + 0.6vw, 1.22rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .logo span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+      margin-top: 1px;
+    }
+
+    .hdr-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.6rem 1.2rem;
+      min-height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(194,24,91,0.35);
+      transition: transform 0.25s cubic-bezier(0.23,1,0.32,1), box-shadow 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .hdr-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(194,24,91,0.45); }
+
+    /* ─────────────────────────────────────────────────
+       HERO — EDITORIAL com imagem de fundo (Modelo C adaptado)
+       Texto âncora base-esquerda, badge glassmorphism
+    ───────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    /* Grain sobre o hero */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('imagens/maps-1.jpg') center 20%/cover no-repeat;
+      animation: kb 24s ease-in-out infinite alternate;
+      transform-origin: center 20%;
+    }
+
+    /* Overlay: diagonal, não chapado — magenta sutil + dark base */
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(
+          170deg,
+          rgba(28,16,24,0.18) 0%,
+          rgba(28,16,24,0.55) 45%,
+          rgba(28,16,24,0.90) 80%,
+          rgba(20,8,16,0.97)  100%
+        ),
+        linear-gradient(
+          90deg,
+          rgba(194,24,91,0.10) 0%,
+          transparent 60%
+        );
+    }
+
+    .hero-content {
+      position: relative; z-index: 4;
+      width: 100%;
+      padding: 0 clamp(1.5rem,6vw,5rem) clamp(3.5rem,7vh,6rem);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: clamp(2rem,4vw,4rem);
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      max-width: 620px;
+    }
+
+    .hero-overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+    }
+    .hero-overline::before {
+      content: '';
+      width: 24px; height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: var(--text-display);
+      font-weight: 500;
+      line-height: var(--lh-display);
+      letter-spacing: var(--ls-display);
+      color: #fff;
+      margin-bottom: 1.4rem;
+      overflow: hidden;
+    }
+
+    /* Word slide-up: cada .word tem overflow clip do container */
+    .hero-title-line {
+      overflow: hidden;
+      display: block;
+    }
+    .word {
+      display: inline-block;
+      transform: translateY(110%);
+      opacity: 0;
+      animation: word-up 0.88s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .word:nth-child(1)  { animation-delay: 0.18s; }
+    .word:nth-child(2)  { animation-delay: 0.30s; }
+    .word:nth-child(3)  { animation-delay: 0.42s; }
+    .word:nth-child(4)  { animation-delay: 0.54s; }
+    .word:nth-child(5)  { animation-delay: 0.66s; }
+    .word.line2-1 { animation-delay: 0.52s; }
+    .word.line2-2 { animation-delay: 0.64s; }
+    .word.line2-3 { animation-delay: 0.76s; }
+
+    @keyframes word-up { to { transform: translateY(0); opacity: 1; } }
+
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.88rem, 0.78rem + 0.4vw, 1.05rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Badge glassmorphism — nota 4,8 */
+    .hero-badge {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow:
+        0 2px 4px rgba(0,0,0,.12),
+        0 8px 28px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(255,255,255,.18);
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      min-width: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-end;
+      margin-bottom: 0.5rem;
+    }
+    .badge-score {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1;
+    }
+    .badge-stars {
+      display: flex;
+      gap: 3px;
+    }
+    .badge-stars svg {
+      width: 14px; height: 14px;
+      fill: var(--gold-light);
+    }
+    .badge-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.64rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+    }
+
+    @keyframes kb { from{transform:scale(1)} to{transform:scale(1.06)} }
+
+    /* ─────────────────────────────────────────────────
+       WAVE — transição hero → sobre
+    ───────────────────────────────────────────────── */
+    .wave-divider {
+      display: block;
+      line-height: 0;
+      background: var(--bg-dark);
+      margin-bottom: -1px;
+    }
+    .wave-divider svg {
+      width: 100%;
+      height: clamp(40px,5vw,80px);
+    }
+
+    /* ─────────────────────────────────────────────────
+       SEÇÃO — SOBRE / AUTORIDADE
+    ───────────────────────────────────────────────── */
+    .sobre {
+      background: var(--bg-base);
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+    }
+    .sobre-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem,6vw,6rem);
+      align-items: center;
+    }
+
+    .sobre-photo-wrap {
+      position: relative;
+    }
+    .sobre-photo-frame {
+      position: relative;
+      border-radius: 24px 24px 80px 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 3/4;
+      max-height: 580px;
+    }
+    .sobre-photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      animation: kb 24s ease-in-out infinite alternate;
+    }
+
+    /* Acento magenta: borda decorativa na foto */
+    .sobre-photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1.5px solid rgba(194,24,91,0.18);
+      pointer-events: none;
+    }
+
+    /* Selo flutuante — dourado */
+    .sobre-seal {
+      position: absolute;
+      bottom: -18px;
+      right: -16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #1c1018;
+      border-radius: 14px;
+      padding: 1rem 1.3rem;
+      box-shadow:
+        0 4px 8px rgba(0,0,0,.12),
+        0 12px 28px rgba(201,168,76,0.22);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+      min-width: 120px;
+    }
+    .sobre-seal strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: #1c1018;
+      margin-bottom: 2px;
+    }
+
+    .sobre-copy { }
+    .sobre-copy h2 {
+      font-size: var(--text-h2);
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      max-width: 14ch;
+    }
+    .sobre-copy p {
+      color: var(--text-secondary);
+      margin-bottom: 1.1rem;
+      max-width: var(--prose-max);
+    }
+    .sobre-copy p:last-of-type { margin-bottom: 1.8rem; }
+
+    .sobre-nums {
+      display: flex;
+      gap: clamp(1.5rem,3vw,3rem);
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .num-item { }
+    .num-val {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem,1.5rem+2vw,2.8rem);
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .num-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ─────────────────────────────────────────────────
+       SEÇÃO — SERVIÇOS (diagonal cut)
+    ───────────────────────────────────────────────── */
+    .servicos {
+      background: var(--bg-inset);
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      margin: -3vw 0;
+      padding-top: calc(var(--section-pad) + 4vw);
+      padding-bottom: calc(var(--section-pad) + 4vw);
+      position: relative;
+      z-index: 1;
+    }
+    .servicos-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .servicos-header {
+      text-align: center;
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .servicos-header .overline { justify-content: center; }
+    .servicos-header .overline::before { display: none; }
+    .servicos-header h2 {
+      font-size: var(--text-h2);
+      max-width: 18ch;
+      margin: 0 auto;
+    }
+    .servicos-header p {
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 1rem auto 0;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,280px),1fr));
+      gap: var(--gap-cards);
+    }
+
+    .serv-card {
+      background: var(--bg-surface);
+      border-radius: 18px;
+      padding: clamp(1.6rem,2.5vw,2.2rem);
+      border: 1px solid rgba(194,24,91,0.08);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform  0.35s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.35s ease,
+        border-color 0.25s ease;
+    }
+    .serv-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md), 0 0 0 1px var(--accent-border);
+      border-color: var(--accent-border);
+    }
+
+    .serv-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-subtle);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .serv-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .serv-overline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .serv-card h3 {
+      font-size: clamp(1.05rem,0.9rem+0.6vw,1.3rem);
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      color: var(--text-primary);
+    }
+    .serv-card p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────────────
+       SEÇÃO — DIFERENCIAIS / NÚMEROS
+    ───────────────────────────────────────────────── */
+    .diferenciais {
+      background: var(--bg-dark);
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Grain na seção escura */
+    .diferenciais::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    /* Gradiente radial magenta sutil */
+    .diferenciais::after {
+      content: '';
+      position: absolute;
+      top: -30%; left: -10%;
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse at 30% 30%, rgba(194,24,91,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .diferenciais-inner {
+      position: relative; z-index: 2;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .diferenciais-header {
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .diferenciais-header .overline { color: var(--gold-light); }
+    .diferenciais-header .overline::before { background: var(--gold-light); }
+    .diferenciais-header h2 {
+      font-size: var(--text-h2);
+      color: var(--text-inverse);
+      max-width: 16ch;
+    }
+    .diferenciais-header p {
+      color: rgba(250,247,245,0.65);
+      max-width: var(--prose-max);
+      margin-top: 0.8rem;
+    }
+
+    .dif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,260px),1fr));
+      gap: var(--gap-cards);
+    }
+
+    .dif-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: clamp(1.6rem,2.5vw,2.2rem);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(4px);
+      transition:
+        transform  0.35s cubic-bezier(0.22,1,0.36,1),
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
+    .dif-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(194,24,91,0.28);
+      background: rgba(194,24,91,0.06);
+    }
+
+    .dif-icon {
+      width: 40px; height: 40px;
+      margin-bottom: 1rem;
+    }
+    .dif-icon svg {
+      width: 100%; height: 100%;
+      stroke: var(--gold-light);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .dif-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem,1.8rem+2vw,3.5rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .dif-num span { color: var(--accent); font-style: italic; }
+
+    .dif-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250,247,245,0.88);
+      margin-bottom: 6px;
+    }
+    .dif-card p {
+      font-size: var(--text-sm);
+      color: rgba(250,247,245,0.55);
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────────────
+       SEÇÃO — PROVA SOCIAL (overlap negativo)
+    ───────────────────────────────────────────────── */
+    .prova {
+      background: var(--bg-base);
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      padding-top: calc(var(--section-pad) + 3rem);
+      position: relative;
+    }
+    .prova-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem,5vw,6rem);
+      align-items: center;
+    }
+
+    .prova-editorial {
+      position: relative;
+    }
+    .prova-score-display {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4.5rem,3rem+5vw,8rem);
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 0.88;
+      letter-spacing: -0.04em;
+    }
+    .prova-score-display em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .prova-score-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+    .prova-stars-row {
+      display: flex;
+      gap: 5px;
+      margin: 14px 0;
+    }
+    .prova-stars-row svg {
+      width: 22px; height: 22px;
+      fill: var(--gold);
+    }
+
+    .prova-copy { }
+    .prova-copy h2 {
+      font-size: var(--text-h2);
+      max-width: 14ch;
+      margin-bottom: 1.2rem;
+    }
+    .prova-copy p {
+      color: var(--text-secondary);
+      max-width: var(--prose-max);
+      margin-bottom: 1rem;
+    }
+    .prova-copy blockquote {
+      margin: 1.8rem 0;
+      padding: 1.4rem 1.6rem;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-subtle);
+      border-radius: 0 12px 12px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      line-height: 1.62;
+    }
+    .prova-copy blockquote cite {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* ─────────────────────────────────────────────────
+       SEÇÃO — AGENDAMENTO + LOCALIZAÇÃO
+    ───────────────────────────────────────────────── */
+    .agendamento {
+      background: linear-gradient(150deg, #1c1018 0%, #2a0e1e 100%);
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .agendamento::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.045;
+      pointer-events: none;
+    }
+    .agendamento::after {
+      content: '';
+      position: absolute;
+      bottom: -20%; right: -10%;
+      width: 50%; height: 70%;
+      background: radial-gradient(ellipse at 60% 60%, rgba(194,24,91,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .agendamento-inner {
+      position: relative; z-index: 2;
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem,5vw,6rem);
+      align-items: start;
+    }
+
+    .agendamento-copy { }
+    .agendamento-copy .overline { color: var(--gold-light); }
+    .agendamento-copy .overline::before { background: var(--gold-light); }
+    .agendamento-copy h2 {
+      font-size: var(--text-h2);
+      color: var(--text-inverse);
+      max-width: 14ch;
+      margin-bottom: 1rem;
+    }
+    .agendamento-copy p {
+      color: rgba(250,247,245,0.68);
+      margin-bottom: 1.8rem;
+      max-width: 420px;
+    }
+
+    .agendamento-info {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .info-row svg {
+      width: 18px; height: 18px;
+      stroke: var(--gold-light);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .info-row span {
+      font-size: var(--text-sm);
+      color: rgba(250,247,245,0.75);
+      line-height: 1.6;
+    }
+    .info-row a { color: rgba(250,247,245,0.75); }
+    .info-row a:hover { color: var(--gold-light); }
+
+    .map-block {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .map-block iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      display: block;
+      filter: grayscale(20%);
+    }
+    .map-btn-wrap {
+      padding: 1.2rem;
+      background: rgba(255,255,255,0.04);
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ─────────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────────── */
+    footer {
+      background: #130a10;
+      padding: clamp(3rem,5vw,5rem) clamp(1.5rem,6vw,5rem);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-brand .logo { font-size: 1.1rem; }
+    .footer-brand .logo span { font-size: 0.6rem; }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-links a {
+      font-size: var(--text-sm);
+      color: rgba(250,247,245,0.5);
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(250,247,245,0.28);
+      letter-spacing: 0.06em;
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ─────────────────────────────────────────────────
+       WA FAB — WhatsApp flutuante com pulse
+    ───────────────────────────────────────────────── */
+    .wa-fab {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 999;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(37,211,102,.42);
+      transition: transform 0.22s cubic-bezier(0.22,1,0.36,1), box-shadow 0.22s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .wa-fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37,211,102,.55);
+    }
+    .wa-fab::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(37,211,102,.34);
+      animation: pulse-wa 2.3s ease-out infinite;
+    }
+    .wa-fab svg {
+      width: 28px; height: 28px;
+      fill: #fff;
+    }
+    @keyframes pulse-wa {
+      0%  { transform: scale(1); opacity: .85; }
+      100%{ transform: scale(1.8); opacity: 0; }
+    }
+
+    /* ─────────────────────────────────────────────────
+       REVEAL ON SCROLL
+    ───────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity   0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal:nth-child(2) { transition-delay: 0.06s; }
+    .reveal:nth-child(3) { transition-delay: 0.12s; }
+    .reveal:nth-child(4) { transition-delay: 0.18s; }
+    .reveal:nth-child(5) { transition-delay: 0.24s; }
+    .reveal:nth-child(6) { transition-delay: 0.30s; }
+
+    /* ─────────────────────────────────────────────────
+       REDUCED MOTION
+    ───────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg, .sobre-photo-frame img { animation: none; }
+      .reveal, .word { transition: none; opacity: 1; transform: none; animation: none; }
+      .wa-fab::before { animation: none; }
+      .serv-card, .dif-card, .btn-primary, .btn-outline { transition: none; }
+    }
+
+    /* ─────────────────────────────────────────────────
+       RESPONSIVO — MOBILE FIRST
+    ───────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .sobre-inner {
+        grid-template-columns: 1fr;
+      }
+      .sobre-photo-wrap { order: -1; }
+      .sobre-photo-frame {
+        aspect-ratio: 4/3;
+        max-height: 380px;
+        border-radius: 18px;
+      }
+      .sobre-seal {
+        bottom: -14px;
+        right: -8px;
+      }
+
+      .prova-inner {
+        grid-template-columns: 1fr;
+      }
+      .prova-editorial {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .prova-score-display { font-size: clamp(3.5rem,8vw,5rem); }
+
+      .agendamento-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-badge { display: none; }
+
+      .servicos {
+        clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .hero-ctas { gap: 10px; }
+      .hero-ctas .btn-ghost-light { display: none; }
+      .hdr-cta span { display: none; }
+      .hdr-cta { padding: 0.6rem 0.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header id="hdr">
+    <div class="logo">
+      Clínica Gina Estética
+      <span>Potengi · Natal/RN</span>
+    </div>
+    <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" class="hdr-cta" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.112 1.524 5.84L0 24l6.318-1.502A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.638-.494-5.155-1.358l-.37-.219-3.748.891.931-3.63-.24-.374A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      <span>Agendar</span>
+    </a>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" aria-label="Apresentação da Clínica Gina Estética">
+    <div class="hero-bg" role="img" aria-label="Gina, esteticista da Clínica Gina Estética"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-overline">Clínica de Estética · Potengi, Natal/RN</div>
+
+        <h1 class="hero-title">
+          <span class="hero-title-line">
+            <span class="word">Cuide</span>&nbsp;<span class="word">de</span>&nbsp;<span class="word">você</span>
+          </span>
+          <span class="hero-title-line">
+            <span class="word line2-1">com</span>&nbsp;<span class="word line2-2">quem</span>&nbsp;<span class="word line2-3"><em>entende.</em></span>
+          </span>
+        </h1>
+
+        <p class="hero-sub">
+          Limpeza de pele, criolipólise, depilação a laser e tratamentos que transformam — com o cuidado de quem atende você de perto.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.112 1.524 5.84L0 24l6.318-1.502A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.638-.494-5.155-1.358l-.37-.219-3.748.891.931-3.63-.24-.374A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="btn-ghost-light">Ver serviços</a>
+        </div>
+      </div>
+
+      <!-- Badge glassmorphism — nota 4,8 -->
+      <div class="hero-badge" aria-label="Nota 4,8 no Google">
+        <div class="badge-score">4,8</div>
+        <div class="badge-stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="badge-label">Google Maps</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave hero → sobre -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,42 C360,72 900,8 1440,48 L1440,72 L0,72 Z" fill="var(--bg-base)"/>
+    </svg>
+  </div>
+
+  <!-- ─── SOBRE / AUTORIDADE ─── -->
+  <section class="sobre" id="sobre">
+    <div class="sobre-inner">
+
+      <div class="sobre-photo-wrap reveal">
+        <div class="sobre-photo-frame">
+          <img src="imagens/maps-1.jpg" alt="Gina, esteticista — Clínica Gina Estética, Potengi/Natal" loading="lazy">
+        </div>
+        <div class="sobre-seal">
+          <strong>4,8</strong>
+          nota Google
+        </div>
+      </div>
+
+      <div class="sobre-copy">
+        <p class="overline reveal">Sobre a Clínica</p>
+        <h2 class="reveal">Atendimento personalizado, resultados reais</h2>
+        <p class="reveal">
+          A Clínica Gina Estética nasceu da crença de que cada cliente merece atenção individual — não um atendimento de linha de produção. Aqui em Potengi, Natal, a Gina conduz cada procedimento com cuidado técnico e olhar humano.
+        </p>
+        <p class="reveal">
+          Com equipamentos modernos e uma abordagem personalizada, a clínica oferece desde a limpeza de pele mais profunda até criolipólise e depilação a laser definitiva. Tudo com a segurança e a acolhida de quem realmente se importa com o seu resultado.
+        </p>
+        <div class="sobre-nums reveal">
+          <div class="num-item">
+            <div class="num-val">4,8</div>
+            <div class="num-desc">Nota Google</div>
+          </div>
+          <div class="num-item">
+            <div class="num-val">3+</div>
+            <div class="num-desc">Procedimentos</div>
+          </div>
+          <div class="num-item">
+            <div class="num-val">100%</div>
+            <div class="num-desc">Personalizado</div>
+          </div>
+        </div>
+        <div style="margin-top:2rem">
+          <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" class="btn-primary reveal" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.112 1.524 5.84L0 24l6.318-1.502A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.638-.494-5.155-1.358l-.37-.219-3.748.891.931-3.63-.24-.374A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Agendar agora
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SERVIÇOS ─── -->
+  <section class="servicos" id="servicos" aria-label="Nossos serviços">
+    <div class="servicos-inner">
+      <div class="servicos-header">
+        <p class="overline">O que fazemos</p>
+        <h2 class="reveal">Procedimentos que fazem diferença</h2>
+        <p class="reveal">Da pele ao corpo — cada tratamento pensado para o seu objetivo.</p>
+      </div>
+
+      <div class="servicos-grid">
+
+        <!-- Limpeza de Pele -->
+        <div class="serv-card reveal">
+          <div class="serv-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8"/>
+              <path d="M12 8v4l3 3"/>
+              <path d="M8 12c0-2.21 1.79-4 4-4"/>
+            </svg>
+          </div>
+          <p class="serv-overline">Rosto</p>
+          <h3>Limpeza de Pele Profunda</h3>
+          <p>Extração, esfoliação e hidratação. Remove impurezas, poros dilatados e promove renovação celular — pele visivelmente mais limpa e luminosa.</p>
+        </div>
+
+        <!-- Criolipólise -->
+        <div class="serv-card reveal">
+          <div class="serv-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/>
+            </svg>
+          </div>
+          <p class="serv-overline">Corpo</p>
+          <h3>Criolipólise</h3>
+          <p>Elimina gordura localizada com frio controlado, sem cirurgia e sem tempo de recuperação. Resultado progressivo nos meses seguintes ao tratamento.</p>
+        </div>
+
+        <!-- Depilação a Laser -->
+        <div class="serv-card reveal">
+          <div class="serv-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3l1.5 4h4l-3.3 2.4 1.3 4L12 11l-3.5 2.4 1.3-4L6.5 7h4z"/>
+              <path d="M12 16v5"/>
+              <path d="M9 19h6"/>
+            </svg>
+          </div>
+          <p class="serv-overline">Depilação</p>
+          <h3>Depilação a Laser</h3>
+          <p>Redução definitiva dos pelos com tecnologia de ponta. Pele lisa, sem foliculite e sem a rotina de cera — procedimento preciso e seguro.</p>
+        </div>
+
+        <!-- Peeling Facial -->
+        <div class="serv-card reveal">
+          <div class="serv-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+              <line x1="9" y1="9" x2="9.01" y2="9"/>
+              <line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </div>
+          <p class="serv-overline">Tratamento Facial</p>
+          <h3>Peeling e Tratamentos Faciais</h3>
+          <p>Renovação e uniformização da pele com peelings químicos e mecânicos. Indicado para manchas, oleosidade e textura irregular.</p>
+        </div>
+
+        <!-- Estética Corporal -->
+        <div class="serv-card reveal">
+          <div class="serv-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <p class="serv-overline">Corpo</p>
+          <h3>Estética Corporal</h3>
+          <p>Tratamentos para modelagem, firmeza e contorno corporal. Da redução de celulite ao estímulo de colágeno — resultado visível e cumulativo.</p>
+        </div>
+
+        <!-- Drenagem -->
+        <div class="serv-card reveal">
+          <div class="serv-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <p class="serv-overline">Bem-estar</p>
+          <h3>Drenagem Linfática</h3>
+          <p>Técnica manual que ativa a circulação, reduz inchaço e melhora o tônus da pele. Indicada para pós-operatório, TPM e qualidade de vida.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DIFERENCIAIS ─── -->
+  <section class="diferenciais" id="diferenciais" aria-label="Nossos diferenciais">
+    <div class="diferenciais-inner">
+      <div class="diferenciais-header">
+        <p class="overline">Por que escolher</p>
+        <h2 class="reveal">O que faz a diferença aqui</h2>
+        <p class="reveal">Nota 4,8 no Google não é acidente — é o resultado de cada cliente bem atendido.</p>
+      </div>
+
+      <div class="dif-grid">
+
+        <div class="dif-card reveal">
+          <div class="dif-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="dif-num">4,<span>8</span></div>
+          <h3>Nota Google</h3>
+          <p>Avaliação excelente no Google Maps — reflexo de clientes satisfeitas que voltam e indicam.</p>
+        </div>
+
+        <div class="dif-card reveal">
+          <div class="dif-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="dif-num">100<span>%</span></div>
+          <h3>Equipamentos Seguros</h3>
+          <p>Aparelhos modernos e protocolos seguros para criolipólise, laser e procedimentos faciais.</p>
+        </div>
+
+        <div class="dif-card reveal">
+          <div class="dif-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="dif-num">1<span>×1</span></div>
+          <h3>Atendimento Individual</h3>
+          <p>Você não é um número. Cada sessão é pensada pro seu corpo, pele e objetivo — sem protocolo genérico.</p>
+        </div>
+
+        <div class="dif-card reveal">
+          <div class="dif-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="dif-num"><span>em</span></div>
+          <h3>Potengi, Natal</h3>
+          <p>Comodidade de se tratar perto de casa, no bairro — sem enfrentar trânsito da Zona Sul para ter qualidade.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROVA SOCIAL ─── -->
+  <section class="prova" id="prova" aria-label="Avaliações e prova social">
+    <div class="prova-inner">
+
+      <div class="prova-editorial reveal">
+        <div class="prova-score-display">4,<em>8</em></div>
+        <div class="prova-stars-row" aria-label="5 estrelas">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="prova-score-label">no Google Maps</div>
+      </div>
+
+      <div class="prova-copy">
+        <p class="overline reveal">O que dizem as clientes</p>
+        <h2 class="reveal">Resultados que falam por si</h2>
+        <p class="reveal">A nota 4,8 no Google não é só um número — é o acúmulo de clientes que saíram satisfeitas, voltaram e indicaram para amigas. Em Potengi, a Clínica Gina já virou referência de quem busca qualidade perto de casa.</p>
+
+        <blockquote class="reveal">
+          "Profissional incrível, atendimento acolhedor e resultado muito além do que eu esperava. Indico de olhos fechados!"
+          <cite>— Avaliação Google Maps</cite>
+        </blockquote>
+
+        <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" class="btn-outline reveal" target="_blank" rel="noopener">
+          Quero agendar meu horário
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── AGENDAMENTO + LOCALIZAÇÃO ─── -->
+  <section class="agendamento" id="agendamento" aria-label="Agendamento e localização">
+    <div class="agendamento-inner">
+
+      <div class="agendamento-copy">
+        <p class="overline">Agende já</p>
+        <h2 class="reveal">Seu próximo passo é um WhatsApp</h2>
+        <p class="reveal">Fale diretamente com a Gina pelo WhatsApp — sem formulário, sem fila de espera. Agende seu horário agora e comece a transformação.</p>
+
+        <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" class="btn-primary reveal" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.112 1.524 5.84L0 24l6.318-1.502A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.638-.494-5.155-1.358l-.37-.219-3.748.891.931-3.63-.24-.374A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Chamar no WhatsApp
+        </a>
+
+        <div class="agendamento-info reveal">
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. Maranguape, 938 · Potengi, Natal/RN · 59112-000</span>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" target="_blank" rel="noopener">(84) 98812-5257</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="map-block reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.4!2d-35.2609141!3d-5.7578297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b3abad38c44e4b%3A0x98db395d5e1c1c3b!2sCl%C3%ADnica%20Gina%20Est%C3%A9tica!5e0!3m2!1spt-BR!2sbr!4v1719244800000"
+          title="Localização da Clínica Gina Estética"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-btn-wrap">
+          <a href="https://www.google.com/maps/place/?q=place_id:0x7b3abad38c44e4b:0x98db395d5e1c1c3b" class="btn-ghost-light" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ver no Google Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          Clínica Gina Estética
+          <span>Potengi · Natal · RN</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#sobre">Sobre a Clínica</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#agendamento">Localização</a>
+        <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div>
+        <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio" class="btn-primary" target="_blank" rel="noopener" style="font-size:0.76rem; padding:0.76rem 1.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.112 1.524 5.84L0 24l6.318-1.502A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.638-.494-5.155-1.358l-.37-.219-3.748.891.931-3.63-.24-.374A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Agendar
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Clínica Gina Estética · Av. Maranguape, 938 · Potengi, Natal/RN</p>
+  </footer>
+
+  <!-- ─── WA FAB ─── -->
+  <a href="https://wa.me/5584988125257?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Gina%20e%20quero%20agendar%20um%20hor%C3%A1rio"
+     class="wa-fab"
+     target="_blank"
+     rel="noopener"
+     aria-label="Falar pelo WhatsApp com a Clínica Gina Estética">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.112 1.524 5.84L0 24l6.318-1.502A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.88 0-3.638-.494-5.155-1.358l-.37-.219-3.748.891.931-3.63-.24-.374A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+
+  <!-- ─── JAVASCRIPT ─── -->
+  <script>
+    // Header sticky
+    const hdr = document.getElementById('hdr');
+    window.addEventListener('scroll', () => {
+      hdr.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
