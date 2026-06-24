@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simetria Face e Corpo | Clínica de Estética Avançada — Natal/RN</title>
+  <meta name="description" content="Clínica de estética avançada em Natal/RN. Harmonização facial, Ultraformer, tratamentos corporais com tecnologia de ponta. Dr. Bruno Linhares — CRO-RN 5417. Nota 4,9 no Google.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      /* Superfície */
+      --bg-base:    #faf7f2;
+      --bg-surface: #f5f1ea;
+      --bg-inset:   #ede9e0;
+      --bg-dark:    #0f2424;
+      --bg-dark2:   #1a3a3a;
+
+      /* Texto */
+      --text-primary:   #1c1a18;
+      --text-secondary: #4a4540;
+      --text-muted:     #8a8278;
+      --text-inverse:   #faf7f2;
+
+      /* Marca: petróleo/teal */
+      --accent:        #1a3a3a;
+      --accent-dark:   #0f2424;
+      --accent-subtle: rgba(26,58,58,.09);
+      --accent-border: rgba(26,58,58,.18);
+
+      /* Dourado champagne */
+      --gold:       #c9a46e;
+      --gold-light: #e0c08a;
+      --gold-subtle: rgba(201,164,110,.15);
+
+      /* Tipografia fluida */
+      --text-display: clamp(2.8rem, 2rem + 4vw, 5.2rem);
+      --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3rem);
+      --text-h3:      clamp(1.2rem, 0.95rem + 1.1vw, 1.75rem);
+      --text-body:    clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
+      --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+
+      --lh-display: 1.02;
+      --lh-heading: 1.12;
+      --lh-body:    1.75;
+      --ls-display: -0.02em;
+      --ls-overline: 0.16em;
+
+      /* Espaçamento */
+      --section-pad: clamp(5rem, 9vw, 10rem);
+      --content-max: 1200px;
+      --prose-max:   680px;
+      --gap-cards:   clamp(1rem, 2.5vw, 2rem);
+
+      /* Sombras */
+      --shadow-sm:
+        0 1px 2px rgba(0,0,0,.04),
+        0 2px 6px rgba(0,0,0,.04);
+      --shadow-md:
+        0 2px 4px rgba(0,0,0,.04),
+        0 8px 18px rgba(0,0,0,.07),
+        0 20px 40px rgba(0,0,0,.05);
+      --shadow-lg:
+        0 4px 8px rgba(0,0,0,.04),
+        0 16px 32px rgba(0,0,0,.07),
+        0 40px 80px rgba(0,0,0,.09);
+      --shadow-gold:
+        0 4px 12px rgba(201,164,110,.22),
+        0 12px 32px rgba(201,164,110,.14);
+    }
+
+    /* ── BODY ── */
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 300;
+      font-size: var(--text-body);
+      line-height: var(--lh-body);
+      color: var(--text-primary);
+      background: var(--bg-base);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      text-wrap: balance;
+      font-optical-sizing: auto;
+    }
+
+    /* ── GRAIN TEXTURE ── */
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ── OVERLINE ── */
+    .overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: var(--ls-overline);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .overline::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 6vw, 5rem);
+    }
+
+    /* ── HEADER STICKY ── */
+    #hdr {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+    }
+    #hdr.scrolled {
+      background: rgba(15,36,36,.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(201,164,110,.18);
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    .hdr-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      font-weight: 500;
+      color: var(--text-inverse);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+    .hdr-logo span {
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hdr-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.65rem 1.4rem;
+      background: transparent;
+      border: 1px solid rgba(201,164,110,.5);
+      color: var(--gold-light);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .hdr-cta:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg-dark);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 620px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('imagens/maps-1.jpg') center/cover no-repeat;
+      animation: kb 24s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes kb {
+      from { transform: scale(1); }
+      to   { transform: scale(1.065); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(165deg,
+          transparent 20%,
+          rgba(15,36,36,.55) 55%,
+          rgba(10,24,24,.9) 85%,
+          rgba(10,24,24,.98) 100%
+        );
+    }
+
+    /* grain no hero */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 0 clamp(1.5rem, 7vw, 5.5rem) clamp(3.5rem, 7vh, 6rem);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 680px;
+    }
+
+    .hero-overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fade-in 0.6s ease forwards 0.1s;
+    }
+    .hero-overline::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero-title {
+      font-size: var(--text-display);
+      font-weight: 400;
+      font-style: italic;
+      line-height: var(--lh-display);
+      letter-spacing: var(--ls-display);
+      color: var(--text-inverse);
+      max-width: 13ch;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .word {
+      display: inline-block;
+      transform: translateY(110%);
+      opacity: 0;
+      animation: word-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-title .word:nth-child(1) { animation-delay: 0.25s; }
+    .hero-title .word:nth-child(2) { animation-delay: 0.38s; }
+    .hero-title .word:nth-child(3) { animation-delay: 0.51s; }
+    .hero-title .word:nth-child(4) { animation-delay: 0.64s; }
+    .hero-title .word:nth-child(5) { animation-delay: 0.77s; }
+
+    @keyframes word-up {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fade-in {
+      to { opacity: 1; }
+    }
+
+    .hero-sub {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: var(--text-sm);
+      font-weight: 300;
+      color: rgba(250,247,242,.7);
+      max-width: 42ch;
+      line-height: 1.65;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fade-in 0.7s ease forwards 1s;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fade-in 0.7s ease forwards 1.15s;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.95rem clamp(1.6rem, 3vw, 2.4rem);
+      min-height: 52px;
+      background: linear-gradient(135deg, var(--gold), #b8924d);
+      color: #0f2424;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      box-shadow: var(--shadow-gold);
+      transition:
+        transform  0.3s cubic-bezier(0.23,1,0.32,1),
+        box-shadow 0.3s ease;
+      will-change: transform;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 8px 24px rgba(201,164,110,.4),
+        0 20px 48px rgba(201,164,110,.2);
+    }
+    .btn-primary:active { transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(250,247,242,.65);
+      letter-spacing: 0.04em;
+      transition: color 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-ghost:hover { color: var(--gold-light); }
+
+    /* Badge de nota no hero */
+    .hero-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      padding: 18px 22px;
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      box-shadow:
+        0 2px 4px rgba(0,0,0,.1),
+        0 8px 24px rgba(0,0,0,.14),
+        inset 0 1px 0 rgba(255,255,255,.16);
+      opacity: 0;
+      animation: fade-in 0.6s ease forwards 1.3s;
+      align-self: flex-end;
+    }
+    .hero-badge .rating {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .hero-badge .stars {
+      display: flex;
+      gap: 3px;
+    }
+    .hero-badge .stars svg {
+      width: 13px; height: 13px;
+      fill: var(--gold);
+    }
+    .hero-badge .label {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      color: rgba(250,247,242,.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    /* ── DIAGONAL CUT ── */
+    .cut-bottom {
+      clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+      margin-bottom: -4vw;
+      padding-bottom: calc(var(--section-pad) + 4vw);
+    }
+    .cut-top {
+      clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+      padding-top: calc(var(--section-pad) + 4vw);
+    }
+
+    /* ── SEÇÃO SOBRE ── */
+    .sobre {
+      background: var(--bg-dark);
+      padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .sobre::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.038;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .sobre-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sobre-img-wrap {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .sobre-img-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.8s cubic-bezier(0.22,1,0.36,1);
+    }
+    .sobre-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+    /* linha dourada decorativa */
+    .sobre-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: -20px;
+      width: 2px;
+      height: 60%;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      z-index: 2;
+    }
+
+    .sobre-copy {
+      color: var(--text-inverse);
+    }
+    .sobre-copy .overline { color: var(--gold); }
+
+    .sobre-copy h2 {
+      font-size: var(--text-h2);
+      font-weight: 400;
+      font-style: italic;
+      line-height: var(--lh-heading);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      max-width: 16ch;
+    }
+
+    .sobre-copy p {
+      color: rgba(250,247,242,.72);
+      line-height: var(--lh-body);
+      margin-bottom: 18px;
+      max-width: var(--prose-max);
+    }
+
+    .sobre-copy .cro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      padding: 10px 18px;
+      border: 1px solid rgba(201,164,110,.25);
+      border-radius: 4px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .sobre-copy .cro-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── SEÇÃO TRATAMENTOS FACE ── */
+    .tratamentos {
+      background: var(--bg-base);
+      padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+    }
+
+    .tratamentos-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .tratamentos-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .tratamentos-header h2 {
+      font-size: var(--text-h2);
+      font-weight: 400;
+      font-style: italic;
+      line-height: var(--lh-heading);
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      max-width: 18ch;
+    }
+    .tratamentos-header p {
+      color: var(--text-secondary);
+      max-width: var(--prose-max);
+      margin-top: 16px;
+    }
+
+    .tratamentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--gap-cards);
+    }
+
+    .trat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-inset);
+      border-radius: 8px;
+      padding: clamp(1.6rem, 3vw, 2.2rem);
+      transition:
+        transform 0.35s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.35s ease,
+        border-color 0.25s ease;
+    }
+    .trat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md), 0 0 0 1px var(--accent-border);
+      border-color: var(--accent-border);
+    }
+
+    .trat-card .category {
+      display: inline-block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      padding: 5px 10px;
+      background: var(--gold-subtle);
+      border-radius: 3px;
+    }
+
+    .trat-card h3 {
+      font-size: var(--text-h3);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .trat-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.68;
+    }
+
+    .trat-divider {
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 16px 0;
+    }
+
+    /* ── SEÇÃO CORPO ── */
+    .corpo {
+      background: var(--bg-inset);
+      padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+    }
+
+    /* SVG Wave entre base e inset */
+    .wave-divider {
+      display: block;
+      line-height: 0;
+      margin-bottom: -1px;
+    }
+    .wave-divider svg {
+      width: 100%;
+      height: clamp(36px, 5vw, 72px);
+    }
+    .wave-bottom {
+      display: block;
+      line-height: 0;
+      margin-top: -1px;
+    }
+    .wave-bottom svg {
+      width: 100%;
+      height: clamp(36px, 5vw, 72px);
+    }
+
+    .corpo-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+
+    .corpo-copy h2 {
+      font-size: var(--text-h2);
+      font-weight: 400;
+      font-style: italic;
+      line-height: var(--lh-heading);
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      max-width: 16ch;
+      margin-bottom: 24px;
+    }
+    .corpo-copy p {
+      color: var(--text-secondary);
+      line-height: var(--lh-body);
+      max-width: var(--prose-max);
+    }
+
+    .corpo-list {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .corpo-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .corpo-list li::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .corpo-list strong {
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      margin-bottom: 2px;
+    }
+
+    /* ── GALERIA RESULTADOS ── */
+    .galeria {
+      background: var(--bg-dark);
+      padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .galeria::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .galeria-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .galeria-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .galeria-header .overline { color: var(--gold); }
+    .galeria-header h2 {
+      font-size: var(--text-h2);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-inverse);
+      line-height: var(--lh-heading);
+      max-width: 18ch;
+    }
+    .galeria-header p {
+      color: rgba(250,247,242,.6);
+      margin-top: 14px;
+      max-width: 48ch;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .galeria-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      aspect-ratio: 1/1.15;
+      cursor: pointer;
+    }
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .galeria-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .galeria-item .galeria-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,24,24,.75) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+    }
+    .galeria-item:hover .galeria-overlay {
+      opacity: 1;
+    }
+    .galeria-overlay span {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* tag "antes/depois" */
+    .galeria-item .tag-ad {
+      position: absolute;
+      top: 12px; left: 12px;
+      padding: 4px 10px;
+      background: rgba(10,24,24,.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(201,164,110,.3);
+      border-radius: 3px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── PROVA SOCIAL ── */
+    .prova {
+      background: var(--bg-base);
+      padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+    }
+
+    .prova-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .prova-rating-block {
+      text-align: center;
+      padding: clamp(2.5rem, 4vw, 4rem);
+      border: 1px solid var(--bg-inset);
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      background: var(--bg-surface);
+    }
+    .prova-rating-block .big-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 8vw, 7rem);
+      font-weight: 400;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .prova-rating-block .big-stars {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 14px 0 8px;
+    }
+    .prova-rating-block .big-stars svg {
+      width: 20px; height: 20px;
+      fill: var(--gold);
+    }
+    .prova-rating-block .google-label {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .prova-rating-block .insta-handle {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--bg-inset);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .prova-rating-block .insta-handle a {
+      color: var(--accent);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .prova-rating-block .insta-handle a:hover { color: var(--gold); }
+
+    .prova-depoimento {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark2) 100%);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .prova-depoimento::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px; left: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .prova-depoimento blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 1.1rem + 0.2vw, 1.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(250,247,242,.85);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 24px;
+    }
+    .prova-depoimento .author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(250,247,242,.5);
+      letter-spacing: 0.04em;
+    }
+    .prova-depoimento .author::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    /* ── SEÇÃO LOCALIZAÇÃO / AGENDAMENTO ── */
+    .agenda {
+      background: var(--bg-dark);
+      padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .agenda::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.038;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .agenda-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .agenda-copy {
+      color: var(--text-inverse);
+    }
+    .agenda-copy .overline { color: var(--gold); }
+    .agenda-copy h2 {
+      font-size: var(--text-h2);
+      font-weight: 400;
+      font-style: italic;
+      line-height: var(--lh-heading);
+      max-width: 18ch;
+      margin-bottom: 20px;
+    }
+    .agenda-copy p {
+      color: rgba(250,247,242,.68);
+      line-height: var(--lh-body);
+      max-width: 42ch;
+      margin-bottom: 32px;
+    }
+
+    .agenda-info {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .agenda-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: var(--text-sm);
+      color: rgba(250,247,242,.65);
+      line-height: 1.55;
+    }
+    .agenda-info-item svg {
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      fill: var(--gold);
+      margin-top: 2px;
+    }
+    .agenda-info-item strong {
+      display: block;
+      color: var(--text-inverse);
+      font-weight: 600;
+      margin-bottom: 1px;
+    }
+
+    .agenda-map {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+      background: var(--bg-dark2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .agenda-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(30%) brightness(0.9);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f0f;
+      padding: clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 6vw, 5rem);
+      text-align: center;
+    }
+    footer .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(250,247,242,.4);
+      margin-bottom: 10px;
+    }
+    footer p {
+      font-size: 0.7rem;
+      color: rgba(250,247,242,.25);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    footer a {
+      color: rgba(201,164,110,.5);
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--gold); }
+
+    /* ── WA FAB ── */
+    .wa-fab {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 999;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 4px 12px rgba(214,36,159,.4),
+        0 8px 24px rgba(214,36,159,.2);
+      transition: transform 0.22s cubic-bezier(0.22,1,0.36,1), box-shadow 0.22s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .wa-fab:hover {
+      transform: scale(1.1);
+      box-shadow:
+        0 6px 18px rgba(214,36,159,.5),
+        0 12px 32px rgba(214,36,159,.25);
+    }
+    .wa-fab svg { width: 28px; height: 28px; fill: #fff; }
+    .wa-fab::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(214,36,159,.35);
+      animation: pulse 2.4s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: .8; }
+      100% { transform: scale(1.75); opacity: 0; }
+    }
+
+    /* ── REVEAL ON SCROLL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal:nth-child(2) { transition-delay: .06s; }
+    .reveal:nth-child(3) { transition-delay: .12s; }
+    .reveal:nth-child(4) { transition-delay: .18s; }
+    .reveal:nth-child(5) { transition-delay: .24s; }
+    .reveal:nth-child(6) { transition-delay: .30s; }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg { animation: none; }
+      .reveal, .word {
+        transition: none;
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+      .wa-fab::before { animation: none; }
+      .hero-overline,
+      .hero-sub,
+      .hero-actions,
+      .hero-badge { animation: none; opacity: 1; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .sobre-inner,
+      .corpo-inner,
+      .prova-inner,
+      .agenda-inner {
+        grid-template-columns: 1fr;
+      }
+      .sobre-img-wrap { order: -1; }
+      .sobre-img-wrap img { aspect-ratio: 16/9; }
+      .sobre-img-wrap::before { display: none; }
+      .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-badge { display: none; }
+      .cut-bottom, .cut-top { clip-path: none; margin-bottom: 0; padding-bottom: var(--section-pad); padding-top: var(--section-pad); }
+    }
+
+    @media (max-width: 580px) {
+      .galeria-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .tratamentos-grid { grid-template-columns: 1fr; }
+      .hdr-logo span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header id="hdr" role="banner">
+  <div class="hdr-logo" aria-label="Simetria Face e Corpo">
+    Simetria
+    <span>Face &amp; Corpo — Natal/RN</span>
+  </div>
+  <a href="https://instagram.com/simetriafaceecorpo"
+     class="hdr-cta"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Agendar avaliação pelo Instagram">
+    Agendar Avaliação
+  </a>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Simetria Face e Corpo — Clínica de Estética Avançada em Natal/RN">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-overline" aria-hidden="true">Clínica de Estética Avançada — Natal/RN</p>
+      <h1 class="hero-title">
+        <span class="word">Beleza</span><span class="word">&nbsp;</span><span class="word">que</span>&nbsp;<span class="word">preserva</span>&nbsp;<em><span class="word">quem&nbsp;você&nbsp;é.</span></em>
+      </h1>
+      <p class="hero-sub">
+        Procedimentos de estética avançada para face e corpo — com tecnologia de ponta e uma filosofia única: realçar o que é seu, sem exageros.
+      </p>
+      <div class="hero-actions">
+        <a href="https://instagram.com/simetriafaceecorpo"
+           class="btn-primary"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Agendar avaliação pelo Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Agendar pelo Instagram
+        </a>
+        <a href="#sobre" class="btn-ghost" aria-label="Conhecer a clínica">
+          Conhecer a clínica
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Badge de nota -->
+    <div class="hero-badge" role="img" aria-label="Nota 4,9 no Google">
+      <div class="rating">4,9</div>
+      <div class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="label">Google Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE ── -->
+<section class="sobre cut-bottom" id="sobre" aria-label="Sobre a Simetria">
+  <div class="sobre-inner">
+    <div class="sobre-img-wrap reveal">
+      <img
+        src="imagens/insta-8.jpg"
+        alt="Procedimento sendo realizado na Simetria Face e Corpo"
+        loading="eager"
+        decoding="async"
+        width="600"
+        height="800"
+      >
+    </div>
+    <div class="sobre-copy">
+      <p class="overline" aria-hidden="true">Sobre a Simetria</p>
+      <h2 class="reveal">Precisão médica. <em>Resultado natural.</em></h2>
+      <p class="reveal">
+        A Simetria Face e Corpo nasceu de uma convicção: estética avançada deve revelar o melhor de quem você já é — não transformá-lo em outra pessoa.
+      </p>
+      <p class="reveal">
+        No 12º andar com vista panorâmica de Natal, reunimos tecnologia de última geração, protocolos clínicos rigorosos e um olhar treinado para harmonia e equilíbrio. Cada tratamento é planejado individualmente, com atenção a proporcionalidade, naturalidade e identidade única de cada paciente.
+      </p>
+      <p class="reveal">
+        O resultado que buscamos: você se olhar no espelho e se reconhecer — só que melhor.
+      </p>
+      <div class="cro-badge reveal" aria-label="Dr. Bruno Linhares — CRO-RN 5417">
+        Dr. Bruno Linhares &nbsp;·&nbsp; CRO-RN 5417
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRATAMENTOS FACE ── -->
+<section class="tratamentos cut-top" id="tratamentos" aria-label="Tratamentos para o rosto">
+  <div class="tratamentos-inner">
+    <div class="tratamentos-header">
+      <p class="overline reveal" aria-hidden="true">Tratamentos — Face</p>
+      <h2 class="reveal">Cada traço do<br><em>seu rosto, em equilíbrio.</em></h2>
+      <p class="reveal">Procedimentos minimamente invasivos com técnica médica, para resultados elegantes e duradouros.</p>
+    </div>
+    <div class="tratamentos-grid">
+      <div class="trat-card reveal">
+        <span class="category">Harmonização Facial</span>
+        <h3>Preenchimento Facial</h3>
+        <div class="trat-divider" aria-hidden="true"></div>
+        <p>Restauração de volume, definição de contornos e rejuvenescimento com ácido hialurônico. Resultado imediato, aspecto natural e duração de 12 a 18 meses.</p>
+      </div>
+      <div class="trat-card reveal">
+        <span class="category">Toxina Botulínica</span>
+        <h3>Botox &amp; Relaxamento Muscular</h3>
+        <div class="trat-divider" aria-hidden="true"></div>
+        <p>Suavização de linhas de expressão com precisão anatômica. Aplicação segura que preserva a expressividade natural do rosto.</p>
+      </div>
+      <div class="trat-card reveal">
+        <span class="category">Contorno e Definição</span>
+        <h3>Projeção de Queixo e Mandíbula</h3>
+        <div class="trat-divider" aria-hidden="true"></div>
+        <p>Harmonização do perfil facial com técnicas de preenchimento estratégico para equilíbrio entre nariz, mento e linha do maxilar.</p>
+      </div>
+      <div class="trat-card reveal">
+        <span class="category">Ultraformer — Face</span>
+        <h3>Lifting Sem Cirurgia</h3>
+        <div class="trat-divider" aria-hidden="true"></div>
+        <p>Tecnologia de ultrassom microfocado que estimula colágeno em profundidade, promovendo firmeza e sustentação da pele sem cortes ou recuperação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SVG Wave -->
+<div class="wave-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,48 C360,72 720,24 1080,48 C1260,60 1380,54 1440,48 L1440,72 L0,72 Z" fill="#ede9e0"/>
+  </svg>
+</div>
+
+<!-- ── TRATAMENTOS CORPO ── -->
+<section class="corpo" id="corpo" aria-label="Tratamentos para o corpo">
+  <div class="corpo-inner container">
+    <div class="corpo-copy">
+      <p class="overline reveal" aria-hidden="true">Tratamentos — Corpo</p>
+      <h2 class="reveal">Tecnologia avançada<br><em>para o corpo inteiro.</em></h2>
+      <p class="reveal">
+        Nosso espaço reúne plataformas de alta performance para tratamentos corporais que vão além da estética — promovem saúde, firmeza e bem-estar real.
+      </p>
+      <ul class="corpo-list">
+        <li class="reveal">
+          <div>
+            <strong>Ultraformer Corporal</strong>
+            Firmeza e lifting em áreas como abdômen, coxas e glúteos com ultrassom microfocado de alta intensidade. Sem cirurgia, sem recuperação.
+          </div>
+        </li>
+        <li class="reveal">
+          <div>
+            <strong>Radiofrequência e Remodelamento</strong>
+            Estímulo profundo ao colágeno, melhora da textura da pele e redução de flacidez com tecnologia de alta precisão.
+          </div>
+        </li>
+        <li class="reveal">
+          <div>
+            <strong>Protocolos Personalizados</strong>
+            Cada paciente recebe um plano de tratamento individualizado, combinando tecnologias conforme o objetivo e o tipo de pele.
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <!-- Visual de reforço com a foto da clínica em detalhe -->
+      <div style="
+        background: url('imagens/maps-1.jpg') center 30%/cover no-repeat;
+        border-radius: 10px;
+        aspect-ratio: 3/4;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        overflow: hidden;
+      " role="img" aria-label="Sala de tratamentos da Simetria com equipamentos de alta tecnologia e vista de Natal">
+        <div style="
+          position: absolute; inset: 0;
+          background: linear-gradient(to bottom, transparent 40%, rgba(15,36,36,.7) 100%);
+        " aria-hidden="true"></div>
+        <div style="
+          position: absolute; bottom: 24px; left: 24px; right: 24px;
+          font-family: 'Nunito Sans', sans-serif;
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--gold-light);
+        " aria-hidden="true">
+          12º andar — Petrópolis, Natal/RN
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SVG Wave -->
+<div class="wave-bottom" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,24 C360,0 720,48 1080,24 C1260,12 1380,18 1440,24 L1440,0 L0,0 Z" fill="#ede9e0"/>
+  </svg>
+</div>
+
+<!-- ── GALERIA RESULTADOS ── -->
+<section class="galeria" id="resultados" aria-label="Galeria de resultados reais">
+  <div class="galeria-inner">
+    <div class="galeria-header">
+      <p class="overline reveal" aria-hidden="true">Resultados Reais</p>
+      <h2 class="reveal">Transformações que<br><em>falam por si.</em></h2>
+      <p class="reveal">Cada resultado é único — porque cada rosto é único. Veja como nossos pacientes se sentiram após os tratamentos.</p>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item reveal" tabindex="0" role="img" aria-label="Resultado de harmonização facial masculina — antes e depois">
+        <img
+          src="imagens/insta-1.jpg"
+          alt="Resultado de harmonização facial masculina — antes e depois"
+          loading="eager"
+          decoding="async"
+          width="400"
+          height="460"
+        >
+        <span class="tag-ad" aria-hidden="true">Antes / Depois</span>
+        <div class="galeria-overlay" aria-hidden="true">
+          <span>Harmonização Facial</span>
+        </div>
+      </div>
+      <div class="galeria-item reveal" tabindex="0" role="img" aria-label="Resultado de preenchimento e restauração de volume facial feminino — antes e depois">
+        <img
+          src="imagens/insta-2.jpg"
+          alt="Resultado de preenchimento e restauração de volume facial feminino — antes e depois"
+          loading="eager"
+          decoding="async"
+          width="400"
+          height="460"
+        >
+        <span class="tag-ad" aria-hidden="true">Antes / Depois</span>
+        <div class="galeria-overlay" aria-hidden="true">
+          <span>Preenchimento Facial</span>
+        </div>
+      </div>
+      <div class="galeria-item reveal" tabindex="0" role="img" aria-label="Resultado de rejuvenescimento e contorno facial — antes e depois">
+        <img
+          src="imagens/insta-3.jpg"
+          alt="Resultado de rejuvenescimento e contorno facial — antes e depois"
+          loading="eager"
+          decoding="async"
+          width="400"
+          height="460"
+        >
+        <span class="tag-ad" aria-hidden="true">Antes / Depois</span>
+        <div class="galeria-overlay" aria-hidden="true">
+          <span>Rejuvenescimento</span>
+        </div>
+      </div>
+      <div class="galeria-item reveal" tabindex="0" role="img" aria-label="Resultado de harmonização facial com marcações clínicas — antes e depois">
+        <img
+          src="imagens/insta-7.jpg"
+          alt="Resultado de harmonização facial com protocolo clínico — antes e depois"
+          loading="eager"
+          decoding="async"
+          width="400"
+          height="460"
+        >
+        <span class="tag-ad" aria-hidden="true">Antes / Depois</span>
+        <div class="galeria-overlay" aria-hidden="true">
+          <span>Protocolo Facial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROVA SOCIAL ── -->
+<section class="prova" id="depoimentos" aria-label="Avaliações e depoimentos">
+  <div class="prova-inner container">
+    <div class="prova-rating-block reveal">
+      <div class="big-number" aria-label="Nota 4,9">4,9</div>
+      <div class="big-stars" aria-label="5 estrelas">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="google-label">no Google</div>
+      <div class="insta-handle">
+        Siga no Instagram:<br>
+        <a href="https://www.instagram.com/simetriafaceecorpo/" target="_blank" rel="noopener noreferrer" aria-label="Perfil do Instagram da Simetria">@simetriafaceecorpo</a>
+      </div>
+    </div>
+    <div class="prova-depoimento reveal" role="blockquote">
+      <blockquote>
+        "Você preserva a identidade, nunca me senti transformada em outra pessoa. Sempre me reconheço. Pequenos detalhes e ajustes que não mudaram meu rosto, mas que deram delicadeza e força que eu queria ter — e iluminaram mais minha personalidade, meu jeito, minha identidade."
+      </blockquote>
+      <div class="author">
+        Paciente da Simetria Face &amp; Corpo
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AGENDAMENTO / LOCALIZAÇÃO ── -->
+<section class="agenda" id="contato" aria-label="Localização e agendamento">
+  <div class="agenda-inner">
+    <div class="agenda-copy">
+      <p class="overline reveal" aria-hidden="true">Agendamento</p>
+      <h2 class="reveal">Seu momento<br><em>começa com uma avaliação.</em></h2>
+      <p class="reveal">
+        A avaliação é o primeiro passo — um momento exclusivo para entender seus objetivos e traçar o caminho ideal para o seu resultado.
+      </p>
+      <a href="https://instagram.com/simetriafaceecorpo"
+         class="btn-primary reveal"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Agendar avaliação pelo Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Agendar pelo Instagram
+      </a>
+      <div class="agenda-info reveal">
+        <div class="agenda-info-item">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div>
+            <strong>Endereço</strong>
+            Rua Coronel Joaquim Manoel, 615 — Sala 1208, 12º Andar<br>
+            Petrópolis, Natal/RN — CEP 59012-330
+          </div>
+        </div>
+        <div class="agenda-info-item">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <div>
+            <strong>Agende pelo Instagram</strong>
+            <a href="https://instagram.com/simetriafaceecorpo" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px solid currentColor;">@simetriafaceecorpo</a><br>
+            Telefone: (84) 2020-6815
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="agenda-map reveal" aria-label="Mapa da localização da Simetria Face e Corpo em Natal/RN">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.5!2d-35.1963846!3d-5.7824604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b3011342fbfbcb%3A0x150bd2e6b79194ba!2sSimetria%20Face%20e%20Corpo%20%7C%20Cl%C3%ADnica%20de%20est%C3%A9tica%20avan%C3%A7ada!5e0!3m2!1spt-BR!2sbr!4v1719183000000!5m2!1spt-BR!2sbr"
+        title="Localização da Simetria Face e Corpo no Google Maps"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo">
+  <div class="footer-brand">Simetria Face &amp; Corpo</div>
+  <p>Clínica de Estética Avançada &nbsp;·&nbsp; Natal/RN &nbsp;·&nbsp; <a href="https://www.instagram.com/simetriafaceecorpo/" target="_blank" rel="noopener noreferrer">@simetriafaceecorpo</a></p>
+</footer>
+
+<!-- ── WA FAB ── -->
+<a href="https://instagram.com/simetriafaceecorpo"
+   class="wa-fab"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Agendar pelo Instagram"
+   title="Agendar pelo Instagram">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+</a>
+
+<!-- ── JS ── -->
+<script>
+  // Header sticky
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Smooth scroll para links âncora
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
