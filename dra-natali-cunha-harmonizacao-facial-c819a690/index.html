@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dra. Nátali Cunha — Harmonização Facial Premium em Natal/RN. Preenchimento labial, toxina botulínica, skinbooster e brow lifting. Agende sua avaliação.">
+<title>Dra. Nátali Cunha | Harmonização Facial — Natal/RN</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --bg-base:      #faf7f4;
+  --bg-surface:   #ffffff;
+  --bg-inset:     #f2ece6;
+  --bg-dark:      #1c1118;
+
+  --text-primary:   #1c1118;
+  --text-secondary: #4a3d43;
+  --text-muted:     #8a7880;
+  --text-inverse:   #faf7f4;
+
+  --accent:        #8b3a5a;
+  --accent-dark:   #6e2d47;
+  --accent-subtle: rgba(139,58,90,.09);
+  --accent-border: rgba(139,58,90,.22);
+
+  --gold:          #c9a057;
+  --gold-light:    #e0c078;
+
+  --shadow-sm:
+    0 1px 2px rgba(0,0,0,.04),
+    0 2px 6px rgba(0,0,0,.04);
+  --shadow-md:
+    0 2px 4px rgba(0,0,0,.04),
+    0 8px 18px rgba(0,0,0,.07),
+    0 20px 40px rgba(0,0,0,.04);
+  --shadow-lg:
+    0 4px 8px rgba(0,0,0,.04),
+    0 16px 32px rgba(0,0,0,.07),
+    0 40px 80px rgba(0,0,0,.08);
+  --shadow-accent:
+    0 4px 14px rgba(139,58,90,.28),
+    0 2px 6px rgba(139,58,90,.18);
+  --shadow-accent-strong:
+    0 8px 24px rgba(139,58,90,.38),
+    0 2px 8px rgba(139,58,90,.22);
+
+  --text-display: clamp(2.8rem, 2rem + 4vw, 5.2rem);
+  --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3rem);
+  --text-h3:      clamp(1.2rem, 0.95rem + 1vw, 1.75rem);
+  --text-body:    clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
+  --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+
+  --lh-display: 1.02;
+  --lh-heading: 1.12;
+  --lh-body:    1.74;
+
+  --ls-display:  -0.02em;
+  --ls-overline:  0.16em;
+
+  --section-pad: clamp(5rem, 9vw, 10rem);
+  --content-max: 1200px;
+  --prose-max:   680px;
+  --gap-cards:   clamp(1rem, 2.5vw, 2rem);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: var(--lh-body);
+  font-size: var(--text-body);
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  text-wrap: balance;
+  font-optical-sizing: auto;
+}
+
+/* ── GRAIN ── */
+.grain::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── OVERLINE ── */
+.overline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: var(--ls-overline);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.overline::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── HEADER ── */
+#hdr {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px clamp(1.5rem, 5vw, 4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.38s ease, box-shadow 0.38s ease;
+}
+#hdr.scrolled {
+  background: rgba(28, 17, 24, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(139,58,90,.25);
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 500;
+  color: var(--text-inverse);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+.logo span {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: var(--gold);
+  margin-top: 2px;
+}
+.header-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 1px solid rgba(201,160,87,.45);
+  color: var(--gold-light);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: 50px;
+  transition: background 0.28s ease, border-color 0.28s ease, color 0.28s ease;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.header-cta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1c1118;
+}
+
+/* ── HERO SPLIT 40/60 ── */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+/* LEFT PANEL */
+.hero-copy {
+  position: relative;
+  background: var(--bg-dark);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4.5rem) clamp(3.5rem, 7vh, 6rem);
+  z-index: 2;
+}
+.hero-copy::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 10px;
+  position: relative; z-index: 1;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.hero-title {
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--text-inverse);
+  max-width: 12ch;
+  position: relative; z-index: 1;
+  overflow: hidden;
+}
+.hero-title .word {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  animation: word-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-title .word:nth-child(1) { animation-delay: 0.25s; }
+.hero-title .word:nth-child(2) { animation-delay: 0.38s; }
+.hero-title .word:nth-child(3) { animation-delay: 0.51s; }
+.hero-title .word:nth-child(4) { animation-delay: 0.64s; }
+.hero-title .word:nth-child(5) { animation-delay: 0.77s; }
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+@keyframes word-up { to { transform: translateY(0); opacity: 1; } }
+
+.hero-subtitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(0.88rem, 0.8rem + 0.3vw, 0.98rem);
+  font-weight: 300;
+  color: rgba(250,247,244,.65);
+  line-height: 1.72;
+  margin-top: 1.5rem;
+  max-width: 36ch;
+  position: relative; z-index: 1;
+  opacity: 0;
+  animation: fade-in 0.9s cubic-bezier(0.22,1,0.36,1) 1s forwards;
+}
+.hero-actions {
+  margin-top: 2.2rem;
+  display: flex; flex-direction: column; gap: 12px;
+  align-items: flex-start;
+  position: relative; z-index: 1;
+  opacity: 0;
+  animation: fade-in 0.9s cubic-bezier(0.22,1,0.36,1) 1.2s forwards;
+}
+@keyframes fade-in { to { opacity: 1; } }
+
+/* RIGHT PANEL — foto */
+.hero-img {
+  position: relative;
+  overflow: hidden;
+}
+.hero-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  animation: kb 24s ease-in-out infinite alternate;
+}
+.hero-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(270deg,
+    transparent 60%,
+    rgba(28,17,24,.55) 100%
+  );
+  z-index: 1;
+}
+@keyframes kb { from { transform: scale(1) } to { transform: scale(1.065) } }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0.9rem clamp(1.5rem, 3vw, 2.2rem);
+  min-height: 48px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600; font-size: 0.78rem; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: var(--shadow-accent);
+  transition:
+    transform 0.3s cubic-bezier(0.23,1,0.32,1),
+    box-shadow 0.3s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-accent-strong);
+}
+.btn-primary:active { transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.85rem clamp(1.3rem, 2.5vw, 2rem);
+  min-height: 48px;
+  background: transparent;
+  border: 1px solid rgba(250,247,244,.25);
+  color: rgba(250,247,244,.75);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 500; font-size: 0.78rem; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition:
+    border-color 0.28s ease,
+    color 0.28s ease,
+    background 0.28s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-secondary:hover {
+  border-color: rgba(250,247,244,.5);
+  color: var(--text-inverse);
+}
+
+/* ── SECTION SHARED ── */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+}
+section { position: relative; }
+
+/* ── WAVE DIVIDER ── */
+.wave-dark { display: block; line-height: 0; margin-bottom: -1px; background: var(--bg-dark); }
+.wave-dark svg { width: 100%; height: clamp(40px, 5vw, 80px); }
+.wave-light { display: block; line-height: 0; margin-bottom: -1px; background: var(--bg-base); }
+.wave-light svg { width: 100%; height: clamp(40px, 5vw, 80px); }
+
+/* ── SOBRE ── */
+.sobre {
+  background: var(--bg-base);
+  padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+}
+.sobre-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+.sobre-img {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.sobre-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.sobre-img:hover img { transform: scale(1.04); }
+.sobre-badge {
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  background: rgba(28,17,24,.82);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(201,160,87,.25);
+  border-radius: 6px;
+  padding: 0.9rem 1.2rem;
+  color: var(--text-inverse);
+}
+.sobre-badge strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+}
+.sobre-badge span {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250,247,244,.55);
+  margin-top: 4px;
+  display: block;
+  font-weight: 400;
+}
+.sobre-copy h2 {
+  font-size: var(--text-h2);
+  font-weight: 500;
+  line-height: var(--lh-heading);
+  color: var(--text-primary);
+  max-width: 14ch;
+  letter-spacing: var(--ls-display);
+}
+.sobre-copy h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.sobre-copy p {
+  margin-top: 1.4rem;
+  color: var(--text-secondary);
+  max-width: var(--prose-max);
+  font-weight: 300;
+  line-height: var(--lh-body);
+}
+.sobre-copy p + p { margin-top: 1rem; }
+.sobre-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.pilar {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 1rem 1.2rem;
+  background: var(--bg-inset);
+  border-radius: 6px;
+  border-left: 2px solid var(--accent-border);
+}
+.pilar-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.pilar-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.55;
+}
+.pilar-icon {
+  width: 32px; height: 32px;
+  background: var(--accent-subtle);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.pilar-icon svg { width: 16px; height: 16px; fill: var(--accent); }
+
+/* ── PROCEDIMENTOS ── */
+.procedimentos {
+  background: var(--bg-dark);
+  padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+  position: relative;
+  overflow: hidden;
+}
+.procedimentos::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+.procedimentos .overline { color: var(--gold); }
+.procedimentos h2 {
+  font-size: var(--text-h2);
+  font-weight: 400;
+  color: var(--text-inverse);
+  max-width: 18ch;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-display);
+  position: relative; z-index: 1;
+}
+.procedimentos h2 em { font-style: italic; color: var(--accent); }
+.proc-subtitle {
+  margin-top: 1rem;
+  color: rgba(250,247,244,.55);
+  font-size: clamp(0.88rem, 0.82rem + 0.2vw, 0.95rem);
+  font-weight: 300;
+  max-width: 52ch;
+  line-height: 1.68;
+  position: relative; z-index: 1;
+}
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gap-cards);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  position: relative; z-index: 1;
+}
+.proc-card {
+  background: rgba(250,247,244,.04);
+  border: 1px solid rgba(250,247,244,.08);
+  border-radius: 8px;
+  padding: 1.8rem 1.6rem;
+  transition:
+    transform 0.38s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.38s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+}
+.proc-card:hover {
+  transform: translateY(-6px);
+  background: rgba(139,58,90,.1);
+  border-color: rgba(139,58,90,.3);
+  box-shadow:
+    0 8px 24px rgba(139,58,90,.18),
+    0 2px 8px rgba(0,0,0,.12);
+}
+.proc-card-overline {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.proc-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem);
+  font-weight: 500;
+  color: var(--text-inverse);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+.proc-card p {
+  margin-top: 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: rgba(250,247,244,.55);
+  line-height: 1.65;
+}
+.proc-card-line {
+  width: 28px; height: 1px;
+  background: var(--accent);
+  margin: 1.2rem 0;
+  transition: width 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.proc-card:hover .proc-card-line { width: 48px; }
+
+/* ── GALERIA ── */
+.galeria {
+  background: var(--bg-base);
+  padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+}
+.galeria-header {
+  max-width: var(--content-max);
+  margin: 0 auto 3rem;
+}
+.galeria-header h2 {
+  font-size: var(--text-h2);
+  font-weight: 500;
+  letter-spacing: var(--ls-display);
+  max-width: 18ch;
+  line-height: var(--lh-heading);
+}
+.galeria-header h2 em { font-style: italic; color: var(--accent); }
+.galeria-header p {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: clamp(0.88rem, 0.82rem + 0.2vw, 0.95rem);
+  max-width: 52ch;
+  font-weight: 300;
+}
+.galeria-grid {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+.galeria-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-inset);
+}
+.galeria-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.galeria-item:hover img { transform: scale(1.07); }
+.galeria-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    transparent 50%,
+    rgba(28,17,24,.45) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.38s ease;
+}
+.galeria-item:hover::after { opacity: 1; }
+.galeria-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,247,244,.9);
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.galeria-item:hover .galeria-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── PROVA SOCIAL ── */
+.prova {
+  background: var(--bg-inset);
+  padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+  clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  margin: -3vw 0;
+  padding-top: calc(var(--section-pad) + 3vw);
+  padding-bottom: calc(var(--section-pad) + 3vw);
+}
+.prova-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+.prova h2 {
+  font-size: var(--text-h2);
+  font-weight: 500;
+  letter-spacing: var(--ls-display);
+  max-width: 16ch;
+  line-height: var(--lh-heading);
+}
+.prova h2 em { font-style: italic; color: var(--accent); }
+.prova-desc {
+  margin-top: 1.4rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: var(--prose-max);
+  line-height: var(--lh-body);
+}
+.prova-stats {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin-top: 2.5rem;
+}
+.stat {
+  display: flex; flex-direction: column;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 1.5rem + 2vw, 3.2rem);
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 400;
+}
+.prova-ig {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(139,58,90,.1);
+}
+.ig-handle {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.ig-avatar {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ig-avatar svg { width: 22px; height: 22px; fill: #fff; }
+.ig-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 500;
+  color: var(--text-primary);
+}
+.ig-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-weight: 300;
+}
+.ig-divider {
+  width: 100%; height: 1px;
+  background: var(--bg-inset);
+  margin-bottom: 1.5rem;
+}
+.ig-points {
+  display: flex; flex-direction: column; gap: 0.9rem;
+}
+.ig-point {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-weight: 300;
+}
+.ig-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.42rem;
+}
+.ig-cta {
+  margin-top: 1.5rem;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-border);
+  padding-bottom: 2px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  touch-action: manipulation;
+}
+.ig-cta:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
+
+/* ── AGENDAMENTO ── */
+.agendamento {
+  background: var(--bg-dark);
+  padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+  position: relative;
+  overflow: hidden;
+}
+.agendamento::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+.agendamento-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+  position: relative; z-index: 1;
+}
+.agendamento .overline { color: var(--gold); }
+.agendamento h2 {
+  font-size: var(--text-h2);
+  font-weight: 400;
+  color: var(--text-inverse);
+  max-width: 16ch;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-display);
+}
+.agendamento h2 em { font-style: italic; color: var(--accent); }
+.agendamento-desc {
+  margin-top: 1.2rem;
+  color: rgba(250,247,244,.55);
+  font-size: clamp(0.88rem, 0.82rem + 0.2vw, 0.95rem);
+  font-weight: 300;
+  max-width: 42ch;
+  line-height: 1.7;
+}
+.agendamento-actions {
+  display: flex; flex-direction: column; gap: 14px;
+  margin-top: 2.5rem;
+  align-items: flex-start;
+}
+.loc-card {
+  background: rgba(250,247,244,.05);
+  border: 1px solid rgba(250,247,244,.1);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex; flex-direction: column; gap: 1.2rem;
+}
+.loc-row {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.loc-icon {
+  width: 36px; height: 36px;
+  background: rgba(139,58,90,.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.loc-icon svg { width: 16px; height: 16px; fill: var(--accent); }
+.loc-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.loc-value {
+  font-size: 0.88rem;
+  color: rgba(250,247,244,.8);
+  font-weight: 300;
+  line-height: 1.5;
+}
+.loc-divider {
+  width: 100%; height: 1px;
+  background: rgba(250,247,244,.08);
+}
+.map-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-top: 0.25rem;
+  transition: color 0.25s ease;
+  touch-action: manipulation;
+}
+.map-link:hover { color: var(--gold-light); }
+.map-link svg { width: 12px; height: 12px; fill: currentColor; }
+
+/* ── FOOTER ── */
+footer {
+  background: #100d0f;
+  padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid rgba(250,247,244,.06);
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(250,247,244,.6);
+}
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(250,247,244,.3);
+  letter-spacing: 0.04em;
+  font-weight: 300;
+}
+
+/* ── WA FAB ── */
+.wa-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow:
+    0 6px 20px rgba(37,211,102,.4),
+    0 2px 8px rgba(37,211,102,.25);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.wa-fab:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 8px 28px rgba(37,211,102,.5),
+    0 3px 10px rgba(37,211,102,.3);
+}
+.wa-fab svg { width: 26px; height: 26px; fill: #fff; }
+.wa-fab::before {
+  content: '';
+  position: absolute; inset: -8px; border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.32);
+  animation: pulse 2.3s ease-out infinite;
+}
+@keyframes pulse {
+  0%  { transform: scale(1);   opacity: .8; }
+  100%{ transform: scale(1.7); opacity: 0;  }
+}
+
+/* ── REVEAL ON SCROLL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity  0.78s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in { opacity: 1; transform: none; }
+.reveal:nth-child(2) { transition-delay: .06s; }
+.reveal:nth-child(3) { transition-delay: .12s; }
+.reveal:nth-child(4) { transition-delay: .18s; }
+.reveal:nth-child(5) { transition-delay: .24s; }
+.reveal:nth-child(6) { transition-delay: .30s; }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .hero-img {
+    height: 60vw;
+    order: -1;
+  }
+  .hero-copy {
+    padding: 2.5rem 1.5rem 3.5rem;
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+  .hero-title { max-width: 100%; }
+  .sobre-inner { grid-template-columns: 1fr; }
+  .sobre-img { aspect-ratio: 4/3; }
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+  .prova-inner { grid-template-columns: 1fr; }
+  .agendamento-inner { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 560px) {
+  .galeria-grid { grid-template-columns: 1fr; }
+  .prova-stats { flex-direction: column; gap: 1.2rem; }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-img img { animation: none; }
+  .hero-title .word { animation: none; opacity: 1; transform: none; }
+  .hero-subtitle, .hero-actions { animation: none; opacity: 1; }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .wa-fab::before { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header id="hdr">
+  <div class="logo">
+    Dra. Nátali Cunha
+    <span>Harmonização Facial — Natal/RN</span>
+  </div>
+  <a href="https://wa.me/5584998672718?text=Ol%C3%A1%2C%20Dra.%20N%C3%A1tali!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." class="header-cta" target="_blank" rel="noopener">
+    Agendar avaliação
+  </a>
+</header>
+
+<!-- ── HERO SPLIT 40/60 ── -->
+<section class="hero" aria-label="Apresentação">
+  <!-- Cópia à esquerda -->
+  <div class="hero-copy">
+    <p class="hero-eyebrow">Harmonização Facial — Natal/RN</p>
+    <h1 class="hero-title">
+      <span class="word">Beleza</span>
+      <span class="word">que</span>
+      <span class="word">parece</span><br>
+      <span class="word">que você</span>
+      <span class="word"><em>nasceu assim.</em></span>
+    </h1>
+    <p class="hero-subtitle">
+      Procedimentos estéticos de alta precisão que realçam sua
+      harmonia natural — sem exageros, sem artificialidade.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5584998672718?text=Ol%C3%A1%2C%20Dra.%20N%C3%A1tali!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." class="btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.37 0 0 5.37 0 12a11.9 11.9 0 001.64 6.07L0 24l6.09-1.6A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22a9.93 9.93 0 01-5.06-1.38l-.36-.21-3.75.98.99-3.68-.24-.38A9.93 9.93 0 012 12C2 6.48 6.48 2 12 2c2.64 0 5.12 1.03 6.99 2.9A9.87 9.87 0 0122 12c0 5.52-4.48 10-10 10zm5.44-7.58c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07a8.17 8.17 0 01-2.41-1.49 9.06 9.06 0 01-1.67-2.08c-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.59-.49-.51-.68-.52l-.58-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+        Agendar avaliação gratuita
+      </a>
+      <a href="#sobre" class="btn-secondary">
+        Conhecer a doutora
+      </a>
+    </div>
+  </div>
+  <!-- Foto à direita -->
+  <div class="hero-img">
+    <img src="imagens/insta-5.jpg" alt="Dra. Nátali Cunha — harmonização facial em Natal/RN">
+  </div>
+</section>
+
+<!-- ── WAVE ── -->
+<div class="wave-light" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="#faf7f4"/>
+  </svg>
+</div>
+
+<!-- ── SOBRE ── -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-img reveal">
+      <img src="imagens/insta-6.jpg" alt="Dra. Nátali Cunha — especialista em harmonização facial">
+      <div class="sobre-badge">
+        <strong>CTC</strong>
+        <span>Lagoa Nova — Natal/RN</span>
+      </div>
+    </div>
+    <div class="sobre-copy">
+      <div class="overline reveal">Sobre a especialista</div>
+      <h2 class="reveal">
+        Precisão médica a serviço da <em>sua</em> harmonia.
+      </h2>
+      <p class="reveal">
+        A Dra. Nátali Cunha é especialista em harmonização orofacial e estética avançada, com atendimento no CTC — um dos espaços de referência médica em Lagoa Nova, Natal. Sua filosofia é simples: cada rosto tem uma harmonia única, e o papel da medicina estética é revelá-la, não substituí-la.
+      </p>
+      <p class="reveal">
+        Com técnica apurada e olhar editorial para proporção e equilíbrio, a Dra. Nátali documenta cada resultado — antes e depois com rigor fotográfico — porque confiança se constrói com evidência real, não com promessa.
+      </p>
+      <div class="sobre-pillars">
+        <div class="pilar reveal">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <div>
+            <div class="pilar-label">Resultado natural</div>
+            <div class="pilar-desc">Proporcionalidade e discrição em cada procedimento — para você parecer descansada, não "feita".</div>
+          </div>
+        </div>
+        <div class="pilar reveal">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          </div>
+          <div>
+            <div class="pilar-label">Segurança em primeiro lugar</div>
+            <div class="pilar-desc">Protocolo médico rigoroso, insumos certificados e avaliação individualizada antes de qualquer aplicação.</div>
+          </div>
+        </div>
+        <div class="pilar reveal">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
+          <div>
+            <div class="pilar-label">Acompanhamento do resultado</div>
+            <div class="pilar-desc">Documentação fotográfica de antes e depois, com retorno incluído para avaliação pós-procedimento.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WAVE escura ── -->
+<div class="wave-dark" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,72 1080,0 1440,36 L1440,72 L0,72 Z" fill="#1c1118"/>
+  </svg>
+</div>
+
+<!-- ── PROCEDIMENTOS ── -->
+<section class="procedimentos" id="procedimentos">
+  <div class="container">
+    <div class="overline reveal">O que fazemos</div>
+    <h2 class="reveal">
+      Cada procedimento,<br><em>um resultado documentado.</em>
+    </h2>
+    <p class="proc-subtitle reveal">
+      Tratamentos realizados com protocolo médico, avaliação individualizada e insumos de referência internacional.
+    </p>
+    <div class="proc-grid">
+      <div class="proc-card reveal">
+        <div class="proc-card-overline">Harmonização</div>
+        <h3>Harmonização Facial</h3>
+        <div class="proc-card-line"></div>
+        <p>Conjunto de procedimentos que reequilibram as proporções do rosto — contorno de mandíbula, queixo, maçã do rosto — para uma aparência harmoniosa e natural.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-card-overline">Volume</div>
+        <h3>Preenchimento Labial</h3>
+        <div class="proc-card-line"></div>
+        <p>Ácido hialurônico aplicado com precisão para dar volume, definição e hidratação aos lábios — sem exagero, com proporção ao seu rosto.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-card-overline">Rejuvenescimento</div>
+        <h3>Toxina Botulínica</h3>
+        <div class="proc-card-line"></div>
+        <p>Aplicação de botox para suavizar rugas dinâmicas, elevar sobrancelhas (brow lifting), tratar olheira muscular e refinar o contorno do rosto.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-card-overline">Pele</div>
+        <h3>Skinbooster</h3>
+        <div class="proc-card-line"></div>
+        <p>Microinjeções de ácido hialurônico não reticulado que hidratam a pele de dentro para fora, devolvendo luminosidade e textura.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-card-overline">Área ocular</div>
+        <h3>Brow Lifting</h3>
+        <div class="proc-card-line"></div>
+        <p>Técnica com toxina botulínica para elevar a sobrancelha e abrir o olhar de forma discreta — o resultado parece natural, como se você tivesse descansado.</p>
+      </div>
+      <div class="proc-card reveal">
+        <div class="proc-card-overline">Avaliação</div>
+        <h3>Consulta Inicial</h3>
+        <div class="proc-card-line"></div>
+        <p>Análise facial personalizada antes de qualquer procedimento. A Dra. Nátali mapeia suas proporções e indica o que realmente vai fazer diferença para você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WAVE ── -->
+<div style="background: var(--bg-dark); line-height:0; margin-bottom:-1px" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:clamp(40px,5vw,80px)">
+    <path d="M0,36 C480,0 960,72 1440,36 L1440,72 L0,72 Z" fill="#faf7f4"/>
+  </svg>
+</div>
+
+<!-- ── GALERIA ── -->
+<section class="galeria" id="resultados">
+  <div class="galeria-header">
+    <div class="overline reveal">Resultados reais</div>
+    <h2 class="reveal">Antes e <em>depois</em> — sem filtro, sem edição.</h2>
+    <p class="reveal">Cada foto é documentação real de pacientes atendidas pela Dra. Nátali. Iluminação e ângulo idênticos entre o antes e o depois — para que você veja o resultado real, não o efeito fotográfico.</p>
+  </div>
+  <div class="galeria-grid">
+    <div class="galeria-item reveal">
+      <img src="imagens/insta-1.jpg" alt="Resultado de preenchimento labial — antes e depois">
+      <span class="galeria-label">Preenchimento labial</span>
+    </div>
+    <div class="galeria-item reveal">
+      <img src="imagens/insta-2.jpg" alt="Resultado de harmonização facial — antes e depois">
+      <span class="galeria-label">Harmonização facial</span>
+    </div>
+    <div class="galeria-item reveal">
+      <img src="imagens/insta-3.jpg" alt="Resultado de harmonização e lábios — antes e depois">
+      <span class="galeria-label">Harmonização + lábios</span>
+    </div>
+    <div class="galeria-item reveal" style="grid-column: 1 / -1; max-width: 380px; margin: 0 auto; width:100%">
+      <img src="imagens/insta-8.jpg" alt="Resultado de brow lifting — antes e depois">
+      <span class="galeria-label">Brow lifting — área ocular</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROVA SOCIAL ── -->
+<section class="prova" aria-label="Sobre o Instagram @dranatalicunha">
+  <div class="prova-inner">
+    <div>
+      <div class="overline reveal">Referência no Instagram</div>
+      <h2 class="reveal">
+        Resultados que<br><em>falam por si.</em>
+      </h2>
+      <p class="prova-desc reveal">
+        No Instagram <strong>@dranatalicunha</strong>, a Dra. Nátali documenta cada resultado com critério fotográfico — mesma iluminação, mesmo ângulo, sem filtro. É a transparência que constrói confiança antes mesmo da consulta.
+      </p>
+      <div class="prova-stats reveal">
+        <div class="stat">
+          <span class="stat-num">100+</span>
+          <span class="stat-label">Resultados documentados</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Resultado natural</span>
+        </div>
+      </div>
+    </div>
+    <div class="prova-ig reveal">
+      <div class="ig-handle">
+        <div class="ig-avatar">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </div>
+        <div>
+          <div class="ig-name">@dranatalicunha</div>
+          <div class="ig-sub">Instagram — resultados documentados</div>
+        </div>
+      </div>
+      <div class="ig-divider"></div>
+      <div class="ig-points">
+        <div class="ig-point"><span class="ig-dot"></span><span>Antes e depois com iluminação e ângulo idênticos — evidência real, não efeito fotográfico</span></div>
+        <div class="ig-point"><span class="ig-dot"></span><span>Preenchimento labial, harmonização, botox e brow lifting documentados com rigor</span></div>
+        <div class="ig-point"><span class="ig-dot"></span><span>Resultados naturais que respeitam as proporções únicas de cada rosto</span></div>
+        <div class="ig-point"><span class="ig-dot"></span><span>Atendimento em Natal/RN — bairro Lagoa Nova, referência em medicina estética</span></div>
+      </div>
+      <a href="https://www.instagram.com/dranatalicunha" class="ig-cta" target="_blank" rel="noopener">
+        Ver perfil no Instagram
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── AGENDAMENTO ── -->
+<section class="agendamento" id="agendar">
+  <div class="agendamento-inner">
+    <div>
+      <div class="overline">Agende sua avaliação</div>
+      <h2>
+        O primeiro passo é<br><em>uma conversa.</em>
+      </h2>
+      <p class="agendamento-desc">
+        A avaliação inicial é gratuita e sem compromisso. A Dra. Nátali analisa suas proporções e indica o que realmente vai fazer diferença — sem empurrar procedimentos desnecessários.
+      </p>
+      <div class="agendamento-actions">
+        <a href="https://wa.me/5584998672718?text=Ol%C3%A1%2C%20Dra.%20N%C3%A1tali!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." class="btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.37 0 0 5.37 0 12a11.9 11.9 0 001.64 6.07L0 24l6.09-1.6A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22a9.93 9.93 0 01-5.06-1.38l-.36-.21-3.75.98.99-3.68-.24-.38A9.93 9.93 0 012 12C2 6.48 6.48 2 12 2c2.64 0 5.12 1.03 6.99 2.9A9.87 9.87 0 0122 12c0 5.52-4.48 10-10 10zm5.44-7.58c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07a8.17 8.17 0 01-2.41-1.49 9.06 9.06 0 01-1.67-2.08c-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.59-.49-.51-.68-.52l-.58-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="loc-card reveal">
+      <div class="loc-row">
+        <div class="loc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div>
+          <div class="loc-label">Localização</div>
+          <div class="loc-value">Av. Amintas Barros, 3700<br>CTC — Lagoa Nova, Natal/RN<br>CEP 59075-810</div>
+          <a href="https://www.google.com/maps/place/Dra.+N%C3%A1tali+Cunha+%7C+Harmoniza%C3%A7%C3%A3o+Facial/@-5.820641,-35.210052,17z" class="map-link" target="_blank" rel="noopener">
+            Ver no Google Maps
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="loc-divider"></div>
+      <div class="loc-row">
+        <div class="loc-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.37 0 0 5.37 0 12a11.9 11.9 0 001.64 6.07L0 24l6.09-1.6A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52z"/></svg>
+        </div>
+        <div>
+          <div class="loc-label">WhatsApp</div>
+          <div class="loc-value">(84) 99867-2718</div>
+          <a href="https://wa.me/5584998672718?text=Ol%C3%A1%2C%20Dra.%20N%C3%A1tali!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." class="map-link" target="_blank" rel="noopener">
+            Abrir conversa
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="loc-divider"></div>
+      <div class="loc-row">
+        <div class="loc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+        </div>
+        <div>
+          <div class="loc-label">Instagram</div>
+          <div class="loc-value">@dranatalicunha</div>
+          <a href="https://www.instagram.com/dranatalicunha" class="map-link" target="_blank" rel="noopener">
+            Seguir no Instagram
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">Dra. Nátali Cunha | Harmonização Facial</div>
+  <div class="footer-copy">© 2026 — Natal/RN · CTC, Lagoa Nova</div>
+</footer>
+
+<!-- ── WA FAB ── -->
+<a class="wa-fab" href="https://wa.me/5584998672718?text=Ol%C3%A1%2C%20Dra.%20N%C3%A1tali!%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.37 0 0 5.37 0 12a11.9 11.9 0 001.64 6.07L0 24l6.09-1.6A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22a9.93 9.93 0 01-5.06-1.38l-.36-.21-3.75.98.99-3.68-.24-.38A9.93 9.93 0 012 12C2 6.48 6.48 2 12 2c2.64 0 5.12 1.03 6.99 2.9A9.87 9.87 0 0122 12c0 5.52-4.48 10-10 10zm5.44-7.58c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07a8.17 8.17 0 01-2.41-1.49 9.06 9.06 0 01-1.67-2.08c-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.59-.49-.51-.68-.52l-.58-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<script>
+// Header scroll
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// Reveal on scroll
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
