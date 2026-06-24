@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allure Odontologia e Harmonização Facial — João Pessoa/PB</title>
+<meta name="description" content="Clínica que une odontologia e harmonização facial em Manaíra, João Pessoa. Lentes de contato dental, clareamento, implantes, Botox, preenchimento e harmonização facial. Nota 5,0 no Google. Agende sua avaliação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* surfaces */
+  --bg-base:#f7f6f3;
+  --bg-surface:#fffefb;
+  --bg-inset:#efece5;
+  --bg-dark:#0e1a1c;
+  --bg-teal:#143539;
+  /* text */
+  --text-primary:#16201f;
+  --text-secondary:#45504e;
+  --text-muted:#8a938f;
+  --text-inverse:#f3f1ea;
+  /* brand */
+  --accent:#1f4f54;
+  --accent-dark:#143539;
+  --accent-subtle:rgba(31,79,84,.09);
+  --accent-border:rgba(31,79,84,.20);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+  /* shadows */
+  --shadow-sm:0 1px 2px rgba(20,53,57,.05),0 2px 6px rgba(20,53,57,.05);
+  --shadow-md:0 2px 4px rgba(20,53,57,.05),0 8px 18px rgba(20,53,57,.07),0 20px 40px rgba(20,53,57,.05);
+  --shadow-lg:0 4px 8px rgba(20,53,57,.05),0 16px 32px rgba(20,53,57,.08),0 40px 80px rgba(20,53,57,.10);
+  --shadow-accent:0 10px 30px rgba(31,79,84,.28);
+  --shadow-accent-strong:0 16px 40px rgba(31,79,84,.40);
+  /* type scale */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.4rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.92rem,.84rem + .3vw,1.02rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04;--lh-heading:1.14;--lh-body:1.74;
+  --ls-display:-.015em;--ls-overline:.18em;
+  /* spacing */
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1180px;--prose-max:660px;
+  --gap-cards:clamp(1rem,2.4vw,1.8rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg-base);color:var(--text-primary);
+  font-size:var(--text-body);line-height:var(--lh-body);
+  font-weight:400;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);letter-spacing:var(--ls-display)}
+em{font-style:italic}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.inner{max-width:var(--content-max);margin:0 auto;width:100%}
+.prose{max-width:var(--prose-max)}
+
+/* ── overline ── */
+.overline{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:var(--gold)}
+.overline.center{justify-content:center}
+.overline.light{color:var(--gold-light)}
+
+/* ── header ── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(1.5rem,5vw,4rem);transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(14,26,28,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(201,168,76,.22);padding-top:13px;padding-bottom:13px}
+.brand{display:flex;flex-direction:column;line-height:1;color:var(--text-inverse)}
+.brand .nm{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.45rem;letter-spacing:.02em}
+.brand .sub{font-family:'Inter',sans-serif;font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-light);margin-top:5px}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text-inverse);border:1px solid rgba(243,241,234,.32);padding:10px 18px;border-radius:50px;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--bg-dark)}
+@media(max-width:560px){.nav-cta .lbl{display:none}.nav-cta{padding:10px 12px}}
+
+/* ── hero ── */
+.hero{position:relative;height:100dvh;min-height:620px;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;background:url('imagens/maps-1.jpg') center 30%/cover;animation:kb 24s ease-in-out infinite alternate;z-index:-2}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.10)}}
+.hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(155deg,rgba(14,26,28,.34) 0%,rgba(14,26,28,.20) 38%,rgba(20,53,57,.74) 76%,rgba(14,26,28,.94) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:0 clamp(1.5rem,6vw,5rem) clamp(2.8rem,6vw,4.6rem);display:flex;align-items:flex-end;justify-content:space-between;gap:34px;flex-wrap:wrap}
+.hero-left{max-width:680px}
+.hero-tag{display:inline-flex;align-items:center;gap:9px;font-size:.66rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.hero-tag::before{content:'';width:26px;height:1px;background:var(--gold)}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);color:var(--text-inverse);font-weight:400;overflow:hidden;letter-spacing:-.02em}
+.hero-title .ln{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:wordup .9s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title em{color:var(--gold-light)}
+.hero-title .ln:nth-child(2) .word{animation-delay:.4s}
+.hero-title .ln:nth-child(3) .word{animation-delay:.55s}
+@keyframes wordup{to{transform:translateY(0);opacity:1}}
+.hero-sub{margin-top:22px;max-width:430px;color:rgba(243,241,234,.86);font-size:1.02rem;line-height:1.7;opacity:0;animation:fadein 1s ease .9s forwards}
+.hero-actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadein 1s ease 1.05s forwards}
+@keyframes fadein{to{opacity:1}}
+.hero-rating{align-self:flex-end;opacity:0;animation:fadein 1s ease 1.2s forwards}
+.glass{background:rgba(243,241,234,.10);backdrop-filter:blur(13px) saturate(150%);-webkit-backdrop-filter:blur(13px) saturate(150%);border:1px solid rgba(243,241,234,.18);box-shadow:0 2px 4px rgba(0,0,0,.10),0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16)}
+.rating-card{padding:20px 26px;border-radius:16px;text-align:center;min-width:160px}
+.rating-card .stars{color:var(--gold-light);font-size:1rem;letter-spacing:3px}
+.rating-card .num{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:600;color:var(--text-inverse);line-height:1;margin:6px 0 2px}
+.rating-card .lbl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,241,234,.7)}
+.scrollcue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;color:rgba(243,241,234,.55);font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadein 1s ease 1.4s forwards;opacity:0}
+.scrollcue .line{width:1px;height:34px;background:linear-gradient(var(--gold-light),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.5);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:680px){.scrollcue{display:none}.hero-rating{display:none}}
+
+/* ── buttons ── */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.5rem,3vw,2.1rem);min-height:48px;background:linear-gradient(135deg,#2c6a70,var(--accent-dark));color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-wa{background:linear-gradient(135deg,#2ee06f,#1faf52);box-shadow:0 10px 30px rgba(37,211,102,.34)}
+.btn-wa:hover{box-shadow:0 16px 40px rgba(37,211,102,.46)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:.95rem 1.9rem;min-height:48px;border:1px solid rgba(243,241,234,.4);color:var(--text-inverse);font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;transition:background .3s ease,border-color .3s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(243,241,234,.1);border-color:var(--gold-light)}
+.btn-primary svg,.btn-ghost svg{width:17px;height:17px;flex:none}
+
+/* ── reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* ── sobre ── */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.4rem,5vw,5rem);align-items:center}
+.sobre h2{font-size:var(--text-h2);margin-bottom:20px}
+.sobre h2 em{color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-bottom:18px}
+.sobre p:last-child{margin-bottom:0}
+.sobre-aside{position:relative;border-radius:18px;overflow:hidden;min-height:380px;background:linear-gradient(145deg,var(--accent),var(--accent-dark));box-shadow:var(--shadow-lg)}
+.sobre-aside::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:overlay}
+.aside-inner{position:relative;z-index:2;height:100%;padding:clamp(2rem,4vw,3rem);display:flex;flex-direction:column;justify-content:space-between;gap:24px;color:var(--text-inverse)}
+.aside-mark{width:64px;height:64px}
+.aside-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.4rem,1rem + 1.6vw,2rem);line-height:1.3;font-weight:400}
+.aside-quote em{color:var(--gold-light);font-style:italic}
+.aside-feats{display:flex;flex-direction:column;gap:13px}
+.aside-feat{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.86rem;color:rgba(243,241,234,.9)}
+.aside-feat svg{width:19px;height:19px;color:var(--gold-light);flex:none}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr}.sobre-aside{min-height:300px;order:-1}}
+
+/* ── serviços ── */
+.servicos{background:var(--bg-inset);position:relative;clip-path:polygon(0 3.2vw,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 3vw)}
+.serv-head{text-align:center;max-width:660px;margin:0 auto clamp(2.6rem,5vw,4rem)}
+.serv-head h2{font-size:var(--text-h2)}
+.serv-head h2 em{color:var(--accent)}
+.serv-head p{color:var(--text-secondary);margin-top:14px}
+.serv-cat-label{display:flex;align-items:center;gap:16px;margin:0 0 26px;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.serv-cat-label::after{content:'';flex:1;height:1px;background:var(--accent-border)}
+.serv-cat-label .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none}
+.serv-cat-label.facial .dot{background:var(--accent)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--gap-cards);margin-bottom:clamp(2.6rem,5vw,4rem)}
+.serv-grid:last-child{margin-bottom:0}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(20,53,57,.07);border-radius:16px;padding:30px 26px;box-shadow:var(--shadow-sm);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-ic{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--accent-subtle);margin-bottom:20px}
+.serv-ic svg{width:26px;height:26px;color:var(--accent)}
+.serv-card.gold .serv-ic{background:rgba(201,168,76,.13)}
+.serv-card.gold .serv-ic svg{color:#a8862f}
+.serv-over{font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px}
+.serv-card h3{font-size:1.32rem;font-weight:600;margin-bottom:9px}
+.serv-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.6}
+
+/* ── ambiente ── */
+.ambiente{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.ambiente::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.amb-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2.2rem,5vw,4.5rem);align-items:center;position:relative;z-index:2}
+.amb-art{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;max-height:560px;background:radial-gradient(120% 90% at 78% 8%,rgba(201,168,76,.20) 0%,transparent 46%),linear-gradient(155deg,#1d484d 0%,var(--accent-dark) 52%,#0c1718 100%)}
+.amb-art::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;mix-blend-mode:overlay;pointer-events:none}
+.amb-art .frame{position:absolute;inset:14px;border:1px solid rgba(224,192,104,.42);border-radius:10px;pointer-events:none;z-index:3}
+.amb-art-inner{position:absolute;inset:0;z-index:2;padding:clamp(1.8rem,4vw,2.8rem);display:flex;flex-direction:column;justify-content:space-between}
+.amb-art-mark{width:clamp(74px,16vw,104px);height:auto;color:var(--gold-light);opacity:.96}
+.amb-art-cap .ov{font-family:'Inter',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:9px}
+.amb-art-cap .ttl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(1.55rem,1.1rem + 1.8vw,2.25rem);line-height:1.18;color:var(--text-inverse)}
+.amb-art-cap .ttl em{color:var(--gold-light)}
+.amb-art-row{display:flex;align-items:center;gap:10px;margin-top:18px;font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.05em;color:rgba(243,241,234,.74)}
+.amb-art-row svg{width:15px;height:15px;color:var(--gold-light);flex:none}
+.amb-text h2{font-size:var(--text-h2);color:var(--text-inverse)}
+.amb-text h2 em{color:var(--gold-light)}
+.amb-text>p{color:rgba(243,241,234,.78);margin:18px 0 28px;max-width:480px}
+.amb-list{display:grid;gap:18px}
+.amb-item{display:flex;gap:15px;align-items:flex-start}
+.amb-item .ic{width:42px;height:42px;border-radius:11px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.25)}
+.amb-item .ic svg{width:21px;height:21px;color:var(--gold-light)}
+.amb-item h4{font-family:'Inter',sans-serif;font-size:.96rem;font-weight:600;margin-bottom:3px;color:var(--text-inverse)}
+.amb-item p{font-size:.84rem;color:rgba(243,241,234,.66);line-height:1.55}
+@media(max-width:860px){.amb-grid{grid-template-columns:1fr}.amb-art{order:-1;aspect-ratio:3/4;max-height:480px}}
+
+/* ── diferenciais ── */
+.dif{background:var(--bg-base)}
+.dif-head{text-align:center;max-width:620px;margin:0 auto clamp(2.4rem,5vw,3.6rem)}
+.dif-head h2{font-size:var(--text-h2)}
+.dif-head h2 em{color:var(--accent)}
+.dif-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap-cards)}
+.dif-card{text-align:center;padding:34px 24px;border-radius:16px;background:var(--bg-surface);border:1px solid rgba(20,53,57,.06);box-shadow:var(--shadow-sm)}
+.dif-card .big{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,2rem + 2vw,3.6rem);font-weight:600;color:var(--accent);line-height:1}
+.dif-card .big .star{color:var(--gold);font-size:.6em;vertical-align:.18em;margin-left:3px}
+.dif-card h4{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;margin:12px 0 7px}
+.dif-card p{font-size:.83rem;color:var(--text-secondary);line-height:1.55}
+.dif-card .ic{width:48px;height:48px;margin:0 auto;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-subtle)}
+.dif-card .ic svg{width:24px;height:24px;color:var(--accent)}
+
+/* ── cta band ── */
+.cta-band{position:relative;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:var(--text-inverse);text-align:center;overflow:hidden;clip-path:polygon(0 0,100% 3vw,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 3vw)}
+.cta-band::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.cta-band .inner{position:relative;z-index:2;max-width:680px}
+.cta-band h2{font-size:var(--text-h2);color:var(--text-inverse)}
+.cta-band h2 em{color:var(--gold-light)}
+.cta-band p{color:rgba(243,241,234,.82);margin:16px auto 30px;max-width:480px}
+.cta-band .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── localização ── */
+.local{background:var(--bg-inset)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.local h2{font-size:var(--text-h2);margin-bottom:10px}
+.local h2 em{color:var(--accent)}
+.local .lead{color:var(--text-secondary);margin-bottom:26px;max-width:440px}
+.local-rows{display:grid;gap:20px;margin-bottom:30px}
+.local-row{display:flex;gap:14px;align-items:flex-start}
+.local-row .ic{width:42px;height:42px;flex:none;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--bg-surface);border:1px solid var(--accent-border)}
+.local-row .ic svg{width:20px;height:20px;color:var(--accent)}
+.local-row .k{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.local-row .v{font-size:.95rem;color:var(--text-primary);font-weight:500;line-height:1.45}
+.local-row a.v:hover{color:var(--accent)}
+.map-card{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--bg-surface);border:1px solid rgba(20,53,57,.08)}
+.map-card iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.02)}
+@media(max-width:860px){.local-grid{grid-template-columns:1fr}.map-card iframe{min-height:280px}}
+
+/* ── footer ── */
+footer{background:var(--bg-dark);color:rgba(243,241,234,.62);padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2rem;position:relative}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:34px;flex-wrap:wrap;padding-bottom:2rem;border-bottom:1px solid rgba(243,241,234,.1)}
+.foot-brand .nm{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--text-inverse);letter-spacing:.02em}
+.foot-brand .sub{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-top:6px}
+.foot-brand p{margin-top:16px;font-size:.86rem;max-width:300px;line-height:1.6}
+.foot-col h5{font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.foot-col p,.foot-col a{display:block;font-size:.86rem;line-height:1.9;color:rgba(243,241,234,.62)}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:1.6rem auto 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.74rem;color:rgba(243,241,234,.42)}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.75);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{animation:none!important;transform:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-rating,.scrollcue{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .wa-fab::before,.scrollcue .line{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand" aria-label="Allure Odontologia e Harmonização Facial">
+    <span class="nm">Allure</span>
+    <span class="sub">Odontologia &amp; Harmonização Facial</span>
+  </a>
+  <a class="nav-cta" href="https://wa.me/5583988539507?text=Ol%C3%A1%20Allure!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+    <span class="lbl">Agendar</span>
+  </a>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content inner">
+    <div class="hero-left">
+      <span class="hero-tag">Manaíra · João Pessoa — PB</span>
+      <h1 class="hero-title">
+        <span class="ln"><span class="word">Sorriso e rosto</span></span>
+        <span class="ln"><span class="word">em <em>harmonia</em>,</span></span>
+        <span class="ln"><span class="word">no mesmo lugar.</span></span>
+      </h1>
+      <p class="hero-sub">Odontologia estética e harmonização facial reunidas numa clínica pensada para o seu cuidado — com tecnologia, conforto e um olhar para o conjunto do seu rosto.</p>
+      <div class="hero-actions">
+        <a class="btn-primary btn-wa" href="https://wa.me/5583988539507?text=Ol%C3%A1%20Allure!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          Agende sua avaliação
+        </a>
+        <a class="btn-ghost" href="#servicos">Ver tratamentos</a>
+      </div>
+    </div>
+    <div class="hero-rating">
+      <div class="rating-card glass">
+        <div class="stars">★★★★★</div>
+        <div class="num">5,0</div>
+        <div class="lbl">no Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span>Conheça</span><span class="line"></span></div>
+</section>
+
+<!-- ── SOBRE ── -->
+<section class="sobre" id="sobre">
+  <div class="inner sobre-grid">
+    <div class="reveal">
+      <span class="overline">A Clínica</span>
+      <h2>Uma clínica, <em>dois cuidados</em> que andam juntos.</h2>
+      <p class="prose">Na Allure, odontologia e harmonização facial deixam de ser caminhos separados. Aqui, o seu sorriso e o seu rosto são tratados com a mesma visão estética — porque a beleza está no conjunto, não em partes isoladas.</p>
+      <p class="prose">Localizada em Manaíra, em um dos endereços mais valorizados de João Pessoa, a Allure une um ambiente sofisticado, tecnologia atual e atendimento próximo. Cada avaliação começa entendendo o que você deseja, para desenhar o resultado mais natural possível.</p>
+      <p class="prose">É essa combinação rara — sorriso e face cuidados sob o mesmo olhar — que rendeu à clínica a nota máxima de quem já passou por aqui.</p>
+    </div>
+    <div class="sobre-aside reveal">
+      <div class="aside-inner">
+        <svg class="aside-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M14 50C14 32 22 16 32 16s18 16 18 34" stroke="#e0c068" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M22 50c0-12 4-22 10-22s10 10 10 22" stroke="rgba(243,241,234,.55)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="32" cy="14" r="3" fill="#e0c068"/>
+        </svg>
+        <p class="aside-quote">"Cuidar do <em>sorriso</em> e da <em>face</em> com o mesmo padrão de excelência."</p>
+        <div class="aside-feats">
+          <div class="aside-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Biossegurança e protocolos rigorosos</div>
+          <div class="aside-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Avaliação personalizada antes de tudo</div>
+          <div class="aside-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 00-8-8z"/></svg>Endereço nobre em Manaíra</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVIÇOS ── -->
+<section class="servicos" id="servicos">
+  <div class="inner">
+    <div class="serv-head reveal">
+      <span class="overline center">Tratamentos</span>
+      <h2>Do sorriso à face, <em>tudo num só lugar</em>.</h2>
+      <p>Dois universos de cuidado estético sob a mesma marca — para você não precisar dividir sua transformação entre vários endereços.</p>
+    </div>
+
+    <p class="serv-cat-label reveal"><span class="dot"></span>Odontologia</p>
+    <div class="serv-grid">
+      <div class="serv-card gold reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4c2 0 2.5 1.5 4 1.5S14 4 16 4c3 0 4 2.5 4 6 0 4-2 11-3.5 11S15 16 12 16s-3 5-4.5 5S4 14 4 10c0-3.5 1-6 1-6z"/></svg></div>
+        <div class="serv-over">Estética dental</div>
+        <h3>Lentes de contato &amp; facetas</h3>
+        <p>Aquele sorriso de cinema, com cor, formato e alinhamento desenhados sob medida para o seu rosto.</p>
+      </div>
+      <div class="serv-card gold reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M4.2 7l1.7 1M18.1 16l1.7 1M4.2 17l1.7-1M18.1 8l1.7-1"/><circle cx="12" cy="12" r="4.5"/></svg></div>
+        <div class="serv-over">Mais branco</div>
+        <h3>Clareamento dental</h3>
+        <p>Dentes mais claros e uniformes com protocolo seguro e acompanhamento profissional, sem agressão ao esmalte.</p>
+      </div>
+      <div class="serv-card gold reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 22v-4M9 6l3-4 3 4"/><rect x="8" y="10" width="8" height="8" rx="2"/></svg></div>
+        <div class="serv-over">Reabilitação</div>
+        <h3>Implantes dentários</h3>
+        <p>A solução definitiva para devolver dentes perdidos — função, estética e segurança para voltar a sorrir sem medo.</p>
+      </div>
+      <div class="serv-card gold reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16"/><path d="M7 9v6M11 9v6M15 9v6M19 9v6"/></svg></div>
+        <div class="serv-over">Alinhamento</div>
+        <h3>Ortodontia &amp; alinhadores</h3>
+        <p>Dentes no lugar certo com aparelhos discretos e alinhadores transparentes — correção sem comprometer sua imagem.</p>
+      </div>
+      <div class="serv-card gold reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-3 8 0 18 3-10 3-14 0-18z"/><path d="M7 8c-1 3 0 6 2 8M17 8c1 3 0 6-2 8"/></svg></div>
+        <div class="serv-over">Saúde &amp; rotina</div>
+        <h3>Limpeza &amp; prevenção</h3>
+        <p>A base de tudo: limpeza profissional e cuidado preventivo para um sorriso saudável que dura o ano inteiro.</p>
+      </div>
+    </div>
+
+    <p class="serv-cat-label facial reveal"><span class="dot"></span>Harmonização Facial</p>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8c4-1 12-1 16 0M5 12c4-.7 10-.7 14 0M7 16c3-.5 7-.5 10 0"/></svg></div>
+        <div class="serv-over">Suavizar</div>
+        <h3>Toxina botulínica (Botox)</h3>
+        <p>Suaviza linhas de expressão de forma natural, com o rosto descansado — sem perder a sua expressão real.</p>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8c-2-2-5-1-5 1.5C7 12 12 15 12 15s5-3 5-5.5C17 7 14 6 12 8z"/></svg></div>
+        <div class="serv-over">Contorno</div>
+        <h3>Preenchimento labial</h3>
+        <p>Lábios mais definidos, hidratados e proporcionais — volume desenhado para combinar com o seu rosto, nunca exagerado.</p>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10" opacity=".5"/><path d="M9 9.5c2 1 4 1 6 0M9 14.5c2-1 4-1 6 0"/></svg></div>
+        <div class="serv-over">Equilíbrio</div>
+        <h3>Harmonização facial</h3>
+        <p>Um plano que olha o conjunto do seu rosto — proporção, contorno e simetria trabalhados com leveza e bom senso.</p>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 017 7c0 4-3 6-3 9H8c0-3-3-5-3-9a7 7 0 017-7z"/><path d="M9 21h6"/></svg></div>
+        <div class="serv-over">Colágeno</div>
+        <h3>Bioestimuladores</h3>
+        <p>Estimulam a produção natural de colágeno: pele mais firme e viçosa, com um resultado que evolui ao longo das semanas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AMBIENTE ── -->
+<section class="ambiente" id="ambiente">
+  <div class="inner amb-grid">
+    <div class="amb-art reveal" role="img" aria-label="Ambiente da clínica Allure em Manaíra — espaço clean, sofisticado e acolhedor, com tecnologia atual e detalhes em dourado">
+      <span class="frame" aria-hidden="true"></span>
+      <div class="amb-art-inner">
+        <svg class="amb-art-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M14 50C14 32 22 16 32 16s18 16 18 34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M22 50c0-12 4-22 10-22s10 10 10 22" stroke="rgba(243,241,234,.5)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="32" cy="14" r="3" fill="currentColor"/>
+        </svg>
+        <div class="amb-art-cap">
+          <div class="ov">Allure · Manaíra</div>
+          <div class="ttl">Um ambiente clean e <em>acolhedor</em>, do primeiro ao último detalhe.</div>
+          <div class="amb-art-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7v6c0 5 3.5 8 9 9 5.5-1 9-4 9-9V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>Tecnologia, conforto e biossegurança</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="amb-text reveal">
+      <span class="overline light">O Ambiente</span>
+      <h2>Um espaço pensado para o seu <em>conforto</em>.</h2>
+      <p>Da recepção ao consultório, cada detalhe da Allure foi desenhado para que você se sinta em um lugar acolhedor, limpo e seguro — onde tecnologia e elegância caminham juntas.</p>
+      <div class="amb-list">
+        <div class="amb-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7v6c0 5 3.5 8 9 9 5.5-1 9-4 9-9V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div><h4>Biossegurança em primeiro lugar</h4><p>Esterilização e protocolos rigorosos para cada atendimento, com total transparência.</p></div>
+        </div>
+        <div class="amb-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+          <div><h4>Tecnologia atual</h4><p>Equipamentos modernos para diagnósticos precisos e tratamentos mais confortáveis.</p></div>
+        </div>
+        <div class="amb-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5-9-10a5 5 0 019-3 5 5 0 019 3c-2 5-9 10-9 10z"/></svg></span>
+          <div><h4>Atendimento próximo</h4><p>Você é ouvido antes de qualquer plano. A avaliação começa pelo que você deseja.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIFERENCIAIS ── -->
+<section class="dif" id="diferenciais">
+  <div class="inner">
+    <div class="dif-head reveal">
+      <span class="overline center">Por que a Allure</span>
+      <h2>O que faz a <em>diferença</em> aqui.</h2>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-card reveal">
+        <div class="big">5,0<span class="star">★</span></div>
+        <h4>Nota máxima no Google</h4>
+        <p>A avaliação de quem já foi atendido fala por nós: experiência nota cinco.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.4" fill="currentColor"/><circle cx="12" cy="17" r="1.4" fill="currentColor"/></svg></div>
+        <h4>Sorriso + face juntos</h4>
+        <p>Odontologia e harmonização facial sob o mesmo olhar — sem precisar de duas clínicas.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 00-8-8z"/></svg></div>
+        <h4>Manaíra, João Pessoa</h4>
+        <p>Em um dos endereços mais valorizados da cidade, com fácil acesso e estrutura premium.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6L12 19.8 6.9 22.4 8 16.8l-4-4 5.6-.8z"/></svg></div>
+        <h4>Resultado natural</h4>
+        <p>Planejamento que valoriza o seu rosto de verdade — beleza sem exageros, do jeito que combina com você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<section class="cta-band" id="agendar">
+  <div class="inner">
+    <span class="overline center light" style="justify-content:center">Agende agora</span>
+    <h2>Sua transformação começa com uma <em>avaliação</em>.</h2>
+    <p>Conte para a gente o que você deseja para o seu sorriso ou para o seu rosto. Em poucos minutos no WhatsApp, marcamos a sua avaliação na Allure.</p>
+    <div class="actions">
+      <a class="btn-primary btn-wa" href="https://wa.me/5583988539507?text=Ol%C3%A1%20Allure!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCALIZAÇÃO ── -->
+<section class="local" id="localizacao">
+  <div class="inner local-grid">
+    <div class="reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Venha nos <em>visitar</em>.</h2>
+      <p class="lead">Estamos em Manaíra, no coração de João Pessoa. Estacione, suba e seja recebido em um ambiente feito para o seu cuidado.</p>
+      <div class="local-rows">
+        <div class="local-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 00-8-8z"/></svg></span>
+          <div><div class="k">Endereço</div><a class="v" href="https://www.google.com/maps/place/Allure+Odontologia+e+Harmoniza%C3%A7%C3%A3o+Facial+l+Jo%C3%A3o+Pessoa/@-7.0972404,-34.8367444,17z/" target="_blank" rel="noopener">Av. Gov. Flávio Ribeiro Coutinho, 400 — sala 203, Manaíra, João Pessoa — PB, 58037-000</a></div>
+        </div>
+        <div class="local-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <div><div class="k">WhatsApp</div><a class="v" href="https://wa.me/5583988539507?text=Ol%C3%A1%20Allure!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">(83) 98853-9507</a></div>
+        </div>
+        <div class="local-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="k">Agendamento</div><div class="v">Avaliações com hora marcada, de segunda a sábado</div></div>
+        </div>
+      </div>
+      <a class="btn-primary" href="https://www.google.com/maps/place/Allure+Odontologia+e+Harmoniza%C3%A7%C3%A3o+Facial+l+Jo%C3%A3o+Pessoa/@-7.0972404,-34.8367444,17z/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 00-8-8z"/></svg>
+        Abrir no Google Maps
+      </a>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Localização da Allure no mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-7.0972404,-34.8367444&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="nm">Allure</div>
+      <div class="sub">Odontologia &amp; Harmonização Facial</div>
+      <p>Sorriso e rosto cuidados sob o mesmo olhar, em Manaíra — João Pessoa/PB.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Tratamentos</h5>
+      <a href="#servicos">Lentes &amp; facetas</a>
+      <a href="#servicos">Clareamento</a>
+      <a href="#servicos">Implantes</a>
+      <a href="#servicos">Harmonização facial</a>
+      <a href="#servicos">Botox &amp; preenchimento</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contato</h5>
+      <a href="https://wa.me/5583988539507?text=Ol%C3%A1%20Allure!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">WhatsApp (83) 98853-9507</a>
+      <p>Av. Gov. Flávio Ribeiro Coutinho, 400 — sala 203</p>
+      <p>Manaíra, João Pessoa — PB, 58037-000</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Allure Odontologia e Harmonização Facial</span>
+    <span>João Pessoa — PB</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5583988539507?text=Ol%C3%A1%20Allure!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<svg style="display:none" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></svg>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>
