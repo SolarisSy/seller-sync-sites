@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clínica Marcell Oliveira — Harmonização Facial e Corporal em Natal/RN</title>
+<meta name="description" content="Harmonização facial e corporal em Natal/RN com naturalidade e segurança. Clínica Marcell Oliveira — nota 5,0 no Google, Lagoa Nova. Agende sua avaliação pelo WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg-base:#f6f1ea; --bg-surface:#fffdfa; --bg-inset:#eee5d8; --bg-dark:#1c1814;
+  --text-primary:#211c17; --text-secondary:#5a5048; --text-muted:#988b7d; --text-inverse:#f6f1ea;
+  --accent:#b08766; --accent-dark:#90694e;
+  --accent-subtle:rgba(176,135,102,.10); --accent-border:rgba(176,135,102,.22);
+  --gold:#c9a86a; --gold-light:#e3c889;
+
+  --text-display:clamp(2.7rem,1.9rem+4vw,5.4rem);
+  --text-h2:clamp(1.95rem,1.3rem+2.5vw,3.05rem);
+  --text-h3:clamp(1.3rem,1rem+1.2vw,1.85rem);
+  --text-body:clamp(.94rem,.86rem+.3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem+.2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-.015em; --ls-overline:.2em;
+
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.4vw,1.8rem);
+
+  --shadow-sm:0 1px 2px rgba(40,28,18,.05),0 2px 6px rgba(40,28,18,.05);
+  --shadow-md:0 2px 4px rgba(40,28,18,.04),0 8px 18px rgba(40,28,18,.07),0 20px 40px rgba(40,28,18,.05);
+  --shadow-lg:0 4px 8px rgba(40,28,18,.04),0 16px 32px rgba(40,28,18,.07),0 40px 80px rgba(40,28,18,.09);
+  --shadow-accent:0 8px 24px rgba(176,135,102,.28);
+  --shadow-accent-strong:0 14px 34px rgba(176,135,102,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:400;font-size:var(--text-body);line-height:var(--lh-body);
+  color:var(--text-secondary);background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--text-primary);font-optical-sizing:auto;text-wrap:balance;font-weight:500;line-height:var(--lh-heading);letter-spacing:var(--ls-display)}
+em{font-style:italic;color:var(--accent-dark)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* overline */
+.overline{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;flex:none}
+.overline.center{justify-content:center}
+.overline.center::after{content:'';width:30px;height:1px;background:currentColor;flex:none}
+
+/* buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:11px;padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text-primary);padding:.4rem 0;border-bottom:1px solid var(--accent-border);transition:border-color .3s,color .3s}
+.btn-ghost:hover{color:var(--accent);border-color:var(--accent)}
+.btn-primary svg,.btn-ghost svg{flex:none}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(28,24,20,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(201,168,106,.22);padding:13px clamp(1.5rem,5vw,4rem)}
+.brand{display:flex;flex-direction:column;line-height:1.05;transition:color .4s}
+.brand .b-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;letter-spacing:.01em;color:var(--text-primary);transition:color .4s}
+.brand .b-sub{font-family:'Inter',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+header.scrolled .brand .b-name{color:#fff}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a:not(.btn-head){font-family:'Inter',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.03em;color:var(--text-secondary);transition:color .3s;position:relative}
+header.scrolled .nav-links a:not(.btn-head){color:rgba(246,241,234,.82)}
+.nav-links a:not(.btn-head):hover{color:var(--accent)}
+.btn-head{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:.65rem 1.3rem;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s}
+.btn-head:hover{transform:translateY(-2px)}
+@media(max-width:780px){.nav-hide{display:none}}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:center;overflow:hidden;padding:clamp(7rem,16vh,10rem) clamp(1.5rem,6vw,5rem) clamp(4rem,8vh,6rem)}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background:
+   radial-gradient(1100px 720px at 78% 18%,rgba(201,168,106,.20),transparent 60%),
+   radial-gradient(900px 700px at 12% 88%,rgba(176,135,102,.18),transparent 62%),
+   linear-gradient(165deg,#fbf7f1 0%,#f3ebe0 48%,#e9ddcc 100%);
+  animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.05)}}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.045}
+/* decorative thin arc */
+.hero-arc{position:absolute;z-index:1;top:-12%;right:-8%;width:min(46vw,560px);aspect-ratio:1;border-radius:50%;border:1px solid var(--accent-border);pointer-events:none}
+.hero-arc.two{top:auto;bottom:-16%;left:-10%;right:auto;width:min(40vw,460px);border-color:rgba(201,168,106,.28)}
+.hero-content{position:relative;z-index:2;max-width:880px;margin:0 auto;width:100%}
+.hero .overline{justify-content:center;color:var(--accent-dark)}
+.hero h1{font-size:var(--text-display);font-weight:400;line-height:var(--lh-display);text-align:center;margin:0 auto;max-width:16ch}
+.hero h1 .lead-word{font-weight:500}
+.hero-title{overflow:hidden;display:block}
+.hero-title .word{display:inline-block;transform:translateY(115%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title .word:nth-child(5){animation-delay:.63s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{max-width:54ch;margin:26px auto 0;text-align:center;font-size:clamp(1rem,.9rem+.4vw,1.18rem);color:var(--text-secondary);opacity:0;animation:fade-in 1s ease .9s forwards}
+.hero-cta{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:38px;opacity:0;animation:fade-in 1s ease 1.1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-trust{display:flex;justify-content:center;gap:clamp(1.6rem,4vw,3.4rem);flex-wrap:wrap;margin-top:clamp(3rem,6vh,5rem);opacity:0;animation:fade-in 1s ease 1.3s forwards}
+.ht-item{text-align:center}
+.ht-num{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,1.3rem+1.6vw,2.7rem);font-weight:500;color:var(--text-primary);line-height:1}
+.ht-num .star{color:var(--gold);font-size:.7em;vertical-align:.08em}
+.ht-lab{font-family:'Inter',sans-serif;font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-top:9px}
+.scroll-ind{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;font-family:'Inter';font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-muted);display:flex;flex-direction:column;align-items:center;gap:9px;opacity:0;animation:fade-in 1s ease 1.6s forwards}
+.scroll-ind span{width:1px;height:34px;background:linear-gradient(var(--accent),transparent);animation:scrolldot 2s ease-in-out infinite}
+@keyframes scrolldot{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.stagger>.reveal:nth-child(2){transition-delay:.06s}
+.stagger>.reveal:nth-child(3){transition-delay:.12s}
+.stagger>.reveal:nth-child(4){transition-delay:.18s}
+.stagger>.reveal:nth-child(5){transition-delay:.24s}
+.stagger>.reveal:nth-child(6){transition-delay:.3s}
+
+/* ── SECTION HEAD ── */
+.sec-head{max-width:640px;margin-bottom:clamp(2.6rem,5vw,4rem)}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:var(--text-h2);font-weight:400}
+.sec-head p{margin-top:18px;color:var(--text-secondary)}
+
+/* ── SOBRE ── */
+.sobre{background:var(--bg-surface);position:relative}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-vis{position:relative;border-radius:8px;min-height:clamp(320px,42vw,500px);overflow:hidden;
+  background:linear-gradient(150deg,#2a231d 0%,#1c1814 100%);box-shadow:var(--shadow-lg);display:grid;place-items:center;padding:2.4rem}
+.sobre-vis::before{content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;opacity:.06;mix-blend-mode:overlay}
+.sobre-vis .monogram{position:relative;text-align:center}
+.sobre-vis .mono-ring{width:clamp(130px,18vw,190px);height:clamp(130px,18vw,190px);margin:0 auto;border-radius:50%;border:1px solid rgba(201,168,106,.4);display:grid;place-items:center;position:relative}
+.sobre-vis .mono-ring::after{content:'';position:absolute;inset:14px;border-radius:50%;border:1px solid rgba(201,168,106,.18)}
+.sobre-vis .mono-letters{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:500;letter-spacing:.04em;background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sobre-vis .mono-name{margin-top:24px;font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.4vw,1.9rem);color:#f6f1ea;font-weight:400;letter-spacing:.02em}
+.sobre-vis .mono-role{margin-top:7px;font-family:'Inter';font-size:.66rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.sobre-txt .overline{margin-bottom:18px}
+.sobre-txt h2{font-size:var(--text-h2);font-weight:400;margin-bottom:22px}
+.sobre-txt p{margin-bottom:18px}
+.sobre-sign{display:flex;align-items:center;gap:14px;margin-top:30px;padding-top:26px;border-top:1px solid var(--accent-border)}
+.sobre-sign .sig{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--accent-dark);font-style:italic}
+.sobre-sign .sig-t{font-family:'Inter';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+
+/* ── PROCEDIMENTOS ── */
+.proc{background:var(--bg-base)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(176,135,102,.12);border-radius:7px;padding:clamp(1.8rem,3vw,2.4rem);box-shadow:var(--shadow-sm);transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease;position:relative;overflow:hidden}
+.serv-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md);border-color:var(--accent-border)}
+.serv-card:hover::before{transform:scaleX(1)}
+.serv-ico{width:54px;height:54px;border-radius:50%;background:var(--accent-subtle);display:grid;place-items:center;margin-bottom:22px;transition:background .3s}
+.serv-card:hover .serv-ico{background:rgba(176,135,102,.18)}
+.serv-ico svg{width:26px;height:26px;stroke:var(--accent-dark);fill:none;stroke-width:1.5}
+.serv-card h3{font-size:var(--text-h3);font-weight:500;margin-bottom:12px}
+.serv-card p{font-size:.96rem;color:var(--text-secondary)}
+.serv-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.serv-tags span{font-family:'Inter';font-size:.7rem;letter-spacing:.02em;color:var(--accent-dark);background:var(--accent-subtle);padding:.34rem .7rem;border-radius:50px}
+
+/* ── FAIXA DARK / DIFERENCIAIS ── */
+.diff{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden;clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);margin-top:-3vw;padding-top:calc(var(--section-pad) + 3vw)}
+.diff::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.diff::after{content:'';position:absolute;top:-30%;right:-15%;width:min(50vw,560px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(201,168,106,.16),transparent 65%);pointer-events:none}
+.diff .wrap{position:relative;z-index:1}
+.diff .overline{color:var(--gold)}
+.diff h2{color:#fff;font-size:var(--text-h2);font-weight:400;max-width:14ch}
+.diff-head{max-width:640px;margin-bottom:clamp(2.6rem,5vw,4rem)}
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(1.4rem,3vw,2.6rem)}
+.diff-card{padding-top:26px;border-top:1px solid rgba(201,168,106,.26)}
+.diff-card .d-ico{width:40px;height:40px;margin-bottom:18px}
+.diff-card .d-ico svg{width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.diff-card h3{color:#fff;font-size:1.4rem;font-weight:500;margin-bottom:10px}
+.diff-card p{color:rgba(246,241,234,.7);font-size:.94rem}
+.diff-stats{display:flex;flex-wrap:wrap;gap:clamp(1.6rem,5vw,4rem);margin-top:clamp(3rem,5vw,4.4rem);padding-top:clamp(2.4rem,4vw,3.2rem);border-top:1px solid rgba(246,241,234,.12)}
+.ds-item .ds-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.3rem,1.6rem+1.8vw,3.4rem);font-weight:500;color:var(--gold-light);line-height:1}
+.ds-item .ds-lab{font-family:'Inter';font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,234,.6);margin-top:10px}
+
+/* ── LOCALIZAÇÃO (foto real) ── */
+.local{background:var(--bg-surface)}
+.local-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local-photo{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.local-photo img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.local-photo:hover img{transform:scale(1.05)}
+.local-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(190deg,transparent 55%,rgba(28,24,20,.45) 100%)}
+.local-badge{position:absolute;left:18px;bottom:18px;z-index:2;display:flex;align-items:center;gap:11px;background:rgba(255,253,250,.14);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.6rem 1.1rem;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.local-badge svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.6;flex:none}
+.local-badge span{font-family:'Inter';font-size:.78rem;font-weight:500;color:#fff;letter-spacing:.01em}
+.local-info h2{font-size:var(--text-h2);font-weight:400;margin-bottom:20px}
+.addr-list{margin:26px 0 32px;display:flex;flex-direction:column;gap:20px}
+.addr-row{display:flex;gap:16px;align-items:flex-start}
+.addr-row .a-ico{flex:none;width:42px;height:42px;border-radius:50%;background:var(--accent-subtle);display:grid;place-items:center}
+.addr-row .a-ico svg{width:19px;height:19px;stroke:var(--accent-dark);fill:none;stroke-width:1.5}
+.addr-row .a-lab{font-family:'Inter';font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.addr-row .a-val{font-size:1rem;color:var(--text-primary);line-height:1.5}
+
+/* ── CTA FINAL ── */
+.cta-final{background:linear-gradient(150deg,#2a231d 0%,#1c1814 100%);color:var(--text-inverse);position:relative;overflow:hidden;text-align:center}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 420px at 50% 0%,rgba(201,168,106,.18),transparent 70%);pointer-events:none}
+.cta-final .wrap{position:relative;z-index:1;max-width:720px}
+.cta-final .overline{color:var(--gold);justify-content:center}
+.cta-final .overline::after{content:'';width:30px;height:1px;background:currentColor}
+.cta-final h2{color:#fff;font-size:clamp(2.2rem,1.5rem+3vw,3.7rem);font-weight:400;margin-bottom:22px}
+.cta-final p{color:rgba(246,241,234,.74);max-width:46ch;margin:0 auto 38px}
+.cta-final .btn-primary{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#2a231d}
+
+/* ── FOOTER ── */
+footer{background:#15110d;color:rgba(246,241,234,.6);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,5vw,4rem);padding-bottom:2.6rem;border-bottom:1px solid rgba(246,241,234,.1)}
+.foot-brand .b-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#f6f1ea;font-weight:500}
+.foot-brand .b-sub{font-family:'Inter';font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.foot-brand p{margin-top:18px;font-size:.9rem;max-width:32ch}
+.foot-col h4{font-family:'Inter';font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:rgba(246,241,234,.62);margin-bottom:11px;transition:color .3s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:1.8rem auto 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:rgba(246,241,234,.42)}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .25s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(max-width:880px){
+  .sobre-grid,.local-grid{grid-template-columns:1fr}
+  .sobre-vis{order:-1;min-height:300px}
+  .local-photo{aspect-ratio:16/11;max-width:520px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1}
+}
+@media(max-width:520px){
+  .foot-grid{grid-template-columns:1fr}
+  .hero-cta{flex-direction:column;gap:16px}
+  .hero-cta .btn-primary{width:100%;justify-content:center}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .hero-bg{animation:none}
+  .reveal,.word,.hero-sub,.hero-cta,.hero-trust,.scroll-ind{opacity:1!important;transform:none!important}
+  .hero-title .word{transform:none;opacity:1}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <span class="b-name">Marcell Oliveira</span>
+    <span class="b-sub">Harmonização · Natal</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre" class="nav-hide">A Clínica</a>
+    <a href="#procedimentos" class="nav-hide">Procedimentos</a>
+    <a href="#localizacao" class="nav-hide">Localização</a>
+    <a class="btn-head" href="https://wa.me/5584991920499?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o." target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-arc"></div>
+  <div class="hero-arc two"></div>
+  <div class="hero-content">
+    <p class="overline">Harmonização Facial &amp; Corporal · Natal/RN</p>
+    <h1>
+      <span class="hero-title"><span class="word">Beleza</span> <span class="word">que</span> <span class="word lead-word">parece</span> <span class="word"><em>sua.</em></span></span>
+    </h1>
+    <p class="hero-sub">Naturalidade que se nota — sem exageros. Procedimentos faciais e corporais com técnica, segurança e um olhar atento ao que torna você, você.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://wa.me/5584991920499?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="ht-item">
+        <div class="ht-num"><span class="star">★</span> 5,0</div>
+        <div class="ht-lab">Avaliação no Google</div>
+      </div>
+      <div class="ht-item">
+        <div class="ht-num">100%</div>
+        <div class="ht-lab">Atendimento individual</div>
+      </div>
+      <div class="ht-item">
+        <div class="ht-num">Lagoa&nbsp;Nova</div>
+        <div class="ht-lab">Endereço de alto padrão</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span></span>Role</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-vis reveal">
+      <div class="monogram">
+        <div class="mono-ring"><div class="mono-letters">MO</div></div>
+        <div class="mono-name">Marcell Oliveira</div>
+        <div class="mono-role">Especialista em Harmonização</div>
+      </div>
+    </div>
+    <div class="sobre-txt reveal">
+      <p class="overline">A clínica</p>
+      <h2>Resultados que valorizam a sua <em>essência</em> — não a substituem.</h2>
+      <p>Na Clínica Marcell Oliveira, harmonização não é padronizar rostos. É estudar cada feição, entender o que você gosta de si e desenhar um plano que realça o seu melhor com discrição e segurança.</p>
+      <p>Cada avaliação é individual e sem pressa: você entende o procedimento, o porquê de cada técnica e o resultado esperado antes de qualquer decisão. Naturalidade, ética e cuidado em cada etapa.</p>
+      <div class="sobre-sign">
+        <span class="sig">Marcell Oliveira</span>
+        <span class="sig-t">Harmonização Facial &amp; Corporal · Natal/RN</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="overline center">O que fazemos</p>
+      <h2>Procedimentos faciais e corporais</h2>
+      <p>Protocolos personalizados, com avaliação prévia e foco em um resultado elegante e duradouro.</p>
+    </div>
+    <div class="proc-grid stagger">
+      <article class="serv-card reveal">
+        <div class="serv-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4.5 4.5 0 018-2.8A4.5 4.5 0 0119 11c0 5.65-7 10-7 10z"/></svg></div>
+        <h3>Contorno facial</h3>
+        <p>Definição de mandíbula, malar e mento para um rosto harmônico, com proporções equilibradas e aparência natural.</p>
+        <div class="serv-tags"><span>Preenchimento</span><span>Contorno</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2.5 2.5 4 4.8 4 7.2A4 4 0 018 10.2C8 7.8 9.5 5.5 12 3z"/><path d="M7.5 13.5c1.7.9 3 2.6 3 4.5M16.5 13.5c-1.7.9-3 2.6-3 4.5"/></svg></div>
+        <h3>Lábios &amp; sorriso</h3>
+        <p>Volume e contorno labial sob medida — hidratação, simetria e um sorriso valorizado, sempre na medida do que combina com você.</p>
+        <div class="serv-tags"><span>Lábios</span><span>Hidratação</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Bioestímulo &amp; viço</h3>
+        <p>Bioestimuladores de colágeno e skinbooster para firmeza, luminosidade e pele com aspecto saudável de dentro pra fora.</p>
+        <div class="serv-tags"><span>Colágeno</span><span>Skinbooster</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c0-3 8-3 8-8M20 14c0-3-8-3-8-8M6 18c2-1 4-1 6 0s4 1 6 0"/></svg></div>
+        <h3>Toxina &amp; expressão</h3>
+        <p>Suavização de linhas de expressão preservando a naturalidade dos seus movimentos — descanso na face, nunca rigidez.</p>
+        <div class="serv-tags"><span>Toxina</span><span>Rugas</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8M9 3v4c0 4-4 5-4 9a7 7 0 0014 0c0-4-4-5-4-9V3"/><path d="M7 16c2.5-1.5 7.5-1.5 10 0"/></svg></div>
+        <h3>Harmonização corporal</h3>
+        <p>Protocolos para gordura localizada e flacidez — contorno corporal definido com tecnologia e ativos injetáveis seguros.</p>
+        <div class="serv-tags"><span>Contorno</span><span>Firmeza</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1018 0 9 9 0 10-18 0z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+        <h3>Avaliação personalizada</h3>
+        <p>Tudo começa por uma análise completa do rosto e dos objetivos. Você sai com um plano claro — e nenhuma decisão tomada por você.</p>
+        <div class="serv-tags"><span>Consulta</span><span>Plano sob medida</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS DARK -->
+<section class="diff">
+  <div class="wrap">
+    <div class="diff-head reveal">
+      <p class="overline">Por que a Marcell Oliveira</p>
+      <h2>Confiança não se improvisa.</h2>
+    </div>
+    <div class="diff-grid stagger">
+      <div class="diff-card reveal">
+        <div class="d-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Segurança em primeiro lugar</h3>
+        <p>Produtos de procedência, técnica apurada e protocolos rigorosos. Você sabe exatamente o que está sendo feito.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="d-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
+        <h3>Atendimento exclusivo</h3>
+        <p>Sem fila, sem pressa. Cada paciente tem tempo, escuta e um plano desenhado só pra ele.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="d-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c3 2.5 5 5 5 8a5 5 0 01-10 0c0-3 2-5.5 5-8z"/></svg></div>
+        <h3>Naturalidade como assinatura</h3>
+        <p>O objetivo nunca é "ficar diferente". É ficar você, em uma versão descansada e harmônica.</p>
+      </div>
+    </div>
+    <div class="diff-stats reveal">
+      <div class="ds-item"><div class="ds-num">5,0★</div><div class="ds-lab">Nota máxima no Google</div></div>
+      <div class="ds-item"><div class="ds-num">1:1</div><div class="ds-lab">Atendimento individual</div></div>
+      <div class="ds-item"><div class="ds-num">+30</div><div class="ds-lab">Protocolos faciais e corporais</div></div>
+      <div class="ds-item"><div class="ds-num">Natal</div><div class="ds-lab">Lagoa Nova · zona nobre</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO (FOTO REAL) -->
+<section class="local" id="localizacao">
+  <div class="wrap local-grid">
+    <div class="local-photo reveal">
+      <img src="imagens/maps-1.jpg" alt="Endereço da Clínica Marcell Oliveira — torre corporativa de alto padrão na Lagoa Nova, Natal/RN" loading="lazy" />
+      <div class="local-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <span>Lagoa Nova · Natal/RN</span>
+      </div>
+    </div>
+    <div class="local-info reveal">
+      <p class="overline">Onde estamos</p>
+      <h2>Uma estrutura à altura do cuidado.</h2>
+      <p>Em um dos endereços mais valorizados de Natal, a clínica recebe você num ambiente reservado e confortável — pensado para o seu bem-estar do primeiro contato à última sessão.</p>
+      <div class="addr-list">
+        <div class="addr-row">
+          <span class="a-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <div><div class="a-lab">Endereço</div><div class="a-val">Rua Dr. Pote de Nóbrega, 1946<br/>Lagoa Nova · Natal/RN · 59056-180</div></div>
+        </div>
+        <div class="addr-row">
+          <span class="a-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
+          <div><div class="a-lab">WhatsApp</div><div class="a-val">(84) 99192-0499</div></div>
+        </div>
+        <div class="addr-row">
+          <span class="a-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="a-lab">Atendimento</div><div class="a-val">Seg. a Sáb. · com hora marcada</div></div>
+        </div>
+      </div>
+      <a class="btn-primary" href="https://wa.me/5584991920499?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Marcell%20Oliveira." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <p class="overline">Dê o primeiro passo</p>
+    <h2>O seu novo reflexo começa com uma conversa.</h2>
+    <p>Agende sua avaliação e descubra, sem compromisso, o que a harmonização pode fazer por você — com naturalidade e segurança.</p>
+    <a class="btn-primary" href="https://wa.me/5584991920499?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o." target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="b-name">Clínica Marcell Oliveira</div>
+      <div class="b-sub">Harmonização Facial &amp; Corporal</div>
+      <p>Beleza com naturalidade, técnica e segurança — no coração da Lagoa Nova, em Natal/RN.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5584991920499" target="_blank" rel="noopener">WhatsApp (84) 99192-0499</a>
+      <p>Rua Dr. Pote de Nóbrega, 1946</p>
+      <p>Lagoa Nova · Natal/RN</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Clínica Marcell Oliveira · Todos os direitos reservados.</span>
+    <span>Harmonização Facial &amp; Corporal · Natal/RN</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5584991920499?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});return;}
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>
