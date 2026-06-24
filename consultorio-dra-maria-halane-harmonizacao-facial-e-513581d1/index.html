@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Maria Halane — Harmonização Facial em Natal</title>
+<meta name="description" content="Harmonização facial com resultado natural, conduzida por médica em Natal/RN. Toxina botulínica, preenchimento, bioestimuladores e skinbooster. Avalie pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* surface */
+  --bg-base:#faf8f4; --bg-surface:#fffdfa; --bg-inset:#f1e9df; --bg-dark:#2a211c;
+  /* text */
+  --text-primary:#1a1714; --text-secondary:#4a4540; --text-muted:#8a8278; --text-inverse:#faf8f4;
+  /* brand */
+  --accent:#b89274; --accent-dark:#9a7559;
+  --accent-subtle:rgba(184,146,116,.10); --accent-border:rgba(184,146,116,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* shadows */
+  --shadow-sm:0 1px 2px rgba(42,33,28,.04),0 2px 6px rgba(42,33,28,.04);
+  --shadow-md:0 2px 4px rgba(42,33,28,.04),0 8px 18px rgba(42,33,28,.06),0 20px 40px rgba(42,33,28,.05);
+  --shadow-lg:0 4px 8px rgba(42,33,28,.04),0 16px 32px rgba(42,33,28,.06),0 40px 80px rgba(42,33,28,.09);
+  --shadow-accent:0 10px 28px rgba(154,117,89,.28);
+  --shadow-accent-strong:0 16px 40px rgba(154,117,89,.40);
+  /* type scale */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.2rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.92rem,.85rem + .3vw,1.02rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.18em;
+  /* spacing */
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1180px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,1.8rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base); color:var(--text-primary);
+  font-family:'Inter',sans-serif; font-size:var(--text-body); line-height:var(--lh-body);
+  font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; letter-spacing:var(--ls-display); line-height:var(--lh-heading)}
+em{font-style:italic}
+a{color:inherit}
+img{display:block; max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max); margin:0 auto}
+
+/* overline */
+.overline{display:flex; align-items:center; gap:12px; font-size:.68rem; letter-spacing:var(--ls-overline); text-transform:uppercase; color:var(--accent-dark); font-weight:600; margin-bottom:16px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* buttons */
+.btn-primary{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem); min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff; font-weight:600; font-size:.78rem; letter-spacing:.06em;
+  text-transform:uppercase; text-decoration:none; border-radius:50px;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:1rem clamp(1.4rem,3vw,2rem); min-height:50px;
+  border:1px solid var(--accent-border); border-radius:50px;
+  color:var(--text-primary); text-decoration:none; font-weight:500; font-size:.8rem;
+  letter-spacing:.04em; text-transform:uppercase; background:transparent;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .3s ease,background .3s ease;
+  touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px); border-color:var(--accent); background:var(--accent-subtle)}
+.btn-primary svg,.btn-ghost svg{width:18px;height:18px;flex:none}
+
+/* header */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex; align-items:center; justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{background:rgba(250,248,244,.9); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:0 1px 0 var(--accent-border); padding-top:13px; padding-bottom:13px}
+.brand{font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; letter-spacing:.01em; text-decoration:none; color:var(--text-primary)}
+.brand span{color:var(--accent-dark)}
+.nav-cta{display:none}
+@media(min-width:760px){.nav-cta{display:inline-flex; padding:.7rem 1.4rem; min-height:auto; font-size:.72rem}}
+
+/* HERO split */
+.hero-split{display:grid; grid-template-columns:5fr 4fr; min-height:100dvh; position:relative}
+.hero-copy{
+  position:relative; z-index:2; background:var(--bg-dark); color:var(--text-inverse);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(6rem,12vh,9rem) clamp(1.6rem,5vw,5rem) clamp(3rem,8vh,5rem);
+}
+.hero-copy .overline{color:var(--gold-light)}
+.hero-copy::before{
+  content:''; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.hero-copy > *{position:relative; z-index:1}
+.hero-title{font-size:var(--text-display); line-height:var(--lh-display); max-width:13ch; overflow:hidden; margin-bottom:24px}
+.hero-title .word{display:inline-block; transform:translateY(110%); opacity:0; animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word em{color:var(--gold-light)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .word:nth-child(4){animation-delay:.48s}
+.hero-title .word:nth-child(5){animation-delay:.59s}
+@keyframes word-up{to{transform:translateY(0); opacity:1}}
+.hero-sub{font-family:'Inter',sans-serif; font-size:var(--text-body); color:rgba(250,248,244,.78); font-weight:300; max-width:42ch; margin-bottom:36px; opacity:0; animation:fade-soft 1s ease .8s forwards}
+.hero-actions{display:flex; flex-wrap:wrap; gap:14px; opacity:0; animation:fade-soft 1s ease 1s forwards}
+.hero-actions .btn-ghost{color:var(--text-inverse); border-color:rgba(250,248,244,.28)}
+.hero-actions .btn-ghost:hover{border-color:var(--gold-light); background:rgba(250,248,244,.06)}
+@keyframes fade-soft{to{opacity:1}}
+.hero-meta{margin-top:clamp(2rem,5vh,3.4rem); display:flex; gap:28px; flex-wrap:wrap; opacity:0; animation:fade-soft 1s ease 1.15s forwards}
+.hero-meta div{display:flex; flex-direction:column; gap:2px}
+.hero-meta .k{font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--gold-light); line-height:1}
+.hero-meta .l{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,248,244,.6)}
+
+.hero-img{position:relative; overflow:hidden; background:var(--bg-inset)}
+.hero-img img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%; animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)} to{transform:scale(1.07)}}
+.hero-badge{
+  position:absolute; left:24px; bottom:24px; z-index:3;
+  display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:14px;
+  background:rgba(42,33,28,.32); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.2);
+  color:#fff;
+}
+.hero-badge .stars{color:var(--gold-light); letter-spacing:2px; font-size:.95rem}
+.hero-badge .bt{font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.82)}
+.hero-badge strong{font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600}
+@media(max-width:900px){
+  .hero-split{grid-template-columns:1fr}
+  .hero-img{height:78vw; min-height:340px; order:-1}
+  .hero-img img{object-position:center 18%}
+  .hero-copy{padding-top:clamp(7rem,18vh,9rem)}
+}
+
+/* SOBRE */
+.about{background:var(--bg-base)}
+.about .grid{display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,4rem); align-items:start}
+@media(min-width:860px){.about .grid{grid-template-columns:1.15fr 1fr}}
+.about h2{font-size:var(--text-h2); max-width:16ch; margin-bottom:24px}
+.about p{color:var(--text-secondary); font-weight:300; margin-bottom:18px; max-width:var(--prose-max)}
+.about .sig{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; color:var(--accent-dark); margin-top:6px}
+.values{display:grid; gap:14px}
+.value{display:flex; gap:16px; padding:20px 22px; background:var(--bg-surface); border:1px solid var(--accent-border); border-radius:16px; box-shadow:var(--shadow-sm)}
+.value svg{width:26px; height:26px; flex:none; color:var(--accent-dark); margin-top:2px}
+.value h4{font-family:'Inter',sans-serif; font-size:.96rem; font-weight:600; margin-bottom:4px}
+.value p{font-size:.86rem; color:var(--text-muted); font-weight:300; margin:0}
+
+/* PROCEDIMENTOS */
+.proc{background:var(--bg-inset); position:relative; clip-path:polygon(0 3%,100% 0,100% 100%,0 100%); padding-top:calc(var(--section-pad) + 4vw)}
+.proc .head{max-width:var(--content-max); margin:0 auto clamp(2.4rem,5vw,3.6rem)}
+.proc h2{font-size:var(--text-h2); max-width:18ch}
+.proc .lead{color:var(--text-secondary); font-weight:300; max-width:var(--prose-max); margin-top:14px}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--gap-cards); max-width:var(--content-max); margin:0 auto}
+.serv-card{
+  background:var(--bg-surface); border:1px solid var(--accent-border); border-radius:18px;
+  padding:clamp(1.6rem,3vw,2.2rem); box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent)}
+.serv-icon{width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--accent-subtle); margin-bottom:18px}
+.serv-icon svg{width:25px; height:25px; color:var(--accent-dark)}
+.serv-card .ovl{font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-dark); font-weight:600; margin-bottom:8px; display:block}
+.serv-card h3{font-size:var(--text-h3); margin-bottom:8px}
+.serv-card p{color:var(--text-muted); font-size:.88rem; font-weight:300}
+
+/* DIFERENCIAIS / prova social */
+.diff{background:var(--bg-dark); color:var(--text-inverse); position:relative; overflow:hidden}
+.diff::before{
+  content:''; position:absolute; inset:0; opacity:.05; pointer-events:none; z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.diff .wrap{position:relative; z-index:1}
+.diff .overline{color:var(--gold-light)}
+.diff h2{font-size:var(--text-h2); color:var(--text-inverse); max-width:18ch; margin-bottom:clamp(2rem,5vw,3.2rem)}
+.diff-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:clamp(1.4rem,3vw,2.4rem)}
+.diff-item{border-top:1px solid rgba(250,248,244,.16); padding-top:20px}
+.diff-item .n{font-family:'Cormorant Garamond',serif; font-size:2.6rem; color:var(--gold-light); line-height:1; margin-bottom:10px; display:flex; align-items:baseline; gap:6px}
+.diff-item .n .stars{font-size:1rem; letter-spacing:2px}
+.diff-item h4{font-family:'Inter',sans-serif; font-size:.96rem; font-weight:600; margin-bottom:6px}
+.diff-item p{font-size:.86rem; color:rgba(250,248,244,.7); font-weight:300}
+
+.quote{max-width:760px; margin:clamp(3rem,7vw,5rem) auto 0; text-align:center; position:relative; z-index:1}
+.quote p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(1.5rem,1rem + 2.4vw,2.4rem); line-height:1.4; color:var(--text-inverse)}
+.quote .stars{color:var(--gold-light); letter-spacing:3px; margin-bottom:18px; font-size:1.1rem}
+.quote .by{margin-top:20px; font-family:'Inter',sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,248,244,.6); font-style:normal}
+
+/* AGENDAMENTO CTA */
+.cta{background:var(--bg-base); text-align:center}
+.cta .inner{max-width:720px; margin:0 auto; background:linear-gradient(160deg,var(--bg-surface),var(--bg-inset)); border:1px solid var(--accent-border); border-radius:26px; padding:clamp(2.6rem,6vw,4.4rem) clamp(1.6rem,5vw,3.6rem); box-shadow:var(--shadow-lg)}
+.cta .overline{justify-content:center}
+.cta h2{font-size:var(--text-h2); max-width:20ch; margin:0 auto 16px}
+.cta p{color:var(--text-secondary); font-weight:300; max-width:46ch; margin:0 auto 30px}
+.cta .note{margin-top:18px; font-size:.78rem; color:var(--text-muted)}
+
+/* LOCALIZACAO */
+.loc{background:var(--bg-inset)}
+.loc .grid{display:grid; grid-template-columns:1fr; gap:clamp(1.6rem,4vw,2.6rem); align-items:center}
+@media(min-width:820px){.loc .grid{grid-template-columns:1fr 1fr}}
+.loc h2{font-size:var(--text-h2); margin-bottom:18px; max-width:16ch}
+.loc-row{display:flex; gap:14px; align-items:flex-start; margin-bottom:18px}
+.loc-row svg{width:22px; height:22px; flex:none; color:var(--accent-dark); margin-top:3px}
+.loc-row .lab{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px}
+.loc-row .val{color:var(--text-primary); font-weight:400; font-size:.95rem}
+.loc-row a.val{text-decoration:none; border-bottom:1px solid var(--accent-border)}
+.map-card{border-radius:20px; overflow:hidden; border:1px solid var(--accent-border); box-shadow:var(--shadow-md); background:var(--bg-surface)}
+.map-card a{display:block; position:relative; aspect-ratio:4/3; text-decoration:none}
+.map-bg{position:absolute; inset:0; background:
+  radial-gradient(circle at 30% 30%,rgba(184,146,116,.18),transparent 60%),
+  linear-gradient(135deg,#efe7dc,#e3d6c6);}
+.map-grid-lines{position:absolute; inset:0; opacity:.5;
+  background-image:linear-gradient(rgba(154,117,89,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(154,117,89,.12) 1px,transparent 1px);
+  background-size:38px 38px;}
+.map-pin{position:absolute; left:50%; top:46%; transform:translate(-50%,-100%); color:var(--accent-dark); width:42px; height:42px; filter:drop-shadow(0 6px 10px rgba(42,33,28,.25))}
+.map-label{position:absolute; left:0; right:0; bottom:0; padding:16px 20px; background:linear-gradient(transparent,rgba(42,33,28,.82)); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:12px}
+.map-label span{font-size:.82rem; font-weight:500}
+.map-label .open{font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-light); display:inline-flex; align-items:center; gap:6px}
+.map-label .open svg{width:15px; height:15px}
+
+/* footer */
+footer{background:var(--bg-dark); color:rgba(250,248,244,.7); padding:clamp(2.6rem,5vw,3.6rem) clamp(1.5rem,6vw,5rem)}
+footer .wrap{display:flex; flex-wrap:wrap; gap:22px; justify-content:space-between; align-items:center}
+footer .brand{color:var(--text-inverse)}
+footer .brand span{color:var(--gold-light)}
+footer .fnav{display:flex; gap:22px; flex-wrap:wrap}
+footer a{text-decoration:none; font-size:.82rem; transition:color .2s ease}
+footer a:hover{color:var(--gold-light)}
+footer .copy{width:100%; border-top:1px solid rgba(250,248,244,.12); padding-top:18px; margin-top:6px; font-size:.72rem; color:rgba(250,248,244,.45)}
+
+/* WA FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 6px 20px rgba(37,211,102,.42); transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px; height:30px; color:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.38); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1); opacity:.8} 100%{transform:scale(1.7); opacity:0}}
+
+/* reveal */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.cards .reveal:nth-child(2),.diff-grid .reveal:nth-child(2),.values .reveal:nth-child(2){transition-delay:.06s}
+.cards .reveal:nth-child(3),.diff-grid .reveal:nth-child(3),.values .reveal:nth-child(3){transition-delay:.12s}
+.cards .reveal:nth-child(4),.diff-grid .reveal:nth-child(4){transition-delay:.18s}
+.cards .reveal:nth-child(5){transition-delay:.24s}
+.cards .reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-img img{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-meta{transition:none; opacity:1; transform:none; animation:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Dra. Maria <span>Halane</span></a>
+  <a class="btn-primary nav-cta" href="https://wa.me/5584996194865?text=Ol%C3%A1%20Dra.%20Maria%20Halane!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">Agendar avaliação</a>
+</header>
+
+<!-- HERO -->
+<section id="topo" class="hero-split" style="padding:0">
+  <div class="hero-copy">
+    <span class="overline">Harmonização facial · Natal/RN</span>
+    <h1 class="hero-title">
+      <span class="word">Beleza</span>
+      <span class="word">que</span>
+      <span class="word">parece</span>
+      <span class="word"><em>natural.</em></span>
+    </h1>
+    <p class="hero-sub">Harmonização facial conduzida por médica, com técnica e equilíbrio. Resultados que valorizam os seus traços — sem exageros, com segurança.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5584996194865?text=Ol%C3%A1%20Dra.%20Maria%20Halane!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.039zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+    <div class="hero-meta">
+      <div><span class="k">5,0</span><span class="l">Google · ★★★★★</span></div>
+      <div><span class="k">Médica</span><span class="l">Especialista</span></div>
+      <div><span class="k">Petrópolis</span><span class="l">Natal/RN</span></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/maps-1.jpg" alt="Dra. Maria Halane, médica especialista em harmonização facial em Natal" width="1080" height="1350">
+    <div class="hero-badge">
+      <div class="stars">★★★★★</div>
+      <div><div class="bt">Avaliação Google</div><strong>5,0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="overline">A especialista</span>
+      <h2>Cada rosto tem o seu equilíbrio. O meu trabalho é revelá-lo.</h2>
+      <p>Sou a <strong>Dra. Maria Halane</strong>, médica dedicada à harmonização facial em Natal. Acredito numa estética que respeita a identidade de cada paciente: nada de excessos, nada de rostos iguais. O objetivo é que você continue sendo você — só que mais descansada, segura e harmônica.</p>
+      <p>O atendimento é individual, no consultório do <strong>Manhattan Business Office</strong>, em Petrópolis. Cada protocolo começa por uma avaliação cuidadosa do seu rosto, dos seus objetivos e do tempo de cada resultado, com a segurança de quem é médica.</p>
+      <p class="sig">— Dra. Maria Halane</p>
+    </div>
+    <div class="values">
+      <div class="value reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><h4>Procedimento médico</h4><p>Avaliação e aplicação conduzidas por médica, com critério clínico.</p></div>
+      </div>
+      <div class="value reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><h4>Resultado natural</h4><p>Equilíbrio e proporção primeiro — beleza que não denuncia o procedimento.</p></div>
+      </div>
+      <div class="value reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-7M14 17H4"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+        <div><h4>Protocolo sob medida</h4><p>Plano feito para o seu rosto e os seus objetivos, não pacotes prontos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section id="procedimentos" class="proc">
+  <div class="head reveal">
+    <span class="overline">Procedimentos</span>
+    <h2>Tratamentos de estética facial avançada</h2>
+    <p class="lead">Tecnologias e ativos para rejuvenescer, definir contornos e hidratar a pele — sempre com avaliação prévia e plano individual.</p>
+  </div>
+  <div class="cards">
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 3 5 17"/><path d="m14 3 7 7"/><path d="M5 17l-2 4 4-2"/><path d="M17 5l2 2"/></svg></div>
+      <span class="ovl">Expressão</span>
+      <h3>Toxina botulínica</h3>
+      <p>Suaviza linhas de expressão da testa, glabela e olhos, com um olhar mais leve e descansado.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 3 5 5 5 8a5 5 0 0 1-10 0c0-3 2-5 5-8z"/><path d="M9.5 13a2.5 2.5 0 0 0 5 0"/></svg></div>
+      <span class="ovl">Contorno</span>
+      <h3>Preenchimento labial e facial</h3>
+      <p>Ácido hialurônico para definir lábios, projetar contornos e restituir volumes com naturalidade.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+      <span class="ovl">Firmeza</span>
+      <h3>Bioestimuladores de colágeno</h3>
+      <p>Estimulam a produção natural de colágeno, melhorando firmeza e qualidade da pele ao longo do tempo.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s5 5.5 5 10a5 5 0 0 1-10 0C7 7.5 12 2 12 2z"/></svg></div>
+      <span class="ovl">Viço</span>
+      <h3>Skinbooster &amp; hidratação</h3>
+      <p>Hidratação profunda da pele, devolvendo viço, luminosidade e textura uniforme ao rosto.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a7 7 0 0 0-7 7c0 2 1 3.5 2 5l1 4h8l1-4c1-1.5 2-3 2-5a7 7 0 0 0-7-7z"/><path d="M9 21h6"/></svg></div>
+      <span class="ovl">Harmonização</span>
+      <h3>Harmonização facial completa</h3>
+      <p>Plano que combina técnicas para equilibrar as proporções do rosto como um todo.</p>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c4-1 6-4 7-9"/><path d="M19 5c-1 4-4 6-9 7"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="5.5" r="1.5"/></svg></div>
+      <span class="ovl">Sustentação</span>
+      <h3>Lifting com fios</h3>
+      <p>Estímulo e sustentação do contorno facial para um efeito de viço e firmeza sem cirurgia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS / PROVA SOCIAL -->
+<section class="diff">
+  <div class="wrap">
+    <span class="overline">Por que a Dra. Maria Halane</span>
+    <h2>Confiança que se vê no resultado e na reputação.</h2>
+    <div class="diff-grid">
+      <div class="diff-item reveal">
+        <div class="n">5,0 <span class="stars">★★★★★</span></div>
+        <h4>Nota máxima no Google</h4>
+        <p>Avaliação 5,0 de quem já passou pelo consultório.</p>
+      </div>
+      <div class="diff-item reveal">
+        <div class="n">Médica</div>
+        <h4>Aplicação por profissional médica</h4>
+        <p>Critério clínico e segurança em cada procedimento.</p>
+      </div>
+      <div class="diff-item reveal">
+        <div class="n">Premium</div>
+        <h4>Endereço Manhattan Business</h4>
+        <p>Consultório no centro empresarial de Petrópolis, Natal.</p>
+      </div>
+      <div class="diff-item reveal">
+        <div class="n">1:1</div>
+        <h4>Atendimento individual</h4>
+        <p>Avaliação e plano dedicados ao seu rosto e objetivos.</p>
+      </div>
+    </div>
+    <div class="quote reveal">
+      <div class="stars">★★★★★</div>
+      <p>Um rosto harmônico não muda quem você é. Ele revela a sua melhor versão.</p>
+      <div class="by">Filosofia do consultório</div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAMENTO -->
+<section class="cta">
+  <div class="inner reveal">
+    <span class="overline center">Agende sua avaliação</span>
+    <h2>Vamos conversar sobre o seu rosto?</h2>
+    <p>Na avaliação entendemos seus objetivos e montamos o protocolo ideal pra você. É simples: mande uma mensagem e escolhemos o melhor horário.</p>
+    <a class="btn-primary" href="https://wa.me/5584996194865?text=Ol%C3%A1%20Dra.%20Maria%20Halane!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.039zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Falar no WhatsApp
+    </a>
+    <p class="note">Resposta no horário comercial · (84) 99619-4865</p>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="loc">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Consultório em Petrópolis, Natal/RN</h2>
+      <div class="loc-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="lab">Endereço</div><div class="val">Manhattan Business Office<br>Av. Campos Sales, 901 — 10º andar, sala 1007<br>Petrópolis, Natal/RN · 59020-300</div></div>
+      </div>
+      <div class="loc-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><div class="lab">WhatsApp</div><a class="val" href="https://wa.me/5584996194865?text=Ol%C3%A1%20Dra.%20Maria%20Halane!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">(84) 99619-4865</a></div>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <a href="https://www.google.com/maps/place/Consult%C3%B3rio+Dra.+Maria+Halane+%7C+Harmoniza%C3%A7%C3%A3o+Facial+em+Natal/@-5.7939049,-35.201885,17z/" target="_blank" rel="noopener" aria-label="Abrir no Google Maps">
+        <div class="map-bg"></div>
+        <div class="map-grid-lines"></div>
+        <svg class="map-pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C7 0 3 4 3 9c0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9zm0 12.5A3.5 3.5 0 1 1 12 5.5a3.5 3.5 0 0 1 0 7z"/></svg>
+        <div class="map-label">
+          <span>Manhattan Business · Petrópolis, Natal</span>
+          <span class="open">Abrir no Maps
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#topo" class="brand">Dra. Maria <span>Halane</span></a>
+    <nav class="fnav">
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="https://www.google.com/maps/place/Consult%C3%B3rio+Dra.+Maria+Halane+%7C+Harmoniza%C3%A7%C3%A3o+Facial+em+Natal/@-5.7939049,-35.201885,17z/" target="_blank" rel="noopener">Localização</a>
+      <a href="https://wa.me/5584996194865?text=Ol%C3%A1%20Dra.%20Maria%20Halane!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <div class="copy">Consultório Dra. Maria Halane — Harmonização Facial · Petrópolis, Natal/RN · Atendimento mediante agendamento.</div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5584996194865?text=Ol%C3%A1%20Dra.%20Maria%20Halane!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20harmoniza%C3%A7%C3%A3o%20facial." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.039zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
