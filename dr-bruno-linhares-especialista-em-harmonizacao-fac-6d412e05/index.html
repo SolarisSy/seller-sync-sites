@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Bruno Linhares — Especialista em Harmonização Facial. CRO-RN 5417. Toxina Botulínica, Preenchimento Labial, Bioestimuladores e mais. Harmony Medical Center, Natal/RN. Nota 5,0 no Google.">
+  <title>Dr. Bruno Linhares | Harmonização Facial | Natal-RN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════
+       RESET + TOKENS
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      /* Superfícies */
+      --bg-base:    #0d0b0a;
+      --bg-surface: #14110f;
+      --bg-warm:    #1e1a15;
+      --bg-card:    #1a1712;
+
+      /* Texto */
+      --text-primary:   #f4f1ea;
+      --text-secondary: #c8bfb0;
+      --text-muted:     #8a7d6a;
+      --text-inverse:   #0d0b0a;
+
+      /* Dourado de marca */
+      --gold:        #c9a84c;
+      --gold-light:  #e0c068;
+      --gold-subtle: rgba(201,168,76,.12);
+      --gold-border: rgba(201,168,76,.25);
+
+      /* Tipografia fluida */
+      --text-display: clamp(3rem, 2rem + 5vw, 6rem);
+      --text-h2:      clamp(2rem, 1.4rem + 2.8vw, 3.2rem);
+      --text-h3:      clamp(1.35rem, 1rem + 1.4vw, 2rem);
+      --text-body:    clamp(0.92rem, 0.84rem + 0.3vw, 1.02rem);
+      --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+
+      --lh-display: 1.0;
+      --lh-heading: 1.1;
+      --lh-body:    1.72;
+      --ls-display: -0.025em;
+      --ls-heading: -0.015em;
+      --ls-overline: 0.16em;
+
+      /* Espaçamento */
+      --section-pad: clamp(5rem, 9vw, 10rem);
+      --content-max: 1200px;
+      --prose-max:   680px;
+      --gap-cards:   clamp(1rem, 2.5vw, 1.8rem);
+      --h-pad:       clamp(1.5rem, 6vw, 5rem);
+
+      /* Sombras */
+      --shadow-sm:
+        0 1px 2px rgba(0,0,0,.12),
+        0 2px 6px rgba(0,0,0,.10);
+      --shadow-md:
+        0 2px 4px rgba(0,0,0,.14),
+        0 8px 20px rgba(0,0,0,.16),
+        0 24px 48px rgba(0,0,0,.14);
+      --shadow-lg:
+        0 4px 8px rgba(0,0,0,.14),
+        0 16px 32px rgba(0,0,0,.18),
+        0 48px 96px rgba(0,0,0,.20);
+      --shadow-gold:
+        0 4px 16px rgba(201,168,76,.20),
+        0 12px 40px rgba(201,168,76,.12);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ═══════════════════════════════════════════
+       TIPOGRAFIA
+    ═══════════════════════════════════════════ */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-optical-sizing: auto;
+      text-wrap: balance;
+    }
+    h1 { font-size: var(--text-display); line-height: var(--lh-display); letter-spacing: var(--ls-display); font-weight: 400; }
+    h2 { font-size: var(--text-h2); line-height: var(--lh-heading); letter-spacing: var(--ls-heading); font-weight: 400; }
+    h3 { font-size: var(--text-h3); line-height: var(--lh-heading); font-weight: 400; }
+    p  { font-size: var(--text-body); line-height: var(--lh-body); color: var(--text-secondary); }
+
+    .overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: var(--ls-overline);
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .overline::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════ */
+    .container {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--h-pad);
+    }
+
+    /* ═══════════════════════════════════════════
+       GRAIN OVERLAY
+    ═══════════════════════════════════════════ */
+    .grain-layer::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════════
+       GLASS
+    ═══════════════════════════════════════════ */
+    .glass {
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow:
+        0 2px 6px rgba(0,0,0,.10),
+        0 10px 28px rgba(0,0,0,.14),
+        inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    /* ═══════════════════════════════════════════
+       BOTÕES
+    ═══════════════════════════════════════════ */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.9rem clamp(1.5rem, 3vw, 2.2rem);
+      min-height: 48px;
+      background: linear-gradient(135deg, var(--gold), #a07b2a);
+      color: var(--text-inverse);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      box-shadow: var(--shadow-gold);
+      transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.3s ease;
+      will-change: transform;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-gold), 0 0 0 1px var(--gold-border);
+    }
+    .btn-primary:active { transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem clamp(1.4rem, 2.5vw, 2rem);
+      min-height: 48px;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.25s ease,
+        border-color 0.25s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-outline:hover {
+      transform: translateY(-2px);
+      background: var(--gold-subtle);
+      border-color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════
+       HEADER STICKY
+    ═══════════════════════════════════════════ */
+    #hdr {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 20px var(--h-pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.3s ease;
+    }
+    #hdr.scrolled {
+      background: rgba(13,11,10,.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 var(--gold-border);
+      padding: 14px var(--h-pad);
+    }
+    .hdr-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1rem, 0.85rem + 0.5vw, 1.25rem);
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+    }
+    .hdr-logo span { color: var(--gold); }
+    .hdr-cta { display: flex; align-items: center; gap: 16px; }
+    .hdr-cta .btn-primary { padding: 0.65rem 1.4rem; font-size: 0.72rem; }
+
+    /* ═══════════════════════════════════════════
+       HERO CINEMATIC
+    ═══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('imagens/insta-5.jpg') center 20% / cover no-repeat;
+      animation: kb 22s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @keyframes kb {
+      from { transform: scale(1); }
+      to   { transform: scale(1.06); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        165deg,
+        rgba(13,11,10,.15) 0%,
+        rgba(13,11,10,.40) 40%,
+        rgba(13,11,10,.82) 70%,
+        rgba(13,11,10,.97) 100%
+      );
+    }
+    /* grain na hero */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 var(--h-pad) clamp(3.5rem, 7vw, 6rem);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      max-width: var(--content-max);
+      width: 100%;
+      margin: 0 auto;
+    }
+    .hero-text { flex: 1; min-width: 280px; max-width: 660px; }
+    .hero-tagline {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fade-in 0.6s ease 0.1s forwards;
+    }
+    /* word slide-up hero */
+    .hero-title {
+      max-width: 13ch;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line {
+      display: block;
+      overflow: hidden;
+      line-height: 1.05;
+    }
+    .hero-title .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(110%);
+      animation: word-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-title .word:nth-child(1) { animation-delay: 0.25s; }
+    .hero-title .word:nth-child(2) { animation-delay: 0.38s; }
+    .hero-title .word:nth-child(3) { animation-delay: 0.51s; }
+    .hero-title .word:nth-child(4) { animation-delay: 0.64s; }
+    .hero-title .word:nth-child(5) { animation-delay: 0.77s; }
+    @keyframes word-up { to { transform: translateY(0); opacity: 1; } }
+    @keyframes fade-in { to { opacity: 1; } }
+
+    .hero-subtitle {
+      font-size: clamp(0.92rem, 0.82rem + 0.3vw, 1.05rem);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 2.2rem;
+      max-width: 38ch;
+      opacity: 0;
+      animation: fade-in 0.7s ease 0.9s forwards;
+    }
+    .hero-ctas {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      opacity: 0;
+      animation: fade-in 0.7s ease 1.05s forwards;
+    }
+    .hero-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-self: flex-end;
+      padding-bottom: 4px;
+      opacity: 0;
+      animation: fade-in 0.7s ease 1.2s forwards;
+    }
+    .badge {
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .badge-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .badge-stars {
+      font-size: 0.9rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .badge-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .badge-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .badge-cro {
+      border-top: 1px solid var(--gold-border);
+      padding-top: 12px;
+    }
+    .badge-cro .badge-cro-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════
+       DIAGONAL CUT
+    ═══════════════════════════════════════════ */
+    .cut-bottom {
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+      margin-bottom: -4vw;
+      padding-bottom: calc(var(--section-pad) + 4vw);
+    }
+    .cut-top {
+      clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+      padding-top: calc(var(--section-pad) + 4vw);
+      margin-top: -1px;
+    }
+
+    /* ═══════════════════════════════════════════
+       WAVE DIVIDER
+    ═══════════════════════════════════════════ */
+    .wave { display: block; line-height: 0; }
+    .wave svg { width: 100%; height: clamp(40px, 5vw, 80px); }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO: SOBRE / AUTORIDADE
+    ═══════════════════════════════════════════ */
+    .section-sobre {
+      position: relative;
+      background: var(--bg-surface);
+      padding: var(--section-pad) var(--h-pad);
+    }
+    .sobre-grid {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .sobre-img-wrap {
+      position: relative;
+    }
+    .sobre-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      border: 1px solid var(--gold-border);
+      box-shadow: var(--shadow-md);
+    }
+    .sobre-evento {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: clamp(100px, 30%, 140px);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .sobre-evento img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+    .sobre-copy { max-width: var(--prose-max); }
+    .sobre-copy h2 { margin-bottom: 1.2rem; }
+    .sobre-copy p { margin-bottom: 1.2rem; }
+    .cro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .cro-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .sobre-stats {
+      display: flex;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .stat { display: flex; flex-direction: column; gap: 4px; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO: PROCEDIMENTOS
+    ═══════════════════════════════════════════ */
+    .section-proc {
+      position: relative;
+      background: var(--bg-base);
+      padding: var(--section-pad) var(--h-pad);
+    }
+    .proc-header {
+      max-width: var(--content-max);
+      margin: 0 auto 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .proc-header h2 { max-width: 18ch; }
+    .proc-subtitle {
+      max-width: 36ch;
+      text-align: right;
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .proc-grid {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+      gap: var(--gap-cards);
+    }
+    .proc-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 6px;
+      padding: clamp(1.5rem, 3vw, 2.2rem);
+      transition:
+        transform 0.35s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.35s ease,
+        border-color 0.25s ease;
+    }
+    .proc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md), 0 0 0 1px var(--gold-border);
+      border-color: var(--gold-border);
+    }
+    .proc-icon {
+      width: 44px; height: 44px;
+      margin-bottom: 1.4rem;
+      color: var(--gold);
+      opacity: 0.85;
+    }
+    .proc-card h3 {
+      font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.45rem);
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+    .proc-card p {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO: RESULTADOS
+    ═══════════════════════════════════════════ */
+    .section-results {
+      background: var(--bg-surface);
+      padding: var(--section-pad) var(--h-pad);
+      position: relative;
+    }
+    .results-header {
+      max-width: var(--content-max);
+      margin: 0 auto 3rem;
+    }
+    .results-gallery {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1rem, 2.5vw, 2rem);
+    }
+    .result-card {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      box-shadow: var(--shadow-md);
+    }
+    .result-card img {
+      width: 100%;
+      height: clamp(200px, 40vw, 450px);
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      display: block;
+    }
+    .result-card:hover img { transform: scale(1.03); }
+    .result-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 14px 18px;
+      background: linear-gradient(to top, rgba(13,11,10,.95) 0%, transparent 100%);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .results-note {
+      max-width: var(--content-max);
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+    }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO: ESPAÇO / ESTRUTURA
+    ═══════════════════════════════════════════ */
+    .section-espaco {
+      position: relative;
+      padding: var(--section-pad) var(--h-pad);
+      background: var(--bg-base);
+      overflow: hidden;
+    }
+    .espaco-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .espaco-copy h2 { margin-bottom: 1.2rem; }
+    .espaco-copy p { margin-bottom: 1.2rem; }
+    .espaco-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .espaco-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+    }
+    .espaco-detail-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .espaco-img-wrap {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      box-shadow: var(--shadow-lg);
+    }
+    .espaco-img-wrap img {
+      width: 100%;
+      height: clamp(300px, 50vw, 580px);
+      object-fit: cover;
+      display: block;
+    }
+    .espaco-tag {
+      position: absolute;
+      top: 20px; left: 20px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO: PROVA SOCIAL
+    ═══════════════════════════════════════════ */
+    .section-prova {
+      background: var(--bg-warm);
+      padding: var(--section-pad) var(--h-pad);
+      position: relative;
+    }
+    .prova-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .prova-rating-block { display: flex; flex-direction: column; gap: 1rem; }
+    .prova-score-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 3rem + 6vw, 9rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .prova-stars { font-size: 1.4rem; letter-spacing: 4px; color: var(--gold); }
+    .prova-stars-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .prova-depo {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .depo-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 6px;
+      padding: clamp(1.5rem, 3vw, 2.2rem);
+    }
+    .depo-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 0.9rem + 1.2vw, 1.8rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+    }
+    .depo-author {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .depo-author span { color: var(--gold); }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO: AGENDAMENTO + MAPA
+    ═══════════════════════════════════════════ */
+    .section-agendar {
+      background: var(--bg-base);
+      padding: var(--section-pad) var(--h-pad);
+      position: relative;
+    }
+    .agendar-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 5rem);
+      align-items: start;
+    }
+    .agendar-copy h2 { margin-bottom: 1.2rem; }
+    .agendar-copy p { margin-bottom: 2rem; }
+    .agendar-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .agendar-info-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+    .agendar-info-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .map-wrap {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      box-shadow: var(--shadow-md);
+      height: clamp(300px, 40vw, 460px);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(1) invert(0.88) contrast(0.9);
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer {
+      background: var(--bg-surface);
+      padding: clamp(3rem, 5vw, 5rem) var(--h-pad);
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-links {
+      display: flex;
+      gap: clamp(1rem, 3vw, 2.5rem);
+      align-items: center;
+    }
+    .footer-links a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: var(--content-max);
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.04);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .footer-cro {
+      font-size: 0.68rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    /* ═══════════════════════════════════════════
+       WA FAB
+    ═══════════════════════════════════════════ */
+    .wa-fab {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(214,36,159,.40);
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .wa-fab:hover { transform: scale(1.1); }
+    .wa-fab::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(214,36,159,.35);
+      animation: pulse 2.2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: .8; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+    .wa-fab svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 2; }
+
+    /* ═══════════════════════════════════════════
+       REVEAL ON SCROLL
+    ═══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal:nth-child(2) { transition-delay: .06s; }
+    .reveal:nth-child(3) { transition-delay: .12s; }
+    .reveal:nth-child(4) { transition-delay: .18s; }
+    .reveal:nth-child(5) { transition-delay: .24s; }
+    .reveal:nth-child(6) { transition-delay: .30s; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .sobre-grid { grid-template-columns: 1fr; }
+      .sobre-img { aspect-ratio: 4/3; }
+      .sobre-evento { bottom: -16px; right: -8px; width: 110px; }
+
+      .espaco-inner { grid-template-columns: 1fr; }
+      .espaco-img-wrap { order: -1; }
+
+      .prova-inner { grid-template-columns: 1fr; }
+      .prova-score-big { font-size: 5rem; }
+
+      .agendar-inner { grid-template-columns: 1fr; }
+      .map-wrap { height: 280px; }
+
+      .proc-subtitle { text-align: left; }
+    }
+
+    @media (max-width: 640px) {
+      .results-gallery { grid-template-columns: 1fr; }
+      .hero-badges { display: none; }
+      .hdr-cta .btn-outline { display: none; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .proc-header { flex-direction: column; }
+    }
+
+    /* ═══════════════════════════════════════════
+       REDUCED MOTION
+    ═══════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg { animation: none; }
+      .reveal, .word { transition: none; opacity: 1; transform: none; animation: none; }
+      .wa-fab::before { animation: none; }
+      .hero-tagline, .hero-subtitle, .hero-ctas, .hero-badges { animation: none; opacity: 1; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       HEADER STICKY
+  ════════════════════════════════════════ -->
+  <header id="hdr" role="banner">
+    <div class="hdr-logo">Dr. <span>Bruno Linhares</span></div>
+    <nav class="hdr-cta" aria-label="Ações principais">
+      <a href="https://www.instagram.com/drbrunolinhares/" target="_blank" rel="noopener" class="btn-outline" aria-label="Instagram do Dr. Bruno Linhares">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @drbrunolinhares
+      </a>
+      <a href="https://www.instagram.com/drbrunolinhares/" target="_blank" rel="noopener" class="btn-primary" aria-label="Agendar avaliação pelo Instagram @drbrunolinhares">
+        Agendar avaliação
+      </a>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════════
+       HERO CINEMATIC
+  ════════════════════════════════════════ -->
+  <main>
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-bg" role="img" aria-label="Dr. Bruno Linhares em pose de autoridade, corredor elegante"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-tagline">Harmonização Facial · Natal, RN</p>
+          <h1 class="hero-title" aria-label="Harmonização que realça. Não que muda.">
+            <span class="line">
+              <span class="word">Harmonização</span>
+            </span>
+            <span class="line">
+              <span class="word" style="animation-delay:.38s">que</span>
+              <span class="word" style="animation-delay:.51s">&nbsp;realça.</span>
+            </span>
+            <span class="line">
+              <span class="word" style="animation-delay:.64s">Não</span>
+              <span class="word" style="animation-delay:.77s">&nbsp;que&nbsp;muda.</span>
+            </span>
+          </h1>
+          <p class="hero-subtitle">Especialista em Harmonização Orofacial com foco em resultados naturais e precisos. Procedimentos realizados com técnica, critério e respeito à sua identidade.</p>
+          <div class="hero-ctas">
+            <a href="https://www.instagram.com/drbrunolinhares/" target="_blank" rel="noopener" class="btn-primary" aria-label="Agendar avaliação pelo Instagram @drbrunolinhares">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Agendar pelo Instagram
+            </a>
+            <a href="#resultados" class="btn-outline">Ver resultados</a>
+          </div>
+        </div>
+
+        <div class="hero-badges" aria-label="Credenciais">
+          <div class="glass badge badge-rating">
+            <div class="badge-stars" aria-hidden="true">★★★★★</div>
+            <div class="badge-score" aria-label="Nota 5,0">5,0</div>
+            <div class="badge-label">Google Maps</div>
+          </div>
+          <div class="glass badge badge-cro">
+            <div class="badge-cro-num">CRO-RN 5417</div>
+            <div class="badge-label">Registro profissional</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave -->
+    <div class="wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--bg-surface)"/>
+      </svg>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         SOBRE / AUTORIDADE
+    ════════════════════════════════════════ -->
+    <section class="section-sobre" id="sobre" aria-labelledby="h2-sobre">
+      <div class="sobre-grid">
+        <div class="sobre-img-wrap reveal">
+          <img
+            src="imagens/insta-4.jpg"
+            alt="Dr. Bruno Linhares com credencial de evento de harmonização facial — Natal, RN"
+            class="sobre-img"
+            loading="lazy"
+            width="600" height="800"
+          >
+          <div class="sobre-evento glass">
+            <img
+              src="imagens/insta-3.jpg"
+              alt="Dr. Bruno Linhares no evento BOTOX Authentic Expression"
+              loading="lazy"
+              width="140" height="90"
+              style="object-position: center 15%;"
+            >
+          </div>
+        </div>
+
+        <div class="sobre-copy reveal">
+          <div class="overline">Sobre o Especialista</div>
+          <div class="cro-badge">
+            <span class="cro-dot" aria-hidden="true"></span>
+            CRO-RN 5417 — Cirurgião-Dentista Especialista
+          </div>
+          <h2 id="h2-sobre">Técnica avançada a serviço da sua naturalidade</h2>
+          <p>O Dr. Bruno Linhares é especialista em Harmonização Orofacial (HOF) — área exclusiva de dentistas habilitados para intervenções estéticas na face com segurança clínica e domínio anatômico completo.</p>
+          <p>Com formação continuada em eventos de referência nacional como o <em>BOTOX Authentic Expression</em>, o Dr. Bruno mantém sua prática atualizada com as técnicas mais precisas e menos invasivas disponíveis hoje. Seu trabalho é reconhecido por resultados que preservam — e valorizam — a identidade de cada paciente.</p>
+          <p>Atende na Sala 1208 do Harmony Medical Center, em Petrópolis, Natal/RN — uma das localidades mais bem posicionadas da capital potiguar.</p>
+
+          <div class="sobre-stats">
+            <div class="stat">
+              <span class="stat-num">5,0</span>
+              <span class="stat-lbl">Nota Google</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">HOF</span>
+              <span class="stat-lbl">Especialidade</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">RN</span>
+              <span class="stat-lbl">CRO Ativo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave -->
+    <div class="wave" aria-hidden="true" style="background: var(--bg-surface); line-height:0;">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="var(--bg-base)"/>
+      </svg>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         PROCEDIMENTOS
+    ════════════════════════════════════════ -->
+    <section class="section-proc" id="procedimentos" aria-labelledby="h2-proc">
+      <div class="proc-header reveal">
+        <div>
+          <div class="overline">O que realizamos</div>
+          <h2 id="h2-proc">Procedimentos</h2>
+        </div>
+        <p class="proc-subtitle">Cada procedimento é planejado individualmente. Nenhum rosto é igual — e o resultado não deve ser.</p>
+      </div>
+
+      <div class="proc-grid">
+        <!-- Card 1 -->
+        <article class="proc-card reveal">
+          <svg class="proc-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <circle cx="22" cy="22" r="18"/>
+            <path d="M14 22c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-linecap="round"/>
+            <circle cx="22" cy="22" r="4"/>
+          </svg>
+          <div class="overline">Procedimento</div>
+          <h3>Harmonização Facial</h3>
+          <p>Planejamento completo do rosto com combinação estratégica de procedimentos para equilíbrio e proporção. Protocolo individualizado para cada perfil facial.</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="proc-card reveal">
+          <svg class="proc-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path d="M10 22h24M22 10v24" stroke-linecap="round"/>
+            <path d="M15 15l14 14M29 15L15 29" stroke-linecap="round"/>
+          </svg>
+          <div class="overline">Procedimento</div>
+          <h3>Toxina Botulínica</h3>
+          <p>Aplicação precisa para suavização de linhas de expressão com resultado natural. Técnica que preserva a expressividade e o movimento facial autêntico.</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="proc-card reveal">
+          <svg class="proc-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path d="M22 34c-6 0-10-5-10-12s4-12 10-12 10 5 10 12-4 12-10 12z"/>
+            <path d="M22 18v8" stroke-linecap="round"/>
+          </svg>
+          <div class="overline">Procedimento</div>
+          <h3>Preenchimento Labial</h3>
+          <p>Definição e volumização dos lábios com ácido hialurônico. Resultados que valorizam o contorno natural sem exageros — elegância como guia.</p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="proc-card reveal">
+          <svg class="proc-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path d="M12 32c2-8 6-14 10-14s8 6 10 14" stroke-linecap="round"/>
+            <circle cx="22" cy="14" r="4"/>
+            <path d="M16 28h12" stroke-linecap="round"/>
+          </svg>
+          <div class="overline">Procedimento</div>
+          <h3>Bioestimuladores de Colágeno</h3>
+          <p>Estimulação da produção natural de colágeno para firmeza e rejuvenescimento progressivo. Resultados que melhoram ao longo de semanas.</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="proc-card reveal">
+          <svg class="proc-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path d="M22 10c0 0-6 4-6 12s6 12 6 12 6-4 6-12-6-12-6-12z"/>
+            <path d="M18 22h8" stroke-linecap="round"/>
+          </svg>
+          <div class="overline">Procedimento</div>
+          <h3>Rinomodelação</h3>
+          <p>Correção estética do nariz sem cirurgia — com preenchimento estratégico para melhorar proporções e harmonia do perfil. Resultado imediato.</p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="proc-card reveal">
+          <svg class="proc-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path d="M14 26c2-4 5-6 8-6s6 2 8 6" stroke-linecap="round"/>
+            <path d="M18 20c0-2 1.8-4 4-4s4 2 4 4" stroke-linecap="round"/>
+            <path d="M12 30h20" stroke-linecap="round"/>
+          </svg>
+          <div class="overline">Procedimento</div>
+          <h3>Lip Lifting e Contorno Facial</h3>
+          <p>Definição do contorno lábio-nasal e regiões da face para um efeito de rejuvenescimento e elevação sem procedimentos invasivos.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         RESULTADOS / ANTES E DEPOIS
+    ════════════════════════════════════════ -->
+    <section class="section-results" id="resultados" aria-labelledby="h2-results">
+      <div class="results-header reveal">
+        <div class="overline">Resultados Reais</div>
+        <h2 id="h2-results">Antes e Depois</h2>
+        <p style="max-width: 44ch; margin-top: 0.8rem;">Cada resultado é único. Cada procedimento, planejado. As imagens abaixo são de pacientes reais, com pleno consentimento.</p>
+      </div>
+
+      <div class="results-gallery">
+        <figure class="result-card reveal">
+          <img
+            src="imagens/insta-8.jpg"
+            alt="Resultado de harmonização facial — comparação antes e depois, paciente real"
+            loading="lazy"
+            width="800" height="800"
+          >
+          <figcaption class="result-caption">Resultado real — paciente</figcaption>
+        </figure>
+
+        <figure class="result-card reveal">
+          <img
+            src="imagens/insta-6.jpg"
+            alt="Resultado de procedimento estético — antes e depois, paciente real com Dr. Bruno Linhares"
+            loading="lazy"
+            width="800" height="800"
+          >
+          <figcaption class="result-caption">Resultado real — paciente</figcaption>
+        </figure>
+      </div>
+
+      <p class="results-note reveal">Resultados reais de pacientes. Imagens publicadas com autorização. Resultados individuais podem variar.</p>
+    </section>
+
+    <!-- wave -->
+    <div class="wave" aria-hidden="true" style="background: var(--bg-surface); line-height:0;">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" fill="var(--bg-base)"/>
+      </svg>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         O ESPAÇO / ESTRUTURA
+    ════════════════════════════════════════ -->
+    <section class="section-espaco" id="espaco" aria-labelledby="h2-espaco">
+      <div class="espaco-inner">
+        <div class="espaco-copy reveal">
+          <div class="overline">Estrutura</div>
+          <h2 id="h2-espaco">Um ambiente à altura do seu cuidado</h2>
+          <p>O consultório do Dr. Bruno Linhares está localizado na Sala 1208 do Harmony Medical Center — um dos complexos médicos mais referenciados de Petrópolis, Natal. Ambiente equipado com tecnologia de ponta, privacidade total e vista privilegiada da cidade.</p>
+          <p>Um espaço projetado para que você se sinta seguro e acolhido desde o momento em que chega.</p>
+
+          <div class="espaco-detail">
+            <div class="espaco-detail-item">
+              <span class="espaco-detail-dot" aria-hidden="true"></span>
+              <span>Harmony Medical Center — Sala 1208, 12º andar</span>
+            </div>
+            <div class="espaco-detail-item">
+              <span class="espaco-detail-dot" aria-hidden="true"></span>
+              <span>Rua Coronel Joaquim Manoel, 615 — Petrópolis, Natal/RN</span>
+            </div>
+            <div class="espaco-detail-item">
+              <span class="espaco-detail-dot" aria-hidden="true"></span>
+              <span>Equipamentos clínicos de referência</span>
+            </div>
+            <div class="espaco-detail-item">
+              <span class="espaco-detail-dot" aria-hidden="true"></span>
+              <span>Vista panorâmica de Natal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="espaco-img-wrap reveal">
+          <img
+            src="imagens/maps-1.jpg"
+            alt="Sala de procedimentos do Dr. Bruno Linhares — Harmony Medical Center, Natal/RN"
+            decoding="sync"
+            fetchpriority="high"
+            width="900" height="700"
+          >
+          <div class="espaco-tag glass">Harmony Medical Center</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PROVA SOCIAL
+    ════════════════════════════════════════ -->
+    <section class="section-prova" id="depoimentos" aria-labelledby="h2-prova">
+      <div class="prova-inner">
+        <div class="prova-rating-block reveal">
+          <div class="overline">Reputação</div>
+          <p class="prova-score-big" aria-label="Nota 5,0">5,0</p>
+          <p class="prova-stars" aria-label="cinco estrelas">★★★★★</p>
+          <p class="prova-stars-label">Nota no Google Maps</p>
+        </div>
+
+        <div class="prova-depo">
+          <div class="overline reveal">O que pacientes dizem</div>
+          <blockquote class="depo-card reveal">
+            <p class="depo-quote">"O resultado ficou muito natural, exatamente o que eu queria. Fiquei com medo de ficar diferente, mas o Dr. Bruno entendeu perfeitamente o que eu pedi. Recomendo muito!"</p>
+            <footer class="depo-author">Paciente real &nbsp;·&nbsp; <span>via Instagram</span></footer>
+          </blockquote>
+
+          <div class="depo-card reveal" style="border-color: var(--gold-border);">
+            <p style="font-size: var(--text-sm); color: var(--text-muted); line-height: 1.65; margin-bottom: 1rem;">Antes de escolher um especialista em harmonização facial, pesquise sua formação, credencial e resultados reais. O CRO-RN 5417 garante que o Dr. Bruno Linhares está legalmente habilitado para todos os procedimentos realizados.</p>
+            <div class="cro-badge" style="margin-bottom: 0; font-size: 0.65rem;">
+              <span class="cro-dot" aria-hidden="true"></span>
+              Dentista Especialista — CRO-RN 5417
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave -->
+    <div class="wave" aria-hidden="true" style="background: var(--bg-warm); line-height:0;">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="var(--bg-base)"/>
+      </svg>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         AGENDAMENTO + MAPA
+    ════════════════════════════════════════ -->
+    <section class="section-agendar" id="agendar" aria-labelledby="h2-agendar">
+      <div class="agendar-inner">
+        <div class="agendar-copy reveal">
+          <div class="overline">Agendamento</div>
+          <h2 id="h2-agendar">Agende sua avaliação</h2>
+          <p>O primeiro passo é uma consulta de avaliação. Nela o Dr. Bruno analisa seu rosto, entende seus objetivos e propõe um plano personalizado — sem compromisso.</p>
+          <a
+            href="https://www.instagram.com/drbrunolinhares/"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary"
+            aria-label="Falar com Dr. Bruno pelo Instagram @drbrunolinhares"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Falar pelo Instagram
+          </a>
+
+          <div class="agendar-info">
+            <div class="agendar-info-item">
+              <svg class="agendar-info-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Harmony Medical Center · Rua Coronel Joaquim Manoel, 615, Sala 1208 · Petrópolis, Natal-RN</span>
+            </div>
+            <div class="agendar-info-item">
+              <svg class="agendar-info-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>(84) 2020-6815</span>
+            </div>
+            <div class="agendar-info-item">
+              <svg class="agendar-info-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>@drbrunolinhares no Instagram</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrap reveal" aria-label="Mapa do Harmony Medical Center">
+          <iframe
+            title="Localização do consultório do Dr. Bruno Linhares"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.5!2d-35.1963846!3d-5.7824604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b3015727e73441%3A0xb2c909886d412e05!2sDr.%20Bruno%20Linhares%20-%20Especialista%20em%20Harmoniza%C3%A7%C3%A3o%20facial%20%7C%20CRO-RN%205417!5e0!3m2!1spt-BR!2sbr!4v1719196800000!5m2!1spt-BR!2sbr"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">Dr. <span>Bruno Linhares</span></div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="#sobre">Sobre</a>
+        <a href="#procedimentos">Procedimentos</a>
+        <a href="#resultados">Resultados</a>
+        <a href="https://www.instagram.com/drbrunolinhares/" target="_blank" rel="noopener" aria-label="Instagram @drbrunolinhares">Instagram</a>
+        <a href="https://www.instagram.com/drbrunolinhares/" target="_blank" rel="noopener" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;" aria-label="Agendar pelo Instagram @drbrunolinhares">Agendar</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Harmony Medical Center · Rua Coronel Joaquim Manoel, 615, Sala 1208 · Petrópolis, Natal-RN · (84) 2020-6815</p>
+      <span class="footer-cro">CRO-RN 5417</span>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════
+       WA FAB
+  ════════════════════════════════════════ -->
+  <a
+    href="https://www.instagram.com/drbrunolinhares/"
+    class="wa-fab"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar com Dr. Bruno pelo Instagram @drbrunolinhares"
+    title="Agendar pelo Instagram"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+
+  <!-- ════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════ -->
+  <script>
+    // Header sticky
+    const hdr = document.getElementById('hdr');
+    window.addEventListener('scroll', () => {
+      hdr.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
