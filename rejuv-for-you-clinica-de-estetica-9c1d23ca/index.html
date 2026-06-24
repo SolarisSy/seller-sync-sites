@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejuv For You — Clínica de Estética em Natal, RN</title>
+  <meta name="description" content="Clínica de estética facial e corporal premium em Natal/RN. Tratamentos faciais, rejuvenescimento, massagem e muito mais. Agende pelo WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 400;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Design Tokens ── */
+    :root {
+      /* Superfície */
+      --bg-base:     #faf6f1;
+      --bg-surface:  #ffffff;
+      --bg-inset:    #f3ece5;
+      --bg-blush:    #f0e0da;
+      --bg-dark:     #2a1f1c;
+
+      /* Texto */
+      --text-primary:   #3a2e2b;
+      --text-secondary: #6b5a55;
+      --text-muted:     #9e8880;
+      --text-inverse:   #faf6f1;
+
+      /* Marca — Blush/Rosé */
+      --accent:         #d9a8a0;
+      --accent-dark:    #c98f86;
+      --accent-deep:    #b37870;
+      --accent-subtle:  rgba(217,168,160,.12);
+      --accent-border:  rgba(217,168,160,.28);
+
+      /* Dourado */
+      --gold:           #c9a44c;
+      --gold-light:     #ddbf72;
+      --gold-subtle:    rgba(201,164,76,.15);
+
+      /* Tipografia fluida */
+      --text-display: clamp(2.6rem, 2rem + 3.5vw, 5rem);
+      --text-h2:      clamp(1.8rem, 1.3rem + 2.2vw, 2.9rem);
+      --text-h3:      clamp(1.2rem, 0.95rem + 1vw, 1.75rem);
+      --text-body:    clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
+      --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+
+      --lh-display: 1.04;
+      --lh-heading: 1.14;
+      --lh-body:    1.75;
+      --ls-display: -0.02em;
+      --ls-overline: 0.16em;
+
+      /* Espaçamento */
+      --section-pad: clamp(5rem, 9vw, 10rem);
+      --content-max: 1200px;
+      --prose-max:   680px;
+      --gap-cards:   clamp(1rem, 2vw, 1.75rem);
+
+      /* Sombras */
+      --shadow-sm:
+        0 1px 2px rgba(58,46,43,.04),
+        0 2px 6px rgba(58,46,43,.04);
+      --shadow-md:
+        0 2px 4px rgba(58,46,43,.04),
+        0 8px 18px rgba(58,46,43,.07),
+        0 20px 40px rgba(58,46,43,.04);
+      --shadow-lg:
+        0 4px 8px rgba(58,46,43,.04),
+        0 16px 32px rgba(58,46,43,.07),
+        0 40px 80px rgba(58,46,43,.08);
+      --shadow-accent:
+        0 4px 14px rgba(217,168,160,.35),
+        0 10px 30px rgba(217,168,160,.18);
+      --shadow-gold:
+        0 4px 14px rgba(201,164,76,.30),
+        0 8px 24px rgba(201,164,76,.15);
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-optical-sizing: auto;
+      text-wrap: balance;
+    }
+    h1 { font-size: var(--text-display); line-height: var(--lh-display); letter-spacing: var(--ls-display); }
+    h2 { font-size: var(--text-h2); line-height: var(--lh-heading); letter-spacing: -0.01em; }
+    h3 { font-size: var(--text-h3); line-height: var(--lh-heading); }
+    p  { line-height: var(--lh-body); color: var(--text-secondary); }
+
+    .overline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      letter-spacing: var(--ls-overline);
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .overline::before { content: ''; width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.9rem clamp(1.5rem,3vw,2.2rem);
+      min-height: 48px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: var(--shadow-accent);
+      transition:
+        transform  0.3s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.3s ease;
+      will-change: transform;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-primary:hover  { transform: translateY(-3px); box-shadow: var(--shadow-accent), 0 16px 40px rgba(217,168,160,.30); }
+    .btn-primary:active { transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem clamp(1.4rem,2.8vw,2rem);
+      min-height: 48px;
+      background: transparent;
+      color: var(--text-inverse);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,.45);
+      transition:
+        transform  0.3s cubic-bezier(0.22,1,0.36,1),
+        background 0.3s ease,
+        border-color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .btn-outline:hover  { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.7); transform: translateY(-2px); }
+
+    /* ── WA FAB ── */
+    .wa-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37,211,102,.4);
+      transition: transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .wa-fab:hover { transform: scale(1.1); }
+    .wa-fab::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(37,211,102,.38);
+      animation: pulse 2.4s ease-out infinite;
+    }
+    .wa-fab svg { width: 28px; height: 28px; fill: #fff; position: relative; z-index: 1; }
+
+    /* ── Header ── */
+    #hdr {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px clamp(1.5rem,5vw,4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.38s ease, box-shadow 0.38s ease, padding 0.3s ease;
+    }
+    #hdr.scrolled {
+      background: rgba(250,246,241,.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(201,164,76,.18), var(--shadow-sm);
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem,1.6vw,1.3rem);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .logo span { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-family: 'Nunito Sans',sans-serif; font-weight: 600; margin-top: 1px; }
+    .hdr-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.65rem 1.4rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: var(--shadow-accent);
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .hdr-cta:hover { transform: translateY(-2px); }
+    .hdr-cta svg { width: 15px; height: 15px; fill: #fff; }
+
+    /* ── Hero — Split Assimétrico 40/60 ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      min-height: 100dvh;
+      padding-top: 0;
+      overflow: hidden;
+    }
+
+    /* Lado esquerdo — copy sobre fundo blush */
+    .hero-copy {
+      background: var(--bg-blush);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(5rem,8vw,8rem) clamp(2rem,5vw,4.5rem) clamp(4rem,6vw,6rem);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Arco decorativo SVG no canto */
+    .hero-copy::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(201,164,76,.25);
+      pointer-events: none;
+    }
+    .hero-copy::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,164,76,.15);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,164,76,.14);
+      border: 1px solid rgba(201,164,76,.3);
+      border-radius: 50px;
+      padding: 0.45rem 1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      width: fit-content;
+      margin-bottom: 28px;
+    }
+    .hero-badge svg { width: 13px; height: 13px; fill: var(--gold); }
+
+    .hero-title {
+      max-width: 13ch;
+      margin-bottom: 24px;
+      overflow: visible;
+    }
+    .hero-title .word {
+      display: inline-block;
+      transform: translateY(110%);
+      opacity: 0;
+      animation: word-up 0.85s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .hero-title .word:nth-child(1) { animation-delay: 0.15s; }
+    .hero-title .word:nth-child(2) { animation-delay: 0.27s; }
+    .hero-title .word:nth-child(3) { animation-delay: 0.39s; }
+    .hero-title .word:nth-child(4) { animation-delay: 0.51s; }
+    .hero-title .word:nth-child(5) { animation-delay: 0.63s; }
+    .hero-title .word-space { display: inline-block; width: 0.35em; }
+
+    .hero-sub {
+      font-size: clamp(0.92rem, 0.82rem + 0.4vw, 1.05rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 34ch;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fade-in 0.7s ease 0.9s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      opacity: 0;
+      animation: fade-in 0.7s ease 1.05s forwards;
+    }
+
+    /* Rating badge */
+    .hero-rating {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fade-in 0.7s ease 1.2s forwards;
+    }
+    .stars {
+      display: flex;
+      gap: 3px;
+    }
+    .stars svg { width: 14px; height: 14px; fill: var(--gold); }
+    .rating-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    .rating-text strong { color: var(--text-primary); font-weight: 700; }
+
+    /* Lado direito — imagem */
+    .hero-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      animation: kb 26s ease-in-out infinite alternate;
+    }
+    /* Overlay sutil para profundidade */
+    .hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(240,224,218,.18) 0%,
+        transparent 40%
+      );
+      pointer-events: none;
+    }
+
+    /* ── Arco decorativo SVG (divisor de seções) ── */
+    .arc-divider {
+      display: block;
+      line-height: 0;
+      overflow: hidden;
+      margin-bottom: -1px;
+    }
+    .arc-divider svg { width: 100%; height: clamp(40px,6vw,90px); display: block; }
+
+    /* ── Wave divider ── */
+    .wave-divider {
+      display: block;
+      line-height: 0;
+      margin-bottom: -1px;
+    }
+    .wave-divider svg { width: 100%; height: clamp(36px,5vw,72px); display: block; }
+
+    /* ── Sobre Section ── */
+    .sobre {
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      background: var(--bg-base);
+      position: relative;
+    }
+    .sobre-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem,6vw,6rem);
+      align-items: center;
+    }
+    .sobre-text {}
+    .sobre-text h2 { max-width: 14ch; margin-bottom: 20px; color: var(--text-primary); }
+    .sobre-text p { max-width: var(--prose-max); margin-bottom: 20px; }
+    .sobre-text p:last-of-type { margin-bottom: 0; }
+
+    .sobre-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Card visual com a foto (lado direito do sobre) */
+    .sobre-photo-frame {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      aspect-ratio: 4/3;
+    }
+    .sobre-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Crop distinto do hero: enquadramento à esquerda/topo + zoom para
+         destacar outro detalhe da recepção e não repetir o mesmo frame */
+      object-position: 22% 30%;
+      transform: scale(1.28);
+      transform-origin: 22% 30%;
+      display: block;
+      filter: brightness(1.02) saturate(1.12) contrast(1.04);
+    }
+    /* Selo flutuante */
+    .sobre-seal {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--bg-surface);
+      border-radius: 16px;
+      padding: 18px 22px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--accent-border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .seal-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .seal-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .seal-text { display: flex; flex-direction: column; gap: 2px; }
+    .seal-text strong { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); font-family: 'Playfair Display',serif; }
+    .seal-text span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+
+    /* Arco decorativo SVG no sobre */
+    .arc-deco {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      opacity: .6;
+      pointer-events: none;
+    }
+
+    /* ── Serviços ── */
+    .servicos {
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      background: var(--bg-inset);
+      position: relative;
+    }
+    .servicos-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .servicos-header {
+      text-align: center;
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .servicos-header .overline { justify-content: center; }
+    .servicos-header .overline::before { display: none; }
+    .servicos-header .overline::after { content: ''; width: 28px; height: 1px; background: currentColor; }
+    .servicos-header h2 { max-width: 18ch; margin: 0 auto 16px; }
+    .servicos-header p { max-width: 52ch; margin: 0 auto; }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap-cards);
+    }
+
+    .serv-card {
+      background: var(--bg-surface);
+      border-radius: 20px;
+      padding: clamp(1.75rem,3vw,2.5rem) clamp(1.5rem,2.5vw,2.2rem);
+      border: 1px solid rgba(217,168,160,.16);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform  0.38s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .serv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 0 0 0 80px;
+      background: var(--accent-subtle);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+    .serv-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md), 0 0 0 1px var(--accent-border);
+      border-color: var(--accent-border);
+    }
+    .serv-card:hover::before { opacity: 1; }
+
+    .serv-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--accent-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .serv-icon svg { width: 26px; height: 26px; stroke: var(--accent-dark); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+
+    .serv-card h3 {
+      font-size: clamp(1.05rem,1vw+0.7rem,1.3rem);
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .serv-card p { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.65; }
+
+    /* ── Diferenciais ── */
+    .diferenciais {
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Grain overlay */
+    .diferenciais::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Arco grande decorativo */
+    .diferenciais::after {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,164,76,.1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .diferenciais-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .diferenciais-header {
+      text-align: center;
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .diferenciais-header .overline { justify-content: center; color: var(--gold); }
+    .diferenciais-header .overline::before { display: none; }
+    .diferenciais-header .overline::after { content: ''; width: 28px; height: 1px; background: currentColor; }
+    .diferenciais-header h2 { color: var(--text-inverse); max-width: 20ch; margin: 0 auto; }
+
+    .nums-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap-cards);
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .num-card {
+      text-align: center;
+      padding: clamp(2rem,3vw,3rem) clamp(1.5rem,2.5vw,2.5rem);
+      border: 1px solid rgba(201,164,76,.18);
+      border-radius: 20px;
+      background: rgba(201,164,76,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .num-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .num-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem,4vw,4.5rem);
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .num-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(250,246,241,.55);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+    }
+
+    .selos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--gap-cards);
+    }
+    .selo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 22px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(6px);
+    }
+    .selo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(201,164,76,.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .selo-icon svg { width: 20px; height: 20px; stroke: var(--gold-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .selo p { font-size: 0.82rem; color: rgba(250,246,241,.75); line-height: 1.4; font-weight: 500; }
+
+    /* ── Prova Social ── */
+    .prova {
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      background: var(--bg-blush);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Arco background */
+    .prova::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,164,76,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .prova-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .prova-header {
+      text-align: center;
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .prova-header .overline { justify-content: center; }
+    .prova-header .overline::before { display: none; }
+    .prova-header .overline::after { content: ''; width: 28px; height: 1px; background: currentColor; }
+    .prova-header h2 { max-width: 16ch; margin: 0 auto 16px; }
+
+    .prova-nota {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-surface);
+      border-radius: 24px;
+      padding: clamp(2.5rem,5vw,4rem) clamp(2rem,4vw,4rem);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(201,164,76,.18);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    .prova-nota::before {
+      content: '"';
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem;
+      color: var(--accent);
+      line-height: 1;
+      opacity: .25;
+      pointer-events: none;
+    }
+    .nota-score {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem,6vw,6.5rem);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .nota-stars { display: flex; gap: 6px; }
+    .nota-stars svg { width: 22px; height: 22px; fill: var(--gold); }
+    .nota-desc {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 36ch;
+    }
+    .nota-source {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .prova-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap-cards);
+    }
+    .depo-card {
+      background: var(--bg-surface);
+      border-radius: 18px;
+      padding: 28px 26px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(217,168,160,.2);
+      position: relative;
+    }
+    .depo-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .depo-stars svg { width: 13px; height: 13px; fill: var(--gold); }
+    .depo-text { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .depo-autor { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+
+    /* Motivo cards (prova social — sem depoimentos fabricados) */
+    .motivo-card {
+      background: var(--bg-surface);
+      border-radius: 18px;
+      padding: clamp(1.75rem,3vw,2.4rem) clamp(1.5rem,2.5vw,2.1rem);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(217,168,160,.2);
+      position: relative;
+      transition:
+        transform  0.38s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.38s ease,
+        border-color 0.25s ease;
+    }
+    .motivo-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md), 0 0 0 1px var(--accent-border);
+      border-color: var(--accent-border);
+    }
+    .motivo-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--gold-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .motivo-icon svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .motivo-card h3 {
+      font-size: clamp(1.05rem,1vw+0.7rem,1.25rem);
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .motivo-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* ── Agendamento / CTA ── */
+    .agendamento {
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      background: linear-gradient(160deg, var(--accent-dark) 0%, #a0635c 100%);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      margin: -4vw 0;
+      padding-top: calc(var(--section-pad) + 4vw);
+      padding-bottom: calc(var(--section-pad) + 4vw);
+    }
+    /* Grain overlay */
+    .agendamento::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+    /* Arco decorativo */
+    .agendamento::after {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,.12);
+      pointer-events: none;
+    }
+    .agendamento-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .agendamento-inner .overline { justify-content: center; color: rgba(255,255,255,.7); }
+    .agendamento-inner .overline::before { display: none; }
+    .agendamento-inner .overline::after { content: ''; width: 28px; height: 1px; background: currentColor; }
+    .agendamento-inner h2 { color: #fff; max-width: 20ch; margin: 0 auto 18px; }
+    .agendamento-inner p { color: rgba(255,255,255,.78); max-width: 50ch; margin: 0 auto 36px; }
+
+    .agenda-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+
+    /* ── Localização ── */
+    .localizacao {
+      padding: var(--section-pad) clamp(1.5rem,6vw,5rem);
+      background: var(--bg-base);
+      margin-top: 4vw;
+    }
+    .localizacao-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem,5vw,5rem);
+      align-items: start;
+    }
+    .loc-text h2 { max-width: 14ch; margin-bottom: 20px; }
+    .loc-text p { margin-bottom: 20px; }
+    .loc-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(217,168,160,.18);
+    }
+    .loc-detail:last-child { border-bottom: none; }
+    .loc-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--accent-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .loc-icon svg { width: 18px; height: 18px; stroke: var(--accent-dark); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .loc-info strong { display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .loc-info span { font-size: 0.9rem; color: var(--text-secondary); }
+
+    .loc-map {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(217,168,160,.18);
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .loc-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .loc-map-btn {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg-dark);
+      padding: clamp(3rem,5vw,5rem) clamp(1.5rem,6vw,5rem) clamp(2rem,3vw,3rem);
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,164,76,.4), transparent);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: clamp(2rem,4vw,4rem);
+    }
+    .footer-brand {}
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--text-inverse);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .footer-logo span { display: block; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'Nunito Sans',sans-serif; font-weight: 600; margin-top: 3px; }
+    .footer-tagline { font-size: 0.88rem; color: rgba(250,246,241,.5); line-height: 1.65; max-width: 28ch; }
+
+    .footer-col h4 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      font-size: 0.88rem;
+      color: rgba(250,246,241,.55);
+      text-decoration: none;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--text-inverse); }
+
+    .footer-bottom {
+      max-width: var(--content-max);
+      margin: clamp(2.5rem,4vw,4rem) auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.76rem; color: rgba(250,246,241,.3); }
+
+    /* ── Animações ── */
+    @keyframes word-up {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fade-in {
+      to { opacity: 1; }
+    }
+    @keyframes kb {
+      from { transform: scale(1); }
+      to   { transform: scale(1.07); }
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: .8; }
+      100% { transform: scale(1.75); opacity: 0; }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity   0.75s cubic-bezier(0.22,1,0.36,1),
+        transform 0.75s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal:nth-child(2) { transition-delay: .06s; }
+    .reveal:nth-child(3) { transition-delay: .12s; }
+    .reveal:nth-child(4) { transition-delay: .18s; }
+    .reveal:nth-child(5) { transition-delay: .24s; }
+    .reveal:nth-child(6) { transition-delay: .30s; }
+
+    /* ── Reduced Motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-img img            { animation: none; }
+      .reveal, .word           { transition: none; opacity: 1; transform: none; animation: none; }
+      .wa-fab::before          { animation: none; }
+      .hero-badge, .hero-sub,
+      .hero-actions, .hero-rating { opacity: 1; animation: none; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-img { height: 58vw; order: -1; }
+      .hero-copy { padding: 6rem 2rem 3.5rem; }
+      .hero-title { max-width: none; }
+      .sobre-inner { grid-template-columns: 1fr; }
+      .sobre-visual { order: -1; }
+      .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+      .nums-grid { grid-template-columns: repeat(2, 1fr); }
+      .selos-grid { grid-template-columns: repeat(2, 1fr); }
+      .prova-cards { grid-template-columns: 1fr; }
+      .localizacao-inner { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .servicos-grid { grid-template-columns: 1fr; }
+      .nums-grid { grid-template-columns: 1fr; }
+      .selos-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .agendamento { clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%); }
+      .sobre-seal { left: 10px; bottom: -16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ── WA FAB ── -->
+<a href="https://wa.me/5584992007307?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rejuv%20For%20You%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+   class="wa-fab"
+   target="_blank"
+   rel="noopener"
+   aria-label="Abrir WhatsApp da Rejuv For You">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+  </svg>
+</a>
+
+<!-- ── Header ── -->
+<header id="hdr">
+  <a href="#" class="logo">
+    Rejuv For You
+    <span>Clínica de Estética</span>
+  </a>
+  <a href="https://wa.me/5584992007307?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rejuv%20For%20You%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+     class="hdr-cta"
+     target="_blank"
+     rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+    Agendar
+  </a>
+</header>
+
+<!-- ── HERO SPLIT ── -->
+<section class="hero" aria-label="Apresentação da clínica">
+  <!-- Copy à esquerda (blush) -->
+  <div class="hero-copy">
+    <div class="hero-badge" aria-label="Nota 5 estrelas no Google">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      5,0 no Google
+    </div>
+
+    <h1 class="hero-title" aria-label="Cuidado que vira ritual">
+      <span class="word">Cuidado</span><span class="word-space"> </span><span class="word">que</span><span class="word-space"> </span><span class="word">vira</span><span class="word-space"> </span><span class="word"><em>ritual.</em></span>
+    </h1>
+
+    <p class="hero-sub">
+      Estética facial e corporal premium em Natal. Um espaço pensado para você descansar, renovar e sair transformada.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/5584992007307?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rejuv%20For%20You%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+         class="btn-primary"
+         target="_blank"
+         rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Agendar Avaliação
+      </a>
+    </div>
+
+    <div class="hero-rating">
+      <div class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="rating-text"><strong>5,0</strong> — nota máxima no Google Maps</p>
+    </div>
+  </div>
+
+  <!-- Imagem à direita -->
+  <div class="hero-img">
+    <img src="imagens/maps-1.jpg"
+         alt="Recepção da Rejuv For You — espaço com arcos dourados, sofá curvo creme e ambiente sofisticado"
+         loading="eager"
+         fetchpriority="high">
+  </div>
+</section>
+
+<!-- ── SOBRE ── -->
+<!-- Arc divider: blush -> bg-base -->
+<div class="arc-divider" aria-hidden="true" style="background:var(--bg-blush)">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,72 1080,72 1440,0 L1440,72 L0,72 Z" fill="var(--bg-base)"/>
+  </svg>
+</div>
+
+<section class="sobre" id="sobre" aria-label="Sobre a clínica">
+  <div class="sobre-inner">
+    <div class="sobre-text reveal">
+      <div class="overline">Nossa história</div>
+      <h2>Um espaço criado para você se sentir em casa.</h2>
+      <p>
+        A Rejuv For You nasceu com uma missão clara: oferecer estética de alto nível em um ambiente que acolhe, respeita e transforma. Localizada no Morro Branco, em Natal, a clínica foi pensada em cada detalhe para que cada visita seja uma experiência completa.
+      </p>
+      <p>
+        Da recepção com arcos dourados ao atendimento personalizado, cada momento aqui é sobre você. Seus objetivos, sua pele, seu bem-estar. É isso que nos diferencia.
+      </p>
+    </div>
+    <div class="sobre-visual reveal">
+      <!-- Arco decorativo SVG -->
+      <svg class="arc-deco" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="80" cy="80" r="79" stroke="#c9a44c" stroke-width="1" stroke-dasharray="6 4" opacity=".35"/>
+        <circle cx="80" cy="80" r="55" stroke="#d9a8a0" stroke-width="1" opacity=".25"/>
+      </svg>
+      <div class="sobre-photo-frame">
+        <img src="imagens/maps-1.jpg"
+             alt="Ambiente interno da Rejuv For You — recepção elegante com arcos dourados"
+             loading="lazy">
+        <div class="sobre-seal" aria-label="Nota 5,0 no Google">
+          <div class="seal-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="seal-text">
+            <strong>5,0</strong>
+            <span>Google Maps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVIÇOS ── -->
+<!-- Wave divider: bg-base -> bg-inset -->
+<div class="wave-divider" aria-hidden="true" style="background:var(--bg-base)">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-inset)"/>
+  </svg>
+</div>
+
+<section class="servicos" id="servicos" aria-label="Nossos serviços">
+  <div class="servicos-inner">
+    <div class="servicos-header">
+      <div class="overline">O que fazemos</div>
+      <h2>Tratamentos pensados para cada necessidade.</h2>
+      <p>Protocolos faciais e corporais com técnicas avançadas, realizados em um ambiente premium e acolhedor.</p>
+    </div>
+
+    <div class="servicos-grid">
+
+      <!-- Limpeza de Pele -->
+      <article class="serv-card reveal" aria-label="Serviço: Limpeza de Pele">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+        </div>
+        <h3>Limpeza de Pele</h3>
+        <p>Limpeza profunda com extração, esfoliação e hidratação. Pele renovada, poros desobstruídos e viço de volta.</p>
+      </article>
+
+      <!-- Tratamentos Faciais -->
+      <article class="serv-card reveal" aria-label="Serviço: Tratamentos Faciais">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>Tratamentos Faciais</h3>
+        <p>Protocolos personalizados para hidratação, clareamento, uniformização e rejuvenescimento. Pele saudável em cada etapa.</p>
+      </article>
+
+      <!-- Estética Corporal -->
+      <article class="serv-card reveal" aria-label="Serviço: Estética Corporal">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+            <path d="M12 14c-6 0-9 3-9 4v2h18v-2c0-1-3-4-9-4z"/>
+          </svg>
+        </div>
+        <h3>Estética Corporal</h3>
+        <p>Tratamentos para modelagem, firmeza e saúde da pele corporal. Do pescoço aos pés, cuidado completo e especializado.</p>
+      </article>
+
+      <!-- Massagem -->
+      <article class="serv-card reveal" aria-label="Serviço: Massagem">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+          </svg>
+        </div>
+        <h3>Massagem Relaxante & Modeladora</h3>
+        <p>Do alívio de tensões à modelagem corporal. Técnicas que relaxam, desinchama e devolvem a leveza ao seu corpo.</p>
+      </article>
+
+      <!-- Depilação -->
+      <article class="serv-card reveal" aria-label="Serviço: Depilação">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3v18M9 6l3-3 3 3M9 18l3 3 3-3"/>
+            <path d="M5 9l2 2 4-4M5 15l2-2 4 4"/>
+          </svg>
+        </div>
+        <h3>Depilação</h3>
+        <p>Depilação com cera, linha ou aparelho — pele lisa e cuidada. Atendimento rápido, confortável e com resultados duradouros.</p>
+      </article>
+
+      <!-- Rejuvenescimento -->
+      <article class="serv-card reveal" aria-label="Serviço: Protocolos de Rejuvenescimento">
+        <div class="serv-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+            <path d="M8 12a4 4 0 0 1 8 0"/>
+          </svg>
+        </div>
+        <h3>Protocolos de Rejuvenescimento</h3>
+        <p>Combinações exclusivas de ativos e técnicas para reverter e retardar o envelhecimento. Pele jovem, viçosa e luminosa.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DIFERENCIAIS ── -->
+<!-- Wave divider: bg-inset -> bg-dark -->
+<div class="wave-divider" aria-hidden="true" style="background:var(--bg-inset)">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L1440,72 L1440,72 L0,72 Z" fill="var(--bg-dark)"/>
+  </svg>
+</div>
+
+<section class="diferenciais" id="diferenciais" aria-label="Diferenciais da clínica">
+  <div class="diferenciais-inner">
+    <div class="diferenciais-header reveal">
+      <div class="overline">Por que escolher a Rejuv</div>
+      <h2>Experiência premium do início ao fim.</h2>
+    </div>
+
+    <div class="nums-grid">
+      <div class="num-card reveal">
+        <span class="num-value">5,0</span>
+        <span class="num-label">Nota no Google Maps</span>
+      </div>
+      <div class="num-card reveal">
+        <span class="num-value">6+</span>
+        <span class="num-label">Tratamentos disponíveis</span>
+      </div>
+      <div class="num-card reveal">
+        <span class="num-value">24h</span>
+        <span class="num-label">Agendamento pelo WhatsApp</span>
+      </div>
+    </div>
+
+    <div class="selos-grid">
+      <div class="selo reveal">
+        <div class="selo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <p>Ambiente seguro e higienizado com produtos de alta qualidade</p>
+      </div>
+      <div class="selo reveal">
+        <div class="selo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <p>Atendimento personalizado — cada cliente é única</p>
+      </div>
+      <div class="selo reveal">
+        <div class="selo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <p>Agende pelo WhatsApp, no dia e hora que melhor te atende</p>
+      </div>
+      <div class="selo reveal">
+        <div class="selo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <p>Nota máxima 5,0 no Google — resultado de quem se importa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROVA SOCIAL ── -->
+<!-- Arc divider: bg-dark -> bg-blush -->
+<div class="arc-divider" aria-hidden="true" style="background:var(--bg-dark)">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,72 C360,0 1080,0 1440,72 L1440,72 L0,72 Z" fill="var(--bg-blush)"/>
+  </svg>
+</div>
+
+<section class="prova" id="prova-social" aria-label="Avaliações e prova social">
+  <div class="prova-inner">
+    <div class="prova-header reveal">
+      <div class="overline">Reconhecimento real</div>
+      <h2>Nota 5,0 no Google — e o cuidado por trás dela.</h2>
+    </div>
+
+    <div class="prova-nota reveal" aria-label="Nota 5,0 no Google">
+      <div class="nota-score" aria-label="Nota cinco ponto zero">5,0</div>
+      <div class="nota-stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="nota-desc">Nota máxima no Google Maps. Cada avaliação é um reflexo do cuidado que colocamos em cada atendimento.</p>
+      <span class="nota-source">Fonte: Google Maps</span>
+    </div>
+
+    <div class="prova-cards">
+      <div class="motivo-card reveal">
+        <div class="motivo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Cuidado em cada detalhe</h3>
+        <p>Protocolos personalizados, ambiente acolhedor e atendimento dedicado — do primeiro contato ao resultado final.</p>
+      </div>
+      <div class="motivo-card reveal">
+        <div class="motivo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Experiência premium</h3>
+        <p>Da recepção com arcos dourados aos tratamentos faciais e corporais, um espaço pensado para você descansar e renovar.</p>
+      </div>
+      <div class="motivo-card reveal">
+        <div class="motivo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Nota máxima no Google</h3>
+        <p>5,0 de avaliação — o reflexo direto de cada cliente que saiu satisfeita da Rejuv For You.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AGENDAMENTO / CTA ── -->
+<section class="agendamento" id="agendamento" aria-label="Agende sua visita">
+  <div class="agendamento-inner">
+    <div class="overline">Pronto para começar?</div>
+    <h2 class="reveal">Dê o primeiro passo para a sua transformação.</h2>
+    <p class="reveal">Entre em contato pelo WhatsApp e agende uma avaliação. Nosso time responde rápido e encontra o horário ideal para você.</p>
+    <div class="agenda-btns reveal">
+      <a href="https://wa.me/5584992007307?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rejuv%20For%20You%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+         class="btn-primary"
+         style="background:linear-gradient(135deg,#fff,#f5f0ec); color:var(--accent-deep);"
+         target="_blank"
+         rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="tel:+5584992007307"
+         class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.16h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        (84) 99200-7307
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCALIZAÇÃO ── -->
+<section class="localizacao" id="localizacao" aria-label="Localização da clínica">
+  <div class="localizacao-inner">
+    <div class="loc-text reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Morro Branco, Natal/RN</h2>
+      <p>Nossa clínica está localizada em ponto de fácil acesso em Natal. Venha nos visitar e conheça o espaço pessoalmente.</p>
+
+      <div class="loc-detail">
+        <div class="loc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="loc-info">
+          <strong>Endereço</strong>
+          <span>Av. Xavier da Silveira, 357<br>Morro Branco, Natal — RN<br>CEP 59015-430</span>
+        </div>
+      </div>
+
+      <div class="loc-detail">
+        <div class="loc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.16h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="loc-info">
+          <strong>WhatsApp</strong>
+          <span>(84) 99200-7307</span>
+        </div>
+      </div>
+
+      <div style="margin-top:28px">
+        <a href="https://www.google.com/maps/place/Rejuv+For+You+-+Cl%C3%ADnica+de+Est%C3%A9tica/@-5.8134599,-35.1988354,17z"
+           class="btn-primary"
+           target="_blank"
+           rel="noopener"
+           style="width:fit-content">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          Ver no Google Maps
+        </a>
+      </div>
+    </div>
+
+    <div class="loc-map reveal">
+      <iframe
+        src="https://maps.google.com/maps?q=-5.8134599,-35.1988354&z=16&output=embed"
+        title="Localização da Rejuv For You no Google Maps"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Mapa do Google com a localização da Rejuv For You">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<!-- Wave divider: bg-base -> bg-dark -->
+<div class="wave-divider" aria-hidden="true" style="background:var(--bg-base)">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,36 C360,0 1080,72 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/>
+  </svg>
+</div>
+
+<footer aria-label="Rodapé da Rejuv For You">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">
+        Rejuv For You
+        <span>Clínica de Estética</span>
+      </span>
+      <p class="footer-tagline">Estética premium em Natal/RN. Onde o cuidado com você vira ritual.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <p>Limpeza de Pele</p>
+      <p>Tratamentos Faciais</p>
+      <p>Estética Corporal</p>
+      <p>Massagem Relaxante</p>
+      <p>Depilação</p>
+      <p>Rejuvenescimento</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5584992007307?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Rejuv%20For%20You%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+         target="_blank" rel="noopener">
+        WhatsApp: (84) 99200-7307
+      </a>
+      <a href="https://www.google.com/maps/place/Rejuv+For+You+-+Cl%C3%ADnica+de+Est%C3%A9tica/@-5.8134599,-35.1988354,17z"
+         target="_blank" rel="noopener">
+        Av. Xavier da Silveira, 357<br>Morro Branco, Natal/RN
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Rejuv For You. Todos os direitos reservados.</p>
+    <p>Natal, RN — (84) 99200-7307</p>
+  </div>
+</footer>
+
+<!-- ── Scripts ── -->
+<script>
+  // Header scroll
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // Reveal on scroll (IntersectionObserver)
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
