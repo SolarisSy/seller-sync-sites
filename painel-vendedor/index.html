@@ -301,7 +301,7 @@ function selectLead(idx, keepScroll) {
       </div>
     </div>
 
-    ${st.rej ? `<div class="rej-banner">
+    ${(st.rej && !st.reanalise) ? `<div class="rej-banner">
       <div class="rej-head">✗ <strong>Site reprovado</strong> — ajuste o site e depois envie para re-análise.</div>
       <div class="rej-note-label">Motivo da reprovação — o que precisa melhorar? (todos os vendedores veem)</div>
       <textarea class="rej-note" id="rejNote" placeholder="Ex.: hero com foto ruim, faltou WhatsApp, cores destoam da marca..."
@@ -404,9 +404,22 @@ function refreshUI() {
 
 async function saveReason(slug, text) {
   if (text === (getState(slug).reason || '')) return;  // nada mudou
-  await patchState(slug, { reason: text });
+  // Persiste SEM re-renderizar o detalhe: o re-render no blur destruia o botao
+  // "Enviar para re-analise" antes do clique completar (exigia 2 cliques) e fazia a obs piscar/duplicar.
+  STATUS[slug] = Object.assign({}, STATUS[slug] || {}, { reason: text });
+  if (currentIdx != null && LEADS[currentIdx].slug === slug) lastDetailSig = JSON.stringify(getState(slug));
   const h = document.getElementById('rejNoteHint');
-  if (h) { h.textContent = '✓ motivo salvo'; setTimeout(() => { const e = document.getElementById('rejNoteHint'); if (e) e.textContent = ''; }, 1800); }
+  try {
+    const r = await fetch(API + '/' + encodeURIComponent(slug), {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reason: text })
+    });
+    if (!r.ok) throw new Error('http ' + r.status);
+    STATUS[slug] = await r.json();   // confirmado pelo servidor
+    if (currentIdx != null && LEADS[currentIdx].slug === slug) lastDetailSig = JSON.stringify(getState(slug));
+    if (h) { h.textContent = '✓ motivo salvo'; setTimeout(() => { const e = document.getElementById('rejNoteHint'); if (e) e.textContent = ''; }, 1800); }
+  } catch (e) {
+    if (h) h.textContent = '⚠ falha ao salvar — tente de novo';
+  }
 }
 
 async function loadStatus(silent) {
