@@ -57,6 +57,10 @@ const server = http.createServer((req, res) => {
       if ('rej' in patch) next.rej = !!patch.rej;
       if ('reanalise' in patch) next.reanalise = !!patch.reanalise;
       if ('reason' in patch) next.reason = String(patch.reason == null ? '' : patch.reason).slice(0, 2000);
+      // CRM: estagio do funil de vendas + arquivar (lead some das visoes sem apagar)
+      const STAGES = ['novo', 'contatado', 'respondeu', 'negociando', 'fechado', 'perdido'];
+      if ('stage' in patch) next.stage = STAGES.includes(patch.stage) ? patch.stage : (cur.stage || 'novo');
+      if ('archived' in patch) next.archived = !!patch.archived;
       next.updatedAt = Date.now();
       status[slug] = next;
       persist();
