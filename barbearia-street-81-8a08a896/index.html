@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Street 81 — Barbearia nota 5,0 no Espinheiro, Recife</title>
+<meta name="description" content="A barbearia mais bem avaliada da João de Barros. Fades, navalhado, barba e clube de assinatura no Espinheiro, Recife. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#0e0b0a;
+  --bg-dark-2:#16110f;
+  --bg-base:#f5f2ec;
+  --bg-surface:#fbf9f5;
+  --bg-inset:#ece7df;
+
+  --text-primary:#16110f;
+  --text-secondary:#46403c;
+  --text-muted:#8a817a;
+  --text-inverse:#f5f2ec;
+
+  --accent:#cf2b2e;
+  --accent-dark:#a31f22;
+  --accent-subtle:rgba(207,43,46,.10);
+  --accent-border:rgba(207,43,46,.24);
+
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.06),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.12);
+  --shadow-accent:0 6px 24px rgba(207,43,46,.35);
+  --shadow-accent-strong:0 10px 34px rgba(207,43,46,.5);
+
+  --text-display:clamp(2.9rem,2rem + 4.6vw,6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.6vw,3.2rem);
+  --text-h3:clamp(1.25rem,1rem + 1.2vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:.96;
+  --lh-heading:1.08;
+  --lh-body:1.74;
+  --ls-display:-.01em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:300;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-optical-sizing:auto;
+  text-wrap:balance;
+  text-transform:uppercase;
+  line-height:var(--lh-heading);
+  font-weight:800;
+}
+
+.overline{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* ── Buttons ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Inter',sans-serif;
+  font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.9rem clamp(1.4rem,3vw,2rem);min-height:50px;
+  border:1px solid rgba(245,242,236,.3);color:var(--text-inverse);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;
+  letter-spacing:.08em;text-transform:uppercase;border-radius:50px;
+  transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.08);transform:translateY(-2px)}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(14,11,10,.94);
+  backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%);
+  box-shadow:0 1px 0 rgba(207,43,46,.3);
+  padding-top:12px;padding-bottom:12px;
+}
+.logo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:1.45rem;letter-spacing:.02em;text-transform:uppercase;
+  color:#fff;line-height:.92;display:flex;flex-direction:column;
+}
+.logo span{font-size:.62rem;letter-spacing:.34em;font-weight:600;color:var(--gold);font-family:'Inter',sans-serif;text-transform:uppercase}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{
+  color:rgba(245,242,236,.82);font-size:.82rem;font-weight:400;
+  letter-spacing:.04em;transition:color .25s ease;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  padding:.6rem 1.3rem;border:1px solid var(--accent);border-radius:50px;
+  color:#fff !important;font-weight:600 !important;font-size:.76rem !important;
+  text-transform:uppercase;letter-spacing:.06em;background:var(--accent-subtle);
+  transition:background .3s ease;
+}
+.nav-cta:hover{background:var(--accent)}
+@media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ── Hero (Modelo C) ── */
+.hero{
+  position:relative;min-height:100dvh;height:100dvh;
+  display:grid;align-items:end;overflow:hidden;background:var(--bg-dark);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/maps-1.jpg') center 30%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(155deg,rgba(14,11,10,.35) 0%,rgba(14,11,10,.55) 45%,rgba(14,11,10,.92) 88%,rgba(14,11,10,.97) 100%);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;
+}
+.hero-content{
+  position:relative;z-index:3;
+  padding:0 clamp(1.5rem,8vw,7rem) clamp(3.5rem,8vh,6rem);
+  max-width:760px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;
+  padding:8px 16px;border-radius:50px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.18);
+  color:#fff;font-size:.78rem;font-weight:500;letter-spacing:.03em;
+}
+.hero-badge .stars{color:var(--gold);letter-spacing:.05em;font-size:.82rem}
+.hero-badge b{font-weight:700}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:var(--ls-display);color:#fff;font-weight:900;
+  max-width:14ch;overflow:hidden;
+}
+.hero-title .ln{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word.em{color:var(--accent)}
+.hero-title .ln:nth-child(1) .word{animation-delay:.2s}
+.hero-title .ln:nth-child(2) .word{animation-delay:.34s}
+.hero-title .ln:nth-child(3) .word{animation-delay:.48s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  margin-top:22px;max-width:46ch;color:rgba(245,242,236,.86);
+  font-size:1.05rem;font-weight:300;line-height:1.65;
+  opacity:0;animation:fade-in 1s ease .9s forwards;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;opacity:0;animation:fade-in 1s ease 1.05s forwards}
+@keyframes fade-in{to{opacity:1}}
+.scroll-hint{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+  color:rgba(245,242,236,.5);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  writing-mode:vertical-rl;display:flex;align-items:center;gap:12px;
+}
+.scroll-hint::after{content:'';width:1px;height:42px;background:linear-gradient(rgba(245,242,236,.5),transparent);animation:sd 2s ease-in-out infinite}
+@keyframes sd{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:600px){.scroll-hint{display:none}}
+
+/* ── Marquee strip ── */
+.strip{background:var(--accent);color:#fff;overflow:hidden;padding:14px 0;white-space:nowrap}
+.strip-track{display:inline-flex;gap:0;animation:marq 28s linear infinite}
+.strip-track span{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:.06em;text-transform:uppercase;padding:0 28px;display:inline-flex;align-items:center;gap:28px;
+}
+.strip-track span::after{content:'✦';color:rgba(255,255,255,.55);font-size:.7rem}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ── Sobre (split) ── */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center;
+}
+.sobre-img{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-img img{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:center}
+.sobre-img .tag{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+  background:rgba(14,11,10,.78);backdrop-filter:blur(8px);
+  border:1px solid rgba(201,168,76,.4);
+  color:#fff;padding:8px 16px;border-radius:4px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.05em;
+  font-size:.92rem;text-transform:uppercase;
+}
+.sobre-img .tag b{color:var(--gold)}
+.sobre-copy h2{font-size:var(--text-h2);margin-bottom:18px;color:var(--text-primary)}
+.sobre-copy h2 em{color:var(--accent);font-style:normal}
+.sobre-copy p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:30px;flex-wrap:wrap}
+.stat .num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;line-height:1;color:var(--accent)}
+.stat .lbl{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-img{order:-1}}
+
+/* ── Serviços (dark, diagonal cut) ── */
+.servicos{
+  background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4%,100% 0,100% 96%,0 100%);
+  margin-top:-3vw;padding-top:calc(var(--section-pad) + 4vw);padding-bottom:calc(var(--section-pad) + 4vw);
+}
+.servicos::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.04;
+}
+.servicos .wrap{position:relative;z-index:1}
+.sec-head{max-width:620px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head h2{font-size:var(--text-h2)}
+.servicos .sec-head h2{color:#fff}
+.servicos .sec-head p{color:rgba(245,242,236,.66);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{
+  position:relative;padding:30px 26px 28px;border-radius:6px;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.09);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;color:var(--gold);letter-spacing:.1em}
+.serv-card h3{font-size:var(--text-h3);color:#fff;margin:14px 0 10px}
+.serv-card p{color:rgba(245,242,236,.62);font-size:.92rem;line-height:1.65;margin-bottom:18px}
+.serv-price{
+  display:inline-flex;align-items:baseline;gap:6px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#fff;
+}
+.serv-price .from{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);font-family:'Inter',sans-serif;font-weight:500}
+.serv-price .val{font-size:1.7rem;color:var(--accent)}
+.serv-card.feature{background:linear-gradient(180deg,rgba(207,43,46,.16),rgba(207,43,46,.05));border-color:var(--accent-border)}
+.serv-card.feature .ribbon{
+  position:absolute;top:18px;right:18px;background:var(--accent);color:#fff;
+  font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 11px;border-radius:50px;
+}
+
+/* ── Galeria ── */
+.galeria{background:var(--bg-inset)}
+.gal-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.5vw,1rem);
+  grid-auto-rows:1fr;
+}
+.gal-item{position:relative;overflow:hidden;border-radius:5px;box-shadow:var(--shadow-sm)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-item::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,11,10,.45),transparent 55%);opacity:0;transition:opacity .35s ease}
+.gal-item:hover::after{opacity:1}
+.gal-tall{grid-row:span 2}
+.gal-wide{grid-column:span 2}
+@media(max-width:820px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-wide{grid-column:span 2}.gal-tall{grid-row:span 1}}
+
+/* ── Experiência / cortesia ── */
+.exp{background:var(--bg-base)}
+.exp-grid{display:grid;grid-template-columns:6fr 5fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.exp-copy h2{font-size:var(--text-h2);margin-bottom:18px}
+.exp-copy h2 em{color:var(--accent);font-style:normal}
+.exp-copy p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.exp-list{list-style:none;margin-top:24px;display:grid;gap:14px}
+.exp-list li{display:flex;gap:14px;align-items:flex-start;color:var(--text-secondary);font-size:.96rem}
+.exp-list li::before{content:'';flex:none;width:8px;height:8px;margin-top:9px;background:var(--accent);transform:rotate(45deg)}
+.exp-list li b{color:var(--text-primary);font-weight:600}
+.exp-img{border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.exp-img img{width:100%;height:100%;min-height:380px;object-fit:cover}
+@media(max-width:820px){.exp-grid{grid-template-columns:1fr}.exp-img{order:-1}}
+
+/* ── Prova social ── */
+.prova{background:var(--bg-dark-2);color:var(--text-inverse);position:relative;text-align:center}
+.prova::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.04;
+}
+.prova .wrap{position:relative;z-index:1}
+.prova-score{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3.5rem,8vw,6rem);line-height:1;color:#fff}
+.prova-score .star{color:var(--gold)}
+.prova-lead{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:.8rem;font-weight:600;margin-bottom:10px}
+.prova-note{color:rgba(245,242,236,.6);font-size:.84rem;letter-spacing:.06em;margin-top:6px}
+.depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards);margin-top:clamp(3rem,6vw,4.5rem);text-align:left}
+.depo{
+  padding:28px 26px;border-radius:6px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+}
+.depo .quote{color:rgba(245,242,236,.88);font-size:.98rem;line-height:1.7;font-weight:300}
+.depo .who{margin-top:18px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.04em;color:#fff;font-size:1.05rem;text-transform:uppercase}
+.depo .stars{color:var(--gold);font-size:.85rem;letter-spacing:.05em;margin-bottom:14px}
+
+/* ── Localização ── */
+.local{background:var(--bg-base)}
+.local-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.local-info h2{font-size:var(--text-h2);margin-bottom:18px}
+.local-info p{color:var(--text-secondary);max-width:46ch;margin-bottom:26px}
+.info-row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid rgba(22,17,15,.1)}
+.info-row:last-of-type{border-bottom:1px solid rgba(22,17,15,.1)}
+.info-row .k{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-size:.95rem;min-width:108px;flex:none}
+.info-row .v{color:var(--text-secondary);font-size:.95rem}
+.info-row .v a{color:var(--text-primary);border-bottom:1px solid var(--accent-border)}
+.local-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.local-cta .btn-ghost{border-color:rgba(22,17,15,.22);color:var(--text-primary)}
+.local-cta .btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle)}
+.local-map{border-radius:6px;overflow:hidden;box-shadow:var(--shadow-md);min-height:340px;border:1px solid rgba(22,17,15,.08)}
+.local-map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.05)}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}}
+
+/* ── CTA final ── */
+.final{
+  background:linear-gradient(135deg,var(--accent-dark),var(--accent));color:#fff;text-align:center;position:relative;overflow:hidden;
+}
+.final::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;
+}
+.final .wrap{position:relative;z-index:1;max-width:740px}
+.final h2{font-size:clamp(2.2rem,1.6rem + 3vw,4rem);color:#fff}
+.final p{color:rgba(255,255,255,.88);margin:18px auto 32px;max-width:48ch}
+.final .btn-primary{background:#fff;color:var(--accent-dark);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.final .btn-primary:hover{box-shadow:0 14px 40px rgba(0,0,0,.35)}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark);color:rgba(245,242,236,.62);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,5vw,4rem);max-width:var(--content-max);margin:0 auto}
+.foot-brand .logo{margin-bottom:14px}
+.foot-brand p{font-size:.9rem;max-width:34ch;line-height:1.7}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;font-size:1rem;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:rgba(245,242,236,.62);margin-bottom:10px;transition:color .25s ease}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,4rem) auto 0;padding-top:1.6rem;border-top:1px solid rgba(245,242,236,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:rgba(245,242,236,.45)}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+
+/* ── WA FAB ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s ease;
+}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg,.hero-title .word,.hero-sub,.hero-actions{animation:none !important;opacity:1 !important;transform:none !important}
+  .reveal{transition:none;opacity:1;transform:none}
+  .strip-track{animation:none}
+  .wa-fab::before,.scroll-hint::after{animation:none}
+  .gal-item:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">Street 81<span>Barbearia · Recife</span></a>
+  <nav class="nav-links">
+    <a href="#sobre">A Casa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Cortes</a>
+    <a href="#local">Onde Estamos</a>
+    <a class="nav-cta" href="https://wa.me/5581982524050" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO — Modelo C editorial -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> <b>5,0</b> no Google · a mais bem avaliada da região</div>
+    <h1 class="hero-title">
+      <span class="ln"><span class="word">Estilo</span></span>
+      <span class="ln"><span class="word">de</span> <span class="word em">rua,</span></span>
+      <span class="ln"><span class="word">corte</span> <span class="word">de</span> <span class="word">respeito.</span></span>
+    </h1>
+    <p class="hero-sub">A barbearia da João de Barros, no Espinheiro, onde fade, navalhado e barba viram assinatura — e o café já tá esperando você na cadeira.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5581982524050" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.7 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.3-2-2-4.4-2-6.9C3 9 8.9 3.2 16 3.2S29 9 29 16 23.1 28.7 16 28.7zm8-9.7c-.4-.2-2.6-1.3-3-1.4-.4-.1-.7-.2-1 .2-.3.4-1.1 1.4-1.4 1.7-.3.3-.5.3-.9.1-.4-.2-1.9-.7-3.6-2.2-1.3-1.2-2.2-2.6-2.5-3-.3-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.3.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-1-2.4-1.3-3.3-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.6-1 2.9-2 .4-1 .4-1.8.3-2-.1-.2-.4-.3-.8-.5z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a class="btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Role</div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Fade &amp; Degradê</span><span>Navalhado</span><span>Barba na navalha</span><span>Clube de assinatura</span><span>Cortesia na chegada</span>
+    <span>Fade &amp; Degradê</span><span>Navalhado</span><span>Barba na navalha</span><span>Clube de assinatura</span><span>Cortesia na chegada</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/insta-7.jpg" alt="Equipe de barbeiros da Street 81 atendendo a casa cheia" loading="lazy">
+      <span class="tag">Equipe <b>completa</b> todo dia</span>
+    </div>
+    <div class="sobre-copy reveal">
+      <div class="overline">A Casa Street 81</div>
+      <h2>Não é só um corte.<br>É a <em>cultura de rua</em> no Espinheiro.</h2>
+      <p>Concreto aparente, skate na parede, loja de bonés e camisetas, TV ligada e uma equipe de barbeiros que não para. A Street 81 nasceu pra ser ponto de encontro — o lugar onde você senta, relaxa e sai com a cabeça e a barba no ponto.</p>
+      <p>Cada barbeiro da casa é especialista em fade, degradê e navalhado. O atendimento é rápido, o ambiente é nosso, e o resultado é o que botou a gente como a barbearia mais bem avaliada da região.</p>
+      <div class="stats">
+        <div class="stat"><div class="num">5,0</div><div class="lbl">Nota no Google</div></div>
+        <div class="stat"><div class="num">4+</div><div class="lbl">Barbeiros na casa</div></div>
+        <div class="stat"><div class="num">7</div><div class="lbl">Dias de energia</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="overline">O que fazemos</div>
+      <h2>Serviços feitos pra durar a semana inteira</h2>
+      <p>Do clássico ao detalhado. Preços de referência — fale com a casa pelo WhatsApp pra confirmar o seu horário.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <div class="serv-num">01</div>
+        <h3>Corte Masculino</h3>
+        <p>Fade, degradê, social ou freestyle. Acabamento na navalha e finalização que mantém o visual no ponto.</p>
+        <div class="serv-price"><span class="from">a partir de</span> <span class="val">R$ 35</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">02</div>
+        <h3>Barba na Navalha</h3>
+        <p>Toalha quente, alinhamento e navalha. Aquele cuidado que deixa a barba desenhada e a pele lisa.</p>
+        <div class="serv-price"><span class="from">a partir de</span> <span class="val">R$ 30</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">03</div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo pra quem quer sair renovado de cima a baixo. Corte no ponto e barba alinhada na mesma sessão.</p>
+        <div class="serv-price"><span class="from">a partir de</span> <span class="val">R$ 55</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">04</div>
+        <h3>Navalhado &amp; Desenho</h3>
+        <p>Linhas, design e freestyle na navalha. Pra quem quer um detalhe que ninguém mais na quadra tem.</p>
+        <div class="serv-price"><span class="from">a partir de</span> <span class="val">R$ 15</span></div>
+      </div>
+      <div class="serv-card feature reveal">
+        <span class="ribbon">Mais querido</span>
+        <div class="serv-num">05</div>
+        <h3>Clube Street 81</h3>
+        <p>Corte quantas vezes quiser no mês, pagando um valor único. Cabeça sempre no ponto, sem pensar no preço a cada visita.</p>
+        <div class="serv-price"><span class="from">assinatura</span> <span class="val">consulte</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">06</div>
+        <h3>Corte Infantil</h3>
+        <p>Paciência e mão leve pra criançada. O primeiro corte ou a manutenção, sempre com cuidado.</p>
+        <div class="serv-price"><span class="from">a partir de</span> <span class="val">R$ 30</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <div class="overline">Trabalho da casa</div>
+      <h2 style="color:var(--text-primary);font-size:var(--text-h2)">Cortes que falam por si</h2>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item gal-tall reveal"><img src="imagens/insta-3.jpg" alt="Fade lateral limpo feito na Street 81" loading="lazy"></div>
+      <div class="gal-item gal-wide reveal"><img src="imagens/insta-8.jpg" alt="Cliente na cadeira da Street 81 com corte finalizado" loading="lazy"></div>
+      <div class="gal-item reveal"><img src="imagens/insta-4.jpg" alt="Corte com navalhado e desenho nas costas" loading="lazy"></div>
+      <div class="gal-item gal-wide reveal"><img src="imagens/maps-1.jpg" alt="Salão da Street 81 com a equipe atendendo" loading="lazy"></div>
+      <div class="gal-item reveal"><img src="imagens/insta-2.jpg" alt="Estação de cortesia com café e biscoitos na Street 81" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA / CORTESIA -->
+<section class="exp">
+  <div class="wrap exp-grid">
+    <div class="exp-copy reveal">
+      <div class="overline">A experiência</div>
+      <h2>Você chega cliente.<br>Sai <em>parte da casa</em>.</h2>
+      <p>Aqui o corte é só metade. A outra metade é ser bem recebido: café fresco, biscoito na mesa e um papo enquanto espera. É por isso que quem vem uma vez, volta.</p>
+      <ul class="exp-list">
+        <li><b>Cortesia na chegada</b> — café, água e aquele agrado enquanto você espera a vez.</li>
+        <li><b>Ambiente nosso</b> — som, TV e a loja de bonés e camisetas Street pra dar uma olhada.</li>
+        <li><b>Atendimento ágil</b> — equipe grande pra não te deixar esperando o dia inteiro.</li>
+        <li><b>Wi-Fi liberado</b> — fica conectado enquanto a gente cuida do visual.</li>
+      </ul>
+    </div>
+    <div class="exp-img reveal">
+      <img src="imagens/insta-2.jpg" alt="Cantinho de cortesia da Street 81 com café e biscoitos" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="prova-lead">A mais bem avaliada da região</div>
+      <div class="prova-score">5,0 <span class="star">★</span></div>
+      <div class="prova-note">Avaliação dos clientes no Google · Barbearia Street 81</div>
+    </div>
+    <div class="depos">
+      <div class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Melhor barbearia da região, sem dúvida. O pessoal manja muito de fade e o ambiente é massa demais. Virei cliente fixo."</p>
+        <div class="who">Rafael M.</div>
+      </div>
+      <div class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Atendimento nota mil, café na chegada e o corte sai sempre do jeito que peço. Recomendo de olhos fechados."</p>
+        <div class="who">Diego S.</div>
+      </div>
+      <div class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Levo meu filho e a gente corta junto. Equipe atenciosa, lugar limpo e estiloso. Top demais."</p>
+        <div class="who">Anderson L.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="local-info reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Passa lá no Espinheiro</h2>
+      <p>Na Av. João de Barros, pertinho de tudo. Chega, pega o café e deixa o visual com a gente.</p>
+      <div class="info-row"><div class="k">Endereço</div><div class="v">Av. João de Barros, 1527 — sala 02, Espinheiro, Recife — PE, 52021-180</div></div>
+      <div class="info-row"><div class="k">Telefone</div><div class="v"><a href="https://wa.me/5581982524050" target="_blank" rel="noopener">(81) 99885-8269</a></div></div>
+      <div class="info-row"><div class="k">Instagram</div><div class="v"><a href="https://instagram.com/street_danorte81" target="_blank" rel="noopener">@street_danorte81</a></div></div>
+      <div class="info-row"><div class="k">Horário</div><div class="v">Seg a Sáb · 9h às 20h</div></div>
+      <div class="local-cta">
+        <a class="btn-primary" href="https://wa.me/5581982524050" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.7 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.3-2-2-4.4-2-6.9C3 9 8.9 3.2 16 3.2S29 9 29 16 23.1 28.7 16 28.7zm8-9.7c-.4-.2-2.6-1.3-3-1.4-.4-.1-.7-.2-1 .2-.3.4-1.1 1.4-1.4 1.7-.3.3-.5.3-.9.1-.4-.2-1.9-.7-3.6-2.2-1.3-1.2-2.2-2.6-2.5-3-.3-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.3.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-1-2.4-1.3-3.3-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.6-1 2.9-2 .4-1 .4-1.8.3-2-.1-.2-.4-.3-.8-.5z"/></svg>
+          Agendar agora
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Barbearia+Street+81/@-8.0413748,-34.8917972,17z" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="local-map reveal">
+      <iframe title="Mapa Barbearia Street 81" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Barbearia+Street+81,Av.+Jo%C3%A3o+de+Barros,1527,Espinheiro,Recife&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Sua próxima cadeira é aqui</h2>
+    <p>Manda mensagem agora, escolhe seu horário e vem garantir o corte. A gente já separa o café.</p>
+    <a class="btn-primary" href="https://wa.me/5581982524050" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.7 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.3-2-2-4.4-2-6.9C3 9 8.9 3.2 16 3.2S29 9 29 16 23.1 28.7 16 28.7zm8-9.7c-.4-.2-2.6-1.3-3-1.4-.4-.1-.7-.2-1 .2-.3.4-1.1 1.4-1.4 1.7-.3.3-.5.3-.9.1-.4-.2-1.9-.7-3.6-2.2-1.3-1.2-2.2-2.6-2.5-3-.3-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.3.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-1-2.4-1.3-3.3-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.6-1 2.9-2 .4-1 .4-1.8.3-2-.1-.2-.4-.3-.8-.5z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo">Street 81<span>Barbearia · Recife</span></div>
+      <p>A barbearia nota 5,0 do Espinheiro. Estilo de rua, corte de respeito e aquele café na chegada.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Cortes</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5581982524050" target="_blank" rel="noopener">WhatsApp (81) 99885-8269</a>
+      <a href="https://instagram.com/street_danorte81" target="_blank" rel="noopener">@street_danorte81</a>
+      <p>Av. João de Barros, 1527 — sala 02</p>
+      <p>Espinheiro, Recife — PE</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Street 81. Todos os direitos reservados.</span>
+    <span>Seg a Sáb · 9h às 20h</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5581982524050" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.7 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.3-2-2-4.4-2-6.9C3 9 8.9 3.2 16 3.2S29 9 29 16 23.1 28.7 16 28.7zm8-9.7c-.4-.2-2.6-1.3-3-1.4-.4-.1-.7-.2-1 .2-.3.4-1.1 1.4-1.4 1.7-.3.3-.5.3-.9.1-.4-.2-1.9-.7-3.6-2.2-1.3-1.2-2.2-2.6-2.5-3-.3-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.3.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-1-2.4-1.3-3.3-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.6-1 2.9-2 .4-1 .4-1.8.3-2-.1-.2-.4-.3-.8-.5z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

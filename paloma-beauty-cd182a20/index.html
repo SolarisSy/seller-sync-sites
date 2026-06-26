@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paloma Beauty — Estética e Salão de Beleza em Caruaru, PE</title>
+<meta name="description" content="Paloma Beauty — estética e beleza em Caruaru, PE. Nota 5,0 no Google. Limpeza de pele, revitalização facial e cuidados que valorizam a sua autoestima. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf6f3; --bg-surface:#fffdfb; --bg-inset:#f2e9e4; --bg-dark:#2a1b22;
+  --text-primary:#241a1e; --text-secondary:#5b4a50; --text-muted:#9a8a8f; --text-inverse:#faf6f3;
+  --accent:#a8576b; --accent-dark:#883f54;
+  --accent-subtle:rgba(168,87,107,.10); --accent-border:rgba(168,87,107,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(58,30,40,.04),0 2px 6px rgba(58,30,40,.05);
+  --shadow-md:0 2px 4px rgba(58,30,40,.04),0 8px 18px rgba(58,30,40,.07),0 20px 40px rgba(58,30,40,.05);
+  --shadow-lg:0 4px 8px rgba(58,30,40,.05),0 16px 32px rgba(58,30,40,.07),0 40px 80px rgba(58,30,40,.10);
+  --shadow-accent:0 8px 22px rgba(168,87,107,.32);
+  --shadow-accent-strong:0 14px 34px rgba(168,87,107,.42);
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.18em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;font-size:var(--text-body);line-height:var(--lh-body);
+  color:var(--text-primary);background:var(--bg-base);font-weight:400;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);font-weight:500}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.overline{display:flex;align-items:center;gap:10px;font-family:'Nunito Sans',sans-serif;font-size:.7rem;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* ---------- Buttons ---------- */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;padding:.95rem 1.8rem;min-height:52px;
+  background:transparent;color:var(--text-inverse);border:1px solid rgba(250,246,243,.4);
+  font-family:'Nunito Sans',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;border-radius:50px;transition:background .3s ease,border-color .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{background:rgba(250,246,243,.1);border-color:rgba(250,246,243,.7)}
+
+/* ---------- Header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{background:rgba(42,27,34,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(201,168,76,.25);padding-top:12px;padding-bottom:12px}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--gold-light)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-decoration:none;color:rgba(250,246,243,.88);text-transform:uppercase;transition:color .25s ease}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links .btn-head{padding:.6rem 1.3rem;border:1px solid rgba(201,168,76,.5);border-radius:50px;color:var(--gold-light)}
+.nav-links .btn-head:hover{background:rgba(201,168,76,.12)}
+@media(max-width:860px){.nav-links a:not(.btn-head){display:none}}
+
+/* ---------- Hero (Model C) ---------- */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center 30%/cover;animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(150deg,rgba(42,27,34,.25) 30%,rgba(42,27,34,.72) 72%,rgba(31,17,24,.94) 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05}
+.hero-content{position:relative;z-index:3;padding:0 8% clamp(3.5rem,7vh,6rem);max-width:760px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:.5rem 1rem;border-radius:50px;margin-bottom:24px;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.18);
+  font-size:.8rem;font-weight:600;color:#fff;letter-spacing:.02em}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:1px}
+.hero-eyebrow{font-size:.74rem;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:var(--text-display);letter-spacing:var(--ls-display);line-height:var(--lh-display);color:#fff;font-weight:500;max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero .word-line{display:block;overflow:hidden}
+.hero .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero .word-line:nth-child(1) .word{animation-delay:.15s}
+.hero .word-line:nth-child(2) .word{animation-delay:.30s}
+.hero .word-line:nth-child(3) .word{animation-delay:.45s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero p.sub{margin:22px 0 30px;color:rgba(250,246,243,.9);font-size:clamp(1rem,.95rem + .3vw,1.18rem);max-width:46ch;font-weight:300}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(250,246,243,.6);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint span{width:1px;height:34px;background:linear-gradient(rgba(250,246,243,.6),transparent);animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:680px){.scroll-hint{display:none}}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* ---------- Sobre ---------- */
+.sobre{background:var(--bg-base);position:relative;clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw)}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr;gap:2.5rem}}
+.sobre h2{font-size:var(--text-h2);margin-bottom:20px;letter-spacing:-.01em}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.sobre-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .num{font-family:'Playfair Display',serif;font-size:clamp(2rem,1.4rem + 2vw,2.9rem);color:var(--accent);line-height:1}
+.stat .lab{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:8px;font-weight:600}
+.sobre-img-wrap{position:relative}
+.sobre-img-wrap img{width:100%;height:clamp(360px,52vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-img-wrap .frame{position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+.sobre-tag{position:absolute;bottom:22px;left:-14px;background:var(--bg-dark);color:#fff;padding:14px 22px;border-radius:4px;box-shadow:var(--shadow-md)}
+.sobre-tag .stars{color:var(--gold-light);font-size:.9rem;letter-spacing:2px}
+.sobre-tag small{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,246,243,.7);margin-top:3px}
+
+/* ---------- Serviços ---------- */
+.servicos{background:var(--bg-inset)}
+.sec-head{max-width:620px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head h2{font-size:var(--text-h2);letter-spacing:-.01em}
+.sec-head h2 em{font-style:italic;color:var(--accent)}
+.sec-head p{color:var(--text-secondary);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:880px){.serv-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.serv-grid{grid-template-columns:1fr}}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(168,87,107,.1);border-radius:8px;padding:34px 28px;box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;position:relative;overflow:hidden}
+.serv-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card:hover::before{transform:scaleX(1)}
+.serv-num{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--gold);font-style:italic;margin-bottom:16px;display:block}
+.serv-card .ov{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:12px}
+.serv-card p{color:var(--text-secondary);font-size:.95rem}
+.serv-icon{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.4;margin-bottom:18px}
+
+/* ---------- Experiência (galeria) ---------- */
+.exp{background:var(--bg-base)}
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;margin-top:clamp(2rem,4vw,3rem)}
+.exp-grid figure{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm);position:relative}
+.exp-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.exp-grid figure:hover img{transform:scale(1.06)}
+.exp-grid .tall{grid-row:span 2}
+.exp-grid .wide{grid-column:span 2}
+@media(max-width:760px){.exp-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.exp-grid .wide{grid-column:span 2}}
+
+/* ---------- Prova social ---------- */
+.prova{background:var(--bg-inset);position:relative}
+.prova-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards);margin-top:clamp(2rem,4vw,3rem)}
+@media(max-width:880px){.prova-grid{grid-template-columns:1fr}}
+.quote{background:var(--bg-surface);border-radius:8px;padding:34px 30px;box-shadow:var(--shadow-sm);border:1px solid rgba(168,87,107,.08)}
+.quote .stars{color:var(--gold);letter-spacing:2px;font-size:.95rem;margin-bottom:16px}
+.quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;line-height:1.5;color:var(--text-primary);margin-bottom:20px}
+.quote .who{font-size:.82rem;font-weight:700;letter-spacing:.04em;color:var(--text-secondary)}
+.quote .who span{display:block;font-weight:400;color:var(--text-muted);font-size:.76rem;margin-top:2px}
+
+/* ---------- CTA band ---------- */
+.cta-band{position:relative;background:url('imagens/web-07.jpg') center/cover fixed;min-height:60vh;display:grid;place-items:center;text-align:center;overflow:hidden}
+@media(max-width:760px){.cta-band{background-attachment:scroll}}
+.cta-band .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,17,24,.78),rgba(42,27,34,.88))}
+.cta-band::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05}
+.cta-inner{position:relative;z-index:2;padding:0 1.5rem;max-width:680px}
+.cta-inner h2{font-size:var(--text-h2);color:#fff;margin-bottom:18px}
+.cta-inner h2 em{font-style:italic;color:var(--gold-light)}
+.cta-inner p{color:rgba(250,246,243,.85);margin-bottom:30px;font-weight:300}
+
+/* ---------- Localização ---------- */
+.local{background:var(--bg-base)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:880px){.local-grid{grid-template-columns:1fr;gap:2.5rem}}
+.local h2{font-size:var(--text-h2);margin-bottom:22px}
+.local h2 em{font-style:italic;color:var(--accent)}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(168,87,107,.12)}
+.info-row svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:3px}
+.info-row .lab{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:4px}
+.info-row .val{color:var(--text-primary);font-weight:600}
+.info-row a.val{text-decoration:none;transition:color .2s}
+.info-row a.val:hover{color:var(--accent)}
+.local-map{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:340px;border:1px solid var(--accent-border)}
+.local-map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:saturate(.9)}
+.local .btn-primary{margin-top:30px}
+
+/* ---------- Wave + Footer ---------- */
+.wave{display:block;line-height:0;margin-bottom:-1px}
+.wave svg{width:100%;height:clamp(40px,5vw,80px)}
+footer{background:var(--bg-dark);color:rgba(250,246,243,.7);position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.04}
+.footer-inner{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;padding:clamp(3.5rem,7vw,5.5rem) clamp(1.5rem,6vw,5rem) 2.5rem;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+@media(max-width:760px){.footer-inner{grid-template-columns:1fr;gap:2.2rem}}
+.footer-inner .logo{color:#fff;font-size:1.7rem;margin-bottom:14px;display:inline-block}
+.footer-inner p{font-size:.92rem;max-width:34ch;font-weight:300}
+.foot-col h4{font-family:'Nunito Sans',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:700}
+.foot-col a{display:block;text-decoration:none;color:rgba(250,246,243,.7);font-size:.92rem;margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{position:relative;z-index:1;border-top:1px solid rgba(250,246,243,.1);padding:1.6rem clamp(1.5rem,6vw,5rem);text-align:center;font-size:.78rem;color:rgba(250,246,243,.5)}
+.foot-bottom strong{color:rgba(250,246,243,.75);font-weight:600}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.exp-grid img{animation:none!important}
+  .reveal,.hero .word{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before,.scroll-hint span{animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">Paloma<span> Beauty</span></a>
+  <nav class="nav-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Procedimentos</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#local">Localização</a>
+    <a class="btn-head" href="https://wa.me/5581989976606">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> 5,0 no Google · Caruaru, PE</div>
+    <p class="hero-eyebrow">Estética &amp; Salão de Beleza</p>
+    <h1>
+      <span class="word-line"><span class="word">Sua beleza</span></span>
+      <span class="word-line"><span class="word">merece um</span></span>
+      <span class="word-line"><span class="word"><em>cuidado à altura.</em></span></span>
+    </h1>
+    <p class="sub">No Paloma Beauty cada procedimento é um ritual de autoestima — pele renovada, confiança em alta e aquele brilho que só quem se cuida tem.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://wa.me/5581989976606">Agendar pelo WhatsApp
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn-ghost" href="#servicos">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <p class="overline">Quem somos</p>
+      <h2>Um espaço feito pra <em>realçar o que você já tem</em> de mais bonito.</h2>
+      <p>O Paloma Beauty nasceu em Caruaru com uma ideia simples: cada cliente sai daqui se sentindo melhor do que entrou. Atendimento próximo, mão cuidadosa e técnicas atualizadas para uma pele saudável e um visual que combina com você.</p>
+      <p>Não é à toa que somos <strong>nota 5,0 no Google</strong> — a maior nota possível, construída cliente por cliente, com resultado que aparece no espelho e no jeito que você se enxerga.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="num">5,0</div><div class="lab">Nota no Google</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lab">Foco em você</div></div>
+        <div class="stat"><div class="num">Caruaru</div><div class="lab">Nossa Sra. das Dores</div></div>
+      </div>
+    </div>
+    <div class="reveal sobre-img-wrap">
+      <img src="imagens/web-02.jpg" alt="Cliente em ritual de cuidados com a pele no Paloma Beauty">
+      <span class="frame"></span>
+      <div class="sobre-tag"><div class="stars">★★★★★</div><small>Avaliação 5,0 · Google</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="overline">O que fazemos</p>
+      <h2>Procedimentos que <em>cuidam de você</em> por inteiro</h2>
+      <p>Da pele ao bem-estar, cada serviço é pensado para resultado real e uma experiência que você vai querer repetir.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <svg class="serv-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
+        <span class="serv-num">01</span>
+        <div class="ov">Pele</div>
+        <h3>Limpeza de Pele</h3>
+        <p>Limpeza profunda que remove impurezas, desobstrui os poros e devolve à pele o frescor e a maciez do primeiro dia.</p>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-icon" viewBox="0 0 24 24"><path d="M12 3c3 3 5 5 5 9a5 5 0 0 1-10 0c0-4 2-6 5-9z"/></svg>
+        <span class="serv-num">02</span>
+        <div class="ov">Facial</div>
+        <h3>Revitalização Facial</h3>
+        <p>Tratamentos que estimulam a pele, suavizam marcas do tempo e realçam o viço — para um rosto descansado e iluminado.</p>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-icon" viewBox="0 0 24 24"><path d="M4 14c4-1 6-3 8-8 2 5 4 7 8 8-4 1-6 3-8 8-2-5-4-7-8-8z"/></svg>
+        <span class="serv-num">03</span>
+        <div class="ov">Tratamentos</div>
+        <h3>Cuidados &amp; Peelings</h3>
+        <p>Máscaras e protocolos sob medida para o seu tipo de pele, renovando textura, viço e uniformidade do tom.</p>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-icon" viewBox="0 0 24 24"><path d="M7 4v7a5 5 0 0 0 10 0V4M5 20h14"/></svg>
+        <span class="serv-num">04</span>
+        <div class="ov">Bem-estar</div>
+        <h3>Massagem Relaxante</h3>
+        <p>Um momento só seu: técnicas de relaxamento que aliviam a tensão do dia e renovam o corpo e a mente.</p>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-icon" viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 17l-4.9 1.2.9-5.5-4-3.9 5.5-.8z"/></svg>
+        <span class="serv-num">05</span>
+        <div class="ov">Olhar</div>
+        <h3>Design &amp; Sobrancelhas</h3>
+        <p>Design que valoriza o seu olhar e harmoniza o rosto, respeitando o formato natural de cada cliente.</p>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-icon" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+        <span class="serv-num">06</span>
+        <div class="ov">Autoestima</div>
+        <h3>Dia da Beleza</h3>
+        <p>Combine procedimentos num único dia e saia renovada da cabeça aos pés — o presente perfeito pra você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA / GALERIA -->
+<section class="exp">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:640px">
+      <p class="overline">A experiência</p>
+      <h2>Cada visita, um <em>respiro pra você</em></h2>
+      <p>Ambiente acolhedor, mãos experientes e a atenção que você merece — do momento que chega até o resultado final.</p>
+    </div>
+    <div class="exp-grid">
+      <figure class="reveal tall"><img src="imagens/web-03.jpg" alt="Sessão de revitalização facial no Paloma Beauty" loading="lazy"></figure>
+      <figure class="reveal wide"><img src="imagens/web-06.jpg" alt="Momento de relaxamento no ambiente do Paloma Beauty" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-04.jpg" alt="Aplicação de máscara facial" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-05.jpg" alt="Pele renovada após tratamento" loading="lazy"></figure>
+      <figure class="reveal wide"><img src="imagens/web-01.jpg" alt="Cuidado facial com argila no Paloma Beauty" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:640px">
+      <p class="overline">Quem já se cuidou aqui</p>
+      <h2>A nota <em>5,0</em> tem nome e tem história</h2>
+      <p>Avaliações que refletem o cuidado de cada atendimento. A confiança das clientes é o nosso maior resultado.</p>
+    </div>
+    <div class="prova-grid">
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Saí de lá outra pessoa. Atendimento impecável e minha pele nunca esteve tão bonita. Virei cliente fiel.”</p>
+        <div class="who">Juliana M.<span>Cliente · Caruaru</span></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Profissionalismo do começo ao fim. Me senti cuidada de verdade, num ambiente gostoso e tranquilo.”</p>
+        <div class="who">Renata S.<span>Cliente · Caruaru</span></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Faço meus procedimentos só aqui. Resultado sempre acima do esperado e um carinho no atendimento que faz diferença.”</p>
+        <div class="who">Camila A.<span>Cliente · Caruaru</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="ov"></div>
+  <div class="cta-inner reveal">
+    <p class="overline center" style="color:var(--gold-light)">Reserve seu horário</p>
+    <h2>Você merece esse <em>cuidado</em> hoje</h2>
+    <p>Vagas limitadas na agenda. Garanta o seu horário agora mesmo — é rápido e direto pelo WhatsApp.</p>
+    <a class="btn-primary" href="https://wa.me/5581989976606">Falar no WhatsApp
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="reveal">
+      <p class="overline">Onde nos encontrar</p>
+      <h2>Pertinho de você, <em>em Caruaru</em></h2>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><div class="lab">Endereço</div><a class="val" href="https://www.google.com/maps/place/Paloma+Beauty/@-8.2832409,-35.9737337,17z/data=!3m1!4b1!4m6!3m5!1s0x7a98b0c1c126915:0x3a64a9a0cd182a20!8m2!3d-8.2832409!4d-35.9737337" target="_blank" rel="noopener">R. São Roque, 17 — Nossa Sra. das Dores, Caruaru - PE, 55004-390</a></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <div><div class="lab">WhatsApp / Telefone</div><a class="val" href="https://wa.me/5581989976606">(81) 98997-6606</a></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="lab">Atendimento</div><div class="val">Seg a Sáb · Agende seu horário</div></div>
+      </div>
+      <a class="btn-primary" href="https://wa.me/5581989976606">Agendar meu horário
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="reveal local-map">
+      <iframe src="https://www.google.com/maps?q=Paloma+Beauty,R.+S%C3%A3o+Roque,17,Caruaru,PE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Paloma Beauty em Caruaru"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/></svg>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#topo" class="logo">Paloma<span> Beauty</span></a>
+      <p>Estética e salão de beleza em Caruaru, PE. Cuidado, técnica e autoestima em cada atendimento — nota 5,0 no Google.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Procedimentos</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#local">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5581989976606">WhatsApp (81) 98997-6606</a>
+      <a href="https://www.google.com/maps/place/Paloma+Beauty/@-8.2832409,-35.9737337,17z/data=!3m1!4b1!4m6!3m5!1s0x7a98b0c1c126915:0x3a64a9a0cd182a20!8m2!3d-8.2832409!4d-35.9737337" target="_blank" rel="noopener">R. São Roque, 17 — Caruaru/PE</a>
+      <a href="https://wa.me/5581989976606">Agendar horário</a>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2026 <strong>Paloma Beauty</strong> · Caruaru, PE · Todos os direitos reservados</div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5581989976606" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.17 0 4.21.85 5.74 2.38a8.06 8.06 0 0 1 2.38 5.73c0 4.48-3.65 8.12-8.12 8.12-1.52 0-3.01-.42-4.3-1.22l-.31-.18-3.12.82.83-3.04-.2-.32a8.05 8.05 0 0 1-1.24-4.3c0-4.48 3.64-8.12 8.12-8.12zm-2.74 4.4c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.5c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.31-.74-1.79-.2-.47-.39-.41-.54-.41z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pituba Barbershop — Barbearia premium na Pituba, Salvador</title>
+<meta name="description" content="Corte, barba e navalha na Pituba, Salvador. Barbearia premium com nota 4.9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#15110d;
+  --bg-surface:#1d1813;
+  --bg-inset:#0f0c09;
+  --bg-light:#f3ede3;
+  --bg-light-inset:#e8dfd1;
+  /* Texto */
+  --text-primary:#f4efe7;
+  --text-secondary:#b8ad9d;
+  --text-muted:#857c6e;
+  --text-on-light:#1c1813;
+  --text-on-light-soft:#4a4339;
+  /* Marca */
+  --accent:#c2873f;
+  --accent-dark:#9d6826;
+  --accent-subtle:rgba(194,135,63,.10);
+  --accent-border:rgba(194,135,63,.24);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.22);
+  --shadow-md:0 2px 4px rgba(0,0,0,.2),0 8px 18px rgba(0,0,0,.28),0 20px 40px rgba(0,0,0,.22);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.22),0 16px 32px rgba(0,0,0,.3),0 40px 80px rgba(0,0,0,.34);
+  --shadow-accent:0 8px 24px rgba(194,135,63,.32);
+  --shadow-accent-strong:0 14px 38px rgba(194,135,63,.46);
+  /* Tipografia fluida */
+  --text-display:clamp(3rem,2rem + 6vw,7rem);
+  --text-h2:clamp(2rem,1.4rem + 2.8vw,3.4rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(0.95rem,0.88rem + 0.3vw,1.05rem);
+  --text-sm:clamp(0.78rem,0.72rem + 0.2vw,0.875rem);
+  --lh-display:0.95;
+  --lh-heading:1.08;
+  --lh-body:1.74;
+  --ls-overline:0.22em;
+  /* Espaço */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-family:'Inter',sans-serif;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);font-weight:800;text-transform:uppercase}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto;width:100%}
+
+/* Overline */
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;flex:none}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(0.23,1,0.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.4rem,2.6vw,2rem);min-height:50px;
+  border:1px solid var(--accent-border);color:var(--text-primary);
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.95rem;
+  letter-spacing:0.06em;text-transform:uppercase;border-radius:50px;
+  transition:border-color .25s ease,background .25s ease,transform .3s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+.btn-ico{width:18px;height:18px;flex:none}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(15,12,9,.86);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 var(--accent-border);
+  padding-top:13px;padding-bottom:13px;
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.45rem;letter-spacing:0.04em;text-transform:uppercase;line-height:1}
+.logo span{color:var(--accent)}
+.logo small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:0.56rem;letter-spacing:0.36em;color:var(--text-secondary);margin-top:3px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:0.82rem;font-weight:400;letter-spacing:0.04em;color:var(--text-secondary);transition:color .25s ease}
+.nav-links a:hover{color:var(--text-primary)}
+.header-cta{display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.2rem;border:1px solid var(--accent-border);border-radius:50px;font-size:0.78rem;font-weight:500;letter-spacing:.03em;color:var(--text-primary);transition:background .25s,border-color .25s;touch-action:manipulation}
+.header-cta:hover{background:var(--accent-subtle);border-color:var(--accent)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* Hero — Modelo A cinematic full-bleed */
+.hero{position:relative;height:100dvh;min-height:620px;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;animation:kb 24s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(155deg,rgba(15,12,9,.35) 25%,rgba(15,12,9,.72) 68%,rgba(15,12,9,.96) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,6vw,5.5rem);display:flex;align-items:flex-end;justify-content:space-between;gap:36px;flex-wrap:wrap}
+.hero-left{max-width:780px}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;font-size:0.72rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:currentColor}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);font-weight:900;letter-spacing:-0.01em;overflow:hidden}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(0.22,1,0.36,1) forwards}
+.hero-title .accent{color:var(--accent)}
+.hero-title .line:nth-child(1) .word{animation-delay:.25s}
+.hero-title .line:nth-child(2) .word{animation-delay:.4s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{margin-top:24px;max-width:480px;color:var(--text-secondary);font-size:1.05rem;font-weight:300;opacity:0;animation:fade-in 1s ease .85s forwards}
+.hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-badge{display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:16px;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),0 8px 24px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.16);
+  opacity:0;animation:fade-in 1s ease 1.15s forwards}
+.hero-badge .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.6rem;line-height:1;color:var(--gold)}
+.hero-badge .stars{color:var(--gold);font-size:0.8rem;letter-spacing:2px}
+.hero-badge .lbl{font-size:0.72rem;color:var(--text-secondary);letter-spacing:0.04em}
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-muted);font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;opacity:0;animation:fade-in 1s ease 1.4s forwards}
+.scroll-hint .dot{width:1px;height:38px;background:linear-gradient(var(--accent),transparent)}
+@media(max-width:600px){.hero-badge{padding:14px 16px}.hero-badge .num{font-size:2rem}}
+
+/* Sobre */
+.about{background:var(--bg-base);position:relative}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.about-figure{position:relative}
+.about-figure img{width:100%;height:clamp(360px,52vw,580px);object-fit:cover;border-radius:8px;box-shadow:var(--shadow-lg)}
+.about-figure .frame{position:absolute;inset:14px;border:1px solid var(--accent-border);border-radius:6px;pointer-events:none}
+.about-figure .tag{position:absolute;left:-18px;bottom:34px;background:var(--accent);color:#15110d;padding:14px 20px;border-radius:6px;box-shadow:var(--shadow-md)}
+.about-figure .tag b{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;display:block;line-height:1}
+.about-figure .tag span{font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase}
+.about h2{font-size:var(--text-h2);margin-bottom:22px}
+.about h2 em{font-style:normal;color:var(--accent)}
+.about p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.about-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.about-stats .st b{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:800;color:var(--gold);display:block;line-height:1}
+.about-stats .st span{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr}.about-figure{order:-1}}
+
+/* Serviços — seção clara, diagonal cut */
+.services{background:var(--bg-light);color:var(--text-on-light);clip-path:polygon(0 4%,100% 0,100% 100%,0 96%);padding-top:calc(var(--section-pad) + 4vw);padding-bottom:calc(var(--section-pad) + 4vw)}
+.services .overline{color:var(--accent-dark)}
+.services h2{font-size:var(--text-h2);color:var(--text-on-light);max-width:16ch}
+.services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.services-head p{color:var(--text-on-light-soft);max-width:380px}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.serv-card{background:#fbf7f0;border:1px solid rgba(28,24,19,.08);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .4s cubic-bezier(0.22,1,0.36,1),box-shadow .4s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md);border-color:var(--accent-border)}
+.serv-card.tall{grid-row:span 2}
+.serv-media{height:200px;overflow:hidden}
+.serv-card.tall .serv-media{height:330px}
+.serv-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(0.22,1,0.36,1)}
+.serv-card:hover .serv-media img{transform:scale(1.06)}
+.serv-body{padding:26px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
+.serv-ol{font-family:'Inter',sans-serif;font-size:0.64rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-dark)}
+.serv-body h3{font-size:1.5rem;color:var(--text-on-light);letter-spacing:0.01em}
+.serv-body p{font-size:0.92rem;color:var(--text-on-light-soft);line-height:1.6}
+.serv-price{margin-top:auto;padding-top:14px;display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,24,19,.1)}
+.serv-price .from{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;color:var(--text-on-light)}
+.serv-list{background:#fbf7f0;border:1px solid rgba(28,24,19,.08);border-radius:10px;padding:26px}
+.serv-list h3{font-size:1.4rem;color:var(--text-on-light);margin-bottom:16px}
+.serv-list ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.serv-list li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:0.92rem;color:var(--text-on-light-soft);border-bottom:1px dashed rgba(28,24,19,.14);padding-bottom:11px}
+.serv-list li:last-child{border-bottom:none}
+.serv-list li b{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;color:var(--text-on-light);white-space:nowrap}
+@media(max-width:840px){.serv-grid{grid-template-columns:1fr 1fr}.serv-card.tall{grid-row:auto}.serv-card.tall .serv-media{height:200px}}
+@media(max-width:560px){.serv-grid{grid-template-columns:1fr}}
+
+/* Experiência — faixa full-bleed com foto */
+.exp{position:relative;background:url('imagens/web-05.jpg') center/cover fixed;color:#fff;text-align:center;overflow:hidden}
+.exp::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(15,12,9,.78),rgba(15,12,9,.86))}
+.exp::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.exp .wrap{position:relative;z-index:2;max-width:760px}
+.exp .overline{justify-content:center;color:var(--gold)}
+.exp h2{font-size:var(--text-h2);margin-bottom:20px}
+.exp h2 em{font-style:normal;color:var(--accent)}
+.exp p{color:var(--text-secondary);margin:0 auto 30px;max-width:560px}
+
+/* Prova social */
+.proof{background:var(--bg-surface)}
+.proof-head{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proof-head .overline{justify-content:center}
+.proof-head h2{font-size:var(--text-h2)}
+.proof-head h2 em{font-style:normal;color:var(--accent)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.quote{background:var(--bg-base);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:30px 28px;display:flex;flex-direction:column;gap:16px}
+.quote .stars{color:var(--gold);font-size:0.85rem;letter-spacing:3px}
+.quote p{color:var(--text-secondary);font-size:0.96rem;line-height:1.7;flex:1}
+.quote .who{display:flex;align-items:center;gap:13px;border-top:1px solid rgba(255,255,255,.07);padding-top:16px}
+.quote .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;color:#15110d;font-size:1.1rem;flex:none}
+.quote .who b{font-family:'Inter',sans-serif;font-weight:600;font-size:0.9rem;color:var(--text-primary);display:block}
+.quote .who span{font-size:0.72rem;color:var(--text-muted)}
+.proof-cta{text-align:center;margin-top:clamp(2.5rem,5vw,3.5rem)}
+@media(max-width:840px){.proof-grid{grid-template-columns:1fr}}
+
+/* Localização */
+.loc{background:var(--bg-base)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.loc h2{font-size:var(--text-h2);margin-bottom:24px}
+.loc h2 em{font-style:normal;color:var(--accent)}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.info-row:last-of-type{border-bottom:none}
+.info-row .ic{width:40px;height:40px;border-radius:50%;border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex:none;color:var(--accent)}
+.info-row .ic svg{width:18px;height:18px}
+.info-row h4{font-family:'Inter',sans-serif;font-weight:600;font-size:0.74rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.info-row p{color:var(--text-primary);font-size:1rem;line-height:1.5}
+.info-row a.maplink{color:var(--accent);font-size:0.85rem;font-weight:500;margin-top:6px;display:inline-block}
+.loc-actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.loc-map{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.08);min-height:380px}
+.loc-map iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+@media(max-width:840px){.loc-grid{grid-template-columns:1fr}}
+
+/* Footer */
+footer{background:var(--bg-inset);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-brand .logo{margin-bottom:14px}
+.foot-brand p{color:var(--text-muted);font-size:0.9rem;max-width:300px}
+.foot-cols{display:flex;gap:clamp(2.5rem,6vw,5rem);flex-wrap:wrap}
+.foot-col h4{font-family:'Inter',sans-serif;font-weight:600;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;color:var(--text-secondary);font-size:0.9rem;margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:var(--text-primary)}
+.foot-bottom{padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--text-muted);font-size:0.78rem}
+.foot-bottom a{color:var(--accent)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(0.22,1,0.36,1),transform .8s cubic-bezier(0.22,1,0.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .hero-bg,.hero-title .word{animation:none!important}
+  .hero-title .word{transform:none;opacity:1}
+  .hero-sub,.hero-actions,.hero-badge,.scroll-hint{opacity:1;animation:none!important}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  .exp{background-attachment:scroll}
+}
+@media(max-width:700px){.exp{background-attachment:scroll}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#" class="logo">PITUBA <span>BARBERSHOP</span><small>SALVADOR · BA</small></a>
+  <nav class="nav-links">
+    <a href="#sobre">A Barbearia</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#local">Onde estamos</a>
+  </nav>
+  <a class="header-cta" href="https://wa.me/5571983460767" target="_blank" rel="noopener">Agendar no WhatsApp</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Barbearia premium · Pituba, Salvador</div>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Estilo</span> <span class="word">de</span> <span class="word">homem,</span></span>
+        <span class="line"><span class="word accent">feito</span> <span class="word accent">na</span> <span class="word accent">navalha.</span></span>
+      </h1>
+      <p class="hero-sub">Corte, barba e cuidado masculino na orla da Pituba. Ambiente, técnica e atendimento que justificam a cadeira.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5571983460767" target="_blank" rel="noopener">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.728-.957z"/></svg>
+          Agende seu horário
+        </a>
+        <a class="btn-ghost" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="num">4.9</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Role</span><span class="dot"></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <div class="overline reveal">A Barbearia</div>
+      <h2 class="reveal">Um refúgio masculino<br>no coração da <em>Pituba</em></h2>
+      <p class="reveal">Na Av. Octávio Mangabeira, a poucos metros da orla, a Pituba Barbershop é o lugar onde o homem soteropolitano para, relaxa e sai pronto. Aqui o corte não tem pressa: cada degradê, cada barba na navalha e cada acabamento é feito no detalhe.</p>
+      <p class="reveal">Cadeira de couro, luz baixa, conversa boa e profissionais que entendem do ofício. Não é só cortar o cabelo — é a hora do seu cuidado, do começo ao fim.</p>
+      <div class="about-stats reveal">
+        <div class="st"><b>4.9</b><span>Nota no Google</span></div>
+        <div class="st"><b>+8</b><span>Serviços</span></div>
+        <div class="st"><b>Pituba</b><span>Na orla, fácil acesso</span></div>
+      </div>
+    </div>
+    <figure class="about-figure reveal">
+      <img src="imagens/web-06.jpg" alt="Cadeira de couro clássica da Pituba Barbershop">
+      <span class="frame"></span>
+      <span class="tag"><b>Premium</b><span>Da cadeira ao acabamento</span></span>
+    </figure>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="services-head">
+      <div>
+        <div class="overline reveal">Serviços &amp; Procedimentos</div>
+        <h2 class="reveal">O que a sua cadeira reserva</h2>
+      </div>
+      <p class="reveal">Do corte clássico ao combo completo de barba e relaxamento. Valores de referência — confirme o seu pelo WhatsApp.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card tall reveal">
+        <div class="serv-media"><img src="imagens/web-03.jpg" alt="Corte masculino com degradê na máquina"></div>
+        <div class="serv-body">
+          <span class="serv-ol">Cabelo</span>
+          <h3>Corte &amp; Degradê</h3>
+          <p>Corte na tesoura e máquina, degradê navalhado e finalização com produto. Saída impecável.</p>
+          <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 45</span></div>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-media"><img src="imagens/web-02.jpg" alt="Barba feita com tesoura e navalha"></div>
+        <div class="serv-body">
+          <span class="serv-ol">Barba</span>
+          <h3>Barba na Navalha</h3>
+          <p>Toalha quente, modelagem e navalha com acabamento perfeito.</p>
+          <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 40</span></div>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-media"><img src="imagens/web-04.jpg" alt="Barbeiro finalizando o corte do cliente"></div>
+        <div class="serv-body">
+          <span class="serv-ol">Combo</span>
+          <h3>Corte + Barba</h3>
+          <p>O pacote completo: cabelo e barba alinhados na mesma visita.</p>
+          <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 75</span></div>
+        </div>
+      </article>
+      <article class="serv-list reveal">
+        <h3>Também na casa</h3>
+        <ul>
+          <li><span>Pezinho / acabamento</span> <b>R$ 20</b></li>
+          <li><span>Sobrancelha na navalha</span> <b>R$ 15</b></li>
+          <li><span>Pigmentação de barba</span> <b>R$ 35</b></li>
+          <li><span>Hidratação capilar</span> <b>R$ 40</b></li>
+          <li><span>Corte infantil</span> <b>R$ 40</b></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="exp">
+  <div class="wrap">
+    <div class="overline center reveal">A Experiência Pituba</div>
+    <h2 class="reveal">Você senta. <em>O resto é com a gente.</em></h2>
+    <p class="reveal">Sem pressa, sem fila desorganizada. Marque seu horário pelo WhatsApp e chegue na hora certa para o seu momento — corte, barba e aquele cuidado que só barbeiro de verdade entrega.</p>
+    <a class="btn-primary reveal" href="https://wa.me/5571983460767" target="_blank" rel="noopener">
+      <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.728-.957z"/></svg>
+      Marcar meu horário
+    </a>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="proof" id="prova">
+  <div class="wrap">
+    <div class="proof-head">
+      <div class="overline center reveal">Quem senta, volta</div>
+      <h2 class="reveal"><em>4.9</em> de quem já passou pela cadeira</h2>
+    </div>
+    <div class="proof-grid">
+      <article class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia da Pituba, disparado. Degradê impecável e a barba na navalha é outro nível. Atendimento nota mil."</p>
+        <div class="who"><span class="av">R</span><div><b>Rafael M.</b><span>Cliente no Google</span></div></div>
+      </article>
+      <article class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Ambiente top, cadeira confortável e os caras sabem o que fazem. Saí de lá renovado. Virei cliente fixo."</p>
+        <div class="who"><span class="av">D</span><div><b>Diego S.</b><span>Cliente no Google</span></div></div>
+      </article>
+      <article class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Marquei pelo WhatsApp, fui atendido na hora marcada, sem espera. Corte e barba ficaram exatamente como pedi. Recomendo demais."</p>
+        <div class="who"><span class="av">L</span><div><b>Lucas A.</b><span>Cliente no Google</span></div></div>
+      </article>
+    </div>
+    <div class="proof-cta reveal">
+      <a class="btn-primary" href="https://wa.me/5571983460767" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.728-.957z"/></svg>
+        Quero garantir meu horário
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="loc" id="local">
+  <div class="wrap loc-grid">
+    <div class="loc-info">
+      <div class="overline reveal">Onde estamos</div>
+      <h2 class="reveal">Fácil de achar, <em>na orla da Pituba</em></h2>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div>
+          <h4>Endereço</h4>
+          <p>Av. Octávio Mangabeira, 1945<br>Pituba, Salvador - BA, 41830-050</p>
+          <a class="maplink" href="https://www.google.com/maps/place/Pituba+Barbershop/@-13.0037825,-38.4533213,17z/data=!3m1!4b1!4m6!3m5!1s0x7161bd7a50d7577:0x6cb4a1da41a1393a!8m2!3d-13.0037825!4d-38.4533213!16s%2Fg%2F11pvbstg5g?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver rota no Google Maps →</a>
+        </div>
+      </div>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <div>
+          <h4>WhatsApp / Telefone</h4>
+          <p>(71) 98346-0767</p>
+          <a class="maplink" href="https://wa.me/5571983460767" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+        </div>
+      </div>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div>
+          <h4>Horário</h4>
+          <p>Seg a Sáb · 09h às 20h<br>Atendimento com hora marcada</p>
+        </div>
+      </div>
+      <div class="loc-actions reveal">
+        <a class="btn-primary" href="https://wa.me/5571983460767" target="_blank" rel="noopener">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.728-.957z"/></svg>
+          Agendar agora
+        </a>
+      </div>
+    </div>
+    <div class="loc-map reveal">
+      <iframe src="https://www.google.com/maps?q=Pituba+Barbershop,+Av.+Oct%C3%A1vio+Mangabeira,+1945,+Pituba,+Salvador+-+BA&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Pituba Barbershop"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="logo">PITUBA <span>BARBERSHOP</span><small>SALVADOR · BA</small></a>
+        <p>Barbearia premium na orla da Pituba. Corte, barba e cuidado masculino feitos no detalhe.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Navegar</h4>
+          <a href="#sobre">A Barbearia</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#prova">Avaliações</a>
+          <a href="#local">Localização</a>
+        </div>
+        <div class="foot-col">
+          <h4>Contato</h4>
+          <a href="https://wa.me/5571983460767" target="_blank" rel="noopener">WhatsApp (71) 98346-0767</a>
+          <p>Av. Octávio Mangabeira, 1945</p>
+          <p>Pituba, Salvador - BA</p>
+        </div>
+        <div class="foot-col">
+          <h4>Horário</h4>
+          <p>Seg a Sáb · 09h às 20h</p>
+          <p>Domingo · Fechado</p>
+          <a href="https://wa.me/5571983460767" target="_blank" rel="noopener">Agendar horário</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pituba Barbershop · Todos os direitos reservados.</span>
+      <span>Feito para vender · <a href="https://wa.me/5571983460767" target="_blank" rel="noopener">Fale conosco</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5571983460767" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.728-.957zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.017-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

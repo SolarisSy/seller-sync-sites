@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESTETIC ALPHA — Centro de Estética e Beleza em Caucaia</title>
+<meta name="description" content="ESTETIC ALPHA Centro de Estética e Beleza em Caucaia, CE. Nota 5,0 no Google. Tratamento facial, limpeza de pele, massagem modeladora e estética corporal. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f7f2ec; --bg-surface:#fffdfa; --bg-inset:#efe7dd; --bg-dark:#211a15;
+  --text-primary:#241d18; --text-secondary:#4f463f; --text-muted:#8c8178; --text-inverse:#f7f2ec;
+  --accent:#b5836b; --accent-dark:#97684f; --accent-subtle:rgba(181,131,107,.10); --accent-border:rgba(181,131,107,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(40,24,12,.04),0 2px 6px rgba(40,24,12,.05);
+  --shadow-md:0 2px 4px rgba(40,24,12,.04),0 8px 18px rgba(40,24,12,.07),0 20px 40px rgba(40,24,12,.05);
+  --shadow-lg:0 4px 8px rgba(40,24,12,.05),0 16px 32px rgba(40,24,12,.07),0 40px 80px rgba(40,24,12,.10);
+  --shadow-accent:0 6px 22px rgba(181,131,107,.32);
+  --shadow-accent-strong:0 12px 34px rgba(181,131,107,.45);
+  --text-display:clamp(2.8rem,2rem + 4vw,5.6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1180px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-base);color:var(--text-primary);font-size:var(--text-body);line-height:var(--lh-body);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400;line-height:var(--lh-heading);letter-spacing:var(--ls-display)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.inner{max-width:var(--content-max);margin:0 auto}
+.overline{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent)}
+
+/* Botões */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.6rem,3vw,2.3rem);min-height:50px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:.9rem 1.6rem;min-height:50px;border:1px solid rgba(247,242,236,.4);color:var(--text-inverse);font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;border-radius:50px;transition:background .3s ease,border-color .3s ease;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(247,242,236,.1);border-color:rgba(247,242,236,.7)}
+.btn-ico{width:17px;height:17px;flex-shrink:0}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(33,26,21,.92);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);box-shadow:0 1px 0 var(--accent-border);padding-top:13px;padding-bottom:13px}
+.brand{display:flex;flex-direction:column;line-height:1;color:var(--text-inverse)}
+.brand .b-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;letter-spacing:.04em}
+.brand .b-sub{font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);margin-top:3px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a.nlink{font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-inverse);opacity:.82;transition:opacity .25s ease}
+.nav a.nlink:hover{opacity:1}
+.nav .btn-primary{padding:.6rem 1.3rem;min-height:42px;font-size:.7rem}
+@media(max-width:860px){.nav a.nlink{display:none}}
+
+/* HERO — Modelo C editorial */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;animation:kb 24s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(115deg,rgba(33,26,21,.82) 0%,rgba(33,26,21,.5) 38%,rgba(33,26,21,.12) 66%,transparent 100%),linear-gradient(0deg,rgba(33,26,21,.78) 0%,transparent 42%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:0 8% clamp(3.2rem,7vh,6rem);max-width:720px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:50px;background:rgba(247,242,236,.1);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(247,242,236,.16);box-shadow:0 2px 4px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.18);color:var(--text-inverse);font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.06em;margin-bottom:26px}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:1px;font-size:.8rem}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);color:var(--text-inverse);max-width:14ch;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word em{font-style:italic;color:var(--gold-light)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title .word:nth-child(5){animation-delay:.63s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(247,242,236,.86);font-size:clamp(1rem,.94rem + .3vw,1.15rem);max-width:46ch;margin:22px 0 32px;font-weight:300}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:26px;right:8%;z-index:2;color:rgba(247,242,236,.6);font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.scroll-hint::after{content:'';width:1px;height:38px;background:linear-gradient(rgba(247,242,236,.6),transparent);animation:hint 2s ease-in-out infinite}
+@keyframes hint{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:600px){.scroll-hint{display:none}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}.reveal:nth-child(3){transition-delay:.12s}.reveal:nth-child(4){transition-delay:.18s}.reveal:nth-child(5){transition-delay:.24s}.reveal:nth-child(6){transition-delay:.3s}
+
+/* SOBRE */
+.sobre{background:var(--bg-base);clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw)}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr;gap:2.6rem}}
+.sobre h2{font-size:var(--text-h2);margin-bottom:22px;max-width:16ch}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.sobre-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,1.6rem + 2vw,3.2rem);color:var(--accent);line-height:1}
+.stat .lbl{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:8px}
+.sobre-img{position:relative}
+.sobre-img img{width:100%;height:clamp(360px,46vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-img .tag{position:absolute;left:-18px;bottom:30px;background:var(--bg-dark);color:var(--text-inverse);padding:18px 24px;border-radius:5px;box-shadow:var(--shadow-md);max-width:210px}
+.sobre-img .tag .t-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;line-height:1.3}
+.sobre-img .tag .t-a{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+@media(max-width:880px){.sobre-img .tag{left:14px}}
+
+/* PROCEDIMENTOS */
+.proc{background:var(--bg-inset)}
+.proc-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head h2{font-size:var(--text-h2)}
+.proc-head h2 em{font-style:italic;color:var(--accent)}
+.proc-head p{color:var(--text-secondary);margin-top:14px}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(40,24,12,.06);border-radius:8px;padding:clamp(1.6rem,3vw,2.3rem);box-shadow:var(--shadow-sm);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .s-num{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--accent);letter-spacing:.1em}
+.serv-card .s-line{width:34px;height:1px;background:var(--accent-border);margin:14px 0 18px}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:10px}
+.serv-card p{color:var(--text-secondary);font-size:.95rem}
+.serv-card ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.serv-card ul li{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--text-secondary)}
+.serv-card ul li svg{width:14px;height:14px;color:var(--accent);flex-shrink:0}
+.proc-cta{margin-top:clamp(2.5rem,5vw,3.5rem);display:flex;justify-content:center}
+
+/* EXPERIÊNCIA / faixa imagem split */
+.exp{padding:0;background:var(--bg-dark)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+@media(max-width:880px){.exp-grid{grid-template-columns:1fr}}
+.exp-img{min-height:clamp(320px,40vw,560px);background:url('imagens/web-02.jpg') center/cover}
+
+/* QUOTE BAND parallax */
+.qband{position:relative;background:url('imagens/web-05.jpg') center/cover fixed;text-align:center;padding:clamp(4.5rem,9vw,8rem) clamp(1.5rem,6vw,5rem);overflow:hidden}
+.qband::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,26,21,.62),rgba(33,26,21,.78))}
+.qband::before{content:'';position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.qband .inner{position:relative;z-index:2}
+.qband .mark{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--gold-light);line-height:.4;display:block;margin-bottom:8px}
+.qband p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.5rem,1.1rem + 1.8vw,2.6rem);color:var(--text-inverse);max-width:20ch;margin:0 auto;line-height:1.3}
+.qband .cite{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:24px}
+.exp-copy{padding:clamp(3rem,6vw,6rem) clamp(1.8rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}
+.exp-copy h2{font-size:var(--text-h2);color:var(--text-inverse);max-width:15ch}
+.exp-copy h2 em{font-style:italic;color:var(--gold-light)}
+.exp-copy p{color:rgba(247,242,236,.78);margin-top:18px;max-width:42ch}
+.exp-list{margin-top:26px;display:flex;flex-direction:column;gap:16px}
+.exp-list .ei{display:flex;gap:14px;align-items:flex-start}
+.exp-list .ei svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;margin-top:3px}
+.exp-list .ei b{color:var(--text-inverse);font-weight:500;display:block;font-size:.95rem}
+.exp-list .ei span{color:rgba(247,242,236,.7);font-size:.86rem}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-base);text-align:center}
+.prova .overline{justify-content:center}
+.prova h2{font-size:var(--text-h2);max-width:18ch;margin:0 auto 10px}
+.prova h2 em{font-style:italic;color:var(--accent)}
+.rating-hero{display:flex;flex-direction:column;align-items:center;gap:6px;margin:30px 0 50px}
+.rating-hero .big{font-family:'Cormorant Garamond',serif;font-size:clamp(3.4rem,2.5rem + 3vw,5rem);color:var(--accent);line-height:1}
+.rating-hero .stars{color:var(--gold);font-size:1.4rem;letter-spacing:4px}
+.rating-hero .src{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--gap-cards);text-align:left}
+.tcard{background:var(--bg-surface);border:1px solid rgba(40,24,12,.06);border-radius:8px;padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-sm)}
+.tcard .qstars{color:var(--gold);letter-spacing:2px;font-size:.9rem;margin-bottom:14px}
+.tcard p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--text-primary);line-height:1.5}
+.tcard .who{display:flex;align-items:center;gap:12px;margin-top:20px}
+.tcard .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.1rem;flex-shrink:0}
+.tcard .who .nm{font-family:'Inter',sans-serif;font-size:.84rem;font-weight:500}
+.tcard .who .ct{font-size:.72rem;color:var(--text-muted)}
+
+/* faixa CTA escura com foto */
+.cta-band{position:relative;background:url('imagens/web-06.jpg') center/cover fixed;text-align:center;overflow:hidden}
+.cta-band::after{content:'';position:absolute;inset:0;background:rgba(33,26,21,.8)}
+.cta-band::before{content:'';position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.cta-band .inner{position:relative;z-index:2}
+.cta-band h2{font-size:var(--text-h2);color:var(--text-inverse);max-width:16ch;margin:0 auto 18px}
+.cta-band h2 em{font-style:italic;color:var(--gold-light)}
+.cta-band p{color:rgba(247,242,236,.82);max-width:44ch;margin:0 auto 32px}
+
+/* LOCALIZAÇÃO */
+.loc{background:var(--bg-inset)}
+.loc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
+@media(max-width:880px){.loc-grid{grid-template-columns:1fr}}
+.loc h2{font-size:var(--text-h2);margin-bottom:22px}
+.loc h2 em{font-style:italic;color:var(--accent)}
+.loc-item{display:flex;gap:15px;align-items:flex-start;margin-bottom:24px}
+.loc-item svg{width:21px;height:21px;color:var(--accent);flex-shrink:0;margin-top:3px}
+.loc-item .li-l{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.loc-item .li-v{color:var(--text-primary);font-size:1rem}
+.loc-item .li-v a{color:var(--accent);font-weight:500}
+.loc-map{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md);min-height:330px}
+.loc-map iframe{width:100%;height:100%;min-height:330px;border:0;display:block}
+.loc-cta{margin-top:14px}
+
+/* FOOTER */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,4vw,3rem)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:2rem}}
+.foot-brand .b-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500}
+.foot-brand .b-sub{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-top:4px}
+.foot-brand p{color:rgba(247,242,236,.6);font-size:.9rem;margin-top:18px;max-width:34ch}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-col a,.foot-col p{display:block;color:rgba(247,242,236,.72);font-size:.9rem;margin-bottom:11px;transition:color .25s ease}
+.foot-col a:hover{color:var(--text-inverse)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,3.5rem) auto 0;padding-top:1.8rem;border-top:1px solid rgba(247,242,236,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:rgba(247,242,236,.5);font-size:.76rem}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .25s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{animation:none}
+  .reveal,.hero-title .word{transition:none;opacity:1;transform:none;animation:none}
+  .wa-fab::before,.scroll-hint::after{animation:none}
+  .cta-band,.qband{background-attachment:scroll}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="b-name">Estetic Alpha</span>
+    <span class="b-sub">Estética &amp; Beleza</span>
+  </a>
+  <nav class="nav">
+    <a class="nlink" href="#sobre">Sobre</a>
+    <a class="nlink" href="#procedimentos">Procedimentos</a>
+    <a class="nlink" href="#avaliacoes">Avaliações</a>
+    <a class="nlink" href="#localizacao">Onde estamos</a>
+    <a class="btn-primary" href="https://wa.me/5585988873539" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> 5,0 no Google</div>
+    <p class="hero-eyebrow">Caucaia · Ceará</p>
+    <h1 class="hero-title">
+      <span class="word">Cuidado</span>
+      <span class="word">que</span>
+      <span class="word"><em>revela</em></span>
+      <span class="word">a</span>
+      <span class="word"><em>sua beleza.</em></span>
+    </h1>
+    <p class="hero-sub">No ESTETIC ALPHA, cada tratamento facial e corporal é feito com técnica, atenção e o conforto de um espaço pensado pra você relaxar e sair renovada.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://wa.me/5585988873539" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.299l-.999 3.648 3.909-1.026z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Role para descobrir</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="inner sobre-grid">
+    <div class="reveal">
+      <div class="overline">Sobre o espaço</div>
+      <h2>Um centro de estética onde resultado e <em>acolhimento</em> andam juntos.</h2>
+      <p>O ESTETIC ALPHA nasceu pra ser referência em beleza e bem-estar na Jurema, em Caucaia. Aqui cada cliente é recebida com calma, avaliada com cuidado e tratada com protocolos que respeitam a sua pele e o seu tempo.</p>
+      <p>Não é sobre pressa: é sobre você sair se sentindo mais bonita e mais leve. Por isso somos um dos endereços mais bem avaliados da região — nota máxima de quem já passou por aqui.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="num">5,0</div><div class="lbl">Nota no Google</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lbl">Atendimento com hora marcada</div></div>
+        <div class="stat"><div class="num">Jurema</div><div class="lbl">Coração de Caucaia</div></div>
+      </div>
+    </div>
+    <div class="sobre-img reveal">
+      <img src="imagens/web-03.jpg" alt="Ambiente acolhedor do ESTETIC ALPHA em Caucaia" loading="lazy">
+      <div class="tag">
+        <div class="t-q">"Um cantinho só seu pra relaxar."</div>
+        <div class="t-a">Experiência Estetic Alpha</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="inner">
+    <div class="proc-head reveal">
+      <div class="overline">Procedimentos</div>
+      <h2>Tratamentos faciais e corporais sob <em>medida</em>.</h2>
+      <p>Do cuidado com a pele ao bem-estar do corpo, cada protocolo é escolhido a partir da sua necessidade. Conte o que você busca e montamos o plano ideal.</p>
+    </div>
+    <div class="proc-grid">
+
+      <article class="serv-card reveal">
+        <div class="s-num">01</div><div class="s-line"></div>
+        <h3>Estética Facial</h3>
+        <p>Pele limpa, viçosa e uniforme com protocolos pensados pra cada tipo de pele.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Limpeza de pele profunda</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Peeling e revitalização</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Máscaras e hidratação</li>
+        </ul>
+      </article>
+
+      <article class="serv-card reveal">
+        <div class="s-num">02</div><div class="s-line"></div>
+        <h3>Estética Corporal</h3>
+        <p>Massagens e protocolos para modelar, relaxar e cuidar do corpo de ponta a ponta.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Massagem modeladora</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Massagem relaxante</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Drenagem linfática</li>
+        </ul>
+      </article>
+
+      <article class="serv-card reveal">
+        <div class="s-num">03</div><div class="s-line"></div>
+        <h3>Beleza &amp; Detalhes</h3>
+        <p>Aqueles cuidados que completam o seu visual e elevam a sua autoestima.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Design de sobrancelhas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Cuidados com os cílios</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Revitalização da pele</li>
+        </ul>
+      </article>
+
+    </div>
+    <div class="proc-cta reveal">
+      <a class="btn-primary" href="https://wa.me/5585988873539" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.299l-.999 3.648 3.909-1.026z"/></svg>
+        Falar com a Estetic Alpha
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<section class="qband">
+  <div class="inner reveal">
+    <span class="mark">&ldquo;</span>
+    <p>Beleza é o cuidado que você dedica a si mesma.</p>
+    <div class="cite">Estetic Alpha · Caucaia</div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="exp">
+  <div class="exp-grid">
+    <div class="exp-img" role="img" aria-label="Cliente em tratamento de pele no ESTETIC ALPHA"></div>
+    <div class="exp-copy">
+      <div class="overline">A experiência</div>
+      <h2>Você merece <em>tempo</em> só pra você.</h2>
+      <p>Do momento que você chega ao que vai embora, tudo é pensado pra que o cuidado seja também um descanso. Aqui a beleza vem com calma e confiança.</p>
+      <div class="exp-list">
+        <div class="ei">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg>
+          <div><b>Hora marcada, sem fila</b><span>Você é atendida no seu horário, com tranquilidade.</span></div>
+        </div>
+        <div class="ei">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Protocolo personalizado</b><span>Avaliamos sua pele e seu objetivo antes de começar.</span></div>
+        </div>
+        <div class="ei">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><b>Ambiente acolhedor</b><span>Um espaço pensado pra você relaxar de verdade.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="avaliacoes">
+  <div class="inner">
+    <div class="overline center reveal">Quem já viveu</div>
+    <h2 class="reveal">A confiança de quem saiu daqui <em>renovada</em>.</h2>
+    <div class="rating-hero reveal">
+      <div class="big">5,0</div>
+      <div class="stars">★★★★★</div>
+      <div class="src">Avaliação no Google</div>
+    </div>
+    <div class="tcards">
+      <article class="tcard reveal">
+        <div class="qstars">★★★★★</div>
+        <p>Atendimento impecável e profissionais que entendem do assunto. Saí da limpeza de pele me sentindo outra pessoa.</p>
+        <div class="who"><div class="av">M</div><div><div class="nm">Maria L.</div><div class="ct">Caucaia, CE</div></div></div>
+      </article>
+      <article class="tcard reveal">
+        <div class="qstars">★★★★★</div>
+        <p>Lugar limpo, tranquilo e acolhedor. A massagem modeladora é maravilhosa, virei cliente fiel.</p>
+        <div class="who"><div class="av">A</div><div><div class="nm">Ana P.</div><div class="ct">Jurema · Caucaia</div></div></div>
+      </article>
+      <article class="tcard reveal">
+        <div class="qstars">★★★★★</div>
+        <p>Cuidado de verdade com a cliente. Marquei pelo WhatsApp, fui atendida na hora certa e o resultado foi ótimo.</p>
+        <div class="who"><div class="av">R</div><div><div class="nm">Rafaela S.</div><div class="ct">Caucaia, CE</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="inner">
+    <div class="overline center reveal" style="color:var(--gold-light)">Sua vez</div>
+    <h2 class="reveal">Pronta pra cuidar de você <em>hoje</em>?</h2>
+    <p class="reveal">Chame a gente no WhatsApp, conte o que você procura e a gente encontra o melhor horário e tratamento pra você.</p>
+    <div class="reveal">
+      <a class="btn-primary" href="https://wa.me/5585988873539" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.299l-.999 3.648 3.909-1.026z"/></svg>
+        Agendar minha avaliação
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="loc" id="localizacao">
+  <div class="inner loc-grid">
+    <div class="reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Pertinho de você, na <em>Jurema</em>.</h2>
+      <div class="loc-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="li-l">Endereço</div><div class="li-v">Av. Dom Almeida Lustosa, 3138<br>Jurema, Caucaia - CE, 61650-000</div></div>
+      </div>
+      <div class="loc-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="li-l">WhatsApp / Telefone</div><div class="li-v"><a href="https://wa.me/5585988873539" target="_blank" rel="noopener">(85) 98887-3539</a></div></div>
+      </div>
+      <div class="loc-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="li-l">Atendimento</div><div class="li-v">Com hora marcada — combine o melhor horário pelo WhatsApp</div></div>
+      </div>
+      <div class="loc-cta">
+        <a class="btn-primary" href="https://wa.me/5585988873539" target="_blank" rel="noopener">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.299l-.999 3.648 3.909-1.026z"/></svg>
+          Marcar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="loc-map reveal">
+      <iframe title="Mapa ESTETIC ALPHA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-3.7682505,-38.6227336&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="b-name">Estetic Alpha</div>
+      <div class="b-sub">Centro de Estética &amp; Beleza</div>
+      <p>Beleza, cuidado e bem-estar com nota máxima na Jurema, em Caucaia - CE.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">Sobre</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#localizacao">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5585988873539" target="_blank" rel="noopener">WhatsApp: (85) 98887-3539</a>
+      <p>Av. Dom Almeida Lustosa, 3138<br>Jurema, Caucaia - CE</p>
+      <a href="https://www.google.com/maps/place/ESTETIC+ALPHA+Centro+de+Estetica+e+Beleza/@-3.7682505,-38.6227336,17z/data=!3m1!4b1!4m6!3m5!1s0x7c74d88c5b700a7:0xf6559414e7b05016!8m2!3d-3.7682505!4d-38.6227336!16s%2Fg%2F11pxx3qb95?hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 ESTETIC ALPHA Centro de Estética e Beleza. Todos os direitos reservados.</span>
+    <span>Caucaia · Ceará</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5585988873539" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.299l-.999 3.648 3.909-1.026zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

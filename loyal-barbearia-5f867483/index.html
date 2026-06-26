@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loyal Barbearia — Barbearia em Campo Grande, MS</title>
+<meta name="description" content="Loyal Barbearia em Campo Grande, MS. Corte, barba e navalha com acabamento premium. Nota 4.9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfície */
+  --bg-base:#f6f2ec; --bg-surface:#fbf8f3; --bg-inset:#ece5db; --bg-dark:#16120e;
+  /* texto */
+  --text-primary:#1c1813; --text-secondary:#4a443c; --text-muted:#8d8478; --text-inverse:#f6f2ec;
+  /* acento */
+  --accent:#b5763a; --accent-dark:#8f5a2a;
+  --accent-subtle:rgba(181,118,58,.10); --accent-border:rgba(181,118,58,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.05),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.10);
+  --shadow-accent:0 8px 24px rgba(181,118,58,.32);
+  --shadow-accent-strong:0 12px 34px rgba(181,118,58,.45);
+  /* type */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.85rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.0; --lh-heading:1.12; --lh-body:1.75;
+  --ls-display:-.02em; --ls-overline:.16em;
+  /* spacing */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;font-weight:400;font-size:var(--text-body);
+  line-height:var(--lh-body);color:var(--text-primary);background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto;width:100%}
+
+/* overline */
+.overline{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;
+  font-size:.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--accent);margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* botões */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.2rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:.85rem 1.8rem;min-height:50px;
+  border:1px solid rgba(246,242,236,.35);color:var(--text-inverse);
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;border-radius:50px;
+  transition:background .3s ease,border-color .3s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(246,242,236,.08);border-color:rgba(246,242,236,.6)}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(22,18,14,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(181,118,58,.25);padding-top:12px;padding-bottom:12px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:.04em;
+  color:var(--text-inverse);text-decoration:none;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.logo .mark{color:var(--gold)}
+.logo span.sub{font-weight:500;font-size:.7rem;letter-spacing:.3em;color:var(--accent);align-self:center}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a.link{font-size:.82rem;font-weight:500;letter-spacing:.04em;color:rgba(246,242,236,.85);text-decoration:none;
+  text-transform:uppercase;transition:color .25s ease}
+.nav a.link:hover{color:var(--gold)}
+.nav .btn-primary{padding:.6rem 1.4rem;min-height:42px;font-size:.85rem}
+@media(max-width:860px){.nav a.link{display:none}}
+
+/* HERO modelo C */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center 30%/cover;
+  animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(125deg,rgba(22,18,14,.35) 0%,rgba(22,18,14,.15) 35%,rgba(22,18,14,.7) 75%,rgba(22,18,14,.95) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-content{position:relative;z-index:3;max-width:680px;
+  padding:0 clamp(1.5rem,8vw,6rem) clamp(3.5rem,8vh,7rem)}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold)}
+.hero-title{font-size:var(--text-display);font-weight:900;color:var(--text-inverse);
+  letter-spacing:var(--ls-display);line-height:.98;margin-bottom:24px;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word.em{color:var(--gold)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(246,242,236,.82);max-width:46ch;font-size:1.08rem;margin-bottom:34px;
+  opacity:0;animation:fade-in 1s ease .8s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;
+  opacity:0;animation:fade-in 1s ease 1s forwards}
+.hero-badge{position:absolute;top:clamp(6.5rem,14vh,9rem);right:clamp(1.5rem,6vw,4rem);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:2px;padding:18px 22px;border-radius:16px;
+  background:rgba(246,242,236,.08);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(246,242,236,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.18);
+  opacity:0;animation:fade-in 1s ease 1.3s forwards}
+.hero-badge .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.2rem;color:#fff;line-height:1}
+.hero-badge .stars{color:var(--gold);font-size:.8rem;letter-spacing:2px}
+.hero-badge .lbl{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,242,236,.7)}
+@media(max-width:560px){.hero-badge{top:auto;bottom:auto;right:clamp(1.2rem,5vw,2rem);padding:14px 16px}.hero-badge .num{font-size:1.7rem}}
+
+/* SOBRE */
+.about{background:var(--bg-base);position:relative}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.about-copy h2{font-size:var(--text-h2);font-weight:800;letter-spacing:-.01em;margin-bottom:22px}
+.about-copy p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.about-stats{display:flex;gap:36px;margin-top:34px;flex-wrap:wrap}
+.about-stats .st .n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.4rem;color:var(--accent);line-height:1}
+.about-stats .st .l{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.about-img{position:relative}
+.about-img img{width:100%;height:clamp(360px,46vw,560px);object-fit:cover;border-radius:14px;box-shadow:var(--shadow-lg)}
+.about-img .tag{position:absolute;bottom:-22px;left:-22px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:20px 26px;border-radius:12px;box-shadow:var(--shadow-md);max-width:230px}
+.about-img .tag .q{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.2;text-transform:uppercase}
+.about-img .tag .q b{color:var(--gold)}
+@media(max-width:840px){.about-grid{grid-template-columns:1fr}.about-img .tag{left:0}}
+
+/* faixa experiência (dark, diagonal) */
+.band{background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-2vw;
+  padding-top:calc(var(--section-pad) + 4vw)}
+.band::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.band .wrap{position:relative;z-index:1}
+.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.band-img img{width:100%;height:clamp(340px,40vw,500px);object-fit:cover;border-radius:14px;box-shadow:var(--shadow-lg)}
+.band-copy h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse);margin-bottom:20px}
+.band-copy p{color:rgba(246,242,236,.72);margin-bottom:16px;max-width:var(--prose-max)}
+.band-list{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:14px}
+.band-list li{display:flex;gap:14px;align-items:flex-start;color:rgba(246,242,236,.85);font-size:.98rem}
+.band-list svg{flex-shrink:0;margin-top:3px;color:var(--gold)}
+@media(max-width:840px){.band-grid{grid-template-columns:1fr}.band-img{order:-1}}
+
+/* SERVIÇOS */
+.serv{background:var(--bg-inset)}
+.serv-head{max-width:620px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-head h2{font-size:var(--text-h2);font-weight:800;letter-spacing:-.01em}
+.serv-head p{color:var(--text-secondary);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(28,24,19,.07);border-radius:14px;
+  padding:clamp(1.6rem,2.4vw,2.2rem);box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+  display:flex;flex-direction:column}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ix{width:44px;height:44px;border-radius:10px;background:var(--accent-subtle);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent)}
+.serv-card h3{font-size:1.5rem;font-weight:700;letter-spacing:.01em;margin-bottom:10px}
+.serv-card p{color:var(--text-secondary);font-size:.95rem;margin-bottom:20px;flex-grow:1}
+.serv-card .price{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.6rem;color:var(--accent-dark);
+  display:flex;align-items:baseline;gap:6px;border-top:1px solid rgba(28,24,19,.08);padding-top:16px}
+.serv-card .price small{font-family:'Inter',sans-serif;font-weight:400;font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}
+
+/* GALERIA */
+.gallery{background:var(--bg-base)}
+.gallery-head{text-align:center;margin-bottom:clamp(2rem,4vw,3rem)}
+.gallery-head h2{font-size:var(--text-h2);font-weight:800}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,230px);gap:14px}
+.gallery-grid .g{overflow:hidden;border-radius:12px;box-shadow:var(--shadow-sm)}
+.gallery-grid .g img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gallery-grid .g:hover img{transform:scale(1.07)}
+.gallery-grid .g.tall{grid-row:span 2}
+.gallery-grid .g.wide{grid-column:span 2}
+@media(max-width:760px){.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid .g.wide{grid-column:span 2}}
+
+/* PROVA SOCIAL */
+.proof{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.proof::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.proof .wrap{position:relative;z-index:1}
+.proof-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.4rem)}
+.proof-top h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse);max-width:14ch}
+.proof-rating{text-align:right;flex-shrink:0}
+.proof-rating .big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,6vw,4.5rem);color:var(--gold);line-height:1}
+.proof-rating .stars{color:var(--gold);letter-spacing:3px;font-size:1rem}
+.proof-rating .lbl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,236,.6)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards)}
+.testi{background:rgba(246,242,236,.05);border:1px solid rgba(246,242,236,.1);border-radius:14px;padding:clamp(1.6rem,2.4vw,2rem)}
+.testi .qstars{color:var(--gold);letter-spacing:2px;font-size:.85rem;margin-bottom:14px}
+.testi p{color:rgba(246,242,236,.88);font-size:1rem;margin-bottom:18px;line-height:1.65}
+.testi .who{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:1.05rem}
+.testi .who span{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.06em;text-transform:none;color:var(--text-muted)}
+
+/* LOCALIZAÇÃO */
+.local{background:var(--bg-base)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.local-copy h2{font-size:var(--text-h2);font-weight:800;margin-bottom:24px}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(28,24,19,.08)}
+.info-row svg{flex-shrink:0;color:var(--accent);margin-top:2px}
+.info-row .k{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;color:var(--text-primary)}
+.info-row .v{color:var(--text-secondary);font-size:.96rem}
+.info-row a.v{text-decoration:none}.info-row a.v:hover{color:var(--accent)}
+.local-actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.local-img{position:relative}
+.local-img img{width:100%;height:clamp(340px,42vw,520px);object-fit:cover;border-radius:14px;box-shadow:var(--shadow-lg)}
+@media(max-width:840px){.local-grid{grid-template-columns:1fr}.local-img{order:-1}}
+
+/* CTA final dark wave */
+.cta-final{background:var(--bg-dark);color:var(--text-inverse);text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.cta-final .wrap{position:relative;z-index:1;max-width:720px}
+.cta-final h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse);margin-bottom:18px}
+.cta-final p{color:rgba(246,242,236,.75);margin-bottom:32px;max-width:48ch;margin-left:auto;margin-right:auto}
+.wave{display:block;line-height:0;margin-bottom:-1px}
+.wave svg{width:100%;height:clamp(40px,5vw,80px)}
+
+/* footer */
+footer{background:#100d0a;color:rgba(246,242,236,.6);padding:clamp(3rem,5vw,4rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot-grid .logo{margin-bottom:14px}
+.foot-col p{font-size:.9rem;max-width:34ch;line-height:1.7}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-inverse);margin-bottom:14px;font-size:1rem}
+.foot-col a{display:block;color:rgba(246,242,236,.6);text-decoration:none;font-size:.9rem;margin-bottom:8px;transition:color .25s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,4vw,3.5rem) auto 0;padding-top:22px;border-top:1px solid rgba(246,242,236,.1);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:rgba(246,242,236,.4)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.about-img img,.gallery-grid .g img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="logo"><span class="mark">&#9670;</span> Loyal <span class="sub">Barbearia</span></a>
+  <nav class="nav">
+    <a href="#sobre" class="link">A Casa</a>
+    <a href="#servicos" class="link">Serviços</a>
+    <a href="#galeria" class="link">Galeria</a>
+    <a href="#local" class="link">Onde Estamos</a>
+    <a href="https://wa.me/5567991140000" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-badge">
+    <span class="num">4.9</span>
+    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <span class="lbl">no Google</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Campo Grande &middot; MS</div>
+    <h1 class="hero-title">
+      <span class="word">Todo</span>
+      <span class="word">corte</span>
+      <span class="word">é</span>
+      <span class="word em">assinatura.</span>
+    </h1>
+    <p class="hero-sub">Corte, barba e navalha com acabamento de quem leva o ofício a sério. Ambiente, capricho e constância — é por isso que a Loyal tem 4.9 no Google.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5567991140000" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <div class="overline">A Casa</div>
+      <h2>Uma barbearia onde o cliente vira de casa</h2>
+      <p>A Loyal nasceu de uma ideia simples: tratar todo cliente como se fosse o único da agenda. Aqui você não pega senha — você senta na cadeira, conversa, e sai com a aparência exatamente como queria. Sem pressa, sem corte de esteira.</p>
+      <p>Tijolo aparente, couro, luz quente e barbeiros que conhecem você pelo nome. É esse cuidado, repetido todos os dias, que construiu a nota 4.9 no Google de quem já passou por aqui.</p>
+      <div class="about-stats">
+        <div class="st"><div class="n">4.9</div><div class="l">Nota no Google</div></div>
+        <div class="st"><div class="n">+8</div><div class="l">Anos de ofício</div></div>
+        <div class="st"><div class="n">100%</div><div class="l">Hora marcada</div></div>
+      </div>
+    </div>
+    <div class="about-img reveal">
+      <img src="imagens/web-02.jpg" alt="Salão da Loyal Barbearia com tijolo aparente e luz quente">
+      <div class="tag"><div class="q">Reputação não é sorte. É <b>constância.</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA EXPERIÊNCIA -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div class="band-img reveal">
+      <img src="imagens/web-03.jpg" alt="Barbeiro da Loyal cortando cabelo com técnica clássica">
+    </div>
+    <div class="band-copy reveal">
+      <div class="overline">A Experiência</div>
+      <h2>Do clássico ao moderno, no detalhe</h2>
+      <p>Cada corte começa com uma conversa e termina no acabamento à navalha. A barba sai alinhada com toalha quente; o cabelo, do degradê fechado ao social, sempre na régua.</p>
+      <ul class="band-list">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Toalha quente e produtos premium em toda barba</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Atendimento por hora marcada — sem fila de espera</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Ambiente climatizado, café e a partida na TV</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="serv" id="servicos">
+  <div class="wrap">
+    <div class="serv-head reveal">
+      <div class="overline">O que fazemos</div>
+      <h2>Serviços e procedimentos</h2>
+      <p>Preços de referência — valores podem variar conforme o profissional e o estilo. Confirme no WhatsApp na hora de agendar.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <div class="ix"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6"/></svg></div>
+        <h3>Corte Masculino</h3>
+        <p>Tesoura e máquina, degradê, social ou disfarçado. Lavagem e finalização inclusas.</p>
+        <div class="price">R$ 45 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12c4 0 6 3 8 3s4-3 8-3"/><path d="M4 17c4 0 6 2 8 2s4-2 8-2"/></svg></div>
+        <h3>Barba na Navalha</h3>
+        <p>Toalha quente, alinhamento à navalha e óleo hidratante. Acabamento que dura.</p>
+        <div class="price">R$ 40 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo da casa: corte na régua e barba feita, num atendimento só.</p>
+        <div class="price">R$ 75 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 8a4 4 0 100 8 4 4 0 000-8zM12 16v6"/></svg></div>
+        <h3>Pezinho &amp; Sobrancelha</h3>
+        <p>Manutenção rápida entre cortes: contorno do pezinho e ajuste de sobrancelha.</p>
+        <div class="price">R$ 20 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M6 7v13a1 1 0 001 1h10a1 1 0 001-1V7M9 7V4h6v3"/></svg></div>
+        <h3>Pigmentação de Barba</h3>
+        <p>Cobertura de falhas e definição do desenho da barba para um visual mais cheio.</p>
+        <div class="price">R$ 50 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16.6 7.1 19.2l.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <h3>Corte Infantil</h3>
+        <p>Paciência e jeitinho para os pequenos, com o mesmo capricho dos adultos.</p>
+        <div class="price">R$ 40 <small>a partir de</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <div class="overline center">O ambiente</div>
+      <h2>Conheça a Loyal por dentro</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g tall reveal"><img src="imagens/web-04.jpg" alt="Cadeiras de cobre e parede de tijolo da Loyal"></div>
+      <div class="g wide reveal"><img src="imagens/web-06.jpg" alt="Cadeira de couro clássica da barbearia"></div>
+      <div class="g reveal"><img src="imagens/web-05.jpg" alt="Ferramentas de barbeiro: máquina, navalha e pincel"></div>
+      <div class="g reveal"><img src="imagens/web-03.jpg" alt="Barbeiro em atendimento na Loyal"></div>
+      <div class="g wide reveal"><img src="imagens/web-02.jpg" alt="Salão completo da Loyal Barbearia"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-top reveal">
+      <h2>O que dizem quem senta na cadeira</h2>
+      <div class="proof-rating">
+        <div class="big">4.9</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="lbl">Avaliações no Google</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="qstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Melhor barbearia que já fui em Campo Grande. Atendimento na hora marcada, corte impecável e a barba então... saio outro homem."</p>
+        <div class="who">Rodrigo M. <span>Cliente no Google</span></div>
+      </div>
+      <div class="testi reveal">
+        <div class="qstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Ambiente top, profissionais que entendem do assunto. Levo meu filho também, tratam a criança super bem. Recomendo demais."</p>
+        <div class="who">Anderson L. <span>Cliente no Google</span></div>
+      </div>
+      <div class="testi reveal">
+        <div class="qstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Virei cliente fixo. Marco pelo WhatsApp, chego e sou atendido na hora. Capricho do começo ao fim, vale cada centavo."</p>
+        <div class="who">Felipe S. <span>Cliente no Google</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="local-copy reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Venha pra Vila Bandeirante</h2>
+      <div class="info-row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="k">Endereço</div><a class="v" href="https://www.google.com/maps/place/Loyal+Barbearia/@-20.4818071,-54.6422634,17z/data=!3m1!4b1!4m6!3m5!1s0x9486e7af66351855:0x1ab0efab5f867483!8m2!3d-20.4818071!4d-54.6422634!16s%2Fg%2F11ghnd1rc2?authuser=0&hl=pt-BR" target="_blank" rel="noopener">R. Brilhante, 3018 — Vila Bandeirante, Campo Grande - MS, 79005-250</a></div>
+      </div>
+      <div class="info-row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="k">WhatsApp</div><a class="v" href="https://wa.me/5567991140000" target="_blank" rel="noopener">(67) 99114-0000</a></div>
+      </div>
+      <div class="info-row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">Horário</div><div class="v">Seg a Sáb &middot; 09h às 20h</div></div>
+      </div>
+      <div class="local-actions">
+        <a href="https://wa.me/5567991140000" class="btn-primary" target="_blank" rel="noopener">Agendar Horário</a>
+        <a href="https://www.google.com/maps/place/Loyal+Barbearia/@-20.4818071,-54.6422634,17z/data=!3m1!4b1!4m6!3m5!1s0x9486e7af66351855:0x1ab0efab5f867483!8m2!3d-20.4818071!4d-54.6422634!16s%2Fg%2F11ghnd1rc2?authuser=0&hl=pt-BR" class="btn-ghost" style="color:var(--text-primary);border-color:rgba(28,24,19,.25)" target="_blank" rel="noopener">Ver no Mapa</a>
+      </div>
+    </div>
+    <div class="local-img reveal">
+      <img src="imagens/web-07.jpg" alt="Fachada de barbearia com poste de barbeiro">
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/>
+  </svg>
+</div>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="overline center" style="justify-content:center">Sua cadeira te espera</div>
+    <h2>Pronto para o melhor corte da semana?</h2>
+    <p>Marque seu horário em segundos pelo WhatsApp. Sem fila, sem espera — só capricho.</p>
+    <a href="https://wa.me/5567991140000" class="btn-primary" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+      Agendar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <a href="#top" class="logo"><span class="mark">&#9670;</span> Loyal <span class="sub">Barbearia</span></a>
+      <p>Corte, barba e navalha com acabamento premium em Campo Grande. Reputação 4.9 no Google construída cliente por cliente.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5567991140000" target="_blank" rel="noopener">WhatsApp (67) 99114-0000</a>
+      <a href="https://www.google.com/maps/place/Loyal+Barbearia/@-20.4818071,-54.6422634,17z/data=!3m1!4b1!4m6!3m5!1s0x9486e7af66351855:0x1ab0efab5f867483!8m2!3d-20.4818071!4d-54.6422634!16s%2Fg%2F11ghnd1rc2?authuser=0&hl=pt-BR" target="_blank" rel="noopener">R. Brilhante, 3018 — Vila Bandeirante</a>
+      <a>Seg a Sáb · 09h às 20h</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Loyal Barbearia. Todos os direitos reservados.</span>
+    <span>Campo Grande · MS</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5567991140000" class="wa-fab" aria-label="Agendar pelo WhatsApp" target="_blank" rel="noopener">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

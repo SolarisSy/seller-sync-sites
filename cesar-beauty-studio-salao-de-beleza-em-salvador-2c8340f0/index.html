@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cesar Beauty Studio — Salão de Beleza e Estética em Salvador | Caminho das Árvores</title>
+<meta name="description" content="Estética e beleza premium no Caminho das Árvores, Salvador. Tratamentos faciais, limpeza de pele e cuidado de luxo. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfície */
+  --bg-base:#faf7f3; --bg-surface:#fffdfb; --bg-inset:#f1e9e0; --bg-dark:#231a15;
+  /* texto */
+  --text-primary:#241c17; --text-secondary:#544a42; --text-muted:#8c8077; --text-inverse:#f7efe7;
+  /* acento + marca */
+  --accent:#b07a6e; --accent-dark:#8f5d52; --accent-subtle:rgba(176,122,110,.10); --accent-border:rgba(176,122,110,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.3rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.25rem,1rem + 1.2vw,1.7rem);
+  --text-body:clamp(.94rem,.86rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.75;
+  --ls-display:-.015em; --ls-overline:.22em;
+  /* sombras */
+  --shadow-sm:0 1px 2px rgba(60,40,30,.04),0 2px 6px rgba(60,40,30,.05);
+  --shadow-md:0 2px 4px rgba(60,40,30,.04),0 8px 18px rgba(60,40,30,.07),0 20px 40px rgba(60,40,30,.05);
+  --shadow-lg:0 4px 8px rgba(60,40,30,.05),0 16px 32px rgba(60,40,30,.07),0 40px 80px rgba(60,40,30,.10);
+  --shadow-accent:0 10px 28px rgba(143,93,82,.34);
+  --shadow-accent-strong:0 16px 40px rgba(143,93,82,.46);
+  /* espaço */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base); color:var(--text-primary);
+  font-family:'Nunito Sans',sans-serif; font-size:var(--text-body); line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; line-height:var(--lh-heading)}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max); margin:0 auto}
+
+/* overline */
+.overline{display:flex; align-items:center; gap:10px; font-family:'Nunito Sans',sans-serif;
+  font-size:.68rem; letter-spacing:var(--ls-overline); text-transform:uppercase; font-weight:700;
+  color:var(--accent); margin-bottom:16px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* botões */
+.btn-primary{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem); min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff;
+  font-family:'Nunito Sans',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
+  border-radius:50px; box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:10px; min-height:50px; padding:.9rem 1.6rem;
+  border:1px solid var(--accent-border); border-radius:50px; color:var(--text-primary);
+  font-weight:600; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
+  transition:background .3s ease,border-color .3s ease; touch-action:manipulation;
+}
+.btn-ghost:hover{background:var(--accent-subtle); border-color:var(--accent)}
+.btn-ico{width:18px;height:18px;fill:currentColor;flex:none}
+
+/* header */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(35,26,21,.92); backdrop-filter:blur(12px) saturate(150%);
+  -webkit-backdrop-filter:blur(12px) saturate(150%); box-shadow:0 1px 0 rgba(201,168,76,.22); padding-top:12px; padding-bottom:12px}
+.brand{font-family:'Playfair Display',serif; font-size:1.32rem; font-weight:600; color:var(--text-inverse); letter-spacing:.01em}
+.brand b{color:var(--gold-light); font-weight:600}
+header.scrolled .brand{color:var(--text-inverse)}
+.nav{display:flex; align-items:center; gap:34px}
+.nav a.lnk{font-size:.82rem; letter-spacing:.04em; color:rgba(247,239,231,.86); font-weight:600; transition:color .25s}
+.nav a.lnk:hover{color:var(--gold-light)}
+.nav .btn-primary{min-height:42px; padding:.55rem 1.3rem; font-size:.72rem}
+@media(max-width:860px){.nav a.lnk{display:none}}
+
+/* HERO split 40/60 */
+.hero{display:grid; grid-template-columns:2fr 3fr; min-height:100dvh}
+.hero-copy{position:relative; z-index:2; background:var(--bg-dark); color:var(--text-inverse);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(6rem,10vh,9rem) clamp(1.8rem,4vw,4rem) clamp(3rem,6vh,5rem)}
+.hero-copy::before{content:''; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.hero-copy>*{position:relative; z-index:1}
+.hero-copy .overline{color:var(--gold-light)}
+.hero-title{font-size:var(--text-display); letter-spacing:var(--ls-display); line-height:var(--lh-display);
+  max-width:13ch; margin-bottom:1.3rem; overflow:hidden}
+.hero-title .word{display:inline-block; transform:translateY(110%); opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title em{font-style:italic; color:var(--gold-light)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{font-size:1.05rem; color:rgba(247,239,231,.8); max-width:38ch; margin-bottom:2rem; font-weight:300}
+.hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:2.4rem}
+.hero-actions .btn-ghost{color:var(--text-inverse); border-color:rgba(247,239,231,.28)}
+.hero-actions .btn-ghost:hover{background:rgba(247,239,231,.08); border-color:var(--gold-light)}
+.hero-meta{display:flex; align-items:center; gap:20px; font-size:.82rem; color:rgba(247,239,231,.7); flex-wrap:wrap}
+.hero-meta .stars{color:var(--gold-light); letter-spacing:2px}
+.hero-img{position:relative; overflow:hidden}
+.hero-img img{width:100%; height:100%; object-fit:cover; object-position:center 35%;
+  animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-badge{position:absolute; left:clamp(1rem,3vw,2.2rem); bottom:clamp(1rem,3vw,2.2rem); z-index:3;
+  display:flex; align-items:center; gap:12px; padding:14px 20px; border-radius:16px;
+  background:rgba(255,255,255,.1); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.22)}
+.hero-badge .num{font-family:'Playfair Display',serif; font-size:1.9rem; color:#fff; line-height:1}
+.hero-badge .lbl{font-size:.7rem; color:rgba(255,255,255,.88); line-height:1.3}
+.hero-badge .lbl b{color:var(--gold-light)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:62vw; min-height:300px; order:-1}
+  .hero-img img{object-position:center 30%}
+}
+
+/* SOBRE */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.sobre-media{position:relative}
+.sobre-media img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; box-shadow:var(--shadow-lg)}
+.sobre-media .tag{position:absolute; right:-14px; bottom:28px; background:var(--bg-dark); color:var(--text-inverse);
+  padding:16px 22px; border-radius:6px; box-shadow:var(--shadow-md); max-width:200px}
+.sobre-media .tag .big{font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); line-height:1; margin-bottom:4px}
+.sobre-media .tag span{font-size:.74rem; color:rgba(247,239,231,.78)}
+.sobre h2{font-size:var(--text-h2); margin-bottom:1.2rem; max-width:16ch}
+.sobre h2 em{font-style:italic; color:var(--accent)}
+.sobre p{color:var(--text-secondary); margin-bottom:1.1rem; max-width:var(--prose-max)}
+.pillars{display:flex; flex-wrap:wrap; gap:14px; margin-top:1.8rem}
+.pillar{display:flex; align-items:center; gap:10px; font-size:.86rem; font-weight:600; color:var(--text-primary)}
+.pillar svg{width:20px;height:20px;fill:none;stroke:var(--accent);stroke-width:1.6;flex:none}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr} .sobre-media{order:-1} .sobre-media .tag{right:16px}}
+
+/* PROCEDIMENTOS (seção escura, corte diagonal) */
+.proc{position:relative; background:var(--bg-dark); color:var(--text-inverse);
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  padding-top:calc(var(--section-pad) + 4vw); margin-top:-1px}
+.proc::before{content:''; position:absolute; inset:0; pointer-events:none; opacity:.05; z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.proc .wrap{position:relative; z-index:1}
+.proc-head{max-width:620px; margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc .overline{color:var(--gold-light)}
+.proc h2{font-size:var(--text-h2); color:var(--text-inverse)}
+.proc h2 em{font-style:italic; color:var(--gold-light)}
+.proc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:var(--gap-cards)}
+.serv-card{position:relative; padding:30px 26px 28px; border-radius:8px;
+  background:rgba(247,239,231,.04); border:1px solid rgba(247,239,231,.1);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease,background .25s ease}
+.serv-card:hover{transform:translateY(-6px); background:rgba(247,239,231,.06); border-color:rgba(201,168,76,.4);
+  box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.serv-num{font-family:'Playfair Display',serif; font-size:.95rem; font-style:italic; color:var(--gold-light); margin-bottom:14px; opacity:.85}
+.serv-card h3{font-size:var(--text-h3); color:var(--text-inverse); margin-bottom:10px}
+.serv-card p{font-size:.9rem; color:rgba(247,239,231,.66); font-weight:300}
+.serv-line{width:34px; height:1px; background:var(--accent); margin-top:18px}
+
+/* GALERIA */
+.galeria{background:var(--bg-base); text-align:center}
+.galeria-title{font-size:var(--text-h2); margin-bottom:clamp(2rem,4vw,3rem)}
+.galeria-title em{font-style:italic; color:var(--accent)}
+.galeria-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap-cards)}
+.galeria figure{position:relative; overflow:hidden; border-radius:8px; box-shadow:var(--shadow-md)}
+.galeria figure:first-child{transform:translateY(clamp(0px,2vw,28px))}
+.galeria img{width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.galeria figure:hover img{transform:scale(1.05)}
+.galeria figcaption{position:absolute; left:0; right:0; bottom:0; text-align:left;
+  padding:30px 20px 16px; color:#fff; font-size:.8rem; font-weight:600; letter-spacing:.04em;
+  background:linear-gradient(transparent,rgba(35,26,21,.82))}
+@media(max-width:620px){.galeria figure:first-child{transform:none}}
+
+/* AMBIENTE faixa */
+.ambiente{padding:0; position:relative}
+.ambiente-strip{position:relative; min-height:clamp(300px,46vw,520px); overflow:hidden; display:grid; align-items:center}
+.ambiente-strip img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center}
+.ambiente-overlay{position:absolute; inset:0; background:linear-gradient(100deg,rgba(35,26,21,.86) 28%,rgba(35,26,21,.45) 62%,transparent 100%)}
+.ambiente-content{position:relative; z-index:2; color:var(--text-inverse);
+  padding:clamp(2.5rem,7vw,6rem); max-width:600px}
+.ambiente-content .overline{color:var(--gold-light)}
+.ambiente-content h2{font-size:var(--text-h2); color:var(--text-inverse); margin-bottom:1rem}
+.ambiente-content h2 em{font-style:italic; color:var(--gold-light)}
+.ambiente-content p{color:rgba(247,239,231,.85); max-width:46ch; font-weight:300}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-inset)}
+.prova-grid{display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.prova-media img{width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center; border-radius:6px; box-shadow:var(--shadow-lg)}
+.prova h2{font-size:var(--text-h2); margin-bottom:.6rem; max-width:15ch}
+.prova h2 em{font-style:italic; color:var(--accent)}
+.rating-row{display:flex; align-items:baseline; gap:14px; margin:.4rem 0 1.8rem}
+.rating-row .score{font-family:'Playfair Display',serif; font-size:3rem; color:var(--accent); line-height:1}
+.rating-row .stars{color:var(--gold); letter-spacing:3px; font-size:1.1rem}
+.rating-row .src{font-size:.78rem; color:var(--text-muted); display:block; margin-top:4px}
+.quotes{display:flex; flex-direction:column; gap:18px}
+.quote{background:var(--bg-surface); border-radius:8px; padding:22px 24px; box-shadow:var(--shadow-sm);
+  border-left:3px solid var(--accent)}
+.quote p{font-family:'Playfair Display',serif; font-style:italic; font-size:1.02rem; color:var(--text-primary); margin-bottom:10px; line-height:1.5}
+.quote .who{font-size:.78rem; color:var(--text-muted); font-weight:600; letter-spacing:.03em}
+@media(max-width:820px){.prova-grid{grid-template-columns:1fr} .prova-media{order:-1}}
+
+/* LOCALIZAÇÃO + CTA */
+.local{background:var(--bg-base)}
+.local-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4rem); align-items:center}
+.local h2{font-size:var(--text-h2); margin-bottom:1.1rem; max-width:14ch}
+.local h2 em{font-style:italic; color:var(--accent)}
+.local p{color:var(--text-secondary); margin-bottom:1.6rem; max-width:46ch}
+.info-list{list-style:none; display:flex; flex-direction:column; gap:18px; margin-bottom:2rem}
+.info-list li{display:flex; gap:14px; align-items:flex-start}
+.info-list svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:1.6;flex:none;margin-top:2px}
+.info-list .k{font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:var(--text-muted); font-weight:700; margin-bottom:3px}
+.info-list .v{font-size:.98rem; color:var(--text-primary); font-weight:600}
+.info-list a.v{transition:color .2s} .info-list a.v:hover{color:var(--accent)}
+.map-card{border-radius:10px; overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid var(--accent-border)}
+.map-card iframe{display:block; width:100%; height:clamp(320px,42vw,440px); border:0; filter:saturate(.92)}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--bg-dark); color:var(--text-inverse); padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem}
+.foot-brand{font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:.8rem}
+.foot-brand b{color:var(--gold-light); font-weight:600}
+.foot-grid p, .foot-grid a{color:rgba(247,239,231,.72); font-size:.9rem; font-weight:300}
+.foot-col h4{font-family:'Nunito Sans',sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; color:var(--gold-light); margin-bottom:16px; font-weight:700}
+.foot-col a{display:block; margin-bottom:10px; transition:color .2s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max); margin:2.6rem auto 0; padding-top:1.6rem; border-top:1px solid rgba(247,239,231,.12);
+  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.76rem; color:rgba(247,239,231,.5)}
+@media(max-width:720px){.foot-grid{grid-template-columns:1fr; gap:1.8rem}}
+
+/* WA FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42); transition:transform .2s; touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0; transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-img img{animation:none}
+  .reveal,.hero-title .word{transition:none; opacity:1; transform:none; animation:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Cesar <b>Beauty Studio</b></a>
+  <nav class="nav">
+    <a href="#sobre" class="lnk">O Estúdio</a>
+    <a href="#procedimentos" class="lnk">Tratamentos</a>
+    <a href="#prova" class="lnk">Avaliações</a>
+    <a href="#localizacao" class="lnk">Localização</a>
+    <a href="https://wa.me/5571991765696" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-copy">
+    <span class="overline">Estética &amp; Beleza · Salvador, BA</span>
+    <h1 class="hero-title">
+      <span class="word">Beleza</span>
+      <span class="word">que</span>
+      <span class="word">se</span>
+      <span class="word"><em>revela.</em></span>
+    </h1>
+    <p class="hero-sub">Cuidado de luxo no coração do Caminho das Árvores. Tratamentos faciais, limpeza de pele e a experiência premium que sua pele merece.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5571991765696" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207z"/></svg>
+        Agende seu horário
+      </a>
+      <a href="#procedimentos" class="btn-ghost">Ver tratamentos</a>
+    </div>
+    <div class="hero-meta">
+      <span class="stars">★★★★★</span>
+      <span><b>5,0</b> no Google</span>
+      <span>Caminho das Árvores · Salvador</span>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/web-01.jpg" alt="Tratamento facial com máscara de argila no Cesar Beauty Studio">
+    <div class="hero-badge">
+      <span class="num">5,0</span>
+      <span class="lbl"><b>★★★★★</b><br>Avaliação no<br>Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-media reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente de tratamento facial no Cesar Beauty Studio">
+      <div class="tag">
+        <div class="big">+ cuidado</div>
+        <span>Atendimento dedicado, do acolhimento ao resultado.</span>
+      </div>
+    </div>
+    <div class="sobre-text">
+      <span class="overline reveal">O Estúdio</span>
+      <h2 class="reveal">Um refúgio de beleza no <em>Caminho das Árvores</em></h2>
+      <p class="reveal">O Cesar Beauty Studio nasceu para entregar mais do que um procedimento: uma experiência completa de cuidado. Cada cliente é recebida com atenção individual, técnica apurada e um ambiente pensado para relaxar.</p>
+      <p class="reveal">Aqui a estética encontra o bem-estar. Tratamentos faciais, limpeza de pele profunda e cuidados personalizados, conduzidos com produtos de qualidade e mãos experientes — o que sustenta nossa nota máxima entre quem já passou por aqui.</p>
+      <div class="pillars reveal">
+        <span class="pillar"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>Cuidado personalizado</span>
+        <span class="pillar"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.9H21l-5.3 4 2 6.9L12 16l-5.7 3.8 2-6.9L3 8.9h6.6z"/></svg>Nota 5,0 no Google</span>
+        <span class="pillar"><svg viewBox="0 0 24 24"><path d="M20 7L9 18l-5-5"/></svg>Produtos de qualidade</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <span class="overline reveal">Tratamentos &amp; Procedimentos</span>
+      <h2 class="reveal">Cada detalhe pensado para a <em>sua pele</em></h2>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <div class="serv-num">01</div>
+        <h3>Limpeza de Pele Profunda</h3>
+        <p>Higienização completa, extração e renovação para uma pele limpa, leve e iluminada.</p>
+        <div class="serv-line"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">02</div>
+        <h3>Tratamentos Faciais</h3>
+        <p>Protocolos de hidratação, máscaras e ativos sob medida para revitalizar e dar viço ao rosto.</p>
+        <div class="serv-line"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">03</div>
+        <h3>Revitalização &amp; Glow</h3>
+        <p>Procedimentos de renovação que devolvem firmeza, brilho e uniformidade ao tom da pele.</p>
+        <div class="serv-line"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">04</div>
+        <h3>Massagem &amp; Relaxamento</h3>
+        <p>Técnicas que aliviam tensões e potencializam o resultado dos cuidados estéticos.</p>
+        <div class="serv-line"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">05</div>
+        <h3>Cuidados Personalizados</h3>
+        <p>Uma avaliação individual define o melhor caminho para o que a sua pele realmente precisa.</p>
+        <div class="serv-line"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">06</div>
+        <h3>Beleza para Todos</h3>
+        <p>Atendimento para mulheres e homens que valorizam autocuidado e uma rotina de pele saudável.</p>
+        <div class="serv-line"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <span class="overline center reveal">Resultados &amp; Tratamentos</span>
+    <h2 class="galeria-title reveal">Cuidado que aparece na <em>pele</em></h2>
+    <div class="galeria-grid">
+      <figure class="reveal"><img src="imagens/web-04.jpg" alt="Aplicação de máscara facial revitalizante"><figcaption>Máscaras &amp; ativos faciais</figcaption></figure>
+      <figure class="reveal"><img src="imagens/web-03.jpg" alt="Procedimento de renovação de pele com equipamento"><figcaption>Renovação &amp; limpeza profunda</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTE -->
+<section class="ambiente" aria-label="Ambiente do estúdio">
+  <div class="ambiente-strip">
+    <img src="imagens/web-05.jpg" alt="Detalhe de ambiente e produtos do estúdio">
+    <div class="ambiente-overlay"></div>
+    <div class="ambiente-content">
+      <span class="overline">A Experiência</span>
+      <h2>Tempo para <em>você</em>, do começo ao fim</h2>
+      <p>Do aroma ao toque, tudo é preparado para que o seu momento de cuidado seja também um momento de pausa. Você relaxa — a gente cuida do resto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap prova-grid">
+    <div class="prova-media reveal">
+      <img src="imagens/web-06.jpg" alt="Cliente satisfeita após cuidado de pele no Cesar Beauty Studio">
+    </div>
+    <div class="prova-text">
+      <span class="overline reveal">Quem vive, recomenda</span>
+      <h2 class="reveal">A confiança de quem já <em>passou por aqui</em></h2>
+      <div class="rating-row reveal">
+        <span class="score">5,0</span>
+        <span>
+          <span class="stars">★★★★★</span>
+          <span class="src">Avaliação no Google</span>
+        </span>
+      </div>
+      <div class="quotes">
+        <div class="quote reveal">
+          <p>“Saí com a pele renovada e me senti cuidada do início ao fim. Ambiente impecável e atendimento atencioso.”</p>
+          <span class="who">— Cliente do Google</span>
+        </div>
+        <div class="quote reveal">
+          <p>“Profissionalismo de verdade. Resultado lindo na limpeza de pele, virei cliente fiel.”</p>
+          <span class="who">— Cliente do Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="wrap local-grid">
+    <div class="local-text">
+      <span class="overline reveal">Onde estamos</span>
+      <h2 class="reveal">Pertinho de você, no <em>Caminho das Árvores</em></h2>
+      <p class="reveal">Estamos em um dos endereços mais acessíveis de Salvador. Agende pelo WhatsApp e garanta seu horário.</p>
+      <ul class="info-list">
+        <li class="reveal">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><div class="k">Endereço</div><a class="v" href="https://www.google.com/maps/place/Cesar+Beauty+Studio-+sal%C3%A3o+de+beleza+em+salvador/@-12.986,-38.4568625,17z/data=!3m1!4b1!4m6!3m5!1s0x7161b611e615b7f:0x253a78002c8340f0!8m2!3d-12.986!4d-38.4568625!16s%2Fg%2F11f_f1nm6c?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">Alameda das Algarobas, 520 — Caminho das Árvores, Salvador - BA, 41820-500</a></div>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="k">Telefone / WhatsApp</div><a class="v" href="https://wa.me/5571991765696" target="_blank" rel="noopener">(71) 99176-5696</a></div>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="k">Atendimento</div><span class="v">Seg a Sáb · com horário marcado</span></div>
+        </li>
+      </ul>
+      <a href="https://wa.me/5571991765696" class="btn-primary reveal" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+    <div class="map-card reveal">
+      <iframe src="https://www.google.com/maps?q=-12.986,-38.4568625&hl=pt-BR&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — Cesar Beauty Studio, Caminho das Árvores, Salvador"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Cesar <b>Beauty Studio</b></div>
+      <p>Estética e beleza premium no Caminho das Árvores, Salvador. Cuidado dedicado, resultado que se vê.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">O Estúdio</a>
+      <a href="#procedimentos">Tratamentos</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5571991765696" target="_blank" rel="noopener">WhatsApp (71) 99176-5696</a>
+      <a href="https://www.google.com/maps/place/Cesar+Beauty+Studio-+sal%C3%A3o+de+beleza+em+salvador/@-12.986,-38.4568625,17z/data=!3m1!4b1!4m6!3m5!1s0x7161b611e615b7f:0x253a78002c8340f0!8m2!3d-12.986!4d-38.4568625!16s%2Fg%2F11f_f1nm6c?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">Alameda das Algarobas, 520<br>Caminho das Árvores, Salvador - BA</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Cesar Beauty Studio · Salvador, BA</span>
+    <span>Salão de Beleza &amp; Estética</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5571991765696" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zM17.5 14.382c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){
+    hdr.classList.toggle('scrolled',window.scrollY>50);
+  },{passive:true});
+
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body>
+</html>

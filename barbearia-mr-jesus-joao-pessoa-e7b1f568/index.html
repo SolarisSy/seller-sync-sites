@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Mr. Jésus — Cabo Branco, João Pessoa | Corte & Barba</title>
+<meta name="description" content="Barbearia Mr. Jésus em Cabo Branco, João Pessoa - PB. Corte, barba e navalha com padrão premium. 4.9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfícies */
+  --bg-base:#f4f0e9;
+  --bg-surface:#fbf8f3;
+  --bg-inset:#ece5db;
+  --bg-dark:#15110d;
+  --bg-dark-2:#1f1812;
+
+  /* texto */
+  --text-primary:#1c1814;
+  --text-secondary:#4b443c;
+  --text-muted:#8a8074;
+  --text-inverse:#f4f0e9;
+
+  /* acento marca */
+  --accent:#c08a3e;
+  --accent-dark:#9a6b2c;
+  --accent-subtle:rgba(192,138,62,.10);
+  --accent-border:rgba(192,138,62,.24);
+  --gold:#cBA55A;
+  --gold-light:#e0c068;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.07),0 20px 40px rgba(0,0,0,.05);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.05),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.10);
+  --shadow-accent:0 8px 24px rgba(192,138,62,.32);
+  --shadow-accent-strong:0 12px 34px rgba(192,138,62,.45);
+
+  --text-display:clamp(2.9rem,2rem + 4.6vw,6rem);
+  --text-h2:clamp(2rem,1.3rem + 2.7vw,3.3rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .25vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:1.0;--lh-heading:1.12;--lh-body:1.72;
+  --ls-overline:.2em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;--prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;line-height:var(--lh-heading);text-wrap:balance;font-optical-sizing:auto;text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--content-max);margin:0 auto;width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:var(--ls-overline);
+  text-transform:uppercase;color:var(--accent);margin-bottom:18px;
+}
+.overline::before{content:'';width:32px;height:1px;background:currentColor;opacity:.8}
+.overline.center{justify-content:center}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(21,17,13,.94);
+  backdrop-filter:blur(12px) saturate(150%);
+  -webkit-backdrop-filter:blur(12px) saturate(150%);
+  box-shadow:0 1px 0 rgba(192,138,62,.22);
+  padding:12px clamp(1.5rem,5vw,4rem);
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.02em;color:var(--text-inverse);text-transform:uppercase;line-height:1}
+.logo span{color:var(--accent)}
+.logo small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.58rem;letter-spacing:.32em;color:var(--text-muted);margin-top:3px}
+nav{display:flex;align-items:center;gap:34px}
+nav a.navlink{font-size:.8rem;font-weight:500;letter-spacing:.04em;color:rgba(244,240,233,.82);transition:color .25s ease}
+nav a.navlink:hover{color:var(--accent)}
+@media(max-width:860px){nav a.navlink{display:none}}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.85rem clamp(1.4rem,3vw,2rem);min-height:48px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#1a140c;font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s var(--ease),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.85rem 1.6rem;min-height:48px;
+  border:1px solid rgba(244,240,233,.28);border-radius:50px;
+  color:var(--text-inverse);font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:border-color .3s ease,background .3s ease,transform .3s var(--ease);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+
+/* ---------- hero (Model B split 40/60) ---------- */
+.hero-split{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh}
+.hero-copy{
+  position:relative;background:var(--bg-dark);color:var(--text-inverse);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,10vh,9rem) clamp(1.6rem,4vw,4rem) clamp(3rem,6vh,5rem);
+  overflow:hidden;z-index:2;
+}
+.hero-copy::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;
+}
+.hero-copy>*{position:relative;z-index:1}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  letter-spacing:-.01em;margin:6px 0 22px;max-width:13ch;overflow:hidden;
+}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .8s var(--ease) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title em{font-style:normal;color:var(--accent)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{font-size:var(--text-body);color:rgba(244,240,233,.74);max-width:42ch;margin-bottom:34px;font-weight:300;opacity:0;animation:fade-in .9s var(--ease) .7s forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in .9s var(--ease) .9s forwards}
+@keyframes fade-in{to{opacity:1}}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:12px;align-self:flex-start;
+  padding:10px 18px;margin-bottom:30px;border-radius:50px;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16);
+  opacity:0;animation:fade-in .9s var(--ease) .55s forwards;
+}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:2px;font-size:.85rem}
+.hero-badge b{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:800}
+.hero-badge small{color:rgba(244,240,233,.6);font-size:.72rem;letter-spacing:.04em}
+
+.hero-img{position:relative;overflow:hidden;background:#0c0a08}
+.hero-img img{width:100%;height:100%;object-fit:cover;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(21,17,13,.55) 0%,transparent 38%);pointer-events:none}
+.hero-tag{
+  position:absolute;left:24px;bottom:24px;z-index:2;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;
+  color:rgba(244,240,233,.85);
+}
+.hero-tag::before{content:'';display:inline-block;width:26px;height:1px;background:var(--accent);vertical-align:middle;margin-right:10px}
+
+@media(max-width:900px){
+  .hero-split{grid-template-columns:1fr}
+  .hero-img{height:62vw;min-height:300px;order:-1}
+  .hero-copy{padding-top:clamp(6rem,18vh,8rem)}
+}
+
+/* ---------- marquee strip ---------- */
+.strip{background:var(--accent);color:#1a140c;padding:14px 0;overflow:hidden;white-space:nowrap}
+.strip-track{display:inline-flex;gap:0;animation:marq 28s linear infinite}
+.strip-track span{font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;padding:0 28px}
+.strip-track span::after{content:'✦';margin-left:28px;opacity:.5}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- sobre ---------- */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-figure{position:relative}
+.sobre-figure img{width:100%;height:clamp(360px,52vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-figure .frame{position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+.sobre h2{font-size:var(--text-h2);margin-bottom:20px;letter-spacing:-.01em}
+.sobre h2 em{font-style:normal;color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.stat-row{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.4rem;color:var(--text-primary);line-height:1}
+.stat span{font-size:.78rem;letter-spacing:.06em;color:var(--text-muted);text-transform:uppercase}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-figure{order:-1}}
+
+/* ---------- serviços (dark, diagonal cut) ---------- */
+.servicos{
+  background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-2vw;padding-top:calc(var(--section-pad) + 4vw);
+}
+.servicos::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;
+}
+.servicos .wrap{position:relative;z-index:1}
+.servicos h2{font-size:var(--text-h2);max-width:16ch;margin-bottom:14px}
+.servicos h2 em{font-style:normal;color:var(--accent)}
+.serv-lead{color:rgba(244,240,233,.66);max-width:48ch;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-dark-2);border:1px solid rgba(255,255,255,.07);
+  border-radius:8px;padding:30px 26px 28px;position:relative;overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ic{width:34px;height:34px;color:var(--accent);margin-bottom:20px}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:10px;color:var(--text-inverse)}
+.serv-card p{font-size:.9rem;color:rgba(244,240,233,.6);margin-bottom:18px}
+.serv-card .price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--gold-light)}
+.serv-card .price small{font-size:.72rem;font-weight:500;color:var(--text-muted);letter-spacing:.04em;font-family:'Inter',sans-serif;text-transform:none}
+.serv-num{position:absolute;top:18px;right:22px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.4rem;color:rgba(255,255,255,.05);line-height:1}
+
+/* ---------- experiência / cta band ---------- */
+.exp{position:relative;color:var(--text-inverse);overflow:hidden;text-align:center}
+.exp-bg{position:absolute;inset:0;z-index:0}
+.exp-bg img{width:100%;height:100%;object-fit:cover}
+.exp-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,13,.82),rgba(21,17,13,.74))}
+.exp .wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.exp h2{font-size:var(--text-h2);max-width:18ch;margin:0 auto 18px}
+.exp h2 em{font-style:normal;color:var(--gold-light)}
+.exp p{color:rgba(244,240,233,.75);max-width:46ch;margin:0 auto 30px}
+
+/* ---------- galeria ---------- */
+.galeria{background:var(--bg-inset)}
+.galeria .head{text-align:center;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.galeria h2{font-size:var(--text-h2)}
+.galeria h2 em{font-style:normal;color:var(--accent)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal-grid figure{position:relative;overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid .g-tall{grid-row:span 2}
+.gal-grid figure{aspect-ratio:1/1}
+.gal-grid .g-tall{aspect-ratio:1/2}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid .g-tall{grid-row:span 1;aspect-ratio:1/1}}
+
+/* ---------- prova social ---------- */
+.prova{background:var(--bg-base)}
+.prova .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.prova h2{font-size:var(--text-h2);max-width:14ch}
+.prova h2 em{font-style:normal;color:var(--accent)}
+.gnote{text-align:right}
+.gnote b{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.4rem;line-height:1;color:var(--text-primary)}
+.gnote .stars{color:var(--gold);letter-spacing:3px;display:block;font-size:1rem}
+.gnote small{color:var(--text-muted);font-size:.78rem;letter-spacing:.04em}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--gap-cards)}
+.rev-card{background:var(--bg-surface);border:1px solid rgba(0,0,0,.05);border-radius:10px;padding:30px 28px;box-shadow:var(--shadow-sm);transition:transform .35s var(--ease),box-shadow .35s ease}
+.rev-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.rev-card .stars{color:var(--gold);letter-spacing:2px;font-size:.9rem;margin-bottom:14px}
+.rev-card p{font-size:.96rem;color:var(--text-secondary);margin-bottom:20px;font-style:italic}
+.rev-card .who{display:flex;align-items:center;gap:12px}
+.rev-card .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#1a140c;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem}
+.rev-card .who b{font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;display:block}
+.rev-card .who span{font-size:.74rem;color:var(--text-muted)}
+
+/* ---------- localização ---------- */
+.local{background:var(--bg-dark);color:var(--text-inverse)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local h2{font-size:var(--text-h2);margin-bottom:14px}
+.local h2 em{font-style:normal;color:var(--accent)}
+.local p.lead{color:rgba(244,240,233,.7);max-width:44ch;margin-bottom:30px}
+.info-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.08)}
+.info-row:last-of-type{border-bottom:1px solid rgba(255,255,255,.08)}
+.info-row .ic{width:22px;height:22px;color:var(--accent);flex-shrink:0;margin-top:3px}
+.info-row .lbl{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.info-row .val{font-size:.98rem;color:var(--text-inverse)}
+.local-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.local-figure{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:340px}
+.local-figure img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.local-figure a{position:absolute;inset:0;z-index:2}
+.local-figure .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;background:rgba(21,17,13,.85);backdrop-filter:blur(8px);border:1px solid var(--accent-border);border-radius:50px;padding:12px 22px;display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
+.local-figure .pin svg{width:18px;height:18px;color:var(--accent)}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}.local-figure{min-height:260px}}
+
+/* ---------- footer ---------- */
+footer{background:#0e0b08;color:rgba(244,240,233,.6);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:32px}
+.foot-grid .logo small{color:var(--text-muted)}
+.foot-col h4{color:var(--text-inverse);font-size:1rem;letter-spacing:.06em;margin-bottom:14px}
+.foot-col p,.foot-col a{font-size:.88rem;line-height:1.9;display:block;color:rgba(244,240,233,.6);transition:color .25s ease}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:24px;font-size:.78rem;color:var(--text-muted)}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-img img,.exp-bg img{animation:none}
+  .strip-track{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge{transition:none;opacity:1;transform:none;animation:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="logo">MR. <span>JÉSUS</span><small>BARBEARIA · CABO BRANCO</small></div>
+  <nav>
+    <a class="navlink" href="#sobre">A Casa</a>
+    <a class="navlink" href="#servicos">Serviços</a>
+    <a class="navlink" href="#galeria">Trabalhos</a>
+    <a class="navlink" href="#local">Onde Estamos</a>
+    <a class="btn-primary" href="https://wa.me/5583988042996" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-1.607z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-split" id="topo" style="padding:0">
+  <div class="hero-copy">
+    <div class="hero-badge">
+      <span class="stars">★★★★★</span>
+      <b>4.9</b>
+      <small>no Google</small>
+    </div>
+    <span class="overline">Corte · Barba · Navalha</span>
+    <h1 class="hero-title">
+      <span class="word">O</span>
+      <span class="word">ritual</span>
+      <span class="word">do</span>
+      <span class="word"><em>bom corte.</em></span>
+    </h1>
+    <p class="hero-sub">Na orla de Cabo Branco, a Barbearia Mr. Jésus cuida da sua aparência com a mão de quem leva corte a sério. Cadeira reservada, sem pressa, do jeito que homem gosta.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5583988042996" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-1.607z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a class="btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/web-01.jpg" alt="Barbeiro aparando a barba de um cliente na Barbearia Mr. Jésus" fetchpriority="high">
+    <span class="hero-tag">João Pessoa · PB</span>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Degradê na régua</span><span>Barba modelada</span><span>Navalha quente</span><span>Pezinho na hora</span><span>Ambiente premium</span>
+    <span>Degradê na régua</span><span>Barba modelada</span><span>Navalha quente</span><span>Pezinho na hora</span><span>Ambiente premium</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <span class="overline">A Casa</span>
+      <h2>Uma barbearia que virou <em>ponto de referência</em> em Cabo Branco</h2>
+      <p>A Mr. Jésus nasceu da ideia simples de que cortar o cabelo deveria ser um momento bom — e não mais uma tarefa corrida. Aqui você senta numa cadeira de verdade, conversa, relaxa e sai com a aparência impecável.</p>
+      <p>Cada corte é feito com atenção ao seu rosto e ao seu estilo. Degradê, social, navalhado, barba desenhada na toalha quente — o acabamento é o que separa um corte qualquer do corte da casa.</p>
+      <div class="stat-row">
+        <div class="stat"><b>4.9</b><span>Nota no Google</span></div>
+        <div class="stat"><b>+8</b><span>Anos na orla</span></div>
+        <div class="stat"><b>100%</b><span>Hora marcada</span></div>
+      </div>
+    </div>
+    <div class="sobre-figure reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente interno da Barbearia Mr. Jésus com cadeiras clássicas e parede de tijolinho">
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <span class="overline">O que fazemos</span>
+    <h2>Serviços com <em>acabamento de barbearia</em>, não de pressa</h2>
+    <p class="serv-lead">Preços de referência da casa. Quer combinar corte + barba ou tirar uma dúvida? Chama no WhatsApp que a gente te encaixa.</p>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="serv-num">01</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        <h3>Corte Masculino</h3>
+        <p>Degradê, social ou navalhado, finalizado na régua e na máquina. Lavagem e styling inclusos.</p>
+        <div class="price">R$ 40 <small>/ a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">02</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6c0 6 3 11 8 11s8-5 8-11"/><path d="M4 6c2-1 5-1.5 8-1.5S18 5 20 6"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <h3>Barba na Toalha</h3>
+        <p>Toalha quente, navalha e modelagem completa. Pele preparada, contorno limpo e hidratação.</p>
+        <div class="price">R$ 35 <small>/ a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">03</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>
+        <h3>Corte + Barba</h3>
+        <p>O combo da casa: visual completo, do corte ao acabamento da barba, num só horário sem correria.</p>
+        <div class="price">R$ 65 <small>/ combo</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">04</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/><line x1="12" y1="13" x2="12" y2="16"/></svg>
+        <h3>Pezinho & Acabamento</h3>
+        <p>Aquela retocada rápida entre cortes pra manter o contorno sempre alinhado. Entra e sai renovado.</p>
+        <div class="price">R$ 20 <small>/ retoque</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA / CTA -->
+<section class="exp">
+  <div class="exp-bg"><img src="imagens/web-04.jpg" alt="Detalhe de barbeiro aparando a barba com cuidado"></div>
+  <div class="wrap">
+    <span class="overline center">A experiência</span>
+    <h2>Você não vem só cortar o cabelo. Vem <em>sair renovado.</em></h2>
+    <p>Hora marcada, atendimento sem fila e aquele cuidado que faz diferença na hora de se olhar no espelho. Reserve seu horário e chegue na hora certa.</p>
+    <a class="btn-primary" href="https://wa.me/5583988042996" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-1.607z"/></svg>
+      Marcar meu horário
+    </a>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="head reveal">
+    <span class="overline center">Trabalhos da casa</span>
+    <h2>Do degradê ao <em>acabamento na navalha</em></h2>
+  </div>
+  <div class="wrap gal-grid">
+    <figure class="g-tall reveal"><img src="imagens/web-03.jpg" alt="Degradê sendo feito na nuca com máquina"></figure>
+    <figure class="reveal"><img src="imagens/web-05.jpg" alt="Barbeiro trabalhando no corte de um cliente"></figure>
+    <figure class="reveal"><img src="imagens/web-04.jpg" alt="Aparo de barba com atenção ao detalhe"></figure>
+    <figure class="reveal"><img src="imagens/web-06.jpg" alt="Cadeira de barbeiro de couro, detalhe do ambiente"></figure>
+    <figure class="reveal"><img src="imagens/web-02.jpg" alt="Salão da barbearia com cadeiras clássicas"></figure>
+    <figure class="reveal"><img src="imagens/web-01.jpg" alt="Cliente sendo atendido na cadeira da barbearia"></figure>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="overline">Quem senta na cadeira</span>
+        <h2>A régua de <em>4.9</em> vem dos clientes</h2>
+      </div>
+      <div class="gnote">
+        <span class="stars">★★★★★</span>
+        <b>4.9</b>
+        <small>Avaliações no Google</small>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia de Cabo Branco, sem dúvida. Atendimento na hora marcada e o acabamento da barba é outro nível. Virei cliente fixo."</p>
+        <div class="who"><span class="av">R</span><div><b>Rafael M.</b><span>Cliente há 2 anos</span></div></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Ambiente top, sem pressa e o cara entende do corte. Saio sempre com o cabelo do jeito que pedi. Recomendo demais."</p>
+        <div class="who"><span class="av">D</span><div><b>Diego A.</b><span>Avaliação no Google</span></div></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Marquei pelo WhatsApp, fui atendido na hora certa e ainda sai com a barba na navalha impecável. Profissionais de verdade."</p>
+        <div class="who"><span class="av">L</span><div><b>Lucas P.</b><span>Cliente da orla</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Na orla de <em>Cabo Branco</em></h2>
+      <p class="lead">Fácil de chegar, fácil de estacionar. Marque seu horário e venha conhecer o atendimento da Mr. Jésus.</p>
+
+      <div class="info-row">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="lbl">Endereço</div><div class="val">Av. Monsenhor Odilon Coutinho, 138 - 02, Cabo Branco — João Pessoa/PB, 58045-120</div></div>
+      </div>
+      <div class="info-row">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><div class="lbl">Telefone / WhatsApp</div><div class="val">(83) 98804-2996</div></div>
+      </div>
+      <div class="info-row">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+        <div><div class="lbl">Horário</div><div class="val">Seg a Sáb · 09h às 20h — atendimento com hora marcada</div></div>
+      </div>
+
+      <div class="local-actions">
+        <a class="btn-primary" href="https://wa.me/5583988042996" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-1.607z"/></svg>
+          Agendar agora
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Barbearia+Mr.+J%C3%A9sus+-+Jo%C3%A3o+Pessoa/@-7.1246346,-34.8251473,17z/data=!3m1!4b1!4m6!3m5!1s0x7acddd5fd9c7a4b:0xa31f1a3de7b1f568!8m2!3d-7.1246346!4d-34.8251473!16s%2Fg%2F11gmysz563?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="local-figure reveal">
+      <img src="imagens/web-06.jpg" alt="Cadeira de barbeiro clássica da Barbearia Mr. Jésus">
+      <span class="pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Cabo Branco · João Pessoa
+      </span>
+      <a href="https://www.google.com/maps/place/Barbearia+Mr.+J%C3%A9sus+-+Jo%C3%A3o+Pessoa/@-7.1246346,-34.8251473,17z/data=!3m1!4b1!4m6!3m5!1s0x7acddd5fd9c7a4b:0xa31f1a3de7b1f568!8m2!3d-7.1246346!4d-34.8251473!16s%2Fg%2F11gmysz563?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener" aria-label="Abrir no Google Maps"></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="logo">MR. <span>JÉSUS</span><small>BARBEARIA · CABO BRANCO</small></div>
+      <p style="margin-top:16px;max-width:32ch">Corte, barba e navalha com padrão de barbearia de verdade, na orla de João Pessoa.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Trabalhos</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5583988042996" target="_blank" rel="noopener">WhatsApp: (83) 98804-2996</a>
+      <p>Av. Monsenhor Odilon Coutinho, 138 - 02</p>
+      <p>Cabo Branco · João Pessoa/PB</p>
+      <p>Seg a Sáb · 09h às 20h</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Mr. Jésus. Todos os direitos reservados.</span>
+    <span>João Pessoa · Paraíba</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5583988042996" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barong Barbearia — Barbearia premium na Jatiúca, Maceió</title>
+<meta name="description" content="Barong Barbearia, Jatiúca, Maceió. Corte, barba e cuidado masculino com nota 5,0 no Google. Agende seu horário pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#14110d; --bg-surface:#1c1813; --bg-inset:#0d0b08; --bg-light:#f4efe7;
+  /* Texto */
+  --text-primary:#f4efe7; --text-secondary:#b8ad9d; --text-muted:#857a6a; --text-dark:#1a160f;
+  /* Acento */
+  --accent:#c08433; --accent-dark:#9c6824; --gold:#d4af6a;
+  --accent-subtle:rgba(192,132,51,.10); --accent-border:rgba(192,132,51,.22);
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.18);
+  --shadow-md:0 2px 4px rgba(0,0,0,.2),0 8px 18px rgba(0,0,0,.28),0 20px 40px rgba(0,0,0,.22);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.2),0 16px 32px rgba(0,0,0,.3),0 40px 80px rgba(0,0,0,.4);
+  --shadow-accent:0 8px 28px rgba(192,132,51,.32);
+  --shadow-accent-strong:0 14px 40px rgba(192,132,51,.45);
+  /* Tipografia fluida */
+  --text-display:clamp(2.9rem,2rem+4.6vw,6rem);
+  --text-h2:clamp(1.95rem,1.3rem+2.6vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem+1.1vw,1.7rem);
+  --text-body:clamp(.94rem,.86rem+.3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem+.2vw,.875rem);
+  --lh-display:1.0; --lh-heading:1.12; --lh-body:1.75;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:640px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base);color:var(--text-primary);
+  font-family:'Inter',sans-serif;font-size:var(--text-body);
+  line-height:var(--lh-body);font-weight:300;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase;letter-spacing:.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* Overline */
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.overline::before{content:'';width:32px;height:1px;background:currentColor}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;
+  letter-spacing:.08em;text-transform:uppercase;border-radius:50px;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.4rem,3vw,2rem);min-height:52px;
+  border:1px solid rgba(244,239,231,.28);color:var(--text-primary);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{background:rgba(13,11,8,.9);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 1px 0 var(--accent-border);padding:13px clamp(1.5rem,5vw,4rem)}
+.brand{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-primary)}
+.brand span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.lnk{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--text-secondary);transition:color .25s ease}
+.nav a.lnk:hover{color:var(--text-primary)}
+.nav .btn-primary{padding:.7rem 1.4rem;min-height:44px}
+@media(max-width:820px){.nav a.lnk{display:none}}
+
+/* Hero - Modelo C editorial */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(13,11,8,.85) 0%,rgba(13,11,8,.45) 38%,rgba(13,11,8,.2) 60%,rgba(13,11,8,.55) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-content{position:relative;z-index:3;padding:0 8% clamp(3.5rem,8vh,7rem);max-width:720px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:50px;margin-bottom:26px;background:rgba(255,255,255,.07);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.16);font-size:.78rem;letter-spacing:.05em;color:var(--text-primary)}
+.hero-badge .stars{color:var(--gold);letter-spacing:1px}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);font-weight:800;letter-spacing:-.01em;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title em{color:var(--accent);font-style:normal}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{max-width:34ch;color:var(--text-secondary);font-size:1.05rem;margin:24px 0 34px;opacity:0;animation:fade-in 1s ease .8s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+.hero-scroll{position:absolute;right:8%;bottom:clamp(3.5rem,8vh,7rem);z-index:3;writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:14px}
+.hero-scroll::after{content:'';width:1px;height:48px;background:linear-gradient(var(--accent),transparent)}
+@media(max-width:820px){.hero-scroll{display:none}}
+
+/* Diagonal cut section */
+.section-cut-top{clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw);position:relative;z-index:5}
+
+/* Sobre */
+.sobre{background:var(--bg-surface)}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.sobre-img{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-img img{width:100%;height:clamp(380px,52vw,600px);object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.sobre-img:hover img{transform:scale(1.05)}
+.sobre-img .tag{position:absolute;left:22px;bottom:22px;padding:12px 18px;border-radius:4px;background:rgba(20,17,13,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);font-size:.78rem;letter-spacing:.04em;color:var(--text-primary)}
+.sobre-img .tag b{color:var(--gold);font-family:'Barlow Condensed';font-weight:800;font-size:1.05rem}
+.sobre h2{font-size:var(--text-h2);font-weight:800;margin-bottom:22px}
+.sobre h2 em{color:var(--accent);font-style:normal}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .n{font-family:'Barlow Condensed';font-weight:800;font-size:clamp(2.2rem,1.5rem+2vw,3.2rem);color:var(--text-primary);line-height:1}
+.stat .l{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-top:8px}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr}.sobre-img{order:-1}}
+
+/* Serviços */
+.servicos{background:var(--bg-base);position:relative}
+.serv-head{max-width:var(--content-max);margin:0 auto 56px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.serv-head h2{font-size:var(--text-h2);font-weight:800;max-width:16ch}
+.serv-head h2 em{color:var(--accent);font-style:normal}
+.serv-head p{color:var(--text-secondary);max-width:36ch}
+.serv-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(244,239,231,.08);border-radius:6px;padding:clamp(1.6rem,3vw,2.4rem);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-num{font-family:'Barlow Condensed';font-weight:700;font-size:.9rem;letter-spacing:.18em;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.serv-num::after{content:'';flex:1;height:1px;background:rgba(244,239,231,.1)}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;margin-bottom:10px}
+.serv-card p{color:var(--text-secondary);font-size:.94rem;margin-bottom:20px}
+.serv-price{font-family:'Barlow Condensed';font-weight:700;font-size:1.5rem;color:var(--gold)}
+.serv-price small{font-family:'Inter';font-weight:400;font-size:.72rem;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:2px}
+@media(max-width:860px){.serv-grid{grid-template-columns:1fr}}
+
+/* Faixa de ambiente / overlap parallax */
+.faixa{position:relative;min-height:60vh;display:grid;align-items:center;overflow:hidden;background:var(--bg-inset)}
+.faixa-bg{position:absolute;inset:0;background:url('imagens/web-03.jpg') center/cover;background-attachment:fixed;z-index:0}
+.faixa-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(13,11,8,.9) 0%,rgba(13,11,8,.55) 60%,rgba(13,11,8,.3) 100%)}
+.faixa::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.faixa-in{position:relative;z-index:3;max-width:var(--content-max);margin:0 auto;width:100%;padding:0 clamp(1.5rem,6vw,5rem)}
+.faixa h2{font-size:var(--text-h2);font-weight:800;max-width:18ch;margin-bottom:20px}
+.faixa h2 em{color:var(--accent);font-style:normal}
+.faixa p{color:var(--text-secondary);max-width:40ch;margin-bottom:30px}
+
+/* Galeria */
+.galeria{background:var(--bg-surface)}
+.gal-head{max-width:var(--content-max);margin:0 auto 48px}
+.gal-head h2{font-size:var(--text-h2);font-weight:800;max-width:18ch}
+.gal-head h2 em{color:var(--accent);font-style:normal}
+.gal-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.08)}
+.gal-grid .big{grid-column:span 2;grid-row:span 2}
+@media(max-width:860px){.gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gal-grid .big{grid-column:span 2}}
+
+/* Prova social */
+.prova{background:var(--bg-base)}
+.prova-wrap{max-width:var(--content-max);margin:0 auto}
+.prova-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.prova-top h2{font-size:var(--text-h2);font-weight:800;max-width:14ch}
+.prova-top h2 em{color:var(--accent);font-style:normal}
+.score{text-align:right}
+.score .big{font-family:'Barlow Condensed';font-weight:900;font-size:clamp(3.4rem,2rem+5vw,5.5rem);color:var(--gold);line-height:1}
+.score .stars{color:var(--gold);letter-spacing:3px;font-size:1.1rem}
+.score .l{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.depo{background:var(--bg-surface);border:1px solid rgba(244,239,231,.08);border-radius:6px;padding:clamp(1.6rem,3vw,2.2rem);display:flex;flex-direction:column}
+.depo .q{color:var(--text-secondary);font-size:.98rem;line-height:1.7;margin-bottom:22px;flex:1}
+.depo .who{display:flex;align-items:center;gap:12px}
+.depo .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;font-family:'Barlow Condensed';font-weight:800;color:#fff;font-size:1.1rem}
+.depo .nm{font-weight:500;color:var(--text-primary);font-size:.92rem}
+.depo .meta{font-size:.74rem;color:var(--text-muted)}
+.depo .meta b{color:var(--gold);font-weight:600}
+@media(max-width:860px){.depo-grid{grid-template-columns:1fr}}
+
+/* Localização / CTA final */
+.local{background:var(--bg-inset);position:relative}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.local h2{font-size:var(--text-h2);font-weight:800;margin-bottom:22px}
+.local h2 em{color:var(--accent);font-style:normal}
+.info-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid rgba(244,239,231,.08)}
+.info-row:first-of-type{border-top:1px solid rgba(244,239,231,.08)}
+.info-ic{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:1px solid var(--accent-border);display:grid;place-items:center;color:var(--accent)}
+.info-row .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.info-row .v{color:var(--text-primary);font-size:.98rem}
+.local-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.map-wrap{border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:380px;position:relative}
+.map-wrap a.maplink{position:absolute;inset:0;display:flex;align-items:flex-end;background:url('imagens/web-04.jpg') center/cover}
+.map-wrap a.maplink span{width:100%;padding:18px 20px;background:linear-gradient(transparent,rgba(13,11,8,.92));color:var(--text-primary);font-size:.86rem;letter-spacing:.04em;display:flex;align-items:center;gap:10px}
+.map-wrap a.maplink span b{color:var(--gold)}
+@media(max-width:860px){.local-grid{grid-template-columns:1fr}.map-wrap{order:-1;min-height:280px}}
+
+/* Footer */
+footer{background:var(--bg-inset);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem;border-top:1px solid rgba(244,239,231,.07)}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{font-family:'Barlow Condensed';font-weight:800;font-size:1.8rem;letter-spacing:.06em;text-transform:uppercase}
+.foot-brand span{color:var(--accent)}
+.foot-brand p{font-family:'Inter';font-weight:300;font-size:.88rem;text-transform:none;letter-spacing:0;color:var(--text-muted);margin-top:10px;max-width:32ch}
+.foot-col h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-family:'Inter';font-weight:600}
+.foot-col p,.foot-col a{display:block;color:var(--text-secondary);font-size:.9rem;margin-bottom:10px;transition:color .25s ease}
+.foot-col a:hover{color:var(--text-primary)}
+.foot-btm{max-width:var(--content-max);margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(244,239,231,.07);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.sobre-img img,.gal-grid img{animation:none!important}
+  .faixa-bg{background-attachment:scroll}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Barong<span>.</span></a>
+  <nav class="nav">
+    <a class="lnk" href="#sobre">A Barbearia</a>
+    <a class="lnk" href="#servicos">Serviços</a>
+    <a class="lnk" href="#galeria">Galeria</a>
+    <a class="lnk" href="#local">Onde estamos</a>
+    <a class="btn-primary" href="https://wa.me/5582999363449" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> 5,0 no Google · Jatiúca, Maceió</div>
+    <p class="hero-eyebrow">Barbearia · Maceió — AL</p>
+    <h1 class="hero-title">
+      <span class="word">Corte</span>
+      <span class="word">que</span>
+      <span class="word">vira</span>
+      <span class="word"><em>hábito.</em></span>
+    </h1>
+    <p class="hero-sub">Barba, cabelo e cuidado masculino com a precisão de quem leva 5,0 a sério. No coração da Jatiúca.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://wa.me/5582999363449" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      <a class="btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Role para descobrir</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre section-cut-top" id="sobre">
+  <div class="sobre-grid">
+    <div class="reveal">
+      <p class="overline">A Barong</p>
+      <h2>Mais que um corte. <em>Um ritual masculino.</em></h2>
+      <p>A Barong nasceu na Jatiúca com uma ideia simples: tratar o cuidado masculino com seriedade. Ambiente de barbearia clássica — tijolo, madeira e couro — e a mão de quem entende de navalha, máquina e tesoura.</p>
+      <p>Aqui você não é mais um da fila. É hora marcada, conversa boa e acabamento que te faz sair com a cabeça erguida. É por isso que a nota é 5,0 — e por isso o cliente volta.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">5,0</div><div class="l">Nota no Google</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Hora marcada</div></div>
+        <div class="stat"><div class="n">Jatiúca</div><div class="l">Maceió — AL</div></div>
+      </div>
+    </div>
+    <div class="sobre-img reveal">
+      <img src="imagens/web-02.jpg" alt="Acabamento de barba na Barong Barbearia">
+      <div class="tag">Acabamento de barba · <b>navalha</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="serv-head">
+    <div class="reveal">
+      <p class="overline">Serviços</p>
+      <h2>O que fazemos <em>de melhor.</em></h2>
+    </div>
+    <p class="reveal">Preços de referência. Combine o seu horário direto no WhatsApp e garanta a cadeira.</p>
+  </div>
+  <div class="serv-grid">
+    <div class="serv-card reveal">
+      <div class="serv-num">01</div>
+      <h3>Corte Masculino</h3>
+      <p>Corte na tesoura ou máquina, finalizado com toalha quente e produto. Do clássico ao degradê navalhado.</p>
+      <div class="serv-price">R$ 45<small>a partir de</small></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">02</div>
+      <h3>Barba Completa</h3>
+      <p>Modelagem, toalha quente, navalha e hidratação. A barba alinhada que valoriza o rosto.</p>
+      <div class="serv-price">R$ 40<small>a partir de</small></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">03</div>
+      <h3>Combo Corte + Barba</h3>
+      <p>O pacote completo da Barong: cabelo e barba no mesmo horário, com acabamento impecável.</p>
+      <div class="serv-price">R$ 75<small>a partir de</small></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">04</div>
+      <h3>Acabamento &amp; Pezinho</h3>
+      <p>Aquela retocada entre cortes para manter o visual sempre alinhado durante a semana.</p>
+      <div class="serv-price">R$ 25<small>a partir de</small></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">05</div>
+      <h3>Sobrancelha na Navalha</h3>
+      <p>Design masculino discreto, feito na navalha, para emoldurar o olhar sem exageros.</p>
+      <div class="serv-price">R$ 20<small>a partir de</small></div>
+    </div>
+    <div class="serv-card reveal">
+      <div class="serv-num">06</div>
+      <h3>Dia do Noivo</h3>
+      <p>Atendimento especial para o grande dia: corte, barba e cuidado completo com hora reservada.</p>
+      <div class="serv-price">Sob consulta<small>fale conosco</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA AMBIENTE -->
+<section class="faixa">
+  <div class="faixa-bg"></div>
+  <div class="faixa-ov"></div>
+  <div class="faixa-in reveal">
+    <p class="overline">O ambiente</p>
+    <h2>Senta na cadeira e <em>relaxa.</em></h2>
+    <p>Cadeira de couro, luz baixa e o cheiro de barbearia de verdade. Um espaço pensado pra você desligar do dia e sair renovado.</p>
+    <a class="btn-primary" href="https://wa.me/5582999363449" target="_blank" rel="noopener">Reservar meu horário</a>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="gal-head reveal">
+    <p class="overline">Galeria</p>
+    <h2>Um pouco do <em>nosso trabalho.</em></h2>
+  </div>
+  <div class="gal-grid">
+    <figure class="big reveal"><img src="imagens/web-04.jpg" alt="Ambiente da Barong Barbearia"></figure>
+    <figure class="reveal"><img src="imagens/web-05.jpg" alt="Degradê preciso na Barong"></figure>
+    <figure class="reveal"><img src="imagens/web-02.jpg" alt="Acabamento de barba"></figure>
+    <figure class="reveal"><img src="imagens/web-06.jpg" alt="Barbeiro em atendimento"></figure>
+    <figure class="reveal"><img src="imagens/web-03.jpg" alt="Cadeira de couro premium"></figure>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="prova-wrap">
+    <div class="prova-top">
+      <div class="reveal">
+        <p class="overline">Quem senta, volta</p>
+        <h2>A régua é <em>5,0.</em></h2>
+      </div>
+      <div class="score reveal">
+        <div class="big">5,0</div>
+        <div class="stars">★★★★★</div>
+        <div class="l">Avaliação no Google</div>
+      </div>
+    </div>
+    <div class="depo-grid">
+      <div class="depo reveal">
+        <p class="q">"Melhor barbearia da Jatiúca, sem exagero. Hora marcada que é respeitada e acabamento impecável. Virei cliente fixo."</p>
+        <div class="who"><div class="av">R</div><div><div class="nm">Rafael M.</div><div class="meta"><b>★★★★★</b> · Google</div></div></div>
+      </div>
+      <div class="depo reveal">
+        <p class="q">"Ambiente top, atendimento de primeira e a barba ficou perfeita. Sai de lá outro homem. Recomendo demais."</p>
+        <div class="who"><div class="av">D</div><div><div class="nm">Diego S.</div><div class="meta"><b>★★★★★</b> · Google</div></div></div>
+      </div>
+      <div class="depo reveal">
+        <p class="q">"Profissionais que entendem do que fazem. Levei meu filho e os dois saíram satisfeitos. Lugar de confiança em Maceió."</p>
+        <div class="who"><div class="av">A</div><div><div class="nm">André L.</div><div class="meta"><b>★★★★★</b> · Google</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="reveal">
+      <p class="overline">Onde estamos</p>
+      <h2>Te esperamos <em>na Jatiúca.</em></h2>
+      <div class="info-row">
+        <div class="info-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="k">Endereço</div><div class="v">R. Dr. Fernando Aranha Saraiva Barbosa, 606 — Jatiúca, Maceió - AL, 57036-000</div></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="k">WhatsApp</div><div class="v">(82) 99936-3449</div></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="k">Horário</div><div class="v">Seg a Sáb · 09h às 20h · com hora marcada</div></div>
+      </div>
+      <div class="local-cta">
+        <a class="btn-primary" href="https://wa.me/5582999363449" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Barong+Barbearia/@-9.6495893,-35.7066239,17z/data=!3m1!4b1!4m6!3m5!1s0x70145e70bed7ef5:0xf40118a00c667e63!8m2!3d-9.6495893!4d-35.7066239!16s%2Fg%2F11qsrm8w2b?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <a class="maplink" href="https://www.google.com/maps/place/Barong+Barbearia/@-9.6495893,-35.7066239,17z/data=!3m1!4b1!4m6!3m5!1s0x70145e70bed7ef5:0xf40118a00c667e63!8m2!3d-9.6495893!4d-35.7066239!16s%2Fg%2F11qsrm8w2b?authuser=0&hl=pt-BR" target="_blank" rel="noopener" aria-label="Abrir Barong Barbearia no Google Maps">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <b>Barong Barbearia</b> &nbsp;— abrir rota no Google Maps</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">Barong<span>.</span>
+      <p>Barbearia masculina na Jatiúca, Maceió. Corte, barba e cuidado com a régua no 5,0.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#local">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <p>R. Dr. Fernando Aranha Saraiva Barbosa, 606<br>Jatiúca, Maceió - AL</p>
+      <a href="https://wa.me/5582999363449" target="_blank" rel="noopener">WhatsApp: (82) 99936-3449</a>
+      <p>Seg a Sáb · 09h às 20h</p>
+    </div>
+  </div>
+  <div class="foot-btm">
+    <span>© 2026 Barong Barbearia. Todos os direitos reservados.</span>
+    <span>Jatiúca · Maceió — AL</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5582999363449" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.985-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<svg style="display:none" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></svg>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Alynne Alcântara — Emagrecimento e Harmonização Facial em Ananindeua</title>
+<meta name="description" content="Clínica de emagrecimento e harmonização facial em Ananindeua - PA. Avaliação com a Dra. Alynne Alcântara. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf6f2; --bg-surface:#fffdfb; --bg-inset:#f1e8e3; --bg-dark:#1c1416;
+  --text-primary:#241a1c; --text-secondary:#5a4b4e; --text-muted:#9a8a8d; --text-inverse:#faf6f2;
+  --accent:#a85d68; --accent-dark:#854954;
+  --accent-subtle:rgba(168,93,104,.10); --accent-border:rgba(168,93,104,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+
+  --shadow-sm:0 1px 2px rgba(40,20,25,.04),0 2px 6px rgba(40,20,25,.05);
+  --shadow-md:0 2px 4px rgba(40,20,25,.04),0 8px 18px rgba(40,20,25,.07),0 20px 40px rgba(40,20,25,.05);
+  --shadow-lg:0 4px 8px rgba(40,20,25,.05),0 16px 32px rgba(40,20,25,.08),0 40px 80px rgba(40,20,25,.10);
+  --shadow-accent:0 8px 24px rgba(168,93,104,.28);
+  --shadow-accent-strong:0 12px 34px rgba(168,93,104,.40);
+
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.02; --lh-heading:1.12; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.16em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:640px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base);color:var(--text-primary);
+  font-family:'Inter',sans-serif;font-size:var(--text-body);line-height:var(--lh-body);
+  font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400}
+h2{font-size:var(--text-h2);line-height:var(--lh-heading);letter-spacing:var(--ls-display)}
+h3{font-size:var(--text-h3);line-height:var(--lh-heading)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+em{font-style:italic;color:var(--accent)}
+
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;
+  font-size:.68rem;font-weight:500;letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* ── Buttons ── */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;font-family:'Inter',sans-serif;
+  font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-primary);
+  padding:.6rem 0;border-bottom:1px solid var(--accent-border);transition:border-color .3s,color .3s;
+  touch-action:manipulation}
+.btn-ghost:hover{color:var(--accent);border-color:var(--accent)}
+.btn-primary svg,.btn-ghost svg{width:17px;height:17px;flex:none}
+
+/* ── Header ── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(28,20,22,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 rgba(201,168,76,.22);padding-top:14px;padding-bottom:14px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500;letter-spacing:.01em;
+  color:var(--text-primary);transition:color .35s;line-height:1.1}
+.brand small{display:block;font-family:'Inter',sans-serif;font-size:.58rem;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);transition:color .35s;margin-top:2px}
+header.scrolled .brand,header.scrolled .brand small{color:var(--text-inverse)}
+header.scrolled .nav-links a{color:rgba(250,246,242,.82)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.04em;color:var(--text-secondary);
+  transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.3rem;border-radius:50px;
+  background:var(--accent);color:#fff!important;font-weight:600;font-size:.74rem;letter-spacing:.05em;
+  text-transform:uppercase;box-shadow:var(--shadow-accent)}
+.nav-cta svg{width:15px;height:15px}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ── Hero (Model B split 40/60) ── */
+.hero-split{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh}
+.hero-copy{position:relative;background:var(--bg-dark);color:var(--text-inverse);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,10vw,8rem) clamp(1.8rem,4vw,4rem) clamp(3rem,6vw,5rem);overflow:hidden}
+.hero-copy::before{content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;z-index:1}
+.hero-copy::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(var(--accent),var(--gold));z-index:2}
+.hero-copy>*{position:relative;z-index:3}
+.hero-copy .overline{color:var(--gold-light)}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  font-weight:300;margin-bottom:1.4rem}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .line:nth-child(2) .word{animation-delay:.3s}
+.hero-title .line:nth-child(3) .word{animation-delay:.45s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{font-family:'Inter',sans-serif;font-weight:300;font-size:var(--text-body);
+  color:rgba(250,246,242,.78);max-width:38ch;margin-bottom:2.2rem;
+  opacity:0;animation:fade-in 1s ease .8s forwards}
+.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  opacity:0;animation:fade-in 1s ease 1s forwards}
+.hero-actions .btn-ghost{color:var(--text-inverse);border-color:rgba(201,168,76,.45)}
+.hero-actions .btn-ghost:hover{color:var(--gold-light);border-color:var(--gold)}
+@keyframes fade-in{to{opacity:1}}
+.hero-media{position:relative;overflow:hidden;min-height:46vh}
+.hero-media img{width:100%;height:100%;object-fit:cover;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-media::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(28,20,22,.34) 0%,transparent 40%)}
+.hero-badge{position:absolute;left:24px;bottom:24px;z-index:4;display:flex;align-items:center;gap:13px;
+  padding:14px 20px;border-radius:16px;
+  background:rgba(28,20,22,.42);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  color:#fff;opacity:0;animation:fade-in 1s ease 1.3s forwards}
+.hero-badge .num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;line-height:1;color:var(--gold-light)}
+.hero-badge .stars{color:var(--gold-light);font-size:.8rem;letter-spacing:2px}
+.hero-badge .lbl{font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.82);margin-top:3px}
+@media(max-width:900px){
+  .hero-split{grid-template-columns:1fr}
+  .hero-media{height:62vw;min-height:300px;order:-1}
+  .hero-copy{min-height:auto;padding-top:7rem}
+}
+
+/* ── Sobre ── */
+.sobre{background:var(--bg-base);position:relative;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 4vw))}
+.sobre-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.sobre-media{position:relative}
+.sobre-media img{width:100%;height:100%;object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg);
+  aspect-ratio:4/5}
+.sobre-media .tag{position:absolute;right:-18px;bottom:34px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:18px 24px;border-radius:6px;box-shadow:var(--shadow-md);max-width:210px}
+.sobre-media .tag .k{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold-light);line-height:1}
+.sobre-media .tag .v{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.04em;color:rgba(250,246,242,.78);margin-top:6px}
+.sobre-copy h2 em{font-weight:400}
+.sobre-copy p{color:var(--text-secondary);max-width:var(--prose-max);margin-top:1.2rem;font-weight:300}
+.sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;color:var(--accent);margin-top:1.6rem}
+.sig small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-media .tag{right:18px}}
+
+/* ── Procedimentos ── */
+.proc{background:var(--bg-inset)}
+.proc-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head p{color:var(--text-secondary);margin-top:.8rem;font-weight:300}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(168,93,104,.10);border-radius:8px;
+  padding:clamp(1.6rem,3vw,2.3rem);box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ico{width:42px;height:42px;color:var(--accent);margin-bottom:18px}
+.serv-card .ico svg{width:100%;height:100%}
+.serv-num{font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:10px}
+.serv-card h3{margin-bottom:.6rem;font-weight:500}
+.serv-card p{color:var(--text-secondary);font-size:.95rem;font-weight:300}
+
+/* ── Experiência / galeria ── */
+.exp{background:var(--bg-base)}
+.exp-head{margin-bottom:clamp(2rem,4vw,3rem);max-width:var(--prose-max)}
+.exp-head h2{font-weight:300}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-cards)}
+.exp-card{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md)}
+.exp-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.exp-card:hover img{transform:scale(1.05)}
+.exp-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:clamp(1.2rem,3vw,2rem);
+  background:linear-gradient(transparent,rgba(28,20,22,.86));color:var(--text-inverse);
+  font-weight:300;font-size:.95rem}
+.exp-card figcaption .k{display:block;font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold-light);margin-bottom:6px}
+@media(max-width:680px){.exp-grid{grid-template-columns:1fr}}
+
+/* ── Faixa detalhe (parallax-ish) ── */
+.strip{position:relative;min-height:46vh;display:grid;place-items:center;text-align:center;
+  background:linear-gradient(rgba(28,20,22,.62),rgba(28,20,22,.62)),url('imagens/web-05.jpg') center/cover fixed;
+  color:var(--text-inverse);overflow:hidden}
+.strip::before{content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;pointer-events:none}
+.strip .q{position:relative;z-index:2;max-width:24ch;font-size:clamp(1.7rem,1.2rem + 2.4vw,2.9rem);
+  font-weight:300;line-height:1.18}
+.strip .q em{color:var(--gold-light)}
+
+/* ── Prova social ── */
+.prova{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.prova::before{content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.prova .wrap{position:relative;z-index:1}
+.prova-top{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.prova-media img{width:100%;border-radius:6px;object-fit:cover;aspect-ratio:5/4;box-shadow:var(--shadow-lg)}
+.prova .overline{color:var(--gold-light)}
+.prova-top h2{font-weight:300}
+.prova-rate{display:flex;align-items:baseline;gap:16px;margin:1.4rem 0 .4rem}
+.prova-rate .big{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,2rem + 3vw,4.6rem);line-height:1;color:var(--gold-light)}
+.prova-rate .stars{color:var(--gold-light);letter-spacing:3px;font-size:1rem}
+.prova-rate .stars span{display:block;font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(250,246,242,.66);margin-top:6px}
+.prova-top p{color:rgba(250,246,242,.74);font-weight:300;max-width:42ch}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap-cards)}
+.quote{background:rgba(250,246,242,.04);border:1px solid rgba(250,246,242,.10);border-radius:8px;
+  padding:clamp(1.4rem,2.5vw,2rem)}
+.quote .mk{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:.5;color:var(--accent);display:block;margin-bottom:.6rem}
+.quote p{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;font-weight:300;
+  color:rgba(250,246,242,.92);line-height:1.45}
+.quote .who{font-family:'Inter',sans-serif;font-style:normal;font-size:.74rem;letter-spacing:.05em;
+  color:var(--gold-light);margin-top:1rem}
+
+/* ── Localização ── */
+.local{background:var(--bg-base)}
+.local-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local-copy h2{font-weight:300}
+.info-list{margin:1.8rem 0;display:flex;flex-direction:column;gap:1.1rem}
+.info-row{display:flex;gap:14px;align-items:flex-start}
+.info-row .ico{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
+.info-row .ico svg{width:100%;height:100%}
+.info-row .t{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.info-row .d{color:var(--text-primary);font-weight:400}
+.info-row .d a{border-bottom:1px solid var(--accent-border)}
+.map-card{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(168,93,104,.12)}
+.map-card iframe{display:block;width:100%;height:clamp(300px,42vw,460px);border:0;filter:saturate(.85)}
+@media(max-width:820px){.prova-top,.local-grid{grid-template-columns:1fr}}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,6vw,5.5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem}
+.foot-brand .brand{color:var(--text-inverse)}
+.foot-brand .brand small{color:rgba(250,246,242,.55)}
+.foot-brand p{color:rgba(250,246,242,.62);font-weight:300;font-size:.92rem;max-width:34ch;margin-top:1rem}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:1.1rem;font-weight:500}
+.foot-col a,.foot-col p{display:block;color:rgba(250,246,242,.72);font-weight:300;font-size:.92rem;margin-bottom:.7rem;transition:color .3s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-base{max-width:var(--content-max);margin:3rem auto 0;padding-top:1.6rem;border-top:1px solid rgba(250,246,242,.12);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:.76rem;color:rgba(250,246,242,.5)}
+@media(max-width:720px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-media img,.hero-bg{animation:none}
+  .strip{background-attachment:scroll}
+  .reveal,.word,.hero-sub,.hero-actions,.hero-badge{transition:none;opacity:1;transform:none;animation:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="brand">Dra. Alynne Alcântara<small>Estética · Ananindeua</small></div>
+  <nav class="nav-links">
+    <a href="#sobre">A Clínica</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#prova">Resultados</a>
+    <a href="#local">Localização</a>
+    <a class="nav-cta" href="https://wa.me/5591981369560" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-split" style="padding:0">
+  <div class="hero-copy">
+    <div class="overline">Emagrecimento &amp; Harmonização Facial</div>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Beleza</span> <span class="word">que</span> <span class="word">equilibra.</span></span>
+      <span class="line"><span class="word"><em>Resultado</em></span></span>
+      <span class="line"><span class="word">que</span> <span class="word">se</span> <span class="word">vê.</span></span>
+    </h1>
+    <p class="hero-sub">Tratamentos de emagrecimento e harmonização facial em Ananindeua, com a assinatura da Dra. Alynne Alcântara. Avaliação personalizada, do diagnóstico ao resultado.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5591981369560" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/web-01.jpg" alt="Procedimento facial na clínica da Dra. Alynne Alcântara em Ananindeua">
+    <div class="hero-badge">
+      <span class="num">5,0</span>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-media reveal">
+      <img src="imagens/web-02.jpg" alt="Sessão de modelagem corporal na clínica">
+      <div class="tag"><div class="k">+ saúde</div><div class="v">Emagrecimento com acompanhamento de perto</div></div>
+    </div>
+    <div class="sobre-copy reveal">
+      <div class="overline">A Clínica</div>
+      <h2>Cuidado que entende <em>cada corpo</em> e cada rosto.</h2>
+      <p>Na clínica da Dra. Alynne Alcântara, em Ananindeua, emagrecimento e harmonização facial caminham juntos com um único objetivo: você se olhar no espelho e se reconhecer mais leve, mais firme e mais confiante.</p>
+      <p>Cada atendimento começa por uma avaliação individual. Nada de protocolo de prateleira: o plano é desenhado para a sua pele, o seu corpo e o seu objetivo, com técnica, segurança e um ambiente pensado para o seu conforto.</p>
+      <div class="sig">Dra. Alynne Alcântara<small>Esteticista responsável</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head reveal">
+      <div class="overline">Procedimentos</div>
+      <h2>Protocolos sob medida para o seu objetivo</h2>
+      <p>Estética facial e corporal com avaliação personalizada e tecnologia a favor do seu resultado.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="22" r="13"/><path d="M24 9c5 4 5 22 0 26M24 9c-5 4-5 22 0 26M11 22h26"/></svg></div>
+        <div class="serv-num">01 · Facial</div>
+        <h3>Harmonização Facial</h3>
+        <p>Equilíbrio de proporções e realce dos seus traços, com naturalidade. Um rosto descansado, harmônico e fiel a você.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c7 6 11 12 11 19a11 11 0 01-22 0c0-7 4-13 11-19z"/><path d="M19 24c0 4 2 6 5 7"/></svg></div>
+        <div class="serv-num">02 · Corporal</div>
+        <h3>Emagrecimento &amp; Modelagem</h3>
+        <p>Protocolos de redução de medidas e modelagem corporal com acompanhamento de perto, do primeiro centímetro ao objetivo final.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 30c-4 0-7-3-7-7s3-7 7-7c1-6 6-10 12-10 7 0 12 5 12 12 0 1 0 2-1 3"/><path d="M30 38l4-8 4 8M30 34h8"/></svg></div>
+        <div class="serv-num">03 · Pele</div>
+        <h3>Limpeza &amp; Rejuvenescimento</h3>
+        <p>Limpeza de pele profunda, peelings e protocolos de viço que devolvem luminosidade e textura à sua pele.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 28c6-2 10-8 10-16M38 28c-6-2-10-8-10-16M10 28c0 6 6 10 14 10s14-4 14-10"/><path d="M24 12v6"/></svg></div>
+        <div class="serv-num">04 · Bem-estar</div>
+        <h3>Massagens &amp; Drenagem</h3>
+        <p>Drenagem linfática e massagem modeladora para reduzir inchaço, ativar a circulação e potencializar cada resultado.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7l4.6 9.3 10.4 1.5-7.5 7.3 1.8 10.4L24 30.6l-9.3 4.9 1.8-10.4L9 17.8l10.4-1.5z"/></svg></div>
+        <div class="serv-num">05 · Avaliação</div>
+        <h3>Avaliação Personalizada</h3>
+        <p>Um diagnóstico completo antes de qualquer procedimento, para montar o plano certo para o seu rosto, o seu corpo e a sua rotina.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="18" r="6"/><path d="M14 38c0-6 4-10 10-10s10 4 10 10"/><path d="M34 10l3 3 5-6"/></svg></div>
+        <div class="serv-num">06 · Acompanhamento</div>
+        <h3>Plano de Manutenção</h3>
+        <p>Acompanhamento contínuo para manter o resultado conquistado, com ajustes ao longo do tempo e cuidado de quem está sempre por perto.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA / GALERIA -->
+<section class="exp">
+  <div class="wrap">
+    <div class="exp-head reveal">
+      <div class="overline">A experiência</div>
+      <h2>Tecnologia e toque humano, lado a lado.</h2>
+    </div>
+    <div class="exp-grid">
+      <figure class="exp-card reveal">
+        <img src="imagens/web-03.jpg" alt="Procedimento facial com aparelho na clínica">
+        <figcaption><span class="k">Tecnologia</span>Aparelhos modernos a serviço do seu resultado.</figcaption>
+      </figure>
+      <figure class="exp-card reveal">
+        <img src="imagens/web-04.jpg" alt="Massagem facial relaxante na clínica">
+        <figcaption><span class="k">Acolhimento</span>Um ambiente pensado para o seu conforto.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA DETALHE -->
+<section class="strip" style="padding-left:1.5rem;padding-right:1.5rem">
+  <p class="q">Você merece um cuidado <em>pensado só para você</em> — do diagnóstico ao resultado.</p>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap">
+    <div class="prova-top">
+      <div class="prova-media reveal">
+        <img src="imagens/web-06.jpg" alt="Cliente satisfeita após cuidados estéticos">
+      </div>
+      <div class="reveal">
+        <div class="overline">Quem confia, recomenda</div>
+        <h2>A confiança de uma clínica nota máxima.</h2>
+        <div class="prova-rate">
+          <span class="big">5,0</span>
+          <span class="stars">★★★★★<span>Avaliação no Google</span></span>
+        </div>
+        <p>A reputação da Dra. Alynne é construída paciente a paciente — com resultado, atenção e acolhimento em cada atendimento, em Ananindeua.</p>
+      </div>
+    </div>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <span class="mk">&ldquo;</span>
+        <p>Atendimento impecável e resultado que eu via a cada sessão. Me senti cuidada de verdade.</p>
+        <figcaption class="who">— Paciente de harmonização facial</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <span class="mk">&ldquo;</span>
+        <p>A Dra. Alynne explica tudo, monta o plano pra você e acompanha de perto. Reduzi medidas com segurança.</p>
+        <figcaption class="who">— Paciente de emagrecimento</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <span class="mk">&ldquo;</span>
+        <p>Ambiente acolhedor e profissional do começo ao fim. Saí outra pessoa, mais confiante.</p>
+        <figcaption class="who">— Paciente de estética facial</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="local-copy reveal">
+      <div class="overline">Localização &amp; Contato</div>
+      <h2>Venha nos visitar na Atalaia.</h2>
+      <div class="info-list">
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.4 7-11a7 7 0 10-14 0c0 4.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><div class="t">Endereço</div><div class="d">R. Santa Inês — Atalaia, Ananindeua - PA, 66013-550</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+          <div><div class="t">WhatsApp</div><div class="d"><a href="https://wa.me/5591981369560" target="_blank" rel="noopener">(91) 98136-9560</a></div></div>
+        </div>
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="t">Agendamento</div><div class="d">Atendimento com hora marcada — agende pelo WhatsApp</div></div>
+        </div>
+      </div>
+      <a class="btn-primary" href="https://wa.me/5591981369560" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+    <div class="map-card reveal">
+      <iframe
+        src="https://www.google.com/maps?q=-1.4031068,-48.4295372&z=16&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa — Clínica Dra. Alynne Alcântara, Ananindeua"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="brand">Dra. Alynne Alcântara<small>Estética · Ananindeua</small></div>
+      <p>Emagrecimento e harmonização facial com avaliação personalizada e cuidado de perto, em Ananindeua - PA.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#prova">Resultados</a>
+      <a href="#local">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5591981369560" target="_blank" rel="noopener">(91) 98136-9560</a>
+      <p>R. Santa Inês — Atalaia<br>Ananindeua - PA</p>
+      <a href="https://www.google.com/maps/place/%F0%9F%8F%BB%E2%80%8D+Clinica+de+emagrecimento+e+Harmoniza%C3%A7%C3%A3o+facial+em+Ananindeua+-+Dra.+Alynne+Alc%C3%A2ntara/@-1.4031068,-48.4295372,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48b2a8b7f09bd:0xad5c0e9f888cebf8!8m2!3d-1.4031068!4d-48.4295372!16s%2Fg%2F11s9b8bgd_?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Dra. Alynne Alcântara — Estética. Todos os direitos reservados.</span>
+    <span>Ananindeua, Pará</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5591981369560" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

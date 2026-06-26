@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Spartan — Barbearia Premium em Manaus | Cachoeirinha</title>
+<meta name="description" content="Barbearia Spartan em Manaus, AM. Corte, barba e navalha com nota 4.8 no Google. Av. Castelo Branco, 1530 - Cachoeirinha. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#14110d;
+  --bg-dark:#100d0a;
+  --bg-surface:#1c1813;
+  --bg-light:#f3efe6;
+  --bg-light-inset:#e9e2d5;
+
+  /* Texto */
+  --text-primary:#f4efe6;
+  --text-secondary:#b7ad9e;
+  --text-muted:#8a8278;
+  --text-dark:#1a1714;
+  --text-dark-soft:#4a4540;
+  --text-inverse:#f4efe6;
+
+  /* Acento + marca */
+  --accent:#bd7d3c;
+  --accent-dark:#9a6228;
+  --accent-subtle:rgba(189,125,60,.10);
+  --accent-border:rgba(189,125,60,.24);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.16);
+  --shadow-md:0 2px 4px rgba(0,0,0,.2),0 8px 18px rgba(0,0,0,.28),0 20px 40px rgba(0,0,0,.22);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.22),0 16px 32px rgba(0,0,0,.3),0 40px 80px rgba(0,0,0,.4);
+  --shadow-accent:0 10px 30px rgba(189,125,60,.32);
+  --shadow-accent-strong:0 16px 44px rgba(189,125,60,.46);
+
+  /* Tipografia fluida */
+  --text-display:clamp(3rem,2rem + 6vw,6.5rem);
+  --text-h2:clamp(2rem,1.4rem + 2.6vw,3.4rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:.96;
+  --lh-heading:1.1;
+  --lh-body:1.75;
+
+  /* Espaço */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;
+  line-height:var(--lh-heading);
+  text-wrap:balance;
+  font-optical-sizing:auto;
+  text-transform:uppercase;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* Overline */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:16px;
+}
+.overline::before{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+.overline.center::after{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.4rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#1a1208;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;border:none;cursor:pointer;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.4rem,3vw,2rem);min-height:52px;
+  border:1px solid rgba(244,239,230,.28);color:var(--text-primary);
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:1rem;letter-spacing:.08em;text-transform:uppercase;border-radius:50px;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),background .3s ease,border-color .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(244,239,230,.06);border-color:var(--accent-border)}
+.btn-icon{width:19px;height:19px;flex-shrink:0}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{
+  background:rgba(16,13,10,.9);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 rgba(189,125,60,.22);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:34px;height:34px;flex-shrink:0}
+.brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:.16em;text-transform:uppercase}
+.brand-name span{color:var(--accent)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:.08em;color:var(--text-secondary);transition:color .25s ease;font-weight:400}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)!important;border:1px solid var(--accent-border);padding:9px 20px;border-radius:50px;transition:background .3s ease!important}
+.nav-cta:hover{background:var(--accent-subtle)}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* Hero — Modelo C editorial base-esquerda */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,rgba(20,17,13,.4) 0%,rgba(20,17,13,.55) 40%,rgba(16,13,10,.86) 78%,rgba(16,13,10,.97) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+.hero-content{position:relative;z-index:3;max-width:720px;padding:0 clamp(1.5rem,6vw,5rem) clamp(3.5rem,8vh,6.5rem)}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:26px;padding:9px 16px;border-radius:50px;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16);
+  font-size:.8rem;font-weight:500;letter-spacing:.04em}
+.hero-badge .stars{color:var(--gold);letter-spacing:.04em;font-size:.85rem}
+.hero-badge b{font-weight:600}
+.hero-title{font-size:var(--text-display);letter-spacing:-.01em;margin-bottom:22px;overflow:hidden;padding-bottom:.08em}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .accent{color:var(--accent)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .word:nth-child(4){animation-delay:.48s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{font-size:clamp(1rem,.92rem + .4vw,1.18rem);color:var(--text-secondary);max-width:48ch;margin-bottom:34px;opacity:0;animation:fade-in 1s ease .8s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+.scroll-hint{position:absolute;bottom:26px;right:clamp(1.5rem,6vw,5rem);z-index:3;writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:14px}
+.scroll-hint::after{content:'';width:1px;height:48px;background:linear-gradient(var(--accent),transparent)}
+@media(max-width:600px){.scroll-hint{display:none}}
+
+/* Diagonal cut */
+.cut-top{clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw);position:relative;z-index:4}
+
+/* Sobre */
+.sobre{background:var(--bg-light);color:var(--text-dark)}
+.sobre .overline{color:var(--accent-dark)}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.sobre-text h2{font-size:var(--text-h2);color:var(--text-dark);margin-bottom:22px;max-width:14ch}
+.sobre-text p{color:var(--text-dark-soft);margin-bottom:18px;max-width:var(--prose-max)}
+.sobre-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.2rem,1.6rem + 2vw,3.2rem);color:var(--accent-dark);line-height:1}
+.stat .lbl{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:6px;font-weight:500}
+.sobre-media{position:relative}
+.sobre-media img{width:100%;height:clamp(360px,46vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-media .frame{position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-media{order:-1}}
+
+/* Serviços */
+.servicos{background:var(--bg-base);position:relative}
+.servicos::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.sec-head{max-width:var(--content-max);margin:0 auto 56px;position:relative;z-index:1}
+.sec-head h2{font-size:var(--text-h2);max-width:16ch}
+.sec-head.center{text-align:center}
+.sec-head.center .overline{justify-content:center}
+.sec-head.center .overline::after{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+.serv-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-cards);position:relative;z-index:1}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(244,239,230,.07);border-radius:8px;
+  padding:clamp(1.6rem,3vw,2.4rem);display:flex;flex-direction:column;gap:14px;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.18em;color:var(--accent)}
+.serv-card h3{font-size:var(--text-h3);color:var(--text-primary)}
+.serv-card p{color:var(--text-secondary);font-size:.95rem}
+.serv-price{margin-top:auto;padding-top:16px;border-top:1px solid rgba(244,239,230,.08);display:flex;align-items:baseline;justify-content:space-between}
+.serv-price .from{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;color:var(--gold)}
+@media(max-width:640px){.serv-grid{grid-template-columns:1fr}}
+
+/* Faixa imersiva */
+.banner{position:relative;min-height:60vh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:clamp(4rem,8vw,7rem) clamp(1.5rem,6vw,5rem)}
+.banner-bg{position:absolute;inset:0;background:url('imagens/web-03.jpg') center/cover;z-index:0}
+.banner-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(16,13,10,.72),rgba(16,13,10,.82))}
+.banner::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.banner-inner{position:relative;z-index:3;max-width:760px}
+.banner-inner h2{font-size:var(--text-h2);margin-bottom:20px}
+.banner-inner h2 em{font-style:normal;color:var(--accent)}
+.banner-inner p{color:var(--text-secondary);margin-bottom:30px;max-width:54ch;margin-left:auto;margin-right:auto}
+
+/* Galeria / experiência */
+.exp{background:var(--bg-light);color:var(--text-dark)}
+.exp .overline{color:var(--accent-dark)}
+.exp-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.exp-grid figure{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-md)}
+.exp-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.exp-grid figure:hover img{transform:scale(1.06)}
+.exp-tall{grid-row:span 2}
+.exp-grid figure:not(.exp-tall) img{height:clamp(180px,22vw,260px)}
+.exp-tall img{height:100%;min-height:380px}
+@media(max-width:760px){.exp-grid{grid-template-columns:1fr 1fr}.exp-tall{grid-row:auto}.exp-tall img{min-height:0;height:clamp(180px,40vw,260px)}}
+
+/* Prova social */
+.prova{background:var(--bg-dark);position:relative}
+.prova-head{max-width:var(--content-max);margin:0 auto 52px;text-align:center}
+.prova-head .overline{justify-content:center}
+.prova-head .overline::after{content:'';width:34px;height:1px;background:currentColor;opacity:.7}
+.prova-head h2{font-size:var(--text-h2)}
+.rating-line{display:inline-flex;align-items:center;gap:14px;margin-top:18px;font-size:.9rem;color:var(--text-secondary)}
+.rating-line .big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.4rem;color:var(--gold);line-height:1}
+.rating-line .stars{color:var(--gold);font-size:1.1rem;letter-spacing:.05em}
+.depos{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.depo{background:var(--bg-surface);border:1px solid rgba(244,239,230,.07);border-radius:8px;padding:clamp(1.6rem,3vw,2.2rem);display:flex;flex-direction:column;gap:16px}
+.depo .stars{color:var(--gold);font-size:.95rem;letter-spacing:.08em}
+.depo p{color:var(--text-secondary);font-size:.97rem;flex:1}
+.depo .who{display:flex;align-items:center;gap:12px;margin-top:4px}
+.depo .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;color:#1a1208;font-size:1.1rem}
+.depo .nm{font-weight:500;color:var(--text-primary);font-size:.92rem;line-height:1.2}
+.depo .nm span{display:block;font-size:.76rem;color:var(--text-muted);font-weight:300;margin-top:2px}
+@media(max-width:820px){.depos{grid-template-columns:1fr}}
+
+/* Localização */
+.local{background:var(--bg-base);position:relative;overflow:hidden}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local-info h2{font-size:var(--text-h2);max-width:14ch;margin-bottom:24px}
+.local-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(244,239,230,.08)}
+.local-row:last-of-type{border-bottom:none}
+.local-row svg{width:22px;height:22px;flex-shrink:0;color:var(--accent);margin-top:3px}
+.local-row .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;font-weight:500}
+.local-row .v{color:var(--text-primary);font-weight:400}
+.local-row .v a{color:var(--text-primary);transition:color .25s}
+.local-row .v a:hover{color:var(--accent)}
+.local-actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.local-media{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.local-media img{width:100%;height:clamp(340px,42vw,520px);object-fit:cover}
+.local-media a{position:absolute;inset:0;display:flex;align-items:flex-end;padding:22px;background:linear-gradient(transparent 55%,rgba(16,13,10,.85));color:var(--text-primary);font-weight:500;font-size:.9rem;gap:9px}
+.local-media a svg{width:20px;height:20px;color:var(--accent)}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}.local-media{order:-1}}
+
+/* Footer */
+footer{background:var(--bg-dark);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem;border-top:1px solid rgba(189,125,60,.16)}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .brand-name{font-size:1.6rem;margin-bottom:14px}
+.foot-brand p{color:var(--text-muted);max-width:34ch;font-size:.9rem}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:.14em;color:var(--accent);margin-bottom:16px;font-weight:700}
+.foot-col a,.foot-col p{display:block;color:var(--text-secondary);font-size:.9rem;margin-bottom:10px;transition:color .25s}
+.foot-col a:hover{color:var(--text-primary)}
+.foot-bottom{max-width:var(--content-max);margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(244,239,230,.07);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--text-muted);font-size:.8rem}
+.foot-bottom a{color:var(--accent)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.exp-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="brand" href="#top" aria-label="Barbearia Spartan">
+    <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M24 3 L41 10 V24 C41 35 33 42 24 45 C15 42 7 35 7 24 V10 Z" stroke="#bd7d3c" stroke-width="2" fill="rgba(189,125,60,.08)"/>
+      <path d="M24 13 L24 33 M17 19 L31 19 M19 26 L29 26" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="brand-name">SPARTAN<span>.</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A Barbearia</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#local">Localização</a>
+    <a class="nav-cta" href="https://wa.me/5592991860935" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="hero-badge"><span class="stars">★★★★★</span> <b>4.8</b> no Google &middot; Cachoeirinha, Manaus</span>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Disciplina</span> <span class="word accent">na</span> <span class="word accent">cadeira.</span></span>
+      <span class="line"><span class="word">Respeito no espelho.</span></span>
+    </h1>
+    <p class="hero-sub">A barbearia que transforma corte, barba e navalha num ritual. Tradição espartana no coração de Manaus — você senta, a gente cuida do resto.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5592991860935" target="_blank" rel="noopener">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.99 5.5l-.999 3.648 3.808-.989z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a class="btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+  <span class="scroll-hint">Role</span>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre cut-top" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-text reveal">
+      <span class="overline">A Barbearia</span>
+      <h2>Onde o corte vira ritual</h2>
+      <p>A Barbearia Spartan nasceu de uma ideia simples: tratar o homem de Manaus como ele merece. Aqui não é só passar a máquina — é couro, navalha quente, toalha, conversa boa e o acabamento que faz diferença na hora de se olhar no espelho.</p>
+      <p>No coração da Cachoeirinha, na Av. Castelo Branco, a Spartan virou ponto de quem leva a aparência a sério. Por isso a nota 4.8 no Google: cada cliente sai com a sensação de que valeu cada minuto na cadeira.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="num">4.8</div><div class="lbl">Nota no Google</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lbl">Acabamento na navalha</div></div>
+        <div class="stat"><div class="num">Seg–Sáb</div><div class="lbl">Atendimento</div></div>
+      </div>
+    </div>
+    <div class="sobre-media reveal">
+      <img src="imagens/web-02.jpg" alt="Cadeira de couro clássica no ambiente da Barbearia Spartan" loading="lazy">
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="sec-head reveal">
+    <span class="overline">Serviços &amp; Procedimentos</span>
+    <h2>O que a gente faz pelo seu visual</h2>
+  </div>
+  <div class="serv-grid">
+    <div class="serv-card reveal">
+      <span class="serv-num">01</span>
+      <h3>Corte Spartan</h3>
+      <p>Corte na máquina e tesoura com acabamento desenhado pro seu rosto. Degradê, social ou clássico — do jeito que combina com você.</p>
+      <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 35</span></div>
+    </div>
+    <div class="serv-card reveal">
+      <span class="serv-num">02</span>
+      <h3>Barba na Navalha</h3>
+      <p>Toalha quente, óleo, navalha e finalização. A barba alinhada, hidratada e com aquele cheiro que dura o dia todo.</p>
+      <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 30</span></div>
+    </div>
+    <div class="serv-card reveal">
+      <span class="serv-num">03</span>
+      <h3>Combo Corte + Barba</h3>
+      <p>O pacote completo do homem cuidado. Corte e barba alinhados na mesma sessão, com preço que vale a pena.</p>
+      <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 55</span></div>
+    </div>
+    <div class="serv-card reveal">
+      <span class="serv-num">04</span>
+      <h3>Acabamentos &amp; Cuidados</h3>
+      <p>Sobrancelha, pezinho, hidratação e detalhes que fecham o visual. O capricho que ninguém percebe — mas todo mundo nota.</p>
+      <div class="serv-price"><span class="from">A partir de</span><span class="val">R$ 15</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER IMERSIVO -->
+<section class="banner">
+  <div class="banner-bg" aria-hidden="true"></div>
+  <div class="banner-overlay" aria-hidden="true"></div>
+  <div class="banner-inner reveal">
+    <span class="overline center">Reserve seu horário</span>
+    <h2>Sua cadeira está <em>esperando</em></h2>
+    <p>Sem fila, sem enrolação. Manda mensagem, escolhe o horário e chega na hora certa. A Spartan cuida do resto.</p>
+    <a class="btn-primary" href="https://wa.me/5592991860935" target="_blank" rel="noopener">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.99 5.5l-.999 3.648 3.808-.989z"/></svg>
+      Agendar agora no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA / GALERIA -->
+<section class="exp">
+  <div class="sec-head reveal">
+    <span class="overline">A Experiência</span>
+    <h2>Ambiente feito pro homem relaxar</h2>
+  </div>
+  <div class="exp-grid">
+    <figure class="exp-tall reveal"><img src="imagens/web-06.jpg" alt="Interior amplo da Barbearia Spartan com cadeiras clássicas" loading="lazy"></figure>
+    <figure class="reveal"><img src="imagens/web-04.jpg" alt="Detalhe de cadeira de couro da barbearia" loading="lazy"></figure>
+    <figure class="reveal"><img src="imagens/web-05.jpg" alt="Ferramentas profissionais do barbeiro" loading="lazy"></figure>
+    <figure class="reveal"><img src="imagens/web-03.jpg" alt="Acabamento de barba na navalha" loading="lazy"></figure>
+    <figure class="reveal"><img src="imagens/web-02.jpg" alt="Cadeira vintage no ambiente escuro da Spartan" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="prova-head reveal">
+    <span class="overline">Quem senta, volta</span>
+    <h2>A reputação está na cadeira</h2>
+    <div class="rating-line"><span class="big">4.8</span><span><span class="stars">★★★★★</span><br>Avaliação no Google</span></div>
+  </div>
+  <div class="depos">
+    <div class="depo reveal">
+      <span class="stars">★★★★★</span>
+      <p>"Melhor barbearia da Cachoeirinha, sem dúvida. Corte impecável e a barba na navalha é outro nível. Saí de lá renovado."</p>
+      <div class="who"><span class="av">R</span><span class="nm">Rafael M.<span>Cliente no Google</span></span></div>
+    </div>
+    <div class="depo reveal">
+      <span class="stars">★★★★★</span>
+      <p>"Atendimento nota mil, ambiente top e o pessoal manja muito. Virei cliente fixo, não troco a Spartan por nada."</p>
+      <div class="who"><span class="av">D</span><span class="nm">Diego A.<span>Cliente no Google</span></span></div>
+    </div>
+    <div class="depo reveal">
+      <span class="stars">★★★★★</span>
+      <p>"Marquei pelo WhatsApp, fui atendido na hora e o acabamento ficou perfeito. Recomendo demais pra quem é exigente."</p>
+      <div class="who"><span class="av">L</span><span class="nm">Lucas F.<span>Cliente no Google</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="local-info reveal">
+      <span class="overline">Onde nos encontrar</span>
+      <h2>Venha conhecer a Spartan</h2>
+      <div class="local-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="k">Endereço</div><div class="v">Av. Castelo Branco, 1530 — Cachoeirinha, Manaus - AM, 69065-011</div></div>
+      </div>
+      <div class="local-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="k">Telefone / WhatsApp</div><div class="v"><a href="https://wa.me/5592991860935" target="_blank" rel="noopener">(92) 99186-0935</a></div></div>
+      </div>
+      <div class="local-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">Horário</div><div class="v">Segunda a Sábado &middot; 09h às 20h</div></div>
+      </div>
+      <div class="local-actions">
+        <a class="btn-primary" href="https://wa.me/5592991860935" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.99 5.5l-.999 3.648 3.808-.989z"/></svg>
+          Agendar horário
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Barbearia+Spartan/@-3.1219133,-60.0073081,17z/data=!3m1!4b1!4m6!3m5!1s0x926c056a55dbe4cf:0xc441da451f7a002!8m2!3d-3.1219133!4d-60.0073081!16s%2Fg%2F11dxfbgfj5?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="local-media reveal">
+      <img src="imagens/web-06.jpg" alt="Fachada e ambiente da Barbearia Spartan em Manaus" loading="lazy">
+      <a href="https://www.google.com/maps/place/Barbearia+Spartan/@-3.1219133,-60.0073081,17z/data=!3m1!4b1!4m6!3m5!1s0x926c056a55dbe4cf:0xc441da451f7a002!8m2!3d-3.1219133!4d-60.0073081!16s%2Fg%2F11dxfbgfj5?authuser=0&hl=pt-BR" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Abrir no Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="brand-name">SPARTAN<span style="color:var(--accent)">.</span></div>
+      <p>Barbearia premium na Cachoeirinha, Manaus. Corte, barba e navalha com o acabamento que faz diferença.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#local">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5592991860935" target="_blank" rel="noopener">WhatsApp: (92) 99186-0935</a>
+      <p>Av. Castelo Branco, 1530<br>Cachoeirinha, Manaus - AM</p>
+      <p>Seg–Sáb &middot; 09h às 20h</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Spartan. Todos os direitos reservados.</span>
+    <span><a href="https://wa.me/5592991860935" target="_blank" rel="noopener">Agende seu horário</a></span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5592991860935" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.99 5.5l-.999 3.648 3.808-.989zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

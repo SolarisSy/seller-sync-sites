@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Guedes — Corte & Barba nos Estados, João Pessoa</title>
+<meta name="description" content="Barbearia Guedes — referência em corte e barba na Av. Maranhão, Estados, João Pessoa-PB. Nota 4.8 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Tipografia fluida */
+  --text-display: clamp(3rem, 2rem + 6vw, 7rem);
+  --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3.2rem);
+  --text-h3:      clamp(1.3rem, 1rem + 1.2vw, 1.9rem);
+  --text-body:    clamp(0.92rem, 0.85rem + 0.3vw, 1.05rem);
+  --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+  --lh-display: 0.95; --lh-heading: 1.1; --lh-body: 1.75;
+  --ls-display: -0.01em; --ls-overline: 0.22em;
+
+  /* Superfície */
+  --bg-base:#f3efe7; --bg-surface:#faf7f1; --bg-inset:#e9e3d8; --bg-dark:#0f0d0b; --bg-dark-2:#17130f;
+  /* Texto */
+  --text-primary:#1a1714; --text-secondary:#4a4540; --text-muted:#8a8278; --text-inverse:#f3efe7;
+  /* Acento + marca */
+  --accent:#c2873f; --accent-dark:#a06d2c; --accent-subtle:rgba(194,135,63,.10); --accent-border:rgba(194,135,63,.24);
+  --gold:#c9a84c; --gold-light:#e0c068;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.06),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.12);
+  --shadow-accent:0 8px 24px rgba(194,135,63,.30);
+  --shadow-accent-strong:0 14px 36px rgba(194,135,63,.42);
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:620px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;font-weight:400;font-size:var(--text-body);
+  line-height:var(--lh-body);color:var(--text-primary);background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem);position:relative}
+
+/* Overline */
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.overline::before{content:'';width:34px;height:1px;background:currentColor;flex:none}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(0.22,1,0.36,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  border:1px solid rgba(243,239,231,.32);color:var(--text-inverse);border-radius:50px;
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:20px clamp(1.5rem,5vw,4rem);transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(15,13,11,.92);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);
+  box-shadow:0 1px 0 rgba(194,135,63,.22);padding:13px clamp(1.5rem,5vw,4rem)}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .mark{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.02em;color:#fff;text-transform:uppercase}
+.brand .mark em{color:var(--accent);font-style:normal}
+.brand .sub{font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(243,239,231,.6);margin-top:4px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,231,.82);transition:color .25s ease}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:.7rem 1.4rem;min-height:auto;font-size:.72rem}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* HERO — Modelo A Cinematic */
+.hero{position:relative;height:100dvh;min-height:620px;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('imagens/web-01.jpg') center/cover no-repeat;animation:kb 24s ease-in-out infinite alternate;transform-origin:center}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,rgba(15,13,11,.25) 30%,rgba(15,13,11,.72) 72%,rgba(15,13,11,.96) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-content{position:relative;z-index:3;width:100%;padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.hero-left{max-width:780px}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--accent)}
+.hero-title{font-weight:900;font-size:var(--text-display);letter-spacing:var(--ls-display);line-height:var(--lh-display);color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(0.22,1,0.36,1) forwards}
+.hero-title .word em{color:var(--accent);font-style:normal}
+.hero-title .line:nth-child(1) .word{animation-delay:.25s}
+.hero-title .line:nth-child(2) .word{animation-delay:.4s}
+.hero-title .line:nth-child(3) .word{animation-delay:.55s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{margin-top:24px;max-width:480px;color:rgba(243,239,231,.86);font-size:var(--text-body);opacity:0;animation:fadein 1s ease .9s forwards}
+.hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadein 1s ease 1.05s forwards}
+@keyframes fadein{to{opacity:1}}
+.hero-badge{display:flex;flex-direction:column;gap:10px;padding:22px 26px;border-radius:16px;
+  background:rgba(255,255,255,.08);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0;animation:fadein 1s ease 1.2s forwards}
+.hero-badge .stars{display:flex;gap:3px;color:var(--gold-light)}
+.hero-badge .stars svg{width:18px;height:18px}
+.hero-badge .score{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.4rem;color:#fff;line-height:1}
+.hero-badge .score span{font-size:1rem;color:rgba(243,239,231,.7)}
+.hero-badge .lbl{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,231,.72)}
+.scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(243,239,231,.5);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadein 1s ease 1.4s forwards}
+.scroll-cue span{width:1px;height:36px;background:linear-gradient(var(--accent),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+
+/* SOBRE */
+.sobre{background:var(--bg-dark);color:var(--text-inverse);
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw);overflow:hidden}
+.sobre::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.sobre-grid{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr}}
+.sobre-media{position:relative}
+.sobre-media img{width:100%;height:clamp(360px,52vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-media .frame{position:absolute;inset:14px;border:1px solid var(--accent-border);border-radius:6px;pointer-events:none}
+.sobre h2{font-size:var(--text-h2);font-weight:800;color:#fff;letter-spacing:var(--ls-display)}
+.sobre h2 em{color:var(--accent);font-style:normal}
+.sobre p{margin-top:20px;color:rgba(243,239,231,.78);max-width:var(--prose-max)}
+.sobre-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:36px;flex-wrap:wrap}
+.stat .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.6rem;color:var(--gold-light);line-height:1}
+.stat .cap{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,239,231,.6);margin-top:6px}
+
+/* SERVIÇOS */
+.servicos{background:var(--bg-base)}
+.sec-head{max-width:var(--content-max);margin:0 auto 56px}
+.sec-head h2{font-size:var(--text-h2);font-weight:800;letter-spacing:var(--ls-display)}
+.sec-head h2 em{color:var(--accent);font-style:normal}
+.sec-head p{margin-top:14px;color:var(--text-secondary);max-width:var(--prose-max)}
+.serv-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:860px){.serv-grid{grid-template-columns:1fr}}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(26,23,20,.07);border-radius:10px;overflow:hidden;
+  transition:transform .35s cubic-bezier(0.22,1,0.36,1),box-shadow .35s ease,border-color .25s ease;box-shadow:var(--shadow-sm)}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ph{height:200px;overflow:hidden}
+.serv-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(0.22,1,0.36,1)}
+.serv-card:hover .ph img{transform:scale(1.06)}
+.serv-card .body{padding:26px 26px 30px}
+.serv-card .ov{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;letter-spacing:0}
+.serv-card .desc{margin-top:10px;color:var(--text-secondary);font-size:.92rem;line-height:1.6}
+.serv-card .price{margin-top:18px;display:flex;align-items:baseline;gap:6px;padding-top:18px;border-top:1px solid rgba(26,23,20,.08)}
+.serv-card .price .from{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.serv-card .price .val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;color:var(--text-primary)}
+
+/* faixa de acabamento (full bleed band) */
+.band{position:relative;min-height:clamp(300px,42vw,440px);display:grid;align-items:center;overflow:hidden;isolation:isolate}
+.band-bg{position:absolute;inset:0;z-index:0;background:url('imagens/web-06.jpg') center/cover no-repeat fixed}
+.band-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(110deg,rgba(15,13,11,.92) 20%,rgba(15,13,11,.55) 100%)}
+.band-inner{position:relative;z-index:2;max-width:var(--content-max);margin:0 auto;width:100%}
+.band h2{font-size:var(--text-h2);font-weight:800;color:#fff;letter-spacing:var(--ls-display);max-width:16ch}
+.band h2 em{color:var(--gold-light);font-style:normal}
+.band p{margin-top:16px;color:rgba(243,239,231,.82);max-width:46ch}
+.band .btn-primary{margin-top:30px}
+@media(max-width:760px){.band-bg{background-attachment:scroll}}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-inset)}
+.prova .sec-head{text-align:center}
+.prova .sec-head .overline{justify-content:center}
+.prova .sec-head p{margin-left:auto;margin-right:auto}
+.dep-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:860px){.dep-grid{grid-template-columns:1fr}}
+.dep{background:var(--bg-surface);border-radius:10px;padding:32px 30px;box-shadow:var(--shadow-sm);border:1px solid rgba(26,23,20,.06);display:flex;flex-direction:column;gap:18px}
+.dep .stars{display:flex;gap:3px;color:var(--gold)}
+.dep .stars svg{width:16px;height:16px}
+.dep .quote{font-size:1rem;line-height:1.7;color:var(--text-primary)}
+.dep .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.dep .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;display:grid;place-items:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem}
+.dep .who .nm{font-weight:600;font-size:.9rem}
+.dep .who .meta{font-size:.74rem;color:var(--text-muted)}
+
+/* GALERIA */
+.galeria{background:var(--bg-base)}
+.gal-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:8px;position:relative}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(0.22,1,0.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .tall{grid-row:span 2}
+.gal-grid .wide{grid-column:span 2}
+@media(max-width:860px){.gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gal-grid .wide{grid-column:span 2}}
+
+/* LOCALIZAÇÃO */
+.local{background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.local::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.local-grid{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media(max-width:860px){.local-grid{grid-template-columns:1fr}}
+.local h2{font-size:var(--text-h2);font-weight:800;color:#fff;letter-spacing:var(--ls-display)}
+.local h2 em{color:var(--accent);font-style:normal}
+.info-list{margin-top:30px;display:flex;flex-direction:column;gap:24px}
+.info{display:flex;gap:16px;align-items:flex-start}
+.info .ic{width:42px;height:42px;flex:none;border-radius:10px;border:1px solid var(--accent-border);background:var(--accent-subtle);display:grid;place-items:center;color:var(--accent)}
+.info .ic svg{width:20px;height:20px}
+.info .k{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)}
+.info .v{font-size:1.02rem;color:rgba(243,239,231,.92);margin-top:3px}
+.info .v a{color:var(--gold-light)}
+.local-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.map-wrap{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(243,239,231,.1);position:relative;min-height:340px}
+.map-wrap iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* FOOTER */
+footer{background:var(--bg-dark-2);color:rgba(243,239,231,.7);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(243,239,231,.1)}
+.foot-brand .mark{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.7rem;color:#fff;text-transform:uppercase}
+.foot-brand .mark em{color:var(--accent);font-style:normal}
+.foot-brand p{margin-top:12px;max-width:34ch;font-size:.9rem}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;margin-bottom:10px;transition:color .25s ease}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{max-width:var(--content-max);margin:24px auto 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.45);transition:transform .2s}
+.wa-fab svg{width:32px;height:32px}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(0.22,1,0.36,1),transform .8s cubic-bezier(0.22,1,0.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-bg,.serv-card .ph img,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge,.scroll-cue{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .wa-fab::before,.scroll-cue span{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <span class="mark">Barbearia <em>Guedes</em></span>
+    <span class="sub">Estados · João Pessoa</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A Casa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#prova">Clientes</a>
+    <a href="#local">Onde Estamos</a>
+    <a href="https://wa.me/5583987972499" class="btn-primary nav-cta" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Corte · Barba · Navalha</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Tradição</span></span>
+        <span class="line"><span class="word">na cadeira,</span></span>
+        <span class="line"><span class="word"><em>respeito</em> no espelho.</span></span>
+      </h1>
+      <p class="hero-sub">A barbearia de referência no bairro dos Estados. Corte preciso, barba feita na régua e aquele atendimento que faz você voltar.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5583987972499" class="btn-primary btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.973-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#servicos" class="btn-ghost btn">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-badge" aria-label="Nota 4.8 no Google">
+      <div class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg>
+      </div>
+      <div class="score">4.8<span> / 5</span></div>
+      <div class="lbl">Avaliação no Google</div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-media reveal">
+      <img src="imagens/web-02.jpg" alt="Barbeiro finalizando a barba de um cliente na Barbearia Guedes">
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+    <div class="sobre-text">
+      <div class="overline reveal">A Casa Guedes</div>
+      <h2 class="reveal">Mais que um corte.<br><em>Um ritual.</em></h2>
+      <p class="reveal">Na Av. Maranhão, no coração do bairro dos Estados, a Barbearia Guedes virou ponto de encontro de quem leva o visual a sério. Aqui cada cliente senta na cadeira e sai com a barba na régua, o corte no capricho e a cabeça mais leve.</p>
+      <p class="reveal">Não é pressa, é cuidado. É o barbeiro que lembra do seu nome, do seu corte e do papo da semana passada. É por isso que a casa carrega <strong style="color:var(--gold-light)">4.8 estrelas no Google</strong> — nota que se conquista cadeira por cadeira.</p>
+      <div class="sobre-stats reveal">
+        <div class="stat"><div class="num">4.8</div><div class="cap">Nota no Google</div></div>
+        <div class="stat"><div class="num">100%</div><div class="cap">Hora marcada</div></div>
+        <div class="stat"><div class="num">Estados</div><div class="cap">João Pessoa · PB</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="sec-head">
+    <div class="overline reveal">O que fazemos</div>
+    <h2 class="reveal">Serviços feitos <em>na régua</em></h2>
+    <p class="reveal">Do corte clássico ao acabamento de barba na navalha. Escolha o seu e marque o horário em um toque.</p>
+  </div>
+  <div class="serv-grid">
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-03.jpg" alt="Degradê sendo feito na máquina"></div>
+      <div class="body">
+        <div class="ov">Cabelo</div>
+        <h3>Corte & Degradê</h3>
+        <p class="desc">Corte na tesoura ou máquina, degradê desenhado e finalização com produto. Sai pronto pra qualquer ocasião.</p>
+        <div class="price"><span class="from">A partir de</span><span class="val">R$ 35</span></div>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-04.jpg" alt="Barba sendo aparada com tesoura"></div>
+      <div class="body">
+        <div class="ov">Barba</div>
+        <h3>Barba na Navalha</h3>
+        <p class="desc">Toalha quente, contorno desenhado e acabamento na navalha. A barba na régua que dá outro porte ao visual.</p>
+        <div class="price"><span class="from">A partir de</span><span class="val">R$ 30</span></div>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-05.jpg" alt="Acabamento de barba e cabelo"></div>
+      <div class="body">
+        <div class="ov">Combo completo</div>
+        <h3>Corte + Barba</h3>
+        <p class="desc">O pacote que mais sai: corte completo e barba feita, tudo na mesma cadeira. Visual renovado de cima a baixo.</p>
+        <div class="price"><span class="from">A partir de</span><span class="val">R$ 55</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- BAND -->
+<section class="band">
+  <div class="band-bg" aria-hidden="true"></div>
+  <div class="band-overlay" aria-hidden="true"></div>
+  <div class="band-inner">
+    <div class="overline reveal">Hora marcada, sem espera</div>
+    <h2 class="reveal">Seu horário <em>reservado</em> em um toque.</h2>
+    <p class="reveal">Nada de fila ou de chegar e voltar. Manda mensagem, a gente confirma o melhor horário pra você e te espera na cadeira.</p>
+    <a href="https://wa.me/5583987972499" class="btn-primary btn reveal" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.973-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Marcar agora
+    </a>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="sec-head">
+    <div class="overline center reveal">Quem senta, volta</div>
+    <h2 class="reveal">A régua é <em>4.8 no Google</em></h2>
+    <p class="reveal">A reputação que a Barbearia Guedes construiu cadeira por cadeira, na voz de quem é cliente da casa.</p>
+  </div>
+  <div class="dep-grid">
+    <article class="dep reveal">
+      <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg></div>
+      <p class="quote">"Melhor barbearia do bairro, sem discussão. O corte sai sempre do jeito que peço e a barba fica impecável. Virei cliente fixo."</p>
+      <div class="who"><div class="av">R</div><div><div class="nm">Rafael M.</div><div class="meta">Cliente · Estados</div></div></div>
+    </article>
+    <article class="dep reveal">
+      <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg></div>
+      <p class="quote">"Atendimento de primeira, ambiente limpo e o pessoal é gente boa. Marco pelo WhatsApp e nunca espero. Recomendo demais."</p>
+      <div class="who"><div class="av">D</div><div><div class="nm">Diego A.</div><div class="meta">Cliente · João Pessoa</div></div></div>
+    </article>
+    <article class="dep reveal">
+      <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.169L12 18.896l-7.335 3.868 1.401-8.169L.132 9.21l8.2-1.192z"/></svg></div>
+      <p class="quote">"Levo meu filho e vou junto. Os dois saem satisfeitos sempre. Profissionais que entendem do corte de verdade. Nota 10."</p>
+      <div class="who"><div class="av">J</div><div><div class="nm">Jonas P.</div><div class="meta">Cliente · Estados</div></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="sec-head">
+    <div class="overline reveal">No capricho</div>
+    <h2 class="reveal">Um pouco do nosso <em>trabalho</em></h2>
+  </div>
+  <div class="gal-grid">
+    <figure class="tall reveal"><img src="imagens/web-01.jpg" alt="Ambiente da Barbearia Guedes"></figure>
+    <figure class="wide reveal"><img src="imagens/web-07.jpg" alt="Corte clássico em andamento"></figure>
+    <figure class="reveal"><img src="imagens/web-03.jpg" alt="Degradê detalhado"></figure>
+    <figure class="reveal"><img src="imagens/web-05.jpg" alt="Acabamento de barba"></figure>
+    <figure class="wide reveal"><img src="imagens/web-02.jpg" alt="Barbeiro trabalhando a barba"></figure>
+    <figure class="reveal"><img src="imagens/web-06.jpg" alt="Acabamento na nuca"></figure>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="local-text">
+      <div class="overline reveal">Onde estamos</div>
+      <h2 class="reveal">Fácil de achar,<br><em>fácil de marcar.</em></h2>
+      <div class="info-list">
+        <div class="info reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="k">Endereço</div><div class="v">Av. Maranhão, 665 — Estados<br>João Pessoa - PB, 58030-260</div></div>
+        </div>
+        <div class="info reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <div><div class="k">Telefone / WhatsApp</div><div class="v"><a href="https://wa.me/5583987972499" target="_blank" rel="noopener">(83) 98797-2499</a></div></div>
+        </div>
+        <div class="info reveal">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="k">Horário</div><div class="v">Seg a Sáb · 09h às 19h</div></div>
+        </div>
+      </div>
+      <div class="local-actions">
+        <a href="https://wa.me/5583987972499" class="btn-primary btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.973-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/place/Barbearia+Guedes/@-7.113682,-34.8555921,17z/data=!3m1!4b1!4m6!3m5!1s0x7acdd5c06ebd9a5:0xdcd24b87fd73b65b!8m2!3d-7.113682!4d-34.8555921!16s%2Fg%2F11b6cq2r3_?authuser=0&hl=pt-BR&entry=ttu" class="btn-ghost btn" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe title="Localização Barbearia Guedes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=-7.113682,-34.8555921&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="mark">Barbearia <em>Guedes</em></div>
+      <p>Corte, barba e atendimento de respeito no bairro dos Estados, João Pessoa. Senta na cadeira que a gente cuida do resto.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegue</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#prova">Clientes</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <p>Av. Maranhão, 665 — Estados</p>
+      <p>João Pessoa - PB</p>
+      <a href="https://wa.me/5583987972499" target="_blank" rel="noopener">(83) 98797-2499</a>
+      <p>Seg a Sáb · 09h às 19h</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Guedes. Todos os direitos reservados.</span>
+    <span>Avaliação 4.8 no Google</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5583987972499" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.973-1.042zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

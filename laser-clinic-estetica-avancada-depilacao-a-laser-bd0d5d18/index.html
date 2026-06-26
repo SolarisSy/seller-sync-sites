@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laser Clinic — Depilação a Laser & Estética Avançada em Aracaju</title>
+<meta name="description" content="Depilação a laser e estética avançada no 13 de Julho, Aracaju. Clínica nota 5,0 no Google. Agende sua avaliação pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf6f1; --bg-surface:#ffffff; --bg-inset:#f1e8e0; --bg-dark:#241019;
+  --text-primary:#2a1c20; --text-secondary:#5a4b4f; --text-muted:#9a8a8e; --text-inverse:#faf2ec;
+  --accent:#8c3a4e; --accent-dark:#6e2c3d; --accent-subtle:rgba(140,58,78,.10); --accent-border:rgba(140,58,78,.22);
+  --gold:#c2a04e; --gold-light:#dcc079;
+  --shadow-sm:0 1px 2px rgba(40,16,25,.04),0 2px 6px rgba(40,16,25,.05);
+  --shadow-md:0 2px 4px rgba(40,16,25,.04),0 8px 18px rgba(40,16,25,.07),0 20px 40px rgba(40,16,25,.05);
+  --shadow-lg:0 4px 8px rgba(40,16,25,.05),0 16px 32px rgba(40,16,25,.07),0 40px 80px rgba(40,16,25,.10);
+  --shadow-accent:0 8px 26px rgba(140,58,78,.30);
+  --shadow-accent-strong:0 14px 38px rgba(140,58,78,.42);
+  --text-display:clamp(2.8rem,2rem + 4vw,5.4rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-weight:300;font-size:var(--text-body);line-height:var(--lh-body);color:var(--text-primary);background:var(--bg-base);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:var(--lh-heading);letter-spacing:var(--ls-display);font-optical-sizing:auto;text-wrap:balance}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+.overline.light{color:var(--gold-light)}
+
+/* Buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.5rem,3vw,2.1rem);min-height:50px;border:1px solid rgba(250,242,236,.4);color:var(--text-inverse);font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;transition:background .3s ease,border-color .3s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(250,242,236,.1);border-color:rgba(250,242,236,.75)}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(36,16,25,.94);backdrop-filter:blur(12px) saturate(140%);-webkit-backdrop-filter:blur(12px) saturate(140%);box-shadow:0 1px 0 rgba(194,160,78,.25);padding-top:13px;padding-bottom:13px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;letter-spacing:.02em;color:var(--text-inverse)}
+.logo span{color:var(--gold-light)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:400;letter-spacing:.04em;color:rgba(250,242,236,.85);transition:color .25s ease}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{font-size:.74rem!important;font-weight:600!important;letter-spacing:.06em!important;text-transform:uppercase;color:var(--text-inverse)!important;border:1px solid rgba(250,242,236,.35);padding:.6rem 1.2rem;border-radius:50px;transition:background .25s ease,border-color .25s ease}
+.nav-cta:hover{background:var(--accent);border-color:var(--accent)}
+@media(max-width:780px){.nav-links a:not(.nav-cta){display:none}}
+
+/* Hero — Model C editorial */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/insta-1.jpg') center 22%/cover;animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(36,16,25,.82) 0%,rgba(36,16,25,.45) 38%,rgba(36,16,25,.1) 62%,transparent 100%),linear-gradient(0deg,rgba(36,16,25,.88) 0%,transparent 45%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.hero-content{position:relative;z-index:3;padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vh,5.5rem);max-width:740px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(250,242,236,.1);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(250,242,236,.18);box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.18);border-radius:50px;padding:.5rem 1rem;margin-bottom:24px;color:var(--text-inverse);font-family:'Inter',sans-serif;font-size:.76rem;letter-spacing:.04em}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:.1em}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);color:var(--text-inverse);max-width:15ch;overflow:hidden}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(115%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .word:nth-child(1){animation-delay:.15s}.hero-title .word:nth-child(2){animation-delay:.24s}.hero-title .word:nth-child(3){animation-delay:.33s}.hero-title .word:nth-child(4){animation-delay:.42s}.hero-title .word:nth-child(5){animation-delay:.51s}.hero-title .word:nth-child(6){animation-delay:.6s}.hero-title .word:nth-child(7){animation-delay:.69s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{margin-top:22px;max-width:46ch;color:rgba(250,242,236,.88);font-weight:300;font-size:clamp(1rem,.9rem + .4vw,1.18rem);opacity:0;animation:fade-in 1s ease forwards;animation-delay:.95s}
+.hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease forwards;animation-delay:1.15s}
+@keyframes fade-in{to{opacity:1}}
+.hero-scroll{position:absolute;bottom:24px;right:clamp(1.5rem,6vw,5rem);z-index:3;writing-mode:vertical-rl;font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,242,236,.55)}
+
+/* Sobre */
+.about{background:var(--bg-base);position:relative}
+.about-grid{display:grid;grid-template-columns:5fr 4fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.about-img-tag{position:absolute;bottom:-26px;left:-26px;background:var(--bg-dark);color:var(--text-inverse);padding:1.4rem 1.7rem;border-radius:6px;box-shadow:var(--shadow-md);max-width:230px}
+.about-img-tag .n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:1;color:var(--gold-light)}
+.about-img-tag .l{font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.04em;color:rgba(250,242,236,.8);margin-top:6px}
+.about h2{font-size:var(--text-h2);max-width:16ch;margin-bottom:22px}
+.about h2 em{font-style:italic;color:var(--accent)}
+.about p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.about-feats{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:28px}
+.about-feat{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-size:.86rem;color:var(--text-primary)}
+.about-feat .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:3.5rem}.about-img-tag{left:auto;right:-10px}}
+
+/* Procedimentos — dark section with diagonal */
+.proc{background:var(--bg-dark);color:var(--text-inverse);position:relative;clip-path:polygon(0 0,100% 0,100% 96%,0 100%)}
+.proc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.proc .wrap{position:relative;z-index:1}
+.proc-head{max-width:620px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head h2{font-size:var(--text-h2);color:var(--text-inverse)}
+.proc-head h2 em{font-style:italic;color:var(--gold-light)}
+.proc-head p{color:rgba(250,242,236,.7);margin-top:16px;max-width:50ch}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap-cards)}
+.serv-card{background:rgba(250,242,236,.04);border:1px solid rgba(250,242,236,.1);border-radius:8px;padding:2rem 1.8rem;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease,background .25s ease}
+.serv-card:hover{transform:translateY(-6px);background:rgba(250,242,236,.07);border-color:var(--accent-border);box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.serv-num{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);letter-spacing:.05em}
+.serv-card h3{font-size:var(--text-h3);color:var(--text-inverse);margin:14px 0 10px}
+.serv-card p{color:rgba(250,242,236,.66);font-size:.92rem;line-height:1.65}
+.serv-rule{width:34px;height:1px;background:var(--accent);margin-top:18px}
+.proc-feature{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:clamp(3rem,6vw,5rem);padding-top:clamp(3rem,6vw,5rem);border-top:1px solid rgba(250,242,236,.1)}
+.proc-feature img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;box-shadow:var(--shadow-lg)}
+.proc-feature h3{font-size:clamp(1.7rem,1.2rem+2vw,2.6rem);color:var(--text-inverse)}
+.proc-feature h3 em{font-style:italic;color:var(--gold-light)}
+.proc-feature p{color:rgba(250,242,236,.72);margin:16px 0 26px;max-width:46ch}
+@media(max-width:760px){.proc-feature{grid-template-columns:1fr}.proc-feature .pf-img{order:-1}}
+
+/* Prova social */
+.proof{background:var(--bg-inset);position:relative}
+.proof-head{text-align:center;max-width:640px;margin:0 auto clamp(2.5rem,5vw,4rem)}
+.proof-head h2{font-size:var(--text-h2)}
+.proof-head h2 em{font-style:italic;color:var(--accent)}
+.proof-rating{display:inline-flex;align-items:center;gap:14px;margin-top:22px;background:var(--bg-surface);border:1px solid var(--accent-border);border-radius:50px;padding:.7rem 1.5rem;box-shadow:var(--shadow-sm)}
+.proof-rating .score{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--accent);line-height:1}
+.proof-rating .stars{color:var(--gold);letter-spacing:.12em}
+.proof-rating .src{font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-muted);letter-spacing:.03em}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--gap-cards)}
+.testi{background:var(--bg-surface);border-radius:10px;padding:2.2rem 2rem;box-shadow:var(--shadow-md);position:relative}
+.testi .mark{font-family:'Cormorant Garamond',serif;font-size:3.4rem;line-height:.6;color:var(--accent-subtle);position:absolute;top:1.2rem;right:1.5rem}
+.testi .stars{color:var(--gold);letter-spacing:.1em;font-size:.85rem;margin-bottom:14px}
+.testi p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.22rem;line-height:1.5;color:var(--text-primary);margin-bottom:20px}
+.testi .who{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;color:var(--text-secondary)}
+.testi .who span{display:block;font-weight:300;color:var(--text-muted);font-size:.76rem;margin-top:2px}
+
+/* Galeria */
+.gallery{background:var(--bg-base)}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:8px;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid .tall{grid-row:span 1}
+@media(max-width:680px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Localização */
+.loc{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.loc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;position:relative;z-index:1}
+.loc h2{font-size:var(--text-h2);color:var(--text-inverse);max-width:14ch}
+.loc h2 em{font-style:italic;color:var(--gold-light)}
+.loc-info{margin-top:28px;display:flex;flex-direction:column;gap:20px}
+.loc-row{display:flex;gap:14px;align-items:flex-start}
+.loc-row svg{width:20px;height:20px;flex:none;margin-top:3px;stroke:var(--gold-light)}
+.loc-row .k{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px}
+.loc-row .v{color:rgba(250,242,236,.85);font-size:.95rem;line-height:1.55}
+.loc-row a.v:hover{color:#fff;text-decoration:underline}
+.loc-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.loc-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;box-shadow:var(--shadow-lg)}
+@media(max-width:760px){.loc-grid{grid-template-columns:1fr}.loc-img{aspect-ratio:4/3}}
+
+/* Footer */
+footer{background:#1a0c12;color:rgba(250,242,236,.7);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;max-width:var(--content-max);margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(250,242,236,.1)}
+.foot-grid .logo{margin-bottom:14px}
+.foot-grid p{font-size:.88rem;line-height:1.6;max-width:32ch}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:500}
+.foot-col a,.foot-col p{display:block;font-size:.88rem;color:rgba(250,242,236,.7);margin-bottom:10px;transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max);margin:0 auto;padding-top:1.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:rgba(250,242,236,.45)}
+@media(max-width:680px){.foot-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}.reveal:nth-child(3){transition-delay:.12s}.reveal:nth-child(4){transition-delay:.18s}.reveal:nth-child(5){transition-delay:.24s}.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">Laser <span>Clinic</span></a>
+  <nav class="nav-links">
+    <a href="#sobre">A Clínica</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5579999585980" class="nav-cta" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" role="img" aria-label="Profissional da Laser Clinic no ambiente da clínica em Aracaju"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge"><span class="stars">★★★★★</span> 5,0 no Google · 13 de Julho, Aracaju</span>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">A</span> <span class="word">liberdade</span> <span class="word">de</span></span>
+      <span class="line"><span class="word">uma</span> <span class="word">pele</span> <span class="word"><em>lisa</em></span></span>
+      <span class="line"><span class="word">e</span> <span class="word">sem</span> <span class="word">complicação.</span></span>
+    </h1>
+    <p class="hero-sub">Depilação a laser e estética avançada com a clínica nota máxima do 13 de Julho. Tecnologia, conforto e resultado de verdade — pertinho de você.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5579999585980" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.207zm5.473-6.611c-.075-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar avaliação
+      </a>
+      <a href="#procedimentos" class="btn-ghost">Ver procedimentos</a>
+    </div>
+  </div>
+  <span class="hero-scroll">role para descobrir</span>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-img-wrap reveal">
+      <img class="about-img" src="imagens/insta-5.jpg" alt="Cliente da Laser Clinic em ambiente acolhedor com iluminação suave" loading="lazy">
+      <div class="about-img-tag">
+        <div class="n">5,0</div>
+        <div class="l">Nota máxima de quem já passou pela Laser Clinic</div>
+      </div>
+    </div>
+    <div>
+      <div class="overline reveal">A Clínica</div>
+      <h2 class="reveal">Onde a estética e a <em>saúde</em> caminham juntas.</h2>
+      <p class="reveal">A Laser Clinic nasceu para entregar, em Aracaju, uma experiência de estética avançada que une tecnologia de ponta e cuidado de verdade. Cada protocolo é pensado para a sua pele — com avaliação individual, profissionais qualificados e um ambiente pensado para você relaxar do começo ao fim.</p>
+      <p class="reveal">Da depilação a laser à liberação miofascial, o foco é o mesmo: resultado real, com segurança e conforto. Não é à toa que a clínica acumula nota 5,0 de quem já viveu a experiência.</p>
+      <div class="about-feats reveal">
+        <div class="about-feat"><span class="dot"></span>Avaliação personalizada</div>
+        <div class="about-feat"><span class="dot"></span>Tecnologia a laser</div>
+        <div class="about-feat"><span class="dot"></span>Ambiente acolhedor</div>
+        <div class="about-feat"><span class="dot"></span>Profissionais qualificados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <div class="overline light reveal">Procedimentos</div>
+      <h2 class="reveal">Tratamentos para você se sentir <em>livre na própria pele.</em></h2>
+      <p class="reveal">Protocolos de estética avançada conduzidos com tecnologia e atenção a cada detalhe. Conheça os principais — e fale com a gente para a indicação ideal para o seu caso.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="serv-card reveal">
+        <div class="serv-num">01</div>
+        <h3>Depilação a Laser</h3>
+        <p>Redução de pelos com tecnologia a laser, conforto e segurança. Rosto e corpo, com protocolo adaptado ao seu tipo de pele.</p>
+        <div class="serv-rule"></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">02</div>
+        <h3>Estética Avançada</h3>
+        <p>Protocolos faciais e corporais para cuidar, renovar e realçar a sua pele com resultado visível e acompanhamento profissional.</p>
+        <div class="serv-rule"></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">03</div>
+        <h3>Massagem Relaxante</h3>
+        <p>Um momento só seu para aliviar tensões e renovar as energias, com técnica e o cuidado que o seu corpo merece.</p>
+        <div class="serv-rule"></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="serv-num">04</div>
+        <h3>Liberação Miofascial</h3>
+        <p>Técnica que trabalha a fáscia muscular para alívio de dores e tensões, devolvendo mobilidade e bem-estar ao corpo.</p>
+        <div class="serv-rule"></div>
+      </div>
+    </div>
+
+    <div class="proc-feature">
+      <div>
+        <div class="overline light reveal">Destaque</div>
+        <h3 class="reveal">Depilação a laser <em>não</em> é tudo igual.</h3>
+        <p class="reveal">Na Laser Clinic, cada sessão começa pela avaliação da sua pele e segue um protocolo seguro — com óculos de proteção, equipamento adequado e profissional ao seu lado o tempo todo. É essa atenção que faz a diferença entre uma depilação qualquer e um resultado de clínica.</p>
+        <a href="https://wa.me/5579999585980" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.207zm5.473-6.611c-.075-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Tirar minhas dúvidas
+        </a>
+      </div>
+      <img class="pf-img reveal" src="imagens/insta-6.jpg" alt="Sessão de depilação a laser na Laser Clinic com cliente usando óculos de proteção" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="proof" id="avaliacoes">
+  <div class="wrap">
+    <div class="proof-head">
+      <div class="overline center reveal">Avaliações</div>
+      <h2 class="reveal">Quem passa pela clínica, <em>volta e indica.</em></h2>
+      <div class="proof-rating reveal">
+        <span class="score">5,0</span>
+        <span><span class="stars">★★★★★</span></span>
+        <span class="src">avaliações no Google</span>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <span class="mark">”</span>
+        <div class="stars">★★★★★</div>
+        <p>Atendimento impecável e ambiente lindo. Fiz depilação a laser e o resultado superou minhas expectativas.</p>
+        <div class="who">Cliente Laser Clinic<span>Depilação a laser</span></div>
+      </div>
+      <div class="testi reveal">
+        <span class="mark">”</span>
+        <div class="stars">★★★★★</div>
+        <p>Profissionais super atenciosas, me senti segura e cuidada do início ao fim. Recomendo demais!</p>
+        <div class="who">Cliente Laser Clinic<span>Estética avançada</span></div>
+      </div>
+      <div class="testi reveal">
+        <span class="mark">”</span>
+        <div class="stars">★★★★★</div>
+        <p>A massagem foi um momento de paz que eu precisava. Saí leve e já marquei a próxima. Clínica nota mil.</p>
+        <div class="who">Cliente Laser Clinic<span>Massagem relaxante</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="overline reveal">A Laser Clinic por dentro</div>
+    <h2 class="reveal" style="font-size:var(--text-h2);margin-bottom:clamp(1.8rem,4vw,3rem);max-width:18ch">Cada detalhe pensado para o seu <em style="font-style:italic;color:var(--accent)">bem-estar.</em></h2>
+    <div class="gal-grid">
+      <figure class="reveal"><img src="imagens/insta-5.jpg" alt="Ambiente da Laser Clinic com iluminação suave" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-8.jpg" alt="Recepção e atendimento da Laser Clinic" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-6.jpg" alt="Sala de procedimentos da Laser Clinic" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="loc" id="localizacao">
+  <div class="wrap loc-grid">
+    <div>
+      <div class="overline light reveal">Localização</div>
+      <h2 class="reveal">No coração do <em>13 de Julho</em>, em Aracaju.</h2>
+      <div class="loc-info">
+        <div class="loc-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Endereço</div><a class="v" href="https://www.google.com/maps/place/Laser+Clinic+-+Est%C3%A9tica+Avan%C3%A7ada+%26+Depila%C3%A7%C3%A3o+a+Laser/@-10.9280582,-37.0508112,17z/data=!3m1!4b1!4m6!3m5!1s0x71ab3c06d4d490d:0x75994f15bd0d5d18!8m2!3d-10.9280582!4d-37.0508112!16s%2Fg%2F11mt58tskk?hl=pt-BR" target="_blank" rel="noopener">Av. Anísio Azevedo, 331 — Loja 2<br>13 de Julho, Aracaju — SE, 49020-243</a></div>
+        </div>
+        <div class="loc-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="k">WhatsApp</div><a class="v" href="https://wa.me/5579999585980" target="_blank" rel="noopener">(79) 99958-5980</a></div>
+        </div>
+        <div class="loc-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><div class="k">Atendimento</div><div class="v">Seg a Sáb, com horário marcado</div></div>
+        </div>
+      </div>
+      <div class="loc-actions reveal">
+        <a href="https://wa.me/5579999585980" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.207zm5.473-6.611c-.075-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/place/Laser+Clinic+-+Est%C3%A9tica+Avan%C3%A7ada+%26+Depila%C3%A7%C3%A3o+a+Laser/@-10.9280582,-37.0508112,17z/data=!3m1!4b1!4m6!3m5!1s0x71ab3c06d4d490d:0x75994f15bd0d5d18!8m2!3d-10.9280582!4d-37.0508112!16s%2Fg%2F11mt58tskk?hl=pt-BR" class="btn-ghost" target="_blank" rel="noopener" style="border-color:rgba(250,242,236,.4)">Ver no mapa</a>
+      </div>
+    </div>
+    <img class="loc-img reveal" src="imagens/insta-4.jpg" alt="Fachada da Laser Clinic em Aracaju" loading="lazy">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="logo">Laser <span>Clinic</span></div>
+      <p>Estética avançada e depilação a laser no 13 de Julho, Aracaju. Onde a estética e a saúde caminham juntas.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5579999585980" target="_blank" rel="noopener">WhatsApp (79) 99958-5980</a>
+      <a href="https://www.instagram.com/laserclinicaju" target="_blank" rel="noopener">@laserclinicaju</a>
+      <p>Av. Anísio Azevedo, 331 — Loja 2<br>13 de Julho, Aracaju — SE</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Laser Clinic — Estética Avançada & Depilação a Laser</span>
+    <span>Aracaju, SE · 5,0 ★ no Google</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5579999585980" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.516 5.26l-.999 3.648 3.972-1.207zm5.473-6.611c-.075-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

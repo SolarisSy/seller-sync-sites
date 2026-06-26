@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Rubianne Inácio — Harmonização Orofacial em Goiânia</title>
+<meta name="description" content="Clínica de Harmonização Orofacial em Goiânia da Dra. Rubianne Inácio. Estética do sorriso, lentes e harmonização facial no Setor Bueno. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Tipografia fluida */
+  --text-display: clamp(2.6rem, 1.8rem + 4.2vw, 5.4rem);
+  --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3rem);
+  --text-h3:      clamp(1.25rem, 1rem + 1.1vw, 1.7rem);
+  --text-body:    clamp(0.95rem, 0.88rem + 0.3vw, 1.05rem);
+  --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+  --lh-display: 1.04; --lh-heading: 1.14; --lh-body: 1.72;
+  --ls-display: -0.02em; --ls-overline: 0.2em;
+
+  /* Superfícies */
+  --bg-base:#f7f4ef; --bg-surface:#fffdfa; --bg-inset:#ece4da; --bg-dark:#0f2e2d;
+  /* Texto */
+  --text-primary:#1b2423; --text-secondary:#4a544f; --text-muted:#8c938c; --text-inverse:#f4efe7;
+  /* Marca + acento */
+  --accent:#1d5450; --accent-dark:#143b38;
+  --accent-subtle:rgba(29,84,80,.10); --accent-border:rgba(29,84,80,.22);
+  --gold:#c4a368; --gold-light:#dcc28e;
+
+  --shadow-sm:0 1px 2px rgba(20,40,38,.04),0 2px 6px rgba(20,40,38,.05);
+  --shadow-md:0 2px 4px rgba(20,40,38,.04),0 8px 18px rgba(20,40,38,.07),0 20px 40px rgba(20,40,38,.05);
+  --shadow-lg:0 4px 8px rgba(20,40,38,.05),0 16px 32px rgba(20,40,38,.08),0 40px 80px rgba(20,40,38,.10);
+  --shadow-accent:0 8px 24px rgba(29,84,80,.28);
+  --shadow-accent-strong:0 12px 34px rgba(29,84,80,.40);
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif; background:var(--bg-base); color:var(--text-primary);
+  font-size:var(--text-body); line-height:var(--lh-body); font-weight:400;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Raleway',sans-serif; font-optical-sizing:auto; text-wrap:balance; line-height:var(--lh-heading); font-weight:500}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* Overline */
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;
+  font-size:.7rem;letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:18px}
+.overline::before{content:'';width:32px;height:1px;background:currentColor;flex:none}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);cursor:pointer;border:none;
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:1rem 1.8rem;min-height:52px;
+  border:1px solid rgba(244,239,231,.35);color:var(--text-inverse);border-radius:50px;
+  font-weight:500;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:background .3s ease,border-color .3s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(244,239,231,.10);border-color:rgba(244,239,231,.6)}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(15,46,45,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 rgba(196,163,104,.25);padding-top:12px;padding-bottom:12px}
+.brand{display:flex;flex-direction:column;line-height:1.15;color:#fff;transition:color .35s ease}
+.brand b{font-family:'Raleway';font-weight:600;font-size:1.05rem;letter-spacing:.02em}
+.brand span{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light)}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.5vw,2.4rem)}
+.nav a.lnk{color:rgba(244,239,231,.85);font-size:.82rem;letter-spacing:.04em;transition:color .25s ease}
+.nav a.lnk:hover{color:#fff}
+.nav .btn-head{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#241a08;
+  padding:.6rem 1.1rem;border-radius:50px;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  transition:transform .25s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.nav .btn-head:hover{transform:translateY(-2px)}
+@media(max-width:760px){.nav a.lnk{display:none}}
+
+/* HERO — Modelo C */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center 20%/cover;
+  animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(105deg,rgba(15,46,45,.92) 0%,rgba(15,46,45,.72) 34%,rgba(15,46,45,.18) 64%,rgba(15,46,45,.05) 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.055}
+.hero-content{position:relative;z-index:2;padding:0 8% clamp(3.5rem,7vh,6.5rem);max-width:720px;color:var(--text-inverse)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+  background:rgba(255,255,255,.08);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.18);
+  padding:.5rem .9rem;border-radius:50px;font-size:.74rem;letter-spacing:.05em}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:1px}
+.hero-overline{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:16px}
+.hero h1{font-size:var(--text-display);letter-spacing:var(--ls-display);font-weight:400;max-width:16ch;line-height:1.02}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero-title{overflow:hidden;display:block}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title .word:nth-child(5){animation-delay:.63s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero p.sub{margin:22px 0 30px;max-width:46ch;color:rgba(244,239,231,.88);font-weight:300;font-size:clamp(1rem,.95rem+.3vw,1.18rem)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:26px;right:7%;z-index:2;color:rgba(244,239,231,.6);font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl;display:flex;align-items:center;gap:10px}
+.scroll-hint::after{content:'';width:1px;height:40px;background:linear-gradient(rgba(244,239,231,.5),transparent)}
+@media(max-width:760px){.scroll-hint{display:none}}
+
+/* Diagonal entre hero e sobre */
+.sec-sobre{position:relative;background:var(--bg-base);clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%);
+  margin-top:-3.5vw;padding-top:calc(var(--section-pad) + 3.5vw)}
+
+/* SOBRE split */
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:5fr 6fr;
+  gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-figs{position:relative}
+.sobre-figs img{border-radius:6px;box-shadow:var(--shadow-lg);width:100%;object-fit:cover}
+.sobre-figs .fig-main{aspect-ratio:4/5}
+.sobre-figs .fig-sub{position:absolute;width:46%;bottom:-8%;right:-6%;aspect-ratio:1/1;object-fit:cover;
+  border:6px solid var(--bg-base)}
+.sobre-figs .credential{position:absolute;top:6%;left:-6%;background:var(--bg-dark);color:var(--text-inverse);
+  padding:1rem 1.2rem;border-radius:4px;box-shadow:var(--shadow-md);text-align:center}
+.credential .n{font-family:'Raleway';font-size:2rem;font-weight:600;color:var(--gold-light);line-height:1}
+.credential .l{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,231,.75);margin-top:4px}
+.sobre-txt h2{font-size:var(--text-h2);font-weight:400;letter-spacing:-.01em;max-width:16ch}
+.sobre-txt h2 em{font-style:italic;color:var(--accent)}
+.sobre-txt p{margin-top:18px;color:var(--text-secondary);max-width:var(--prose-max)}
+.sign{margin-top:28px;font-family:'Raleway';font-style:italic;font-size:1.3rem;color:var(--accent);font-weight:500}
+.sign span{display:block;font-family:'Inter';font-style:normal;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+@media(max-width:880px){
+  .sobre-grid{grid-template-columns:1fr;gap:clamp(3.5rem,9vw,5rem)}
+  .sobre-figs{max-width:440px;margin:0 auto}
+  .sobre-figs .credential{left:0}
+}
+
+/* PROCEDIMENTOS */
+.sec-proc{background:var(--bg-inset);position:relative}
+.proc-head{max-width:var(--content-max);margin:0 auto 3rem;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.proc-head h2{font-size:var(--text-h2);font-weight:400;letter-spacing:-.01em;max-width:14ch}
+.proc-head p{color:var(--text-secondary);max-width:42ch}
+.proc-grid{max-width:var(--content-max);margin:0 auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(27,36,35,.07);border-radius:6px;
+  padding:clamp(1.6rem,2.5vw,2.2rem);position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .num{font-family:'Raleway';font-size:.8rem;letter-spacing:.18em;color:var(--gold);font-weight:600}
+.serv-card .ico{width:34px;height:34px;margin:18px 0 16px;color:var(--accent);stroke:var(--accent)}
+.serv-card h3{font-size:var(--text-h3);font-weight:500;letter-spacing:-.01em}
+.serv-card p{margin-top:10px;color:var(--text-secondary);font-size:.95rem}
+.serv-card::after{content:'';position:absolute;left:0;bottom:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .4s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover::after{width:100%}
+
+/* EXPERIÊNCIA (banda imagem) */
+.sec-exp{position:relative;background:var(--bg-base)}
+.exp-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:6fr 5fr;
+  gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.exp-grid .exp-img{border-radius:6px;box-shadow:var(--shadow-lg);aspect-ratio:5/4;object-fit:cover;width:100%}
+.exp-txt h2{font-size:var(--text-h2);font-weight:400;max-width:14ch}
+.exp-txt h2 em{font-style:italic;color:var(--accent)}
+.exp-list{list-style:none;margin-top:24px;display:grid;gap:16px}
+.exp-list li{display:flex;gap:14px;align-items:flex-start;color:var(--text-secondary)}
+.exp-list .tick{flex:none;width:24px;height:24px;color:var(--accent)}
+.exp-list b{color:var(--text-primary);font-weight:600;display:block;font-size:1rem}
+@media(max-width:880px){.exp-grid{grid-template-columns:1fr}.exp-grid .exp-img{order:-1}}
+
+/* Onda para seção escura */
+.wave{display:block;line-height:0;margin-bottom:-1px}
+.wave svg{width:100%;height:clamp(40px,5vw,80px)}
+
+/* PROVA (dark) */
+.sec-prova{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.sec-prova::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;z-index:0}
+.prova-inner{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1}
+.prova-top{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.prova-top h2{font-size:var(--text-h2);font-weight:300;max-width:18ch}
+.prova-top h2 em{font-style:italic;color:var(--gold-light)}
+.rating-chip{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:.9rem 1.3rem;border-radius:10px}
+.rating-chip .big{font-family:'Raleway';font-size:2.4rem;font-weight:600;color:var(--gold-light);line-height:1}
+.rating-chip .stars{color:var(--gold-light);font-size:.9rem;letter-spacing:2px}
+.rating-chip .sub{font-size:.7rem;letter-spacing:.06em;color:rgba(244,239,231,.7)}
+.prova-banner{position:relative;border-radius:10px;overflow:hidden;margin-bottom:var(--gap-cards);box-shadow:var(--shadow-lg)}
+.prova-banner img{width:100%;aspect-ratio:21/7;object-fit:cover;object-position:center 40%}
+.prova-banner .cap{position:absolute;inset:0;display:flex;align-items:flex-end;padding:clamp(1.2rem,3vw,2.2rem);
+  background:linear-gradient(90deg,rgba(15,46,45,.78) 0%,rgba(15,46,45,.25) 55%,transparent 100%)}
+.prova-banner .cap p{font-family:'Raleway';font-weight:300;font-size:clamp(1.1rem,1rem+1vw,1.7rem);
+  color:#fff;max-width:24ch;font-style:italic;line-height:1.2}
+.prova-banner .cap em{color:var(--gold-light);font-style:italic}
+@media(max-width:600px){.prova-banner img{aspect-ratio:16/10}}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap-cards)}
+.tcard{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);border-radius:8px;
+  padding:clamp(1.6rem,2.5vw,2rem);transition:transform .35s cubic-bezier(.22,1,.36,1),background .3s ease}
+.tcard:hover{transform:translateY(-5px);background:rgba(255,255,255,.07)}
+.tcard .q{font-family:'Raleway';font-size:1.6rem;color:var(--gold);line-height:1;height:18px}
+.tcard p{margin:14px 0 18px;color:rgba(244,239,231,.9);font-weight:300;font-size:1rem;font-style:italic}
+.tcard .who{font-size:.8rem;letter-spacing:.04em;color:var(--gold-light);font-weight:500}
+.tcard .who span{display:block;color:rgba(244,239,231,.55);font-style:normal;letter-spacing:.1em;
+  text-transform:uppercase;font-size:.66rem;margin-top:3px}
+
+/* LOCALIZAÇÃO */
+.sec-local{background:var(--bg-base)}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:5fr 6fr;
+  gap:clamp(2rem,5vw,4rem);align-items:center}
+.local-info h2{font-size:var(--text-h2);font-weight:400;max-width:14ch}
+.local-info h2 em{font-style:italic;color:var(--accent)}
+.info-row{display:flex;gap:14px;align-items:flex-start;margin-top:22px;padding-bottom:22px;border-bottom:1px solid rgba(27,36,35,.10)}
+.info-row .ico{flex:none;width:22px;height:22px;color:var(--accent);margin-top:3px}
+.info-row .lbl{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:600}
+.info-row .val{color:var(--text-primary);font-weight:500;margin-top:3px}
+.info-row a.val{color:var(--accent)}
+.local-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn-map{display:inline-flex;align-items:center;gap:10px;padding:1rem 1.7rem;min-height:52px;border-radius:50px;
+  border:1px solid var(--accent-border);color:var(--accent);font-weight:600;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;transition:background .3s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-map:hover{background:var(--accent-subtle)}
+.local-img{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.local-img img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.local-img .tag{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.10);
+  backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.2);color:#fff;padding:.6rem 1rem;border-radius:8px;font-size:.78rem;letter-spacing:.04em}
+@media(max-width:880px){.local-grid{grid-template-columns:1fr}}
+
+/* CTA final */
+.sec-cta{background:var(--bg-inset);text-align:center}
+.sec-cta .inner{max-width:680px;margin:0 auto}
+.sec-cta h2{font-size:var(--text-h2);font-weight:400;letter-spacing:-.01em}
+.sec-cta h2 em{font-style:italic;color:var(--accent)}
+.sec-cta p{margin:18px auto 30px;color:var(--text-secondary);max-width:48ch}
+
+/* FOOTER */
+footer{background:var(--bg-dark);color:rgba(244,239,231,.75);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.10)}
+.foot-brand b{font-family:'Raleway';font-size:1.3rem;font-weight:600;color:#fff;display:block}
+.foot-brand span{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
+.foot-brand p{margin-top:14px;max-width:34ch;font-size:.9rem;font-weight:300}
+.foot-col h4{font-family:'Raleway';color:#fff;font-weight:500;font-size:1rem;margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:rgba(244,239,231,.72);margin-bottom:8px;font-weight:300}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:1.6rem auto 0;display:flex;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;font-size:.76rem;color:rgba(244,239,231,.5)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{animation:none}
+  .reveal,.hero-title .word{transition:none;opacity:1;transform:none;animation:none}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <b>Dra. Rubianne Inácio</b>
+    <span>Harmonização Orofacial</span>
+  </a>
+  <nav class="nav">
+    <a href="#sobre" class="lnk">A Doutora</a>
+    <a href="#procedimentos" class="lnk">Procedimentos</a>
+    <a href="#prova" class="lnk">Resultados</a>
+    <a href="#localizacao" class="lnk">Contato</a>
+    <a href="https://wa.me/5562999014041" class="btn-head" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.83 9.83 0 001.74 5.61l-.999 3.648 3.758-.985z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> 5,0 no Google · Setor Bueno, Goiânia</div>
+    <p class="hero-overline">Clínica de Harmonização Orofacial</p>
+    <h1>
+      <span class="hero-title"><span class="word">Seu</span> <span class="word">sorriso</span> <span class="word">em</span></span>
+      <span class="hero-title"><span class="word">perfeita</span> <span class="word"><em>harmonia.</em></span></span>
+    </h1>
+    <p class="sub">Harmonização facial, lentes e estética do sorriso com a Dra. Rubianne Inácio — naturalidade, técnica e o cuidado que já é referência em Goiânia.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5562999014041" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.83 9.83 0 001.74 5.61l-.999 3.648 3.758-.985z"/></svg>
+        Agendar avaliação
+      </a>
+      <a href="#procedimentos" class="btn-ghost">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Role para descobrir</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sec-sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-figs reveal">
+      <img class="fig-main" src="imagens/web-02.jpg" alt="Sorriso harmonizado em destaque">
+      <img class="fig-sub" src="imagens/web-06.jpg" alt="Dra. Rubianne em atendimento próximo à paciente">
+      <div class="credential">
+        <div class="n">5,0</div>
+        <div class="l">Nota no Google</div>
+      </div>
+    </div>
+    <div class="sobre-txt reveal">
+      <div class="overline">A Doutora</div>
+      <h2>Cuidado preciso para um resultado <em>naturalmente seu</em>.</h2>
+      <p>A Dra. Rubianne Inácio dedica a sua clínica à harmonização orofacial: o equilíbrio entre o sorriso e os traços do rosto. Cada plano de tratamento começa por escutar você e entender o que quer realçar — para que o resultado pareça sempre genuíno, nunca artificial.</p>
+      <p>Com consultório no coração do Setor Bueno, em Goiânia, e nota máxima entre quem já passou por aqui, o atendimento une técnica avançada, materiais de alto padrão e um acompanhamento próximo do início ao retorno.</p>
+      <div class="sign">Dra. Rubianne Inácio
+        <span>Cirurgiã-dentista · Harmonização Orofacial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="sec-proc" id="procedimentos">
+  <div class="proc-head">
+    <div>
+      <div class="overline">Procedimentos</div>
+      <h2 class="reveal">Tratamentos pensados para o seu sorriso</h2>
+    </div>
+    <p class="reveal">Estética facial e do sorriso com planejamento individual. Conheça os principais procedimentos e tire suas dúvidas direto pelo WhatsApp.</p>
+  </div>
+  <div class="proc-grid">
+    <article class="serv-card reveal">
+      <div class="num">01</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/><path d="M12 8v6"/></svg>
+      <h3>Harmonização Facial</h3>
+      <p>Realce dos contornos do rosto com técnicas que respeitam a sua expressão. Mais equilíbrio, mantendo a naturalidade que é só sua.</p>
+    </article>
+    <article class="serv-card reveal">
+      <div class="num">02</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9c0-3 3-5 8-5s8 2 8 5c0 2-1 4-2 7-.7 2-1.5 4-3 4s-1.6-3-3-3-1.5 3-3 3-2.3-2-3-4C5 13 4 11 4 9z"/></svg>
+      <h3>Lentes de Contato Dental</h3>
+      <p>Lâminas ultrafinas que transformam forma, cor e alinhamento do sorriso em poucas sessões, com aparência leve e brilho natural.</p>
+    </article>
+    <article class="serv-card reveal">
+      <div class="num">03</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.85 4.95L12 14.8 7.55 16.65 8.4 11.7 4.8 8.2l5-.7z"/></svg>
+      <h3>Clareamento Dental</h3>
+      <p>Protocolo seguro para devolver tons mais claros e uniformes ao sorriso, com conforto e resultado que dura.</p>
+    </article>
+    <article class="serv-card reveal">
+      <div class="num">04</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+      <h3>Estética do Sorriso</h3>
+      <p>Planejamento digital do sorriso para visualizar o resultado antes de começar. Você decide com segurança o que combina com você.</p>
+    </article>
+    <article class="serv-card reveal">
+      <div class="num">05</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v3M12 5c-3 0-5 2-5 6 0 3 1 5 1 8 0 .8 1 .8 1.2 0L11 14h2l.8 5c.2.8 1.2.8 1.2 0 0-3 1-5 1-8 0-4-2-6-5-6z"/></svg>
+      <h3>Reabilitação Estética</h3>
+      <p>Correção de desgastes, espaços e alinhamento para devolver função e harmonia ao conjunto do sorriso.</p>
+    </article>
+    <article class="serv-card reveal">
+      <div class="num">06</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.3"/></svg>
+      <h3>Avaliação Personalizada</h3>
+      <p>Conversa inicial para entender seus objetivos e montar um plano sob medida — sem pressa e sem promessas vazias.</p>
+    </article>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="sec-exp">
+  <div class="exp-grid">
+    <img class="exp-img reveal" src="imagens/web-03.jpg" alt="Atendimento próximo e acolhedor na clínica">
+    <div class="exp-txt reveal">
+      <div class="overline">A Experiência</div>
+      <h2>Você no centro de <em>cada decisão</em>.</h2>
+      <ul class="exp-list">
+        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Planejamento individual</b>Nada de tratamento de prateleira. Cada plano nasce do seu rosto e do seu objetivo.</span></li>
+        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Resultado natural</b>O objetivo é realçar o que você já tem — não mudar quem você é.</span></li>
+        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Ambiente de alto padrão</b>Estrutura moderna e confortável no Setor Bueno, com biossegurança rigorosa.</span></li>
+        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Acompanhamento de perto</b>A Dra. Rubianne acompanha você do primeiro contato ao retorno final.</span></li>
+      </ul>
+      <div style="margin-top:30px">
+        <a href="https://wa.me/5562999014041" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.83 9.83 0 001.74 5.61l-.999 3.648 3.758-.985z"/></svg>
+          Falar com a clínica
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/></svg>
+</div>
+
+<!-- PROVA -->
+<section class="sec-prova" id="prova">
+  <div class="prova-inner">
+    <div class="prova-top">
+      <div>
+        <div class="overline">Resultados &amp; Confiança</div>
+        <h2 class="reveal">Quem passa pela clínica <em>indica</em>.</h2>
+      </div>
+      <div class="rating-chip reveal">
+        <div class="big">5,0</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="sub">Avaliação no Google</div>
+        </div>
+      </div>
+    </div>
+    <figure class="prova-banner reveal">
+      <img src="imagens/web-05.jpg" alt="Detalhe técnico do trabalho odontológico de precisão">
+      <figcaption class="cap"><p>Técnica de precisão e materiais de alto padrão em <em>cada detalhe</em>.</p></figcaption>
+    </figure>
+    <div class="tgrid">
+      <article class="tcard reveal">
+        <div class="q">“</div>
+        <p>Profissional incrível e muito atenciosa. Resultado natural, exatamente como eu queria. Me senti segura do começo ao fim.</p>
+        <div class="who">Paciente de harmonização<span>Goiânia · GO</span></div>
+      </article>
+      <article class="tcard reveal">
+        <div class="q">“</div>
+        <p>Fiz minhas lentes com a Dra. Rubianne e amei. O sorriso ficou lindo e leve, ninguém percebe que é lente. Recomendo demais.</p>
+        <div class="who">Paciente de lentes<span>Setor Bueno · Goiânia</span></div>
+      </article>
+      <article class="tcard reveal">
+        <div class="q">“</div>
+        <p>Clínica impecável e atendimento de outro nível. Explicaram cada etapa com calma. Saí confiante e muito satisfeita.</p>
+        <div class="who">Paciente de estética do sorriso<span>Goiânia · GO</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="sec-local" id="localizacao">
+  <div class="local-grid">
+    <div class="local-info reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Setor Bueno, <em>fácil de chegar</em>.</h2>
+      <div class="info-row">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        <div><div class="lbl">Endereço</div><div class="val">Edifício New Times Square — Av. T-10, 208, Sala 905<br>Setor Bueno, Goiânia - GO · 74223-060</div></div>
+      </div>
+      <div class="info-row">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="lbl">WhatsApp</div><a class="val" href="https://wa.me/5562999014041" target="_blank" rel="noopener">(62) 99901-4041</a></div>
+      </div>
+      <div class="info-row">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="lbl">Atendimento</div><div class="val">Segunda a sexta · Horários com hora marcada</div></div>
+      </div>
+      <div class="local-actions">
+        <a href="https://wa.me/5562999014041" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.83 9.83 0 001.74 5.61l-.999 3.648 3.758-.985z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/place/Cl%C3%ADnica+de+Harmoniza%C3%A7%C3%A3o+Orofacial+em+Goi%C3%A2nia+%E2%80%93+Dra.+Rubianne+In%C3%A1cio/@-16.7033895,-49.2660259,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef1b6db994f69:0xb94ae0ecef973f71!8m2!3d-16.7033895!4d-49.2660259!16s%2Fg%2F11ywdgm59y?authuser=0&hl=pt-BR" class="btn-map" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="local-img reveal">
+      <img src="imagens/web-04.jpg" alt="Ambiente da clínica no Setor Bueno">
+      <div class="tag">Estrutura moderna · Setor Bueno, Goiânia</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="sec-cta">
+  <div class="inner reveal">
+    <div class="overline center">Dê o primeiro passo</div>
+    <h2>Pronta para conhecer o <em>sorriso que combina com você</em>?</h2>
+    <p>Agende uma avaliação com a Dra. Rubianne Inácio e descubra, com tranquilidade, o melhor caminho para o seu sorriso.</p>
+    <a href="https://wa.me/5562999014041" class="btn-primary" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.83 9.83 0 001.74 5.61l-.999 3.648 3.758-.985z"/></svg>
+      Agendar avaliação no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <b>Dra. Rubianne Inácio</b>
+      <span>Harmonização Orofacial · Goiânia</span>
+      <p>Estética facial e do sorriso com técnica, naturalidade e cuidado próximo, no coração do Setor Bueno.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Doutora</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#prova">Resultados</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5562999014041" target="_blank" rel="noopener">WhatsApp: (62) 99901-4041</a>
+      <p>Av. T-10, 208, Sala 905 — Ed. New Times Square</p>
+      <p>Setor Bueno · Goiânia - GO</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Clínica de Harmonização Orofacial — Dra. Rubianne Inácio</span>
+    <span>Goiânia · GO · Nota 5,0 no Google</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5562999014041" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.83 9.83 0 001.74 5.61l-.999 3.648 3.758-.985zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

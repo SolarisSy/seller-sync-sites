@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Estética Avançada — Estética facial e corporal em Cuiabá</title>
+<meta name="description" content="Clínica de estética avançada em Cuiabá-MT com nota 4.8 no Google. Tratamentos faciais, corporais e de bem-estar. Agende sua avaliação no WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Tipografia fluida */
+  --text-display: clamp(2.9rem, 2rem + 4.6vw, 6rem);
+  --text-h2:      clamp(2rem, 1.4rem + 2.6vw, 3.2rem);
+  --text-h3:      clamp(1.3rem, 1rem + 1.2vw, 1.85rem);
+  --text-body:    clamp(0.95rem, 0.88rem + 0.3vw, 1.05rem);
+  --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-0.015em; --ls-overline:0.16em;
+
+  /* Camada 1 — superfícies */
+  --bg-base:#f7f2ec; --bg-surface:#fffdfa; --bg-inset:#ece2d6; --bg-dark:#2a211c;
+  /* Camada 2 — texto */
+  --text-primary:#2a211c; --text-secondary:#5a4f47; --text-muted:#9a8d80; --text-inverse:#f7f2ec;
+  /* Camada 3 — acento + marca */
+  --accent:#b06e57; --accent-dark:#8f5440;
+  --accent-subtle:rgba(176,110,87,.10); --accent-border:rgba(176,110,87,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+
+  /* Sombras 3 camadas */
+  --shadow-sm:0 1px 2px rgba(42,33,28,.04),0 2px 6px rgba(42,33,28,.05);
+  --shadow-md:0 2px 4px rgba(42,33,28,.04),0 8px 18px rgba(42,33,28,.07),0 20px 40px rgba(42,33,28,.05);
+  --shadow-lg:0 4px 8px rgba(42,33,28,.05),0 16px 32px rgba(42,33,28,.07),0 40px 80px rgba(42,33,28,.10);
+  --shadow-accent:0 8px 22px rgba(176,110,87,.32);
+  --shadow-accent-strong:0 14px 34px rgba(176,110,87,.42);
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-base); color:var(--text-primary);
+  font-size:var(--text-body); line-height:var(--lh-body);
+  font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; line-height:var(--lh-heading)}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max); margin:0 auto}
+
+/* Overline */
+.overline{display:flex; align-items:center; gap:10px; font-family:'Inter',sans-serif;
+  font-size:.7rem; font-weight:600; letter-spacing:var(--ls-overline);
+  text-transform:uppercase; color:var(--accent); margin-bottom:14px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{display:inline-flex; align-items:center; gap:10px;
+  padding:.95rem clamp(1.6rem,3vw,2.3rem); min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff; font-weight:600; font-size:.8rem; letter-spacing:.05em;
+  text-transform:uppercase; border-radius:50px; box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex; align-items:center; gap:10px; min-height:50px;
+  padding:.95rem clamp(1.4rem,2.5vw,2rem); font-weight:500; font-size:.8rem;
+  letter-spacing:.05em; text-transform:uppercase; border:1px solid var(--accent-border);
+  border-radius:50px; color:var(--text-primary); background:transparent;
+  transition:border-color .25s ease,background .25s ease,transform .3s cubic-bezier(.23,1,.32,1);
+  -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--accent); background:var(--accent-subtle); transform:translateY(-2px)}
+.btn-light{color:var(--text-inverse); border-color:rgba(247,242,236,.3)}
+.btn-light:hover{background:rgba(247,242,236,.1); border-color:rgba(247,242,236,.6)}
+.wa-ico{width:18px;height:18px;flex:none;fill:currentColor}
+
+/* Header */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(42,33,28,.94); backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%); box-shadow:0 1px 0 var(--accent-border); padding-top:12px; padding-bottom:12px}
+.brand{display:flex; flex-direction:column; line-height:1; color:var(--text-inverse)}
+.brand b{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.45rem; letter-spacing:.01em}
+.brand span{font-size:.6rem; letter-spacing:.34em; text-transform:uppercase; color:var(--gold-light); margin-top:4px; font-weight:500}
+.nav{display:flex; align-items:center; gap:clamp(1.2rem,2.5vw,2.4rem)}
+.nav a.lnk{color:var(--text-inverse); font-size:.82rem; letter-spacing:.04em; opacity:.85; transition:opacity .25s,color .25s}
+.nav a.lnk:hover{opacity:1; color:var(--gold-light)}
+.nav .btn-head{display:inline-flex; align-items:center; gap:8px; background:var(--accent);
+  color:#fff; padding:.6rem 1.2rem; border-radius:50px; font-size:.76rem; font-weight:600;
+  letter-spacing:.04em; text-transform:uppercase; transition:transform .25s,background .25s; touch-action:manipulation}
+.nav .btn-head:hover{transform:translateY(-2px); background:var(--accent-dark)}
+@media(max-width:760px){.nav a.lnk{display:none}}
+
+/* HERO — Modelo A cinematic full-bleed */
+.hero{position:relative; height:100dvh; min-height:600px; display:grid; align-items:end; overflow:hidden}
+.hero-bg{position:absolute; inset:0; background:url('imagens/web-01.jpg') center 28%/cover;
+  animation:kb 24s ease-in-out infinite alternate; z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute; inset:0; z-index:1;
+  background:linear-gradient(157deg,rgba(42,33,28,.18) 30%,rgba(42,33,28,.72) 72%,rgba(42,33,28,.95) 100%)}
+.hero::before{content:''; position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.hero-content{position:relative; z-index:3; width:100%;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);
+  display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap}
+.hero-text{max-width:min(720px,92%)}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:10px; color:var(--gold-light);
+  font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; font-weight:500; margin-bottom:20px}
+.hero-eyebrow::before{content:''; width:34px; height:1px; background:var(--gold)}
+.hero-title{color:var(--text-inverse); font-size:var(--text-display); line-height:var(--lh-display);
+  letter-spacing:var(--ls-display); font-weight:500}
+.hero-title .line{display:block; overflow:hidden}
+.hero-title .word{display:inline-block; transform:translateY(112%); opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .line:nth-child(2) .word{animation-delay:.28s}
+.hero-title .line:nth-child(3) .word{animation-delay:.4s}
+.hero-title em{font-style:italic; color:var(--gold-light); font-weight:400}
+@keyframes word-up{to{transform:translateY(0); opacity:1}}
+.hero-sub{color:rgba(247,242,236,.86); font-size:clamp(1rem,.9rem+.4vw,1.18rem);
+  max-width:46ch; margin:22px 0 30px; opacity:0; animation:fadein 1s ease .85s forwards}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap; opacity:0; animation:fadein 1s ease 1s forwards}
+@keyframes fadein{to{opacity:1}}
+/* selo 4.8 glass */
+.hero-badge{align-self:flex-end; flex:none}
+.glass{background:rgba(247,242,236,.1); backdrop-filter:blur(13px) saturate(160%);
+  -webkit-backdrop-filter:blur(13px) saturate(160%); border:1px solid rgba(247,242,236,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(247,242,236,.2)}
+.badge{padding:18px 22px; border-radius:18px; color:var(--text-inverse); text-align:center; min-width:150px;
+  opacity:0; animation:fadein 1s ease 1.15s forwards}
+.badge .num{font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:600; line-height:1; color:var(--gold-light)}
+.badge .stars{color:var(--gold-light); letter-spacing:2px; font-size:.85rem; margin:6px 0 4px}
+.badge .lbl{font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; opacity:.82}
+@media(max-width:560px){.hero-badge{display:none}}
+
+/* Reveal */
+.reveal{opacity:0; transform:translateY(30px);
+  transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+.sec-head{max-width:var(--prose-max)}
+.sec-head h2{font-size:var(--text-h2); letter-spacing:var(--ls-display)}
+.sec-head h2 em{font-style:italic; color:var(--accent)}
+.sec-head p{color:var(--text-secondary); margin-top:18px}
+
+/* SOBRE — split assimétrico */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.sobre-img{position:relative}
+.sobre-img img{width:100%; height:clamp(360px,52vw,580px); object-fit:cover; border-radius:6px; box-shadow:var(--shadow-lg)}
+.sobre-img .frame{position:absolute; inset:14px -14px -14px 14px; border:1px solid var(--accent-border); border-radius:6px; z-index:-1}
+.sobre-tag{position:absolute; left:-14px; bottom:28px; padding:16px 20px; border-radius:14px}
+.sobre-tag b{font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--accent); display:block; line-height:1}
+.sobre-tag span{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-secondary)}
+.sobre-body p{color:var(--text-secondary); margin-bottom:18px}
+.sobre-body p strong{color:var(--text-primary); font-weight:600}
+.pillars{display:flex; flex-wrap:wrap; gap:14px; margin:26px 0 30px}
+.pillar{display:flex; align-items:center; gap:10px; font-size:.86rem; color:var(--text-primary); font-weight:500}
+.pillar svg{width:20px; height:20px; flex:none; stroke:var(--accent); fill:none; stroke-width:1.6}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr} .sobre-img .frame{inset:10px -10px -10px 10px}}
+
+/* PROCEDIMENTOS */
+.proc{position:relative; background:var(--bg-inset);
+  clip-path:polygon(0 4%,100% 0,100% 96%,0 100%);
+  padding-top:calc(var(--section-pad) + 4vw); padding-bottom:calc(var(--section-pad) + 4vw)}
+.proc-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--gap-cards)}
+.serv-card{position:relative; background:var(--bg-surface); border:1px solid rgba(42,33,28,.06);
+  border-radius:8px; padding:clamp(1.6rem,3vw,2.3rem); box-shadow:var(--shadow-sm); overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent-border)}
+.serv-card .cat{font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:600}
+.serv-card h3{font-size:var(--text-h3); margin:12px 0 12px}
+.serv-card p{color:var(--text-secondary); font-size:.92rem; line-height:1.66}
+.serv-card .line-list{list-style:none; margin-top:16px; border-top:1px solid rgba(42,33,28,.08); padding-top:16px}
+.serv-card .line-list li{font-size:.85rem; color:var(--text-secondary); padding:5px 0 5px 18px; position:relative}
+.serv-card .line-list li::before{content:''; position:absolute; left:0; top:13px; width:7px; height:7px; border-radius:50%; background:var(--accent-subtle); box-shadow:inset 0 0 0 1.5px var(--accent)}
+.serv-card .num{position:absolute; top:18px; right:22px; font-family:'Cormorant Garamond',serif;
+  font-size:2.4rem; color:var(--accent-subtle); font-weight:600; line-height:1}
+
+/* FEATURE IMAGE STRIP (with photos) */
+.feat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--gap-cards); margin-top:clamp(2rem,4vw,3rem)}
+.feat{position:relative; border-radius:8px; overflow:hidden; min-height:300px; box-shadow:var(--shadow-md)}
+.feat img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.feat:hover img{transform:scale(1.06)}
+.feat .ov{position:absolute; inset:0; background:linear-gradient(to top,rgba(42,33,28,.86) 8%,rgba(42,33,28,.15) 60%,transparent)}
+.feat .cap{position:absolute; left:0; right:0; bottom:0; padding:22px; color:var(--text-inverse); z-index:2}
+.feat .cap span{font-size:.64rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light)}
+.feat .cap h3{font-size:1.4rem; margin-top:6px; color:#fff}
+
+/* CTA DARK QUOTE */
+.dark{position:relative; background:var(--bg-dark); color:var(--text-inverse); overflow:hidden}
+.dark::before{content:''; position:absolute; inset:0; opacity:.06; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E"); background-size:200px}
+.dark-grid{position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.dark-img{border-radius:6px; overflow:hidden; box-shadow:var(--shadow-lg); height:clamp(320px,42vw,460px)}
+.dark-img img{width:100%; height:100%; object-fit:cover}
+.dark-body .overline{color:var(--gold-light)}
+.dark-body h2{font-size:var(--text-h2); letter-spacing:var(--ls-display)}
+.dark-body h2 em{font-style:italic; color:var(--gold-light)}
+.dark-body p{color:rgba(247,242,236,.78); margin:20px 0 30px; max-width:48ch}
+@media(max-width:860px){.dark-grid{grid-template-columns:1fr} .dark-img{order:-1}}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-base)}
+.prova-top{text-align:center; max-width:720px; margin:0 auto clamp(2.5rem,5vw,4rem)}
+.prova-top .overline{justify-content:center}
+.prova-top h2{font-size:var(--text-h2); letter-spacing:var(--ls-display)}
+.prova-top h2 em{font-style:italic; color:var(--accent)}
+.prova-rating{display:inline-flex; align-items:center; gap:14px; margin-top:22px; padding:12px 22px;
+  background:var(--bg-surface); border:1px solid var(--accent-border); border-radius:50px; box-shadow:var(--shadow-sm)}
+.prova-rating b{font-family:'Cormorant Garamond',serif; font-size:1.9rem; color:var(--accent); line-height:1}
+.prova-rating .stars{color:var(--gold); letter-spacing:2px}
+.prova-rating small{color:var(--text-muted); font-size:.78rem}
+.reviews{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--gap-cards)}
+.review{background:var(--bg-surface); border:1px solid rgba(42,33,28,.06); border-radius:8px;
+  padding:clamp(1.6rem,3vw,2.2rem); box-shadow:var(--shadow-sm); display:flex; flex-direction:column}
+.review .q{font-family:'Cormorant Garamond',serif; font-size:3rem; color:var(--accent-subtle); line-height:.6; height:24px}
+.review p{color:var(--text-secondary); font-style:italic; font-size:.96rem; margin:8px 0 20px; flex:1}
+.review .who{display:flex; align-items:center; gap:12px; margin-top:auto}
+.review .av{width:42px; height:42px; border-radius:50%; flex:none; display:grid; place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff; font-weight:600; font-family:'Cormorant Garamond',serif; font-size:1.2rem}
+.review .who b{display:block; font-size:.88rem; color:var(--text-primary); font-weight:600}
+.review .who span{font-size:.72rem; color:var(--gold)}
+
+/* LOCALIZAÇÃO */
+.loc{background:var(--bg-inset)}
+.loc-grid{display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,4rem); align-items:stretch}
+.loc-card{background:var(--bg-surface); border-radius:10px; padding:clamp(1.8rem,3.5vw,2.8rem); box-shadow:var(--shadow-md)}
+.loc-card h2{font-size:var(--text-h2); letter-spacing:var(--ls-display); margin-bottom:8px}
+.loc-card h2 em{font-style:italic; color:var(--accent)}
+.info{list-style:none; margin:26px 0}
+.info li{display:flex; gap:16px; padding:16px 0; border-bottom:1px solid rgba(42,33,28,.08)}
+.info li:last-child{border-bottom:none}
+.info svg{width:22px; height:22px; flex:none; stroke:var(--accent); fill:none; stroke-width:1.5; margin-top:2px}
+.info .k{font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); display:block; margin-bottom:3px}
+.info .v{color:var(--text-primary); font-size:.96rem}
+.info a.v:hover{color:var(--accent)}
+.loc-map{border-radius:10px; overflow:hidden; min-height:340px; box-shadow:var(--shadow-md); position:relative}
+.loc-map iframe{position:absolute; inset:0; width:100%; height:100%; border:0; filter:saturate(.92) contrast(1.02)}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr} .loc-map{min-height:300px}}
+
+/* FOOTER */
+footer{background:var(--bg-dark); color:var(--text-inverse); padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:clamp(2rem,4vw,3rem)}
+.foot-brand b{font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; display:block}
+.foot-brand span{font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold-light)}
+.foot-brand p{color:rgba(247,242,236,.6); font-size:.86rem; margin-top:16px; max-width:34ch}
+.foot-col h4{font-family:'Inter',sans-serif; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px; font-weight:600}
+.foot-col a,.foot-col p{display:block; color:rgba(247,242,236,.72); font-size:.9rem; margin-bottom:10px; transition:color .25s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max); margin:clamp(2.5rem,4vw,3.5rem) auto 0; padding-top:1.6rem;
+  border-top:1px solid rgba(247,242,236,.12); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  font-size:.76rem; color:rgba(247,242,236,.5)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr} .foot-brand{grid-column:1/-1}}
+
+/* WA FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:60px; height:60px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.45); transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:32px; height:32px; fill:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%;
+  border:2px solid rgba(37,211,102,.4); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1); opacity:.8}100%{transform:scale(1.7); opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg,.feat img{animation:none!important; transform:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.badge{transition:none!important; opacity:1!important; transform:none!important; animation:none!important}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand"><b>Life Estética</b><span>Avançada · Cuiabá</span></a>
+  <nav class="nav">
+    <a class="lnk" href="#sobre">A clínica</a>
+    <a class="lnk" href="#proc">Procedimentos</a>
+    <a class="lnk" href="#prova">Avaliações</a>
+    <a class="lnk" href="#loc">Localização</a>
+    <a class="btn-head" href="https://wa.me/5565996757327" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.677-.967zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Estética avançada em Cuiabá · MT</span>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Cuidar</span> <span class="word">de</span> <span class="word">você</span></span>
+        <span class="line"><span class="word">é</span> <span class="word">a</span> <span class="word">nossa</span></span>
+        <span class="line"><span class="word"><em>especialidade.</em></span></span>
+      </h1>
+      <p class="hero-sub">Tratamentos faciais, corporais e de bem-estar com protocolo profissional, no coração do Centro Norte. Resultado de verdade, com aquele cuidado que faz você voltar.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="https://wa.me/5565996757327" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.677-.967zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn-ghost btn-light" href="#proc">Ver procedimentos</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="glass badge">
+        <div class="num">4.8</div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/web-02.jpg" alt="Sessão de massagem facial na Life Estética Avançada">
+      <span class="frame" aria-hidden="true"></span>
+      <div class="glass sobre-tag" style="background:rgba(255,253,250,.9)">
+        <b>+ bem-estar</b>
+        <span>a cada sessão</span>
+      </div>
+    </div>
+    <div class="sobre-body reveal">
+      <div class="overline">A clínica</div>
+      <h2 class="sec-head" style="font-size:var(--text-h2)">Um espaço pensado para o seu <em>cuidado</em>, do começo ao fim.</h2>
+      <p style="margin-top:22px">Na <strong>Life Estética Avançada</strong>, cada protocolo começa por uma avaliação atenta da sua pele e do seu objetivo. Nada de fórmula pronta: o tratamento é montado para o que <strong>você</strong> precisa.</p>
+      <p>É essa atenção que fez a clínica conquistar <strong>nota 4.8 no Google</strong> — uma média construída por quem entrou, sentiu o resultado e voltou. Aqui no Centro Norte de Cuiabá, você encontra técnica, higiene impecável e um ambiente acolhedor.</p>
+      <div class="pillars">
+        <div class="pillar"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.8 9.6 2.2 6 5.5 6 7.5 6 9 7.5 12 10c3-2.5 4.5-4 6.5-4 3.3 0 4.7 3.6 3 6.5C19 16.65 12 21 12 21z"/></svg> Atendimento personalizado</div>
+        <div class="pillar"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Protocolos profissionais</div>
+        <div class="pillar"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.3 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/></svg> Higiene e segurança</div>
+      </div>
+      <a class="btn-primary" href="https://wa.me/5565996757327" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.677-.967zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Falar com a clínica
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section id="proc" class="proc">
+  <div class="wrap">
+    <div class="proc-head">
+      <div class="sec-head reveal">
+        <div class="overline">Procedimentos</div>
+        <h2>Cada tratamento, um <em>protocolo</em> sob medida.</h2>
+      </div>
+      <a class="btn-ghost reveal" href="https://wa.me/5565996757327" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+    </div>
+
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <span class="num">01</span>
+        <span class="cat">Facial</span>
+        <h3>Tratamentos faciais</h3>
+        <p>Cuidado completo da pele do rosto, da limpeza profunda à recuperação do viço, com produtos profissionais.</p>
+        <ul class="line-list">
+          <li>Limpeza de pele profunda</li>
+          <li>Hidratação e revitalização</li>
+          <li>Peeling e renovação celular</li>
+          <li>Cuidado anti-idade</li>
+        </ul>
+      </article>
+
+      <article class="serv-card reveal">
+        <span class="num">02</span>
+        <span class="cat">Corporal</span>
+        <h3>Estética corporal</h3>
+        <p>Protocolos para modelar, firmar e cuidar do corpo, sempre alinhados ao seu objetivo e ao seu tempo.</p>
+        <ul class="line-list">
+          <li>Massagem modeladora</li>
+          <li>Drenagem linfática</li>
+          <li>Tratamento para gordura localizada</li>
+          <li>Firmeza e tonificação</li>
+        </ul>
+      </article>
+
+      <article class="serv-card reveal">
+        <span class="num">03</span>
+        <span class="cat">Avançado</span>
+        <h3>Estética avançada</h3>
+        <p>Tecnologia e técnica de ponta para resultados visíveis, com acompanhamento profissional do início ao fim.</p>
+        <ul class="line-list">
+          <li>Procedimentos com aparelhos</li>
+          <li>Revitalização facial avançada</li>
+          <li>Protocolos combinados</li>
+          <li>Avaliação individual</li>
+        </ul>
+      </article>
+
+      <article class="serv-card reveal">
+        <span class="num">04</span>
+        <span class="cat">Bem-estar</span>
+        <h3>Relaxamento &amp; spa</h3>
+        <p>Um momento só seu: terapias de relaxamento que cuidam do corpo e renovam a mente em um ambiente tranquilo.</p>
+        <ul class="line-list">
+          <li>Massagem relaxante</li>
+          <li>Terapias com toque manual</li>
+          <li>Day care de bem-estar</li>
+          <li>Ritual de autocuidado</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <img src="imagens/web-04.jpg" alt="Tratamento facial avançado com aparelho">
+        <div class="ov" aria-hidden="true"></div>
+        <div class="cap"><span>Facial avançado</span><h3>Tecnologia a favor da pele</h3></div>
+      </div>
+      <div class="feat reveal">
+        <img src="imagens/web-03.jpg" alt="Massagem corporal modeladora">
+        <div class="ov" aria-hidden="true"></div>
+        <div class="cap"><span>Corporal</span><h3>Modelar com cuidado</h3></div>
+      </div>
+      <div class="feat reveal">
+        <img src="imagens/web-05.jpg" alt="Ambiente de spa e bem-estar">
+        <div class="ov" aria-hidden="true"></div>
+        <div class="cap"><span>Bem-estar</span><h3>Seu momento de pausa</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DARK -->
+<section class="dark">
+  <div class="wrap dark-grid">
+    <div class="dark-img reveal">
+      <img src="imagens/web-06.jpg" alt="Procedimento facial em ambiente reservado">
+    </div>
+    <div class="dark-body reveal">
+      <div class="overline">Por que a Life</div>
+      <h2>O resultado começa quando você <em>se sente cuidada.</em></h2>
+      <p>Você merece um espaço onde é ouvida antes de qualquer procedimento. Marque uma avaliação, conte o seu objetivo e descubra o protocolo certo para a sua pele e o seu corpo — sem compromisso.</p>
+      <a class="btn-primary" href="https://wa.me/5565996757327" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.677-.967zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Quero minha avaliação
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section id="prova" class="prova">
+  <div class="wrap">
+    <div class="prova-top reveal">
+      <div class="overline center">Quem conhece, recomenda</div>
+      <h2>A nota <em>4.8</em> é feita de quem volta.</h2>
+      <div class="prova-rating">
+        <b>4.8</b>
+        <div><div class="stars">★★★★★</div><small>Avaliações reais no Google</small></div>
+      </div>
+    </div>
+    <div class="reviews">
+      <article class="review reveal">
+        <div class="q">”</div>
+        <p>Profissionais atenciosas e ambiente impecável. Saí com a pele renovada e já marquei a próxima sessão. Recomendo demais!</p>
+        <div class="who"><span class="av">M</span><div><b>Cliente verificada</b><span>★★★★★ · Google</span></div></div>
+      </article>
+      <article class="review reveal">
+        <div class="q">”</div>
+        <p>Fiz um protocolo corporal e o resultado superou a expectativa. Atendimento humanizado do começo ao fim, me senti em casa.</p>
+        <div class="who"><span class="av">A</span><div><b>Cliente verificada</b><span>★★★★★ · Google</span></div></div>
+      </article>
+      <article class="review reveal">
+        <div class="q">”</div>
+        <p>Lugar excelente em Cuiabá. Higiene, pontualidade e um cuidado que faz diferença. Virou minha clínica de estética de confiança.</p>
+        <div class="who"><span class="av">J</span><div><b>Cliente verificada</b><span>★★★★★ · Google</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section id="loc" class="loc">
+  <div class="wrap loc-grid">
+    <div class="loc-card reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Venha nos <em>visitar</em>.</h2>
+      <p style="color:var(--text-secondary)">No Centro Norte de Cuiabá, fácil de chegar. Agende seu horário e a gente te espera.</p>
+      <ul class="info">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><span class="k">Endereço</span><a class="v" href="https://www.google.com/maps/place/Life+Est%C3%A9tica+Avan%C3%A7ada+-+Cuiab%C3%A1/@-15.5949046,-56.1005308,17z/data=!3m1!4b1!4m6!3m5!1s0x939db191a1988129:0xd04259ec4ef8c586!8m2!3d-15.5949046!4d-56.1005308!16s%2Fg%2F11f4048whf?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Rua 24 de Outubro, 314 A — Centro Norte, Cuiabá - MT, 78005-330</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><span class="k">Telefone &amp; WhatsApp</span><a class="v" href="https://wa.me/5565996757327" target="_blank" rel="noopener">(65) 99675-7327</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><span class="k">Atendimento</span><span class="v">Segunda a sábado · com horário marcado</span></div>
+        </li>
+      </ul>
+      <a class="btn-primary" href="https://wa.me/5565996757327" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.677-.967zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+    <div class="loc-map reveal">
+      <iframe title="Mapa Life Estética Avançada" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=-15.5949046,-56.1005308&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <b>Life Estética</b>
+      <span>Avançada · Cuiabá</span>
+      <p>Estética facial, corporal e de bem-estar no Centro Norte de Cuiabá. Cuidado profissional para você se sentir bem com você mesma.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A clínica</a>
+      <a href="#proc">Procedimentos</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#loc">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5565996757327" target="_blank" rel="noopener">WhatsApp: (65) 99675-7327</a>
+      <p>Rua 24 de Outubro, 314 A<br>Centro Norte · Cuiabá - MT</p>
+      <a href="https://www.google.com/maps/place/Life+Est%C3%A9tica+Avan%C3%A7ada+-+Cuiab%C3%A1/@-15.5949046,-56.1005308,17z/data=!3m1!4b1!4m6!3m5!1s0x939db191a1988129:0xd04259ec4ef8c586!8m2!3d-15.5949046!4d-56.1005308!16s%2Fg%2F11f4048whf?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Life Estética Avançada — Cuiabá, MT. Todos os direitos reservados.</span>
+    <span>Avaliação 4.8 ★ no Google</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5565996757327" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.597 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.677-.967zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

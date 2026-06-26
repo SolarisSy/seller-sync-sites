@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Dourado's — Barbearia em Aparecida de Goiânia</title>
+<meta name="description" content="Barbearia Studio Dourado's no Setor Serra Dourada, Aparecida de Goiânia. Corte, barba e acabamento com padrão premium. Nota 4.9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f6f1e9; --bg-surface:#fbf8f2; --bg-inset:#ece4d6; --bg-dark:#100d0a; --bg-dark-2:#181310;
+  --text-primary:#1a1714; --text-secondary:#4a4540; --text-muted:#8a8278; --text-inverse:#f6f1e9;
+  --accent:#a9742e; --accent-dark:#8a5d22; --accent-subtle:rgba(169,116,46,.10); --accent-border:rgba(169,116,46,.22);
+  --gold:#c9a84c; --gold-light:#e6c463;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.05),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.10);
+  --shadow-accent:0 6px 22px rgba(169,116,46,.30);
+  --shadow-accent-strong:0 10px 34px rgba(169,116,46,.42);
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.8rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.92rem,.84rem + .3vw,1.02rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.0; --lh-heading:1.12; --lh-body:1.72;
+  --ls-display:-0.02em; --ls-overline:.18em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-base);color:var(--text-primary);font-size:var(--text-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.overline{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.light{color:var(--gold-light)}
+.overline.center{justify-content:center}
+
+/* Buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:.9rem 1.8rem;min-height:50px;border:1px solid rgba(246,241,233,.35);color:var(--text-inverse);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:50px;transition:border-color .3s ease,background .3s ease;touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.btn-icon{width:18px;height:18px;flex:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(16,13,10,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(201,168,76,.2);padding:12px clamp(1.5rem,5vw,4rem)}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:.04em;color:var(--text-inverse);text-decoration:none;text-transform:uppercase}
+.logo b{color:var(--gold)}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,241,233,.82);text-decoration:none;transition:color .25s ease}
+.nav a:hover{color:var(--gold)}
+.nav .nav-cta{padding:.6rem 1.3rem;border:1px solid rgba(201,168,76,.5);border-radius:50px;color:var(--gold)}
+.nav .nav-cta:hover{background:var(--gold);color:var(--bg-dark)}
+@media(max-width:780px){.nav a:not(.nav-cta){display:none}}
+
+/* Hero — Model C editorial */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden;background:var(--bg-dark)}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(155deg,rgba(16,13,10,.25) 30%,rgba(16,13,10,.78) 72%,rgba(16,13,10,.96) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:0 8% clamp(3rem,7vh,6rem);max-width:720px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:.5rem 1rem;border-radius:50px;background:rgba(246,241,233,.08);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(246,241,233,.16);box-shadow:0 2px 4px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.16);font-size:.78rem;font-weight:600;color:var(--text-inverse);letter-spacing:.03em;margin-bottom:24px}
+.hero-badge .star{color:var(--gold)}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.hero-title{font-size:var(--text-display);letter-spacing:var(--ls-display);color:var(--text-inverse);overflow:hidden;margin-bottom:22px}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word em{font-style:italic;color:var(--gold);font-weight:700}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{max-width:520px;color:rgba(246,241,233,.82);font-size:1.05rem;margin-bottom:32px;opacity:0;animation:fade-in 1s ease .7s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease .85s forwards}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;width:24px;height:38px;border:1.5px solid rgba(246,241,233,.4);border-radius:14px;display:flex;justify-content:center;padding-top:7px}
+.scroll-hint span{width:3px;height:8px;border-radius:2px;background:var(--gold);animation:scrolldot 1.8s ease-in-out infinite}
+@keyframes scrolldot{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:1;transform:translateY(6px)}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* Sobre */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr}}
+.sobre h2{font-size:var(--text-h2);font-weight:800;color:var(--text-primary);margin-bottom:20px;max-width:14ch}
+.sobre h2 em{font-style:normal;color:var(--accent)}
+.sobre p{max-width:var(--prose-max);color:var(--text-secondary);margin-bottom:18px}
+.sobre-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.6rem;line-height:1;color:var(--accent)}
+.stat .lbl{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+.sobre-media{position:relative}
+.sobre-media img{width:100%;height:clamp(340px,52vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-media .tag{position:absolute;left:-18px;bottom:28px;background:var(--bg-dark);color:var(--text-inverse);padding:16px 22px;border-radius:6px;box-shadow:var(--shadow-md);border-left:3px solid var(--gold)}
+.sobre-media .tag b{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;display:block;letter-spacing:.03em}
+.sobre-media .tag span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light)}
+
+/* Serviços (dark, diagonal cut top) */
+.servicos{background:var(--bg-dark);color:var(--text-inverse);position:relative;clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.servicos::before{content:'';position:absolute;inset:0;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.servicos .wrap{position:relative;z-index:1}
+.serv-head{max-width:560px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-head h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse)}
+.serv-head h2 em{font-style:normal;color:var(--gold)}
+.serv-head p{color:rgba(246,241,233,.7);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:880px){.serv-grid{grid-template-columns:1fr}}
+.serv-card{background:rgba(246,241,233,.035);border:1px solid rgba(246,241,233,.10);border-radius:8px;padding:clamp(1.6rem,3vw,2.2rem);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ix{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.18em;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.serv-card .ix::before{content:'';width:26px;height:1px;background:var(--gold)}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;color:var(--text-inverse);margin-bottom:10px}
+.serv-card p{color:rgba(246,241,233,.66);font-size:.95rem;margin-bottom:18px}
+.serv-card .price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--text-inverse)}
+.serv-card .price small{font-size:.7rem;font-weight:500;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+/* Faixa imagem detalhe */
+.strip{position:relative;height:clamp(260px,38vw,440px);background:url('imagens/web-06.jpg') center/cover fixed;display:grid;place-items:center;text-align:center;color:var(--text-inverse)}
+.strip .ov{position:absolute;inset:0;background:linear-gradient(rgba(16,13,10,.72),rgba(16,13,10,.82))}
+.strip .inner{position:relative;z-index:1;max-width:640px;padding:0 1.5rem}
+.strip h2{font-size:var(--text-h2);font-weight:800}
+.strip h2 em{font-style:normal;color:var(--gold)}
+.strip p{color:rgba(246,241,233,.8);margin-top:14px}
+@media(max-width:780px){.strip{background-attachment:scroll}}
+
+/* Prova social */
+.prova{background:var(--bg-inset)}
+.prova-head{text-align:center;max-width:620px;margin:0 auto clamp(2.5rem,5vw,3.6rem)}
+.prova-head h2{font-size:var(--text-h2);font-weight:800;color:var(--text-primary)}
+.prova-head h2 em{font-style:normal;color:var(--accent)}
+.prova-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:880px){.prova-grid{grid-template-columns:1fr}}
+.review{background:var(--bg-surface);border-radius:8px;padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-md);border:1px solid rgba(0,0,0,.04);display:flex;flex-direction:column}
+.review .stars{color:var(--gold);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
+.review p{color:var(--text-secondary);font-size:.98rem;margin-bottom:20px;flex:1}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem}
+.review .who b{font-size:.92rem;color:var(--text-primary);font-weight:600}
+.review .who span{font-size:.74rem;color:var(--text-muted);display:block}
+
+/* Galeria */
+.galeria{background:var(--bg-base)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal-grid figure{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .big{grid-column:span 2;grid-row:span 2}
+@media(max-width:880px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid .big{grid-column:span 2}}
+
+/* Localização */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.local::before{content:'';position:absolute;inset:0;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.local .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:880px){.local .wrap{grid-template-columns:1fr}}
+.local h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse);margin-bottom:24px}
+.local h2 em{font-style:normal;color:var(--gold)}
+.info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(246,241,233,.1)}
+.info-row svg{width:22px;height:22px;flex:none;color:var(--gold);margin-top:2px}
+.info-row .k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px}
+.info-row .v{color:rgba(246,241,233,.88);font-size:.98rem}
+.info-row a.v{text-decoration:none;transition:color .25s ease}
+.info-row a.v:hover{color:var(--gold)}
+.local-cta{margin-top:30px}
+.map-card{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(246,241,233,.1)}
+.map-card iframe{width:100%;height:clamp(300px,42vw,460px);border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+/* Footer */
+footer{background:var(--bg-dark-2);color:rgba(246,241,233,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-top{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:2.5rem;border-bottom:1px solid rgba(246,241,233,.1)}
+.foot-brand .logo{font-size:1.7rem}
+.foot-brand p{margin-top:12px;max-width:320px;font-size:.92rem}
+.foot-links{display:flex;gap:14px;flex-direction:column}
+.foot-links a{text-decoration:none;font-size:.9rem;color:rgba(246,241,233,.62);transition:color .25s ease}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:1.6rem auto 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.hero-title .word,.hero-sub,.hero-actions{animation:none!important;opacity:1!important;transform:none!important}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before,.scroll-hint span{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">Studio <b>Dourado's</b></a>
+  <nav class="nav">
+    <a href="#sobre">A Barbearia</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#local">Localização</a>
+    <a href="https://wa.me/5562991291358" class="nav-cta">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO (Model C) -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="star">★</span> 4.9 no Google · Serra Dourada</div>
+    <p class="hero-eyebrow">Barbearia · Aparecida de Goiânia, GO</p>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Padrão</span> <span class="word"><em>Dourado's.</em></span></span>
+      <span class="line"><span class="word">Do</span> <span class="word">corte ao acabamento.</span></span>
+    </h1>
+    <p class="hero-sub">Corte, barba e cuidado masculino com a qualidade que rendeu uma das melhores notas da cidade. Ambiente, atendimento e estilo no Setor Serra Dourada.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5562991291358" class="btn-primary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <div class="overline">A Barbearia</div>
+      <h2>Mais que um corte. Um <em>ritual masculino.</em></h2>
+      <p>O Studio Dourado's nasceu pra entregar o que todo homem procura e poucos lugares fazem direito: corte preciso, barba alinhada e um ambiente onde dá gosto sentar na cadeira. Cada cliente sai pronto pra ser visto.</p>
+      <p>Aqui no Setor Serra Dourada, em Aparecida de Goiânia, construímos uma reputação que fala por si: nota <strong>4.9 no Google</strong>, feita de cliente que volta e indica. É esse padrão que você encontra a cada visita.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="num">4.9</div><div class="lbl">Nota no Google</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lbl">Foco no masculino</div></div>
+        <div class="stat"><div class="num">7d</div><div class="lbl">Agenda pelo Zap</div></div>
+      </div>
+    </div>
+    <div class="sobre-media reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente interno do Studio Dourado's com cadeiras de couro" loading="lazy">
+      <div class="tag"><b>Serra Dourada</b><span>Aparecida de Goiânia · GO</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="serv-head reveal">
+      <div class="overline light">Serviços</div>
+      <h2>O que fazemos com <em>excelência</em></h2>
+      <p>Preços de referência. Valor final pode variar conforme cabelo e combinação de serviços — confirme no WhatsApp.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <div class="ix">01</div>
+        <h3>Corte Masculino</h3>
+        <p>Corte na máquina e tesoura, desenhado pro seu rosto e finalizado do jeito que você gosta. Acabamento impecável.</p>
+        <div class="price">R$ 35 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix">02</div>
+        <h3>Barba na Navalha</h3>
+        <p>Toalha quente, desenho e navalha. A barba alinhada com a pele tratada — o ritual completo de barbearia.</p>
+        <div class="price">R$ 30 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix">03</div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo pra sair renovado. Corte e barba na mesma sessão, com economia e acabamento premium.</p>
+        <div class="price">R$ 55 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix">04</div>
+        <h3>Sobrancelha &amp; Detalhes</h3>
+        <p>Aquele acabamento que faz diferença: limpeza de sobrancelha e finalização dos detalhes do visual.</p>
+        <div class="price">R$ 15 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix">05</div>
+        <h3>Corte Infantil</h3>
+        <p>Atendimento com paciência pra molecada. Corte caprichado e ambiente tranquilo pros pequenos.</p>
+        <div class="price">R$ 30 <small>a partir de</small></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="ix">06</div>
+        <h3>Pézinho &amp; Manutenção</h3>
+        <p>Para manter o corte sempre alinhado entre uma visita e outra. Rápido, prático e sempre no ponto.</p>
+        <div class="price">R$ 15 <small>a partir de</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<section class="strip">
+  <div class="ov" aria-hidden="true"></div>
+  <div class="inner reveal">
+    <div class="overline light center">O detalhe importa</div>
+    <h2>Ferramenta certa, <em>mão de profissional</em></h2>
+    <p>Equipamento de qualidade e técnica afiada. É essa combinação que transforma um corte comum no padrão Dourado's.</p>
+  </div>
+</section>
+
+<!-- PROVA -->
+<section class="prova" id="prova">
+  <div class="wrap">
+    <div class="prova-head reveal">
+      <div class="overline center">Quem senta na cadeira</div>
+      <h2>Nota <em>4.9</em> é o cliente falando por nós</h2>
+    </div>
+    <div class="prova-grid">
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia da região, sem exagero. Corte sempre no capricho e o atendimento é nota dez. Virei cliente fixo."</p>
+        <div class="who"><div class="av">R</div><div><b>Rafael M.</b><span>Cliente no Google</span></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Ambiente top, profissional atencioso e a barba ficou perfeita na navalha. Saio de lá outro homem. Recomendo demais."</p>
+        <div class="who"><div class="av">L</div><div><b>Lucas P.</b><span>Cliente no Google</span></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Levo meu filho e os dois saem satisfeitos. Pontual, limpo e caprichoso no corte. Studio Dourado's é referência aqui."</p>
+        <div class="who"><div class="av">A</div><div><b>Anderson S.</b><span>Cliente no Google</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="wrap">
+    <div class="overline reveal">Por dentro</div>
+    <div class="gal-grid">
+      <figure class="big reveal"><img src="imagens/web-03.jpg" alt="Barbeiro do Studio Dourado's atendendo cliente" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-04.jpg" alt="Serviço de barba na navalha" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-05.jpg" alt="Detalhe da cadeira de couro da barbearia" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-06.jpg" alt="Ferramentas profissionais de barbearia" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-02.jpg" alt="Ambiente interno premium do Studio Dourado's" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL -->
+<section class="local" id="local">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="overline light">Onde estamos</div>
+      <h2>Venha conhecer o <em>Studio Dourado's</em></h2>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="k">Endereço</div><div class="v">Av. Copacabana, 1ª Etapa<br>St. Serra Dourada - 3ª Etapa<br>Aparecida de Goiânia - GO, 74976-261</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="k">WhatsApp / Telefone</div><a class="v" href="https://wa.me/5562991291358">(62) 99129-1358</a></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><div class="k">Horário</div><div class="v">Seg a Sáb · 09h às 20h<br>Atendimento por ordem de chegada e agendamento</div></div>
+      </div>
+      <div class="local-cta">
+        <a href="https://wa.me/5562991291358" class="btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Mapa Studio Dourado's" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-16.8270397,-49.2548277&hl=pt-BR&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="#topo" class="logo">Studio <b>Dourado's</b></a>
+      <p>Barbearia masculina no Setor Serra Dourada, Aparecida de Goiânia. Corte, barba e estilo com padrão premium.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#prova">Avaliações</a>
+      <a href="https://www.google.com/maps/place/Studio+Dourado%E2%80%99s/@-16.8270397,-49.2548277,17z/data=!3m1!4b1!4m6!3m5!1s0x935efd1cf3ea99f5:0x7456689bd69a56dc!8m2!3d-16.8270397!4d-49.2548277!16s%2Fg%2F11tfbxvchf?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+      <a href="https://wa.me/5562991291358">WhatsApp</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Studio Dourado's · Aparecida de Goiânia, GO</span>
+    <span>(62) 99129-1358</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5562991291358" class="wa-fab" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

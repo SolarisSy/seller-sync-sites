@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sublime Toque — Clínica de Estética em Jaboatão dos Guararapes</title>
+<meta name="description" content="Clínica de Estética Sublime Toque, em Jaboatão dos Guararapes (PE). Limpeza de pele, tratamentos faciais, massagem modeladora e protocolos avançados. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f7f2ec; --bg-surface:#fffdfa; --bg-inset:#ece2d6; --bg-dark:#211a16;
+  --text-primary:#241d18; --text-secondary:#5b4f46; --text-muted:#938678; --text-inverse:#f7f2ec;
+  --accent:#a86a63; --accent-dark:#854f49; --accent-subtle:rgba(168,106,99,.10); --accent-border:rgba(168,106,99,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(45,30,22,.04),0 2px 6px rgba(45,30,22,.05);
+  --shadow-md:0 2px 4px rgba(45,30,22,.04),0 8px 18px rgba(45,30,22,.07),0 20px 40px rgba(45,30,22,.05);
+  --shadow-lg:0 4px 8px rgba(45,30,22,.04),0 16px 32px rgba(45,30,22,.07),0 40px 80px rgba(45,30,22,.09);
+  --shadow-accent:0 8px 24px rgba(168,106,99,.32);
+  --shadow-accent-strong:0 12px 32px rgba(168,106,99,.42);
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.2rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.06rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;font-weight:300;font-size:var(--text-body);
+  line-height:var(--lh-body);color:var(--text-primary);background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:500}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* Overline */
+.overline{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;
+  font-size:.68rem;font-weight:500;letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;flex:none}
+.overline.center{justify-content:center}
+
+/* Buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;min-height:50px;
+  padding:.95rem clamp(1.4rem,3vw,2.1rem);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-inverse);border:1px solid rgba(247,242,236,.4);border-radius:50px;
+  transition:background .3s ease,border-color .3s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(247,242,236,.12);border-color:rgba(247,242,236,.7)}
+.btn-icon{width:18px;height:18px;flex:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(33,26,22,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(201,168,76,.2);padding-top:12px;padding-bottom:12px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;letter-spacing:.02em;color:#fff;line-height:1}
+.brand small{display:block;font-family:'Inter',sans-serif;font-size:.56rem;font-weight:400;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--gold-light);margin-top:3px}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:400;letter-spacing:.04em;color:rgba(247,242,236,.85);
+  transition:color .25s ease}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{font-size:.74rem !important;font-weight:600 !important;text-transform:uppercase;letter-spacing:.08em;
+  color:#fff !important;border:1px solid rgba(201,168,76,.5);padding:9px 18px;border-radius:50px}
+@media(max-width:840px){.nav-links a:not(.nav-cta){display:none}}
+
+/* Hero — Modelo A cinematic full-bleed */
+.hero{position:relative;height:100dvh;min-height:620px;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center 30%/cover;
+  animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(155deg,rgba(33,26,22,.15) 28%,rgba(33,26,22,.62) 68%,rgba(33,26,22,.92) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+.hero-content{position:relative;z-index:3;width:100%;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(2.6rem,6vw,4.5rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.hero-text{max-width:760px}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold)}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  color:#fff;font-weight:400;overflow:hidden}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic;color:var(--gold-light);font-weight:400}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .word:nth-child(4){animation-delay:.48s}
+.hero-title .word:nth-child(5){animation-delay:.59s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(247,242,236,.88);font-size:clamp(1rem,.9rem + .4vw,1.18rem);font-weight:300;
+  max-width:46ch;margin:22px 0 30px;opacity:0;animation:fade-in 1s ease .8s forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-badge{display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:16px;
+  background:rgba(255,255,255,.10);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0;animation:fade-in 1s ease 1.15s forwards}
+.hero-badge .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:500;color:#fff;line-height:1}
+.hero-badge .stars{color:var(--gold-light);font-size:.78rem;letter-spacing:2px}
+.hero-badge .lbl{font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(247,242,236,.78);margin-top:3px}
+
+/* Sobre */
+.sobre{background:var(--bg-base);position:relative;
+  clip-path:polygon(0 0,100% 0,100% 94%,0 100%);padding-bottom:calc(var(--section-pad) + 4vw)}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.sobre-img{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.sobre-img::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,.25);border-radius:6px;pointer-events:none}
+.sobre-tag{position:absolute;left:24px;bottom:24px;padding:12px 18px;border-radius:12px;
+  background:rgba(33,26,22,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.16);color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic}
+.sobre-tag b{font-style:normal;color:var(--gold-light)}
+.sec-title{font-size:var(--text-h2);line-height:var(--lh-heading);letter-spacing:-.01em;margin-bottom:20px;font-weight:400}
+.sec-title em{font-style:italic;color:var(--accent)}
+.prose{color:var(--text-secondary);max-width:var(--prose-max)}
+.prose p+p{margin-top:1.1rem}
+.sobre-stats{display:flex;gap:34px;margin-top:34px;flex-wrap:wrap}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--accent);line-height:1;font-weight:500}
+.stat .t{font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+
+/* Procedimentos */
+.proc{background:var(--bg-inset)}
+.proc-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(45,30,22,.07);border-radius:8px;
+  padding:clamp(1.6rem,3vw,2.4rem);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ov{font-family:'Inter',sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.serv-card .ov::before{content:'';width:22px;height:1px;background:var(--accent)}
+.serv-card h3{font-size:var(--text-h3);font-weight:500;margin-bottom:10px;letter-spacing:-.01em}
+.serv-card p{font-size:.95rem;color:var(--text-secondary);line-height:1.62}
+.serv-card .ico{width:30px;height:30px;color:var(--accent);margin-bottom:18px;opacity:.85}
+.serv-card.media{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.serv-card.media .media-img{height:200px;background:url('imagens/web-03.jpg') center 35%/cover}
+.serv-card.media .media-body{padding:clamp(1.6rem,3vw,2.4rem)}
+.proc-feature{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:8px;overflow:hidden;
+  box-shadow:var(--shadow-md);margin-top:8px;background:var(--bg-dark)}
+.proc-feature .pf-img{min-height:340px;background:url('imagens/web-04.jpg') center/cover}
+.proc-feature .pf-body{padding:clamp(2rem,4vw,3.4rem);display:flex;flex-direction:column;justify-content:center;color:var(--text-inverse)}
+.proc-feature .pf-body h3{color:#fff;font-size:var(--text-h3);font-weight:500;margin-bottom:14px}
+.proc-feature .pf-body p{color:rgba(247,242,236,.82);font-size:.98rem;margin-bottom:24px}
+.proc-feature .ov{color:var(--gold-light)}
+.proc-feature .ov::before{background:var(--gold-light)}
+@media(max-width:760px){.proc-feature{grid-template-columns:1fr}.proc-feature .pf-img{min-height:240px}}
+
+/* Wave + Dark */
+.wave{display:block;line-height:0;margin-bottom:-1px;background:var(--bg-inset)}
+.wave svg{width:100%;height:clamp(40px,5vw,80px)}
+.dark{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.dark::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+.dark .wrap{position:relative;z-index:1}
+.dark-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.dark-img{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.dark-img img{width:100%;object-fit:cover;aspect-ratio:5/4}
+.dark .sec-title{color:#fff}
+.dark .sec-title em{color:var(--gold-light)}
+.dark .prose{color:rgba(247,242,236,.8)}
+.dark .overline{color:var(--gold-light)}
+.checklist{list-style:none;margin:26px 0 32px;display:grid;gap:14px}
+.checklist li{display:flex;gap:13px;align-items:flex-start;font-size:.98rem;color:rgba(247,242,236,.88)}
+.checklist svg{width:20px;height:20px;color:var(--gold-light);flex:none;margin-top:2px}
+
+/* Prova social */
+.prova{background:var(--bg-base)}
+.prova-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.prova-img{position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.prova-img img{width:100%;object-fit:cover;aspect-ratio:4/5}
+.prova-rating{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.prova-rating .big{font-family:'Cormorant Garamond',serif;font-size:clamp(3.4rem,2rem + 6vw,5.4rem);color:var(--accent);line-height:.9;font-weight:500}
+.prova-rating .meta .stars{color:var(--gold);letter-spacing:3px;font-size:1rem}
+.prova-rating .meta .src{font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+.quotes{display:grid;gap:var(--gap-cards);margin-top:30px}
+.quote{background:var(--bg-surface);border:1px solid rgba(45,30,22,.07);border-left:3px solid var(--accent);
+  border-radius:6px;padding:1.5rem 1.7rem;box-shadow:var(--shadow-sm)}
+.quote p{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-style:italic;color:var(--text-primary);line-height:1.5}
+.quote .who{font-family:'Inter',sans-serif;font-style:normal;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:12px}
+
+/* Localização */
+.local{background:var(--bg-inset)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.local-info{display:flex;flex-direction:column;justify-content:center}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(45,30,22,.1)}
+.info-row:last-of-type{border-bottom:none}
+.info-row svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:3px}
+.info-row .k{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.info-row .v{font-size:1.02rem;color:var(--text-primary)}
+.local-map{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md);min-height:340px}
+.local-map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:saturate(.9)}
+.local-actions{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* Footer */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,7vw,6rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:500;color:#fff;margin-bottom:14px}
+.foot-brand small{display:block;font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-light);margin-top:4px}
+footer p,footer a{color:rgba(247,242,236,.74);font-size:.92rem}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:600}
+.foot-col a{display:block;margin-bottom:10px;transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,4rem) auto 0;padding-top:1.8rem;border-top:1px solid rgba(247,242,236,.12);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem;color:rgba(247,242,236,.5)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(max-width:840px){
+  .sobre-grid,.dark-grid,.prova-grid,.local-grid,.foot-grid{grid-template-columns:1fr}
+  .sobre-img img,.prova-img img{aspect-ratio:16/11}
+  .sobre-img,.dark-img{order:-1}
+  .foot-bottom{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg,.hero-title .word{animation:none}
+  .hero-title .word{transform:none;opacity:1}
+  .hero-sub,.hero-actions,.hero-badge{animation:none;opacity:1}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="brand" href="#topo">Sublime Toque<small>Clínica de Estética</small></a>
+  <nav class="nav-links">
+    <a href="#sobre">A clínica</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#localizacao">Onde estamos</a>
+    <a class="nav-cta" href="https://wa.me/5581988077054" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Jaboatão dos Guararapes &middot; PE</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">O</span> <span class="word">toque</span> <span class="word"><em>sublime</em></span></span>
+        <span class="line"><span class="word">que</span> <span class="word">sua pele merece.</span></span>
+      </h1>
+      <p class="hero-sub">Estética facial e corporal com método, hora marcada e o cuidado de quem trata cada cliente como única. Avaliação personalizada para o seu objetivo.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5581988077054" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+      </div>
+    </div>
+    <div class="hero-badge" aria-label="Nota 5,0 no Google">
+      <span class="num">5,0</span>
+      <span>
+        <span class="stars">★★★★★</span>
+        <span class="lbl">Nota no Google</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/web-02.jpg" alt="Massagem facial sendo realizada na Clínica Sublime Toque" loading="lazy">
+      <span class="sobre-tag">Cuidado <b>artesanal</b>, resultado real</span>
+    </div>
+    <div class="sobre-copy">
+      <p class="overline reveal">A clínica</p>
+      <h2 class="sec-title reveal">Estética é detalhe — e o detalhe é o nosso <em>toque</em>.</h2>
+      <div class="prose reveal">
+        <p>A Sublime Toque nasceu para quem quer cuidar da pele e do corpo sem pressa e sem fórmula de balcão. Aqui cada atendimento começa por uma avaliação: entender a sua pele, o seu momento e o resultado que você procura — e só então definir o protocolo certo.</p>
+        <p>No coração do Centro de Jaboatão dos Guararapes, recebemos você em um ambiente reservado, com hora marcada e produtos profissionais. A nota máxima no Google não é sorte: é o que acontece quando técnica encontra acolhimento.</p>
+      </div>
+      <div class="sobre-stats reveal">
+        <div class="stat"><div class="n">5,0</div><div class="t">Nota no Google</div></div>
+        <div class="stat"><div class="n">Hora<br>marcada</div><div class="t">Sem fila de espera</div></div>
+        <div class="stat"><div class="n">100%</div><div class="t">Protocolo personalizado</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <p class="overline reveal">Procedimentos</p>
+      <h2 class="sec-title reveal">Protocolos faciais e corporais sob medida para você.</h2>
+      <p class="prose reveal">Da limpeza de pele profunda aos tratamentos avançados de firmeza e modelagem. Tudo definido na avaliação, para você investir só no que a sua pele realmente precisa.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card media reveal">
+        <div class="media-img" aria-hidden="true"></div>
+        <div class="media-body">
+          <p class="ov">Facial</p>
+          <h3>Limpeza de pele profunda</h3>
+          <p>Higienização, extração e hidratação para uma pele renovada, sem cravos e com viço. O básico bem feito que muda tudo.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z"/></svg>
+        <p class="ov">Rejuvenescimento</p>
+        <h3>Tratamento anti-idade</h3>
+        <p>Protocolos de firmeza, viço e atenuação de linhas finas com ativos profissionais. Pele mais lisa, descansada e luminosa.</p>
+      </article>
+      <article class="serv-card reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12c3-4 6-4 9 0s6 4 9 0"/><path d="M3 17c3-4 6-4 9 0s6 4 9 0"/></svg>
+        <p class="ov">Corporal</p>
+        <h3>Massagem modeladora</h3>
+        <p>Técnica manual e pindas para contorno, drenagem e bem-estar. Ideal para acompanhar objetivos de definição corporal.</p>
+      </article>
+      <article class="serv-card reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <p class="ov">Bem-estar</p>
+        <h3>Drenagem linfática</h3>
+        <p>Reduz inchaço, ativa a circulação e relaxa. Sensação de leveza imediata e apoio à saúde da pele.</p>
+      </article>
+      <article class="serv-card reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3l2.5 5 5.5.8-4 3.9.95 5.5L12 16.5 7.1 18.2 8 12.7l-4-3.9L9.5 8z"/></svg>
+        <p class="ov">Sob medida</p>
+        <h3>Avaliação personalizada</h3>
+        <p>Antes de qualquer procedimento, a gente conversa e avalia. Você sai com um plano claro — não com um pacote genérico.</p>
+      </article>
+      <article class="serv-card reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 00-7-7z"/><path d="M9 21h6"/></svg>
+        <p class="ov">Pré-evento</p>
+        <h3>Skincare para o dia D</h3>
+        <p>Casamento, formatura, ensaio? Preparamos sua pele para chegar radiante na data — com protocolo planejado com antecedência.</p>
+      </article>
+
+      <div class="proc-feature reveal">
+        <div class="pf-img" aria-hidden="true"></div>
+        <div class="pf-body">
+          <p class="ov">Destaque do mês</p>
+          <h3>Protocolo corporal completo</h3>
+          <p>Massagem modeladora + drenagem em sessões pensadas para o seu objetivo. Acompanhamento de perto, do diagnóstico ao resultado — com a constância que faz diferença.</p>
+          <a class="btn-primary" href="https://wa.me/5581988077054" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+            Quero saber valores
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/></svg>
+</div>
+
+<!-- DARK -->
+<section class="dark">
+  <div class="wrap dark-grid">
+    <div class="dark-img reveal">
+      <img src="imagens/web-05.jpg" alt="Tratamento facial avançado em ambiente reservado" loading="lazy">
+    </div>
+    <div>
+      <p class="overline reveal">Por que a Sublime Toque</p>
+      <h2 class="sec-title reveal">Cada pele é única. O seu tratamento <em>também</em>.</h2>
+      <p class="prose reveal">Não trabalhamos com receita pronta. Avaliamos, explicamos e só então cuidamos — para que cada sessão tenha propósito e você veja resultado de verdade.</p>
+      <ul class="checklist reveal">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Avaliação antes de qualquer procedimento</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Hora marcada, atendimento reservado e sem fila</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Produtos e aparelhos profissionais</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Nota 5,0 de quem já passou por aqui</li>
+      </ul>
+      <a class="btn-primary reveal" href="https://wa.me/5581988077054" target="_blank" rel="noopener">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+        Falar com a clínica
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap prova-grid">
+    <div class="prova-img reveal">
+      <img src="imagens/web-06.jpg" alt="Cliente com pele radiante após tratamento na Sublime Toque" loading="lazy">
+    </div>
+    <div>
+      <p class="overline reveal">Avaliações</p>
+      <div class="prova-rating reveal">
+        <span class="big">5,0</span>
+        <span class="meta">
+          <span class="stars">★★★★★</span>
+          <span class="src">Avaliação no Google</span>
+        </span>
+      </div>
+      <h2 class="sec-title reveal">Quem cuida da pele aqui, <em>volta</em>.</h2>
+      <div class="quotes">
+        <blockquote class="quote reveal">
+          <p>“Saí com a pele outra. Atendimento atencioso do começo ao fim e ambiente super tranquilo.”</p>
+          <span class="who">Cliente · Limpeza de pele</span>
+        </blockquote>
+        <blockquote class="quote reveal">
+          <p>“Profissional cuidadosa e que explica tudo. Marquei a hora e fui atendida na hora certinha.”</p>
+          <span class="who">Cliente · Massagem modeladora</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="wrap">
+    <p class="overline reveal">Onde estamos</p>
+    <h2 class="sec-title reveal" style="margin-bottom:clamp(2rem,4vw,3rem)">No Centro de Jaboatão, pertinho de você.</h2>
+    <div class="local-grid">
+      <div class="local-info">
+        <div class="info-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Endereço</div><div class="v">Av. Barão de Lucena, 250 — Centro<br>Jaboatão dos Guararapes - PE, 54110-005</div></div>
+        </div>
+        <div class="info-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="k">WhatsApp / Telefone</div><div class="v">(81) 98807-7054</div></div>
+        </div>
+        <div class="info-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="k">Atendimento</div><div class="v">Com hora marcada — combine seu horário pelo WhatsApp</div></div>
+        </div>
+        <div class="local-actions reveal">
+          <a class="btn-primary" href="https://wa.me/5581988077054" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="btn-ghost" style="color:var(--accent-dark);border-color:var(--accent-border)" href="https://www.google.com/maps/place/Cl%C3%ADnica+de+Est%C3%A9tica+-+Sublime+Toque/@-8.1119193,-35.0160765,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab1d9f06c2f89b:0x28b72f31654b491d!8m2!3d-8.1119193!4d-35.0160765!16s%2Fg%2F11vdkmcj4f" target="_blank" rel="noopener">Ver no Google Maps</a>
+        </div>
+      </div>
+      <div class="local-map reveal">
+        <iframe title="Mapa — Sublime Toque, Av. Barão de Lucena 250, Jaboatão dos Guararapes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-8.1119193,-35.0160765&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Sublime Toque<small>Clínica de Estética</small></div>
+      <p>Estética facial e corporal com método e acolhimento, no Centro de Jaboatão dos Guararapes. Sua pele merece o toque certo.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Procedimentos</h4>
+      <a href="#procedimentos">Limpeza de pele</a>
+      <a href="#procedimentos">Tratamento anti-idade</a>
+      <a href="#procedimentos">Massagem modeladora</a>
+      <a href="#procedimentos">Drenagem linfática</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5581988077054" target="_blank" rel="noopener">WhatsApp (81) 98807-7054</a>
+      <a href="https://www.google.com/maps/place/Cl%C3%ADnica+de+Est%C3%A9tica+-+Sublime+Toque/@-8.1119193,-35.0160765,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab1d9f06c2f89b:0x28b72f31654b491d!8m2!3d-8.1119193!4d-35.0160765!16s%2Fg%2F11vdkmcj4f" target="_blank" rel="noopener">Av. Barão de Lucena, 250 — Centro</a>
+      <a href="#topo">Voltar ao topo</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Clínica de Estética Sublime Toque · Jaboatão dos Guararapes - PE</span>
+    <span>Avaliação 5,0 no Google</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5581988077054" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

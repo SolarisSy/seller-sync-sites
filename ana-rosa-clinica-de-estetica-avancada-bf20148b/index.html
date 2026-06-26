@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Rosa Clínica de Estética Avançada — Belém, PA</title>
+<meta name="description" content="Estética avançada com a biomédica Ana Rosa Gonçalves, em Umarizal, Belém-PA. Pós-operatório premium, bioestimuladores de colágeno, harmonização corporal e emagrecimento. Nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf7f2; --bg-surface:#ffffff; --bg-inset:#f1ebe1; --bg-dark:#221b14;
+  --text-primary:#211b15; --text-secondary:#5a5048; --text-muted:#988b7c; --text-inverse:#f7f1e8;
+  --accent:#b88a3e; --accent-dark:#946d2c; --accent-light:#d8b164;
+  --accent-subtle:rgba(184,138,62,.10); --accent-border:rgba(184,138,62,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(40,28,12,.04),0 2px 6px rgba(40,28,12,.05);
+  --shadow-md:0 2px 4px rgba(40,28,12,.04),0 8px 18px rgba(40,28,12,.07),0 20px 40px rgba(40,28,12,.05);
+  --shadow-lg:0 4px 8px rgba(40,28,12,.05),0 16px 32px rgba(40,28,12,.07),0 40px 80px rgba(40,28,12,.09);
+  --shadow-accent:0 8px 24px rgba(184,138,62,.28);
+  --shadow-accent-strong:0 14px 36px rgba(184,138,62,.40);
+  --text-display:clamp(2.7rem,1.9rem+3.9vw,5.2rem);
+  --text-h2:clamp(1.9rem,1.3rem+2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem+1.2vw,1.85rem);
+  --text-body:clamp(.94rem,.86rem+.3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem+.2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif; font-weight:300; font-size:var(--text-body);
+  line-height:var(--lh-body); color:var(--text-primary); background:var(--bg-base);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-optical-sizing:auto; text-wrap:balance; line-height:var(--lh-heading)}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max); margin:0 auto}
+
+.overline{display:flex; align-items:center; gap:10px; font-family:'Inter',sans-serif;
+  font-size:.68rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:16px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+.overline.center::after{content:''; width:30px; height:1px; background:currentColor}
+
+.btn-primary{display:inline-flex; align-items:center; gap:11px;
+  padding:.95rem clamp(1.6rem,3vw,2.3rem); min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff;
+  font-family:'Inter',sans-serif; font-weight:600; font-size:.78rem; letter-spacing:.08em;
+  text-transform:uppercase; border-radius:50px; box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1), box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px;fill:currentColor}
+.btn-ghost{display:inline-flex; align-items:center; gap:9px; font-family:'Inter',sans-serif;
+  font-weight:500; font-size:.8rem; letter-spacing:.04em; color:var(--text-primary);
+  border-bottom:1px solid var(--accent-border); padding-bottom:3px;
+  transition:border-color .3s ease, color .3s ease}
+.btn-ghost:hover{color:var(--accent); border-color:var(--accent)}
+
+/* HEADER */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between;
+  transition:background .35s ease, box-shadow .35s ease, padding .35s ease}
+header.scrolled{background:rgba(250,247,242,.9); backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%); box-shadow:0 1px 0 var(--accent-border); padding-top:13px; padding-bottom:13px}
+.brand{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500; letter-spacing:.04em; color:var(--text-primary); display:flex; align-items:center; gap:11px}
+.brand .mono{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border:1px solid var(--accent-border); border-radius:50%; font-size:1rem; letter-spacing:0; color:var(--accent)}
+.brand small{display:block; font-family:'Inter',sans-serif; font-size:.54rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--text-muted); margin-top:1px}
+.nav{display:flex; align-items:center; gap:34px}
+.nav a.lnk{font-family:'Inter',sans-serif; font-size:.82rem; font-weight:400; letter-spacing:.02em; color:var(--text-secondary); transition:color .25s ease}
+.nav a.lnk:hover{color:var(--accent)}
+.nav .btn-primary{padding:.7rem 1.4rem; min-height:44px}
+@media(max-width:880px){ .nav a.lnk{display:none} }
+
+/* HERO — Model B split 40/60 */
+.hero{display:grid; grid-template-columns:2fr 3fr; min-height:100dvh}
+.hero-copy{position:relative; background:var(--bg-inset); display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(6.5rem,11vh,9rem) clamp(1.6rem,4.5vw,4rem) clamp(2.5rem,6vh,4rem); overflow:hidden}
+.hero-copy::after{content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:190px; opacity:.04; pointer-events:none}
+.hero-copy>*{position:relative; z-index:1}
+.hero-title{font-size:var(--text-display); line-height:var(--lh-display); letter-spacing:-.015em; max-width:13ch; margin:6px 0 22px; overflow:hidden}
+.hero-title .word{display:inline-block; transform:translateY(110%); opacity:0; animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title em{font-style:italic; color:var(--accent)}
+@keyframes word-up{to{transform:translateY(0); opacity:1}}
+.hero-sub{max-width:42ch; color:var(--text-secondary); font-size:1.02rem; margin-bottom:30px; opacity:0; animation:fade-in 1s ease .8s forwards}
+.hero-cta{display:flex; flex-wrap:wrap; gap:18px 26px; align-items:center; opacity:0; animation:fade-in 1s ease 1s forwards}
+.hero-seal{display:flex; align-items:center; gap:12px; margin-top:38px; opacity:0; animation:fade-in 1s ease 1.15s forwards}
+.hero-seal .stars{display:flex; gap:2px}
+.hero-seal .stars svg{width:16px; height:16px; fill:var(--gold)}
+.hero-seal .txt{font-family:'Inter',sans-serif; font-size:.78rem; color:var(--text-secondary); line-height:1.4}
+.hero-seal .txt b{color:var(--text-primary); font-weight:600}
+@keyframes fade-in{to{opacity:1}}
+.hero-img{position:relative; overflow:hidden; background:var(--bg-dark)}
+.hero-img img{width:100%; height:100%; object-fit:cover; object-position:center 18%; animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.01)} to{transform:scale(1.09)}}
+.hero-img::after{content:''; position:absolute; inset:0; background:linear-gradient(115deg,rgba(241,235,225,.35) 0%,transparent 22%)}
+.hero-floating{position:absolute; left:clamp(1rem,3vw,2rem); bottom:clamp(1rem,3vw,2rem); z-index:3;
+  background:rgba(255,255,255,.1); backdrop-filter:blur(13px) saturate(160%); -webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.2); border-radius:16px; padding:16px 20px; max-width:260px;
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 12px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.25)}
+.hero-floating .name{font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:#fff; line-height:1.1}
+.hero-floating .role{font-family:'Inter',sans-serif; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.82); margin-top:5px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:64vw; min-height:340px; order:-1}
+  .hero-img img{object-position:center 12%}
+  .hero-copy{padding-top:2.8rem}
+}
+
+/* SOBRE */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,5rem); align-items:center}
+.sobre-figure{position:relative}
+.sobre-figure img{width:100%; aspect-ratio:4/4.6; object-fit:cover; object-position:center 8%; border-radius:6px; box-shadow:var(--shadow-lg)}
+.sobre-figure .frame{position:absolute; inset:14px -14px -14px 14px; border:1px solid var(--accent-border); border-radius:6px; z-index:-1}
+.sobre-figure .crbm{position:absolute; right:clamp(-6px,-1vw,-18px); bottom:24px; background:var(--bg-dark); color:var(--text-inverse);
+  padding:16px 20px; border-radius:10px; box-shadow:var(--shadow-md); max-width:190px}
+.sobre-figure .crbm b{font-family:'Cormorant Garamond',serif; font-size:1.45rem; display:block; color:var(--gold-light)}
+.sobre-figure .crbm span{font-family:'Inter',sans-serif; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(247,241,232,.78)}
+.sobre h2{font-size:var(--text-h2); letter-spacing:-.01em; max-width:16ch; margin-bottom:22px}
+.sobre h2 em{font-style:italic; color:var(--accent)}
+.sobre p{color:var(--text-secondary); max-width:var(--prose-max); margin-bottom:18px}
+.sobre .sig{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; color:var(--text-primary); margin-top:26px}
+.sobre .sig small{display:block; font-family:'Inter',sans-serif; font-style:normal; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-top:4px}
+@media(max-width:820px){ .sobre-grid{grid-template-columns:1fr} .sobre-figure{max-width:440px; margin:0 auto} }
+
+/* PROCEDIMENTOS */
+.proc{background:var(--bg-inset); position:relative}
+.proc-head{max-width:680px; margin:0 auto clamp(2.5rem,5vw,4rem); text-align:center}
+.proc-head h2{font-size:var(--text-h2); letter-spacing:-.01em}
+.proc-head p{color:var(--text-secondary); margin-top:14px}
+.proc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface); border:1px solid rgba(184,138,62,.1); border-radius:12px;
+  padding:clamp(1.6rem,2.5vw,2.2rem); box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent-border)}
+.serv-card .num{font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--accent); letter-spacing:.04em}
+.serv-card .line{width:34px; height:1px; background:var(--accent-border); margin:14px 0 16px}
+.serv-card h3{font-size:var(--text-h3); margin-bottom:10px; letter-spacing:-.005em}
+.serv-card p{font-size:.92rem; color:var(--text-secondary); line-height:1.62}
+.serv-card.feature{grid-column:span 1; padding:0; overflow:hidden; position:relative; min-height:280px; display:flex; align-items:flex-end; border:none}
+.serv-card.feature img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.serv-card.feature:hover img{transform:scale(1.06)}
+.serv-card.feature .ov{position:relative; z-index:2; padding:1.8rem; background:linear-gradient(0deg,rgba(34,27,20,.92) 0%,rgba(34,27,20,.5) 55%,transparent 100%); width:100%; color:var(--text-inverse)}
+.serv-card.feature h3{color:#fff}
+.serv-card.feature p{color:rgba(247,241,232,.85)}
+
+/* METODO — dark, diagonal cut, grain */
+.metodo{position:relative; background:var(--bg-dark); color:var(--text-inverse);
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%); margin-top:-2vw;
+  padding-top:calc(var(--section-pad) + 4vw)}
+.metodo::before{content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px; opacity:.06; pointer-events:none}
+.metodo .wrap{position:relative; z-index:1}
+.metodo-head{max-width:640px; margin-bottom:clamp(2.5rem,5vw,4rem)}
+.metodo-head .overline{color:var(--gold-light)}
+.metodo-head h2{font-size:var(--text-h2); color:#fff; letter-spacing:-.01em}
+.metodo-head h2 em{font-style:italic; color:var(--gold-light)}
+.metodo-head p{color:rgba(247,241,232,.72); margin-top:14px; max-width:54ch}
+.steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(1.5rem,3vw,2.6rem)}
+.step{position:relative; padding-top:30px; border-top:1px solid rgba(216,177,100,.28)}
+.step .st-num{font-family:'Cormorant Garamond',serif; font-size:2.6rem; color:var(--gold-light); line-height:1; position:absolute; top:-6px; right:0; opacity:.5}
+.step h3{font-size:1.5rem; color:#fff; margin-bottom:10px}
+.step p{font-size:.92rem; color:rgba(247,241,232,.74); line-height:1.62}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-base)}
+.prova-grid{display:grid; grid-template-columns:5fr 7fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.prova-figure{position:relative}
+.prova-figure img{width:100%; aspect-ratio:4/4; object-fit:cover; object-position:center 15%; border-radius:6px; box-shadow:var(--shadow-lg)}
+.prova-rating{position:absolute; left:-12px; bottom:-16px; background:var(--bg-surface); border:1px solid var(--accent-border);
+  border-radius:14px; padding:16px 22px; box-shadow:var(--shadow-md); text-align:center}
+.prova-rating .big{font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:var(--text-primary); line-height:1}
+.prova-rating .stars{display:flex; gap:2px; justify-content:center; margin:5px 0 4px}
+.prova-rating .stars svg{width:14px; height:14px; fill:var(--gold)}
+.prova-rating small{font-family:'Inter',sans-serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted)}
+.prova h2{font-size:var(--text-h2); margin-bottom:30px; letter-spacing:-.01em; max-width:15ch}
+.prova h2 em{font-style:italic; color:var(--accent)}
+.quote{border-left:2px solid var(--accent-border); padding:6px 0 6px 22px; margin-bottom:26px}
+.quote p{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.32rem; line-height:1.45; color:var(--text-primary)}
+.quote cite{display:block; font-family:'Inter',sans-serif; font-style:normal; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin-top:12px}
+@media(max-width:820px){ .prova-grid{grid-template-columns:1fr} .prova-figure{max-width:420px; margin:0 auto 1.5rem} }
+
+/* LOCALIZAÇÃO */
+.local{background:var(--bg-inset)}
+.local-grid{display:grid; grid-template-columns:6fr 5fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.local-figure img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; box-shadow:var(--shadow-lg)}
+.local h2{font-size:var(--text-h2); margin-bottom:14px; letter-spacing:-.01em}
+.local h2 em{font-style:italic; color:var(--accent)}
+.local p.lead{color:var(--text-secondary); margin-bottom:28px; max-width:46ch}
+.info-row{display:flex; gap:16px; padding:16px 0; border-top:1px solid rgba(184,138,62,.16)}
+.info-row:last-of-type{border-bottom:1px solid rgba(184,138,62,.16)}
+.info-row .ic{flex-shrink:0; width:40px; height:40px; border-radius:50%; border:1px solid var(--accent-border); display:flex; align-items:center; justify-content:center}
+.info-row .ic svg{width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:1.6}
+.info-row .k{font-family:'Inter',sans-serif; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px}
+.info-row .v{font-size:.98rem; color:var(--text-primary)}
+.info-row .v a{color:var(--accent); border-bottom:1px solid var(--accent-border)}
+.local .btn-primary{margin-top:30px}
+
+/* FOOTER */
+footer{background:var(--bg-dark); color:var(--text-inverse); padding:clamp(3.5rem,7vw,6rem) clamp(1.5rem,6vw,5rem) 2.2rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:clamp(2rem,5vw,4rem)}
+.foot-brand .brand{color:#fff}
+.foot-brand .brand small{color:rgba(247,241,232,.6)}
+.foot-brand p{color:rgba(247,241,232,.66); font-size:.9rem; margin-top:18px; max-width:38ch}
+.foot-col h4{font-family:'Inter',sans-serif; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px; font-weight:500}
+.foot-col a, .foot-col p{display:block; color:rgba(247,241,232,.72); font-size:.9rem; margin-bottom:10px; transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max); margin:clamp(2.5rem,5vw,4rem) auto 0; padding-top:1.8rem; border-top:1px solid rgba(216,177,100,.2);
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; font-family:'Inter',sans-serif; font-size:.76rem; color:rgba(247,241,232,.5)}
+@media(max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr} .foot-brand{grid-column:1/-1} }
+
+/* WA FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.45); transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px; height:30px; fill:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1); opacity:.8} 100%{transform:scale(1.7); opacity:0}}
+
+/* REVEAL */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.proc-grid .reveal:nth-child(2){transition-delay:.06s}
+.proc-grid .reveal:nth-child(3){transition-delay:.12s}
+.proc-grid .reveal:nth-child(4){transition-delay:.18s}
+.proc-grid .reveal:nth-child(5){transition-delay:.24s}
+.proc-grid .reveal:nth-child(6){transition-delay:.3s}
+.steps .reveal:nth-child(2){transition-delay:.08s}
+.steps .reveal:nth-child(3){transition-delay:.16s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-img img{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.hero-seal{transition:none; animation:none; opacity:1; transform:none}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand"><span class="mono">AR</span><span>Ana Rosa<small>Estética Avançada</small></span></a>
+  <nav class="nav">
+    <a href="#sobre" class="lnk">A Clínica</a>
+    <a href="#procedimentos" class="lnk">Procedimentos</a>
+    <a href="#metodo" class="lnk">Método 360°</a>
+    <a href="#localizacao" class="lnk">Localização</a>
+    <a href="https://wa.me/5591981451211" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo" style="padding:0">
+  <div class="hero-copy">
+    <span class="overline">Clínica de Estética Avançada · Belém-PA</span>
+    <h1 class="hero-title">
+      <span class="word">Resultado</span>
+      <span class="word">de</span>
+      <span class="word"><em>verdade,</em></span>
+      <span class="word">cuidado inteiro.</span>
+    </h1>
+    <p class="hero-sub">Estética avançada com a biomédica <b>Ana Rosa Gonçalves</b> — pós-operatório, bioestimuladores e harmonização corporal, em Umarizal, no coração de Belém.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5591981451211" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207z"/></svg>
+        Agendar avaliação
+      </a>
+      <a href="#procedimentos" class="btn-ghost">Ver procedimentos</a>
+    </div>
+    <div class="hero-seal">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+      </div>
+      <span class="txt"><b>5,0 no Google</b><br>avaliação máxima de quem já passou pela clínica</span>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/web-01.jpg" alt="Ana Rosa Gonçalves, biomédica, em atendimento na clínica">
+    <div class="hero-floating">
+      <div class="name">Ana Rosa Gonçalves</div>
+      <div class="role">Biomédica · Esteticista · CRBM 10767</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-figure reveal">
+      <img src="imagens/web-02.jpg" alt="A biomédica Ana Rosa Gonçalves">
+      <span class="frame" aria-hidden="true"></span>
+      <div class="crbm"><b>CRBM 10767</b><span>Biomédica responsável</span></div>
+    </div>
+    <div class="sobre-copy reveal">
+      <span class="overline">Quem cuida de você</span>
+      <h2>Estética que une <em>técnica</em> e acolhimento</h2>
+      <p>A clínica nasceu de um jeito de trabalhar: cada corpo é único e merece um plano feito só para ele. Por isso tudo começa com uma avaliação cuidadosa — antes de qualquer procedimento, a gente entende o seu objetivo e desenha o caminho mais seguro até ele.</p>
+      <p>À frente está a biomédica <b>Ana Rosa Gonçalves</b>, especializada em estética avançada e pós-operatório. Aqui você não recebe um pacote pronto: recebe ciência, tecnologia e a atenção de quem acompanha cada etapa da sua jornada, do primeiro contato ao resultado.</p>
+      <div class="sig">Ana Rosa Gonçalves<small>Biomédica · Esteticista responsável</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head reveal">
+      <span class="overline center">O que fazemos</span>
+      <h2>Procedimentos pensados para o seu resultado</h2>
+      <p>Protocolos personalizados, com resultados naturais e seguros — do cuidado pós-cirúrgico à harmonização do corpo e do rosto.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <span class="num">01</span><span class="line"></span>
+        <h3>Pós-operatório Premium</h3>
+        <p>Acompanhamento especializado para uma recuperação tranquila: drenagem, redução de inchaço e fibrose e mais conforto para você viver o seu melhor resultado.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="num">02</span><span class="line"></span>
+        <h3>Bioestimuladores de Colágeno</h3>
+        <p>Hidroxiapatita de cálcio para estimular a produção natural de colágeno: mais firmeza, densidade e sustentação da pele, de forma progressiva e natural.</p>
+      </article>
+      <article class="serv-card feature reveal">
+        <img src="imagens/web-05.jpg" alt="Tratamento facial em andamento na clínica">
+        <div class="ov">
+          <h3>Harmonização Facial</h3>
+          <p>Toxina botulínica e protocolos faciais que realçam o que você já tem — com leveza e naturalidade.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <span class="num">03</span><span class="line"></span>
+        <h3>Harmonização Corporal</h3>
+        <p>Técnicas avançadas para realçar contorno, projeção e firmeza do corpo, respeitando a sua proporção e a sua autoestima.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="num">04</span><span class="line"></span>
+        <h3>Emagrecimento Localizado</h3>
+        <p>Intradermoterapia, enzimas e protocolos combinados para redução de medidas, definição e eliminação de toxinas, com brinde de drenagem.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="num">05</span><span class="line"></span>
+        <h3>Avaliação Personalizada</h3>
+        <p>O ponto de partida de tudo: uma análise exclusiva para entender o seu corpo e desenhar o protocolo certo para o seu objetivo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- METODO -->
+<section class="metodo" id="metodo">
+  <div class="wrap">
+    <div class="metodo-head reveal">
+      <span class="overline">Método Ana Rosa 360°</span>
+      <h2>Mais do que cuidar, <em>transformamos</em></h2>
+      <p>Cada jornada é acompanhada do começo ao fim, com segurança, acolhimento e excelência em todas as etapas. É assim que o resultado dura.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="st-num">01</span>
+        <h3>Pré-operatório Premium</h3>
+        <p>Planejamento personalizado para preparar o seu corpo e a sua mente para o melhor resultado possível.</p>
+      </div>
+      <div class="step reveal">
+        <span class="st-num">02</span>
+        <h3>Acompanhamento Assistido</h3>
+        <p>Suporte especializado em cada etapa, para mais segurança e resultados realmente superiores.</p>
+      </div>
+      <div class="step reveal">
+        <span class="st-num">03</span>
+        <h3>Pós-operatório Ouro</h3>
+        <p>Cuidados exclusivos para uma recuperação confortável, tranquila e com resultados duradouros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap prova-grid">
+    <div class="prova-figure reveal">
+      <img src="imagens/web-03.jpg" alt="Ana Rosa Gonçalves na clínica">
+      <div class="prova-rating">
+        <div class="big">5,0</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.401 8.168L12 18.896l-7.335 3.866 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+        </div>
+        <small>Nota no Google</small>
+      </div>
+    </div>
+    <div class="prova-copy reveal">
+      <span class="overline">Confiança de quem já passou por aqui</span>
+      <h2>É sobre recuperar a <em>confiança</em></h2>
+      <div class="quote">
+        <p>“Mais do que procedimentos, fui cuidada em cada etapa. Saí com segurança, acolhimento e o resultado que eu queria.”</p>
+        <cite>Experiência de paciente · Clínica Ana Rosa</cite>
+      </div>
+      <div class="quote">
+        <p>“Profissionalismo do começo ao fim. A avaliação fez toda a diferença — me senti em boas mãos.”</p>
+        <cite>Experiência de paciente · Belém-PA</cite>
+      </div>
+      <a href="https://wa.me/5591981451211" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207z"/></svg>
+        Quero ser atendida
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="wrap local-grid">
+    <div class="local-figure reveal">
+      <img src="imagens/maps-1.jpg" alt="Sala de atendimento da Clínica Ana Rosa em Belém">
+    </div>
+    <div class="local-copy reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Venha nos <em>visitar</em> em Umarizal</h2>
+      <p class="lead">Um espaço pensado para o seu conforto, no Edifício Real One, em um dos bairros mais nobres de Belém.</p>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <div><div class="k">Endereço</div><div class="v">Ed. Real One — Av. Gov. José Malcher, 937, Sala 1501<br>Umarizal, Belém — PA, 66030-281</div></div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+        <div><div class="k">WhatsApp & Telefone</div><div class="v"><a href="https://wa.me/5591981451211" target="_blank" rel="noopener">(91) 98145-1211</a></div></div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z"/></svg></span>
+        <div><div class="k">Como chegar</div><div class="v"><a href="https://www.google.com/maps/place/Ana+Rosa+Cl%C3%ADnica+de+Est%C3%A9tica+Avan%C3%A7ada/@-1.4503946,-48.4854078,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48c3ea9af6ee1:0x8653aaffbf20148b!8m2!3d-1.4503946!4d-48.4854078!16s%2Fg%2F1pyclqjdw?hl=pt-BR" target="_blank" rel="noopener">Abrir no Google Maps</a></div></div>
+      </div>
+      <a href="https://wa.me/5591981451211" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207z"/></svg>
+        Agendar avaliação
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <span class="brand"><span class="mono">AR</span><span>Ana Rosa<small>Estética Avançada</small></span></span>
+      <p>Estética avançada com técnica, segurança e acolhimento. Resultados naturais para você viver a sua melhor versão.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegue</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#metodo">Método 360°</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5591981451211" target="_blank" rel="noopener">(91) 98145-1211</a>
+      <a href="https://www.instagram.com/anarosa_estetica_avancada" target="_blank" rel="noopener">@anarosa_estetica_avancada</a>
+      <p>Umarizal, Belém — PA</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Ana Rosa Clínica de Estética Avançada · CRBM 10767</span>
+    <span>Belém · Pará</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5591981451211" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>
+</content>

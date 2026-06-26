@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica de Estética Iomara Santos | Caucaia-CE</title>
+<meta name="description" content="Clínica de Estética Iomara Santos em Caucaia, CE. Limpeza de pele, tratamentos faciais e massagem modeladora com nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f7f2ec;
+  --bg-surface:#fdfaf6;
+  --bg-inset:#efe6da;
+  --bg-dark:#2a211c;
+
+  --text-primary:#221b16;
+  --text-secondary:#5a4f47;
+  --text-muted:#8a7d72;
+  --text-inverse:#f7f2ec;
+
+  --accent:#b67d5c;
+  --accent-dark:#95603f;
+  --accent-subtle:rgba(182,125,92,.10);
+  --accent-border:rgba(182,125,92,.22);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+
+  --shadow-sm:0 1px 2px rgba(60,40,25,.05),0 2px 6px rgba(60,40,25,.05);
+  --shadow-md:0 2px 4px rgba(60,40,25,.04),0 8px 18px rgba(60,40,25,.07),0 20px 40px rgba(60,40,25,.05);
+  --shadow-lg:0 4px 8px rgba(60,40,25,.05),0 16px 32px rgba(60,40,25,.07),0 40px 80px rgba(60,40,25,.09);
+  --shadow-accent:0 8px 24px rgba(182,125,92,.32);
+  --shadow-accent-strong:0 12px 34px rgba(182,125,92,.44);
+
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.92rem,.84rem + .3vw,1.02rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:1.02;--lh-heading:1.12;--lh-body:1.72;
+  --ls-display:-.02em;--ls-body:0em;--ls-overline:.18em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;--prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:500;line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.overline{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;
+  font-size:.68rem;font-weight:600;
+  letter-spacing:var(--ls-overline);
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:18px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-weight:600;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;border-radius:50px;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px;fill:currentColor}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.9rem 1.8rem;min-height:52px;
+  border:1px solid var(--accent-border);border-radius:50px;
+  color:var(--text-primary);font-weight:500;font-size:.8rem;
+  letter-spacing:.06em;text-transform:uppercase;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .3s ease,background .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--accent-subtle)}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(42,33,28,.92);
+  backdrop-filter:blur(12px) saturate(150%);
+  -webkit-backdrop-filter:blur(12px) saturate(150%);
+  box-shadow:0 1px 0 rgba(182,125,92,.25);
+  padding-top:12px;padding-bottom:12px;
+}
+.brand{display:flex;flex-direction:column;line-height:1;color:var(--text-inverse);transition:color .35s ease}
+.brand .b-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.01em}
+.brand .b-sub{font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-top:4px}
+header:not(.scrolled) .brand{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+nav{display:flex;align-items:center;gap:clamp(1rem,2.5vw,2.4rem)}
+nav a.nav-link{font-size:.78rem;font-weight:500;letter-spacing:.04em;color:var(--text-inverse);opacity:.88;transition:opacity .25s}
+header:not(.scrolled) nav a.nav-link{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+nav a.nav-link:hover{opacity:1}
+.header-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:.62rem 1.25rem;border-radius:50px;
+  background:#25D366;color:#fff;font-size:.74rem;font-weight:600;
+  letter-spacing:.04em;box-shadow:0 4px 14px rgba(37,211,102,.35);
+  transition:transform .25s;touch-action:manipulation;
+}
+.header-cta:hover{transform:translateY(-2px)}
+.header-cta svg{width:15px;height:15px;fill:#fff}
+@media(max-width:760px){nav .nav-link{display:none}}
+
+/* ── HERO (Model C — editorial, texto base-esquerda) ── */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background:url('imagens/web-01.jpg') center 30%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate;}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(105deg,rgba(28,21,17,.82) 0%,rgba(28,21,17,.45) 38%,rgba(28,21,17,.12) 65%,rgba(28,21,17,.35) 100%);}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(20,15,12,.85) 0%,transparent 42%);}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;}
+.hero-content{position:relative;z-index:3;
+  padding:0 clamp(1.5rem,7vw,6rem) clamp(3.2rem,8vh,6.5rem);max-width:720px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold-light);
+  font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;margin-bottom:22px;}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold-light)}
+.hero-title{font-size:var(--text-display);letter-spacing:var(--ls-display);line-height:var(--lh-display);
+  color:#fff;font-weight:400;max-width:14ch;overflow:hidden;}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards;}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(255,255,255,.9);font-size:clamp(1rem,.9rem + .4vw,1.18rem);
+  max-width:46ch;margin:26px 0 32px;font-weight:300;
+  opacity:0;animation:fade-in 1s ease .85s forwards;}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  opacity:0;animation:fade-in 1s ease 1s forwards;}
+.hero-badge{
+  position:absolute;z-index:3;top:clamp(6.5rem,14vh,9rem);right:clamp(1.5rem,6vw,5rem);
+  display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:16px;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0;animation:fade-in 1s ease 1.2s forwards;}
+.hero-badge .score{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:#fff;line-height:1}
+.hero-badge .meta{display:flex;flex-direction:column;line-height:1.2}
+.hero-badge .stars{color:var(--gold-light);font-size:.85rem;letter-spacing:1px}
+.hero-badge .lbl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
+@media(max-width:560px){.hero-badge{padding:11px 15px}.hero-badge .score{font-size:1.6rem}}
+
+/* ── SECTION base ── */
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.eyebrow-center{text-align:center}
+.eyebrow-center .overline{justify-content:center}
+
+/* diagonal cut for sobre */
+.sobre{position:relative;background:var(--bg-base);
+  clip-path:polygon(0 0,100% 4vw,100% 100%,0 100%);
+  margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw);}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center;}
+.sobre-media{position:relative}
+.sobre-media img{width:100%;height:clamp(360px,52vw,580px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-media .frame{position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+.sobre-media .tag{position:absolute;left:-12px;bottom:28px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:16px 22px;border-radius:6px;box-shadow:var(--shadow-md);max-width:200px}
+.sobre-media .tag b{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--gold-light);display:block;line-height:1}
+.sobre-media .tag span{font-size:.72rem;color:rgba(247,242,236,.78);letter-spacing:.04em}
+.sobre h2{font-size:var(--text-h2);max-width:16ch;margin-bottom:6px;font-weight:400}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-top:20px;max-width:var(--prose-max)}
+.sobre .sign{margin-top:28px;display:flex;align-items:center;gap:16px}
+.sobre .sign .ln{width:46px;height:1px;background:var(--accent)}
+.sobre .sign b{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600}
+.sobre .sign span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr}.sobre-media .tag{left:14px}}
+
+/* ── PROCEDIMENTOS ── */
+.procs{background:var(--bg-inset);position:relative}
+.procs-head{max-width:var(--content-max);margin:0 auto 50px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.procs-head h2{font-size:var(--text-h2);max-width:16ch;font-weight:400}
+.procs-head h2 em{font-style:italic;color:var(--accent)}
+.procs-head p{color:var(--text-secondary);max-width:42ch}
+.proc-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.proc-card{background:var(--bg-surface);border:1px solid rgba(150,120,90,.12);border-radius:8px;
+  padding:clamp(1.6rem,2.6vw,2.4rem);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;}
+.proc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.proc-card .num{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--accent);font-weight:600}
+.proc-card .ic{width:40px;height:40px;margin:6px 0 18px;color:var(--accent)}
+.proc-card .ic svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.4;fill:none}
+.proc-card .plbl{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.proc-card h3{font-size:var(--text-h3);font-weight:500;margin-bottom:10px}
+.proc-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.65}
+.proc-feature{grid-column:span 3;display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:10px;overflow:hidden;
+  background:var(--bg-surface);border:1px solid rgba(150,120,90,.12);box-shadow:var(--shadow-sm);margin-top:6px}
+.proc-feature .pf-img{min-height:300px;background:url('imagens/web-04.jpg') center/cover}
+.proc-feature .pf-body{padding:clamp(2rem,4vw,3.2rem);display:flex;flex-direction:column;justify-content:center}
+.proc-feature .pf-body h3{font-size:var(--text-h3);font-weight:500;margin:8px 0 12px}
+.proc-feature .pf-body p{color:var(--text-secondary);max-width:42ch}
+.proc-feature .pf-body .btn-ghost{margin-top:24px;align-self:flex-start}
+@media(max-width:900px){.proc-grid{grid-template-columns:1fr 1fr}.proc-feature{grid-column:span 2}}
+@media(max-width:620px){.proc-grid{grid-template-columns:1fr}.proc-feature{grid-column:span 1;grid-template-columns:1fr}.proc-feature .pf-img{min-height:220px}}
+
+/* wave into dark */
+.wave{display:block;line-height:0;margin-bottom:-1px;background:var(--bg-inset)}
+.wave svg{width:100%;height:clamp(40px,5vw,80px)}
+
+/* ── PROVA SOCIAL (dark) ── */
+.prova{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.prova::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;}
+.prova-grid{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.prova-media img{width:100%;height:clamp(340px,46vw,520px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.prova .overline{color:var(--gold-light)}
+.prova h2{font-size:var(--text-h2);font-weight:400;max-width:15ch;color:#fff}
+.prova h2 em{font-style:italic;color:var(--gold-light)}
+.prova .big-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:clamp(1.4rem,1rem + 1.6vw,2rem);line-height:1.4;color:rgba(247,242,236,.94);margin:24px 0}
+.prova .rate{display:flex;align-items:center;gap:18px;margin-top:8px;padding-top:24px;border-top:1px solid rgba(247,242,236,.14)}
+.prova .rate .n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--gold-light);line-height:1}
+.prova .rate .stars{color:var(--gold-light);font-size:1rem;letter-spacing:2px}
+.prova .rate .sub{font-size:.74rem;color:rgba(247,242,236,.7);letter-spacing:.04em;margin-top:4px}
+@media(max-width:860px){.prova-grid{grid-template-columns:1fr}}
+
+/* ── LOCALIZAÇÃO ── */
+.local{background:var(--bg-base)}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:6fr 5fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local-media{position:relative}
+.local-media img{width:100%;height:clamp(320px,44vw,500px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-md)}
+.local h2{font-size:var(--text-h2);font-weight:400;max-width:16ch}
+.local h2 em{font-style:italic;color:var(--accent)}
+.info-list{list-style:none;margin:30px 0 0;display:flex;flex-direction:column;gap:22px}
+.info-list li{display:flex;gap:16px;align-items:flex-start}
+.info-list .ic{flex:none;width:38px;height:38px;border-radius:50%;background:var(--accent-subtle);
+  display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.info-list .ic svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.6;fill:none}
+.info-list .t{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.info-list .v{font-size:1rem;color:var(--text-primary)}
+.info-list a.v:hover{color:var(--accent)}
+.local-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,6vw,5.5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.foot-brand .fb-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600}
+.foot-brand .fb-sub{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light);margin:6px 0 18px}
+.foot-brand p{color:rgba(247,242,236,.7);max-width:38ch;font-size:.92rem}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;color:rgba(247,242,236,.78);font-size:.9rem;margin-bottom:11px}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,3.5rem) auto 0;padding-top:1.8rem;
+  border-top:1px solid rgba(247,242,236,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.74rem;color:rgba(247,242,236,.55)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:span 2}}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg{animation:none}
+  .hero-title .word,.hero-sub,.hero-actions,.hero-badge{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="b-name">Iomara Santos</span>
+    <span class="b-sub">Clínica de Estética</span>
+  </a>
+  <nav>
+    <a href="#sobre" class="nav-link">Sobre</a>
+    <a href="#procedimentos" class="nav-link">Procedimentos</a>
+    <a href="#prova" class="nav-link">Resultados</a>
+    <a href="#localizacao" class="nav-link">Localização</a>
+    <a href="https://wa.me/5585988304926" class="header-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.768-.989zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+      WhatsApp
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-badge">
+    <span class="score">5,0</span>
+    <span class="meta">
+      <span class="stars">★★★★★</span>
+      <span class="lbl">Avaliação no Google</span>
+    </span>
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Caucaia · Ceará</span>
+    <h1 class="hero-title">
+      <span class="word">Sua</span>
+      <span class="word">pele</span>
+      <span class="word">merece</span>
+      <span class="word"><em>cuidado.</em></span>
+    </h1>
+    <p class="hero-sub">Clínica de Estética Iomara Santos — tratamentos faciais, limpeza de pele e massagem modeladora com técnica, acolhimento e resultado de verdade.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5585988304926" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.768-.989zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#procedimentos" class="btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff">Ver procedimentos</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-media reveal">
+      <div class="frame"></div>
+      <img src="imagens/web-02.jpg" alt="Sessão de massagem modeladora na Clínica de Estética Iomara Santos">
+      <div class="tag"><b>5,0</b><span>nota máxima de quem já se cuidou aqui</span></div>
+    </div>
+    <div class="sobre-body">
+      <span class="overline reveal">Sobre a clínica</span>
+      <h2 class="reveal">Estética que une <em>técnica</em> e acolhimento, em Caucaia</h2>
+      <p class="reveal">Na Clínica de Estética Iomara Santos cada atendimento começa pela escuta: entender a sua pele, o seu momento e o que você quer alcançar. A partir daí, o cuidado é todo personalizado — com protocolos seguros, produtos de qualidade e a atenção que faz você sair daqui mais bonita e mais leve.</p>
+      <p class="reveal">É essa dedicação que mantém a nota máxima no Google e traz tanta cliente pela indicação de quem já passou por aqui. Cuidar de você é levar a estética a sério, do começo ao fim.</p>
+      <div class="sign reveal">
+        <span class="ln"></span>
+        <div><b>Iomara Santos</b><br><span>Esteticista responsável</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="procs" id="procedimentos">
+  <div class="procs-head">
+    <div>
+      <span class="overline reveal">O que fazemos</span>
+      <h2 class="reveal">Procedimentos pensados para a sua <em>pele</em></h2>
+    </div>
+    <p class="reveal">Tratamentos faciais e corporais conduzidos com técnica, em um ambiente tranquilo e seguro. Conte pra gente o seu objetivo no WhatsApp e montamos o cuidado ideal.</p>
+  </div>
+  <div class="proc-grid">
+
+    <article class="proc-card reveal">
+      <span class="num">01</span>
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 13.5s1.2 1.6 3.5 1.6 3.5-1.6 3.5-1.6"/><circle cx="9" cy="9.5" r=".6" fill="currentColor" stroke="none"/><circle cx="15" cy="9.5" r=".6" fill="currentColor" stroke="none"/></svg></div>
+      <p class="plbl">Facial</p>
+      <h3>Limpeza de Pele Profunda</h3>
+      <p>Higienização, extração e hidratação para devolver o viço, controlar a oleosidade e deixar a pele renovada e respirando.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <span class="num">02</span>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3c2.5 3 4.5 5.2 4.5 8a4.5 4.5 0 11-9 0c0-2.8 2-5 4.5-8z"/><path d="M12 14.5c1.2 0 2-.8 2.2-2"/></svg></div>
+      <p class="plbl">Tratamento</p>
+      <h3>Revitalização Facial</h3>
+      <p>Protocolos com ativos e séruns que tratam manchas, marcas finas e ressecamento, recuperando firmeza e luminosidade.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <span class="num">03</span>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 15c2-1 4-1.5 7-1.5s5 .5 7 1.5"/><path d="M6 11c1.6-.8 3.4-1.2 6-1.2s4.4.4 6 1.2"/><path d="M9 18.5c1-.4 2-.6 3-.6s2 .2 3 .6"/></svg></div>
+      <p class="plbl">Corporal</p>
+      <h3>Massagem Modeladora</h3>
+      <p>Manobras firmes que ativam a circulação, reduzem medidas e ajudam a contornar o corpo, num momento de puro relaxamento.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <span class="num">04</span>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M12 20c-3 0-5-2-5-5 0-2 1-3 1-5"/><path d="M12 20c3 0 5-2 5-5 0-2-1-3-1-5"/><path d="M12 4c-1.5 1.5-2.5 3-2.5 4M12 4c1.5 1.5 2.5 3 2.5 4"/></svg></div>
+      <p class="plbl">Bem-estar</p>
+      <h3>Drenagem Linfática</h3>
+      <p>Técnica suave que estimula a eliminação de líquidos, reduz o inchaço e traz sensação de leveza ao corpo todo.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <span class="num">05</span>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 14c4 0 4-4 8-4s4 4 8 4"/><path d="M4 18c4 0 4-4 8-4s4 4 8 4"/><circle cx="12" cy="6" r="2"/></svg></div>
+      <p class="plbl">Sobrancelhas</p>
+      <h3>Design &amp; Realce do Olhar</h3>
+      <p>Design personalizado que valoriza os traços do rosto, com acabamento natural que harmoniza e ilumina o seu olhar.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <span class="num">06</span>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9l-3.7 3 1.2 5L12 14.6 8 17l1.2-5L5.5 9l4.7-1.3z"/></svg></div>
+      <p class="plbl">Pele radiante</p>
+      <h3>Peeling &amp; Renovação</h3>
+      <p>Esfoliação profissional que renova as camadas da pele, uniformiza o tom e potencializa o brilho saudável.</p>
+    </article>
+
+    <div class="proc-feature reveal">
+      <div class="pf-img"></div>
+      <div class="pf-body">
+        <span class="overline">Avaliação sem compromisso</span>
+        <h3>Não sabe por onde começar?</h3>
+        <p>Cada pele é única. Me chame no WhatsApp, conte o que te incomoda e qual resultado você quer — eu te indico o tratamento certo e já organizo o seu horário.</p>
+        <a href="https://wa.me/5585988304926" class="btn-ghost" target="_blank" rel="noopener">Falar com a clínica</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"></path>
+  </svg>
+</div>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="prova-grid">
+    <div class="prova-media reveal">
+      <img src="imagens/web-03.jpg" alt="Cliente satisfeita após cuidado na Clínica de Estética Iomara Santos">
+    </div>
+    <div class="prova-body">
+      <span class="overline reveal">Quem se cuida aqui, volta</span>
+      <h2 class="reveal">Resultado que se vê — e <em>confiança</em> que se sente</h2>
+      <p class="big-quote reveal">"Saio de cada sessão com a pele renovada e me sentindo cuidada de verdade. Atendimento impecável, do começo ao fim."</p>
+      <div class="rate reveal">
+        <span class="n">5,0</span>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="sub">Nota máxima das clientes no Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="local-grid">
+    <div class="local-media reveal">
+      <img src="imagens/web-05.jpg" alt="Ambiente acolhedor da Clínica de Estética Iomara Santos em Caucaia">
+    </div>
+    <div class="local-body">
+      <span class="overline reveal">Onde nos encontrar</span>
+      <h2 class="reveal">Te esperamos em <em>Caucaia</em></h2>
+      <ul class="info-list">
+        <li class="reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 1114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><div class="t">Endereço</div><div class="v">Rua José da Rocha Sales, nº 184<br>Caucaia, CE · 61600-015</div></div>
+        </li>
+        <li class="reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <div><div class="t">Telefone / WhatsApp</div><a class="v" href="https://wa.me/5585988304926" target="_blank" rel="noopener">(85) 98830-4926</a></div>
+        </li>
+        <li class="reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="t">Atendimento</div><div class="v">Segunda a sábado · com hora marcada</div></div>
+        </li>
+      </ul>
+      <div class="local-actions">
+        <a href="https://wa.me/5585988304926" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.768-.989zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+          Agendar agora
+        </a>
+        <a href="https://www.google.com/maps/place/CL%C3%8DNICA+DE+EST%C3%89TICA+IOMARA+SANTOS+%7C+CAUCAIA+-CE/@-3.7391332,-38.6552902,17z/data=!3m1!4b1!4m6!3m5!1s0x7c0b56ebfe45889:0xc4b0662c4347865e!8m2!3d-3.7391332!4d-38.6552902!16s%2Fg%2F11zbkwgy64?authuser=0&hl=pt-BR" class="btn-ghost" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="fb-name">Iomara Santos</div>
+      <div class="fb-sub">Clínica de Estética · Caucaia-CE</div>
+      <p>Cuidar da sua pele e do seu bem-estar com técnica, segurança e o carinho que você merece.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">Sobre</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#prova">Resultados</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5585988304926" target="_blank" rel="noopener">WhatsApp (85) 98830-4926</a>
+      <p>Rua José da Rocha Sales, 184<br>Caucaia, CE · 61600-015</p>
+      <p>Seg. a sáb. · com hora marcada</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Clínica de Estética Iomara Santos. Todos os direitos reservados.</span>
+    <span>Caucaia · Ceará</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5585988304926" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.768-.989zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

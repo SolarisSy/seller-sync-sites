@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio A15 - Barbearia | Pajuçara, Natal-RN</title>
+<meta name="description" content="Studio A15 - Barbearia em Pajuçara, Natal-RN. Corte, barba e cuidado masculino com padrão premium. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#f5f0e7;
+  --bg-surface:#fbf8f2;
+  --bg-inset:#ebe4d8;
+  --bg-dark:#14110d;
+  --bg-dark-2:#1d1813;
+  /* Texto */
+  --text-primary:#1c1813;
+  --text-secondary:#4a443b;
+  --text-muted:#8c8377;
+  --text-inverse:#f5f0e7;
+  /* Acento + marca */
+  --accent:#c0833d;
+  --accent-dark:#9b6529;
+  --accent-subtle:rgba(192,131,61,.10);
+  --accent-border:rgba(192,131,61,.22);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.06),0 16px 32px rgba(0,0,0,.09),0 40px 80px rgba(0,0,0,.12);
+  --shadow-accent:0 6px 22px rgba(192,131,61,.34);
+  --shadow-accent-strong:0 12px 34px rgba(192,131,61,.46);
+  /* Tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.8rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.94rem,.86rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.0;
+  --lh-heading:1.12;
+  --lh-body:1.72;
+  --ls-display:-0.015em;
+  /* Espaço */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Barlow Condensed',sans-serif;
+  font-optical-sizing:auto;
+  text-wrap:balance;
+  line-height:var(--lh-heading);
+  text-transform:uppercase;
+  letter-spacing:var(--ls-display);
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* Overline */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+  font-size:.7rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Inter',sans-serif;
+  font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.4rem,3vw,2rem);min-height:50px;
+  border:1px solid rgba(245,240,231,.32);color:var(--text-inverse);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;
+  letter-spacing:.06em;text-transform:uppercase;border-radius:50px;
+  transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.1);transform:translateY(-2px)}
+.wa-ico{width:18px;height:18px;fill:currentColor;flex:none}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(20,17,13,.94);
+  backdrop-filter:blur(12px) saturate(150%);
+  -webkit-backdrop-filter:blur(12px) saturate(150%);
+  box-shadow:0 1px 0 rgba(201,168,76,.22);
+  padding-top:12px;padding-bottom:12px;
+}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .b-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:1.4rem;letter-spacing:.02em;color:var(--text-inverse);text-transform:uppercase}
+.brand .b-sub{font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-inverse);opacity:.85;transition:opacity .25s ease,color .25s ease}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.2rem;
+  border:1px solid var(--accent-border);border-radius:50px;color:var(--gold)!important;opacity:1!important}
+.nav-cta:hover{background:var(--accent-subtle)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* HERO — Modelo C editorial base-esquerda */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;
+  animation:kb 24s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;background:
+  linear-gradient(165deg,rgba(20,17,13,.18) 28%,rgba(20,17,13,.72) 70%,rgba(20,17,13,.96) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+.hero-content{position:relative;z-index:2;
+  padding:0 clamp(1.5rem,8vw,7%) clamp(3.2rem,7vh,6rem);max-width:760px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;
+  padding:.5rem 1rem;border-radius:50px;
+  background:rgba(245,240,231,.08);backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(245,240,231,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.16);
+  font-size:.74rem;font-weight:500;letter-spacing:.04em;color:var(--text-inverse)}
+.hero-badge .stars{color:var(--gold);letter-spacing:.05em;font-size:.82rem}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.74rem;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);
+  color:var(--text-inverse);max-width:15ch;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word em{font-style:normal;color:var(--accent)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .word:nth-child(4){animation-delay:.48s}
+.hero-title .word:nth-child(5){animation-delay:.59s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{margin-top:22px;max-width:46ch;color:rgba(245,240,231,.84);
+  font-weight:300;font-size:clamp(1rem,.92rem + .4vw,1.18rem);
+  opacity:0;animation:fade-in 1s ease .8s forwards}
+.hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(245,240,231,.6);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase}
+.scroll-hint .line{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);
+  animation:scrolly 2s ease-in-out infinite}
+@keyframes scrolly{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:560px){.scroll-hint{display:none}}
+
+/* Marquee faixa */
+.strip{background:var(--bg-dark-2);color:var(--gold);overflow:hidden;
+  border-top:1px solid rgba(201,168,76,.16);border-bottom:1px solid rgba(201,168,76,.16);
+  padding:0}
+.strip-track{display:flex;gap:0;white-space:nowrap;animation:marq 28s linear infinite;padding:16px 0}
+.strip-track span{font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;padding:0 28px;
+  display:inline-flex;align-items:center;gap:28px}
+.strip-track span::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* SOBRE */
+.about{background:var(--bg-base);position:relative}
+.about-grid{max-width:var(--content-max);margin:0 auto;display:grid;
+  grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.about-figure{position:relative}
+.about-figure img{width:100%;height:clamp(360px,52vw,560px);object-fit:cover;
+  border-radius:6px;box-shadow:var(--shadow-lg)}
+.about-figure .stat{position:absolute;bottom:-26px;left:-22px;
+  background:var(--bg-dark);color:var(--text-inverse);padding:1.3rem 1.6rem;border-radius:6px;
+  box-shadow:var(--shadow-lg);border:1px solid rgba(201,168,76,.2)}
+.about-figure .stat .n{font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:2.6rem;line-height:1;color:var(--gold)}
+.about-figure .stat .l{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(245,240,231,.7);margin-top:4px}
+.about-body h2{font-size:var(--text-h2);font-weight:800;margin-bottom:20px}
+.about-body p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:16px}
+.about-body .signoff{margin-top:24px;display:flex;align-items:center;gap:14px}
+.about-body .signoff .bar{width:40px;height:2px;background:var(--accent)}
+.about-body .signoff span{font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--text-primary)}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}
+  .about-figure .stat{left:auto;right:18px;bottom:-22px}}
+
+/* SERVIÇOS — seção escura com diagonal cut */
+.services{background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%)}
+.services::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  background-size:220px}
+.services-inner{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1;
+  padding-top:clamp(2rem,4vw,3.5rem)}
+.services-head{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:24px;flex-wrap:wrap;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.services-head h2{font-size:var(--text-h2);font-weight:800;max-width:14ch}
+.services-head p{color:rgba(245,240,231,.7);max-width:38ch;font-weight:300}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{position:relative;padding:2rem 1.8rem;border-radius:8px;
+  background:linear-gradient(180deg,rgba(245,240,231,.04),rgba(245,240,231,.01));
+  border:1px solid rgba(245,240,231,.09);
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease}
+.serv-card:hover{transform:translateY(-6px);border-color:var(--accent-border);
+  box-shadow:0 18px 40px rgba(0,0,0,.4),0 0 0 1px var(--accent-border)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;
+  color:var(--accent);letter-spacing:.1em}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;margin:14px 0 10px;color:var(--text-inverse)}
+.serv-card p{font-size:.92rem;color:rgba(245,240,231,.66);font-weight:300;margin-bottom:18px}
+.serv-price{display:flex;align-items:baseline;gap:8px;
+  padding-top:16px;border-top:1px solid rgba(245,240,231,.1)}
+.serv-price .from{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .v{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--gold)}
+
+/* FAIXA BARBA destaque split */
+.feature{display:grid;grid-template-columns:1fr 1fr;background:var(--bg-dark-2);color:var(--text-inverse)}
+.feature-img{background:url('imagens/web-03.jpg') center/cover;min-height:clamp(320px,42vw,520px)}
+.feature-body{padding:clamp(3rem,6vw,6rem) clamp(1.8rem,5vw,5rem);
+  display:flex;flex-direction:column;justify-content:center}
+.feature-body h2{font-size:var(--text-h2);font-weight:800;margin-bottom:18px;max-width:16ch}
+.feature-body p{color:rgba(245,240,231,.74);max-width:46ch;font-weight:300;margin-bottom:14px}
+.feature-list{list-style:none;margin:18px 0 30px;display:grid;gap:12px}
+.feature-list li{display:flex;align-items:center;gap:12px;font-size:.95rem;color:rgba(245,240,231,.86)}
+.feature-list li svg{width:18px;height:18px;flex:none;stroke:var(--accent);fill:none;stroke-width:2.4}
+.feature-body .btn-primary{align-self:flex-start}
+@media(max-width:780px){.feature{grid-template-columns:1fr}.feature-img{order:-1;min-height:54vw}}
+
+/* PROVA SOCIAL */
+.proof{background:var(--bg-inset);position:relative}
+.proof-inner{max-width:var(--content-max);margin:0 auto;text-align:center}
+.proof-inner .overline{justify-content:center}
+.proof-inner h2{font-size:var(--text-h2);font-weight:800;max-width:18ch;margin:0 auto 12px}
+.proof-rating{display:inline-flex;align-items:center;gap:14px;margin:6px auto 50px;
+  padding:.7rem 1.4rem;background:var(--bg-surface);border-radius:50px;box-shadow:var(--shadow-sm)}
+.proof-rating .num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--text-primary)}
+.proof-rating .stars{color:var(--gold);font-size:1.1rem;letter-spacing:.08em}
+.proof-rating .lbl{font-size:.74rem;color:var(--text-muted);letter-spacing:.04em}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards);text-align:left}
+.review{background:var(--bg-surface);padding:2rem 1.9rem;border-radius:8px;box-shadow:var(--shadow-md);
+  border:1px solid rgba(0,0,0,.04);position:relative}
+.review .q{font-family:'Barlow Condensed',sans-serif;font-size:3.4rem;line-height:.6;
+  color:var(--accent-subtle);position:absolute;top:18px;right:22px}
+.review .rs{color:var(--gold);font-size:.92rem;letter-spacing:.1em;margin-bottom:14px}
+.review p{color:var(--text-secondary);font-size:.96rem;margin-bottom:18px}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:1.1rem}
+.review .who .nm{font-weight:600;font-size:.9rem;color:var(--text-primary)}
+.review .who .dt{font-size:.74rem;color:var(--text-muted)}
+
+/* GALERIA */
+.gallery{background:var(--bg-base)}
+.gallery-inner{max-width:var(--content-max);margin:0 auto}
+.gallery-head{margin-bottom:clamp(2rem,4vw,3rem)}
+.gallery-head h2{font-size:var(--text-h2);font-weight:800}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  grid-auto-rows:clamp(150px,18vw,230px)}
+.gallery-grid figure{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm)}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;
+  transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gallery-grid figure:hover img{transform:scale(1.07)}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+@media(max-width:720px){.gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .g-wide{grid-column:span 2}.g-tall{grid-row:span 1}}
+
+/* LOCALIZAÇÃO + CTA */
+.locate{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.locate::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url('imagens/web-06.jpg') center/cover;opacity:.14}
+.locate::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(120deg,var(--bg-dark) 30%,rgba(20,17,13,.7))}
+.locate-inner{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.locate-body h2{font-size:var(--text-h2);font-weight:800;margin-bottom:18px;max-width:14ch}
+.locate-body p{color:rgba(245,240,231,.78);max-width:44ch;font-weight:300;margin-bottom:28px}
+.info-list{list-style:none;display:grid;gap:20px;margin-bottom:32px}
+.info-list li{display:flex;gap:14px;align-items:flex-start}
+.info-list svg{width:22px;height:22px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.8;margin-top:2px}
+.info-list .k{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.info-list .val{color:var(--text-inverse);font-size:.98rem}
+.info-list a.val{transition:color .25s ease}
+.info-list a.val:hover{color:var(--gold)}
+.locate-actions{display:flex;gap:14px;flex-wrap:wrap}
+.map-card{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg);
+  border:1px solid rgba(201,168,76,.2);min-height:340px;position:relative;background:var(--bg-dark-2)}
+.map-card iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.3) contrast(1.05)}
+@media(max-width:860px){.locate-inner{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--bg-dark-2);color:rgba(245,240,231,.7);
+  padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;
+  justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .b-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:1.7rem;color:var(--text-inverse);text-transform:uppercase}
+.foot-brand .b-sub{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.foot-brand p{margin-top:16px;max-width:34ch;font-size:.9rem;font-weight:300}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;
+  color:var(--text-inverse);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:rgba(245,240,231,.7);
+  margin-bottom:9px;transition:color .25s ease}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:40px auto 0;padding-top:22px;
+  border-top:1px solid rgba(245,240,231,.1);display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .25s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.gallery-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions{transition:none!important;
+    opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before,.strip-track,.scroll-hint .line{animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="b-name">Studio A15</span>
+    <span class="b-sub">Barbearia · Natal-RN</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A Casa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#prova">Clientes</a>
+    <a href="#local">Onde Estamos</a>
+    <a href="https://wa.me/5584986160299" class="nav-cta">
+      <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> 5,0 no Google · Pajuçara, Natal</div>
+    <div class="hero-eyebrow">Barbearia · Desde o primeiro corte</div>
+    <h1 class="hero-title">
+      <span class="word">Tradição</span>
+      <span class="word">na</span>
+      <span class="word">navalha,</span>
+      <span class="word"><em>padrão</em></span>
+      <span class="word">premium.</span>
+    </h1>
+    <p class="hero-sub">No Studio A15 cada corte tem hora marcada, mão firme e acabamento de quem leva o visual a sério. Aqui o homem de Natal cuida da imagem do jeito certo.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5584986160299" class="btn-primary">
+        <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Role</span><span class="line"></span></div>
+</section>
+
+<!-- FAIXA -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Corte na régua</span><span>Barba desenhada</span><span>Navalhado</span><span>Ambiente premium</span><span>Hora marcada</span>
+    <span>Corte na régua</span><span>Barba desenhada</span><span>Navalhado</span><span>Ambiente premium</span><span>Hora marcada</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="about-grid">
+    <div class="about-figure reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente interno do Studio A15 com poltrona de couro" loading="lazy">
+      <div class="stat"><div class="n">5,0</div><div class="l">Nota no Google</div></div>
+    </div>
+    <div class="about-body reveal">
+      <div class="overline">A Casa</div>
+      <h2>Uma barbearia feita pra quem não abre mão do detalhe</h2>
+      <p>O Studio A15 nasceu em Pajuçara com uma ideia simples: tratar o corte masculino como ele merece. Cadeira confortável, conversa boa, e um acabamento que você sente no espelho e percebe na rua.</p>
+      <p>Nada de fila e pressa. Aqui o atendimento é com hora marcada — você chega, senta e sai pronto pra qualquer compromisso. É essa régua que mantém nossa nota máxima no Google e os clientes voltando todo mês.</p>
+      <div class="signoff"><span class="bar"></span><span>Studio A15 — Pajuçara, Natal-RN</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="services-inner">
+    <div class="services-head">
+      <div>
+        <div class="overline">O que fazemos</div>
+        <h2 class="reveal">Serviços com padrão de barbearia de verdade</h2>
+      </div>
+      <p class="reveal">Cada serviço pensado pro homem que quer sair impecável — sem enrolação e com acabamento de mestre.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="serv-num">01</div>
+        <h3>Corte Masculino</h3>
+        <p>Corte na máquina e tesoura, desenhado pro seu rosto e finalizado na régua. Sai pronto, sem retoque em casa.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 35</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">02</div>
+        <h3>Barba Navalhada</h3>
+        <p>Toalha quente, modelagem e navalha pra um acabamento limpo. Barba desenhada do jeito que valoriza o visual.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 30</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">03</div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo num só horário: corte na régua e barba navalhada. O queridinho de quem volta sempre.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 55</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">04</div>
+        <h3>Acabamentos & Detalhes</h3>
+        <p>Pezinho, sobrancelha e finalização. Os detalhes que fazem o corte durar mais e o visual ficar redondo.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 15</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE BARBA -->
+<section class="feature">
+  <div class="feature-img" role="img" aria-label="Barbeiro aparando a barba de um cliente"></div>
+  <div class="feature-body">
+    <div class="overline">Especialidade da casa</div>
+    <h2>A barba que define o seu rosto</h2>
+    <p>Não é só passar a máquina. É toalha quente, modelagem no contorno e navalha pra um acabamento que dura. A diferença entre "fiz a barba" e "tô impecável".</p>
+    <ul class="feature-list">
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Toalha quente e óleo pra amaciar os fios</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Contorno desenhado pro formato do rosto</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Navalha e finalização com produto premium</li>
+    </ul>
+    <a href="https://wa.me/5584986160299" class="btn-primary">
+      <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+      Marcar minha barba
+    </a>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="proof" id="prova">
+  <div class="proof-inner">
+    <div class="overline center">Quem senta na cadeira</div>
+    <h2 class="reveal">Nota máxima não é sorte — é constância</h2>
+    <div class="proof-rating reveal">
+      <span class="num">5,0</span>
+      <span class="stars">★★★★★</span>
+      <span class="lbl">avaliação no Google</span>
+    </div>
+    <div class="reviews">
+      <article class="review reveal">
+        <div class="q">”</div>
+        <div class="rs">★★★★★</div>
+        <p>Melhor barbearia que já fui em Natal. Corte na régua, ambiente top e atendimento com hora marcada de verdade. Virei cliente fixo.</p>
+        <div class="who"><div class="av">R</div><div><div class="nm">Rafael M.</div><div class="dt">Cliente no Google</div></div></div>
+      </article>
+      <article class="review reveal">
+        <div class="q">”</div>
+        <div class="rs">★★★★★</div>
+        <p>Profissionais que entendem do assunto. A barba ficou impecável, exatamente como pedi. Recomendo demais pra galera de Pajuçara.</p>
+        <div class="who"><div class="av">D</div><div><div class="nm">Diego S.</div><div class="dt">Cliente no Google</div></div></div>
+      </article>
+      <article class="review reveal">
+        <div class="q">”</div>
+        <div class="rs">★★★★★</div>
+        <p>Marquei pelo WhatsApp e fui atendido na hora certa. Saí de outro nível. É o tipo de lugar que você indica sem medo.</p>
+        <div class="who"><div class="av">L</div><div><div class="nm">Lucas A.</div><div class="dt">Cliente no Google</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="overline">O ambiente</div>
+      <h2 class="reveal">Um espaço pensado no detalhe</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-tall g-wide reveal"><img src="imagens/web-01.jpg" alt="Salão do Studio A15 com cadeiras de barbeiro" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-04.jpg" alt="Barbeiro fazendo corte masculino" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-05.jpg" alt="Ferramentas de barbearia sobre a bancada" loading="lazy"></figure>
+      <figure class="g-wide reveal"><img src="imagens/web-06.jpg" alt="Detalhe da poltrona de couro" loading="lazy"></figure>
+      <figure class="g-wide reveal"><img src="imagens/web-02.jpg" alt="Ambiente premium com iluminação quente" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="locate" id="local">
+  <div class="locate-inner">
+    <div class="locate-body reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>Te esperamos em Pajuçara</h2>
+      <p>Fácil de chegar e com hora marcada pra você não perder tempo. Manda mensagem, escolhe o horário e aparece.</p>
+      <ul class="info-list">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Endereço</div><div class="val">Av. Gov. Antônio de Melo e Souza, 2445A — Pajuçara, Natal - RN, 59123-030</div></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="k">WhatsApp / Telefone</div><a class="val" href="https://wa.me/5584986160299">(84) 98616-0299</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="k">Atendimento</div><div class="val">Seg a Sáb · com hora marcada</div></div>
+        </li>
+      </ul>
+      <div class="locate-actions">
+        <a href="https://wa.me/5584986160299" class="btn-primary">
+          <svg class="wa-ico" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+          Agendar agora
+        </a>
+        <a href="https://www.google.com/maps/place/Studio+A15+-+Barbearia/@-5.7421669,-35.2458442,17z/data=!3m1!4b1!4m6!3m5!1s0x7b3ab7998890125:0x932471200f508df7!8m2!3d-5.7421669!4d-35.2458442!16s%2Fg%2F11nc6wdgl5?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener" class="btn-ghost">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Mapa do Studio A15 - Barbearia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=-5.7421669,-35.2458442&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="b-name">Studio A15</div>
+      <div class="b-sub">Barbearia · Natal-RN</div>
+      <p>Corte, barba e cuidado masculino com padrão premium em Pajuçara. Nota 5,0 no Google.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#prova">Clientes</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5584986160299">WhatsApp: (84) 98616-0299</a>
+      <p>Av. Gov. Antônio de Melo e Souza, 2445A</p>
+      <p>Pajuçara, Natal - RN</p>
+      <a href="https://wa.me/5584986160299">Agendar horário</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Studio A15 - Barbearia. Todos os direitos reservados.</span>
+    <span>Pajuçara · Natal - RN</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5584986160299" class="wa-fab" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

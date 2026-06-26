@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nice Centro de Estética — Anápolis, GO | Estética avançada</title>
+<meta name="description" content="Nice Centro de Estética em Anápolis-GO. Limpeza de pele, tratamentos faciais, massagens e protocolos corporais. Nota 4.7 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superficie */
+  --bg-base:#f7f2ec;
+  --bg-surface:#fffdfa;
+  --bg-inset:#efe7dc;
+  --bg-dark:#241c17;
+  /* texto */
+  --text-primary:#221d18;
+  --text-secondary:#5c534a;
+  --text-muted:#94897c;
+  --text-inverse:#f7f2ec;
+  /* marca */
+  --accent:#b07a63;
+  --accent-dark:#925f4b;
+  --accent-subtle:rgba(176,122,99,.10);
+  --accent-border:rgba(176,122,99,.22);
+  --gold:#c9a24c;
+  --gold-light:#e0c068;
+  /* sombras */
+  --shadow-sm:0 1px 2px rgba(60,40,30,.05),0 2px 6px rgba(60,40,30,.05);
+  --shadow-md:0 2px 4px rgba(60,40,30,.05),0 8px 18px rgba(60,40,30,.07),0 20px 40px rgba(60,40,30,.05);
+  --shadow-lg:0 4px 8px rgba(60,40,30,.05),0 16px 32px rgba(60,40,30,.07),0 40px 80px rgba(60,40,30,.09);
+  --shadow-accent:0 10px 28px rgba(176,122,99,.32);
+  --shadow-accent-strong:0 16px 40px rgba(176,122,99,.42);
+  /* tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.3rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.03;--lh-heading:1.14;--lh-body:1.75;
+  --ls-display:-.02em;--ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,9.5rem);
+  --content-max:1200px;--prose-max:660px;--gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400;letter-spacing:var(--ls-display);line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.overline{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+.overline.center::after{content:'';width:30px;height:1px;background:currentColor}
+
+/* botoes */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;padding:.85rem 1.6rem;min-height:48px;
+  border:1px solid var(--accent-border);color:var(--text-primary);border-radius:50px;
+  font-weight:500;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),background .3s ease,border-color .3s ease;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.btn-ghost:hover{transform:translateY(-3px);background:var(--accent-subtle);border-color:var(--accent)}
+.btn-primary svg,.btn-ghost svg{width:17px;height:17px;flex:none}
+
+/* header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{background:rgba(36,28,23,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(201,162,76,.25);padding-top:13px;padding-bottom:13px}
+.brand{display:flex;flex-direction:column;line-height:1;transition:color .35s ease}
+.brand .b-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;letter-spacing:.01em}
+.brand .b-sub{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-top:5px;font-weight:500}
+header.scrolled .brand{color:var(--text-inverse)}
+header.scrolled .brand .b-sub{color:var(--gold-light)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.8rem;letter-spacing:.05em;color:var(--text-secondary);transition:color .25s ease}
+header.scrolled .nav-links a{color:rgba(247,242,236,.8)}
+.nav-links a:hover{color:var(--accent)}
+header.scrolled .nav-links a:hover{color:var(--gold-light)}
+.nav-cta{font-size:.74rem!important;letter-spacing:.07em;text-transform:uppercase;padding:.6rem 1.3rem;border:1px solid var(--accent-border);border-radius:50px;color:var(--accent)!important}
+header.scrolled .nav-cta{border-color:rgba(201,162,76,.4);color:var(--gold-light)!important}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* hero split */
+.hero{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh}
+.hero-copy{
+  position:relative;background:var(--bg-dark);color:var(--text-inverse);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(5rem,8vw,7rem) clamp(1.6rem,4vw,3.6rem) clamp(3rem,5vw,4rem);
+  overflow:hidden;z-index:2;
+}
+.hero-copy::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.hero-copy>*{position:relative;z-index:1}
+.hero-copy .overline{color:var(--gold-light)}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);font-weight:300;max-width:14ch;margin-bottom:1.4rem;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}
+.hero-title .word:nth-child(2){animation-delay:.36s}
+.hero-title .word:nth-child(3){animation-delay:.47s}
+.hero-title .word:nth-child(4){animation-delay:.58s}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-lead{color:rgba(247,242,236,.78);max-width:42ch;margin-bottom:2.2rem;font-size:1.02rem;opacity:0;animation:fade-in 1s ease .9s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1.1s forwards}
+.hero-actions .btn-ghost{color:var(--text-inverse);border-color:rgba(247,242,236,.22)}
+.hero-actions .btn-ghost:hover{background:rgba(247,242,236,.08);border-color:var(--gold-light)}
+.hero-meta{display:flex;align-items:center;gap:22px;margin-top:2.6rem;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1.3s forwards}
+.hero-meta .divline{width:1px;height:34px;background:rgba(247,242,236,.16)}
+.hero-meta small{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.hero-meta strong{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(36,28,23,.45) 0%,transparent 26%);pointer-events:none}
+/* selo 4.7 sobre foto */
+.rating-badge{
+  position:absolute;right:clamp(1.2rem,3vw,2.4rem);bottom:clamp(1.2rem,3vw,2.4rem);z-index:3;
+  display:flex;align-items:center;gap:13px;padding:13px 20px;border-radius:16px;
+  background:rgba(255,253,250,.14);backdrop-filter:blur(13px) saturate(160%);-webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 2px 4px rgba(0,0,0,.08),0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  color:#fff;
+}
+.rating-badge .score{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:500;line-height:1}
+.rating-badge .stars{display:flex;gap:2px;margin-bottom:3px}
+.rating-badge .stars svg{width:13px;height:13px}
+.rating-badge .lbl{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:64vw;min-height:340px;order:-1}
+  .hero-copy{padding-top:6.5rem}
+}
+
+/* section base */
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.sec-head{max-width:var(--prose-max)}
+.sec-head h2{font-size:var(--text-h2);font-weight:300;margin-bottom:1rem}
+.sec-head p{color:var(--text-secondary)}
+.sec-head em{font-style:italic;color:var(--accent)}
+
+/* diagonal cut sobre */
+.sobre{
+  background:var(--bg-surface);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw);
+}
+.sobre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2.4rem,5vw,5rem);align-items:center}
+.sobre-imgwrap{position:relative}
+.sobre-imgwrap img{border-radius:8px;box-shadow:var(--shadow-lg);width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.sobre-imgwrap .tag{
+  position:absolute;left:-22px;bottom:34px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:18px 24px;border-radius:8px;box-shadow:var(--shadow-md);max-width:210px;
+}
+.sobre-imgwrap .tag .num{font-family:'Cormorant Garamond',serif;font-size:2.3rem;color:var(--gold-light);line-height:1}
+.sobre-imgwrap .tag span{font-size:.72rem;color:rgba(247,242,236,.7);letter-spacing:.04em}
+.sobre-text h2{font-size:var(--text-h2);font-weight:300;margin-bottom:1.3rem}
+.sobre-text h2 em{font-style:italic;color:var(--accent)}
+.sobre-text p{color:var(--text-secondary);margin-bottom:1.1rem;max-width:50ch}
+.pillars{display:flex;gap:30px;margin-top:1.8rem;flex-wrap:wrap}
+.pillars div{flex:1;min-width:120px}
+.pillars .pk{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--accent);line-height:1.1}
+.pillars .pl{font-size:.82rem;color:var(--text-muted)}
+@media(max-width:840px){.sobre-grid{grid-template-columns:1fr}.sobre-imgwrap{order:-1}.sobre-imgwrap img{aspect-ratio:16/11}.sobre-imgwrap .tag{left:14px}}
+
+/* servicos */
+.servicos{background:var(--bg-base)}
+.serv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(2.4rem,5vw,3.5rem)}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(176,122,99,.12);border-radius:10px;overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+  box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ph{aspect-ratio:4/3;overflow:hidden}
+.serv-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .ph img{transform:scale(1.05)}
+.serv-body{padding:1.7rem 1.6rem 1.9rem}
+.serv-body .overline{font-size:.62rem;margin-bottom:10px}
+.serv-body h3{font-size:var(--text-h3);font-weight:400;margin-bottom:.6rem}
+.serv-body p{font-size:.92rem;color:var(--text-secondary);line-height:1.65}
+.serv-list{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:7px}
+.serv-list li{font-size:.84rem;color:var(--text-secondary);display:flex;align-items:center;gap:9px}
+.serv-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+@media(max-width:900px){.serv-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.serv-grid{grid-template-columns:1fr}}
+
+/* prova social - dark */
+.prova{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.prova::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.prova .wrap{position:relative;z-index:1}
+.prova-top{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.2rem,5vw,4.5rem);align-items:center;margin-bottom:clamp(2.6rem,5vw,4rem)}
+.prova-feat{position:relative}
+.prova-feat img{border-radius:10px;width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow-lg)}
+.prova-score{display:flex;align-items:center;gap:18px;margin-bottom:1.6rem}
+.prova-score .big{font-family:'Cormorant Garamond',serif;font-size:clamp(3.4rem,7vw,5rem);line-height:1;color:var(--gold-light)}
+.prova-score .stars{display:flex;gap:3px;margin-bottom:6px}
+.prova-score .stars svg{width:17px;height:17px}
+.prova-score small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,242,236,.6)}
+.prova-intro .overline{color:var(--gold-light)}
+.prova-intro h2{font-size:var(--text-h2);font-weight:300;margin-bottom:1rem}
+.prova-intro h2 em{font-style:italic;color:var(--gold-light)}
+.prova-intro p{color:rgba(247,242,236,.74);max-width:46ch}
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.depo{background:rgba(247,242,236,.05);border:1px solid rgba(247,242,236,.1);border-radius:10px;padding:1.7rem 1.6rem}
+.depo .stars{display:flex;gap:2px;margin-bottom:1rem}
+.depo .stars svg{width:14px;height:14px}
+.depo p{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-style:italic;font-weight:300;line-height:1.45;color:rgba(247,242,236,.92);margin-bottom:1.1rem}
+.depo .who{font-size:.78rem;letter-spacing:.04em;color:var(--text-muted)}
+.depo .who b{color:var(--text-inverse);font-weight:500}
+@media(max-width:840px){.prova-top{grid-template-columns:1fr}.prova-feat{max-width:360px}.depo-grid{grid-template-columns:1fr}}
+
+/* localizacao */
+.local{background:var(--bg-inset)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.local-info h2{font-size:var(--text-h2);font-weight:300;margin-bottom:1.2rem}
+.local-info h2 em{font-style:italic;color:var(--accent)}
+.info-row{display:flex;gap:15px;padding:1.1rem 0;border-bottom:1px solid rgba(176,122,99,.16)}
+.info-row .ic{width:38px;height:38px;flex:none;border-radius:50%;background:var(--accent-subtle);display:flex;align-items:center;justify-content:center}
+.info-row .ic svg{width:18px;height:18px;color:var(--accent)}
+.info-row .t{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.info-row .v{font-size:.98rem;color:var(--text-primary)}
+.info-row a.v:hover{color:var(--accent)}
+.local-cta{margin-top:1.8rem;display:flex;gap:13px;flex-wrap:wrap}
+.map-card{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;min-height:340px;background:var(--bg-dark)}
+.map-card iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.02)}
+@media(max-width:840px){.local-grid{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.2rem;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.045;pointer-events:none}
+.foot-grid{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.foot-brand .fb{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:500}
+.foot-brand .fbs{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);margin:6px 0 1.2rem}
+.foot-brand p{color:rgba(247,242,236,.62);max-width:34ch;font-size:.92rem}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:600;margin-bottom:1.1rem}
+.foot-col a,.foot-col p{display:block;color:rgba(247,242,236,.72);font-size:.9rem;margin-bottom:.7rem}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{position:relative;z-index:1;max-width:var(--content-max);margin:clamp(2.4rem,5vw,3.4rem) auto 0;padding-top:1.6rem;border-top:1px solid rgba(247,242,236,.12);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:2.2rem}}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-img img{animation:none}
+  .hero-title .word,.hero-lead,.hero-actions,.hero-meta{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  .serv-card:hover .ph img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand" aria-label="Nice Centro de Estética — início">
+    <span class="b-name">Nice</span>
+    <span class="b-sub">Centro de Estética</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A clínica</a>
+    <a href="#servicos">Procedimentos</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#local">Localização</a>
+    <a class="nav-cta" href="https://wa.me/5562981430814">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-copy">
+    <span class="overline">Estética avançada · Anápolis, GO</span>
+    <h1 class="hero-title">
+      <span class="word">Cuidado</span>
+      <span class="word">que</span>
+      <span class="word">realmente</span>
+      <span class="word"><em>transforma.</em></span>
+    </h1>
+    <p class="hero-lead">Na Nice Centro de Estética, cada protocolo é pensado para realçar o que você tem de melhor — com técnica, acolhimento e resultado que se vê no espelho.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5562981430814">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.215z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#servicos">Ver procedimentos</a>
+    </div>
+    <div class="hero-meta">
+      <div>
+        <small>Nota no Google</small>
+        <strong>4.7 ★</strong>
+      </div>
+      <span class="divline"></span>
+      <div>
+        <small>Onde estamos</small>
+        <strong>Setor Pedro Ludovico</strong>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/web-01.jpg" alt="Sessão de tratamento facial na Nice Centro de Estética" fetchpriority="high">
+    <div class="rating-badge" aria-label="Nota 4.7 no Google">
+      <span class="score">4.7</span>
+      <div>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+        </div>
+        <span class="lbl">Avaliações reais no Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-text reveal">
+      <span class="overline">Sobre a clínica</span>
+      <h2>Um espaço pensado para o seu <em>bem-estar</em> de verdade.</h2>
+      <p>A Nice Centro de Estética nasceu para oferecer em Anápolis uma experiência completa de cuidado: ambiente acolhedor, protocolos atualizados e atenção real a cada detalhe da sua pele e do seu corpo.</p>
+      <p>Aqui você não é só mais um horário na agenda. Cada atendimento começa com uma avaliação para entender o que você precisa — e termina com um resultado que faz você querer voltar. É por isso que mantemos uma nota 4.7 no Google.</p>
+      <div class="pillars">
+        <div>
+          <div class="pk">Avaliação</div>
+          <div class="pl">personalizada antes de cada protocolo</div>
+        </div>
+        <div>
+          <div class="pk">Conforto</div>
+          <div class="pl">ambiente tranquilo e higienizado</div>
+        </div>
+        <div>
+          <div class="pk">Resultado</div>
+          <div class="pl">técnica que você vê e sente</div>
+        </div>
+      </div>
+    </div>
+    <div class="sobre-imgwrap reveal">
+      <img src="imagens/web-06.jpg" alt="Ambiente de cuidado e bem-estar da Nice Centro de Estética">
+      <div class="tag">
+        <div class="num">4.7★</div>
+        <span>de clientes satisfeitas no Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="serv-head">
+      <div class="sec-head reveal">
+        <span class="overline">Procedimentos</span>
+        <h2>Tratamentos para <em>pele, rosto e corpo</em>.</h2>
+      </div>
+      <a class="btn-ghost reveal" href="https://wa.me/5562981430814">Tirar dúvida no WhatsApp</a>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="ph"><img src="imagens/web-02.jpg" alt="Limpeza de pele profunda e tratamento facial"></div>
+        <div class="serv-body">
+          <span class="overline">Facial</span>
+          <h3>Limpeza de pele &amp; faciais</h3>
+          <p>Pele limpa, renovada e iluminada com protocolos que cuidam de cravos, oleosidade e textura.</p>
+          <ul class="serv-list">
+            <li>Limpeza de pele profunda</li>
+            <li>Máscaras e revitalização facial</li>
+            <li>Cuidado para acne e oleosidade</li>
+          </ul>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ph"><img src="imagens/web-03.jpg" alt="Massagem modeladora e terapias corporais"></div>
+        <div class="serv-body">
+          <span class="overline">Corporal</span>
+          <h3>Massagens &amp; corporais</h3>
+          <p>Relaxamento e modelagem em sessões que aliviam tensões e ajudam o corpo a recuperar o equilíbrio.</p>
+          <ul class="serv-list">
+            <li>Massagem modeladora</li>
+            <li>Massagem relaxante</li>
+            <li>Protocolos para o contorno corporal</li>
+          </ul>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ph"><img src="imagens/web-04.jpg" alt="Tratamento facial relaxante e bem-estar"></div>
+        <div class="serv-body">
+          <span class="overline">Bem-estar</span>
+          <h3>Tratamentos &amp; rejuvenescimento</h3>
+          <p>Procedimentos para firmeza, viço e autoestima — com um momento de pausa que você merece.</p>
+          <ul class="serv-list">
+            <li>Rejuvenescimento facial</li>
+            <li>Hidratação e firmeza da pele</li>
+            <li>Cuidados de relaxamento</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap">
+    <div class="prova-top">
+      <div class="prova-feat reveal">
+        <img src="imagens/web-05.jpg" alt="Cliente satisfeita após atendimento na Nice Centro de Estética">
+      </div>
+      <div class="prova-intro reveal">
+        <div class="prova-score">
+          <span class="big">4.7</span>
+          <div>
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+              <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+              <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+              <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+              <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+            </div>
+            <small>Avaliação média no Google</small>
+          </div>
+        </div>
+        <span class="overline">Quem já passou por aqui</span>
+        <h2>A confiança de quem <em>volta sempre</em>.</h2>
+        <p>Nossa maior propaganda são as clientes que saem satisfeitas e indicam a Nice para amigas e família. Veja o que dizem sobre o atendimento.</p>
+      </div>
+    </div>
+    <div class="depo-grid">
+      <div class="depo reveal">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+        </div>
+        <p>"Saí com a pele renovada e o atendimento foi impecável. Me senti cuidada do começo ao fim."</p>
+        <span class="who"><b>Ana Paula</b> · cliente em Anápolis</span>
+      </div>
+      <div class="depo reveal">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+        </div>
+        <p>"Ambiente tranquilo, limpo e profissionais que sabem o que fazem. Virei cliente fiel."</p>
+        <span class="who"><b>Camila R.</b> · Setor Pedro Ludovico</span>
+      </div>
+      <div class="depo reveal">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg><svg viewBox="0 0 24 24" fill="#e0c068"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.171L12 18.896l-7.335 3.857 1.401-8.171L.132 9.211l8.2-1.193z"/></svg>
+        </div>
+        <p>"Faço minhas sessões aqui há meses. Resultado de verdade e um carinho que faz diferença."</p>
+        <span class="who"><b>Juliana M.</b> · cliente desde 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="local-info reveal">
+      <span class="overline">Localização &amp; contato</span>
+      <h2>Venha nos <em>visitar</em> em Anápolis.</h2>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div>
+          <div class="t">Endereço</div>
+          <a class="v" href="https://www.google.com/maps/place/Nice+Centro+de+Est%C3%A9tica/@-16.3497792,-48.9741626,17z/data=!3m1!4b1!4m6!3m5!1s0x935ea36e248a2243:0x9b206fe28165f7e3!8m2!3d-16.3497792!4d-48.9741626!16s%2Fg%2F11b6hn685f?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Av. Pedro Ludovico, Qd. 02 - Lt. 21 — St. Res. Pedro Ludovico, Anápolis - GO, 75124-884</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+        <div>
+          <div class="t">Telefone / WhatsApp</div>
+          <a class="v" href="https://wa.me/5562981430814">(62) 98143-0814</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div>
+          <div class="t">Atendimento</div>
+          <div class="v">Segunda a sábado · com hora marcada</div>
+        </div>
+      </div>
+      <div class="local-cta">
+        <a class="btn-primary" href="https://wa.me/5562981430814">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.215z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Nice+Centro+de+Est%C3%A9tica/@-16.3497792,-48.9741626,17z/data=!3m1!4b1!4m6!3m5!1s0x935ea36e248a2243:0x9b206fe28165f7e3!8m2!3d-16.3497792!4d-48.9741626!16s%2Fg%2F11b6hn685f?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Mapa da Nice Centro de Estética em Anápolis" src="https://www.google.com/maps?q=-16.3497792,-48.9741626&hl=pt-BR&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="fb">Nice</div>
+      <div class="fbs">Centro de Estética</div>
+      <p>Estética avançada em Anápolis-GO. Cuidado, técnica e resultado para a sua pele, seu rosto e seu corpo.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A clínica</a>
+      <a href="#servicos">Procedimentos</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#local">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5562981430814">WhatsApp (62) 98143-0814</a>
+      <p>Av. Pedro Ludovico, Qd. 02 - Lt. 21<br>St. Res. Pedro Ludovico — Anápolis, GO</p>
+      <a href="https://www.google.com/maps/place/Nice+Centro+de+Est%C3%A9tica/@-16.3497792,-48.9741626,17z/data=!3m1!4b1!4m6!3m5!1s0x935ea36e248a2243:0x9b206fe28165f7e3!8m2!3d-16.3497792!4d-48.9741626!16s%2Fg%2F11b6hn685f?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Maps · 4.7 ★</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Nice Centro de Estética · Anápolis, GO</span>
+    <span>Agende sua avaliação pelo WhatsApp</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5562981430814" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.215zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

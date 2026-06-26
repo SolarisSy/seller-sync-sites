@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Maison for Men — Barbearia de alto padrão em Aparecida de Goiânia</title>
+<meta name="description" content="Barbearia Maison for Men em Aparecida de Goiânia, GO. Corte, barba e cuidado masculino com padrão premium. 4,9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f6f2ec; --bg-surface:#fffdf9; --bg-inset:#ece5db; --bg-dark:#15110e; --bg-dark2:#1d1814;
+  --text-primary:#1b1714; --text-secondary:#4a433d; --text-muted:#8a8278; --text-inverse:#f6f2ec;
+  --accent:#c0392b; --accent-dark:#962a20;
+  --accent-subtle:rgba(192,57,43,.10); --accent-border:rgba(192,57,43,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+
+  --text-display:clamp(2.9rem,2rem + 4.6vw,6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.92rem,.85rem + .3vw,1.02rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.0; --lh-heading:1.12; --lh-body:1.72;
+  --ls-display:-0.02em; --ls-overline:.18em;
+
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:640px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.05),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.10);
+  --shadow-accent:0 8px 24px rgba(192,57,43,.32);
+  --shadow-accent-strong:0 14px 34px rgba(192,57,43,.42);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-base);color:var(--text-primary);
+  font-size:var(--text-body);line-height:var(--lh-body);font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;
+  font-size:.7rem;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);
+  font-weight:600;margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.light{color:var(--gold)}
+.overline.center{justify-content:center}
+
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,#2ecb6a,#1ea855);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.05em;
+  text-transform:uppercase;text-decoration:none;border-radius:50px;
+  box-shadow:0 8px 24px rgba(37,211,102,.32);
+  transition:transform .3s var(--ease),box-shadow .3s ease;will-change:transform;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(37,211,102,.45)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:20px;height:20px;fill:currentColor}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:.9rem 1.8rem;min-height:50px;
+  border:1px solid rgba(246,242,236,.3);color:var(--text-inverse);border-radius:50px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.05em;
+  text-transform:uppercase;text-decoration:none;transition:border-color .3s ease,background .3s ease,transform .3s var(--ease);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.08);transform:translateY(-2px)}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(21,17,14,.92);backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%);box-shadow:0 1px 0 rgba(201,168,76,.22);padding:10px clamp(1.5rem,5vw,4rem)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,168,76,.4)}
+.brand-txt{font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--text-inverse);font-size:1.15rem;line-height:1}
+.brand-txt span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a:not(.btn-primary){color:rgba(246,242,236,.82);text-decoration:none;font-size:.9rem;font-weight:500;
+  letter-spacing:.02em;transition:color .25s ease}
+.nav a:not(.btn-primary):hover{color:var(--gold)}
+.nav .btn-primary{padding:.6rem 1.3rem;min-height:42px;font-size:.85rem}
+.nav-links{display:flex;gap:30px;align-items:center}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ── HERO MODELO B — split 40/60 ── */
+.hero{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh}
+.hero-copy{position:relative;background:var(--bg-dark);display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,10vh,8rem) clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vh,4rem);overflow:hidden}
+.hero-copy::before{content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.055;pointer-events:none}
+.hero-copy::after{content:'';position:absolute;right:-1px;top:0;bottom:0;width:5px;
+  background:linear-gradient(var(--accent),var(--gold));z-index:2}
+.hero-copy>*{position:relative;z-index:1}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;color:var(--text-inverse);
+  font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  max-width:13ch;margin-bottom:22px;overflow:hidden}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s var(--ease) forwards}
+.hero-title em{font-style:normal;color:var(--accent)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .line:nth-child(2) .word{animation-delay:.28s}
+.hero-title .line:nth-child(3) .word{animation-delay:.41s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(246,242,236,.78);font-size:clamp(.95rem,.9rem+.3vw,1.1rem);max-width:42ch;
+  margin-bottom:30px;opacity:0;animation:fade-in .9s var(--ease) .7s forwards}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in .9s var(--ease) .85s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-media{position:relative;overflow:hidden;background:#000}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-media::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(21,17,14,.55) 0%,transparent 40%)}
+.hero-badge{position:absolute;bottom:26px;right:26px;z-index:3;
+  display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:14px;
+  background:rgba(21,17,14,.42);backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(246,242,236,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.16)}
+.hero-badge .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.9rem;color:#fff;line-height:1}
+.hero-badge .stars{color:var(--gold);font-size:.8rem;letter-spacing:2px}
+.hero-badge .lbl{color:rgba(246,242,236,.8);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{height:62vw;min-height:300px;order:-1}
+  .hero-media img{object-position:center 25%}
+  .hero-copy{padding:7rem 1.6rem 3rem}
+  .hero-copy::after{display:none}
+}
+
+/* ── SOBRE ── */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-img{position:relative}
+.sobre-img img{width:100%;border-radius:14px;box-shadow:var(--shadow-lg);object-fit:cover;aspect-ratio:4/5}
+.sobre-img .frame{position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--accent-border);border-radius:14px;z-index:-1}
+.sobre h2{font-size:var(--text-h2);font-weight:800;margin-bottom:18px;max-width:16ch;letter-spacing:var(--ls-display)}
+.sobre h2 em{font-style:normal;color:var(--accent)}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:16px}
+.sobre-stats{display:flex;gap:clamp(1.4rem,4vw,3rem);margin-top:32px;flex-wrap:wrap}
+.stat .n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.4rem;color:var(--text-primary);line-height:1}
+.stat .n span{color:var(--accent)}
+.stat .l{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-top:4px}
+@media(max-width:780px){.sobre-grid{grid-template-columns:1fr}.sobre-img{order:-1;max-width:440px;margin:0 auto}}
+
+/* ── SERVIÇOS (dark, diagonal cut) ── */
+.servicos{background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%)}
+.servicos::before{content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none}
+.servicos-inner{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1}
+.serv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.serv-head h2{font-size:var(--text-h2);font-weight:800;color:#fff;max-width:14ch;letter-spacing:var(--ls-display)}
+.serv-head h2 em{font-style:normal;color:var(--gold)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap-cards)}
+.serv-card{background:rgba(246,242,236,.04);border:1px solid rgba(246,242,236,.1);border-radius:14px;
+  padding:30px 28px;transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease,background .25s ease}
+.serv-card:hover{transform:translateY(-6px);border-color:var(--accent-border);background:rgba(246,242,236,.06);
+  box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.serv-card .idx{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;color:var(--gold);
+  letter-spacing:.12em;display:block;margin-bottom:16px}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;color:#fff;margin-bottom:10px}
+.serv-card p{color:rgba(246,242,236,.7);font-size:.92rem;margin-bottom:18px}
+.serv-card .price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:#fff}
+.serv-card .price small{font-size:.7rem;color:var(--text-muted);font-weight:500;display:block;text-transform:uppercase;letter-spacing:.08em}
+.serv-card .price .ac{color:var(--accent)}
+
+/* ── PROVA / GALERIA ── */
+.prova{background:var(--bg-inset)}
+.prova-inner{max-width:var(--content-max);margin:0 auto}
+.prova-top{text-align:center;margin-bottom:48px}
+.prova-top h2{font-size:var(--text-h2);font-weight:800;max-width:18ch;margin:0 auto;letter-spacing:var(--ls-display)}
+.prova-top h2 em{font-style:normal;color:var(--accent)}
+.gallery{display:grid;grid-template-columns:1.4fr 1fr;grid-auto-rows:1fr;gap:14px;margin-bottom:56px}
+.gallery figure{position:relative;overflow:hidden;border-radius:12px;box-shadow:var(--shadow-md)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery .tall{grid-row:span 2}
+@media(max-width:680px){.gallery{grid-template-columns:1fr}.gallery .tall{grid-row:auto}}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.review{background:var(--bg-surface);border:1px solid rgba(0,0,0,.05);border-radius:14px;padding:28px 26px;box-shadow:var(--shadow-sm)}
+.review .stars{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-bottom:14px}
+.review p{color:var(--text-secondary);font-size:.95rem;margin-bottom:16px;font-style:italic}
+.review .who{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1rem}
+.review .who small{display:block;color:var(--text-muted);font-weight:400;font-size:.72rem;letter-spacing:.06em}
+
+/* ── LOCALIZAÇÃO ── */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative}
+.local::before{content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:1}
+.local h2{font-size:var(--text-h2);font-weight:800;color:#fff;margin-bottom:24px;max-width:14ch;letter-spacing:var(--ls-display)}
+.local h2 em{font-style:normal;color:var(--gold)}
+.info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(246,242,236,.1)}
+.info-row svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.6;flex-shrink:0;margin-top:2px}
+.info-row .t{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1rem;color:#fff;margin-bottom:2px}
+.info-row .d{color:rgba(246,242,236,.75);font-size:.92rem}
+.info-row a{color:var(--gold);text-decoration:none}
+.local-photo{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.local-photo img{width:100%;height:100%;object-fit:cover}
+.local-cta{margin-top:10px}
+@media(max-width:780px){.local-grid{grid-template-columns:1fr}.local-photo{max-width:440px;margin:0 auto;aspect-ratio:4/3}}
+
+/* ── FOOTER ── */
+footer{background:#0e0b09;color:rgba(246,242,236,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-inner{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;
+  gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:36px;border-bottom:1px solid rgba(246,242,236,.1)}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.foot-brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,168,76,.4)}
+.foot-brand .n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;text-transform:uppercase;line-height:1}
+.foot-brand .n span{color:var(--accent)}
+.foot-col p{font-size:.9rem;max-width:34ch}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;font-size:1rem}
+.foot-col a{display:block;color:rgba(246,242,236,.6);text-decoration:none;font-size:.9rem;margin-bottom:8px;transition:color .25s ease}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:0 auto;padding-top:22px;display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--text-muted)}
+.foot-bottom a{color:var(--text-muted);text-decoration:none}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-media img{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta{transition:none;opacity:1;transform:none;animation:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <img src="imagens/insta-2.jpg" alt="Logo Barbearia Maison for Men">
+    <span class="brand-txt">Maison <span>for</span> Men</span>
+  </a>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Ambiente</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <a href="https://wa.me/5562992856856" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO MODELO B -->
+<section class="hero" id="topo">
+  <div class="hero-copy">
+    <span class="overline light">Barbearia · Aparecida de Goiânia, GO</span>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Padrão</span></span>
+      <span class="line"><span class="word">Maison.</span></span>
+      <span class="line"><span class="word"><em>Estilo de homem.</em></span></span>
+    </h1>
+    <p class="hero-sub">Corte, barba e cuidado masculino com acabamento de alto padrão. A barbearia que Aparecida de Goiânia já recomenda — agora com agendamento direto pelo WhatsApp.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5562992856856" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/insta-4.jpg" alt="Barbeiro finalizando corte na Barbearia Maison for Men">
+    <div class="hero-badge">
+      <div class="num">4,9</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada da Barbearia Maison for Men em Aparecida de Goiânia">
+      <div class="frame" aria-hidden="true"></div>
+    </div>
+    <div class="sobre-txt reveal">
+      <span class="overline">Quem somos</span>
+      <h2>A excelência mora nos <em>detalhes</em></h2>
+      <p>A Maison for Men é uma barbearia de alto padrão em Aparecida de Goiânia, onde excelência no atendimento, profissionais experientes e um ambiente elegante se unem para entregar uma experiência única.</p>
+      <p>Mais do que cuidar da aparência, criamos momentos de conforto, estilo e bem-estar. Ambiente de tijolo aparente, iluminação cênica e o acabamento que você sente em cada corte — esse é o padrão Maison.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="n">4,9<span>★</span></div><div class="l">Nota no Google</div></div>
+        <div class="stat"><div class="n">100<span>%</span></div><div class="l">Foco no acabamento</div></div>
+        <div class="stat"><div class="n">7<span>d</span></div><div class="l">Agende quando quiser</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="servicos-inner">
+    <div class="serv-head">
+      <div>
+        <span class="overline light">O que fazemos</span>
+        <h2>Serviços com <em>assinatura Maison</em></h2>
+      </div>
+      <a href="https://wa.me/5562992856856" class="btn-ghost" target="_blank" rel="noopener">Agendar agora</a>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="idx">01 — Cabelo</span>
+        <h3>Corte Masculino</h3>
+        <p>Corte sob medida, finalizado no detalhe, com a técnica e o acabamento que viraram a marca da casa.</p>
+        <div class="price">a partir de <span class="ac">R$ 40</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="idx">02 — Barba</span>
+        <h3>Barba & Navalha</h3>
+        <p>Desenho da barba com toalha quente e navalha, hidratação e finalização. Conforto do começo ao fim.</p>
+        <div class="price">a partir de <span class="ac">R$ 35</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="idx">03 — Completo</span>
+        <h3>Combo Cabelo + Barba</h3>
+        <p>O pacote completo do homem que cuida da imagem: corte e barba alinhados no mesmo padrão Maison.</p>
+        <div class="price">a partir de <span class="ac">R$ 65</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="idx">04 — Detalhes</span>
+        <h3>Acabamento & Cuidado</h3>
+        <p>Sobrancelha, pezinho, hidratação e finalização. O detalhe que separa o bom corte do corte impecável.</p>
+        <div class="price">sob consulta <small>fale no WhatsApp</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA / GALERIA -->
+<section class="prova" id="galeria">
+  <div class="prova-inner">
+    <div class="prova-top reveal">
+      <span class="overline center">Ambiente & reputação</span>
+      <h2>Um ambiente que combina com o <em>corte</em></h2>
+    </div>
+    <div class="gallery">
+      <figure class="tall reveal"><img src="imagens/insta-5.jpg" alt="Ambiente noturno da Barbearia Maison for Men com letreiro iluminado"></figure>
+      <figure class="reveal"><img src="imagens/insta-6.jpg" alt="Corte sendo executado na Maison for Men"></figure>
+      <figure class="reveal"><img src="imagens/insta-4.jpg" alt="Barbeiro finalizando o corte com secador"></figure>
+    </div>
+    <div class="reviews">
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia da região. Atendimento impecável e o corte sai sempre do jeito que peço. Ambiente top."</p>
+        <div class="who">Cliente Maison<small>Avaliação no Google</small></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Profissionais que entendem do assunto. Saio sempre satisfeito, vale cada real. Recomendo demais."</p>
+        <div class="who">Cliente Maison<small>Avaliação no Google</small></div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Lugar de homem que se cuida. Barba feita na navalha, conforto e capricho no acabamento. Virei cliente fiel."</p>
+        <div class="who">Cliente Maison<small>Avaliação no Google</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="local-info reveal">
+      <span class="overline light">Onde estamos</span>
+      <h2>Venha conhecer a <em>Maison</em></h2>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.686-7-11a7 7 0 1114 0c0 5.314-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><div class="t">Endereço</div><div class="d">Av. da Paz, 564 — St. Garavelo<br>Aparecida de Goiânia, GO · 74930-570</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="t">WhatsApp</div><div class="d"><a href="https://wa.me/5562992856856" target="_blank" rel="noopener">(62) 99285-6856</a></div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="t">Atendimento</div><div class="d">Seg a Sáb · Agende seu horário pelo WhatsApp</div></div>
+      </div>
+      <div class="local-cta">
+        <a href="https://wa.me/5562992856856" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/place/BARBEARIA+MAISON+FOR+MEN/@-16.7686696,-49.3291472,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef82a1aa4263d:0x696c193dd7ac5e0!8m2!3d-16.7686696!4d-49.3291472!16s%2Fg%2F11dxbvm9k4?hl=pt-BR" class="btn-ghost" target="_blank" rel="noopener" style="margin-left:10px">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="local-photo reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada da Barbearia Maison for Men">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-col">
+      <div class="foot-brand">
+        <img src="imagens/insta-2.jpg" alt="Logo Maison for Men">
+        <div class="n">Maison <span>for</span> Men</div>
+      </div>
+      <p>Barbearia de alto padrão em Aparecida de Goiânia. Corte, barba e cuidado masculino com o acabamento que vira marca.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Ambiente</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5562992856856" target="_blank" rel="noopener">WhatsApp: (62) 99285-6856</a>
+      <a href="https://instagram.com/maisonformen" target="_blank" rel="noopener">Instagram: @maisonformen</a>
+      <a href="#local">Av. da Paz, 564 — St. Garavelo</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Maison for Men · Aparecida de Goiânia, GO</span>
+    <a href="https://wa.me/5562992856856" target="_blank" rel="noopener">Agende seu horário</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/5562992856856" class="wa-fab" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

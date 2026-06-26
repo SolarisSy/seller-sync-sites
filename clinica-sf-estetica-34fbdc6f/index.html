@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica SF Estética — Estética avançada em Caucaia, CE</title>
+<meta name="description" content="Clínica SF Estética em Caucaia, CE. Limpeza de pele, peelings, revitalização facial e massagem modeladora. Nota 4.9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#f7f3ee; --bg-surface:#fffdfa; --bg-inset:#efe7dd; --bg-dark:#2a211c;
+  /* Texto */
+  --text-primary:#2a211c; --text-secondary:#5c5048; --text-muted:#998b7e; --text-inverse:#f7f3ee;
+  /* Acento + marca */
+  --accent:#b07d56; --accent-dark:#8f6242;
+  --accent-subtle:rgba(176,125,86,.10); --accent-border:rgba(176,125,86,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* Sombras 3 camadas */
+  --shadow-sm:0 1px 2px rgba(42,33,28,.04),0 2px 6px rgba(42,33,28,.05);
+  --shadow-md:0 2px 4px rgba(42,33,28,.04),0 8px 18px rgba(42,33,28,.07),0 20px 40px rgba(42,33,28,.05);
+  --shadow-lg:0 4px 8px rgba(42,33,28,.05),0 16px 32px rgba(42,33,28,.08),0 40px 80px rgba(42,33,28,.10);
+  --shadow-accent:0 8px 24px rgba(176,125,86,.30);
+  --shadow-accent-strong:0 12px 34px rgba(176,125,86,.42);
+  /* Tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.1vw,1.8rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.75;
+  --ls-display:-.02em; --ls-overline:.2em;
+  /* Espaço */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base); color:var(--text-primary);
+  font-family:'Inter',sans-serif; font-size:var(--text-body); line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif; font-weight:400; line-height:var(--lh-heading); letter-spacing:var(--ls-display); font-optical-sizing:auto; text-wrap:balance}
+em{font-style:italic; color:var(--accent)}
+a{color:inherit; text-decoration:none}
+img{display:block; max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{display:flex; align-items:center; gap:12px; font-family:'Inter',sans-serif;
+  font-size:.7rem; font-weight:600; letter-spacing:var(--ls-overline); text-transform:uppercase;
+  color:var(--accent); margin-bottom:18px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{display:inline-flex; align-items:center; gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem); min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff;
+  font-family:'Inter',sans-serif; font-weight:600; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
+  border-radius:50px; box-shadow:var(--shadow-accent); border:none; cursor:pointer;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex; align-items:center; gap:9px; padding:1rem 1.8rem; min-height:50px;
+  font-family:'Inter',sans-serif; font-weight:500; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--text-inverse); border:1px solid rgba(247,243,238,.35); border-radius:50px;
+  transition:background .3s ease,border-color .3s ease; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-ghost:hover{background:rgba(247,243,238,.10); border-color:rgba(247,243,238,.6)}
+.btn-icon{width:17px;height:17px;flex:none}
+
+/* Header */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(42,33,28,.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(176,125,86,.25); padding-top:12px; padding-bottom:12px}
+.brand{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:500; letter-spacing:.01em; color:var(--text-inverse); display:flex; align-items:baseline; gap:9px}
+.brand b{font-weight:600}
+.brand .dot{color:var(--gold-light)}
+nav{display:flex; align-items:center; gap:32px}
+nav a.link{font-size:.82rem; font-weight:400; letter-spacing:.04em; color:rgba(247,243,238,.82); transition:color .25s ease}
+nav a.link:hover{color:#fff}
+nav .btn-primary{padding:.7rem 1.4rem; min-height:42px}
+.nav-links{display:flex; gap:32px}
+@media(max-width:840px){.nav-links{display:none}}
+
+/* HERO — Modelo A cinematic full-bleed */
+.hero{position:relative; height:100dvh; min-height:620px; display:grid; align-items:end; overflow:hidden}
+.hero-bg{position:absolute; inset:0; background:url('imagens/web-01.jpg') center/cover; animation:kb 24s ease-in-out infinite alternate; z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero::after{content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(155deg,rgba(42,33,28,.12) 30%,rgba(42,33,28,.62) 70%,rgba(42,33,28,.92) 100%)}
+.hero::before{content:''; position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.hero-content{position:relative; z-index:3; width:100%;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);
+  display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap}
+.hero-copy{max-width:680px}
+.hero-eyebrow{font-family:'Inter',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-light); margin-bottom:20px}
+.hero-title{font-size:var(--text-display); line-height:var(--lh-display); color:#fff; max-width:14ch; overflow:hidden}
+.hero-title .word{display:inline-block; transform:translateY(110%); opacity:0; animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(247,243,238,.88); font-size:1.05rem; max-width:46ch; margin:22px 0 30px; opacity:0; animation:fadein 1s ease .7s forwards}
+@keyframes fadein{to{opacity:1}}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap; opacity:0; animation:fadein 1s ease .9s forwards}
+.hero-badge{display:flex; flex-direction:column; gap:6px; padding:20px 26px; border-radius:18px;
+  background:rgba(247,243,238,.10); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(247,243,238,.18);
+  box-shadow:0 2px 4px rgba(0,0,0,.10),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16);
+  opacity:0; animation:fadein 1s ease 1.1s forwards}
+.hero-badge .stars{color:var(--gold-light); font-size:1rem; letter-spacing:3px}
+.hero-badge .num{font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:#fff; line-height:1}
+.hero-badge .lbl{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(247,243,238,.75)}
+.scroll-hint{position:absolute; left:50%; bottom:22px; transform:translateX(-50%); z-index:3; color:rgba(247,243,238,.6); font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:8px}
+.scroll-hint span{width:1px; height:34px; background:linear-gradient(rgba(247,243,238,.6),transparent); animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* Reveal */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* SOBRE — split assimétrico */
+.sobre{display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,5rem); align-items:center; max-width:var(--content-max); margin:0 auto}
+.sobre-media{position:relative}
+.sobre-media img{width:100%; height:clamp(360px,52vw,620px); object-fit:cover; border-radius:6px; box-shadow:var(--shadow-lg)}
+.sobre-media .tag{position:absolute; bottom:-26px; left:-26px; background:var(--bg-dark); color:var(--text-inverse);
+  padding:22px 28px; border-radius:6px; box-shadow:var(--shadow-md); max-width:230px}
+.sobre-media .tag .n{font-family:'Cormorant Garamond',serif; font-size:2.6rem; line-height:1; color:var(--gold-light)}
+.sobre-media .tag .t{font-size:.78rem; color:rgba(247,243,238,.8); margin-top:6px; letter-spacing:.04em}
+.sec-title{font-size:var(--text-h2); max-width:18ch; margin-bottom:22px}
+.prose{color:var(--text-secondary); max-width:var(--prose-max)}
+.prose p+p{margin-top:1.1rem}
+.sobre-points{list-style:none; margin-top:26px; display:flex; flex-direction:column; gap:14px}
+.sobre-points li{display:flex; gap:13px; align-items:flex-start; font-size:.96rem; color:var(--text-secondary)}
+.sobre-points svg{flex:none; width:20px; height:20px; color:var(--accent); margin-top:2px}
+@media(max-width:840px){.sobre{grid-template-columns:1fr} .sobre-media .tag{left:16px; bottom:-22px}}
+
+/* PROCEDIMENTOS */
+.proc{background:var(--bg-inset)}
+.proc-head{max-width:var(--content-max); margin:0 auto clamp(2.5rem,5vw,4rem); display:flex; justify-content:space-between; align-items:flex-end; gap:28px; flex-wrap:wrap}
+.proc-head .sec-title{margin-bottom:0}
+.proc-head p{color:var(--text-secondary); max-width:38ch}
+.proc-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap-cards)}
+@media(max-width:880px){.proc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+.serv-card{background:var(--bg-surface); border:1px solid rgba(42,33,28,.06); border-radius:8px; overflow:hidden;
+  box-shadow:var(--shadow-sm); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent-border)}
+.serv-card .ph{height:200px; overflow:hidden}
+.serv-card .ph img{width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .ph img{transform:scale(1.06)}
+.serv-body{padding:24px 24px 28px}
+.serv-body .ol{font-size:.66rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:9px}
+.serv-body h3{font-size:var(--text-h3); margin-bottom:10px}
+.serv-body p{font-size:.9rem; color:var(--text-secondary); line-height:1.65}
+.proc-foot{max-width:var(--content-max); margin:clamp(2.5rem,5vw,4rem) auto 0; text-align:center}
+.proc-foot p{color:var(--text-muted); font-size:.9rem; margin-bottom:18px}
+
+/* FAIXA ESCURA / prova social */
+.band{position:relative; background:var(--bg-dark); color:var(--text-inverse); overflow:hidden;
+  clip-path:polygon(0 0,100% 4vw,100% 100%,0 calc(100% - 4vw))}
+.band::after{content:''; position:absolute; inset:0; z-index:0; background:url('imagens/web-07.jpg') center/cover; opacity:.20}
+.band::before{content:''; position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.band-inner{position:relative; z-index:2; max-width:var(--content-max); margin:0 auto; text-align:center; padding:3vw 0}
+.band .overline{color:var(--gold-light); justify-content:center}
+.band-quote{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,1.2rem + 2vw,2.9rem); font-weight:300; line-height:1.25; max-width:20ch; margin:0 auto 18px; color:#fff}
+.band-quote em{color:var(--gold-light)}
+.band-cite{font-size:.82rem; letter-spacing:.04em; color:rgba(247,243,238,.7)}
+.stats{display:flex; justify-content:center; gap:clamp(2rem,7vw,5.5rem); flex-wrap:wrap; margin-top:46px}
+.stat .n{font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,1.5rem + 2.5vw,3.6rem); color:var(--gold-light); line-height:1}
+.stat .l{font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(247,243,238,.72); margin-top:8px}
+
+/* DEPOIMENTOS */
+.reviews{background:var(--bg-base)}
+.rev-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap-cards)}
+@media(max-width:880px){.rev-grid{grid-template-columns:1fr}}
+.rev-card{background:var(--bg-surface); border:1px solid rgba(42,33,28,.06); border-radius:8px; padding:30px 28px; box-shadow:var(--shadow-sm)}
+.rev-card .stars{color:var(--gold); letter-spacing:3px; font-size:.95rem; margin-bottom:14px}
+.rev-card p{font-family:'Cormorant Garamond',serif; font-size:1.22rem; line-height:1.5; color:var(--text-primary); margin-bottom:18px}
+.rev-card .who{display:flex; align-items:center; gap:12px}
+.rev-card .av{width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:.9rem}
+.rev-card .who b{font-size:.9rem; font-weight:600; display:block}
+.rev-card .who span{font-size:.78rem; color:var(--text-muted)}
+
+/* LOCALIZAÇÃO + CTA */
+.local{background:var(--bg-inset)}
+.local-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+@media(max-width:840px){.local-grid{grid-template-columns:1fr}}
+.local .sec-title{margin-bottom:18px}
+.info-list{list-style:none; margin:28px 0 32px; display:flex; flex-direction:column; gap:20px}
+.info-list li{display:flex; gap:16px; align-items:flex-start}
+.info-list svg{flex:none; width:22px; height:22px; color:var(--accent); margin-top:3px}
+.info-list .k{font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px}
+.info-list .v{font-size:1rem; color:var(--text-primary)}
+.map-wrap{border-radius:8px; overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:4/3; background:var(--bg-surface)}
+.map-wrap iframe{width:100%; height:100%; border:0; filter:grayscale(.2) contrast(1.02)}
+
+/* FOOTER */
+footer{background:var(--bg-dark); color:var(--text-inverse); padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap}
+.foot-brand .brand{margin-bottom:14px}
+.foot-brand p{color:rgba(247,243,238,.6); font-size:.9rem; max-width:34ch}
+.foot-col h4{font-family:'Inter',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px}
+.foot-col a,.foot-col p{display:block; color:rgba(247,243,238,.72); font-size:.9rem; margin-bottom:10px; transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max); margin:48px auto 0; padding-top:22px; border-top:1px solid rgba(247,243,238,.12); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.78rem; color:rgba(247,243,238,.5)}
+
+/* WA FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.4); transition:transform .2s; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px; height:30px; fill:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.35); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg,.serv-card .ph img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.hero-badge{transition:none!important; animation:none!important; opacity:1!important; transform:none!important}
+  .wa-fab::before,.scroll-hint span{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Clínica <b>SF</b> Estética<span class="dot">.</span></a>
+  <nav>
+    <div class="nav-links">
+      <a class="link" href="#sobre">A clínica</a>
+      <a class="link" href="#procedimentos">Procedimentos</a>
+      <a class="link" href="#depoimentos">Avaliações</a>
+      <a class="link" href="#local">Onde estamos</a>
+    </div>
+    <a class="btn-primary" href="https://wa.me/5585987960044" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Estética avançada · Caucaia — CE</p>
+      <h1 class="hero-title">
+        <span class="word">Cuidado</span>
+        <span class="word">que</span>
+        <span class="word"><em>revela</em></span>
+        <span class="word">você.</span>
+      </h1>
+      <p class="hero-sub">Tratamentos faciais e corporais com técnica, conforto e resultado de verdade — a clínica mais bem avaliada de Caucaia.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="https://wa.me/5585987960044" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          Agendar no WhatsApp
+        </a>
+        <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="stars">★★★★★</div>
+      <div class="num">4.9</div>
+      <div class="lbl">Avaliação no Google</div>
+    </div>
+  </div>
+  <div class="scroll-hint">role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-media reveal">
+    <img src="imagens/web-02.jpg" alt="Ambiente acolhedor da Clínica SF Estética">
+    <div class="tag">
+      <div class="n">+ você</div>
+      <div class="t">um espaço pensado pro seu bem-estar</div>
+    </div>
+  </div>
+  <div class="sobre-text reveal">
+    <div class="overline">A clínica</div>
+    <h2 class="sec-title">Autocuidado de verdade, com mãos que entendem de pele</h2>
+    <div class="prose">
+      <p>Na Clínica SF Estética, em Caucaia, cada atendimento começa com uma avaliação atenta da sua pele e termina com um resultado que você vê no espelho. Nada de pacote engessado: o tratamento é montado pra o que a <em>sua</em> pele precisa.</p>
+      <p>É essa entrega cuidadosa que fez a clínica chegar à nota 4.9 no Google — uma das melhores avaliadas da região. Aqui você não é mais um horário na agenda; é alguém saindo daqui mais confiante.</p>
+    </div>
+    <ul class="sobre-points">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Avaliação personalizada antes de cada protocolo</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Produtos e aparelhos profissionais</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Ambiente higienizado, reservado e confortável</li>
+    </ul>
+    <div style="margin-top:32px"><a class="btn-primary" href="https://wa.me/5585987960044" target="_blank" rel="noopener">Falar com a clínica</a></div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="proc-head">
+    <div class="reveal">
+      <div class="overline">O que fazemos</div>
+      <h2 class="sec-title">Procedimentos faciais e corporais</h2>
+    </div>
+    <p class="reveal">Da limpeza de pele à revitalização e à massagem modeladora — protocolos para cada objetivo, sempre adaptados a você.</p>
+  </div>
+  <div class="proc-grid">
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-03.jpg" alt="Limpeza de pele profunda"></div>
+      <div class="serv-body">
+        <div class="ol">Facial</div>
+        <h3>Limpeza de pele profunda</h3>
+        <p>Higienização, extração e hidratação que desobstruem os poros e devolvem o viço — pele macia e renovada na hora.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-04.jpg" alt="Peeling e revitalização facial com aparelho"></div>
+      <div class="serv-body">
+        <div class="ol">Renovação</div>
+        <h3>Peeling &amp; revitalização</h3>
+        <p>Tratamentos que atenuam manchas, marcas e textura irregular, estimulando uma pele mais uniforme e iluminada.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-06.jpg" alt="Tratamento facial revitalizante"></div>
+      <div class="serv-body">
+        <div class="ol">Rejuvenescimento</div>
+        <h3>Revitalização facial</h3>
+        <p>Protocolos de firmeza e luminosidade que suavizam linhas finas e devolvem o aspecto descansado e saudável.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-05.jpg" alt="Massagem modeladora corporal"></div>
+      <div class="serv-body">
+        <div class="ol">Corporal</div>
+        <h3>Massagem modeladora</h3>
+        <p>Técnica que ajuda a modelar o contorno, reduzir medidas e melhorar a circulação, com relaxamento profundo.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-01.jpg" alt="Máscara facial e cuidados com a pele"></div>
+      <div class="serv-body">
+        <div class="ol">Bem-estar</div>
+        <h3>Máscaras &amp; hidratação</h3>
+        <p>Ativos que nutrem, acalmam e devolvem o equilíbrio à pele — um ritual de cuidado do começo ao fim.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-07.jpg" alt="Avaliação estética personalizada"></div>
+      <div class="serv-body">
+        <div class="ol">Personalizado</div>
+        <h3>Avaliação &amp; protocolo</h3>
+        <p>Conversamos, analisamos sua pele e montamos um plano sob medida pro seu objetivo. É por aqui que tudo começa.</p>
+      </div>
+    </article>
+  </div>
+  <div class="proc-foot reveal">
+    <p>Não sabe por onde começar? A gente te orienta sem compromisso.</p>
+    <a class="btn-primary" href="https://wa.me/5585987960044" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+  </div>
+</section>
+
+<!-- FAIXA ESCURA -->
+<section class="band">
+  <div class="band-inner">
+    <div class="overline center">Quem já passou por aqui</div>
+    <p class="band-quote">“Saí me sentindo <em>outra pessoa</em>. Atendimento atencioso e resultado que a gente vê.”</p>
+    <p class="band-cite">— Clientes da Clínica SF Estética, em avaliações no Google</p>
+    <div class="stats">
+      <div class="stat"><div class="n">4.9</div><div class="l">Nota no Google</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">Atendimento personalizado</div></div>
+      <div class="stat"><div class="n">Caucaia</div><div class="l">Arianópoles — CE</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="reviews" id="depoimentos">
+  <div class="proc-head">
+    <div class="reveal">
+      <div class="overline">Avaliações</div>
+      <h2 class="sec-title">A confiança de quem cuida da pele aqui</h2>
+    </div>
+    <p class="reveal">Uma reputação 4.9 construída atendimento por atendimento, na base do cuidado e do resultado.</p>
+  </div>
+  <div class="rev-grid">
+    <article class="rev-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>“Profissional excelente, ambiente limpo e tranquilo. Minha pele mudou depois da limpeza de pele.”</p>
+      <div class="who"><div class="av">M</div><div><b>Mariana L.</b><span>Caucaia, CE</span></div></div>
+    </article>
+    <article class="rev-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>“Atendimento atencioso do início ao fim. Expliquei o que queria e montaram tudo certinho pra mim.”</p>
+      <div class="who"><div class="av">A</div><div><b>Aline S.</b><span>Caucaia, CE</span></div></div>
+    </article>
+    <article class="rev-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>“Recomendo demais. Saí relaxada e com a autoestima lá em cima. Virei cliente fixa.”</p>
+      <div class="who"><div class="av">J</div><div><b>Juliana R.</b><span>Caucaia, CE</span></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="reveal">
+      <div class="overline">Onde estamos</div>
+      <h2 class="sec-title">Pertinho de você, em Caucaia</h2>
+      <p class="prose">Estamos na Av. Airton Senna, no bairro Arianópoles. Agende seu horário pelo WhatsApp e venha viver um momento só seu.</p>
+      <ul class="info-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Endereço</div><div class="v">Av. Airton Senna, 2040 b — Arianópoles<br>Caucaia — CE, 61656-030</div></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div class="k">WhatsApp</div><div class="v">(85) 98796-0044</div></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div class="k">Atendimento</div><div class="v">Com hora marcada — chame no WhatsApp</div></div>
+        </li>
+      </ul>
+      <div style="display:flex; gap:14px; flex-wrap:wrap">
+        <a class="btn-primary" href="https://wa.me/5585987960044" target="_blank" rel="noopener">Agendar horário</a>
+        <a class="btn-ghost" style="color:var(--accent); border-color:var(--accent-border)" href="https://www.google.com/maps/place/Cl%C3%ADnica+SF+Est%C3%A9tica/@-3.7663903,-38.6516542,17z/data=!3m1!4b1!4m6!3m5!1s0x7c74d190446609b:0x83a4fad034fbdc6f!8m2!3d-3.7663903!4d-38.6516542!16s%2Fg%2F11krqkj3fh?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe title="Mapa — Clínica SF Estética" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=-3.7663903,-38.6516542&hl=pt-BR&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="brand">Clínica <b>SF</b> Estética<span class="dot">.</span></div>
+      <p>Estética facial e corporal em Caucaia, CE. Cuidado, técnica e resultado — pela autoestima de quem confia na gente.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#depoimentos">Avaliações</a>
+      <a href="#local">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <p>Av. Airton Senna, 2040 b<br>Arianópoles — Caucaia, CE</p>
+      <a href="https://wa.me/5585987960044" target="_blank" rel="noopener">WhatsApp: (85) 98796-0044</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Clínica SF Estética. Todos os direitos reservados.</span>
+    <span>Caucaia — Ceará</span>
+  </div>
+</footer>
+
+<!-- WA FAB -->
+<a class="wa-fab" href="https://wa.me/5585987960044" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>

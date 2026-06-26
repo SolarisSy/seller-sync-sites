@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relax Barbearia Teresina — Barbearia nota 5,0 no Jóquei</title>
+<meta name="description" content="Relax Barbearia, no Jóquei em Teresina (PI). Corte, barba e cuidado masculino com nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#f4efe7;
+  --bg-surface:#fbf8f2;
+  --bg-inset:#ebe4d8;
+  --bg-dark:#15110d;
+  --bg-dark-2:#1f1812;
+
+  /* Texto */
+  --text-primary:#1c1813;
+  --text-secondary:#4a433a;
+  --text-muted:#8a8175;
+  --text-inverse:#f4efe7;
+
+  /* Acento + marca */
+  --accent:#bd7f3c;
+  --accent-dark:#9a6428;
+  --accent-subtle:rgba(189,127,60,.10);
+  --accent-border:rgba(189,127,60,.24);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(20,14,8,.05),0 2px 6px rgba(20,14,8,.05);
+  --shadow-md:0 2px 4px rgba(20,14,8,.05),0 8px 18px rgba(20,14,8,.08),0 20px 40px rgba(20,14,8,.06);
+  --shadow-lg:0 4px 8px rgba(20,14,8,.05),0 16px 32px rgba(20,14,8,.08),0 40px 80px rgba(20,14,8,.10);
+  --shadow-accent:0 6px 20px rgba(189,127,60,.32);
+  --shadow-accent-strong:0 10px 30px rgba(189,127,60,.45);
+
+  /* Tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.0;
+  --lh-heading:1.12;
+  --lh-body:1.72;
+  --ls-display:-.01em;
+  --ls-overline:.16em;
+
+  /* Spacing */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+.wrap{max-width:var(--content-max);margin:0 auto}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* Overline */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:var(--ls-overline);
+  text-transform:uppercase;color:var(--accent);margin-bottom:16px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* Buttons */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:transparent;color:var(--text-inverse);
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;border-radius:50px;
+  border:1px solid rgba(244,239,231,.35);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),background .3s ease,border-color .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(244,239,231,.08);border-color:rgba(244,239,231,.6)}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(21,17,13,.92);
+  backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%);
+  box-shadow:0 1px 0 rgba(189,127,60,.25);
+  padding-top:12px;padding-bottom:12px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text-inverse)}
+.brand-mark{
+  width:38px;height:38px;border-radius:50%;flex:none;
+  display:grid;place-items:center;
+  border:1.5px solid var(--accent);color:var(--gold);
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.15rem;
+}
+.brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.02em;line-height:1;text-transform:uppercase}
+.brand-name small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:.6rem;letter-spacing:.22em;color:var(--accent);margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:.82rem;letter-spacing:.04em;text-decoration:none;color:var(--text-inverse);opacity:.82;transition:opacity .25s ease}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav .nav-links{display:flex;gap:30px}
+.nav .btn-primary{padding:.7rem 1.4rem;min-height:42px;font-size:.72rem}
+@media(max-width:860px){.nav .nav-links{display:none}}
+
+/* HERO — Modelo C editorial base-esquerda */
+.hero{
+  position:relative;height:100dvh;min-height:620px;
+  display:grid;align-items:end;overflow:hidden;background:var(--bg-dark);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/web-01.jpg') center/cover;
+  animation:kb 24s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(105deg,rgba(15,11,8,.92) 0%,rgba(15,11,8,.55) 42%,rgba(15,11,8,.12) 70%,transparent 100%),
+    linear-gradient(0deg,rgba(15,11,8,.85) 0%,transparent 45%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;
+}
+.hero-content{
+  position:relative;z-index:3;
+  padding:0 clamp(1.5rem,7vw,6rem) clamp(3.5rem,9vh,7rem);
+  max-width:720px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+  padding:8px 16px 8px 12px;border-radius:50px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.18);
+}
+.hero-badge .stars{color:var(--gold);letter-spacing:1px;font-size:.85rem}
+.hero-badge .b-txt{font-size:.74rem;letter-spacing:.05em;color:var(--text-inverse);font-weight:500}
+.hero-badge .b-txt strong{font-weight:700}
+.hero-eyebrow{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+}
+.hero-title{
+  color:var(--text-inverse);
+  font-weight:900;font-size:var(--text-display);
+  letter-spacing:var(--ls-display);line-height:var(--lh-display);
+  max-width:14ch;overflow:hidden;
+}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:normal;color:var(--accent)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .line:nth-child(2) .word{animation-delay:.3s}
+.hero-title .line:nth-child(3) .word{animation-delay:.45s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  color:rgba(244,239,231,.82);font-size:clamp(1rem,.92rem + .4vw,1.18rem);
+  max-width:46ch;margin:24px 0 34px;line-height:1.6;
+  opacity:0;animation:fade-in 1s ease .8s forwards;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.scroll-cue{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(244,239,231,.6);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  animation:fade-in 1s ease 1.4s forwards;opacity:0;
+}
+.scroll-cue .mouse{width:22px;height:34px;border:1.5px solid rgba(244,239,231,.45);border-radius:12px;position:relative}
+.scroll-cue .mouse::after{content:'';position:absolute;top:6px;left:50%;width:3px;height:6px;background:var(--gold);border-radius:2px;transform:translateX(-50%);animation:wheel 1.6s ease infinite}
+@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,10px)}}
+@media(max-width:600px){.scroll-cue{display:none}}
+
+/* diagonal cut helpers */
+.cut-top{clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw)}
+
+/* SOBRE */
+.sobre{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.sobre::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;z-index:0;
+}
+.sobre .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-imgs{position:relative;min-height:440px}
+.sobre-imgs .img-a{width:74%;border-radius:6px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover}
+.sobre-imgs .img-b{position:absolute;right:0;bottom:-18px;width:48%;border-radius:6px;border:4px solid var(--bg-dark);box-shadow:var(--shadow-lg);aspect-ratio:3/4;object-fit:cover}
+.sobre-imgs .stat{
+  position:absolute;left:-10px;bottom:42px;z-index:2;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;padding:16px 22px;border-radius:6px;box-shadow:var(--shadow-md);
+}
+.sobre-imgs .stat b{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.2rem;display:block;line-height:1}
+.sobre-imgs .stat span{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;opacity:.92}
+.sobre h2{color:var(--text-inverse);font-size:var(--text-h2);font-weight:800;margin-bottom:20px}
+.sobre h2 em{font-style:normal;color:var(--gold)}
+.sobre p{color:rgba(244,239,231,.78);max-width:var(--prose-max);margin-bottom:18px}
+.sobre .feats{list-style:none;margin:28px 0 32px;display:grid;gap:14px}
+.sobre .feats li{display:flex;gap:14px;align-items:flex-start;font-size:.95rem;color:rgba(244,239,231,.88)}
+.sobre .feats svg{width:22px;height:22px;flex:none;color:var(--accent);margin-top:2px}
+@media(max-width:860px){.sobre .wrap{grid-template-columns:1fr}.sobre-imgs{margin-bottom:40px;max-width:460px}}
+
+/* SERVIÇOS */
+.servicos{background:var(--bg-base);position:relative}
+.sec-head{max-width:640px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head h2{font-size:var(--text-h2);font-weight:800;color:var(--text-primary)}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.sec-head p{color:var(--text-secondary);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(28,24,19,.08);border-radius:8px;
+  padding:34px 30px;box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+  position:relative;overflow:hidden;
+}
+.serv-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card:hover::before{transform:scaleX(1)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.18em;color:var(--accent);margin-bottom:18px;display:block}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;color:var(--text-primary);margin-bottom:10px}
+.serv-card p{font-size:.92rem;color:var(--text-secondary);line-height:1.6;margin-bottom:20px}
+.serv-price{display:flex;align-items:baseline;gap:6px;padding-top:18px;border-top:1px solid rgba(28,24,19,.09)}
+.serv-price .from{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;color:var(--text-primary)}
+
+/* EXPERIÊNCIA / faixa com foto */
+.experiencia{
+  position:relative;color:var(--text-inverse);overflow:hidden;
+  background:url('imagens/web-03.jpg') center/cover fixed;
+}
+.experiencia::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,11,8,.94),rgba(15,11,8,.6) 70%,rgba(15,11,8,.4))}
+.experiencia .wrap{position:relative;z-index:1;max-width:600px}
+.experiencia h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse);margin-bottom:18px}
+.experiencia h2 em{font-style:normal;color:var(--gold)}
+.experiencia p{color:rgba(244,239,231,.84);margin-bottom:30px}
+@media(max-width:600px){.experiencia{background-attachment:scroll}}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-inset);position:relative}
+.prova .sec-head{text-align:center;margin-left:auto;margin-right:auto}
+.prova .sec-head .overline{justify-content:center}
+.prova-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards)}
+.quote{
+  background:var(--bg-surface);border-radius:8px;padding:32px 30px;
+  box-shadow:var(--shadow-sm);border:1px solid rgba(28,24,19,.06);
+  display:flex;flex-direction:column;gap:16px;
+}
+.quote .stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.quote p{font-size:1rem;line-height:1.65;color:var(--text-primary);font-style:italic}
+.quote .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.quote .av{width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem}
+.quote .who b{font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;display:block;color:var(--text-primary)}
+.quote .who span{font-size:.74rem;color:var(--text-muted)}
+.rating-banner{
+  display:flex;align-items:center;justify-content:center;gap:clamp(1.5rem,5vw,4rem);
+  flex-wrap:wrap;margin-top:clamp(2.5rem,5vw,4rem);
+  padding:clamp(1.5rem,4vw,2.5rem);background:var(--bg-surface);border-radius:10px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--accent-border);text-align:center;
+}
+.rating-banner .big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,4.5rem);color:var(--accent);line-height:.9}
+.rating-banner .rb-mid .stars{color:var(--gold);font-size:1.2rem;letter-spacing:2px}
+.rating-banner .rb-mid p{font-size:.82rem;color:var(--text-secondary);margin-top:4px}
+.rating-banner .rb-div{width:1px;align-self:stretch;background:rgba(28,24,19,.12)}
+@media(max-width:600px){.rating-banner .rb-div{display:none}}
+
+/* GALERIA */
+.galeria{background:var(--bg-base)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .span2{grid-column:span 2;grid-row:span 2}
+.gal-grid .tall{grid-row:span 2}
+@media(max-width:860px){.gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gal-grid .span2{grid-column:span 2;grid-row:span 2}}
+
+/* LOCALIZAÇÃO */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.local::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;
+}
+.local .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local h2{font-size:var(--text-h2);font-weight:800;color:var(--text-inverse);margin-bottom:24px}
+.local h2 em{font-style:normal;color:var(--gold)}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(244,239,231,.1)}
+.info-row svg{width:22px;height:22px;flex:none;color:var(--accent);margin-top:3px}
+.info-row .lbl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.info-row .val{color:rgba(244,239,231,.9);font-size:.98rem;line-height:1.5}
+.info-row a.val{text-decoration:none;transition:color .25s ease}
+.info-row a.val:hover{color:var(--gold)}
+.local .cta-block{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.local-photo{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:380px}
+.local-photo img{width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.local .wrap{grid-template-columns:1fr}.local-photo{min-height:280px;order:-1}}
+
+/* FOOTER */
+footer{background:var(--bg-dark-2);color:rgba(244,239,231,.7);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(244,239,231,.1)}
+.foot-brand .brand-name{color:var(--text-inverse)}
+.foot-brand p{margin-top:14px;max-width:34ch;font-size:.9rem;line-height:1.6}
+.foot-cols{display:flex;gap:clamp(2rem,5vw,4rem);flex-wrap:wrap}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.08em;color:var(--gold);margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:.88rem;text-decoration:none;color:rgba(244,239,231,.7);margin-bottom:8px;transition:color .25s ease}
+.foot-col a:hover{color:var(--text-inverse)}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;font-size:.78rem;color:rgba(244,239,231,.5)}
+.foot-bottom a{color:var(--gold);text-decoration:none}
+
+/* WA FAB */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s;
+}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.scroll-cue{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before,.scroll-cue .mouse::after{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <span class="brand-mark">R</span>
+    <span class="brand-name">Relax Barbearia<small>Teresina · PI</small></span>
+  </a>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <a href="https://wa.me/5586995046772" class="btn-primary" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.969-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="stars">★★★★★</span>
+      <span class="b-txt"><strong>5,0</strong> no Google</span>
+    </div>
+    <p class="hero-eyebrow">Barbearia · Jóquei · Teresina-PI</p>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Estilo</span></span>
+      <span class="line"><span class="word">com</span> <span class="word">assinatura</span></span>
+      <span class="line"><span class="word"><em>de quem</em></span> <span class="word"><em>entende.</em></span></span>
+    </h1>
+    <p class="hero-sub">Corte, barba e cuidado masculino num ambiente pensado pra você relaxar. A barbearia mais bem avaliada do Jóquei agora também online.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5586995046772" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.969-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="mouse"></span>Role</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre cut-top" id="sobre">
+  <div class="wrap">
+    <div class="sobre-imgs reveal">
+      <img class="img-a" src="imagens/web-02.jpg" alt="Cadeira de couro da Relax Barbearia">
+      <img class="img-b" src="imagens/web-04.jpg" alt="Barbeiro da Relax Barbearia em atendimento">
+      <div class="stat"><b>5,0</b><span>Nota no Google</span></div>
+    </div>
+    <div class="sobre-txt reveal">
+      <p class="overline">A Relax Barbearia</p>
+      <h2>Um corte bem feito <em>começa pelo ambiente.</em></h2>
+      <p>No coração do Jóquei, a Relax Barbearia é o lugar onde o homem de Teresina vem fazer a barba, ajustar o corte e sair de cabeça erguida. Couro, tijolo e a atenção de quem leva o ofício a sério — sem pressa, do jeito certo.</p>
+      <p>A nota máxima no Google não veio por acaso: vem de cada cliente que senta na cadeira e volta porque foi bem cuidado. É essa experiência que a gente entrega todos os dias.</p>
+      <ul class="feats">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Barbeiros experientes, técnica de verdade</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Atendimento sem pressa, no horário que cabe pra você</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Ambiente pensado pra relaxar de verdade</li>
+      </ul>
+      <a href="https://wa.me/5586995046772" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.969-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Marcar meu horário
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="overline">Serviços & Procedimentos</p>
+      <h2>Tudo que seu visual <em>precisa, num lugar só.</em></h2>
+      <p>Do corte clássico ao acabamento de barba na navalha. Escolha o serviço e agende em segundos pelo WhatsApp.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="serv-num">01</span>
+        <h3>Corte Masculino</h3>
+        <p>Corte na tesoura ou máquina, finalizado do jeito que combina com você. Inclui lavagem e styling.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 35</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">02</span>
+        <h3>Barba na Navalha</h3>
+        <p>Toalha quente, navalha e finalização. A barba desenhada e hidratada, com aquele acabamento de barbearia clássica.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 30</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">03</span>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo pra sair renovado. Corte e barba na mesma sessão, com preço que vale a pena.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 55</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">04</span>
+        <h3>Sobrancelha & Acabamento</h3>
+        <p>Limpeza de sobrancelha na navalha e contorno do pescoço pra deixar o visual alinhado nos detalhes.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 15</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">05</span>
+        <h3>Corte Infantil</h3>
+        <p>Paciência e cuidado com a molecada. Corte tranquilo, do jeito que a criança e os pais gostam.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 30</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">06</span>
+        <h3>Pézinho & Manutenção</h3>
+        <p>Aquele retoque entre cortes pra manter o visual sempre em dia, sem esperar o mês fechar.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 15</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="experiencia">
+  <div class="wrap reveal">
+    <p class="overline">A Experiência Relax</p>
+    <h2>Sentou na cadeira, <em>o resto é com a gente.</em></h2>
+    <p>Toalha quente, conversa boa e o tempo certo pra cada detalhe. Aqui você não é mais um número na fila — é cliente que volta porque foi bem tratado. É por isso que a nota é 5,0.</p>
+    <a href="https://wa.me/5586995046772" class="btn-primary" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.969-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Quero essa experiência
+    </a>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="overline center">Quem senta na cadeira</p>
+      <h2>Nota 5,0 não é sorte. <em>É padrão.</em></h2>
+    </div>
+    <div class="prova-grid">
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Melhor barbearia do Jóquei, sem dúvida. Atendimento impecável e o corte sempre sai do jeito que eu peço."</p>
+        <div class="who"><span class="av">M</span><div><b>Marcos A.</b><span>Cliente no Google</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Ambiente top, dá vontade de ficar. A barba na navalha com toalha quente é outro nível. Recomendo demais."</p>
+        <div class="who"><span class="av">R</span><div><b>Rafael S.</b><span>Cliente no Google</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Profissionais que entendem do que fazem. Levo meu filho também, atendem a criança com a maior paciência."</p>
+        <div class="who"><span class="av">J</span><div><b>João P.</b><span>Cliente no Google</span></div></div>
+      </div>
+    </div>
+    <div class="rating-banner reveal">
+      <div class="big">5,0</div>
+      <div class="rb-div"></div>
+      <div class="rb-mid">
+        <div class="stars">★★★★★</div>
+        <p>Avaliação no Google Maps</p>
+      </div>
+      <div class="rb-div"></div>
+      <div class="rb-mid">
+        <p style="font-size:.95rem;color:var(--text-primary);font-weight:500;max-width:24ch">Reputação construída cliente a cliente, no boca a boca de Teresina.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="overline">O Espaço</p>
+      <h2>Um ambiente feito <em>pra você relaxar.</em></h2>
+    </div>
+    <div class="gal-grid reveal">
+      <figure class="span2"><img src="imagens/web-01.jpg" alt="Salão da Relax Barbearia com cadeiras e iluminação âmbar"></figure>
+      <figure class="tall"><img src="imagens/web-05.jpg" alt="Detalhe da cadeira de couro"></figure>
+      <figure><img src="imagens/web-03.jpg" alt="Atendimento de barba na navalha"></figure>
+      <figure><img src="imagens/web-04.jpg" alt="Barbeiro em atendimento"></figure>
+      <figure class="span2"><img src="imagens/web-06.jpg" alt="Ambiente amplo da barbearia com tijolo aparente"></figure>
+      <figure class="tall"><img src="imagens/web-02.jpg" alt="Cadeira de couro escura premium"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap">
+    <div class="local-txt reveal">
+      <p class="overline">Onde Estamos</p>
+      <h2>Passa lá no Jóquei. <em>A gente te espera.</em></h2>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="lbl">Endereço</div><div class="val">Av. Raul Lopes, 880 — loja 02<br>Jóquei, Teresina - PI · 64048-065</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="lbl">Telefone / WhatsApp</div><a class="val" href="https://wa.me/5586995046772" target="_blank" rel="noopener">(86) 99504-6772</a></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><div class="lbl">Horário</div><div class="val">Seg a Sáb · 09h às 20h<br>Domingo: fechado</div></div>
+      </div>
+      <div class="cta-block">
+        <a href="https://wa.me/5586995046772" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.969-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/place/Relax+Barbearia+Teresina/@-5.0766053,-42.7972265,17z/data=!3m1!4b1!4m6!3m5!1s0x78e39d657a7f905:0x14f67746e0404669!8m2!3d-5.0766053!4d-42.7972265!16s%2Fg%2F11j7ymwmfr?authuser=0&hl=pt-BR&entry=ttu" class="btn-ghost" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="local-photo reveal">
+      <img src="imagens/web-06.jpg" alt="Interior da Relax Barbearia no Jóquei, Teresina">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#topo" class="brand">
+          <span class="brand-mark">R</span>
+          <span class="brand-name">Relax Barbearia<small>Teresina · PI</small></span>
+        </a>
+        <p>Corte, barba e cuidado masculino no coração do Jóquei. A barbearia nota 5,0 de Teresina.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Navegação</h4>
+          <a href="#sobre">A Barbearia</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#prova">Avaliações</a>
+          <a href="#local">Onde Estamos</a>
+        </div>
+        <div class="foot-col">
+          <h4>Contato</h4>
+          <a href="https://wa.me/5586995046772" target="_blank" rel="noopener">(86) 99504-6772</a>
+          <p>Av. Raul Lopes, 880 - loja 02</p>
+          <p>Jóquei, Teresina - PI</p>
+        </div>
+        <div class="foot-col">
+          <h4>Horário</h4>
+          <p>Seg a Sáb · 09h às 20h</p>
+          <p>Domingo: fechado</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Relax Barbearia Teresina. Todos os direitos reservados.</span>
+      <span>Agende agora pelo <a href="https://wa.me/5586995046772" target="_blank" rel="noopener">WhatsApp</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5586995046772" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.969-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

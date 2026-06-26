@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brooklyn Barbearia — Umarizal, Belém/PA | Corte & Barba</title>
+<meta name="description" content="Brooklyn Barbearia, no Umarizal em Belém/PA. Corte, barba e navalha com nota 4.7 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* surfaces */
+  --bg-base:#f6f1ea;
+  --bg-surface:#fffdf9;
+  --bg-inset:#ece4d8;
+  --bg-dark:#14110d;
+  --bg-dark-2:#1d1812;
+  /* text */
+  --text-primary:#1c1814;
+  --text-secondary:#544c42;
+  --text-muted:#8c8276;
+  --text-inverse:#f6f1ea;
+  /* brand + accent */
+  --accent:#9a5b2c;
+  --accent-dark:#7c451d;
+  --accent-subtle:rgba(154,91,44,.10);
+  --accent-border:rgba(154,91,44,.22);
+  --gold:#c9a44c;
+  --gold-light:#e0c068;
+  /* shadows */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 2px 6px rgba(0,0,0,.04);
+  --shadow-md:0 2px 4px rgba(20,17,13,.05),0 8px 18px rgba(20,17,13,.07),0 20px 40px rgba(20,17,13,.05);
+  --shadow-lg:0 4px 8px rgba(20,17,13,.05),0 16px 32px rgba(20,17,13,.07),0 40px 80px rgba(20,17,13,.10);
+  --shadow-accent:0 6px 22px rgba(154,91,44,.32);
+  --shadow-accent-strong:0 10px 30px rgba(154,91,44,.45);
+  /* type scale */
+  --text-display:clamp(3rem,2rem + 6vw,7rem);
+  --text-h2:clamp(2rem,1.4rem + 2.8vw,3.4rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.94rem,.88rem + .25vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:.95;
+  --lh-heading:1.1;
+  --lh-body:1.74;
+  --ls-display:-.01em;
+  --ls-overline:.2em;
+  /* spacing */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* overline */
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:var(--ls-overline);
+  text-transform:uppercase;color:var(--accent);margin-bottom:18px;
+}
+.overline::before{content:'';width:34px;height:1px;background:currentColor}
+.overline.light{color:var(--gold)}
+
+/* buttons */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,#25D366,#1da851);
+  color:#fff;font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;
+  border-radius:50px;box-shadow:0 6px 22px rgba(37,211,102,.32);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,.45)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  border:1px solid var(--accent-border);color:var(--text-primary);
+  font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;
+  border-radius:50px;background:transparent;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .25s ease,background .25s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--accent-subtle)}
+.btn-ico{width:18px;height:18px;flex-shrink:0}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(20,17,13,.94);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 rgba(201,164,76,.22);
+  padding:14px clamp(1.5rem,5vw,4rem);
+}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand-mark{
+  width:40px;height:40px;border:1.5px solid var(--gold);border-radius:50%;
+  display:grid;place-items:center;font-family:'Barlow Condensed';font-weight:900;
+  color:var(--gold);font-size:1.2rem;flex-shrink:0;
+}
+.brand-name{font-family:'Barlow Condensed';font-weight:800;font-size:1.3rem;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.brand-name small{display:block;font-family:'Inter';font-weight:400;font-size:.58rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-top:2px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{color:rgba(246,241,234,.82);font-size:.82rem;font-weight:500;letter-spacing:.03em;transition:color .25s}
+.nav a:hover{color:var(--gold)}
+.nav .btn-head{
+  border:1px solid rgba(201,164,76,.5);color:#fff;padding:.6rem 1.3rem;border-radius:50px;
+  font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;transition:background .25s,border-color .25s;
+}
+.nav .btn-head:hover{background:var(--gold);color:#14110d;border-color:var(--gold)}
+@media(max-width:860px){.nav a:not(.btn-head){display:none}}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,rgba(20,17,13,.35) 20%,rgba(20,17,13,.72) 65%,rgba(20,17,13,.96) 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05}
+.hero-content{position:relative;z-index:3;width:100%;padding:0 clamp(1.5rem,6vw,5rem) clamp(3.2rem,7vw,6rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:34px;flex-wrap:wrap}
+.hero-left{max-width:720px}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:38px;height:1px;background:var(--gold)}
+.hero-title{color:#fff;font-weight:900;font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);overflow:hidden}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .accent{color:var(--gold)}
+.hero-title .word:nth-child(1){animation-delay:.2s}
+.hero-title .line:nth-child(2) .word{animation-delay:.34s}
+.hero-title .line:nth-child(3) .word{animation-delay:.48s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(246,241,234,.82);font-size:clamp(1rem,.9rem + .4vw,1.18rem);max-width:46ch;margin:26px 0 32px;opacity:0;animation:fade-in 1s ease .9s forwards}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1.05s forwards}
+.hero-cta .btn-ghost{color:#fff;border-color:rgba(246,241,234,.3)}
+.hero-cta .btn-ghost:hover{border-color:var(--gold);background:rgba(201,164,76,.12)}
+@keyframes fade-in{to{opacity:1}}
+/* glass badge */
+.hero-badge{
+  position:relative;z-index:3;
+  background:rgba(246,241,234,.08);
+  backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(201,164,76,.28);border-radius:18px;
+  padding:22px 26px;min-width:200px;
+  box-shadow:0 2px 4px rgba(0,0,0,.18),0 8px 28px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.14);
+  opacity:0;animation:fade-in 1s ease 1.2s forwards;
+}
+.hero-badge .stars{color:var(--gold);font-size:1.1rem;letter-spacing:3px}
+.hero-badge .num{font-family:'Barlow Condensed';font-weight:900;font-size:3rem;color:#fff;line-height:1;margin:6px 0 2px}
+.hero-badge .lbl{color:rgba(246,241,234,.72);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(246,241,234,.5);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint span{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);animation:scrolldot 2s ease-in-out infinite}
+@keyframes scrolldot{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:680px){.scroll-hint{display:none}.hero-badge{min-width:auto}}
+
+/* ===== SOBRE ===== */
+.sobre{
+  background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-3vw;padding-top:calc(var(--section-pad) + 4vw);overflow:hidden;
+}
+.sobre::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05}
+.sobre-grid{position:relative;z-index:1;display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-img{position:relative}
+.sobre-img img{width:100%;height:clamp(360px,46vw,560px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-img .frame{position:absolute;inset:14px;border:1px solid rgba(201,164,76,.4);border-radius:4px;pointer-events:none}
+.sobre h2{font-size:var(--text-h2);font-weight:800;color:#fff;margin-bottom:22px}
+.sobre h2 em{font-style:normal;color:var(--gold)}
+.sobre p{color:rgba(246,241,234,.78);max-width:var(--prose-max);margin-bottom:18px}
+.sobre .stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .n{font-family:'Barlow Condensed';font-weight:900;font-size:2.6rem;color:var(--gold);line-height:1}
+.stat .t{font-size:.78rem;color:rgba(246,241,234,.65);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-img{order:-1}}
+
+/* ===== SERVICOS ===== */
+.servicos{background:var(--bg-base)}
+.sec-head{margin-bottom:clamp(2.4rem,5vw,4rem);max-width:640px}
+.sec-head h2{font-size:var(--text-h2);font-weight:800}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.sec-head p{color:var(--text-secondary);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards)}
+.serv-card{
+  background:var(--bg-surface);border:1px solid rgba(28,24,20,.08);border-radius:10px;overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+  box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card.has-img .serv-photo{height:200px;overflow:hidden}
+.serv-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .serv-photo img{transform:scale(1.06)}
+.serv-body{padding:26px 26px 28px}
+.serv-body .ol{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+.serv-body h3{font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.serv-body p{color:var(--text-secondary);font-size:.92rem;line-height:1.6}
+.serv-price{margin-top:18px;display:flex;align-items:baseline;gap:8px;border-top:1px solid rgba(28,24,20,.08);padding-top:16px}
+.serv-price .from{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}
+.serv-price .v{font-family:'Barlow Condensed';font-weight:800;font-size:1.7rem;color:var(--text-primary)}
+
+/* ===== GALERIA ===== */
+.galeria{background:var(--bg-inset)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,230px);gap:12px}
+.gal-grid figure{overflow:hidden;border-radius:8px;box-shadow:var(--shadow-sm);position:relative}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .tall{grid-row:span 2}
+.gal-grid .wide{grid-column:span 2}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid .wide{grid-column:span 2}}
+
+/* ===== PROVA SOCIAL ===== */
+.prova{background:var(--bg-dark-2);color:var(--text-inverse);position:relative;overflow:hidden}
+.prova::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05}
+.prova .wrap{position:relative;z-index:1}
+.prova .sec-head h2{color:#fff}
+.prova .sec-head h2 em{color:var(--gold)}
+.prova .sec-head p{color:rgba(246,241,234,.7)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--gap-cards)}
+.rev-card{
+  background:rgba(246,241,234,.04);border:1px solid rgba(201,164,76,.16);border-radius:12px;padding:30px 28px;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .25s ease;
+}
+.rev-card:hover{transform:translateY(-5px);border-color:rgba(201,164,76,.4)}
+.rev-card .stars{color:var(--gold);letter-spacing:2px;margin-bottom:16px}
+.rev-card p{color:rgba(246,241,234,.86);font-size:.98rem;line-height:1.68;margin-bottom:20px}
+.rev-who{display:flex;align-items:center;gap:12px}
+.rev-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;font-family:'Barlow Condensed';font-weight:800;color:#fff;font-size:1.1rem}
+.rev-who .nm{font-weight:600;font-size:.92rem;color:#fff}
+.rev-who .src{font-size:.74rem;color:rgba(246,241,234,.55)}
+
+/* ===== LOCALIZACAO ===== */
+.local{background:var(--bg-base)}
+.local-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local h2{font-size:var(--text-h2);font-weight:800;margin-bottom:24px}
+.local h2 em{font-style:normal;color:var(--accent)}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(28,24,20,.09)}
+.info-row:last-of-type{border-bottom:none}
+.info-ico{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--accent-subtle);display:grid;place-items:center;color:var(--accent)}
+.info-ico svg{width:18px;height:18px}
+.info-row .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.info-row .v{font-weight:500;color:var(--text-primary);font-size:1rem}
+.info-row a.v:hover{color:var(--accent)}
+.local-map{position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md);min-height:340px}
+.local-map iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.25) contrast(1.05)}
+.local-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}}
+
+/* ===== FOOTER ===== */
+footer{background:var(--bg-dark);color:rgba(246,241,234,.7);padding:clamp(3.5rem,7vw,6rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-top{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;align-items:flex-start;max-width:var(--content-max);margin:0 auto;padding-bottom:34px;border-bottom:1px solid rgba(201,164,76,.16)}
+.foot-brand .brand-name{color:#fff}
+.foot-brand p{margin-top:14px;max-width:34ch;font-size:.92rem;color:rgba(246,241,234,.6)}
+.foot-col h4{color:var(--gold);font-size:.78rem;letter-spacing:.16em;font-weight:700;margin-bottom:16px;font-family:'Inter'}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:rgba(246,241,234,.7);margin-bottom:10px;transition:color .25s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:24px auto 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:rgba(246,241,234,.45)}
+
+/* ===== WA FAB ===== */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg,.sobre-img img,.serv-photo img,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.hero-badge{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before,.scroll-hint span{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="brand-mark">B</span>
+    <span class="brand-name">Brooklyn<small>Barbearia · Belém</small></span>
+  </a>
+  <nav class="nav">
+    <a href="#sobre">O ofício</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#local">Onde estamos</a>
+    <a href="https://wa.me/5591982814838" class="btn-head" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Umarizal · Belém / PA</div>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Tradição</span> <span class="word">em</span> <span class="word">corte.</span></span>
+        <span class="line"><span class="word accent">Respeito</span></span>
+        <span class="line"><span class="word">pela</span> <span class="word accent">navalha.</span></span>
+      </h1>
+      <p class="hero-sub">A barbearia do Umarizal que virou referência em Belém. Corte, barba e acabamento de quem leva o ofício a sério.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/5591982814838" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-.937z"/></svg>
+          Agendar no WhatsApp
+        </a>
+        <a href="#servicos" class="btn-ghost">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="stars">★★★★★</div>
+      <div class="num">4.7</div>
+      <div class="lbl">no Google</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/web-02.jpg" alt="Barbeiro da Brooklyn cuidando da barba de um cliente">
+      <span class="frame"></span>
+    </div>
+    <div class="sobre-text">
+      <div class="overline light reveal">O ofício</div>
+      <h2 class="reveal">Cada cliente sai <em>com a régua certa.</em></h2>
+      <p class="reveal">A Brooklyn nasceu da ideia simples de que homem bem cuidado se sente diferente. Aqui não tem corte na correria: tem tempo de cadeira, máquina afiada, toalha quente e o acabamento que você só percebe quando olha no espelho e gosta do que vê.</p>
+      <p class="reveal">É essa entrega que fez a gente virar ponto de encontro no Umarizal e somar a melhor reputação da região — uma cadeira de cada vez, um cliente fiel de cada vez.</p>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">4.7</div><div class="t">Nota no Google</div></div>
+        <div class="stat"><div class="n">+10</div><div class="t">Anos de navalha</div></div>
+        <div class="stat"><div class="n">100%</div><div class="t">Acabamento na régua</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="overline reveal">Serviços & valores</div>
+      <h2 class="reveal">O que a gente faz <em>na cadeira.</em></h2>
+      <p class="reveal">Do corte clássico ao acabamento de barba na navalha. Valores de referência — chame no WhatsApp pra confirmar horário.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card has-img reveal">
+        <div class="serv-photo"><img src="imagens/web-04.jpg" alt="Corte degradê sendo feito na máquina"></div>
+        <div class="serv-body">
+          <div class="ol">Cabelo</div>
+          <h3>Corte & Degradê</h3>
+          <p>Corte na tesoura ou degradê na máquina, fechado do jeito que você pediu. Desenho e contorno inclusos.</p>
+          <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 40</span></div>
+        </div>
+      </article>
+      <article class="serv-card has-img reveal">
+        <div class="serv-photo"><img src="imagens/web-03.jpg" alt="Acabamento de barba com navalha"></div>
+        <div class="serv-body">
+          <div class="ol">Barba</div>
+          <h3>Barba & Navalha</h3>
+          <p>Toalha quente, modelagem e acabamento na navalha. Barba desenhada e hidratada, do contorno ao pescoço.</p>
+          <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 35</span></div>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-body">
+          <div class="ol">Combo</div>
+          <h3>Corte + Barba</h3>
+          <p>O pacote completo num só horário: corte fechado e barba na navalha. O ritual completo, com preço de combo.</p>
+          <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 65</span></div>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-body">
+          <div class="ol">Detalhes</div>
+          <h3>Sobrancelha & Pézinho</h3>
+          <p>Aquele acabamento entre uma visita e outra: alinhamento de sobrancelha na navalha e pézinho pra manter a régua.</p>
+          <div class="serv-price"><span class="from">a partir de</span><span class="v">R$ 15</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="overline reveal">Galeria</div>
+      <h2 class="reveal">O trabalho fala <em>por si.</em></h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="tall reveal"><img src="imagens/web-05.jpg" alt="Acabamento de barba na tesoura"></figure>
+      <figure class="wide reveal"><img src="imagens/web-01.jpg" alt="Ambiente da Brooklyn Barbearia"></figure>
+      <figure class="reveal"><img src="imagens/web-06.jpg" alt="Acabamento da nuca na máquina"></figure>
+      <figure class="reveal"><img src="imagens/web-03.jpg" alt="Barba sendo finalizada"></figure>
+      <figure class="wide reveal"><img src="imagens/web-02.jpg" alt="Barbeiro trabalhando na barba do cliente"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="overline light reveal">Quem senta, volta</div>
+      <h2 class="reveal">4.7 no Google <em>não é por acaso.</em></h2>
+      <p class="reveal">O que os clientes da Brooklyn falam de quem cuida do visual deles.</p>
+    </div>
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia do Umarizal, sem exagero. Atendimento na hora marcada e o acabamento da barba é outro nível. Virei cliente fixo."</p>
+        <div class="rev-who"><span class="rev-av">R</span><div><div class="nm">Rafael M.</div><div class="src">Avaliação no Google</div></div></div>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Ambiente top, profissionais que entendem do que fazem. Saí com o corte exatamente como pedi. Recomendo de olhos fechados."</p>
+        <div class="rev-who"><span class="rev-av">D</span><div><div class="nm">Diego S.</div><div class="src">Avaliação no Google</div></div></div>
+      </article>
+      <article class="rev-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Levo meu filho e vou junto. Capricho do começo ao fim e tratam a gente bem. Pra mim é a referência em Belém."</p>
+        <div class="rev-who"><span class="rev-av">A</span><div><div class="nm">André L.</div><div class="src">Avaliação no Google</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="local-text">
+      <div class="overline reveal">Onde estamos</div>
+      <h2 class="reveal">Passa lá no <em>Umarizal.</em></h2>
+      <div class="info-row reveal">
+        <span class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><div class="k">Endereço</div><a class="v" href="https://www.google.com/maps/place/Brooklyn+Barbearia/@-1.4433125,-48.4872317,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48ebc954353a9:0x4e19a993372295ce!8m2!3d-1.4433125!4d-48.4872317!16s%2Fg%2F11bwwss6dz?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">R. Bernal do Couto, 260 — Umarizal, Belém - PA, 66055-080</a></div>
+      </div>
+      <div class="info-row reveal">
+        <span class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+        <div><div class="k">Telefone / WhatsApp</div><a class="v" href="https://wa.me/5591982814838" target="_blank" rel="noopener">(91) 98281-4838</a></div>
+      </div>
+      <div class="info-row reveal">
+        <span class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><div class="k">Horário</div><div class="v">Seg a Sáb · 09h às 20h</div></div>
+      </div>
+      <div class="local-cta reveal">
+        <a href="https://wa.me/5591982814838" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-.937z"/></svg>
+          Marcar horário
+        </a>
+        <a href="https://www.google.com/maps/place/Brooklyn+Barbearia/@-1.4433125,-48.4872317,17z/data=!3m1!4b1!4m6!3m5!1s0x92a48ebc954353a9:0x4e19a993372295ce!8m2!3d-1.4433125!4d-48.4872317!16s%2Fg%2F11bwwss6dz?authuser=0&hl=pt-BR&entry=ttu" class="btn-ghost" target="_blank" rel="noopener">Abrir no Maps</a>
+      </div>
+    </div>
+    <div class="local-map reveal">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — Brooklyn Barbearia"
+        src="https://www.google.com/maps?q=-1.4433125,-48.4872317&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <span class="brand-name" style="color:#fff">Brooklyn Barbearia</span>
+      <p>Corte, barba e navalha no Umarizal. Tradição masculina com a régua que você merece, em Belém do Pará.</p>
+    </div>
+    <div class="foot-col">
+      <h4>NAVEGAR</h4>
+      <a href="#sobre">O ofício</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#local">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>CONTATO</h4>
+      <a href="https://wa.me/5591982814838" target="_blank" rel="noopener">WhatsApp (91) 98281-4838</a>
+      <p>R. Bernal do Couto, 260 — Umarizal</p>
+      <p>Belém - PA, 66055-080</p>
+      <p>Seg a Sáb · 09h às 20h</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Brooklyn Barbearia. Todos os direitos reservados.</span>
+    <span>Nota 4.7 no Google</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5591982814838" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.578-.937zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

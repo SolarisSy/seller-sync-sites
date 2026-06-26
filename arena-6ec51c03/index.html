@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arena — Barbearia em São Luís | Corte & Barba no Jardim Renascença</title>
+<meta name="description" content="Arena Barbearia no Jardim Renascença, São Luís. Corte, barba e cuidado masculino com padrão premium. Nota 4.5 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f4f1ea; --bg-surface:#fbf9f4; --bg-inset:#ebe6dc; --bg-dark:#15120d; --bg-dark-2:#1f1a13;
+  --text-primary:#1c1814; --text-secondary:#544d44; --text-muted:#8a8175; --text-inverse:#f4f1ea;
+  --accent:#b8863d; --accent-dark:#9a6e2d; --accent-subtle:rgba(184,134,61,.10); --accent-border:rgba(184,134,61,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.05);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.05),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.10);
+  --shadow-accent:0 8px 24px rgba(184,134,61,.30);
+  --shadow-accent-strong:0 12px 34px rgba(184,134,61,.42);
+  --text-display:clamp(2.8rem,2rem + 5vw,6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.6vw,3.2rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .25vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:.98; --lh-heading:1.1; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.2em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-base);color:var(--text-primary);font-size:var(--text-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);text-transform:uppercase;letter-spacing:.01em}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.inner{max-width:var(--content-max);margin:0 auto}
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.light{color:var(--gold-light)}
+
+/* ---- buttons ---- */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.5rem,3vw,2.3rem);min-height:52px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:1rem clamp(1.4rem,3vw,2rem);min-height:52px;background:transparent;color:var(--text-inverse);font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(244,241,234,.28);border-radius:50px;transition:border-color .3s ease,background .3s ease;touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.btn-icon{width:18px;height:18px;flex-shrink:0}
+
+/* ---- header ---- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(21,18,13,.94);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 1px 0 rgba(184,134,61,.25);padding-top:12px;padding-bottom:12px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:.16em;color:#fff;text-decoration:none;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.logo span{width:8px;height:8px;background:var(--accent);border-radius:50%;display:inline-block}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(244,241,234,.85);text-decoration:none;font-weight:500;transition:color .25s ease}
+.nav a:hover{color:var(--gold)}
+.nav .btn-primary{padding:.7rem 1.4rem;min-height:44px}
+.nav-links{display:flex;gap:34px}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ---- hero split ---- */
+.hero{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh;position:relative}
+.hero-copy{background:var(--bg-dark);position:relative;display:flex;flex-direction:column;justify-content:center;padding:clamp(6rem,10vh,9rem) clamp(1.8rem,4vw,4rem) clamp(3rem,6vh,5rem);overflow:hidden;z-index:2}
+.hero-copy::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.hero-copy>*{position:relative;z-index:1}
+.hero-title{color:#fff;font-weight:900;font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);max-width:13ch;margin:8px 0 22px;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title em{color:var(--gold);font-style:normal}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(244,241,234,.78);font-size:var(--text-body);max-width:42ch;margin-bottom:32px;font-weight:300;opacity:0;animation:fade-in 1s ease .8s forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-media{position:relative;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(21,18,13,.55) 0%,transparent 30%)}
+.selo{position:absolute;left:0;bottom:clamp(1.5rem,4vh,3rem);z-index:3;display:flex;align-items:center;gap:14px;padding:14px 22px 14px 18px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.16);border-left:3px solid var(--gold);box-shadow:0 2px 4px rgba(0,0,0,.1),0 12px 30px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.18);opacity:0;animation:fade-in 1s ease 1.2s forwards}
+.selo .stars{display:flex;gap:2px}
+.selo .stars svg{width:15px;height:15px;fill:var(--gold)}
+.selo .rate{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.9rem;color:#fff;line-height:1}
+.selo .rate-txt{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,241,234,.7)}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{height:62vw;min-height:300px;order:-1}
+  .hero-copy{padding-top:7rem;min-height:auto}
+  .selo{left:clamp(1.8rem,4vw,4rem)}
+}
+
+/* ---- marquee strip ---- */
+.strip{background:var(--accent);color:#15120d;padding:18px 0;overflow:hidden;white-space:nowrap}
+.strip-track{display:inline-flex;gap:48px;animation:marq 28s linear infinite;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase}
+.strip-track span{display:inline-flex;align-items:center;gap:48px}
+.strip-track span::after{content:'✦';color:#15120d}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---- sobre ---- */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-img{position:relative;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.sobre-img .tag{position:absolute;bottom:18px;left:18px;background:rgba(21,18,13,.82);backdrop-filter:blur(6px);color:#fff;padding:10px 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;border-left:3px solid var(--gold)}
+.sobre h2{font-size:var(--text-h2);font-weight:800;max-width:14ch;margin-bottom:20px}
+.sobre p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max);font-weight:300}
+.stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:32px;flex-wrap:wrap}
+.stat .n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.6rem;color:var(--accent);line-height:1}
+.stat .l{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+@media(max-width:780px){.sobre-grid{grid-template-columns:1fr}.sobre-img{order:-1}}
+
+/* ---- servicos (dark) ---- */
+.servicos{background:var(--bg-dark);color:var(--text-inverse);position:relative;clip-path:polygon(0 0,100% 4vw,100% 100%,0 100%);margin-top:-3vw;padding-top:calc(var(--section-pad) + 4vw)}
+.servicos::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.servicos .inner{position:relative;z-index:1}
+.servicos h2{font-size:var(--text-h2);font-weight:800;color:#fff;max-width:16ch;margin-bottom:14px}
+.servicos .lead{color:rgba(244,241,234,.7);max-width:var(--prose-max);font-weight:300;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid rgba(244,241,234,.1);border-radius:6px;padding:clamp(1.6rem,2.5vw,2.2rem);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);border-color:var(--accent-border);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:18px;display:block}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;color:#fff;margin-bottom:10px}
+.serv-card p{font-size:.92rem;color:rgba(244,241,234,.65);font-weight:300;margin-bottom:18px}
+.serv-price{display:flex;align-items:baseline;gap:6px;border-top:1px solid rgba(244,241,234,.1);padding-top:16px}
+.serv-price .from{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;color:var(--gold)}
+
+/* ---- galeria ---- */
+.galeria{background:var(--bg-inset)}
+.galeria h2{font-size:var(--text-h2);font-weight:800;max-width:16ch;margin-bottom:14px}
+.galeria .lead{color:var(--text-secondary);max-width:var(--prose-max);font-weight:300;margin-bottom:clamp(2rem,4vw,3rem)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,230px);gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:4px;position:relative;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .g1{grid-column:span 2;grid-row:span 2}
+.gal-grid .g4{grid-column:span 2}
+@media(max-width:720px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid .g1{grid-column:span 2}.gal-grid .g4{grid-column:span 2}}
+
+/* ---- prova social ---- */
+.prova{background:var(--bg-base);text-align:center}
+.prova .overline{justify-content:center}
+.prova .overline::after{content:'';width:30px;height:1px;background:currentColor}
+.prova h2{font-size:var(--text-h2);font-weight:800;max-width:18ch;margin:0 auto 12px}
+.prova-rate{display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin:8px auto 48px}
+.prova-rate .big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3.4rem,8vw,5rem);color:var(--accent);line-height:1}
+.prova-rate .stars{display:flex;gap:4px}
+.prova-rate .stars svg{width:22px;height:22px;fill:var(--gold)}
+.prova-rate .sub{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.depo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-cards);text-align:left}
+.depo{background:var(--bg-surface);border:1px solid rgba(0,0,0,.05);border-radius:8px;padding:clamp(1.6rem,2.5vw,2.2rem);box-shadow:var(--shadow-sm);position:relative}
+.depo .qt{font-family:'Barlow Condensed',sans-serif;font-size:4rem;line-height:.7;color:var(--accent-subtle);position:absolute;top:18px;right:20px}
+.depo .stars{display:flex;gap:2px;margin-bottom:14px}
+.depo .stars svg{width:15px;height:15px;fill:var(--gold)}
+.depo p{font-size:.96rem;color:var(--text-secondary);margin-bottom:18px;font-weight:300;position:relative;z-index:1}
+.depo .who{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.92rem}
+.depo .who span{display:block;font-family:'Inter';font-weight:400;text-transform:none;letter-spacing:0;font-size:.74rem;color:var(--text-muted)}
+
+/* ---- localizacao ---- */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.local::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;position:relative;z-index:1}
+.local h2{font-size:var(--text-h2);font-weight:800;color:#fff;max-width:14ch;margin-bottom:24px}
+.info-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid rgba(244,241,234,.12)}
+.info-row:last-of-type{border-bottom:1px solid rgba(244,241,234,.12)}
+.info-row svg{width:22px;height:22px;stroke:var(--gold);flex-shrink:0;margin-top:2px}
+.info-row .k{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.info-row .v{color:rgba(244,241,234,.92);font-weight:300}
+.local-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.local-media{border-radius:6px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.local-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+@media(max-width:780px){.local-grid{grid-template-columns:1fr}.local-media{order:-1;aspect-ratio:16/10}}
+
+/* ---- footer ---- */
+footer{background:#0e0b07;color:rgba(244,241,234,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;letter-spacing:.16em;color:#fff;text-transform:uppercase;margin-bottom:10px}
+.foot-logo span{color:var(--accent)}
+.foot-col p{font-size:.88rem;font-weight:300;max-width:34ch}
+.foot-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;font-size:.95rem;margin-bottom:14px}
+.foot-col a{display:block;color:rgba(244,241,234,.6);text-decoration:none;font-size:.9rem;margin-bottom:8px;transition:color .25s ease}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,3.5rem) auto 0;padding-top:1.5rem;border-top:1px solid rgba(244,241,234,.1);font-size:.78rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--text-muted)}
+
+/* ---- WA FAB ---- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:32px;height:32px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---- reveal ---- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-media img,.strip-track{animation:none}
+  .hero-title .word,.hero-sub,.hero-actions,.selo{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  .gal-grid figure:hover img{transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo"><span></span>ARENA</a>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <a href="https://wa.me/5598992347330" class="btn-primary">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO split 40/60 -->
+<section class="hero" id="topo" style="padding:0">
+  <div class="hero-copy">
+    <div class="overline light">Barbearia · Jardim Renascença · São Luís</div>
+    <h1 class="hero-title">
+      <span class="word">Corte</span>
+      <span class="word">e</span>
+      <span class="word"><em>barba</em></span>
+      <span class="word">no ponto.</span>
+    </h1>
+    <p class="hero-sub">Na Arena, sua passada pela cadeira vira ritual — ambiente, mão de barbeiro e acabamento que você sente no espelho. Sem pressa, sem fila.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5598992347330" class="btn-primary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.027z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/web-01.jpg" alt="Barbeiro finalizando barba na cadeira da Arena">
+    <div class="selo">
+      <div class="rate">4.5</div>
+      <div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+        </div>
+        <div class="rate-txt">no Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- marquee -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Corte na régua</span><span>Barba modelada</span><span>Navalhado</span><span>Sobrancelha</span><span>Hidratação</span><span>Pézinho</span>
+    <span>Corte na régua</span><span>Barba modelada</span><span>Navalhado</span><span>Sobrancelha</span><span>Hidratação</span><span>Pézinho</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="inner sobre-grid">
+    <div class="reveal">
+      <div class="overline">A Casa</div>
+      <h2>Um lugar feito pro homem se cuidar</h2>
+      <p>A Arena nasceu pra ser mais que uma barbearia de passagem. Aqui no Jardim Renascença, em São Luís, você encontra ambiente, conversa boa e barbeiro que entende do corte que combina com você.</p>
+      <p>Cada atendimento é no tempo certo: a navalha que acerta a linha, a toalha quente, o acabamento que você só percebe quando olha no espelho e gosta do que vê. É por isso que a casa carrega <strong>4.5 de nota</strong> com quem já sentou na cadeira.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">4.5</div><div class="l">Nota Google</div></div>
+        <div class="stat"><div class="n">+6</div><div class="l">Serviços</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">No agendamento</div></div>
+      </div>
+    </div>
+    <div class="sobre-img reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente da barbearia Arena com cadeiras e tijolo aparente">
+      <div class="tag">Jardim Renascença</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="inner">
+    <div class="overline light">Serviços & Valores</div>
+    <h2>O que a gente faz na cadeira</h2>
+    <p class="lead">Do corte clássico ao trato completo de barba. Preços a partir de — o valor final depende do que o seu visual pede. Marque pelo WhatsApp e a gente acerta tudo.</p>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="serv-num">01 — Cabelo</span>
+        <h3>Corte Arena</h3>
+        <p>Corte na máquina e tesoura, finalizado na régua, do degradê ao social. Lavagem e styling inclusos.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 40</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">02 — Barba</span>
+        <h3>Barba Modelada</h3>
+        <p>Toalha quente, navalha e desenho do contorno. A barba alinhada com o formato do seu rosto.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 35</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">03 — Combo</span>
+        <h3>Corte + Barba</h3>
+        <p>O pacote completo da casa: visual renovado da cabeça ao queixo, com o acabamento que faz diferença.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 65</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">04 — Detalhes</span>
+        <h3>Pézinho & Sobrancelha</h3>
+        <p>O acabamento entre uma visita e outra. Contorno limpo, sobrancelha na medida, visual sempre no ponto.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 20</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">05 — Tratamento</span>
+        <h3>Hidratação & Cuidado</h3>
+        <p>Hidratação de cabelo e barba pra deixar o fio mais macio e a barba mais cheia e bem cuidada.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 30</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="serv-num">06 — Premium</span>
+        <h3>Dia do Noivo / VIP</h3>
+        <p>Atendimento completo e sem pressa para a ocasião que pede o visual impecável. Agende com antecedência.</p>
+        <div class="serv-price"><span class="from">sob</span><span class="val">consulta</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="inner">
+    <div class="overline">Galeria</div>
+    <h2>O traço da casa</h2>
+    <p class="lead">Um pouco do dia a dia na cadeira: corte, barba e o ambiente onde tudo acontece.</p>
+    <div class="gal-grid">
+      <figure class="g1 reveal"><img src="imagens/web-03.jpg" alt="Barbeiro cortando cabelo na Arena"></figure>
+      <figure class="reveal"><img src="imagens/web-04.jpg" alt="Acabamento de corte com máquina na nuca"></figure>
+      <figure class="reveal"><img src="imagens/web-05.jpg" alt="Aparo de barba reclinado na cadeira"></figure>
+      <figure class="g4 reveal"><img src="imagens/web-07.jpg" alt="Salão da barbearia Arena com cadeiras de cobre"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="inner">
+    <div class="overline">Quem senta, volta</div>
+    <h2>A régua de quem já passou pela cadeira</h2>
+    <div class="prova-rate">
+      <div class="big">4.5</div>
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg>
+      </div>
+      <div class="sub">avaliação no Google</div>
+    </div>
+    <div class="depo-grid">
+      <div class="depo reveal">
+        <div class="qt">&ldquo;</div>
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg></div>
+        <p>Melhor barbearia que já fui no Jardim Renascença. O degradê fica na régua e a barba sai impecável. Virei cliente fixo.</p>
+        <div class="who">Rafael M.<span>Cliente desde 2024</span></div>
+      </div>
+      <div class="depo reveal">
+        <div class="qt">&ldquo;</div>
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg></div>
+        <p>Ambiente top e atendimento sem pressa. Dá pra relaxar enquanto cuidam do visual. Marquei pelo WhatsApp e fui atendido na hora marcada.</p>
+        <div class="who">Diego S.<span>Cliente Arena</span></div>
+      </div>
+      <div class="depo reveal">
+        <div class="qt">&ldquo;</div>
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.869 1.402-8.168L.132 9.21l8.2-1.192z"/></svg></div>
+        <p>Profissionais que entendem do corte. Falei o que queria, eles deram a real e o resultado ficou melhor do que eu esperava. Recomendo demais.</p>
+        <div class="who">Lucas P.<span>Cliente Arena</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="inner local-grid">
+    <div>
+      <div class="overline light">Onde Estamos</div>
+      <h2>Passa na Arena</h2>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="k">Endereço</div><div class="v">R. dos Acapus, 23 — Jardim Renascença<br>São Luís - MA, 65075-020</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="k">WhatsApp</div><div class="v">(98) 99234-7330</div></div>
+      </div>
+      <div class="info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><div class="k">Atendimento</div><div class="v">Seg a Sáb · sob agendamento pelo WhatsApp</div></div>
+      </div>
+      <div class="local-actions">
+        <a href="https://wa.me/5598992347330" class="btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.027z"/></svg>
+          Agendar agora
+        </a>
+        <a href="https://www.google.com/maps/place/Arena/@-2.5089452,-44.2972161,17z/data=!3m1!4b1!4m6!3m5!1s0x7f68e9cfb80216f:0xe9fb04246ec51c03!8m2!3d-2.5089452!4d-44.2972161!16s%2Fg%2F1hhkvb876?authuser=0&hl=pt-BR" target="_blank" rel="noopener" class="btn-ghost">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="local-media">
+      <img src="imagens/web-06.jpg" alt="Detalhe da cadeira de couro clássica da Arena">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-logo">ARE<span>NA</span></div>
+      <p>Barbearia no Jardim Renascença, São Luís - MA. Corte, barba e cuidado masculino com o padrão que você merece.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegue</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5598992347330">WhatsApp: (98) 99234-7330</a>
+      <a href="https://www.google.com/maps/place/Arena/@-2.5089452,-44.2972161,17z/data=!3m1!4b1!4m6!3m5!1s0x7f68e9cfb80216f:0xe9fb04246ec51c03!8m2!3d-2.5089452!4d-44.2972161!16s%2Fg%2F1hhkvb876?authuser=0&hl=pt-BR" target="_blank" rel="noopener">R. dos Acapus, 23 — Jardim Renascença</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Arena Barbearia. Todos os direitos reservados.</span>
+    <span>São Luís · Maranhão</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5598992347330" class="wa-fab" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.027zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

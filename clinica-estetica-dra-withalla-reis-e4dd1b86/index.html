@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica estética Dra. Withalla Reis — Estética Avançada em Maceió</title>
+<meta name="description" content="Clínica de estética avançada em Maceió (Feitosa) com nota 5,0 no Google. Limpeza de pele, microagulhamento, revitalização facial e massagem modeladora. Agende sua avaliação pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#faf6f1; --bg-surface:#fffdfb; --bg-inset:#f1e9e0; --bg-dark:#1c1614;
+  /* Texto */
+  --text-primary:#221c18; --text-secondary:#5a504a; --text-muted:#938479; --text-inverse:#faf6f1;
+  /* Acento + marca */
+  --accent:#b8876b; --accent-dark:#9a6951; --accent-subtle:rgba(184,135,107,.10); --accent-border:rgba(184,135,107,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(40,25,15,.05),0 2px 6px rgba(40,25,15,.05);
+  --shadow-md:0 2px 4px rgba(40,25,15,.04),0 8px 18px rgba(40,25,15,.07),0 20px 40px rgba(40,25,15,.05);
+  --shadow-lg:0 4px 8px rgba(40,25,15,.05),0 16px 32px rgba(40,25,15,.07),0 40px 80px rgba(40,25,15,.10);
+  --shadow-accent:0 8px 26px rgba(184,135,107,.34);
+  --shadow-accent-strong:0 14px 38px rgba(184,135,107,.46);
+  /* Tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.95rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .25vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.16em;
+  /* Espaço */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base); color:var(--text-primary);
+  font-family:'Inter',sans-serif; font-size:var(--text-body); font-weight:400; line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; line-height:var(--lh-heading); letter-spacing:var(--ls-display)}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{display:flex; align-items:center; gap:12px; font-family:'Inter',sans-serif; font-size:.7rem; font-weight:500; letter-spacing:var(--ls-overline); text-transform:uppercase; color:var(--accent); margin-bottom:18px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex; align-items:center; gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem); min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff;
+  font-family:'Inter',sans-serif; font-weight:600; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase;
+  border-radius:50px; box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:10px; min-height:52px;
+  padding:1rem clamp(1.4rem,3vw,2rem);
+  border:1px solid rgba(255,255,255,.4); color:#fff; border-radius:50px;
+  font-family:'Inter',sans-serif; font-weight:500; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase;
+  backdrop-filter:blur(6px); transition:background .3s ease,border-color .3s ease; touch-action:manipulation;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.12); border-color:#fff}
+.btn-icon{width:17px; height:17px; flex-shrink:0}
+
+/* Header */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex; align-items:center; justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{background:rgba(28,22,20,.92); backdrop-filter:blur(14px) saturate(150%); box-shadow:0 1px 0 var(--accent-border); padding-top:14px; padding-bottom:14px}
+.brand{display:flex; flex-direction:column; line-height:1.1}
+.brand .b-name{font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; color:#fff; letter-spacing:.01em}
+.brand .b-sub{font-family:'Inter',sans-serif; font-size:.6rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-light); margin-top:2px}
+.nav-links{display:flex; gap:30px; align-items:center}
+.nav-links a{font-family:'Inter',sans-serif; font-size:.8rem; letter-spacing:.04em; color:rgba(255,255,255,.82); transition:color .25s ease}
+.nav-links a:hover{color:#fff}
+.nav-cta{font-size:.72rem!important; letter-spacing:.08em!important; text-transform:uppercase; padding:.7rem 1.3rem; border:1px solid var(--accent-border); border-radius:40px; color:var(--gold-light)!important}
+.nav-cta:hover{background:var(--accent-subtle)}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* Hero — Modelo A cinematic full-bleed */
+.hero{position:relative; min-height:100dvh; display:grid; align-items:end; overflow:hidden}
+.hero-bg{position:absolute; inset:0; background:url('imagens/web-01.jpg') center 30%/cover no-repeat; animation:kb 24s ease-in-out infinite alternate; will-change:transform}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{position:absolute; inset:0; background:linear-gradient(155deg,rgba(28,22,20,.18) 30%,rgba(28,22,20,.62) 68%,rgba(28,22,20,.92) 100%)}
+.hero::before{content:''; position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.hero-content{position:relative; z-index:2; width:100%; padding:0 clamp(1.5rem,6vw,5rem) clamp(3.2rem,7vw,5.5rem); display:flex; align-items:flex-end; justify-content:space-between; gap:36px; flex-wrap:wrap}
+.hero-left{max-width:780px}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:10px; font-family:'Inter',sans-serif; font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-light); margin-bottom:22px}
+.hero-eyebrow::before{content:''; width:34px; height:1px; background:var(--gold-light)}
+.hero-title{font-size:var(--text-display); line-height:var(--lh-display); color:#fff; font-weight:400; max-width:15ch}
+.hero-title .line{display:block; overflow:hidden}
+.hero-title .word{display:inline-block; transform:translateY(112%); opacity:0; animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}.hero-title .line:nth-child(2) .word{animation-delay:.28s}.hero-title .line:nth-child(3) .word{animation-delay:.41s}
+.hero-title em{font-style:italic; color:var(--gold-light); font-weight:400}
+@keyframes word-up{to{transform:translateY(0); opacity:1}}
+.hero-sub{margin-top:26px; max-width:46ch; color:rgba(250,246,241,.86); font-size:clamp(1rem,.95rem + .3vw,1.18rem); font-weight:300; opacity:0; animation:fade-in 1s ease .85s forwards}
+.hero-actions{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap; opacity:0; animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-badge{
+  display:flex; align-items:center; gap:16px; padding:18px 24px; border-radius:18px;
+  background:rgba(255,255,255,.08); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.18);
+  opacity:0; animation:fade-in 1s ease 1.15s forwards;
+}
+.hero-badge .score{font-family:'Cormorant Garamond',serif; font-size:2.7rem; font-weight:600; color:#fff; line-height:1}
+.hero-badge .stars{color:var(--gold-light); font-size:.85rem; letter-spacing:2px}
+.hero-badge .lbl{font-family:'Inter',sans-serif; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(250,246,241,.8); margin-top:4px}
+.scroll-hint{position:absolute; left:50%; bottom:22px; transform:translateX(-50%); z-index:2; color:rgba(255,255,255,.6); font-family:'Inter',sans-serif; font-size:.62rem; letter-spacing:.25em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:8px; animation:fade-in 1s ease 1.4s both}
+.scroll-hint .bar{width:1px; height:38px; background:linear-gradient(rgba(255,255,255,.5),transparent); animation:drop 2s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(.5);transform-origin:top;opacity:.3}50%{transform:scaleY(1);opacity:.9}}
+@media(max-width:600px){.scroll-hint{display:none}}
+
+/* Reveal */
+.reveal{opacity:0; transform:translateY(30px); transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}.reveal:nth-child(3){transition-delay:.12s}.reveal:nth-child(4){transition-delay:.18s}.reveal:nth-child(5){transition-delay:.24s}.reveal:nth-child(6){transition-delay:.3s}
+
+/* Sobre */
+.section-sobre{background:var(--bg-base); clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%); margin-top:-4vw; padding-top:calc(var(--section-pad) + 4vw); position:relative}
+.sobre-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,5rem); align-items:center}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr}}
+.sobre-figure{position:relative}
+.sobre-figure img{width:100%; height:clamp(360px,52vw,620px); object-fit:cover; border-radius:14px; box-shadow:var(--shadow-lg)}
+.sobre-figure .tag{
+  position:absolute; bottom:-26px; left:-26px; background:var(--bg-dark); color:var(--text-inverse);
+  padding:22px 28px; border-radius:14px; box-shadow:var(--shadow-md); max-width:230px;
+}
+@media(max-width:860px){.sobre-figure .tag{left:0; bottom:-20px}}
+.sobre-figure .tag .num{font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:600; color:var(--gold-light); line-height:1}
+.sobre-figure .tag .txt{font-size:.78rem; color:rgba(250,246,241,.78); margin-top:6px; line-height:1.5}
+.sobre-h{font-size:var(--text-h2); margin-bottom:20px}
+.sobre-h em{font-style:italic; color:var(--accent)}
+.sobre-p{color:var(--text-secondary); max-width:var(--prose-max); margin-bottom:18px; font-weight:300}
+.sobre-sign{margin-top:28px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; color:var(--accent-dark)}
+.sobre-sign small{display:block; font-family:'Inter',sans-serif; font-style:normal; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); margin-top:6px}
+
+/* Procedimentos */
+.section-proc{background:var(--bg-inset)}
+.proc-head{max-width:var(--content-max); margin:0 auto 56px; display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap}
+.proc-head h2{font-size:var(--text-h2); max-width:16ch}
+.proc-head h2 em{font-style:italic; color:var(--accent)}
+.proc-head p{color:var(--text-secondary); max-width:38ch; font-weight:300}
+.proc-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:var(--gap-cards)}
+.proc-card{
+  background:var(--bg-surface); border:1px solid rgba(40,25,15,.06); border-radius:16px; padding:34px 30px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease;
+}
+.proc-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent-border)}
+.proc-card .pc-mark{display:flex; align-items:center; gap:10px; font-family:'Inter',sans-serif; font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:22px}
+.proc-card .pc-mark::before{content:''; width:22px; height:1px; background:currentColor}
+.proc-card .pc-svg{width:34px; height:34px; margin-bottom:18px; color:var(--accent-dark)}
+.proc-card h3{font-size:var(--text-h3); margin-bottom:12px}
+.proc-card p{color:var(--text-secondary); font-size:.95rem; font-weight:300; line-height:1.7}
+
+/* Faixa de procedimentos com fotos */
+.proc-strip{max-width:var(--content-max); margin:clamp(2.5rem,5vw,4rem) auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap-cards)}
+@media(max-width:760px){.proc-strip{grid-template-columns:1fr 1fr}.proc-strip figure:last-child{grid-column:1/-1}}
+.proc-strip figure{position:relative; border-radius:14px; overflow:hidden; box-shadow:var(--shadow-md)}
+.proc-strip img{width:100%; height:clamp(220px,26vw,320px); object-fit:cover; transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.proc-strip figure:hover img{transform:scale(1.06)}
+.proc-strip figcaption{position:absolute; left:0; right:0; bottom:0; padding:24px 22px 18px; color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.3rem; background:linear-gradient(transparent,rgba(28,22,20,.82))}
+.proc-strip figcaption small{display:block; font-family:'Inter',sans-serif; font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); margin-bottom:4px}
+
+/* Prova social — dark */
+.section-prova{position:relative; background:var(--bg-dark); color:var(--text-inverse); overflow:hidden}
+.section-prova::before{content:''; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.prova-wrap{position:relative; z-index:1; max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:5fr 6fr; gap:clamp(2.5rem,5vw,5rem); align-items:center}
+@media(max-width:860px){.prova-wrap{grid-template-columns:1fr}}
+.prova-figure img{width:100%; height:clamp(340px,46vw,540px); object-fit:cover; border-radius:14px; box-shadow:var(--shadow-lg)}
+.prova-content .overline{color:var(--gold-light)}
+.prova-quote{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,1.2rem + 2vw,2.7rem); font-weight:400; line-height:1.28; color:#fff; margin-bottom:24px}
+.prova-quote em{font-style:italic; color:var(--gold-light)}
+.prova-meta{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:30px}
+.prova-score{display:flex; align-items:center; gap:14px; padding:16px 22px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.05)}
+.prova-score .n{font-family:'Cormorant Garamond',serif; font-size:2.3rem; font-weight:600; color:var(--gold-light); line-height:1}
+.prova-score .st{color:var(--gold-light); font-size:.8rem; letter-spacing:2px}
+.prova-score .lb{font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(250,246,241,.72); margin-top:3px}
+.prova-note{color:rgba(250,246,241,.62); font-size:.85rem; font-weight:300; max-width:30ch}
+
+/* Localização */
+.section-local{background:var(--bg-base)}
+.local-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+@media(max-width:860px){.local-grid{grid-template-columns:1fr}}
+.local-info h2{font-size:var(--text-h2); margin-bottom:24px}
+.local-info h2 em{font-style:italic; color:var(--accent)}
+.local-row{display:flex; gap:16px; padding:20px 0; border-bottom:1px solid rgba(40,25,15,.1)}
+.local-row:first-of-type{border-top:1px solid rgba(40,25,15,.1)}
+.local-row .li-svg{width:22px; height:22px; color:var(--accent); flex-shrink:0; margin-top:3px}
+.local-row .li-k{font-family:'Inter',sans-serif; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--text-muted); margin-bottom:5px}
+.local-row .li-v{color:var(--text-primary); font-weight:400}
+.local-row a.li-v:hover{color:var(--accent-dark)}
+.local-actions{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap}
+.local-map{position:relative; border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); min-height:340px}
+.local-map iframe{width:100%; height:100%; min-height:340px; border:0; display:block; filter:saturate(.92) contrast(1.02)}
+
+/* CTA final */
+.section-cta{position:relative; background:linear-gradient(135deg,var(--accent-dark),#7d5440); color:#fff; text-align:center; overflow:hidden}
+.section-cta::before{content:''; position:absolute; inset:0; opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.cta-inner{position:relative; z-index:1; max-width:720px; margin:0 auto}
+.cta-inner .overline{justify-content:center; color:var(--gold-light)}
+.cta-inner h2{font-size:var(--text-h2); margin-bottom:18px}
+.cta-inner h2 em{font-style:italic; color:var(--gold-light)}
+.cta-inner p{color:rgba(255,255,255,.86); font-weight:300; max-width:46ch; margin:0 auto 34px}
+.cta-inner .btn-primary{background:#fff; color:var(--accent-dark); box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.cta-inner .btn-primary:hover{box-shadow:0 16px 40px rgba(0,0,0,.3)}
+
+/* Footer */
+footer{background:var(--bg-dark); color:rgba(250,246,241,.7); padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:clamp(2rem,4vw,3rem)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr; gap:2rem}}
+.foot-brand .fb-name{font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:#fff; font-weight:600}
+.foot-brand .fb-sub{font-size:.62rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-light); margin:6px 0 16px}
+.foot-brand p{font-size:.9rem; font-weight:300; max-width:34ch; color:rgba(250,246,241,.6)}
+.foot-col h4{font-family:'Inter',sans-serif; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:#fff; margin-bottom:16px}
+.foot-col a,.foot-col p{display:block; font-size:.88rem; color:rgba(250,246,241,.62); margin-bottom:10px; font-weight:300; transition:color .25s ease}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max); margin:clamp(2.5rem,5vw,3.5rem) auto 0; padding-top:1.8rem; border-top:1px solid rgba(255,255,255,.1); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.74rem; color:rgba(250,246,241,.45)}
+
+/* WhatsApp FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:60px; height:60px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 22px rgba(37,211,102,.45); transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:32px; height:32px; fill:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-bg,.proc-strip img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge,.scroll-hint{transition:none!important; animation:none!important; opacity:1!important; transform:none!important}
+  .wa-fab::before{animation:none}
+  .scroll-hint .bar{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <span class="b-name">Dra. Withalla Reis</span>
+    <span class="b-sub">Estética Avançada</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A Clínica</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#localizacao">Localização</a>
+    <a class="nav-cta" href="https://wa.me/5582988370776" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Maceió · Feitosa</span>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Beleza</span></span>
+        <span class="line"><span class="word">que nasce</span></span>
+        <span class="line"><span class="word"><em>do cuidado.</em></span></span>
+      </h1>
+      <p class="hero-sub">Estética facial e corporal avançada com protocolos personalizados e o toque profissional que rende nota máxima no Google.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/5582988370776" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+      </div>
+    </div>
+    <div class="hero-badge" aria-label="Nota 5,0 no Google">
+      <span class="score">5,0</span>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>Role</span><span class="bar"></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="section-sobre" id="sobre">
+  <div class="sobre-grid">
+    <figure class="sobre-figure reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente acolhedor da Clínica estética Dra. Withalla Reis em Maceió" loading="lazy">
+      <div class="tag">
+        <div class="num">+5 anos</div>
+        <div class="txt">de dedicação à estética em Maceió</div>
+      </div>
+    </figure>
+    <div class="sobre-text reveal">
+      <span class="overline">A Clínica</span>
+      <h2 class="sobre-h">Um espaço pensado para o seu <em>resultado</em> e o seu bem-estar.</h2>
+      <p class="sobre-p">Na Clínica estética Dra. Withalla Reis cada atendimento começa com uma avaliação real da sua pele e do seu objetivo. Nada de pacote pronto: o protocolo é desenhado para você, com técnica, segurança e produtos de qualidade profissional.</p>
+      <p class="sobre-p">É essa atenção, do diagnóstico ao acompanhamento, que constrói a confiança das clientes e mantém a clínica com nota máxima no Google. Aqui você não é só mais um horário na agenda — é um cuidado conduzido do início ao fim.</p>
+      <div class="sobre-sign">Dra. Withalla Reis
+        <small>Profissional responsável</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="section-proc" id="procedimentos">
+  <div class="proc-head">
+    <div class="reveal">
+      <span class="overline">O que fazemos</span>
+      <h2>Procedimentos para <em>rosto e corpo</em></h2>
+    </div>
+    <p class="reveal">Tecnologia, técnica manual e protocolos personalizados para cada tipo de pele e cada objetivo.</p>
+  </div>
+
+  <div class="proc-grid">
+    <article class="proc-card reveal">
+      <svg class="pc-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="13"/><circle cx="24" cy="24" r="5"/><path d="M24 4v5M24 39v5M4 24h5M39 24h5"/></svg>
+      <span class="pc-mark">Facial</span>
+      <h3>Limpeza de pele profunda</h3>
+      <p>Higienização, extração e revitalização para uma pele limpa, equilibrada e com aquele viço que se nota na hora.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <svg class="pc-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 34 34 14M30 10l8 8"/><path d="M12 36l-4 4M18 30l2 2M24 24l2 2"/></svg>
+      <span class="pc-mark">Renovação</span>
+      <h3>Microagulhamento</h3>
+      <p>Estímulo natural de colágeno para suavizar marcas, cicatrizes e textura, devolvendo firmeza e uniformidade à pele.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <svg class="pc-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 6c6 8 10 13 10 19a10 10 0 0 1-20 0c0-6 4-11 10-19z"/><path d="M19 27a5 5 0 0 0 5 5"/></svg>
+      <span class="pc-mark">Hidratação</span>
+      <h3>Revitalização facial</h3>
+      <p>Hidratação profunda e ativos potentes que recuperam o brilho, amenizam linhas e deixam o rosto descansado e luminoso.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <svg class="pc-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M10 24c4-6 24-6 28 0-4 6-24 6-28 0z"/><circle cx="24" cy="24" r="4"/></svg>
+      <span class="pc-mark">Expressão</span>
+      <h3>Peeling &amp; clareamento</h3>
+      <p>Protocolos para manchas, melasma e tom desigual, renovando a superfície da pele com segurança e acompanhamento.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <svg class="pc-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 30c6-2 10-2 16 0s10 2 16 0"/><path d="M8 20c6-2 10-2 16 0s10 2 16 0"/></svg>
+      <span class="pc-mark">Corporal</span>
+      <h3>Massagem modeladora</h3>
+      <p>Técnicas manuais e terapia com bastões para reduzir medidas, ativar a circulação e modelar o contorno corporal.</p>
+    </article>
+
+    <article class="proc-card reveal">
+      <svg class="pc-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 8c-7 4-11 9-11 15a11 11 0 0 0 22 0c0-6-4-11-11-15z"/><path d="M24 16v18"/></svg>
+      <span class="pc-mark">Drenagem</span>
+      <h3>Drenagem linfática</h3>
+      <p>Diminui o inchaço, alivia a retenção de líquido e dá leveza ao corpo, com toque preciso e relaxante do início ao fim.</p>
+    </article>
+  </div>
+
+  <div class="proc-strip">
+    <figure class="reveal"><img src="imagens/web-03.jpg" alt="Procedimento facial de precisão na clínica" loading="lazy"><figcaption><small>Rosto</small>Cuidado de precisão</figcaption></figure>
+    <figure class="reveal"><img src="imagens/web-04.jpg" alt="Revitalização facial com aparelho profissional" loading="lazy"><figcaption><small>Tecnologia</small>Revitalização facial</figcaption></figure>
+    <figure class="reveal"><img src="imagens/web-05.jpg" alt="Massagem modeladora corporal em ambiente acolhedor" loading="lazy"><figcaption><small>Corpo</small>Massagem modeladora</figcaption></figure>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="section-prova" id="resultados">
+  <div class="prova-wrap">
+    <figure class="prova-figure reveal">
+      <img src="imagens/web-06.jpg" alt="Cliente em momento de cuidado facial relaxante" loading="lazy">
+    </figure>
+    <div class="prova-content reveal">
+      <span class="overline">Quem cuida com a gente</span>
+      <p class="prova-quote">“Saio de cada sessão me sentindo <em>renovada</em>. Atendimento atencioso do começo ao fim — virei cliente fiel.”</p>
+      <div class="prova-meta">
+        <div class="prova-score">
+          <span class="n">5,0</span>
+          <div>
+            <div class="st">★★★★★</div>
+            <div class="lb">Google</div>
+          </div>
+        </div>
+        <p class="prova-note">A nota máxima no Google reflete a experiência de quem já passou por aqui.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="section-local" id="localizacao">
+  <div class="local-grid">
+    <div class="local-info reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Pertinho de você, no <em>Feitosa</em>.</h2>
+      <div class="local-row">
+        <svg class="li-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div>
+          <div class="li-k">Endereço</div>
+          <a class="li-v" href="https://www.google.com/maps/place/Cl%C3%ADnica+est%C3%A9tica+Dra.+Withalla+Reis/@-9.6360701,-35.7250277,17z/data=!3m1!4b1!4m6!3m5!1s0x701452cbdb8a387:0xbe5d4ef2e4dd1b86!8m2!3d-9.6360701!4d-35.7250277!16s%2Fg%2F11pg9ttzfs?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">Rua Desembargador Hélio Cabral, 136 — Pista Nova, Feitosa, Maceió - AL, 57043-040</a>
+        </div>
+      </div>
+      <div class="local-row">
+        <svg class="li-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <div>
+          <div class="li-k">WhatsApp</div>
+          <a class="li-v" href="https://wa.me/5582988370776" target="_blank" rel="noopener">(82) 98837-0776</a>
+        </div>
+      </div>
+      <div class="local-row">
+        <svg class="li-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div>
+          <div class="li-k">Atendimento</div>
+          <div class="li-v">Segunda a sábado · horários com hora marcada</div>
+        </div>
+      </div>
+      <div class="local-actions">
+        <a class="btn-primary" href="https://wa.me/5582988370776" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+          Marcar pelo WhatsApp
+        </a>
+        <a class="btn-ghost" style="border-color:var(--accent-border); color:var(--accent-dark)" href="https://www.google.com/maps/place/Cl%C3%ADnica+est%C3%A9tica+Dra.+Withalla+Reis/@-9.6360701,-35.7250277,17z/data=!3m1!4b1!4m6!3m5!1s0x701452cbdb8a387:0xbe5d4ef2e4dd1b86!8m2!3d-9.6360701!4d-35.7250277!16s%2Fg%2F11pg9ttzfs?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="local-map reveal">
+      <iframe title="Mapa da Clínica estética Dra. Withalla Reis" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-9.6360701,-35.7250277&hl=pt-BR&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section-cta">
+  <div class="cta-inner reveal">
+    <span class="overline center">Sua pele merece</span>
+    <h2>Pronta para o <em>cuidado que transforma</em>?</h2>
+    <p>Conte o que você quer melhorar e a gente monta o protocolo ideal para você. A avaliação começa com uma conversa rápida no WhatsApp.</p>
+    <a class="btn-primary" href="https://wa.me/5582988370776" target="_blank" rel="noopener">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+      Falar com a clínica
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="fb-name">Dra. Withalla Reis</div>
+      <div class="fb-sub">Estética Avançada</div>
+      <p>Estética facial e corporal com protocolos personalizados em Maceió. Cuidado de verdade, do diagnóstico ao resultado.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#localizacao">Localização</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5582988370776" target="_blank" rel="noopener">(82) 98837-0776</a>
+      <p>Rua Des. Hélio Cabral, 136<br>Feitosa, Maceió - AL</p>
+      <a href="https://wa.me/5582988370776" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Clínica estética Dra. Withalla Reis. Todos os direitos reservados.</span>
+    <span>Maceió · Alagoas</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5582988370776" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

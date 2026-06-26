@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LouBeauty Estética — Beleza e bem-estar em São Luís, MA</title>
+<meta name="description" content="Clínica de estética em São Luís, MA. Micropigmentação labial, limpeza de pele, Laser Lavieen e protocolos faciais. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf7f2; --bg-surface:#fffdfa; --bg-inset:#f1e9dd; --bg-dark:#1c1410;
+  --text-primary:#241c15; --text-secondary:#5a4f44; --text-muted:#9a8d7c; --text-inverse:#f6efe4;
+  --accent:#b9893d; --accent-dark:#9a6f2e; --accent-subtle:rgba(185,137,61,.10); --accent-border:rgba(185,137,61,.24);
+  --gold:#c9a84c; --gold-light:#d9b46a;
+  --shadow-sm:0 1px 2px rgba(40,28,12,.04),0 2px 6px rgba(40,28,12,.05);
+  --shadow-md:0 2px 4px rgba(40,28,12,.04),0 8px 18px rgba(40,28,12,.07),0 20px 40px rgba(40,28,12,.05);
+  --shadow-lg:0 4px 8px rgba(40,28,12,.05),0 16px 32px rgba(40,28,12,.07),0 40px 80px rgba(40,28,12,.10);
+  --shadow-accent:0 8px 24px rgba(185,137,61,.32);
+  --shadow-accent-strong:0 14px 34px rgba(185,137,61,.45);
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.95rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.94rem,.86rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif; font-size:var(--text-body); line-height:var(--lh-body);
+  color:var(--text-primary); background:var(--bg-base); -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border:none;cursor:pointer;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;padding:.95rem 1.8rem;min-height:50px;
+  border:1px solid var(--accent-border);border-radius:50px;color:var(--text-primary);
+  font-weight:500;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  transition:background .3s ease,border-color .3s ease,transform .3s cubic-bezier(.22,1,.36,1);
+  touch-action:manipulation;
+}
+.btn-ghost:hover{background:var(--accent-subtle);border-color:var(--accent);transform:translateY(-2px)}
+.btn-ghost.inverse{color:var(--text-inverse);border-color:rgba(246,239,228,.28)}
+.btn-ghost.inverse:hover{background:rgba(246,239,228,.08);border-color:rgba(246,239,228,.6)}
+
+/* ---------- HEADER ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+}
+header.scrolled{background:rgba(28,20,16,.92);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 1px 0 rgba(185,137,61,.22);padding-top:13px;padding-bottom:13px}
+.brand{display:flex;flex-direction:column;line-height:1;color:#fff;transition:color .4s}
+.brand .name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.02em}
+.brand .tag{font-family:'Inter',sans-serif;font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-light);margin-top:4px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.link{color:rgba(255,255,255,.85);font-size:.82rem;letter-spacing:.04em;transition:color .25s}
+.nav a.link:hover{color:var(--gold-light)}
+.nav .btn-primary{font-size:.72rem;padding:.7rem 1.4rem;min-height:42px}
+@media(max-width:860px){.nav a.link{display:none}}
+
+/* ---------- HERO (Model A cinematic) ---------- */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;background:#1c1410}
+.hero-bg{position:absolute;inset:0;background:url('imagens/insta-6.jpg') center 35%/cover no-repeat;animation:kb 24s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(155deg,rgba(28,20,16,.42) 18%,rgba(28,20,16,.62) 58%,rgba(28,20,16,.93) 100%);z-index:1}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.hero-content{position:relative;z-index:3;width:100%;padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);display:flex;align-items:flex-end;justify-content:space-between;gap:38px;flex-wrap:wrap}
+.hero-left{max-width:760px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--gold-light);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold-light)}
+.hero-title{color:#fff;font-weight:400;font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:-.015em;max-width:16ch;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(115%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .word:nth-child(4){animation-delay:.48s}
+.hero-title .word:nth-child(5){animation-delay:.59s}
+.hero-title .word:nth-child(6){animation-delay:.70s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(246,239,228,.85);font-size:clamp(1rem,.9rem+.4vw,1.18rem);max-width:46ch;margin-top:24px;opacity:0;animation:fade-in 1s ease .9s forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;opacity:0;animation:fade-in 1s ease 1.05s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-badge{
+  display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:16px;
+  background:rgba(255,255,255,.09);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.12),0 10px 28px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0;animation:fade-in 1s ease 1.2s forwards;align-self:flex-end
+}
+.hero-badge .stars{color:var(--gold-light);font-size:1.05rem;letter-spacing:2px}
+.hero-badge .score{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:#fff;line-height:1;font-weight:600}
+.hero-badge .lbl{color:rgba(246,239,228,.82);font-size:.72rem;letter-spacing:.04em}
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;color:rgba(246,239,228,.55);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fade-in 1s ease 1.5s both}
+.scroll-hint span{width:1px;height:30px;background:linear-gradient(rgba(246,239,228,.5),transparent);animation:hint 2s ease-in-out infinite}
+@keyframes hint{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:680px){.hero-badge{display:none}}
+
+/* ---------- SECTION BASE ---------- */
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.eyebrow-line{color:var(--accent)}
+
+/* ---------- SOBRE ---------- */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr;gap:2.6rem}}
+.sobre-figure{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-figure img{width:100%;height:clamp(360px,52vw,560px);object-fit:cover}
+.sobre-figure .quote{
+  position:absolute;left:18px;bottom:18px;right:18px;padding:18px 22px;border-radius:12px;
+  background:rgba(28,20,16,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.14);color:var(--text-inverse)
+}
+.sobre-figure .quote span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--gold-light)}
+.sobre h2{font-size:var(--text-h2);margin-bottom:22px;max-width:14ch}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.sobre .stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.sobre .stat .num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,1.5rem+2vw,3rem);color:var(--accent);font-weight:600;line-height:1}
+.sobre .stat .cap{font-size:.78rem;color:var(--text-muted);letter-spacing:.04em;margin-top:6px}
+
+/* ---------- PROCEDIMENTOS ---------- */
+.proc{background:var(--bg-dark);color:var(--text-inverse);position:relative;clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);margin-top:-3vw;padding-top:calc(var(--section-pad) + 4vw)}
+.proc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.proc .inner{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1}
+.proc .head{max-width:640px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc h2{font-size:var(--text-h2);color:#fff}
+.proc h2 em{font-style:italic;color:var(--gold-light)}
+.proc .head p{color:rgba(246,239,228,.7);margin-top:16px;max-width:52ch}
+.proc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-cards)}
+@media(max-width:760px){.proc-grid{grid-template-columns:1fr}}
+.serv-card{
+  position:relative;border-radius:10px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;
+  border:1px solid rgba(246,239,228,.08);
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease;
+  box-shadow:var(--shadow-md)
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover img{transform:scale(1.06)}
+.serv-card .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,10,.94) 8%,rgba(20,14,10,.55) 48%,rgba(20,14,10,.18) 100%)}
+.serv-card .body{position:relative;z-index:2;padding:clamp(1.6rem,3vw,2.2rem)}
+.serv-card .cat{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);font-weight:600;display:block;margin-bottom:10px}
+.serv-card h3{font-size:var(--text-h3);color:#fff;margin-bottom:8px}
+.serv-card p{color:rgba(246,239,228,.78);font-size:.92rem;line-height:1.6;max-width:40ch}
+.proc .cta-row{margin-top:clamp(2.5rem,5vw,3.5rem);display:flex;justify-content:center}
+
+/* ---------- PROVA SOCIAL ---------- */
+.prova{background:var(--bg-inset);position:relative}
+.prova .inner{max-width:var(--content-max);margin:0 auto}
+.prova .top{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+@media(max-width:760px){.prova .top{grid-template-columns:1fr;gap:1.8rem}}
+.rating-block{text-align:center;padding:clamp(1.6rem,3vw,2.4rem) clamp(2rem,4vw,3rem);background:var(--bg-surface);border-radius:14px;box-shadow:var(--shadow-md);border:1px solid var(--accent-border)}
+.rating-block .big{font-family:'Cormorant Garamond',serif;font-size:clamp(3.4rem,2.5rem+3vw,5rem);color:var(--accent);font-weight:600;line-height:1}
+.rating-block .stars{color:var(--gold);letter-spacing:3px;font-size:1.2rem;margin:6px 0}
+.rating-block .src{font-size:.74rem;color:var(--text-muted);letter-spacing:.06em}
+.prova h2{font-size:var(--text-h2);max-width:16ch}
+.prova h2 em{font-style:italic;color:var(--accent)}
+.prova .top p{color:var(--text-secondary);margin-top:14px;max-width:46ch}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:820px){.testi-grid{grid-template-columns:1fr}}
+.testi{background:var(--bg-surface);border-radius:12px;padding:clamp(1.6rem,3vw,2.1rem);box-shadow:var(--shadow-sm);border:1px solid rgba(40,28,12,.06);display:flex;flex-direction:column;gap:16px}
+.testi .qstars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.testi p{color:var(--text-secondary);font-size:.96rem;line-height:1.7;font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:400}
+.testi .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.testi .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.95rem;font-family:'Cormorant Garamond',serif}
+.testi .who b{font-size:.86rem;font-weight:600;display:block;font-family:'Inter',sans-serif}
+.testi .who small{font-size:.74rem;color:var(--text-muted)}
+
+/* ---------- GALERIA / RESULTADOS strip ---------- */
+.galeria{background:var(--bg-base)}
+.galeria .inner{max-width:var(--content-max);margin:0 auto}
+.galeria .head{text-align:center;margin-bottom:clamp(2.2rem,4vw,3.2rem)}
+.galeria h2{font-size:var(--text-h2)}
+.galeria h2 em{font-style:italic;color:var(--accent)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.5vw,1rem)}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+.gal-grid figure{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:3/4}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+
+/* ---------- LOCALIZACAO ---------- */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.local::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.local .inner{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:center;position:relative;z-index:1}
+@media(max-width:880px){.local .inner{grid-template-columns:1fr;gap:2.4rem}}
+.local h2{font-size:var(--text-h2);color:#fff;max-width:14ch;margin-bottom:22px}
+.local h2 em{font-style:italic;color:var(--gold-light)}
+.local .info{list-style:none;display:flex;flex-direction:column;gap:22px;margin:28px 0 32px}
+.local .info li{display:flex;gap:16px;align-items:flex-start}
+.local .info .ic{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--gold-light)}
+.local .info .ic svg{width:18px;height:18px}
+.local .info .t{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px}
+.local .info .v{color:rgba(246,239,228,.9);font-size:.98rem;line-height:1.5}
+.local .actions{display:flex;gap:14px;flex-wrap:wrap}
+.map-card{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(246,239,228,.1);min-height:340px}
+.map-card iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.05)}
+
+/* ---------- FOOTER ---------- */
+footer{background:#150f0b;color:rgba(246,239,228,.6);padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-inner{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;font-weight:600}
+.foot-brand .tag{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-top:6px}
+.foot-brand p{margin-top:16px;font-size:.86rem;max-width:34ch;line-height:1.7}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:.88rem;color:rgba(246,239,228,.6);margin-bottom:10px;transition:color .25s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,3.5rem) auto 0;padding-top:1.6rem;border-top:1px solid rgba(246,239,228,.1);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem;color:rgba(246,239,228,.4)}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .25s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.serv-card img,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge,.scroll-hint{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#top" class="brand">
+    <span class="name">LouBeauty</span>
+    <span class="tag">Beleza &amp; Bem-estar</span>
+  </a>
+  <nav class="nav">
+    <a href="#sobre" class="link">A Clínica</a>
+    <a href="#procedimentos" class="link">Procedimentos</a>
+    <a href="#prova" class="link">Resultados</a>
+    <a href="#local" class="link">Onde estamos</a>
+    <a href="https://wa.me/5598982021426" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Clínica de Estética · São Luís, MA</span>
+      <h1 class="hero-title">
+        <span class="word">Beleza</span>
+        <span class="word">e</span>
+        <span class="word">bem-estar</span>
+        <span class="word">que</span>
+        <span class="word"><em>realçam</em></span>
+        <span class="word">você.</span>
+      </h1>
+      <p class="hero-sub">Da micropigmentação labial ao Laser Lavieen, cada procedimento é pensado para realçar a sua melhor versão — com técnica, cuidado e acolhimento no coração de São Luís.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5598982021426" class="btn-primary" target="_blank" rel="noopener">Agendar avaliação</a>
+        <a href="#procedimentos" class="btn-ghost inverse">Ver procedimentos</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div>
+        <div class="score">5,0</div>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="lbl">Avaliação<br>no Google</div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <figure class="sobre-figure reveal">
+      <img src="imagens/web-facial.jpg" alt="Atendimento facial cuidadoso na LouBeauty Estética" loading="lazy">
+      <div class="quote"><span>"Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos."</span></div>
+    </figure>
+    <div class="sobre-text">
+      <div class="overline reveal">A Clínica</div>
+      <h2 class="reveal">Mais que estética: um cuidado que <em>transforma</em> a autoestima.</h2>
+      <p class="reveal">A LouBeauty nasceu em São Luís com um propósito simples: unir beleza e bem-estar num só lugar, onde cada cliente é cuidada com atenção do começo ao fim. Aqui a estética não é correr atrás de um padrão — é realçar o que você já tem de melhor.</p>
+      <p class="reveal">Da técnica delicada da micropigmentação labial às tecnologias de pele como o Laser Lavieen, cada protocolo é conduzido com segurança, higiene e um olhar de quem se importa com o seu resultado e com o seu conforto.</p>
+      <div class="stats reveal">
+        <div class="stat"><div class="num">5,0</div><div class="cap">Nota no Google</div></div>
+        <div class="stat"><div class="num">+4</div><div class="cap">Linhas de procedimento</div></div>
+        <div class="stat"><div class="num">100%</div><div class="cap">Atendimento personalizado</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="inner">
+    <div class="head">
+      <div class="overline">Procedimentos</div>
+      <h2>Tratamentos para realçar a sua <em>beleza natural</em></h2>
+      <p>Cada serviço é avaliado de forma individual. Conte o que você deseja e montamos o protocolo ideal para o seu rosto e a sua pele.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <img src="imagens/insta-4.jpg" alt="Resultado de micropigmentação labial" loading="lazy">
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Carro-chefe</span>
+          <h3>Micropigmentação Labial</h3>
+          <p>Lábios com cor, contorno e viço naturais que duram. Acaba a rotina do batom e devolve a definição que realça o sorriso.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="imagens/web-laser.jpg" alt="Tratamento facial com Laser Lavieen" loading="lazy">
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Tecnologia</span>
+          <h3>Laser Lavieen</h3>
+          <p>Skincare tecnológico para uniformizar o tom, suavizar manchas e melasma e dar à pele um viço de "pele de vidro" sem agredir.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="imagens/web-mascara.jpg" alt="Limpeza de pele profunda com máscara facial" loading="lazy">
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Cuidado facial</span>
+          <h3>Limpeza de Pele &amp; Máscaras</h3>
+          <p>Limpeza profunda, extração e máscaras ativas que renovam a pele, controlam a oleosidade e devolvem a sensação de pele leve.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <img src="imagens/web-produtos.jpg" alt="Protocolos de skincare personalizados" loading="lazy">
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Rotina &amp; viço</span>
+          <h3>Protocolos &amp; Skincare</h3>
+          <p>Protocolos faciais de hidratação, firmeza e rejuvenescimento, com orientação de cuidados em casa para manter o resultado.</p>
+        </div>
+      </article>
+    </div>
+    <div class="cta-row">
+      <a href="https://wa.me/5598982021426" class="btn-primary" target="_blank" rel="noopener">Falar sobre o meu tratamento</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="inner">
+    <div class="top">
+      <div class="rating-block reveal">
+        <div class="big">5,0</div>
+        <div class="stars">★★★★★</div>
+        <div class="src">Avaliação no Google</div>
+      </div>
+      <div>
+        <div class="overline">Quem passa por aqui, volta</div>
+        <h2 class="reveal">A confiança de quem já <em>se sentiu cuidada</em></h2>
+        <p class="reveal">Nota máxima no Google não é sorte: é o reflexo de cada atendimento feito com técnica, higiene e carinho. Veja o que dizem as clientes da LouBeauty.</p>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <article class="testi reveal">
+        <div class="qstars">★★★★★</div>
+        <p>"Fiz a micropigmentação labial e amei o resultado. Cor super natural e o atendimento é impecável, super atenciosa do início ao fim."</p>
+        <div class="who"><div class="av">A</div><div><b>Amanda R.</b><small>São Luís, MA</small></div></div>
+      </article>
+      <article class="testi reveal">
+        <div class="qstars">★★★★★</div>
+        <p>"Ambiente acolhedor e profissional de verdade. Minha pele mudou depois dos cuidados faciais. Recomendo de olhos fechados."</p>
+        <div class="who"><div class="av">J</div><div><b>Juliana M.</b><small>Bairro de Fátima</small></div></div>
+      </article>
+      <article class="testi reveal">
+        <div class="qstars">★★★★★</div>
+        <p>"Lugar limpo, organizado e me senti em casa. Saí de lá renovada e com a autoestima lá em cima. Já marquei meu retorno."</p>
+        <div class="who"><div class="av">P</div><div><b>Patrícia L.</b><small>São Luís, MA</small></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="inner">
+    <div class="head reveal">
+      <div class="overline center">Resultados reais</div>
+      <h2>Trabalhos feitos <em>aqui na clínica</em></h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="reveal"><img src="imagens/insta-5.jpg" alt="Resultado de micropigmentação labial LouBeauty" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-4.jpg" alt="Lábios após micropigmentação" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-resultado.jpg" alt="Pele saudável e viçosa" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/web-facial.jpg" alt="Procedimento facial em andamento" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="inner">
+    <div class="local-text">
+      <div class="overline">Onde estamos</div>
+      <h2>Venha viver a experiência <em>LouBeauty</em></h2>
+      <ul class="info">
+        <li>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <div><div class="t">Endereço</div><div class="v">Tv. Boa Esperança, 68 — Bairro de Fátima<br>São Luís - MA, 65030-180</div></div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v2.5a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 3.7 2 2 0 0 1 4.1 1.5h2.5a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.6 9.3a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><div class="t">WhatsApp</div><div class="v">(98) 98202-1426</div></div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+          <div><div class="t">Instagram</div><div class="v">@loubeautyestetica</div></div>
+        </li>
+      </ul>
+      <div class="actions">
+        <a href="https://wa.me/5598982021426" class="btn-primary" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a href="https://www.google.com/maps/place/LouBeauty+Est%C3%A9tica+-+S%C3%A3o+Lu%C3%ADs+MA/@-2.5446,-44.28172,17z/data=!3m1!4b1!4m6!3m5!1s0x7f68dd6c927cf89:0xd68f4f588078a3a3!8m2!3d-2.5446!4d-44.28172!16s%2Fg%2F11p77fkqg3" class="btn-ghost inverse" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Mapa LouBeauty Estética" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-2.5446,-44.28172&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="name">LouBeauty</div>
+      <div class="tag">Beleza &amp; Bem-estar</div>
+      <p>Clínica de estética em São Luís, MA. Realçando a sua melhor versão com técnica, cuidado e acolhimento.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Procedimentos</h4>
+      <a href="#procedimentos">Micropigmentação Labial</a>
+      <a href="#procedimentos">Laser Lavieen</a>
+      <a href="#procedimentos">Limpeza de Pele</a>
+      <a href="#procedimentos">Protocolos &amp; Skincare</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5598982021426" target="_blank" rel="noopener">WhatsApp: (98) 98202-1426</a>
+      <a href="https://www.instagram.com/loubeautyestetica" target="_blank" rel="noopener">@loubeautyestetica</a>
+      <p>Tv. Boa Esperança, 68<br>Bairro de Fátima — São Luís, MA</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 LouBeauty Estética. Todos os direitos reservados.</span>
+    <span>São Luís · Maranhão</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5598982021426" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

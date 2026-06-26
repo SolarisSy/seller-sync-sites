@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espaço Estético Marcela Martins — Estética Avançada em Caucaia, CE</title>
+<meta name="description" content="Clínica de estética avançada em Caucaia/CE com a assinatura de Marcela Martins. Microagulhamento, depilação a laser, GHK-Cu e detox corporal. Nota 4.9 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Tipografia fluida */
+  --text-display: clamp(2.8rem, 2rem + 4.4vw, 5.6rem);
+  --text-h2:      clamp(1.9rem, 1.3rem + 2.5vw, 3.1rem);
+  --text-h3:      clamp(1.3rem, 1rem + 1.2vw, 1.85rem);
+  --text-body:    clamp(0.95rem, 0.88rem + 0.3vw, 1.05rem);
+  --text-sm:      clamp(0.78rem, 0.72rem + 0.2vw, 0.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-0.015em; --ls-overline:0.16em;
+
+  /* Cor — superfície */
+  --bg-base:#faf6f1; --bg-surface:#ffffff; --bg-inset:#f1e9df; --bg-dark:#2a211b;
+  /* Cor — texto */
+  --text-primary:#2b231d; --text-secondary:#5b4f45; --text-muted:#9a8d7f; --text-inverse:#f7efe6;
+  /* Cor — acento marca + metálico */
+  --accent:#a9763e; --accent-dark:#866033;
+  --accent-subtle:rgba(169,118,62,.10); --accent-border:rgba(169,118,62,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+
+  --shadow-sm:0 1px 2px rgba(43,35,29,.05),0 2px 6px rgba(43,35,29,.05);
+  --shadow-md:0 2px 4px rgba(43,35,29,.04),0 8px 18px rgba(43,35,29,.07),0 20px 40px rgba(43,35,29,.05);
+  --shadow-lg:0 4px 8px rgba(43,35,29,.05),0 16px 32px rgba(43,35,29,.07),0 40px 80px rgba(43,35,29,.09);
+  --shadow-accent:0 8px 22px rgba(169,118,62,.32);
+  --shadow-accent-strong:0 12px 34px rgba(169,118,62,.42);
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif; font-weight:400;
+  font-size:var(--text-body); line-height:var(--lh-body);
+  color:var(--text-primary); background:var(--bg-base);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; line-height:var(--lh-heading)}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max); margin:0 auto}
+
+/* Overline */
+.overline{display:flex; align-items:center; gap:12px; font-family:'Inter',sans-serif;
+  font-size:.7rem; font-weight:600; letter-spacing:var(--ls-overline); text-transform:uppercase;
+  color:var(--accent); margin-bottom:18px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{display:inline-flex; align-items:center; gap:11px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem); min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff;
+  font-family:'Inter',sans-serif; font-weight:600; font-size:.8rem; letter-spacing:.06em;
+  text-transform:uppercase; border-radius:50px; box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex; align-items:center; gap:10px; padding:1rem 1.8rem; min-height:52px;
+  font-family:'Inter',sans-serif; font-weight:500; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase;
+  border:1px solid var(--accent-border); border-radius:50px; color:var(--text-primary);
+  transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);
+  touch-action:manipulation}
+.btn-ghost:hover{border-color:var(--accent); background:var(--accent-subtle); transform:translateY(-2px)}
+.btn-light{color:var(--text-inverse); border-color:rgba(247,239,230,.3)}
+.btn-light:hover{background:rgba(247,239,230,.08); border-color:rgba(247,239,230,.55)}
+.wa-ico{width:19px; height:19px; flex:none}
+
+/* Header */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(42,33,27,.94); backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%); box-shadow:0 1px 0 rgba(201,168,76,.22); padding:12px clamp(1.5rem,5vw,4rem)}
+.brand{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; letter-spacing:.02em; color:var(--text-primary); transition:color .35s ease}
+.brand small{display:block; font-family:'Inter',sans-serif; font-size:.56rem; font-weight:500; letter-spacing:.34em; text-transform:uppercase; color:var(--accent); margin-top:1px}
+header.scrolled .brand{color:var(--text-inverse)}
+.nav{display:flex; align-items:center; gap:30px}
+.nav a.lnk{font-family:'Inter',sans-serif; font-size:.82rem; font-weight:500; color:var(--text-secondary); transition:color .25s ease}
+header.scrolled .nav a.lnk{color:rgba(247,239,230,.82)}
+.nav a.lnk:hover{color:var(--accent)}
+header.scrolled .nav a.lnk:hover{color:var(--gold-light)}
+.nav .btn-head{padding:.7rem 1.4rem; min-height:44px; background:var(--accent); color:#fff; border-radius:50px;
+  font-family:'Inter',sans-serif; font-size:.76rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+  display:inline-flex; align-items:center; gap:8px; transition:transform .25s ease,background .25s ease}
+.nav .btn-head:hover{transform:translateY(-2px); background:var(--accent-dark)}
+@media(max-width:780px){.nav a.lnk{display:none}}
+
+/* HERO — Modelo B split 40/60 */
+.hero{display:grid; grid-template-columns:2fr 3fr; min-height:100dvh}
+.hero-copy{position:relative; background:var(--bg-dark); color:var(--text-inverse);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(6rem,10vh,8rem) clamp(1.8rem,4vw,4rem) clamp(3rem,6vh,5rem); overflow:hidden}
+.hero-copy::before{content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px; opacity:.05}
+.hero-copy::after{content:''; position:absolute; left:0; top:0; bottom:0; width:55%; z-index:0;
+  background:radial-gradient(120% 80% at 0% 50%,rgba(169,118,62,.20),transparent 70%)}
+.hero-copy>*{position:relative; z-index:2}
+.hero-eyebrow{font-family:'Inter',sans-serif; font-size:.7rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-light); margin-bottom:24px; display:flex; align-items:center; gap:12px}
+.hero-eyebrow::before{content:''; width:34px; height:1px; background:var(--gold)}
+.hero-title{font-size:var(--text-display); line-height:var(--lh-display); letter-spacing:var(--ls-display);
+  font-weight:400; max-width:13ch; margin-bottom:26px}
+.hero-title .word{display:inline-block; transform:translateY(112%); opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .ln{display:block; overflow:hidden; padding-bottom:.04em}
+.hero-title em{font-style:italic; color:var(--gold-light)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .ln:nth-child(2) .word{animation-delay:.28s}
+.hero-title .ln:nth-child(3) .word{animation-delay:.41s}
+@keyframes word-up{to{transform:translateY(0); opacity:1}}
+.hero-sub{font-size:1.02rem; color:rgba(247,239,230,.78); max-width:38ch; margin-bottom:36px;
+  opacity:0; animation:fade-in 1s ease .9s forwards}
+.hero-actions{display:flex; flex-wrap:wrap; gap:14px; opacity:0; animation:fade-in 1s ease 1.1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-media{position:relative; overflow:hidden; min-height:60vh}
+.hero-media img{width:100%; height:100%; object-fit:cover; object-position:center 28%;
+  animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-media::after{content:''; position:absolute; inset:0;
+  background:linear-gradient(120deg,rgba(42,33,27,.34) 0%,transparent 30%)}
+.selo{position:absolute; bottom:26px; right:26px; z-index:3;
+  display:flex; align-items:center; gap:13px; padding:13px 18px; border-radius:16px;
+  background:rgba(42,33,27,.42); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(247,239,230,.18);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 10px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16)}
+.selo .num{font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:#fff; line-height:1}
+.selo .meta{color:rgba(247,239,230,.9)}
+.selo .stars{color:var(--gold-light); font-size:.8rem; letter-spacing:2px; line-height:1}
+.selo .lbl{font-family:'Inter',sans-serif; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; margin-top:3px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-media{order:-1; height:64vw; min-height:340px}
+  .hero-copy{padding-top:6.5rem}
+}
+
+/* SOBRE */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,5rem); align-items:center}
+.sobre-media{position:relative}
+.sobre-media img{width:100%; border-radius:6px; box-shadow:var(--shadow-lg); aspect-ratio:4/5; object-fit:cover; object-position:center 22%}
+.sobre-media .frame{position:absolute; inset:-14px -14px auto auto; width:62%; height:62%; border:1px solid var(--accent-border); border-radius:6px; z-index:-1}
+.lead-p{font-size:1.06rem; color:var(--text-secondary); margin-bottom:18px; max-width:var(--prose-max)}
+.sobre h2{font-size:var(--text-h2); margin-bottom:22px; max-width:16ch}
+.sobre h2 em{font-style:italic; color:var(--accent)}
+.sig{margin-top:30px; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-style:italic; color:var(--text-primary)}
+.sig small{display:block; font-family:'Inter',sans-serif; font-style:normal; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); margin-top:5px}
+.mini-stats{display:flex; gap:clamp(1.5rem,4vw,3rem); margin-top:34px; flex-wrap:wrap}
+.mini-stats .st .n{font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:600; color:var(--accent); line-height:1}
+.mini-stats .st .t{font-size:.8rem; color:var(--text-muted); margin-top:4px}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr; gap:2.5rem}.sobre-media{order:-1; max-width:440px}}
+
+/* PROCEDIMENTOS — diagonal dark */
+.proc{position:relative; background:var(--bg-dark); color:var(--text-inverse);
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-2vw; padding-top:calc(var(--section-pad) + 4vw)}
+.proc::before{content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px; opacity:.045}
+.proc .wrap{position:relative; z-index:1}
+.proc .overline{color:var(--gold-light)}
+.proc h2{font-size:var(--text-h2); color:var(--text-inverse); margin-bottom:14px; max-width:18ch}
+.proc h2 em{font-style:italic; color:var(--gold-light)}
+.proc .intro{color:rgba(247,239,230,.7); max-width:54ch; margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:var(--gap-cards)}
+.serv-card{position:relative; padding:clamp(1.6rem,2.6vw,2.2rem); border-radius:8px;
+  background:rgba(247,239,230,.04); border:1px solid rgba(247,239,230,.1);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease,background .25s ease}
+.serv-card:hover{transform:translateY(-6px); border-color:rgba(201,168,76,.4); background:rgba(247,239,230,.06);
+  box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.serv-num{font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--gold-light); letter-spacing:.1em}
+.serv-card h3{font-size:var(--text-h3); color:var(--text-inverse); margin:14px 0 10px}
+.serv-card p{font-size:.92rem; color:rgba(247,239,230,.66)}
+.serv-card .tag{display:inline-block; margin-top:16px; font-family:'Inter',sans-serif; font-size:.66rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light); padding-bottom:3px; border-bottom:1px solid rgba(201,168,76,.4)}
+.proc-cta{margin-top:clamp(2.6rem,5vw,4rem)}
+
+/* RESULTADOS / GALERIA */
+.gal{background:var(--bg-base)}
+.gal-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:clamp(2rem,4vw,3.2rem)}
+.gal h2{font-size:var(--text-h2); max-width:14ch}
+.gal h2 em{font-style:italic; color:var(--accent)}
+.gal-head p{color:var(--text-secondary); max-width:40ch}
+.gal-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap-cards)}
+.gal-grid figure{position:relative; overflow:hidden; border-radius:8px; box-shadow:var(--shadow-md); aspect-ratio:3/4}
+.gal-grid img{width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid figure:first-child{grid-row:span 2; aspect-ratio:3/5}
+.gal-cap{position:absolute; left:0; right:0; bottom:0; padding:18px 18px 16px;
+  background:linear-gradient(transparent,rgba(42,33,27,.78)); color:#fff;
+  font-family:'Inter',sans-serif; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase}
+@media(max-width:720px){.gal-grid{grid-template-columns:1fr 1fr}.gal-grid figure:first-child{grid-row:span 1; aspect-ratio:3/4}}
+
+/* PROVA SOCIAL */
+.prova{position:relative; background:var(--bg-inset); overflow:hidden}
+.prova .wrap{max-width:880px; text-align:center; position:relative; z-index:1}
+.prova .mark{font-family:'Cormorant Garamond',serif; font-size:5rem; line-height:.6; color:var(--accent-border); margin-bottom:6px}
+.prova blockquote{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(1.5rem,1rem + 2.4vw,2.5rem); line-height:1.32; color:var(--text-primary); margin-bottom:30px}
+.prova blockquote em{font-style:italic; color:var(--accent)}
+.prova .rate{display:inline-flex; flex-direction:column; align-items:center; gap:6px}
+.prova .rate .stars{color:var(--gold); font-size:1.1rem; letter-spacing:3px}
+.prova .rate .who{font-family:'Inter',sans-serif; font-size:.8rem; letter-spacing:.06em; color:var(--text-secondary)}
+.prova .rate .who strong{color:var(--text-primary)}
+
+/* LOCALIZAÇÃO */
+.loc{background:var(--bg-dark); color:var(--text-inverse)}
+.loc-grid{display:grid; grid-template-columns:5fr 6fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.loc .overline{color:var(--gold-light)}
+.loc h2{font-size:var(--text-h2); color:var(--text-inverse); margin-bottom:22px; max-width:15ch}
+.loc h2 em{font-style:italic; color:var(--gold-light)}
+.loc .info{list-style:none; margin:0 0 30px}
+.loc .info li{display:flex; gap:14px; padding:15px 0; border-top:1px solid rgba(247,239,230,.12); color:rgba(247,239,230,.82); font-size:.96rem}
+.loc .info li:last-child{border-bottom:1px solid rgba(247,239,230,.12)}
+.loc .info .k{font-family:'Inter',sans-serif; font-size:.66rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light); min-width:96px; padding-top:3px}
+.loc-map{border-radius:10px; overflow:hidden; box-shadow:var(--shadow-lg); min-height:340px; border:1px solid rgba(247,239,230,.12)}
+.loc-map iframe{width:100%; height:100%; min-height:340px; border:0; display:block; filter:grayscale(.2) contrast(1.05)}
+@media(max-width:820px){.loc-grid{grid-template-columns:1fr; gap:2.5rem}}
+
+/* FOOTER */
+footer{background:#211a15; color:rgba(247,239,230,.66); padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between; gap:34px; flex-wrap:wrap; align-items:flex-start}
+.foot-brand{font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; color:var(--text-inverse)}
+.foot-brand small{display:block; font-family:'Inter',sans-serif; font-size:.58rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold-light); margin-top:3px}
+footer p{font-size:.9rem; max-width:34ch; margin-top:14px}
+.foot-col h4{font-family:'Inter',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light); margin-bottom:14px}
+.foot-col a,.foot-col span{display:block; font-size:.92rem; color:rgba(247,239,230,.72); margin-bottom:9px; transition:color .25s ease}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max); margin:2.6rem auto 0; padding-top:1.6rem; border-top:1px solid rgba(247,239,230,.1); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.78rem; color:rgba(247,239,230,.5)}
+
+/* WA FAB */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.42); transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px; height:30px}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.35); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1); opacity:.8}100%{transform:scale(1.7); opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0; transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-media img,.hero-bg{animation:none}
+  .hero-title .word,.hero-sub,.hero-actions{animation:none; opacity:1; transform:none}
+  .reveal{transition:none; opacity:1; transform:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Marcela Martins<small>Estética &amp; Beleza</small></a>
+  <nav class="nav">
+    <a class="lnk" href="#sobre">Sobre</a>
+    <a class="lnk" href="#procedimentos">Procedimentos</a>
+    <a class="lnk" href="#resultados">Resultados</a>
+    <a class="lnk" href="#localizacao">Onde estamos</a>
+    <a class="btn-head" href="https://wa.me/5585992246212" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo" style="padding:0">
+  <div class="hero-copy">
+    <span class="hero-eyebrow">Estética avançada · Caucaia, CE</span>
+    <h1 class="hero-title">
+      <span class="ln"><span class="word">Sua</span> <span class="word">beleza</span></span>
+      <span class="ln"><span class="word">de</span> <span class="word">volta,</span></span>
+      <span class="ln"><span class="word"><em>com&nbsp;ciência</em></span></span>
+    </h1>
+    <p class="hero-sub">Microagulhamento, laser, GHK-Cu e detox corporal com a assinatura de Marcela Martins. Cada protocolo pensado para revelar a sua melhor versão.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5585992246212" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost btn-light" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/insta-1.jpg" alt="Resultado de cliente do Espaço Estético Marcela Martins em Caucaia">
+    <div class="selo">
+      <span class="num">4.9</span>
+      <span class="meta">
+        <span class="stars">★★★★★</span>
+        <span class="lbl">no Google</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-media reveal">
+      <span class="frame" aria-hidden="true"></span>
+      <img src="imagens/insta-8.jpg" alt="Marcela Martins, esteticista responsável pela clínica em Caucaia">
+    </div>
+    <div class="sobre-text">
+      <span class="overline">Quem cuida de você</span>
+      <h2>O trabalho das minhas mãos para você <em>se reconhecer no espelho</em>.</h2>
+      <p class="lead-p">Sou a Marcela Martins. À frente do espaço estético, atendo cada mulher com um propósito simples: que o cuidado da pele e do corpo devolva a confiança de quem se olha e gosta do que vê.</p>
+      <p style="color:var(--text-secondary); max-width:var(--prose-max)">Aqui não existe protocolo de prateleira. A avaliação vem primeiro — pele, objetivo e momento de cada paciente — para indicar o tratamento certo, com tecnologia de ponta e acabamento de quem leva a estética a sério. É essa entrega que sustenta a nossa nota 4.9 no Google.</p>
+      <div class="mini-stats">
+        <div class="st"><div class="n">4.9</div><div class="t">Avaliação no Google</div></div>
+        <div class="st"><div class="n">+5</div><div class="t">Protocolos avançados</div></div>
+        <div class="st"><div class="n">100%</div><div class="t">Atendimento individual</div></div>
+      </div>
+      <div class="sig">Marcela Martins<small>Esteticista responsável</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <span class="overline">O que fazemos</span>
+    <h2>Procedimentos que unem <em>ciência e cuidado</em>.</h2>
+    <p class="intro">Tecnologia de estética avançada para rosto e corpo, sempre indicada após avaliação. Conheça os protocolos mais procurados no espaço.</p>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <span class="serv-num">01</span>
+        <h3>Microagulhamento</h3>
+        <p>Estímulo profundo de colágeno para firmeza, textura uniforme e renovação da pele — resultados naturais e progressivos.</p>
+        <a class="tag" href="https://wa.me/5585992246212" target="_blank" rel="noopener">Agendar avaliação</a>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">02</span>
+        <h3>Depilação a Laser</h3>
+        <p>Tecnologia Elysium para uma pele lisa de verdade, com conforto e segurança. Adeus à lâmina e aos pelos encravados.</p>
+        <a class="tag" href="https://wa.me/5585992246212" target="_blank" rel="noopener">Agendar avaliação</a>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">03</span>
+        <h3>Protocolo GHK-Cu</h3>
+        <p>O queridinho do rejuvenescimento: firmeza, ação antioxidante e luminosidade para realçar a sua beleza natural.</p>
+        <a class="tag" href="https://wa.me/5585992246212" target="_blank" rel="noopener">Agendar avaliação</a>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">04</span>
+        <h3>Detox Corporal</h3>
+        <p>Protocolo corporal que ativa a circulação, reduz o inchaço e prepara o corpo para resultados que você sente e vê.</p>
+        <a class="tag" href="https://wa.me/5585992246212" target="_blank" rel="noopener">Agendar avaliação</a>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">05</span>
+        <h3>Limpeza de Pele Profunda</h3>
+        <p>Higienização completa, extração e hidratação para uma pele saudável, equilibrada e pronta para os demais tratamentos.</p>
+        <a class="tag" href="https://wa.me/5585992246212" target="_blank" rel="noopener">Agendar avaliação</a>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">06</span>
+        <h3>Avaliação Personalizada</h3>
+        <p>Antes de qualquer procedimento, um plano feito para a sua pele e o seu objetivo. É aqui que tudo começa.</p>
+        <a class="tag" href="https://wa.me/5585992246212" target="_blank" rel="noopener">Agendar avaliação</a>
+      </article>
+    </div>
+    <div class="proc-cta">
+      <a class="btn-primary" href="https://wa.me/5585992246212" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+        Não sei o que preciso — me ajuda?
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="gal" id="resultados">
+  <div class="wrap">
+    <div class="gal-head">
+      <div>
+        <span class="overline">Resultados reais</span>
+        <h2>O cuidado que <em>aparece</em> na pele.</h2>
+      </div>
+      <p>Momentos do nosso atendimento e resultados de quem já confiou na estética Marcela Martins.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="reveal">
+        <img src="imagens/insta-3.jpg" alt="Resultado de cliente do espaço estético">
+        <figcaption class="gal-cap">Resultado de cliente</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="imagens/insta-6.jpg" alt="Marcela Martins realizando procedimento a laser" style="object-position:center 18%">
+        <figcaption class="gal-cap">Atendimento na clínica</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="imagens/insta-7.jpg" alt="Pele realçada após protocolo de rejuvenescimento">
+        <figcaption class="gal-cap">Pele realçada · GHK-Cu</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true">&ldquo;</div>
+    <blockquote>Que o trabalho das minhas mãos seja o motivo pelo qual uma mulher <em>volte a enxergar a própria beleza</em>.</blockquote>
+    <div class="rate">
+      <span class="stars">★★★★★</span>
+      <span class="who"><strong>4.9 de 5</strong> · avaliações no Google · Caucaia, CE</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="loc" id="localizacao">
+  <div class="wrap loc-grid">
+    <div class="loc-text">
+      <span class="overline">Onde estamos</span>
+      <h2>Venha viver a experiência <em>pessoalmente</em>.</h2>
+      <ul class="info">
+        <li><span class="k">Endereço</span><span>Rodovia Estruturante, CE-085, 363 — Bom Jesus, Caucaia - CE, 61600-545</span></li>
+        <li><span class="k">WhatsApp</span><span>(85) 99224-6212</span></li>
+        <li><span class="k">Instagram</span><span>@marcelamartinsestetica</span></li>
+        <li><span class="k">Atendimento</span><span>Com hora marcada · agende pelo WhatsApp</span></li>
+      </ul>
+      <div style="display:flex; gap:14px; flex-wrap:wrap">
+        <a class="btn-primary" href="https://wa.me/5585992246212" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607z"/></svg>
+          Marcar pelo WhatsApp
+        </a>
+        <a class="btn-ghost btn-light" href="https://www.google.com/maps/place/Espa%C3%A7o+Est%C3%A9tico+Marcela+Martins+-+Caucaia/@-3.7692016,-38.6526962,17z/data=!3m1!4b1!4m6!3m5!1s0x7c0b51805b078fd:0x1a28af7247e5f7af!8m2!3d-3.7692016!4d-38.6526962!16s%2Fg%2F11s11x3j90" target="_blank" rel="noopener">Ver rota no Google Maps</a>
+      </div>
+    </div>
+    <div class="loc-map">
+      <iframe src="https://www.google.com/maps?q=-3.7692016,-38.6526962&hl=pt-BR&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — Espaço Estético Marcela Martins, Caucaia"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Marcela Martins<small>Estética &amp; Beleza</small></div>
+      <p>Estética avançada em Caucaia, CE. Tecnologia, ciência e cuidado para revelar a sua melhor versão.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">Sobre</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#localizacao">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5585992246212" target="_blank" rel="noopener">WhatsApp (85) 99224-6212</a>
+      <a href="https://www.instagram.com/marcelamartinsestetica/" target="_blank" rel="noopener">@marcelamartinsestetica</a>
+      <span>Rodovia Estruturante, CE-085, 363</span>
+      <span>Bom Jesus, Caucaia - CE</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Espaço Estético Marcela Martins. Todos os direitos reservados.</span>
+    <span>Caucaia, Ceará · Atendimento com hora marcada</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5585992246212" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

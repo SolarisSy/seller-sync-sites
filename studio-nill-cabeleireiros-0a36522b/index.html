@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Nill Cabeleireiros — Salão de Beleza no Setor Oeste, Goiânia</title>
+<meta name="description" content="Studio Nill Cabeleireiros — coloração ruiva e acobreada, cortes femininos, penteados de festa e noiva no Setor Oeste, Goiânia. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#faf7f3; --bg-surface:#ffffff; --bg-inset:#f1eae1; --bg-dark:#1a1410;
+  /* Texto */
+  --text-primary:#221c17; --text-secondary:#4a423a; --text-muted:#8a8076; --text-inverse:#faf7f3;
+  /* Acento marca (cobre) + dourado */
+  --accent:#b56a3d; --accent-dark:#90502b;
+  --accent-subtle:rgba(181,106,61,.10); --accent-border:rgba(181,106,61,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* Sombras 3 camadas */
+  --shadow-sm:0 1px 2px rgba(40,28,18,.04),0 2px 6px rgba(40,28,18,.05);
+  --shadow-md:0 2px 4px rgba(40,28,18,.04),0 8px 18px rgba(40,28,18,.07),0 20px 40px rgba(40,28,18,.05);
+  --shadow-lg:0 4px 8px rgba(40,28,18,.05),0 16px 32px rgba(40,28,18,.07),0 40px 80px rgba(40,28,18,.09);
+  --shadow-accent:0 6px 18px rgba(181,106,61,.28),0 2px 6px rgba(181,106,61,.18);
+  --shadow-accent-strong:0 12px 30px rgba(181,106,61,.40),0 4px 10px rgba(181,106,61,.22);
+  /* Tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.25rem,1rem + 1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.18em;
+  /* Espaçamento */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;
+  font-size:var(--text-body);line-height:var(--lh-body);
+  color:var(--text-primary);background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:500;line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* Overline */
+.overline{display:flex;align-items:center;gap:10px;font-family:'Nunito Sans',sans-serif;
+  font-size:.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.2rem);min-height:48px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+  font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.05em;
+  text-transform:uppercase;text-decoration:none;border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:.9rem 1.8rem;min-height:48px;
+  border:1px solid rgba(250,247,243,.35);color:var(--text-inverse);border-radius:50px;
+  font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),background .3s ease,border-color .3s ease;
+  touch-action:manipulation}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(250,247,243,.10);border-color:rgba(250,247,243,.6)}
+.ico{width:18px;height:18px;flex-shrink:0}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(26,20,16,.92);backdrop-filter:blur(12px) saturate(150%);
+  -webkit-backdrop-filter:blur(12px) saturate(150%);box-shadow:0 1px 0 rgba(181,106,61,.25);padding:12px clamp(1.5rem,5vw,4rem)}
+.brand{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:#fff;
+  letter-spacing:.02em;text-decoration:none;line-height:1.05}
+.brand small{display:block;font-family:'Nunito Sans',sans-serif;font-size:.55rem;font-weight:600;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-top:2px}
+.nav{display:flex;align-items:center;gap:clamp(1.2rem,2.5vw,2.4rem)}
+.nav a.lk{font-size:.82rem;font-weight:500;letter-spacing:.04em;color:rgba(250,247,243,.85);
+  text-decoration:none;transition:color .25s ease}
+.nav a.lk:hover{color:#fff}
+.nav .btn-head{display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.25rem;border-radius:50px;
+  background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.nav .btn-head:hover{transform:translateY(-2px);background:var(--accent-dark)}
+@media(max-width:760px){.nav a.lk{display:none}}
+
+/* HERO — Modelo C editorial */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/insta-8.jpg') center 22%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate;transform-origin:center}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(26,20,16,.82) 0%,rgba(26,20,16,.55) 32%,rgba(26,20,16,.12) 60%,rgba(26,20,16,.30) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-content{position:relative;z-index:2;padding:0 8% clamp(3.5rem,7vh,6rem);max-width:680px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;padding:.5rem 1rem;border-radius:50px;
+  background:rgba(255,255,255,.10);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.18);
+  font-size:.78rem;font-weight:600;letter-spacing:.03em;color:#fff}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:.05em}
+.hero-eyebrow{font-family:'Nunito Sans',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);
+  color:#fff;font-weight:500;max-width:14ch;overflow:hidden}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .8s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title .word:nth-child(5){animation-delay:.63s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(250,247,243,.9);font-size:clamp(1rem,.9rem + .4vw,1.18rem);max-width:46ch;margin:22px 0 30px;
+  opacity:0;animation:fade-in 1s ease .8s forwards}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.scroll-hint{position:absolute;bottom:26px;right:8%;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(250,247,243,.6);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
+.scroll-hint span{width:1px;height:38px;background:linear-gradient(rgba(250,247,243,.6),transparent);animation:sh 2s ease-in-out infinite}
+@keyframes sh{0%,100%{transform:scaleY(.4);opacity:.3}50%{transform:scaleY(1);opacity:.8}}
+@media(max-width:760px){.scroll-hint{display:none}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* SOBRE */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr;gap:2.5rem}}
+.sobre-imgwrap{position:relative}
+.sobre-imgwrap img{width:100%;height:clamp(360px,46vw,560px);object-fit:cover;object-position:center 30%;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-imgwrap .float{position:absolute;bottom:-28px;left:-22px;background:var(--bg-dark);color:var(--text-inverse);
+  padding:1.4rem 1.6rem;border-radius:6px;box-shadow:var(--shadow-lg);max-width:230px}
+.sobre-imgwrap .float .num{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--gold-light);line-height:1}
+.sobre-imgwrap .float p{font-size:.82rem;color:rgba(250,247,243,.78);margin-top:6px;line-height:1.5}
+@media(max-width:880px){.sobre-imgwrap .float{left:auto;right:16px;bottom:-24px}}
+.sobre h2{font-size:var(--text-h2);margin-bottom:20px;max-width:16ch}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.sobre .signature{margin-top:26px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;color:var(--accent)}
+
+/* PROCEDIMENTOS (seção escura, diagonal cut top) */
+.proc{position:relative;background:var(--bg-dark);color:var(--text-inverse);
+  clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.proc::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.proc .wrap{position:relative;z-index:1}
+.proc-head{max-width:600px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head h2{font-size:var(--text-h2);color:#fff;max-width:16ch}
+.proc-head h2 em{font-style:italic;color:var(--gold-light)}
+.proc-head p{color:rgba(250,247,243,.7);margin-top:16px;max-width:52ch}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:var(--gap-cards)}
+.serv-card{position:relative;border-radius:8px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;
+  border:1px solid rgba(250,247,243,.08);
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .3s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--accent-border)}
+.serv-card .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .ph{transform:scale(1.06)}
+.serv-card .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,15,11,.94) 8%,rgba(20,15,11,.55) 42%,rgba(20,15,11,.10) 100%)}
+.serv-card .body{position:relative;z-index:2;padding:1.6rem 1.5rem}
+.serv-card .cat{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;display:block}
+.serv-card h3{font-size:var(--text-h3);color:#fff;margin-bottom:8px}
+.serv-card p{font-size:.86rem;color:rgba(250,247,243,.78);line-height:1.6}
+.serv-card.txt{background:linear-gradient(150deg,#23190f,#160f0a);justify-content:center;border-color:rgba(181,106,61,.25)}
+.serv-card.txt .body{padding:2rem 1.7rem}
+.serv-card.txt .lead{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:#fff;margin-bottom:14px;line-height:1.3}
+.serv-card.txt p{color:rgba(250,247,243,.72)}
+.serv-card.txt a{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--gold-light);
+  font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:gap .25s ease}
+.serv-card.txt a:hover{gap:14px}
+
+/* PROVA SOCIAL */
+.prova{background:var(--bg-inset)}
+.prova-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.prova-grid{grid-template-columns:1fr}}
+.prova-imgwrap img{width:100%;height:clamp(380px,48vw,560px);object-fit:cover;object-position:center 25%;border-radius:6px;box-shadow:var(--shadow-lg)}
+.prova h2{font-size:var(--text-h2);margin-bottom:14px;max-width:15ch}
+.prova h2 em{font-style:italic;color:var(--accent)}
+.rating-line{display:flex;align-items:baseline;gap:14px;margin:22px 0 26px}
+.rating-line .big{font-family:'Playfair Display',serif;font-size:3.2rem;color:var(--accent);line-height:1}
+.rating-line .stars{color:var(--gold);font-size:1.15rem;letter-spacing:.08em}
+.rating-line .lbl{font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em}
+.quotes{display:flex;flex-direction:column;gap:18px;max-width:var(--prose-max)}
+.quote{background:var(--bg-surface);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+  padding:1.2rem 1.4rem;box-shadow:var(--shadow-sm)}
+.quote p{font-style:italic;color:var(--text-secondary);font-size:.95rem;line-height:1.6}
+.quote .who{display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:.8rem;color:var(--text-primary);letter-spacing:.02em}
+
+/* wave divisor */
+.wave{display:block;line-height:0;margin-bottom:-1px}
+.wave svg{width:100%;height:clamp(40px,5vw,80px)}
+
+/* LOCALIZAÇÃO */
+.local{background:var(--bg-dark);color:var(--text-inverse)}
+.local-grid{display:grid;grid-template-columns:6fr 5fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.local-grid{grid-template-columns:1fr}}
+.local-imgwrap img{width:100%;height:clamp(280px,38vw,460px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.local h2{font-size:var(--text-h2);color:#fff;margin-bottom:18px;max-width:16ch}
+.local h2 em{font-style:italic;color:var(--gold-light)}
+.info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(250,247,243,.10)}
+.info-row .ico{color:var(--gold-light);margin-top:3px}
+.info-row .k{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px}
+.info-row .v{color:rgba(250,247,243,.85);font-size:.95rem;line-height:1.5}
+.info-row a.v{text-decoration:none;transition:color .25s ease}
+.info-row a.v:hover{color:#fff}
+.local .cta-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px}
+.local .btn-map{display:inline-flex;align-items:center;gap:9px;padding:.85rem 1.6rem;min-height:48px;border-radius:50px;
+  border:1px solid rgba(250,247,243,.3);color:#fff;font-weight:600;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;
+  text-decoration:none;transition:transform .3s ease,background .3s ease;touch-action:manipulation}
+.local .btn-map:hover{transform:translateY(-3px);background:rgba(250,247,243,.08)}
+
+/* FOOTER */
+footer{background:#120d09;color:rgba(250,247,243,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.5rem}
+.foot-brand .brand{color:#fff}
+.foot-brand p{margin-top:14px;font-size:.88rem;max-width:34ch;line-height:1.6}
+.foot-col h4{font-family:'Nunito Sans',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:.88rem;color:rgba(250,247,243,.6);text-decoration:none;margin-bottom:10px;line-height:1.5;transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max);margin:2.5rem auto 0;padding-top:1.6rem;border-top:1px solid rgba(250,247,243,.08);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.76rem;color:rgba(250,247,243,.4)}
+
+/* WhatsApp FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg{animation:none}
+  .hero-title .word,.hero-sub,.hero-cta{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .scroll-hint span{animation:none}
+  .wa-fab::before{animation:none}
+  .serv-card:hover .ph{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Studio Nill<small>Cabeleireiros</small></a>
+  <nav class="nav">
+    <a href="#sobre" class="lk">O Studio</a>
+    <a href="#procedimentos" class="lk">Serviços</a>
+    <a href="#prova" class="lk">Avaliações</a>
+    <a href="#local" class="lk">Onde Estamos</a>
+    <a href="https://wa.me/5562982891084" class="btn-head" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" role="img" aria-label="Cliente do Studio Nill com penteado editorial"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="stars">★★★★★</span> Nota 5,0 no Google</div>
+    <p class="hero-eyebrow">Salão de Beleza · Setor Oeste, Goiânia</p>
+    <h1 class="hero-title">
+      <span class="word">O</span>
+      <span class="word">ruivo</span>
+      <span class="word">perfeito</span>
+      <span class="word">tem</span>
+      <span class="word"><em>endereço.</em></span>
+    </h1>
+    <p class="hero-sub">Coloração acobreada de alto brilho, cortes femininos e penteados que transformam. Cuidado técnico de quem leva a beleza a sério.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5562982891084" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#procedimentos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-imgwrap reveal">
+      <img src="imagens/insta-6.jpg" alt="Profissional do Studio Nill atendendo cliente">
+      <div class="float">
+        <div class="num">5,0</div>
+        <p>A nota máxima no Google de quem já sentou na nossa cadeira.</p>
+      </div>
+    </div>
+    <div class="sobre-txt">
+      <div class="overline reveal">Sobre o Studio</div>
+      <h2 class="reveal">Cada fio tratado como <em>peça única</em>.</h2>
+      <p class="reveal">No coração do Setor Oeste, o Studio Nill nasceu de uma obsessão por resultado: coloração que respeita o cabelo, cortes que valorizam o rosto e penteados pensados para o seu dia mais importante.</p>
+      <p class="reveal">Aqui o ruivo acobreado virou assinatura — uniforme, brilhante e duradouro. Mas a verdade é simples: você senta, conversa com quem entende, e sai com o cabelo que imaginou. Sem improviso, sem surpresa ruim.</p>
+      <p class="reveal signature">Beleza com técnica, do jeito que você merece.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <div class="overline reveal">O que fazemos</div>
+      <h2 class="reveal">Serviços que <em>realçam</em> quem você é.</h2>
+      <p class="reveal">Da coloração à finalização para o grande dia — tudo feito à mão, com produtos profissionais e olhar de quem cuida do detalhe.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <div class="ph" style="background-image:url('imagens/insta-3.jpg')"></div>
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Coloração</span>
+          <h3>Ruivo &amp; Acobreado</h3>
+          <p>Nossa especialidade. Cor uniforme, brilho intenso e fios saudáveis do comprimento à raiz.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ph" style="background-image:url('imagens/insta-1.jpg')"></div>
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Corte &amp; Escova</span>
+          <h3>Corte Feminino</h3>
+          <p>Cortes que valorizam o formato do rosto e ondas marcadas que duram. Movimento natural, acabamento impecável.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ph" style="background-image:url('imagens/insta-5.jpg')"></div>
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Ocasião</span>
+          <h3>Penteado de Festa</h3>
+          <p>Semipresos, ondas e tranças para madrinhas, formandas e convidadas que querem brilhar.</p>
+        </div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="ph" style="background-image:url('imagens/insta-7.jpg')"></div>
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat">Momento</span>
+          <h3>Noivas &amp; Glam</h3>
+          <p>O penteado do dia mais esperado, planejado para combinar com você e durar a celebração inteira.</p>
+        </div>
+      </article>
+      <article class="serv-card txt reveal">
+        <div class="body">
+          <p class="lead">Não achou o que procura?</p>
+          <p>Tratamento de reconstrução, hidratação, mechas e mais. Conte o que você quer no cabelo — a gente cuida do resto.</p>
+          <a href="https://wa.me/5562982891084" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap prova-grid">
+    <div class="prova-imgwrap reveal">
+      <img src="imagens/insta-2.jpg" alt="Cliente satisfeita do Studio Nill com corte acobreado">
+    </div>
+    <div class="prova-txt">
+      <div class="overline reveal">Quem confia</div>
+      <h2 class="reveal">A nota máxima não é <em>sorte</em>.</h2>
+      <div class="rating-line reveal">
+        <span class="big">5,0</span>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="lbl">Avaliação no Google</div>
+        </div>
+      </div>
+      <div class="quotes">
+        <div class="quote reveal">
+          <p>"Amei o resultado! O ruivo ficou exatamente como eu queria, brilhando e uniforme. Atendimento impecável."</p>
+          <span class="who">Cliente · Setor Oeste</span>
+        </div>
+        <div class="quote reveal">
+          <p>"Fiz meu penteado de madrinha e durou a festa inteira. Profissionais que entendem mesmo do que fazem."</p>
+          <span class="who">Cliente · Goiânia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/>
+  </svg>
+</div>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="local-imgwrap reveal">
+      <img src="imagens/maps-1.jpg" alt="Recepção do Studio Nill Cabeleireiros">
+    </div>
+    <div class="local-txt">
+      <div class="overline reveal">Onde estamos</div>
+      <h2 class="reveal">Te esperamos no <em>Setor Oeste</em>.</h2>
+      <div class="info-row reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="k">Endereço</div><div class="v">Ed. Comercial Empire Center — R. 6, 370, salas 5, 6 e 7<br>Setor Oeste, Goiânia - GO · 74115-070</div></div>
+      </div>
+      <div class="info-row reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="k">Telefone / WhatsApp</div><a class="v" href="https://wa.me/5562982891084" target="_blank" rel="noopener">(62) 98289-1084</a></div>
+      </div>
+      <div class="info-row reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">Atendimento</div><div class="v">Com horário marcado — chame no WhatsApp e garanta seu dia.</div></div>
+      </div>
+      <div class="cta-row reveal">
+        <a href="https://wa.me/5562982891084" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar agora
+        </a>
+        <a href="https://www.google.com/maps/place/Studio+Nill+Cabeleireiros/@-16.6833762,-49.2665399,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef15c54c56d2f:0x63c58c9d0a36522b!8m2!3d-16.6833762!4d-49.2665399!16s%2Fg%2F1ptxhnb6t" class="btn-map" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#topo" class="brand">Studio Nill<small>Cabeleireiros</small></a>
+      <p>Salão de beleza no Setor Oeste de Goiânia. Coloração, corte, penteado e tratamento com cuidado técnico e nota 5,0 no Google.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">O Studio</a>
+      <a href="#procedimentos">Serviços</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5562982891084" target="_blank" rel="noopener">WhatsApp (62) 98289-1084</a>
+      <a href="https://www.instagram.com/studionillcabeleireiros/" target="_blank" rel="noopener">@studionillcabeleireiros</a>
+      <p>Ed. Empire Center — R. 6, 370<br>Setor Oeste, Goiânia - GO</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Studio Nill Cabeleireiros. Todos os direitos reservados.</span>
+    <span>Setor Oeste · Goiânia - GO</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5562982891084" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

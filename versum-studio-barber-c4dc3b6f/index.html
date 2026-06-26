@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Versum studio barber — Barbearia no Meireles, Fortaleza</title>
+<meta name="description" content="Versum studio barber — barbearia premium no Meireles, Fortaleza. Corte, barba e cuidado masculino com nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#f4efe7;
+  --bg-surface:#fbf8f2;
+  --bg-inset:#ebe3d6;
+  --bg-dark:#0e0b09;
+  --bg-dark-2:#161009;
+
+  /* Texto */
+  --text-primary:#1c1714;
+  --text-secondary:#4a423a;
+  --text-muted:#8a7f72;
+  --text-inverse:#f4efe7;
+
+  /* Acento + marca */
+  --accent:#b07a3c;
+  --accent-dark:#8a5d2a;
+  --accent-subtle:rgba(176,122,60,.10);
+  --accent-border:rgba(176,122,60,.24);
+  --gold:#caa45a;
+  --gold-light:#e0c272;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 2px 6px rgba(0,0,0,.05);
+  --shadow-md:0 2px 4px rgba(0,0,0,.05),0 8px 18px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.05);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.05),0 16px 32px rgba(0,0,0,.08),0 40px 80px rgba(0,0,0,.10);
+  --shadow-accent:0 8px 24px rgba(176,122,60,.32);
+  --shadow-accent-strong:0 12px 34px rgba(176,122,60,.45);
+
+  --text-display:clamp(2.8rem,2rem + 5vw,6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.6vw,3.2rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:1.0;
+  --lh-heading:1.1;
+  --lh-body:1.72;
+  --ls-display:-.01em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;line-height:var(--lh-heading);text-wrap:balance;font-optical-sizing:auto;text-transform:uppercase}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+.overline{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:16px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* Buttons */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Inter',sans-serif;font-weight:600;
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.6rem,3vw,2.3rem);min-height:50px;
+  border:1px solid rgba(244,239,231,.4);color:var(--text-inverse);
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;border-radius:50px;
+  transition:transform .3s cubic-bezier(.23,1,.32,1),background .3s ease,border-color .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(244,239,231,.08);border-color:rgba(244,239,231,.7)}
+.btn-icon{width:18px;height:18px;flex:none}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(14,11,9,.92);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 rgba(176,122,60,.25);
+  padding-top:14px;padding-bottom:14px;
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.45rem;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--text-inverse);text-decoration:none;line-height:1}
+.logo span{color:var(--gold)}
+.logo small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:.55rem;
+  letter-spacing:.34em;color:var(--text-muted);margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.navlink{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+  color:var(--text-inverse);text-decoration:none;opacity:.85;transition:opacity .25s,color .25s}
+.nav a.navlink:hover{opacity:1;color:var(--gold)}
+.nav .btn-primary{padding:.7rem 1.4rem;min-height:42px}
+@media(max-width:860px){.nav a.navlink{display:none}}
+
+/* Hero — Model A cinematic */
+.hero{position:relative;height:100dvh;min-height:620px;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-01.jpg') center/cover;
+  animation:kb 24s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(155deg,
+  rgba(14,11,9,.35) 0%,rgba(14,11,9,.25) 38%,rgba(14,11,9,.78) 74%,rgba(14,11,9,.96) 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.055}
+.hero-content{position:relative;z-index:2;width:100%;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,6vw,5.5rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.hero-left{max-width:760px}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold-light);
+  font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:currentColor}
+.hero-title{color:var(--text-inverse);font-size:var(--text-display);letter-spacing:var(--ls-display);
+  line-height:.94;text-shadow:0 2px 30px rgba(0,0,0,.4)}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word em{font-style:normal;color:var(--gold)}
+.hero-title .line:nth-child(1) .word{animation-delay:.15s}
+.hero-title .line:nth-child(2) .word{animation-delay:.3s}
+.hero-title .line:nth-child(3) .word{animation-delay:.45s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(244,239,231,.82);font-weight:300;max-width:46ch;margin:26px 0 30px;
+  font-size:clamp(1rem,.95rem + .3vw,1.18rem);line-height:1.6;
+  opacity:0;animation:fade-in 1s ease .9s forwards}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1.05s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-badge{
+  align-self:flex-end;flex:none;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:22px 26px;
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  text-align:center;min-width:160px;opacity:0;animation:fade-in 1s ease 1.2s forwards}
+.hero-badge .stars{color:var(--gold-light);font-size:1.05rem;letter-spacing:3px}
+.hero-badge .num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;
+  color:var(--text-inverse);line-height:1;margin:6px 0 2px}
+.hero-badge .lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,239,231,.7)}
+.scroll-hint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:2;
+  color:rgba(244,239,231,.55);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint .bar{width:1px;height:38px;background:linear-gradient(rgba(244,239,231,.5),transparent);animation:scrolldot 2s ease-in-out infinite}
+@keyframes scrolldot{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:600px){.hero-badge{display:none}.scroll-hint{display:none}}
+
+/* Sobre */
+.sobre{background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 0,100% 4vw,100% 100%,0 100%);margin-top:-4vw;
+  padding-top:calc(var(--section-pad) + 4vw)}
+.sobre::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05}
+.sobre .wrap{position:relative;z-index:1}
+.sobre-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr}}
+.sobre h2{font-size:var(--text-h2);color:var(--text-inverse);letter-spacing:var(--ls-display);max-width:14ch}
+.sobre h2 em{font-style:normal;color:var(--gold)}
+.sobre p{color:rgba(244,239,231,.78);font-weight:300;max-width:var(--prose-max);margin-top:22px}
+.sobre p + p{margin-top:16px}
+.sobre-stats{display:flex;gap:38px;margin-top:38px;flex-wrap:wrap}
+.stat .n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;color:var(--gold);line-height:1}
+.stat .t{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,231,.6);margin-top:4px}
+.sobre-img{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.sobre-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.sobre-img:hover img{transform:scale(1.05)}
+.sobre-img .tag{position:absolute;left:18px;bottom:18px;
+  background:rgba(14,11,9,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;padding:8px 14px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light)}
+
+/* Serviços */
+.serv{background:var(--bg-base)}
+.serv-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-head h2{font-size:var(--text-h2);letter-spacing:var(--ls-display)}
+.serv-head h2 em{font-style:normal;color:var(--accent)}
+.serv-head p{color:var(--text-secondary);margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+@media(max-width:880px){.serv-grid{grid-template-columns:1fr}}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(28,23,20,.07);border-radius:16px;
+  padding:34px 30px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;
+  letter-spacing:.2em;color:var(--accent);opacity:.6}
+.serv-card .svg-wrap{width:46px;height:46px;margin:18px 0 18px;color:var(--accent)}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:10px;letter-spacing:0}
+.serv-card p{color:var(--text-secondary);font-size:.95rem;line-height:1.65}
+.serv-card .price{margin-top:20px;display:flex;align-items:baseline;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700}
+.serv-card .price .from{font-family:'Inter',sans-serif;font-weight:400;font-size:.7rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.serv-card .price .val{font-size:1.7rem;color:var(--text-primary)}
+
+/* Faixa escura prova/experiência */
+.exp{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;align-items:stretch;padding:0;min-height:560px}
+@media(max-width:880px){.exp{grid-template-columns:1fr}}
+.exp-img{position:relative;overflow:hidden;min-height:360px}
+.exp-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.exp-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(14,11,9,.4))}
+.exp-body{padding:clamp(3rem,6vw,6rem) clamp(1.5rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.exp-body::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05}
+.exp-body h2{font-size:var(--text-h2);color:var(--text-inverse);letter-spacing:var(--ls-display);max-width:15ch}
+.exp-body h2 em{font-style:normal;color:var(--gold)}
+.exp-body p{color:rgba(244,239,231,.78);font-weight:300;margin-top:20px;max-width:50ch}
+.exp-list{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:14px}
+.exp-list li{display:flex;gap:14px;align-items:flex-start;color:rgba(244,239,231,.85);font-size:.95rem}
+.exp-list svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:2px}
+
+/* Galeria */
+.galeria{background:var(--bg-base)}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-cards)}
+.gal-item{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);position:relative;aspect-ratio:4/3}
+.gal-item.gal-tall{grid-row:span 2;aspect-ratio:auto}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.gal-item:hover img{transform:scale(1.06)}
+@media(max-width:700px){.gal-grid{grid-template-columns:1fr}.gal-item.gal-tall{grid-row:auto;aspect-ratio:4/3}}
+
+/* Prova social */
+.prova{background:var(--bg-inset);text-align:center}
+.prova .overline{justify-content:center}
+.prova-top{max-width:680px;margin:0 auto clamp(2.5rem,5vw,3.5rem)}
+.prova-top h2{font-size:var(--text-h2);letter-spacing:var(--ls-display)}
+.prova-rating{display:inline-flex;align-items:center;gap:14px;margin-top:18px;
+  background:var(--bg-surface);border:1px solid rgba(28,23,20,.08);border-radius:50px;
+  padding:10px 22px;box-shadow:var(--shadow-sm)}
+.prova-rating .stars{color:var(--gold);letter-spacing:3px;font-size:1.05rem}
+.prova-rating b{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:900}
+.prova-rating span{font-size:.78rem;color:var(--text-muted);letter-spacing:.04em}
+.prova-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards);text-align:left}
+@media(max-width:880px){.prova-grid{grid-template-columns:1fr}}
+.quote{background:var(--bg-surface);border:1px solid rgba(28,23,20,.07);border-radius:16px;
+  padding:30px 28px;box-shadow:var(--shadow-sm)}
+.quote .mark{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;
+  color:var(--accent);line-height:.6;opacity:.5}
+.quote p{color:var(--text-secondary);margin:14px 0 18px;font-size:.97rem;line-height:1.65}
+.quote .who{display:flex;align-items:center;gap:12px}
+.quote .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem}
+.quote .who b{display:block;font-weight:600;font-size:.9rem;color:var(--text-primary)}
+.quote .who small{color:var(--text-muted);font-size:.74rem}
+
+/* Localização */
+.local{background:var(--bg-dark);color:var(--text-inverse)}
+.local-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:880px){.local-grid{grid-template-columns:1fr}}
+.local h2{font-size:var(--text-h2);color:var(--text-inverse);letter-spacing:var(--ls-display)}
+.local h2 em{font-style:normal;color:var(--gold)}
+.local-info{margin-top:26px;display:flex;flex-direction:column;gap:22px}
+.info-row{display:flex;gap:16px;align-items:flex-start}
+.info-row svg{width:22px;height:22px;flex:none;color:var(--gold);margin-top:2px}
+.info-row .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.info-row .v{color:rgba(244,239,231,.9);font-weight:300}
+.info-row a.v:hover{color:var(--gold)}
+.local-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.local-img{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:5/4;position:relative}
+.local-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.local-img:hover img{transform:scale(1.05)}
+
+/* Footer */
+footer{background:var(--bg-dark-2);color:var(--text-inverse);padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;
+  gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .logo{font-size:1.6rem}
+.foot-brand p{color:var(--text-muted);max-width:36ch;margin-top:14px;font-size:.9rem}
+.foot-col h4{font-size:1rem;letter-spacing:.06em;color:var(--gold);margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;color:rgba(244,239,231,.72);text-decoration:none;
+  font-size:.9rem;margin-bottom:9px;font-weight:300;transition:color .25s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,3.5rem) auto 0;
+  padding-top:22px;border-top:1px solid rgba(244,239,231,.1);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:.78rem;color:var(--text-muted)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg,.sobre-img img,.local-img img{animation:none!important;transition:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.hero-badge{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before,.scroll-hint .bar{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">VER<span>SUM</span><small>STUDIO BARBER</small></a>
+  <nav class="nav">
+    <a href="#sobre" class="navlink">A Casa</a>
+    <a href="#servicos" class="navlink">Serviços</a>
+    <a href="#prova" class="navlink">Avaliações</a>
+    <a href="#local" class="navlink">Onde Estamos</a>
+    <a href="https://wa.me/5585986121936" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Barbearia &middot; Meireles, Fortaleza</div>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Corte&nbsp;e&nbsp;barba</span></span>
+        <span class="line"><span class="word">viram</span></span>
+        <span class="line"><span class="word"><em>ritual.</em></span></span>
+      </h1>
+      <p class="hero-sub">No coração do Meireles, a Versum trata cada homem como deve ser: tempo, técnica e um acabamento que dura a semana inteira.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/5585986121936" class="btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.736-.981z"/></svg>
+          Agendar no WhatsApp
+        </a>
+        <a href="#servicos" class="btn-ghost">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="num">5,0</div>
+      <div class="lbl">no Google</div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Role</span><span class="bar"></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <div class="overline">A Casa</div>
+      <h2>Uma barbearia feita pra quem <em>leva o estilo a sério</em></h2>
+      <p>A Versum studio barber nasceu no Meireles com uma ideia simples: o homem que se cuida não quer pressa, quer presença. Aqui a cadeira é sua pelo tempo que o corte precisar — sem fila correndo, sem acabamento pela metade.</p>
+      <p>Cada corte e cada barba saem da mão de quem entende de proporção, traço e a sua cara. É por isso que a nota no Google é 5,0: cliente que entra, vira frequência.</p>
+      <div class="sobre-stats">
+        <div class="stat"><div class="n">5,0</div><div class="t">Nota no Google</div></div>
+        <div class="stat"><div class="n">100%</div><div class="t">Foco no masculino</div></div>
+        <div class="stat"><div class="n">Meireles</div><div class="t">Fortaleza &middot; CE</div></div>
+      </div>
+    </div>
+    <div class="sobre-img reveal">
+      <img src="imagens/web-02.jpg" alt="Barbeiro da Versum trabalhando a barba de um cliente sob luz quente">
+      <span class="tag">Acabamento que dura</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="serv" id="servicos">
+  <div class="wrap">
+    <div class="serv-head reveal">
+      <div class="overline">O que fazemos</div>
+      <h2>Serviços <em>sob medida</em> pro seu estilo</h2>
+      <p>Do corte clássico ao trato completo da barba. Escolha o seu e agende em segundos pelo WhatsApp.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="serv-num">01</div>
+        <div class="svg-wrap"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="6"/><circle cx="11" cy="35" r="6"/><path d="M16 17l26 18M16 31L42 13"/></svg></div>
+        <h3>Corte Versum</h3>
+        <p>Corte na tesoura e máquina, lavagem, finalização e aquele acabamento na navalha que fecha o visual.</p>
+        <div class="price"><span class="from">a partir de</span><span class="val">R$ 45</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">02</div>
+        <div class="svg-wrap"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 8v12a14 14 0 0028 0V8"/><path d="M24 34v8"/><path d="M16 42h16"/><path d="M10 8h28"/></svg></div>
+        <h3>Barba Terapia</h3>
+        <p>Toalha quente, óleo, desenho e navalha. A barba modelada do jeito certo, com a pele cuidada de ponta a ponta.</p>
+        <div class="price"><span class="from">a partir de</span><span class="val">R$ 40</span></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="serv-num">03</div>
+        <div class="svg-wrap"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4l4 8 9 1-6.5 6 1.5 9-8-4.5L16 28l1.5-9L11 13l9-1z"/><path d="M24 30v14"/></svg></div>
+        <h3>Combo Completo</h3>
+        <p>Corte + barba na mesma cadeira. O pacote do homem que quer sair daqui pronto pra qualquer compromisso.</p>
+        <div class="price"><span class="from">a partir de</span><span class="val">R$ 75</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA / faixa escura -->
+<section class="exp">
+  <div class="exp-img reveal"><img src="imagens/web-04.jpg" alt="Acabamento de barba na navalha em ambiente escuro"></div>
+  <div class="exp-body reveal">
+    <div class="overline">A experiência</div>
+    <h2>Mais que um corte. Um <em>momento seu</em>.</h2>
+    <p>Na Versum, sentar na cadeira é desligar do dia. Som no ponto certo, atendimento de quem te conhece pelo nome e o cuidado de quem faz porque gosta.</p>
+    <ul class="exp-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Profissionais que dominam o traço e a proporção do seu rosto</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Ambiente reservado, sem pressa e sem fila correndo</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Agendamento simples pelo WhatsApp, no horário que cabe pra você</li>
+    </ul>
+    <div style="margin-top:30px">
+      <a href="https://wa.me/5585986121936" class="btn-primary" target="_blank" rel="noopener">Quero agendar meu horário</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="serv-head reveal">
+      <div class="overline">Galeria</div>
+      <h2>O traço fala por <em>si</em></h2>
+      <p>Um pouco do que sai da nossa cadeira todos os dias no Meireles.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="gal-item gal-tall reveal"><img src="imagens/web-03.jpg" alt="Barba sendo modelada na tesoura na Versum studio barber"></figure>
+      <figure class="gal-item reveal"><img src="imagens/web-05.jpg" alt="Acabamento de corte na máquina em detalhe"></figure>
+      <figure class="gal-item reveal"><img src="imagens/web-02.jpg" alt="Barbeiro finalizando a barba de um cliente"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="wrap">
+    <div class="prova-top reveal">
+      <div class="overline center">Quem senta, volta</div>
+      <h2>Nota 5,0 não se ganha por sorte</h2>
+      <div class="prova-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <b>5,0</b><span>avaliação no Google</span>
+      </div>
+    </div>
+    <div class="prova-grid">
+      <div class="quote reveal">
+        <div class="mark">&ldquo;</div>
+        <p>Melhor barbearia do Meireles, sem exagero. Capricho no corte e na barba, e o atendimento é outro nível. Virei cliente fixo.</p>
+        <div class="who"><span class="av">R</span><div><b>Rafael M.</b><small>Cliente no Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="mark">&ldquo;</div>
+        <p>Ambiente top, te tratam bem desde a porta. Saí com o corte exatamente como pedi e a barba ficou impecável. Recomendo demais.</p>
+        <div class="who"><span class="av">D</span><div><b>Diego S.</b><small>Cliente no Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="mark">&ldquo;</div>
+        <p>Profissionais que entendem do que fazem. Marquei pelo WhatsApp, fui atendido na hora e o resultado durou a semana toda. Nota 10.</p>
+        <div class="who"><span class="av">L</span><div><b>Lucas F.</b><small>Cliente no Google</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div class="reveal">
+      <div class="overline">Onde estamos</div>
+      <h2>No coração do <em>Meireles</em></h2>
+      <div class="local-info">
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Endereço</div><div class="v">Av. Farias Brito, 120 &middot; Meireles<br>Fortaleza &middot; CE &middot; 60160-240</div></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="k">WhatsApp</div><a class="v" href="https://wa.me/5585986121936" target="_blank" rel="noopener">(85) 98612-1936</a></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="k">Horário</div><div class="v">Seg a Sáb &middot; 09h às 20h<br>Atendimento com hora marcada</div></div>
+        </div>
+      </div>
+      <div class="local-cta">
+        <a href="https://wa.me/5585986121936" class="btn-primary" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a href="https://www.google.com/maps/place/Versum+studio+barber/@-3.7361042,-38.4883827,17z/data=!3m1!4b1!4m6!3m5!1s0x7c747b8f26433cf:0x5f5140d2c4dc3b6f!8m2!3d-3.7361042!4d-38.4883827!16s%2Fg%2F11gfjr2pth" class="btn-ghost" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="local-img reveal">
+      <img src="imagens/web-06.jpg" alt="Ambiente da Versum studio barber com tijolo aparente e cadeiras de couro">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#topo" class="logo">VER<span>SUM</span><small>STUDIO BARBER</small></a>
+      <p>Barbearia premium no Meireles, Fortaleza. Corte, barba e o cuidado que o homem moderno merece.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A Casa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5585986121936" target="_blank" rel="noopener">WhatsApp (85) 98612-1936</a>
+      <p>Av. Farias Brito, 120 &middot; Meireles</p>
+      <p>Fortaleza &middot; CE</p>
+      <p>Seg a Sáb &middot; 09h às 20h</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Versum studio barber. Todos os direitos reservados.</span>
+    <span>Nota 5,0 no Google &middot; Meireles, Fortaleza</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5585986121936" class="wa-fab" aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.736-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

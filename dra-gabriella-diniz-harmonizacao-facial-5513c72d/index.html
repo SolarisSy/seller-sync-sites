@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra Gabriella Diniz · Harmonização Facial em Goiânia</title>
+<meta name="description" content="Harmonização facial que realça sua beleza natural, com a assinatura da Dra. Gabriella Diniz. Consultório de alto padrão no Jardim Goiás, Goiânia. Nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf7f2; --bg-surface:#ffffff; --bg-inset:#f1ebe2; --bg-dark:#1a1410;
+  --text-primary:#211a14; --text-secondary:#544a40; --text-muted:#8a7d6e; --text-inverse:#f7f1e8;
+  --accent:#a9783f; --accent-dark:#8a5f2e;
+  --accent-subtle:rgba(169,120,63,.10); --accent-border:rgba(169,120,63,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.92rem,.85rem + .3vw,1.04rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.03; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.16em;
+
+  --shadow-sm:0 1px 2px rgba(40,28,15,.05),0 2px 6px rgba(40,28,15,.05);
+  --shadow-md:0 2px 4px rgba(40,28,15,.05),0 8px 18px rgba(40,28,15,.07),0 20px 40px rgba(40,28,15,.05);
+  --shadow-lg:0 4px 8px rgba(40,28,15,.05),0 16px 32px rgba(40,28,15,.07),0 40px 80px rgba(40,28,15,.09);
+  --shadow-accent:0 6px 16px rgba(169,120,63,.28),0 14px 34px rgba(169,120,63,.20);
+  --shadow-accent-strong:0 10px 22px rgba(169,120,63,.34),0 20px 48px rgba(169,120,63,.26);
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base); color:var(--text-primary);
+  font-family:'Inter',sans-serif; font-size:var(--text-body); line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif; font-optical-sizing:auto; text-wrap:balance; font-weight:500; line-height:var(--lh-heading)}
+img{display:block; max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max); margin:0 auto}
+
+.overline{display:flex; align-items:center; gap:10px; font-family:'Inter',sans-serif;
+  font-size:.68rem; letter-spacing:var(--ls-overline); text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin-bottom:14px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor}
+.overline.center{justify-content:center}
+
+/* ---------- Buttons ---------- */
+.btn-primary{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.2rem); min-height:48px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff; font-weight:600; font-size:.8rem; letter-spacing:.05em;
+  text-transform:uppercase; text-decoration:none; border-radius:50px;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:10px; min-height:48px;
+  padding:.9rem 1.6rem; border:1px solid var(--accent-border); border-radius:50px;
+  color:var(--text-primary); text-decoration:none; font-size:.8rem; font-weight:500;
+  letter-spacing:.05em; text-transform:uppercase; background:transparent;
+  transition:transform .3s cubic-bezier(.22,1,.36,1),background .3s ease,border-color .3s ease;
+  touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px); background:var(--accent-subtle); border-color:var(--accent)}
+.btn-primary svg,.btn-ghost svg{width:18px;height:18px;flex:none}
+
+/* ---------- Header ---------- */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(26,20,16,.92); backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%); box-shadow:0 1px 0 rgba(201,168,76,.22); padding:12px clamp(1.5rem,5vw,4rem)}
+.brand{font-family:'Cormorant Garamond',serif; color:#fff; text-decoration:none; line-height:1}
+.brand b{display:block; font-size:1.32rem; font-weight:600; letter-spacing:.02em}
+.brand span{display:block; font-family:'Inter',sans-serif; font-size:.6rem; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--gold-light); margin-top:3px}
+nav{display:flex; align-items:center; gap:30px}
+nav a.lnk{color:rgba(247,241,232,.86); text-decoration:none; font-size:.82rem; letter-spacing:.04em;
+  transition:color .25s ease; position:relative}
+nav a.lnk::after{content:''; position:absolute; left:0; bottom:-5px; width:0; height:1px;
+  background:var(--gold-light); transition:width .3s cubic-bezier(.22,1,.36,1)}
+nav a.lnk:hover{color:#fff} nav a.lnk:hover::after{width:100%}
+.nav-cta{display:inline-flex; align-items:center; gap:8px; padding:.62rem 1.25rem; border-radius:50px;
+  background:rgba(247,241,232,.10); border:1px solid rgba(201,168,76,.45); color:#fff;
+  text-decoration:none; font-size:.78rem; letter-spacing:.04em; transition:background .3s ease,transform .3s ease}
+.nav-cta:hover{background:rgba(201,168,76,.22); transform:translateY(-2px)}
+@media(max-width:860px){nav a.lnk{display:none}}
+
+/* ---------- Hero (Model C) ---------- */
+.hero{position:relative; min-height:100dvh; display:grid; align-items:end; overflow:hidden}
+.hero-bg{position:absolute; inset:0; background:url('imagens/insta-2.jpg') center 18%/cover no-repeat;
+  animation:kb 26s ease-in-out infinite alternate; z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-overlay{position:absolute; inset:0; z-index:1;
+  background:linear-gradient(105deg,rgba(26,20,16,.86) 0%,rgba(26,20,16,.55) 34%,rgba(26,20,16,.10) 60%,rgba(26,20,16,.30) 100%),
+             linear-gradient(0deg,rgba(26,20,16,.86) 0%,rgba(26,20,16,0) 46%)}
+.hero::before{content:''; position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px}
+.hero-content{position:relative; z-index:3; padding:0 8% clamp(3.2rem,7vh,6rem); max-width:720px}
+.hero-selo{display:inline-flex; align-items:center; gap:10px; margin-bottom:22px;
+  padding:.5rem .95rem; border-radius:50px;
+  background:rgba(247,241,232,.10); backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%); border:1px solid rgba(201,168,76,.5);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16)}
+.hero-selo .stars{color:var(--gold-light); letter-spacing:2px; font-size:.78rem}
+.hero-selo span{color:#fff; font-size:.74rem; letter-spacing:.05em}
+.hero-selo b{color:var(--gold-light)}
+.hero h1{color:#fff; font-size:var(--text-display); letter-spacing:var(--ls-display);
+  line-height:var(--lh-display); font-weight:400; max-width:15ch; margin-bottom:18px}
+.hero h1 em{font-style:italic; color:var(--gold-light)}
+.hero h1 .word{display:inline-block; transform:translateY(112%); opacity:0;
+  animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1 .ln{display:block; overflow:hidden; padding-bottom:.04em}
+.hero h1 .word:nth-child(1){animation-delay:.18s}
+.hero .ln:nth-child(2) .word{animation-delay:.30s}
+.hero .ln:nth-child(3) .word{animation-delay:.42s}
+@keyframes word-up{to{transform:translateY(0); opacity:1}}
+.hero p.sub{color:rgba(247,241,232,.88); max-width:46ch; font-size:1.05rem; margin-bottom:30px;
+  opacity:0; animation:fade-in 1s ease .7s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex; gap:14px; flex-wrap:wrap; opacity:0; animation:fade-in 1s ease .9s forwards}
+.hero-actions .btn-ghost{color:#fff; border-color:rgba(247,241,232,.4)}
+.hero-actions .btn-ghost:hover{background:rgba(247,241,232,.12); border-color:#fff}
+.scroll-hint{position:absolute; right:8%; bottom:clamp(3.2rem,7vh,6rem); z-index:3;
+  writing-mode:vertical-rl; color:rgba(247,241,232,.6); font-size:.62rem; letter-spacing:.28em;
+  text-transform:uppercase; display:flex; align-items:center; gap:14px}
+.scroll-hint::after{content:''; width:1px; height:48px; background:linear-gradient(rgba(201,168,76,.7),transparent)}
+@media(max-width:680px){.scroll-hint{display:none}}
+
+/* ---------- Section diagonal cut wrapper ---------- */
+.cut-top{clip-path:polygon(0 3.5vw,100% 0,100% 100%,0 100%); margin-top:-3.5vw;
+  padding-top:calc(var(--section-pad) + 3.5vw); position:relative}
+
+/* ---------- Sobre ---------- */
+.sobre{background:var(--bg-surface)}
+.sobre-grid{display:grid; grid-template-columns:0.92fr 1.08fr; gap:clamp(2rem,5vw,5rem); align-items:center}
+.sobre-img{position:relative}
+.sobre-img img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 25%;
+  border-radius:6px; box-shadow:var(--shadow-lg)}
+.sobre-img::after{content:''; position:absolute; inset:14px -14px -14px 14px; z-index:-1;
+  border:1px solid var(--accent-border); border-radius:6px}
+.sobre-badge{position:absolute; left:-18px; bottom:26px; background:var(--bg-dark); color:#fff;
+  padding:18px 22px; border-radius:6px; box-shadow:var(--shadow-md); max-width:200px}
+.sobre-badge b{font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:var(--gold-light); display:block; line-height:1}
+.sobre-badge span{font-size:.72rem; letter-spacing:.04em; color:rgba(247,241,232,.82)}
+.sobre h2{font-size:var(--text-h2); margin-bottom:20px; max-width:16ch}
+.sobre h2 em{font-style:italic; color:var(--accent)}
+.sobre p{color:var(--text-secondary); margin-bottom:18px; max-width:var(--prose-max)}
+.sobre .sig{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem;
+  color:var(--accent); margin-top:8px}
+.sobre .sig span{display:block; font-family:'Inter',sans-serif; font-style:normal; font-size:.7rem;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); margin-top:6px}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr; gap:3rem}
+  .sobre-img{max-width:440px; margin:0 auto} .sobre-badge{left:0}}
+
+/* ---------- Procedimentos ---------- */
+.proc{background:var(--bg-inset); position:relative}
+.proc-head{max-width:var(--prose-max); margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head h2{font-size:var(--text-h2)} .proc-head h2 em{font-style:italic; color:var(--accent)}
+.proc-head p{color:var(--text-secondary); margin-top:12px}
+.proc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface); border:1px solid rgba(169,120,63,.12); border-radius:8px;
+  padding:clamp(1.6rem,2.5vw,2.2rem); box-shadow:var(--shadow-sm); position:relative; overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card::before{content:''; position:absolute; top:0; left:0; width:100%; height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--gold)); transform:scaleX(0); transform-origin:left;
+  transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent-border)}
+.serv-card:hover::before{transform:scaleX(1)}
+.serv-num{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--accent);
+  letter-spacing:.1em; margin-bottom:14px; display:block}
+.serv-card h3{font-size:var(--text-h3); margin-bottom:10px; font-weight:600}
+.serv-card p{color:var(--text-secondary); font-size:.94rem; line-height:1.66}
+
+/* ---------- Ambiente split ---------- */
+.ambiente{padding:0; background:var(--bg-dark); color:var(--text-inverse)}
+.amb-grid{display:grid; grid-template-columns:1.12fr .88fr; align-items:stretch}
+.amb-img{background:url('imagens/insta-8.jpg') center/cover no-repeat; min-height:clamp(320px,46vw,580px)}
+.amb-copy{padding:clamp(3rem,6vw,6rem) clamp(1.8rem,5vw,5rem); position:relative; overflow:hidden}
+.amb-copy::before{content:''; position:absolute; inset:0; pointer-events:none; opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.amb-copy .inner{position:relative; z-index:1; max-width:440px}
+.amb-copy h2{font-size:var(--text-h2); color:#fff; margin-bottom:18px}
+.amb-copy h2 em{font-style:italic; color:var(--gold-light)}
+.amb-copy p{color:rgba(247,241,232,.82); margin-bottom:16px}
+.amb-list{list-style:none; margin-top:24px; display:grid; gap:14px}
+.amb-list li{display:flex; gap:12px; align-items:flex-start; color:rgba(247,241,232,.9); font-size:.95rem}
+.amb-list svg{width:20px; height:20px; flex:none; color:var(--gold-light); margin-top:2px}
+@media(max-width:860px){.amb-grid{grid-template-columns:1fr} .amb-img{order:-1; min-height:62vw}}
+
+/* ---------- Resultados / prova ---------- */
+.result{background:var(--bg-base)}
+.result-head{text-align:center; max-width:var(--prose-max); margin:0 auto clamp(2.5rem,5vw,4rem)}
+.result-head h2{font-size:var(--text-h2)} .result-head h2 em{font-style:italic; color:var(--accent)}
+.result-head p{color:var(--text-secondary); margin-top:12px}
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap-cards)}
+.gallery figure{position:relative; border-radius:8px; overflow:hidden; box-shadow:var(--shadow-md);
+  aspect-ratio:4/5; background:var(--bg-inset)}
+.gallery img{width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute; left:0; right:0; bottom:0; padding:20px 18px 16px; color:#fff;
+  font-size:.82rem; letter-spacing:.02em; background:linear-gradient(0deg,rgba(26,20,16,.86),transparent)}
+.gallery figcaption b{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.05rem; display:block}
+@media(max-width:760px){.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.gallery{grid-template-columns:1fr}}
+.disclaimer{text-align:center; color:var(--text-muted); font-size:.78rem; margin-top:26px}
+
+/* ---------- Depoimento âncora ---------- */
+.quote{background:var(--bg-inset)}
+.quote .wrap{max-width:840px; text-align:center}
+.quote .stars{color:var(--gold); letter-spacing:4px; font-size:1rem; margin-bottom:22px}
+.quote blockquote{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(1.5rem,1rem + 2vw,2.5rem);
+  line-height:1.34; color:var(--text-primary)}
+.quote blockquote em{font-style:italic; color:var(--accent)}
+.quote .by{margin-top:24px; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted)}
+
+/* ---------- Localização / CTA ---------- */
+.local{background:var(--bg-dark); color:var(--text-inverse); position:relative; overflow:hidden}
+.local::before{content:''; position:absolute; inset:0; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px}
+.local-grid{position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.local h2{font-size:var(--text-h2); color:#fff; margin-bottom:18px}
+.local h2 em{font-style:italic; color:var(--gold-light)}
+.local p.lead{color:rgba(247,241,232,.84); max-width:46ch; margin-bottom:30px}
+.info-row{display:flex; gap:14px; align-items:flex-start; margin-bottom:20px}
+.info-row svg{width:22px; height:22px; flex:none; color:var(--gold-light); margin-top:3px}
+.info-row .t b{display:block; font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:#fff; margin-bottom:3px}
+.info-row .t span{color:rgba(247,241,232,.74); font-size:.92rem}
+.info-row .t a{color:rgba(247,241,232,.74); text-decoration:none; transition:color .25s} .info-row .t a:hover{color:var(--gold-light)}
+.local-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+.local-actions .btn-ghost{color:#fff; border-color:rgba(247,241,232,.34)}
+.local-actions .btn-ghost:hover{background:rgba(247,241,232,.1); border-color:#fff}
+.map-card{border-radius:10px; overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid rgba(201,168,76,.2)}
+.map-card iframe{display:block; width:100%; height:clamp(320px,42vw,460px); border:0; filter:grayscale(.2) contrast(1.02)}
+@media(max-width:860px){.local-grid{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+footer{background:#120d0a; color:rgba(247,241,232,.62); padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between;
+  gap:30px; flex-wrap:wrap; align-items:flex-start}
+.foot-brand b{font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:#fff; display:block}
+.foot-brand span{font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold-light)}
+.foot-brand p{margin-top:14px; max-width:34ch; font-size:.88rem}
+.foot-links{display:flex; gap:40px; flex-wrap:wrap}
+.foot-col b{display:block; color:#fff; font-family:'Inter',sans-serif; font-size:.74rem; letter-spacing:.16em;
+  text-transform:uppercase; margin-bottom:14px}
+.foot-col a{display:block; color:rgba(247,241,232,.62); text-decoration:none; font-size:.9rem; margin-bottom:9px;
+  transition:color .25s} .foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max); margin:2.5rem auto 0; padding-top:1.6rem;
+  border-top:1px solid rgba(247,241,232,.1); display:flex; justify-content:space-between; gap:14px;
+  flex-wrap:wrap; font-size:.78rem; color:rgba(247,241,232,.46)}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center; text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.42); transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px; height:30px}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%;
+  border:2px solid rgba(37,211,102,.35); animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0; transform:translateY(28px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.gallery img{animation:none!important; transition:none!important}
+  .reveal,.hero h1 .word,.hero p.sub,.hero-actions{transition:none!important; opacity:1!important; transform:none!important; animation:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="brand" href="#topo"><b>Gabriella Diniz</b><span>Harmonização Facial</span></a>
+  <nav>
+    <a class="lnk" href="#sobre">A Doutora</a>
+    <a class="lnk" href="#procedimentos">Procedimentos</a>
+    <a class="lnk" href="#resultados">Resultados</a>
+    <a class="lnk" href="#localizacao">Contato</a>
+    <a class="nav-cta" href="https://wa.me/5562982690929" target="_blank" rel="noopener">Agendar avaliação</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-selo">
+      <span class="stars">★★★★★</span>
+      <span><b>5,0</b> no Google · Jardim Goiás</span>
+    </div>
+    <h1>
+      <span class="ln"><span class="word">Harmonização</span></span>
+      <span class="ln"><span class="word">que realça</span></span>
+      <span class="ln"><span class="word"><em>a sua beleza.</em></span></span>
+    </h1>
+    <p class="sub">Resultados naturais e atendimento de alto padrão em Goiânia, com a assinatura da Dra. Gabriella Diniz.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5562982690929" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#resultados">Ver resultados</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Role para descobrir</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre cut-top" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/insta-4.jpg" alt="Dra. Gabriella Diniz em seu consultório de harmonização facial em Goiânia">
+      <div class="sobre-badge"><b>5,0</b><span>Avaliação dos pacientes no Google</span></div>
+    </div>
+    <div class="sobre-txt">
+      <div class="overline reveal">A Doutora</div>
+      <h2 class="reveal">Cada rosto tem uma <em>harmonia própria</em> — meu trabalho é revelá-la.</h2>
+      <p class="reveal">Sou a Dra. Gabriella Diniz e dedico minha prática à harmonização facial com um princípio inegociável: realçar, nunca descaracterizar. O resultado bonito é aquele em que as pessoas notam você melhor — e não o procedimento.</p>
+      <p class="reveal">No meu consultório no Metropolitan Mall, no Jardim Goiás, cada paciente passa por uma avaliação individual antes de qualquer aplicação. Técnica, segurança e bom gosto guiando cada detalhe, num ambiente pensado para o seu conforto.</p>
+      <div class="sig reveal">Dra. Gabriella Diniz<span>Especialista em Harmonização Facial · Goiânia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <div class="overline reveal">Procedimentos</div>
+      <h2 class="reveal">Protocolos para um resultado <em>natural e elegante</em>.</h2>
+      <p class="reveal">Tratamentos faciais personalizados de acordo com a sua anatomia e o seu objetivo. Todos com avaliação individual antes de iniciar.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <span class="serv-num">01</span>
+        <h3>Preenchimento Labial</h3>
+        <p>Lábios com volume equilibrado e contorno definido, mantendo a expressão e o movimento naturais.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">02</span>
+        <h3>Toxina Botulínica</h3>
+        <p>Suavização de linhas de expressão na testa, olhos e entre as sobrancelhas, com aparência descansada.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">03</span>
+        <h3>Rinomodelação</h3>
+        <p>Ajuste do perfil do nariz sem cirurgia, corrigindo a ponta e o dorso de forma sutil e imediata.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">04</span>
+        <h3>Preenchimento de Olheiras</h3>
+        <p>Atenuação da região sob os olhos para um olhar mais iluminado e menos cansado.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">05</span>
+        <h3>Bioestimulador de Colágeno</h3>
+        <p>Estímulo natural à produção de colágeno, devolvendo firmeza e qualidade à pele ao longo do tempo.</p>
+      </article>
+      <article class="serv-card reveal">
+        <span class="serv-num">06</span>
+        <h3>Harmonização Facial Completa</h3>
+        <p>Plano de tratamento que combina os procedimentos certos para equilibrar todos os traços do rosto.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTE (split, sem texto sobreposto) -->
+<section class="ambiente">
+  <div class="amb-grid">
+    <div class="amb-img" role="img" aria-label="Consultório da Dra. Gabriella Diniz com vista panorâmica de Goiânia"></div>
+    <div class="amb-copy">
+      <div class="inner">
+        <div class="overline reveal">A Experiência</div>
+        <h2 class="reveal">Um espaço pensado para <em>cuidar de você</em>.</h2>
+        <p class="reveal">Harmonização facial é confiança. Por isso o atendimento acontece em um ambiente reservado, sofisticado e seguro, no coração do Jardim Goiás.</p>
+        <ul class="amb-list">
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Avaliação individual antes de qualquer procedimento</li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Produtos e técnicas com foco em segurança</li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Resultados naturais, no seu tempo e do seu jeito</li>
+          <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Localização de fácil acesso no Metropolitan Mall</li>
+        </ul>
+        <div style="margin-top:32px">
+          <a class="btn-primary" href="https://wa.me/5562982690929" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Falar com a Dra. Gabriella
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="result" id="resultados">
+  <div class="wrap">
+    <div class="result-head">
+      <div class="overline center reveal">Antes &amp; Depois</div>
+      <h2 class="reveal">Resultados reais, <em>de pacientes reais</em>.</h2>
+      <p class="reveal">Cada transformação respeitando os traços de quem confiou seu rosto à Dra. Gabriella. Veja a diferença sutil que muda tudo.</p>
+    </div>
+    <div class="gallery">
+      <figure class="reveal">
+        <img src="imagens/insta-1.jpg" alt="Antes e depois de preenchimento labial">
+        <figcaption><b>Preenchimento Labial</b>Volume equilibrado e natural</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="imagens/insta-6.jpg" alt="Antes e depois de harmonização facial">
+        <figcaption><b>Harmonização Facial</b>Equilíbrio dos traços</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="imagens/insta-3.jpg" alt="Antes e depois de rinomodelação, perfil">
+        <figcaption><b>Rinomodelação</b>Perfil em harmonia</figcaption>
+      </figure>
+    </div>
+    <p class="disclaimer">Resultados podem variar de paciente para paciente. Cada plano é definido em avaliação individual.</p>
+  </div>
+</section>
+
+<!-- DEPOIMENTO -->
+<section class="quote">
+  <div class="wrap">
+    <div class="stars reveal">★★★★★</div>
+    <blockquote class="reveal">"Saí com o resultado que eu sempre quis: <em>natural, ninguém percebe que fiz</em>, só percebem que estou mais bonita. Atendimento impecável do começo ao fim."</blockquote>
+    <div class="by reveal">Paciente · Avaliação 5,0 no Google</div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="wrap local-grid">
+    <div>
+      <div class="overline reveal">Onde me encontrar</div>
+      <h2 class="reveal">Venha conhecer o <em>consultório</em>.</h2>
+      <p class="lead reveal">Estou no Metropolitan Mall, no Jardim Goiás — um dos endereços mais nobres de Goiânia, com fácil acesso e estacionamento.</p>
+      <div class="info-row reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="t"><b>Endereço</b><span>Metropolitan Mall · Av. Dep. Jamel Cecílio, 2690 — Jardim Goiás, Goiânia - GO, 74150-030</span></div>
+      </div>
+      <div class="info-row reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div class="t"><b>WhatsApp &amp; Telefone</b><span><a href="https://wa.me/5562982690929" target="_blank" rel="noopener">(62) 98269-0929</a></span></div>
+      </div>
+      <div class="info-row reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="t"><b>Atendimento</b><span>Com hora marcada · Agende pelo WhatsApp</span></div>
+      </div>
+      <div class="local-actions">
+        <a class="btn-primary" href="https://wa.me/5562982690929" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Dra+Gabriella+Diniz+-+Harmoniza%C3%A7%C3%A3o+Facial/@-16.7046909,-49.2411226,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef5e7b962a92b:0x5de074235513c72d!8m2!3d-16.7046909!4d-49.2411226!16s%2Fg%2F11v0qbt27w" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Localização da Dra. Gabriella Diniz no mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://www.google.com/maps?q=Dra+Gabriella+Diniz+Harmoniza%C3%A7%C3%A3o+Facial,+Av.+Dep.+Jamel+Cec%C3%ADlio,+2690,+Jardim+Goi%C3%A1s,+Goi%C3%A2nia&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <b>Gabriella Diniz</b><span>Harmonização Facial</span>
+      <p>Harmonização facial com resultados naturais e atendimento de alto padrão no Jardim Goiás, Goiânia - GO.</p>
+    </div>
+    <div class="foot-links">
+      <div class="foot-col">
+        <b>Navegação</b>
+        <a href="#sobre">A Doutora</a>
+        <a href="#procedimentos">Procedimentos</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#localizacao">Contato</a>
+      </div>
+      <div class="foot-col">
+        <b>Contato</b>
+        <a href="https://wa.me/5562982690929" target="_blank" rel="noopener">WhatsApp (62) 98269-0929</a>
+        <a href="https://www.instagram.com/dragabrielladiniz" target="_blank" rel="noopener">@dragabrielladiniz</a>
+        <a href="https://www.google.com/maps/place/Dra+Gabriella+Diniz+-+Harmoniza%C3%A7%C3%A3o+Facial/@-16.7046909,-49.2411226,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef5e7b962a92b:0x5de074235513c72d!8m2!3d-16.7046909!4d-49.2411226!16s%2Fg%2F11v0qbt27w" target="_blank" rel="noopener">Metropolitan Mall · Jardim Goiás</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Dra. Gabriella Diniz · Harmonização Facial. Todos os direitos reservados.</span>
+    <span>Goiânia, GO</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5562982690929" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

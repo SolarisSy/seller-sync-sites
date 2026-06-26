@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Número 1 — Parque 10 | Barba, Cabelo e Estilo em Manaus</title>
+<meta name="description" content="Barbearia Número 1, Parque 10 de Novembro, Manaus. Barba, cabelo e estilo no padrão premium. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#13110f;
+  --bg-surface:#1a1714;
+  --bg-inset:#0f0d0b;
+  --bg-light:#f6f3ee;
+  --bg-light-inset:#ece6dc;
+  --bg-dark:#0c0a09;
+
+  --text-primary:#f6f3ee;
+  --text-secondary:#cdc6bb;
+  --text-muted:#9a9186;
+  --text-dark:#1a1714;
+  --text-dark-soft:#4a443c;
+
+  --accent:#c9a44c;
+  --accent-dark:#a9853a;
+  --accent-light:#e0c068;
+  --accent-subtle:rgba(201,164,76,.10);
+  --accent-border:rgba(201,164,76,.22);
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.16);
+  --shadow-md:0 2px 4px rgba(0,0,0,.16),0 8px 18px rgba(0,0,0,.22),0 20px 40px rgba(0,0,0,.18);
+  --shadow-lg:0 4px 8px rgba(0,0,0,.18),0 16px 32px rgba(0,0,0,.26),0 40px 80px rgba(0,0,0,.30);
+  --shadow-accent:0 8px 24px rgba(201,164,76,.28);
+  --shadow-accent-strong:0 12px 34px rgba(201,164,76,.42);
+
+  --text-display:clamp(2.9rem,2rem + 5vw,6.2rem);
+  --text-h2:clamp(2rem,1.4rem + 2.6vw,3.4rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+
+  --lh-display:.96;
+  --lh-heading:1.08;
+  --lh-body:1.74;
+  --ls-display:-.01em;
+
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  background:var(--bg-base);
+  color:var(--text-primary);
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;font-optical-sizing:auto;text-wrap:balance;text-transform:uppercase;letter-spacing:var(--ls-display);line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem);position:relative}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* ---------- HEADER ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(12,10,9,.92);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 1px 0 var(--accent-border);
+  padding:12px clamp(1.5rem,5vw,4rem);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:42px;height:42px;border-radius:50%;
+  border:1.5px solid var(--accent);
+  display:grid;place-items:center;
+  font-family:'Barlow Condensed';font-weight:900;font-size:1.25rem;color:var(--accent);
+  background:rgba(201,164,76,.06);
+}
+.brand-name{font-family:'Barlow Condensed';font-weight:800;font-size:1.05rem;letter-spacing:.04em;line-height:1;text-transform:uppercase}
+.brand-name span{display:block;font-family:'Inter';font-weight:400;font-size:.6rem;letter-spacing:.32em;color:var(--accent);margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.lnk{font-size:.78rem;font-weight:500;letter-spacing:.04em;color:var(--text-secondary);transition:color .25s ease;text-transform:uppercase}
+.nav a.lnk:hover{color:var(--accent)}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.85rem clamp(1.3rem,3vw,2rem);min-height:48px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#1a1410;font-family:'Barlow Condensed';font-weight:800;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:18px;height:18px;fill:currentColor}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.85rem clamp(1.3rem,3vw,2rem);min-height:48px;
+  border:1.5px solid var(--accent-border);color:var(--text-primary);
+  font-family:'Barlow Condensed';font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:50px;transition:border-color .3s ease,background .3s ease,transform .3s cubic-bezier(.23,1,.32,1);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-subtle);transform:translateY(-3px)}
+.nav-toggle{display:none}
+
+/* ---------- HERO (Model C) ---------- */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/insta-8.jpg') center 30%/cover;animation:kb 24s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(105deg,rgba(12,10,9,.92) 0%,rgba(12,10,9,.62) 38%,rgba(12,10,9,.18) 65%,rgba(12,10,9,.55) 100%),
+             linear-gradient(0deg,rgba(12,10,9,.96) 2%,rgba(12,10,9,.25) 40%,transparent 70%);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.hero-content{position:relative;z-index:3;padding:0 clamp(1.5rem,8vw,7rem) clamp(3.5rem,8vh,7rem);max-width:760px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+  padding:9px 16px;border-radius:50px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.18);
+  font-size:.78rem;font-weight:500;letter-spacing:.02em;
+}
+.hero-badge .stars{color:var(--accent-light);letter-spacing:1px;font-size:.85rem}
+.hero-badge b{font-weight:700}
+.hero-eyebrow{font-family:'Inter';font-weight:600;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero h1{font-size:var(--text-display);font-weight:900;line-height:var(--lh-display);max-width:14ch;margin-bottom:24px}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero h1 .ln:nth-child(1) .word{animation-delay:.15s}
+.hero h1 .ln:nth-child(2) .word{animation-delay:.28s}
+.hero h1 .ln:nth-child(3) .word{animation-delay:.41s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{max-width:46ch;color:var(--text-secondary);font-size:1.05rem;margin-bottom:34px;opacity:0;animation:fade-in 1s ease .8s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+.scroll-hint{position:absolute;bottom:26px;right:clamp(1.5rem,8vw,7rem);z-index:3;writing-mode:vertical-rl;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:14px}
+.scroll-hint::after{content:'';width:1px;height:48px;background:linear-gradient(var(--accent),transparent)}
+
+/* ---------- SOBRE ---------- */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-img{position:relative}
+.sobre-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-img .frame{position:absolute;inset:14px;border:1px solid var(--accent-border);border-radius:6px;pointer-events:none}
+.sobre h2{font-size:var(--text-h2);font-weight:800;margin-bottom:22px;max-width:16ch}
+.sobre h2 em{font-style:normal;color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:36px;flex-wrap:wrap}
+.stat .n{font-family:'Barlow Condensed';font-weight:900;font-size:2.6rem;line-height:1;color:var(--accent)}
+.stat .l{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+
+/* ---------- SERVICOS ---------- */
+.servicos{background:var(--bg-light);color:var(--text-dark);clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.servicos .overline{color:var(--accent-dark)}
+.servicos h2{font-size:var(--text-h2);font-weight:800;color:var(--text-dark);max-width:18ch;margin-bottom:14px}
+.servicos .lead{color:var(--text-dark-soft);max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.serv-card{
+  background:#fff;border:1px solid rgba(26,23,20,.07);border-radius:8px;padding:clamp(1.6rem,3vw,2.4rem);
+  box-shadow:var(--shadow-sm);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .num{font-family:'Barlow Condensed';font-weight:700;font-size:.8rem;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:18px}
+.serv-card h3{font-size:var(--text-h3);font-weight:700;color:var(--text-dark);margin-bottom:10px}
+.serv-card p{font-size:.92rem;color:var(--text-dark-soft);line-height:1.65;margin-bottom:18px}
+.serv-card .price{font-family:'Barlow Condensed';font-weight:800;font-size:1.15rem;color:var(--text-dark);border-top:1px solid rgba(26,23,20,.08);padding-top:14px}
+.serv-card .price span{font-family:'Inter';font-weight:400;font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}
+.serv-feature{grid-column:span 3;display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md);margin-top:8px}
+.serv-feature .ft-img{background:url('imagens/insta-5.jpg') center 28%/cover;min-height:320px}
+.serv-feature .ft-txt{background:var(--bg-dark);color:var(--text-primary);padding:clamp(2rem,4vw,3.4rem);display:flex;flex-direction:column;justify-content:center}
+.serv-feature .ft-txt .overline{color:var(--accent)}
+.serv-feature h3{color:var(--text-primary);font-size:var(--text-h3);font-weight:700;margin-bottom:14px}
+.serv-feature p{color:var(--text-secondary);font-size:.95rem;margin-bottom:22px}
+
+/* ---------- EQUIPE / PROVA ---------- */
+.equipe{background:var(--bg-base)}
+.equipe .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.equipe h2{font-size:var(--text-h2);font-weight:800;max-width:16ch}
+.equipe h2 em{font-style:normal;color:var(--accent)}
+.equipe .head p{color:var(--text-secondary);max-width:40ch}
+.prova-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:var(--gap-cards)}
+.prova-img{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md)}
+.prova-img img{width:100%;height:100%;object-fit:cover;min-height:280px;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.prova-img:hover img{transform:scale(1.05)}
+.prova-img .cap{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(0deg,rgba(12,10,9,.9),transparent);font-family:'Barlow Condensed';font-weight:700;font-size:1.05rem;letter-spacing:.02em}
+.prova-side{display:grid;grid-template-rows:1fr auto;gap:var(--gap-cards)}
+.review-card{background:var(--bg-surface);border:1px solid var(--accent-border);border-radius:8px;padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;justify-content:center}
+.review-card .stars{color:var(--accent-light);font-size:1rem;letter-spacing:2px;margin-bottom:14px}
+.review-card blockquote{font-family:'Barlow Condensed';font-weight:600;font-size:1.35rem;line-height:1.25;color:var(--text-primary);margin-bottom:16px}
+.review-card cite{font-style:normal;font-size:.8rem;color:var(--text-muted);letter-spacing:.04em}
+
+/* ---------- GALERIA ---------- */
+.galeria{background:var(--bg-inset)}
+.galeria h2{font-size:var(--text-h2);font-weight:800;margin-bottom:14px}
+.galeria .lead{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:clamp(2rem,4vw,3rem)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:6px;box-shadow:var(--shadow-md)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+
+/* ---------- LOCALIZACAO ---------- */
+.local{background:var(--bg-dark);clip-path:polygon(0 0,100% 4%,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.local-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.local h2{font-size:var(--text-h2);font-weight:800;margin-bottom:24px;max-width:14ch}
+.local h2 em{font-style:normal;color:var(--accent)}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.info-row .ic{flex:0 0 22px;margin-top:3px;color:var(--accent)}
+.info-row .ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6}
+.info-row .t{font-family:'Barlow Condensed';font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.info-row .d{color:var(--text-secondary);font-size:.96rem}
+.local-cta{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap}
+.map-wrap{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--accent-border)}
+.map-wrap iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--bg-inset);padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem;border-top:1px solid var(--accent-border)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(2rem,4vw,3rem);max-width:var(--content-max);margin:0 auto}
+.foot-brand .brand{margin-bottom:18px}
+.foot-brand p{color:var(--text-muted);font-size:.9rem;max-width:34ch}
+.foot-col h4{font-family:'Barlow Condensed';font-weight:700;font-size:.85rem;letter-spacing:.14em;color:var(--accent);margin-bottom:18px;text-transform:uppercase}
+.foot-col a,.foot-col p{display:block;color:var(--text-secondary);font-size:.9rem;margin-bottom:12px;transition:color .25s ease}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{max-width:var(--content-max);margin:clamp(2.5rem,5vw,4rem) auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+.foot-bottom a{color:var(--accent)}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .nav{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);flex-direction:column;justify-content:center;gap:28px;background:rgba(12,10,9,.97);backdrop-filter:blur(14px);transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);padding:2rem}
+  .nav.open{transform:translateX(0)}
+  .nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;z-index:101;padding:8px}
+  .nav-toggle span{width:26px;height:2px;background:var(--text-primary);transition:.3s}
+  .nav-toggle.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.x span:nth-child(2){opacity:0}
+  .nav-toggle.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sobre-grid,.local-grid{grid-template-columns:1fr}
+  .sobre-img{order:-1}
+  .serv-grid{grid-template-columns:1fr 1fr}
+  .serv-feature{grid-column:span 2;grid-template-columns:1fr}
+  .serv-feature .ft-img{min-height:240px}
+  .prova-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .serv-grid{grid-template-columns:1fr}
+  .serv-feature{grid-column:span 1}
+  .stats{gap:2rem}
+  .foot-grid{grid-template-columns:1fr}
+  .scroll-hint{display:none}
+  .gal-grid{grid-auto-rows:150px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{animation:none}
+  .reveal,.hero h1 .word,.hero-sub,.hero-cta{transition:none;opacity:1;transform:none;animation:none}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand" aria-label="Barbearia Número 1">
+    <span class="brand-mark">N1</span>
+    <span class="brand-name">Número 1<span>Barba · Cabelo · Estilo</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav" id="nav">
+    <a href="#sobre" class="lnk">A Barbearia</a>
+    <a href="#servicos" class="lnk">Serviços</a>
+    <a href="#equipe" class="lnk">Equipe</a>
+    <a href="#local" class="lnk">Onde Estamos</a>
+    <a href="https://wa.me/5592988523765" class="btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.06 24l1.69-6.16a11.87 11.87 0 01-1.59-5.95C.16 5.34 5.5 0 12.07 0a11.82 11.82 0 018.41 3.49 11.82 11.82 0 013.48 8.41c0 6.57-5.34 11.91-11.9 11.91a11.9 11.9 0 01-5.7-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.9-4.43 9.9-9.89a9.84 9.84 0 00-9.88-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.24.64 3.92 1.74 5.68l-1 3.66 3.74-1.04zM17.4 14.3c-.07-.12-.26-.2-.55-.34-.29-.14-1.72-.85-1.98-.95-.27-.1-.46-.14-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.14-1.23-.45-2.34-1.44-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.24-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.5.07-.76.36s-1 .98-1 2.39 1.02 2.78 1.17 2.97c.14.19 2.01 3.07 4.87 4.31.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38z"/></svg>
+      WhatsApp
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" role="img" aria-label="Barbeiro da Número 1 em atendimento"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="stars">★★★★★</span> <b>5,0</b> no Google · Parque 10, Manaus
+    </div>
+    <p class="hero-eyebrow">Barbearia Número 1 · Unidade Parque 10</p>
+    <h1>
+      <span class="ln"><span class="word">Barba,</span></span>
+      <span class="ln"><span class="word">cabelo</span> <span class="word">e</span></span>
+      <span class="ln"><span class="word"><em>estilo.</em></span></span>
+    </h1>
+    <p class="hero-sub">O padrão Número 1 do Parque 10: ambiente premium, barbeiros de verdade e um corte que te representa. Reserve sua cadeira em segundos.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5592988523765" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.06 24l1.69-6.16a11.87 11.87 0 01-1.59-5.95C.16 5.34 5.5 0 12.07 0a11.82 11.82 0 018.41 3.49 11.82 11.82 0 013.48 8.41c0 6.57-5.34 11.91-11.9 11.91a11.9 11.9 0 01-5.7-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.9-4.43 9.9-9.89a9.84 9.84 0 00-9.88-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.24.64 3.92 1.74 5.68l-1 3.66 3.74-1.04zM17.4 14.3c-.07-.12-.26-.2-.55-.34-.29-.14-1.72-.85-1.98-.95-.27-.1-.46-.14-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.14-1.23-.45-2.34-1.44-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.24-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.5.07-.76.36s-1 .98-1 2.39 1.02 2.78 1.17 2.97c.14.19 2.01 3.07 4.87 4.31.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Role para descobrir</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-img reveal">
+      <img src="imagens/maps-1.jpg" alt="Cliente da Barbearia Número 1 com o corte finalizado, em frente ao logo N1">
+      <span class="frame"></span>
+    </div>
+    <div class="sobre-txt">
+      <div class="overline reveal">A Barbearia</div>
+      <h2 class="reveal">Mais que um corte. Um <em>ritual</em> masculino.</h2>
+      <p class="reveal">No coração do Parque 10 de Novembro, a Número 1 nasceu pra elevar o padrão da barbearia em Manaus. Ambiente de couro e aço, atendimento sem pressa e barbeiros que tratam cabelo e barba como deveriam ser tratados: com técnica e cuidado.</p>
+      <p class="reveal">Cada visita é uma pausa no seu dia — você senta, relaxa e sai com a melhor versão do seu visual. Não é à toa que somos nota máxima entre quem já passou pela nossa cadeira.</p>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">5,0</div><div class="l">Nota no Google</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">Unidades em Manaus</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Foco no acabamento</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="overline reveal">Nossos Serviços</div>
+    <h2 class="reveal">O que fazemos pelo seu estilo</h2>
+    <p class="lead reveal">Serviços completos de barba e cabelo, com produtos de qualidade e acabamento de primeira. Escolha o seu e agende pelo WhatsApp — sem fila, sem espera.</p>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <div class="num">01</div>
+        <h3>Corte Masculino</h3>
+        <p>Corte na tesoura ou máquina, alinhado ao formato do seu rosto e ao estilo que você quer levar pra rua.</p>
+        <div class="price">a partir de R$ 45 <span>/ sessão</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="num">02</div>
+        <h3>Barba Desenhada</h3>
+        <p>Modelagem, navalha e toalha quente. A barba alinhada do jeito que valoriza o seu rosto.</p>
+        <div class="price">a partir de R$ 40 <span>/ sessão</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="num">03</div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo da Número 1: cabelo e barba alinhados na mesma visita, com acabamento impecável.</p>
+        <div class="price">a partir de R$ 75 <span>/ combo</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="num">04</div>
+        <h3>Acabamento &amp; Pezinho</h3>
+        <p>Pra manter o corte sempre no ponto entre uma visita e outra. Linha e navalha pra contorno limpo.</p>
+        <div class="price">a partir de R$ 20 <span>/ retoque</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="num">05</div>
+        <h3>Sobrancelha Masculina</h3>
+        <p>Limpeza e design discreto, do jeito masculino. Detalhe que faz toda a diferença no resultado final.</p>
+        <div class="price">a partir de R$ 15 <span>/ sessão</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <div class="num">06</div>
+        <h3>Corte Infantil</h3>
+        <p>Atendimento com paciência pros pequenos, no mesmo padrão de cuidado e ambiente da casa.</p>
+        <div class="price">a partir de R$ 40 <span>/ sessão</span></div>
+      </div>
+      <div class="serv-feature reveal">
+        <div class="ft-img" role="img" aria-label="Barboterapia na Barbearia Número 1"></div>
+        <div class="ft-txt">
+          <div class="overline">Experiência da Casa</div>
+          <h3>Barboterapia Completa</h3>
+          <p>Toalha quente, esfoliação, navalha e finalização. O cuidado premium com a barba que transforma o atendimento em um verdadeiro momento de relax — só na Número 1.</p>
+          <a href="https://wa.me/5592988523765" class="btn-primary" target="_blank" rel="noopener" style="align-self:flex-start">Quero agendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE / PROVA -->
+<section class="equipe" id="equipe">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="overline reveal">Equipe &amp; Reconhecimento</div>
+        <h2 class="reveal">Time que <em>veste a camisa</em></h2>
+      </div>
+      <p class="reveal">Profissionais que amam o que fazem — e clientes que voltam por isso. A Número 1 virou referência no Parque 10 e já chamou a atenção até da imprensa local.</p>
+    </div>
+    <div class="prova-grid">
+      <div class="prova-img reveal">
+        <img src="imagens/insta-2.jpg" alt="Equipe da Barbearia Número 1 no lounge da unidade Parque 10">
+        <div class="cap">Nossa equipe, na unidade Parque 10</div>
+      </div>
+      <div class="prova-side">
+        <div class="prova-img reveal">
+          <img src="imagens/insta-1.jpg" alt="Equipe da Barbearia Número 1 recebendo a imprensa">
+          <div class="cap">Reconhecimento da imprensa local</div>
+        </div>
+        <div class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Melhor barbearia do Parque 10. Atendimento nota mil e o corte sempre impecável.”</blockquote>
+          <cite>— Avaliação 5,0 no Google</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="wrap">
+    <div class="overline reveal">Galeria</div>
+    <h2 class="reveal">Resultados que falam por nós</h2>
+    <p class="lead reveal">Cortes, barbas e acabamentos feitos na cadeira da Número 1. O seu próximo visual pode estar aqui.</p>
+    <div class="gal-grid">
+      <figure class="g-tall reveal"><img src="imagens/insta-8.jpg" alt="Barbeiro da Número 1 trabalhando no corte"></figure>
+      <figure class="g-wide reveal"><img src="imagens/insta-5.jpg" alt="Barboterapia em andamento" style="object-position:center 30%"></figure>
+      <figure class="reveal"><img src="imagens/maps-1.jpg" alt="Corte finalizado em frente ao logo N1" style="object-position:center 20%"></figure>
+      <figure class="g-wide reveal"><img src="imagens/insta-7.jpg" alt="Acabamento de corte degradê" style="object-position:center 75%"></figure>
+      <figure class="reveal"><img src="imagens/insta-2.jpg" alt="Ambiente e equipe da barbearia" style="object-position:center 35%"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="wrap local-grid">
+    <div>
+      <div class="overline reveal">Onde Estamos</div>
+      <h2 class="reveal">Te esperamos no <em>Parque 10</em></h2>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><div class="t">Endereço</div><div class="d">Av. Tancredo Neves, 645 — Parque 10 de Novembro, Manaus - AM, 69054-700</div></div>
+      </div>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
+        <div><div class="t">WhatsApp</div><div class="d">(92) 98852-3765</div></div>
+      </div>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <div><div class="t">Horário</div><div class="d">Seg a Sáb · 09h às 19h — confirme o seu horário pelo WhatsApp</div></div>
+      </div>
+      <div class="info-row reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+        <div><div class="t">Instagram</div><div class="d"><a href="https://www.instagram.com/barbearianumero_1/" target="_blank" rel="noopener" style="color:var(--accent)">@barbearianumero_1</a></div></div>
+      </div>
+      <div class="local-cta reveal">
+        <a href="https://wa.me/5592988523765" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M.06 24l1.69-6.16a11.87 11.87 0 01-1.59-5.95C.16 5.34 5.5 0 12.07 0a11.82 11.82 0 018.41 3.49 11.82 11.82 0 013.48 8.41c0 6.57-5.34 11.91-11.9 11.91a11.9 11.9 0 01-5.7-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.9-4.43 9.9-9.89a9.84 9.84 0 00-9.88-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.24.64 3.92 1.74 5.68l-1 3.66 3.74-1.04z"/></svg>
+          Agendar agora
+        </a>
+        <a href="https://www.google.com/maps/place/Barbearia+N%C3%BAmero+1+-+Parque+10/@-3.0718756,-60.0072353,17z/data=!3m1!4b1!4m6!3m5!1s0x926c1b7645f3eb21:0x9edfe76ce4a8ca8b!8m2!3d-3.0718756!4d-60.0072353!16s%2Fg%2F11wj3vhxxy" class="btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe title="Mapa Barbearia Número 1 - Parque 10" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-3.0718756,-60.0072353&hl=pt-BR&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#topo" class="brand">
+        <span class="brand-mark">N1</span>
+        <span class="brand-name">Número 1<span>Barba · Cabelo · Estilo</span></span>
+      </a>
+      <p>A barbearia nota 5,0 do Parque 10, em Manaus. Barba, cabelo e estilo no padrão que você merece.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <p>Av. Tancredo Neves, 645<br>Parque 10 de Novembro<br>Manaus - AM</p>
+      <a href="https://wa.me/5592988523765" target="_blank" rel="noopener">(92) 98852-3765</a>
+      <a href="https://www.instagram.com/barbearianumero_1/" target="_blank" rel="noopener">@barbearianumero_1</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Número 1 — Parque 10. Todos os direitos reservados.</span>
+    <span>Agende pelo <a href="https://wa.me/5592988523765" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5592988523765" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.06 24l1.69-6.16a11.87 11.87 0 01-1.59-5.95C.16 5.34 5.5 0 12.07 0a11.82 11.82 0 018.41 3.49 11.82 11.82 0 013.48 8.41c0 6.57-5.34 11.91-11.9 11.91a11.9 11.9 0 01-5.7-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.9-4.43 9.9-9.89a9.84 9.84 0 00-9.88-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.24.64 3.92 1.74 5.68l-1 3.66 3.74-1.04zM17.4 14.3c-.07-.12-.26-.2-.55-.34-.29-.14-1.72-.85-1.98-.95-.27-.1-.46-.14-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.14-1.23-.45-2.34-1.44-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.24-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.5.07-.76.36s-1 .98-1 2.39 1.02 2.78 1.17 2.97c.14.19 2.01 3.07 4.87 4.31.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+const tg=document.getElementById('navToggle'),nv=document.getElementById('nav');
+tg.addEventListener('click',()=>{nv.classList.toggle('open');tg.classList.toggle('x')});
+nv.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nv.classList.remove('open');tg.classList.remove('x')}));
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

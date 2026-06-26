@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salão de Beleza Tesoura de Ouro — Dourados, MS</title>
+<meta name="description" content="Salão de beleza nota 5,0 em Dourados, MS. Penteado, coloração, dia da noiva e cuidado de spa. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf6f1; --bg-surface:#fffdfb; --bg-inset:#f2e8dd; --bg-dark:#241b17;
+  --text-primary:#251f1a; --text-secondary:#574c43; --text-muted:#9a8d7f; --text-inverse:#f7efe6;
+  --accent:#bf9b4e; --accent-dark:#9a7a36; --gold-light:#e6cf86;
+  --accent-subtle:rgba(191,155,78,.10); --accent-border:rgba(191,155,78,.22);
+  --rose:#b5727d;
+  --text-display:clamp(2.8rem,2rem + 4vw,5.3rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.7rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,9.5rem); --content-max:1180px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,1.9rem);
+  --shadow-sm:0 1px 2px rgba(40,28,18,.05),0 2px 6px rgba(40,28,18,.05);
+  --shadow-md:0 2px 4px rgba(40,28,18,.05),0 8px 18px rgba(40,28,18,.07),0 20px 40px rgba(40,28,18,.05);
+  --shadow-lg:0 4px 8px rgba(40,28,18,.05),0 16px 32px rgba(40,28,18,.07),0 40px 80px rgba(40,28,18,.09);
+  --shadow-accent:0 8px 24px rgba(191,155,78,.30);
+  --shadow-accent-strong:0 14px 34px rgba(191,155,78,.42);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;font-size:var(--text-body);line-height:var(--lh-body);
+  color:var(--text-primary);background:var(--bg-base);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:500;line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{display:flex;align-items:center;gap:10px;font-family:'Nunito Sans',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* ---- buttons ---- */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.5rem,3vw,2.2rem);min-height:48px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-weight:700;font-size:.8rem;
+  letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:.9rem 1.7rem;min-height:48px;border:1px solid var(--accent-border);
+  color:var(--text-primary);font-weight:600;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;
+  border-radius:50px;transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .3s ease,background .3s ease;touch-action:manipulation}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--accent);background:var(--accent-subtle)}
+.btn-primary svg,.btn-ghost svg{width:18px;height:18px}
+
+/* ---- header ---- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(36,27,23,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(191,155,78,.22);padding-top:12px;padding-bottom:12px}
+.brand{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:600;letter-spacing:.01em;color:var(--text-inverse);text-decoration:none;line-height:1.1}
+.brand span{display:block;font-family:'Nunito Sans',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-top:2px}
+header .nav{display:flex;align-items:center;gap:30px}
+header .nav a.link{display:none;color:var(--text-inverse);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.02em;opacity:.9;transition:color .25s}
+header .nav a.link:hover{color:var(--accent)}
+header .nav .btn-head{display:inline-flex;align-items:center;gap:8px;padding:.6rem 1.2rem;min-height:40px;background:var(--accent);
+  color:#241b17;font-weight:700;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border-radius:50px;
+  transition:transform .25s,background .25s;touch-action:manipulation}
+header .nav .btn-head:hover{transform:translateY(-2px);background:var(--gold-light)}
+@media(min-width:880px){header .nav a.link{display:inline}}
+
+/* ---- hero (model B 40/60) ---- */
+.hero{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh}
+.hero-copy{position:relative;background:var(--bg-dark);display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(5.5rem,9vw,7rem) clamp(1.6rem,4vw,3.4rem) clamp(2.5rem,5vw,3.5rem);overflow:hidden}
+.hero-copy::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:1}
+.hero-copy::after{content:'';position:absolute;top:-30%;right:-30%;width:80%;height:80%;
+  background:radial-gradient(circle,rgba(191,155,78,.20),transparent 70%);pointer-events:none}
+.hero-copy>*{position:relative;z-index:2}
+.hero-title{font-size:var(--text-display);letter-spacing:var(--ls-display);line-height:var(--lh-display);color:var(--text-inverse);max-width:13ch;margin-bottom:22px}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .8s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .line{display:block;overflow:hidden;padding-bottom:.08em}
+.hero-title em{font-style:italic;color:var(--accent)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .line:nth-child(2) .word{animation-delay:.3s}
+.hero-title .line:nth-child(3) .word{animation-delay:.45s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:#cdbfb1;font-size:1.02rem;max-width:38ch;margin-bottom:30px;opacity:0;animation:fade-in .9s ease .7s forwards}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fade-in .9s ease .85s forwards}
+.hero-actions .btn-ghost{color:var(--text-inverse);border-color:rgba(247,239,230,.25)}
+.hero-actions .btn-ghost:hover{border-color:var(--accent);background:rgba(191,155,78,.12)}
+@keyframes fade-in{to{opacity:1}}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 28%;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-selo{position:absolute;left:24px;bottom:24px;z-index:3;display:flex;align-items:center;gap:12px;
+  padding:12px 18px;border-radius:16px;background:rgba(36,27,23,.42);backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2)}
+.hero-selo .num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:600;color:#fff;line-height:1}
+.hero-selo .stars{color:var(--gold-light);font-size:.8rem;letter-spacing:2px}
+.hero-selo .lbl{color:#e8ddd1;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;margin-top:3px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:62vw;min-height:300px;order:-1}
+  .hero-img img{object-position:center 22%}
+}
+
+/* ---- sobre ---- */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.sobre-figure{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.sobre-figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.sobre-figure .tag{position:absolute;left:18px;bottom:18px;background:rgba(36,27,23,.5);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);color:#f7efe6;padding:8px 16px;border-radius:30px;font-size:.74rem;letter-spacing:.04em;border:1px solid rgba(255,255,255,.16)}
+.sobre-body h2{font-size:var(--text-h2);margin-bottom:18px;max-width:16ch}
+.sobre-body p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:16px}
+.sobre-body em{font-style:italic;color:var(--accent-dark)}
+.sobre-stats{display:flex;gap:clamp(1.6rem,4vw,3rem);margin-top:30px;flex-wrap:wrap}
+.sobre-stats .st{display:flex;flex-direction:column}
+.sobre-stats .n{font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--accent-dark);line-height:1}
+.sobre-stats .l{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-top:6px}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}}
+
+/* ---- servicos (diagonal dark) ---- */
+.servicos{background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-2vw;padding-top:calc(var(--section-pad) + 4vw)}
+.servicos::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.servicos .inner{max-width:var(--content-max);margin:0 auto;position:relative;z-index:2}
+.serv-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.serv-head h2{font-size:var(--text-h2);color:#fff}
+.serv-head p{color:#bcae9f;margin-top:14px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap-cards)}
+.serv-card{position:relative;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:16px;
+  padding:clamp(1.6rem,3vw,2.2rem);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease,background .35s ease}
+.serv-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.06);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .idx{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--accent);margin-bottom:14px}
+.serv-card h3{font-size:var(--text-h3);color:#fff;margin-bottom:10px}
+.serv-card p{color:#b9ab9c;font-size:.95rem}
+.serv-card .ln{width:36px;height:2px;background:var(--accent);margin-top:18px;opacity:.7}
+
+/* ---- galeria ---- */
+.galeria{background:var(--bg-inset)}
+.galeria .inner{max-width:var(--content-max);margin:0 auto}
+.gal-head{text-align:center;margin-bottom:clamp(2.2rem,5vw,3.2rem)}
+.gal-head h2{font-size:var(--text-h2)}
+.gal-head p{color:var(--text-secondary);max-width:50ch;margin:14px auto 0}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.gal-grid figure{position:relative;overflow:hidden;border-radius:14px;box-shadow:var(--shadow-md)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid .g-tall{grid-row:span 2}
+.gal-grid figure.full{aspect-ratio:auto}
+.gal-grid figure:not(.g-tall) img{aspect-ratio:4/5}
+.gal-grid .g-tall img{height:100%;min-height:100%}
+@media(max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.gal-grid .g-tall{grid-row:span 1}}
+
+/* ---- prova social ---- */
+.prova{background:var(--bg-base);position:relative}
+.prova .inner{max-width:980px;margin:0 auto;text-align:center}
+.prova .overline{justify-content:center}
+.prova h2{font-size:var(--text-h2);margin-bottom:clamp(2rem,4vw,3rem)}
+.prova-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards);text-align:left}
+.quote{background:var(--bg-surface);border:1px solid var(--accent-border);border-radius:16px;padding:clamp(1.6rem,3vw,2.1rem);box-shadow:var(--shadow-sm)}
+.quote .stars{color:var(--accent);letter-spacing:2px;font-size:.85rem;margin-bottom:12px}
+.quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;color:var(--text-primary);line-height:1.5;margin-bottom:14px}
+.quote .who{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);font-weight:700}
+
+/* ---- localizacao ---- */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.local::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.local .inner{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:2}
+.local h2{font-size:var(--text-h2);color:#fff;margin-bottom:20px;max-width:14ch}
+.local .info{margin-bottom:14px;display:flex;gap:12px;align-items:flex-start}
+.local .info .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);min-width:84px;padding-top:3px;font-weight:700}
+.local .info .v{color:#d8cbbd}
+.local .info .v a{color:#d8cbbd;text-decoration:none;border-bottom:1px solid var(--accent-border)}
+.local .actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px}
+.local .actions .btn-ghost{color:var(--text-inverse);border-color:rgba(247,239,230,.25)}
+.local .actions .btn-ghost:hover{border-color:var(--accent);background:rgba(191,155,78,.12)}
+.local .mapwrap{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.1);aspect-ratio:4/3}
+.local .mapwrap iframe{width:100%;height:100%;border:0;filter:grayscale(.2) contrast(1.05)}
+@media(max-width:820px){.local .inner{grid-template-columns:1fr}}
+
+/* ---- footer ---- */
+footer{background:#1a130f;color:#a99c8d;padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-inner{max-width:var(--content-max);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px}
+.foot-brand{font-family:'Playfair Display',serif;font-size:1.4rem;color:#f7efe6}
+.foot-brand span{display:block;font-family:'Nunito Sans',sans-serif;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-top:4px;font-weight:700}
+.foot-col h4{font-family:'Nunito Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:14px;font-weight:700}
+.foot-col p,.foot-col a{font-size:.9rem;color:#a99c8d;text-decoration:none;display:block;margin-bottom:8px}
+.foot-col a:hover{color:#f7efe6}
+.foot-bottom{max-width:var(--content-max);margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:#7d7164;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+/* ---- WA FAB ---- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---- reveal ---- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-img img{animation:none}
+  .hero-title .word,.hero-sub,.hero-actions{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  .gal-grid figure:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Tesoura de Ouro<span>Salão de Beleza</span></a>
+  <nav class="nav">
+    <a href="#sobre" class="link">O Salão</a>
+    <a href="#servicos" class="link">Serviços</a>
+    <a href="#galeria" class="link">Portfólio</a>
+    <a href="#local" class="link">Onde Estamos</a>
+    <a href="https://wa.me/5567998458335" class="btn-head" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO model B 40/60 -->
+<section class="hero" id="topo">
+  <div class="hero-copy">
+    <p class="overline">Dourados · MS</p>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Beleza</span> <span class="word">que</span></span>
+      <span class="line"><span class="word">vira</span> <span class="word"><em>referência</em></span></span>
+      <span class="line"><span class="word">em</span> <span class="word">Dourados.</span></span>
+    </h1>
+    <p class="hero-sub">Penteado, coloração, dia da noiva e cuidado de spa — tudo num salão acolhedor com nota máxima no Google.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5567998458335" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/insta-3.jpg" alt="Cliente do Salão Tesoura de Ouro com maquiagem e penteado finalizados">
+    <div class="hero-selo">
+      <span class="num">5,0</span>
+      <span>
+        <span class="stars">★★★★★</span>
+        <span class="lbl">no Google</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <figure class="sobre-figure reveal">
+      <img src="imagens/maps-1.jpg" alt="Ambiente interno do Salão Tesoura de Ouro em Dourados">
+      <span class="tag">Nosso espaço · Jardim Itaipu</span>
+    </figure>
+    <div class="sobre-body reveal">
+      <p class="overline">O Salão</p>
+      <h2>Um lugar acolhedor onde cada detalhe importa</h2>
+      <p>No Tesoura de Ouro, beleza é experiência. Da maquiagem ao penteado, da coloração ao momento de spa, cada cliente é cuidada num ambiente pensado para relaxar — marcenaria quente, iluminação suave e uma equipe que faz você se sentir em casa.</p>
+      <p>É por isso que tantas <em>noivas, mães e mulheres de Dourados</em> escolhem o nosso salão para os dias mais importantes. O resultado está na nota: avaliação máxima, de quem volta e indica.</p>
+      <div class="sobre-stats">
+        <div class="st"><span class="n">5,0</span><span class="l">Nota no Google</span></div>
+        <div class="st"><span class="n">4+</span><span class="l">Especialidades</span></div>
+        <div class="st"><span class="n">100%</span><span class="l">Foco em você</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICOS (diagonal dark) -->
+<section class="servicos" id="servicos">
+  <div class="inner">
+    <div class="serv-head reveal">
+      <p class="overline">Serviços</p>
+      <h2>O cuidado completo, num só lugar</h2>
+      <p>Do dia a dia ao grande dia. Conheça as especialidades que fazem do Tesoura de Ouro referência em Dourados.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="idx">01</div>
+        <h3>Dia da Noiva</h3>
+        <p>Penteado, maquiagem e cuidado de spa para o seu grande dia — você pronta, tranquila e radiante, do início ao fim.</p>
+        <div class="ln"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">02</div>
+        <h3>Coloração & Mechas</h3>
+        <p>Luzes, mechas e tons sob medida com técnica e produtos que protegem o fio. Cor viva, brilho e movimento.</p>
+        <div class="ln"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">03</div>
+        <h3>Cortes & Penteados</h3>
+        <p>Do bob cut moderno ao penteado de festa. Um corte que valoriza o seu rosto e combina com o seu estilo.</p>
+        <div class="ln"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">04</div>
+        <h3>Maquiagem</h3>
+        <p>Maquiagem para festas, ensaios e ocasiões especiais — natural ou marcante, sempre do jeito que você sonhou.</p>
+        <div class="ln"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">05</div>
+        <h3>Unhas</h3>
+        <p>Esmaltação impecável e acabamento que dura. Mãos e pés bem cuidados, do brilho intenso ao clássico discreto.</p>
+        <div class="ln"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">06</div>
+        <h3>Spa & Relaxamento</h3>
+        <p>Um momento só seu, para desacelerar e se sentir renovada. O cuidado que vai além da aparência.</p>
+        <div class="ln"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="inner">
+    <div class="gal-head reveal">
+      <p class="overline center">Portfólio</p>
+      <h2>Resultados reais do nosso salão</h2>
+      <p>Penteados, colorações e dias de noiva feitos aqui, em Dourados.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="g-tall reveal"><img src="imagens/insta-1.jpg" alt="Noiva com buquê preparada no Salão Tesoura de Ouro"></figure>
+      <figure class="reveal"><img src="imagens/insta-4.jpg" alt="Coloração e mechas com brilho feitas no salão"></figure>
+      <figure class="reveal"><img src="imagens/maps-1.jpg" alt="Ambiente do Salão Tesoura de Ouro"></figure>
+      <figure class="reveal"><img src="imagens/insta-3.jpg" alt="Maquiagem e penteado finalizados"></figure>
+      <figure class="g-tall reveal"><img src="imagens/insta-2.jpg" alt="Noiva pronta para o grande dia"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="inner">
+    <p class="overline center">Quem viveu, recomenda</p>
+    <h2>Nota 5,0 de quem confia o seu dia a nós</h2>
+    <div class="prova-grid">
+      <blockquote class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Lugar maravilhoso, acolhedor, pessoas incríveis, equipe sensacional."</p>
+        <div class="who">Cliente · Google</div>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Me senti uma princesa no meu dia da noiva. Cada detalhe perfeito, do penteado à maquiagem."</p>
+        <div class="who">Noiva atendida</div>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Saí renovada. Ambiente lindo, atendimento atencioso e resultado impecável. Voltarei sempre."</p>
+        <div class="who">Cliente · Dourados</div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section class="local" id="local">
+  <div class="inner">
+    <div class="reveal">
+      <p class="overline">Onde Estamos</p>
+      <h2>Venha viver a experiência Tesoura de Ouro</h2>
+      <div class="info"><span class="k">Endereço</span><span class="v">R. Manoel Santiago, 850 — Jardim Itaipu, Dourados - MS, 79824-200</span></div>
+      <div class="info"><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/5567998458335" target="_blank" rel="noopener">(67) 99845-8335</a></span></div>
+      <div class="info"><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/salao.tesouradeouroms/" target="_blank" rel="noopener">@salao.tesouradeouroms</a></span></div>
+      <div class="info"><span class="k">Avaliação</span><span class="v">5,0 ★ no Google</span></div>
+      <div class="actions">
+        <a href="https://wa.me/5567998458335" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar meu horário
+        </a>
+        <a href="https://www.google.com/maps/place/Sal%C3%A3o+de+Beleza+Tesoura+de+Ouro/@-22.2138719,-54.8234158,17z/data=!3m1!4b1!4m6!3m5!1s0x9489a9a5dbf9ce3f:0x95fbf9a2e545dd03!8m2!3d-22.2138719!4d-54.8234158!16s%2Fg%2F1tczlkrd" class="btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+    <div class="mapwrap reveal">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Salão Tesoura de Ouro"
+        src="https://www.google.com/maps?q=-22.2138719,-54.8234158&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Tesoura de Ouro<span>Salão de Beleza</span></div>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5567998458335" target="_blank" rel="noopener">(67) 99845-8335</a>
+      <a href="https://www.instagram.com/salao.tesouradeouroms/" target="_blank" rel="noopener">@salao.tesouradeouroms</a>
+    </div>
+    <div class="foot-col">
+      <h4>Endereço</h4>
+      <p>R. Manoel Santiago, 850</p>
+      <p>Jardim Itaipu — Dourados, MS</p>
+      <p>79824-200</p>
+    </div>
+    <div class="foot-col">
+      <h4>Especialidades</h4>
+      <p>Dia da Noiva · Coloração</p>
+      <p>Cortes · Maquiagem</p>
+      <p>Unhas · Spa</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Salão de Beleza Tesoura de Ouro — Dourados, MS</span>
+    <span>Nota 5,0 ★ no Google</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5567998458335" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

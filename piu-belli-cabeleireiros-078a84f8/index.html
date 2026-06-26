@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piu Belli Cabeleireiros — Salão de Beleza em Dourados, MS</title>
+<meta name="description" content="Piu Belli Cabeleireiros — salão de beleza nota 4.8 no Google em Dourados, MS. Corte, coloração, tratamentos e estética facial. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf6f2; --bg-surface:#fffdfb; --bg-inset:#f1e8e2; --bg-dark:#2a1f24;
+  --text-primary:#241c1f; --text-secondary:#5a4d51; --text-muted:#9a8a8f; --text-inverse:#faf6f2;
+  --accent:#a85d6e; --accent-dark:#874a58; --accent-subtle:rgba(168,93,110,.10); --accent-border:rgba(168,93,110,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(42,31,36,.04),0 2px 6px rgba(42,31,36,.05);
+  --shadow-md:0 2px 4px rgba(42,31,36,.04),0 8px 18px rgba(42,31,36,.07),0 20px 40px rgba(42,31,36,.05);
+  --shadow-lg:0 4px 8px rgba(42,31,36,.05),0 16px 32px rgba(42,31,36,.07),0 40px 80px rgba(42,31,36,.10);
+  --shadow-accent:0 8px 24px rgba(168,93,110,.32);
+  --shadow-accent-strong:0 14px 34px rgba(168,93,110,.42);
+  --text-display:clamp(2.8rem,2rem + 4vw,5.3rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.72;
+  --ls-display:-.02em; --ls-overline:.16em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg-base);color:var(--text-primary);font-family:'Nunito Sans',sans-serif;font-size:var(--text-body);line-height:var(--lh-body);font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;font-optical-sizing:auto;text-wrap:balance;line-height:var(--lh-heading);font-weight:500}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.overline{display:flex;align-items:center;gap:10px;font-family:'Nunito Sans',sans-serif;font-size:.7rem;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* Buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:.85rem 1.6rem;min-height:48px;border:1px solid var(--accent-border);border-radius:50px;color:var(--text-primary);font-weight:700;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;transition:background .3s ease,border-color .3s ease;touch-action:manipulation}
+.btn-ghost:hover{background:var(--accent-subtle);border-color:var(--accent)}
+.btn-primary svg,.btn-ghost svg{width:18px;height:18px;flex-shrink:0}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(42,31,36,.92);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);box-shadow:0 1px 0 rgba(201,168,76,.25);padding-top:12px;padding-bottom:12px}
+.brand{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;color:var(--text-inverse);letter-spacing:.01em;line-height:1;transition:color .35s ease}
+.brand small{display:block;font-family:'Nunito Sans',sans-serif;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-top:4px;font-weight:600}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a:not(.btn-primary){font-size:.82rem;font-weight:600;color:var(--text-inverse);opacity:.85;letter-spacing:.02em;transition:opacity .25s ease}
+.nav-links a:not(.btn-primary):hover{opacity:1}
+.nav-links .btn-primary{padding:.6rem 1.3rem;min-height:42px;font-size:.72rem}
+@media(max-width:860px){.nav-links a:not(.btn-primary){display:none}}
+
+/* Hero — Model B split 40/60 */
+.hero-split{display:grid;grid-template-columns:2fr 3fr;min-height:100dvh}
+.hero-copy{position:relative;background:linear-gradient(165deg,#2f2228,#221a1e);color:var(--text-inverse);display:flex;flex-direction:column;justify-content:center;padding:clamp(6rem,10vw,8rem) clamp(1.8rem,4vw,4rem) clamp(3rem,6vw,5rem);overflow:hidden;z-index:2}
+.hero-copy::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.hero-copy>*{position:relative;z-index:1}
+.hero-eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-bottom:22px}
+.hero-title{font-size:var(--text-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);font-weight:500;max-width:14ch;margin-bottom:26px;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(115%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word em{font-style:italic;color:var(--gold-light)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+.hero-title .word:nth-child(5){animation-delay:.63s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{font-size:1.02rem;color:rgba(250,246,242,.82);max-width:42ch;margin-bottom:34px;opacity:0;animation:fade-in 1s ease .8s forwards}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-media{position:relative;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 35%;animation:kb 24s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(34,26,30,.55) 0%,transparent 30%);pointer-events:none}
+.badge{position:absolute;left:clamp(1.5rem,4vw,3rem);bottom:clamp(1.5rem,4vw,3rem);z-index:3;display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:16px;background:rgba(255,255,255,.10);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.18);box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2)}
+.badge .num{font-family:'Playfair Display',serif;font-size:1.9rem;color:#fff;line-height:1;font-weight:600}
+.badge .stars{color:var(--gold-light);font-size:.8rem;letter-spacing:1px}
+.badge .lbl{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:600}
+@media(max-width:900px){.hero-split{grid-template-columns:1fr}.hero-media{height:62vw;min-height:320px;order:-1}.hero-media img{object-position:center 30%}.hero-copy{min-height:auto;padding-top:clamp(5rem,18vw,7rem)}}
+
+/* Sobre */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.sobre-text h2{font-size:var(--text-h2);margin-bottom:22px;max-width:16ch}
+.sobre-text h2 em{font-style:italic;color:var(--accent)}
+.sobre-text p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.sobre-stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.stat .n{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--accent);line-height:1;font-weight:600}
+.stat .t{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:8px;font-weight:600}
+.sobre-media{position:relative}
+.sobre-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;box-shadow:var(--shadow-lg)}
+.sobre-media .accent-frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--accent-border);border-radius:20px;z-index:-1}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr;gap:3rem}.sobre-media{max-width:440px}.sobre-media .accent-frame{inset:14px -14px -14px 14px}}
+
+/* Diagonal cut wrapper for procedimentos */
+.section-cut-bottom{clip-path:polygon(0 0,100% 0,100% 95%,0 100%);margin-bottom:-4vw;padding-bottom:calc(var(--section-pad) + 4vw)}
+
+/* Procedimentos */
+.procedimentos{background:var(--bg-inset);position:relative}
+.proc-head{max-width:var(--content-max);margin:0 auto 56px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.proc-head h2{font-size:var(--text-h2);max-width:18ch}
+.proc-head p{color:var(--text-secondary);max-width:50ch;margin-top:14px}
+.proc-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(42,31,36,.06);border-radius:18px;padding:clamp(1.6rem,3vw,2.2rem);box-shadow:var(--shadow-sm);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .cat{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.serv-card .cat svg{width:20px;height:20px;color:var(--accent)}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:12px}
+.serv-card p{font-size:.96rem;color:var(--text-secondary);line-height:1.65}
+.serv-card ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px}
+.serv-card li{font-size:.9rem;color:var(--text-secondary);display:flex;align-items:center;gap:10px}
+.serv-card li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.proc-wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;gap:0;overflow:hidden;padding:0}
+.proc-wide .pad{padding:clamp(1.8rem,4vw,3rem)}
+.proc-wide img{width:100%;height:100%;min-height:240px;object-fit:cover}
+@media(max-width:760px){.proc-wide{grid-template-columns:1fr}.proc-wide img{order:-1;min-height:220px}}
+.proc-gallery{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-cards)}
+.proc-gallery figure{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.proc-gallery img{width:100%;aspect-ratio:5/4;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.proc-gallery figure:hover img{transform:scale(1.05)}
+.proc-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 22px 18px;background:linear-gradient(transparent,rgba(34,26,30,.82));color:#fff;font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic}
+@media(max-width:560px){.proc-gallery{grid-template-columns:1fr}}
+
+/* Prova social — dark */
+.prova{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.prova::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.prova-inner{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.prova-rating{text-align:left}
+.prova-rating .big{font-family:'Playfair Display',serif;font-size:clamp(4rem,9vw,6.5rem);line-height:.9;font-weight:600;color:#fff}
+.prova-rating .big span{color:var(--gold-light)}
+.prova-rating .stars{color:var(--gold-light);font-size:1.3rem;letter-spacing:3px;margin:14px 0 10px}
+.prova-rating .src{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,242,.65);font-weight:600}
+.prova-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.prova-media img{width:100%;aspect-ratio:16/11;object-fit:cover}
+.quotes{display:grid;gap:18px;margin-top:0}
+.quote{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px 24px}
+.quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;color:#fff;line-height:1.5;margin-bottom:12px}
+.quote .who{font-family:'Nunito Sans',sans-serif;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
+.prova-head{margin-bottom:44px}
+.prova-head .overline{color:var(--gold-light)}
+.prova-head h2{font-size:var(--text-h2);max-width:18ch;color:#fff}
+@media(max-width:820px){.prova-inner{grid-template-columns:1fr;gap:2.4rem}.prova-rating{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}}
+
+/* Localização */
+.local{background:var(--bg-base)}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.local-info h2{font-size:var(--text-h2);margin-bottom:22px;max-width:14ch}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(42,31,36,.08)}
+.info-row:first-of-type{border-top:1px solid rgba(42,31,36,.08)}
+.info-row svg{width:22px;height:22px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.info-row .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:4px}
+.info-row .v{color:var(--text-primary);font-weight:600;font-size:1rem}
+.info-row .v a:hover{color:var(--accent)}
+.local-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.map-wrap{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-md);min-height:340px;position:relative;border:1px solid rgba(42,31,36,.06)}
+.map-wrap a{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:2rem;background:linear-gradient(160deg,#efe3dc,#e3d3ca)}
+.map-wrap .pin{width:52px;height:52px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-accent)}
+.map-wrap .pin svg{width:26px;height:26px;color:#fff}
+.map-wrap .mt{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text-primary)}
+.map-wrap .ms{font-size:.85rem;color:var(--text-secondary);max-width:30ch}
+.map-wrap .mlink{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr}.map-wrap{min-height:280px}}
+
+/* Footer */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,7vw,5.5rem) clamp(1.5rem,6vw,5rem) 2.5rem;position:relative}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600}
+.foot-brand small{display:block;font-family:'Nunito Sans',sans-serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);margin-top:6px;font-weight:600}
+.foot-col p,.foot-col a{font-size:.92rem;color:rgba(250,246,242,.75);margin-bottom:8px;display:block}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-col h4{font-family:'Nunito Sans',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:700}
+.foot-bottom{max-width:var(--content-max);margin:0 auto;padding-top:2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:rgba(250,246,242,.55)}
+
+/* WhatsApp FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:transform .2s;touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;color:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-media img{animation:none}
+  .hero-title .word,.hero-sub,.hero-actions{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="brand">Piu Belli<small>Cabeleireiros</small></div>
+  <nav class="nav-links">
+    <a href="#sobre">O Salão</a>
+    <a href="#procedimentos">Serviços</a>
+    <a href="#prova">Avaliações</a>
+    <a href="#local">Onde Estamos</a>
+    <a class="btn-primary" href="https://wa.me/5567996080944">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-split" id="topo">
+  <div class="hero-copy">
+    <div class="hero-eyebrow">Salão de Beleza • Dourados, MS</div>
+    <h1 class="hero-title">
+      <span class="word">Beleza</span>
+      <span class="word">que</span>
+      <span class="word">cuida</span>
+      <span class="word">de</span>
+      <span class="word"><em>você.</em></span>
+    </h1>
+    <p class="hero-sub">Corte, coloração e tratamentos com a mão de quem fez o Piu Belli virar referência em Dourados — o salão nota 4.8 no Google, agora a um toque de distância.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5567996080944">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044zm5.812-7.51l-.357-.177c-.413-.205-.964-.396-1.273-.243-.243.123-.397.485-.55.789l-.123.235c-.142.275-.245.235-.456.146-.211-.089-.892-.329-1.7-1.049-.628-.561-1.052-1.253-1.175-1.464-.123-.211-.013-.325.093-.43.095-.094.211-.245.317-.367.106-.123.141-.211.211-.353.07-.142.035-.265-.018-.371-.053-.106-.476-1.147-.652-1.571-.171-.412-.345-.356-.476-.363l-.405-.007c-.141 0-.371.053-.565.265-.193.211-.74.723-.74 1.764s.758 2.047.864 2.188c.106.141 1.493 2.28 3.617 3.198.505.218.9.348 1.207.446.507.161.969.138 1.334.084.407-.061 1.252-.512 1.428-1.006.176-.494.176-.918.123-1.006-.053-.089-.193-.142-.404-.247z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver serviços</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="imagens/web-01.jpg" alt="Cliente recebendo tratamento facial no Piu Belli Cabeleireiros">
+    <div class="badge">
+      <div class="num">4.8</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre section-cut-bottom" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-text">
+      <div class="overline reveal">Sobre o salão</div>
+      <h2 class="reveal">Um espaço pensado para <em>realçar</em> o seu melhor.</h2>
+      <p class="reveal">No Piu Belli, beleza é cuidado de verdade. Cada cliente sai com o cabelo, a pele e a autoestima renovados — e é por isso que somos um dos salões mais bem avaliados de Dourados.</p>
+      <p class="reveal">Da coloração ao tratamento facial, trabalhamos com técnica, produtos de qualidade e um atendimento que faz você se sentir em casa. Aqui, o seu tempo é só seu.</p>
+      <div class="sobre-stats reveal">
+        <div class="stat"><div class="n">4.8</div><div class="t">Nota no Google</div></div>
+        <div class="stat"><div class="n">100%</div><div class="t">Foco em você</div></div>
+        <div class="stat"><div class="n">Dourados</div><div class="t">Jardim Caramuru</div></div>
+      </div>
+    </div>
+    <div class="sobre-media reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente acolhedor do Piu Belli com toalhas e vela">
+      <div class="accent-frame"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="procedimentos" id="procedimentos">
+  <div class="proc-head">
+    <div class="overline center reveal">Nossos serviços</div>
+    <h2 class="reveal">Tudo para o seu cabelo e a sua pele</h2>
+    <p class="reveal">Do clássico ao detalhe que faz diferença — escolha o cuidado e fale com a gente no WhatsApp para marcar.</p>
+  </div>
+  <div class="proc-grid">
+
+    <div class="serv-card reveal">
+      <div class="cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 7l6 6"/><path d="M3 21l8.5-8.5"/><circle cx="6.5" cy="6.5" r="3"/><path d="M21 3l-9 9"/></svg>Cabelo</div>
+      <h3>Corte &amp; Finalização</h3>
+      <p>Corte que valoriza o seu rosto e a sua rotina, com finalização que dura além da cadeira.</p>
+      <ul><li>Corte feminino e masculino</li><li>Escova e modelagem</li><li>Hidratação e reconstrução</li></ul>
+    </div>
+
+    <div class="serv-card reveal">
+      <div class="cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4.97 0 9 3.5 9 7.5 0 2.5-2 4.5-4.5 4.5H15a2 2 0 00-2 2 1.5 1.5 0 01-1 1.4"/><circle cx="7.5" cy="9.5" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16.5" cy="9.5" r="1"/></svg>Coloração</div>
+      <h3>Cor &amp; Mechas</h3>
+      <p>Coloração, luzes e tons que combinam com você — sem agredir o fio, com acabamento natural.</p>
+      <ul><li>Coloração e retoque de raiz</li><li>Mechas, luzes e morena iluminada</li><li>Tratamento pós-química</li></ul>
+    </div>
+
+    <div class="serv-card reveal">
+      <div class="cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4.5-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 2.5 7 7 10z"/><circle cx="12" cy="11" r="2.2"/></svg>Estética facial</div>
+      <h3>Limpeza de Pele</h3>
+      <p>Pele limpa, leve e renovada com protocolo profissional e produtos de qualidade.</p>
+      <ul><li>Limpeza de pele profunda</li><li>Hidratação facial</li><li>Cuidado para todos os tipos de pele</li></ul>
+    </div>
+
+    <!-- Wide card with image -->
+    <div class="serv-card proc-wide reveal">
+      <div class="pad">
+        <div class="cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16"/><path d="M7 7c2 1.5 3 3 3 5s-1 3.5-3 5"/><path d="M17 7c-2 1.5-3 3-3 5s1 3.5 3 5"/></svg>Bem-estar &amp; sobrancelhas</div>
+        <h3>O detalhe que completa o visual</h3>
+        <p>Design de sobrancelhas, máscaras e tratamentos que vão além do cabelo — porque cuidar de você é cuidar de cada detalhe. Um momento só seu, do começo ao fim.</p>
+        <div style="margin-top:22px"><a class="btn-ghost" href="https://wa.me/5567996080944">Quero esse cuidado</a></div>
+      </div>
+      <img src="imagens/web-04.jpg" alt="Aplicação de máscara facial no Piu Belli">
+    </div>
+
+    <div class="proc-gallery reveal">
+      <figure><img src="imagens/web-03.jpg" alt="Tratamento facial profissional no Piu Belli"><figcaption>Pele renovada</figcaption></figure>
+      <figure><img src="imagens/web-05.jpg" alt="Cliente relaxando durante atendimento facial no Piu Belli"><figcaption>Um momento só seu</figcaption></figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="prova-inner">
+    <div class="prova-rating">
+      <div class="big">4.8<span>.</span></div>
+      <div class="stars">★★★★★</div>
+      <div class="src">Avaliação no Google</div>
+    </div>
+    <div>
+      <div class="prova-head">
+        <div class="overline reveal">Quem vai, recomenda</div>
+        <h2 class="reveal">A reputação que já é sua — agora visível para quem ainda não conhece.</h2>
+      </div>
+      <div class="prova-media reveal" style="margin-bottom:18px">
+        <img src="imagens/web-06.jpg" alt="Cliente relaxando durante atendimento no Piu Belli">
+      </div>
+      <div class="quotes">
+        <div class="quote reveal">
+          <p>"Atendimento impecável e o resultado no cabelo sempre supera o que eu espero. Virei cliente fiel."</p>
+          <div class="who">Cliente Piu Belli</div>
+        </div>
+        <div class="quote reveal">
+          <p>"Saí me sentindo outra pessoa. Ambiente acolhedor e profissionais que entendem do que fazem."</p>
+          <div class="who">Cliente Piu Belli</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="local-info">
+      <div class="overline reveal">Onde estamos</div>
+      <h2 class="reveal">Pertinho de você, no Jardim Caramuru</h2>
+      <div class="info-row reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4.5-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 2.5 7 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        <div><div class="k">Endereço</div><div class="v">R. Hilda Bergo Duarte, 680<br>Jardim Caramuru, Dourados - MS, 79826-090</div></div>
+      </div>
+      <div class="info-row reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div><div class="k">Telefone &amp; WhatsApp</div><div class="v"><a href="https://wa.me/5567996080944">(67) 99608-0944</a></div></div>
+      </div>
+      <div class="info-row reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">Atendimento</div><div class="v">Segunda a sábado — agende seu horário</div></div>
+      </div>
+      <div class="local-cta reveal">
+        <a class="btn-primary" href="https://wa.me/5567996080944">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044zm5.812-7.51l-.357-.177c-.413-.205-.964-.396-1.273-.243-.243.123-.397.485-.55.789l-.123.235c-.142.275-.245.235-.456.146-.211-.089-.892-.329-1.7-1.049-.628-.561-1.052-1.253-1.175-1.464-.123-.211-.013-.325.093-.43.095-.094.211-.245.317-.367.106-.123.141-.211.211-.353.07-.142.035-.265-.018-.371-.053-.106-.476-1.147-.652-1.571-.171-.412-.345-.356-.476-.363l-.405-.007c-.141 0-.371.053-.565.265-.193.211-.74.723-.74 1.764s.758 2.047.864 2.188c.106.141 1.493 2.28 3.617 3.198.505.218.9.348 1.207.446.507.161.969.138 1.334.084.407-.061 1.252-.512 1.428-1.006.176-.494.176-.918.123-1.006-.053-.089-.193-.142-.404-.247z"/></svg>
+          Marcar meu horário
+        </a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <a href="https://www.google.com/maps/place/Piu+Belli+Cabeleireiros/@-22.2256357,-54.8055272,17z/data=!3m1!4b1!4m6!3m5!1s0x9489a835c18a4f25:0x3f312d39078a84f8!8m2!3d-22.2256357!4d-54.8055272!16s%2Fg%2F11c5_4_pnq?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c4.5-3 7-6.5 7-10a7 7 0 10-14 0c0 3.5 2.5 7 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+        <div class="mt">Piu Belli Cabeleireiros</div>
+        <div class="ms">R. Hilda Bergo Duarte, 680 — Jardim Caramuru, Dourados - MS</div>
+        <div class="mlink">Abrir no Google Maps →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand">Piu Belli<small>Cabeleireiros</small></div>
+      <p style="margin-top:16px;max-width:32ch">Beleza que cuida de você. Salão de beleza nota 4.8 no Google em Dourados, MS.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Serviços</h4>
+      <a href="#procedimentos">Corte &amp; Finalização</a>
+      <a href="#procedimentos">Cor &amp; Mechas</a>
+      <a href="#procedimentos">Limpeza de Pele</a>
+      <a href="#procedimentos">Sobrancelhas &amp; Bem-estar</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5567996080944">WhatsApp: (67) 99608-0944</a>
+      <p>R. Hilda Bergo Duarte, 680</p>
+      <p>Jardim Caramuru, Dourados - MS</p>
+      <a href="https://www.google.com/maps/place/Piu+Belli+Cabeleireiros/@-22.2256357,-54.8055272,17z/data=!3m1!4b1!4m6!3m5!1s0x9489a835c18a4f25:0x3f312d39078a84f8!8m2!3d-22.2256357!4d-54.8055272!16s%2Fg%2F11c5_4_pnq?authuser=0&hl=pt-BR&entry=ttu" target="_blank" rel="noopener">Ver no Google Maps</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Piu Belli Cabeleireiros. Todos os direitos reservados.</span>
+    <span>Dourados, MS</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5567996080944" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.044zm5.812-7.51l-.357-.177c-.413-.205-.964-.396-1.273-.243-.243.123-.397.485-.55.789l-.123.235c-.142.275-.245.235-.456.146-.211-.089-.892-.329-1.7-1.049-.628-.561-1.052-1.253-1.175-1.464-.123-.211-.013-.325.093-.43.095-.094.211-.245.317-.367.106-.123.141-.211.211-.353.07-.142.035-.265-.018-.371-.053-.106-.476-1.147-.652-1.571-.171-.412-.345-.356-.476-.363l-.405-.007c-.141 0-.371.053-.565.265-.193.211-.74.723-.74 1.764s.758 2.047.864 2.188c.106.141 1.493 2.28 3.617 3.198.505.218.9.348 1.207.446.507.161.969.138 1.334.084.407-.061 1.252-.512 1.428-1.006.176-.494.176-.918.123-1.006-.053-.089-.193-.142-.404-.247z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

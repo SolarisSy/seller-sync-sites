@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Seu Carlos — Corte e Barba de Respeito em Santarém, PA</title>
+<meta name="description" content="Barbearia Seu Carlos, na Fátima, Santarém-PA. Corte, barba e acabamento com mão firme e tradição. Nota 4.8 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ── Superfície ── */
+  --bg-base:#f5f1ea;
+  --bg-surface:#fbf8f2;
+  --bg-inset:#ece5da;
+  --bg-dark:#14110d;
+  --bg-dark-2:#1d1812;
+
+  /* ── Texto ── */
+  --text-primary:#1c1813;
+  --text-secondary:#4a443c;
+  --text-muted:#8a8175;
+  --text-inverse:#f5f1ea;
+
+  /* ── Acento + Marca ── */
+  --accent:#b07b3e;
+  --accent-dark:#8c5e2c;
+  --accent-subtle:rgba(176,123,62,.10);
+  --accent-border:rgba(176,123,62,.22);
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+
+  /* ── Sombras 3 camadas ── */
+  --shadow-sm:0 1px 2px rgba(20,17,13,.05),0 2px 6px rgba(20,17,13,.05);
+  --shadow-md:0 2px 4px rgba(20,17,13,.05),0 8px 18px rgba(20,17,13,.08),0 20px 40px rgba(20,17,13,.06);
+  --shadow-lg:0 4px 8px rgba(20,17,13,.06),0 16px 32px rgba(20,17,13,.09),0 40px 80px rgba(20,17,13,.12);
+  --shadow-accent:0 8px 24px rgba(176,123,62,.34);
+  --shadow-accent-strong:0 12px 34px rgba(176,123,62,.46);
+
+  /* ── Tipo fluido ── */
+  --text-display:clamp(2.8rem,2rem + 5vw,6rem);
+  --text-h2:clamp(2rem,1.4rem + 2.6vw,3.4rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.94rem,.86rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.0;
+  --lh-heading:1.1;
+  --lh-body:1.74;
+  --ls-overline:.2em;
+
+  /* ── Ritmo ── */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-primary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;
+  line-height:var(--lh-heading);
+  text-transform:uppercase;
+  font-optical-sizing:auto;
+  text-wrap:balance;
+  letter-spacing:.01em;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* ── Overline ── */
+.overline{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+  font-size:.7rem;font-weight:600;
+  letter-spacing:var(--ls-overline);
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* ── Botões ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.6rem,3vw,2.3rem);min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:1rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;box-shadow:var(--shadow-accent);
+  transition:transform .3s var(--ease),box-shadow .3s ease;
+  will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:1rem clamp(1.4rem,3vw,2rem);min-height:52px;
+  border:1px solid rgba(245,241,234,.3);color:var(--text-inverse);
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;
+  letter-spacing:.08em;text-transform:uppercase;border-radius:50px;
+  transition:transform .3s var(--ease),background .3s ease,border-color .3s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-ghost:hover{transform:translateY(-3px);background:rgba(245,241,234,.08);border-color:var(--gold)}
+.wa-ico{width:20px;height:20px;flex:none}
+
+/* ── Header ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(20,17,13,.92);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 1px 0 rgba(201,168,76,.2);
+  padding:13px clamp(1.5rem,5vw,4rem);
+}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text-inverse)}
+.brand .mark{
+  width:40px;height:40px;border-radius:50%;flex:none;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;
+  color:var(--gold);letter-spacing:.02em;
+}
+.brand .name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.brand .name span{display:block;font-size:.6rem;letter-spacing:.32em;color:var(--gold);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{color:var(--text-inverse);font-size:.82rem;font-weight:500;letter-spacing:.04em;opacity:.85;transition:opacity .25s,color .25s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:.6rem 1.3rem;border:1px solid var(--accent-border);border-radius:50px;
+  color:var(--text-inverse)!important;font-family:'Barlow Condensed',sans-serif;
+  font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;
+  background:var(--accent-subtle);transition:background .3s,border-color .3s;
+}
+.nav-cta:hover{background:rgba(176,123,62,.2);border-color:var(--gold)}
+@media(max-width:880px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('imagens/web-01.jpg') center 30%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(105deg,rgba(20,17,13,.82) 0%,rgba(20,17,13,.42) 40%,transparent 68%),
+    linear-gradient(0deg,rgba(20,17,13,.95) 2%,rgba(20,17,13,.35) 40%,rgba(20,17,13,.25) 100%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;
+}
+.hero-content{
+  position:relative;z-index:3;
+  width:100%;max-width:var(--content-max);margin:0 auto;
+  padding:0 clamp(1.5rem,4vw,2rem) clamp(3.5rem,8vh,6rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:36px;flex-wrap:wrap;
+}
+.hero-left{max-width:760px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  color:var(--gold);font-size:.74rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  margin-bottom:22px;
+}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold)}
+.hero-title{
+  font-size:var(--text-display);line-height:var(--lh-display);
+  color:var(--text-inverse);font-weight:900;letter-spacing:-.01em;
+  max-width:15ch;overflow:hidden;
+}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s var(--ease) forwards}
+.hero-title .word.em{color:var(--gold)}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.26s}
+.hero-title .word:nth-child(3){animation-delay:.37s}
+.hero-title .word:nth-child(4){animation-delay:.48s}
+.hero-title .word:nth-child(5){animation-delay:.59s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  color:rgba(245,241,234,.82);font-size:clamp(1rem,.9rem + .4vw,1.18rem);
+  max-width:46ch;margin:26px 0 34px;line-height:1.6;
+  opacity:0;animation:fade-in 1s var(--ease) .8s forwards;
+}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade-in 1s var(--ease) .95s forwards}
+.hero-badge{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 24px;border-radius:16px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 2px 4px rgba(0,0,0,.18),0 8px 24px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.18);
+  opacity:0;animation:fade-in 1s var(--ease) 1.1s forwards;
+}
+.hero-badge .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.6rem;color:var(--gold);line-height:1}
+.hero-badge .stars{color:var(--gold);font-size:.85rem;letter-spacing:2px}
+.hero-badge .lbl{color:rgba(245,241,234,.8);font-size:.75rem;letter-spacing:.04em;margin-top:3px}
+.scroll-hint{
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;
+  color:rgba(245,241,234,.5);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  animation:fade-in 1s ease 1.6s both;
+}
+.scroll-hint span{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:scrolly 2s ease-in-out infinite}
+@keyframes scrolly{0%,100%{opacity:.3;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── Reveal ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* ── Faixa marquee ── */
+.marquee{
+  background:var(--bg-dark);color:var(--text-inverse);overflow:hidden;
+  padding:18px 0;border-top:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.18);
+}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:marq 28s linear infinite}
+.marquee-track span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,241,234,.55);display:flex;align-items:center;gap:48px}
+.marquee-track span::after{content:'✦';color:var(--gold)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ── Sobre ── */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,6rem);align-items:center;
+}
+.sobre-img-wrap{position:relative}
+.sobre-img-wrap img{width:100%;height:clamp(360px,52vw,580px);object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-img-wrap::before{
+  content:'';position:absolute;top:-18px;left:-18px;width:120px;height:120px;
+  border-top:2px solid var(--gold);border-left:2px solid var(--gold);opacity:.7;border-radius:6px 0 0 0;
+}
+.sobre-tag{
+  position:absolute;right:-14px;bottom:30px;
+  background:var(--bg-dark);color:var(--text-inverse);
+  padding:20px 26px;border-radius:8px;box-shadow:var(--shadow-lg);
+  border:1px solid rgba(201,168,76,.25);
+}
+.sobre-tag .big{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.4rem;color:var(--gold);line-height:1}
+.sobre-tag .sm{font-size:.74rem;letter-spacing:.04em;color:rgba(245,241,234,.75)}
+.sobre h2{font-size:var(--text-h2);margin-bottom:20px;color:var(--text-primary)}
+.sobre h2 em{font-style:normal;color:var(--accent)}
+.sobre p{color:var(--text-secondary);margin-bottom:18px;max-width:var(--prose-max)}
+.sobre-points{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:14px}
+.sobre-points li{display:flex;gap:14px;align-items:flex-start;color:var(--text-secondary);font-size:.96rem}
+.sobre-points svg{flex:none;margin-top:3px;color:var(--accent)}
+@media(max-width:840px){.sobre-grid{grid-template-columns:1fr}.sobre-img-wrap{order:-1}}
+
+/* ── Serviços ── */
+.servicos{
+  background:var(--bg-dark);color:var(--text-inverse);position:relative;
+  clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-3vw;padding-top:calc(var(--section-pad) + 4vw);
+}
+.servicos::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.045;
+}
+.servicos .inner{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1}
+.sec-head{margin-bottom:clamp(2.5rem,5vw,4rem);max-width:620px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.servicos h2{font-size:var(--text-h2);color:var(--text-inverse)}
+.servicos .lead{color:rgba(245,241,234,.7);margin-top:16px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{
+  background:rgba(255,255,255,.03);border:1px solid rgba(245,241,234,.09);
+  border-radius:10px;padding:30px 28px;position:relative;overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s ease,border-color .25s ease,background .35s ease;
+}
+.serv-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.05);border-color:var(--accent-border);box-shadow:var(--shadow-lg)}
+.serv-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.serv-card h3{font-size:1.5rem;color:var(--text-inverse);margin-bottom:10px}
+.serv-card p{color:rgba(245,241,234,.62);font-size:.92rem;line-height:1.6;margin-bottom:20px}
+.serv-price{display:flex;align-items:baseline;gap:8px;border-top:1px solid rgba(245,241,234,.1);padding-top:16px}
+.serv-price .from{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.serv-price .val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.7rem;color:var(--gold)}
+.serv-deco{position:absolute;top:22px;right:24px;color:rgba(201,168,76,.25)}
+
+/* ── Galeria ── */
+.galeria{background:var(--bg-inset)}
+.galeria .inner{max-width:var(--content-max);margin:0 auto}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,230px);gap:14px;margin-top:8px}
+.gal-grid figure{overflow:hidden;border-radius:8px;position:relative;box-shadow:var(--shadow-md)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .wide{grid-column:span 2}
+.gal-grid .tall{grid-row:span 2}
+.gal-grid figure::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,17,13,.45),transparent 55%);opacity:0;transition:opacity .4s ease}
+.gal-grid figure:hover::after{opacity:1}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid .wide{grid-column:span 2}.gal-grid .tall{grid-row:span 1}}
+
+/* ── Faixa imersiva (prova social) ── */
+.prova{
+  position:relative;color:var(--text-inverse);overflow:hidden;
+  background:url('imagens/web-05.jpg') center 35%/cover fixed no-repeat;
+  text-align:center;
+}
+.prova::before{content:'';position:absolute;inset:0;background:rgba(20,17,13,.78)}
+.prova::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;
+}
+.prova .inner{position:relative;z-index:1;max-width:920px;margin:0 auto}
+.prova .quote{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:none;
+  font-size:clamp(1.5rem,1.1rem + 2.4vw,2.8rem);line-height:1.18;color:var(--text-inverse);
+  letter-spacing:.005em;
+}
+.prova .quote em{color:var(--gold);font-style:normal}
+.reviews{display:flex;justify-content:center;gap:clamp(1.5rem,5vw,4rem);flex-wrap:wrap;margin-top:46px}
+.review{max-width:300px;text-align:left;padding:22px 24px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.review .stars{color:var(--gold);letter-spacing:2px;font-size:.85rem;margin-bottom:10px}
+.review p{color:rgba(245,241,234,.85);font-size:.92rem;line-height:1.6;margin-bottom:12px}
+.review .who{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.9rem;color:var(--gold)}
+
+/* ── Localização ── */
+.local{background:var(--bg-base)}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.local h2{font-size:var(--text-h2);margin-bottom:20px}
+.local h2 em{font-style:normal;color:var(--accent)}
+.info-list{list-style:none;margin:26px 0 32px;display:flex;flex-direction:column;gap:22px}
+.info-list li{display:flex;gap:16px;align-items:flex-start}
+.info-list .ico{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent-subtle);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.info-list .k{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.86rem;color:var(--text-primary)}
+.info-list .v{color:var(--text-secondary);font-size:.96rem;line-height:1.5}
+.info-list a.v:hover{color:var(--accent)}
+.hours{margin-top:6px;padding:18px 22px;border-radius:10px;background:var(--bg-surface);border:1px solid rgba(28,24,19,.08);box-shadow:var(--shadow-sm)}
+.hours .row{display:flex;justify-content:space-between;padding:7px 0;font-size:.9rem;color:var(--text-secondary);border-bottom:1px dashed rgba(28,24,19,.1)}
+.hours .row:last-child{border-bottom:none}
+.hours .row b{color:var(--text-primary);font-weight:600}
+.local-map{position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);min-height:340px}
+.local-map img{width:100%;height:100%;object-fit:cover;min-height:340px}
+.map-overlay{
+  position:absolute;inset:0;display:flex;align-items:flex-end;
+  background:linear-gradient(0deg,rgba(20,17,13,.7),transparent 60%);padding:26px;
+}
+.map-overlay a{width:100%;justify-content:center}
+@media(max-width:840px){.local-grid{grid-template-columns:1fr}}
+
+/* ── CTA final ── */
+.cta-final{background:var(--bg-dark);color:var(--text-inverse);text-align:center;position:relative;overflow:hidden}
+.cta-final::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;
+}
+.cta-final .inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-final h2{font-size:var(--text-h2);color:var(--text-inverse);margin-bottom:18px}
+.cta-final h2 em{font-style:normal;color:var(--gold)}
+.cta-final p{color:rgba(245,241,234,.72);margin-bottom:32px}
+
+/* ── Footer ── */
+footer{background:var(--bg-dark-2);color:rgba(245,241,234,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(245,241,234,.1)}
+.foot-brand .name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--text-inverse);text-transform:uppercase;letter-spacing:.04em}
+.foot-brand .name span{color:var(--gold)}
+.foot-brand p{margin-top:12px;max-width:320px;font-size:.9rem}
+.foot-col h4{color:var(--text-inverse);font-size:1rem;letter-spacing:.06em;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;color:rgba(245,241,234,.6);font-size:.9rem;margin-bottom:10px;transition:color .25s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:var(--content-max);margin:24px auto 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem;color:rgba(245,241,234,.4)}
+
+/* ── WA FAB ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:60px;height:60px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ── Reduced motion ── */
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .hero-bg,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge,.scroll-hint{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .marquee-track{animation:none!important}
+  .wa-fab::before,.scroll-hint span{animation:none!important}
+  .prova{background-attachment:scroll}
+}
+@media(max-width:600px){
+  .prova{background-attachment:scroll}
+  .hero-badge{padding:14px 18px}
+  .hero-badge .num{font-size:2.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <span class="mark">SC</span>
+    <span class="name">Seu Carlos<span>Barbearia · Santarém</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#sobre">A Barbearia</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Cortes</a>
+    <a href="#local">Onde Estamos</a>
+    <a href="https://wa.me/5593991364175" class="nav-cta">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Fátima · Santarém — PA</span>
+      <h1 class="hero-title">
+        <span class="word">Corte</span>
+        <span class="word">e</span>
+        <span class="word">barba</span>
+        <span class="word em">de</span>
+        <span class="word em">respeito.</span>
+      </h1>
+      <p class="hero-sub">Tradição, mão firme e acabamento de verdade. No Seu Carlos você senta na cadeira e sai com a aparência que o seu dia merece.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5593991364175" class="btn-primary">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar no WhatsApp
+        </a>
+        <a href="#servicos" class="btn-ghost">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="num">4.8</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="lbl">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Role<span></span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Corte na máquina e tesoura</span><span>Barba modelada</span><span>Degradê</span><span>Pezinho &amp; acabamento</span><span>Atendimento sem pressa</span>
+    <span>Corte na máquina e tesoura</span><span>Barba modelada</span><span>Degradê</span><span>Pezinho &amp; acabamento</span><span>Atendimento sem pressa</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="reveal">
+      <span class="overline">A Barbearia</span>
+      <h2>Mais de uma cadeira: um <em>ponto de respeito</em> na Fátima.</h2>
+      <p>A Barbearia Seu Carlos virou referência no bairro pela razão mais simples que existe: corte bem feito, barba alinhada e quem entra é tratado como gente. Aqui o cliente não é número — é freguês.</p>
+      <p>Cada corte sai com calma e capricho, do degradê limpo ao acabamento na navalha. É o tipo de lugar em que você marca a hora, conversa, relaxa e sai com a aparência em dia.</p>
+      <ul class="sobre-points">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Barbeiros experientes, mão firme e olho no detalhe</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Ambiente masculino, atendimento sem pressa</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Horário marcado pelo WhatsApp, sem fila</li>
+      </ul>
+    </div>
+    <div class="sobre-img-wrap reveal">
+      <img src="imagens/web-02.jpg" alt="Ambiente da Barbearia Seu Carlos com cadeiras clássicas de barbeiro">
+      <div class="sobre-tag">
+        <div class="big">100%</div>
+        <div class="sm">capricho em cada corte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <span class="overline">O que fazemos</span>
+      <h2>Serviços feitos com tempo e técnica</h2>
+      <p class="lead">Do clássico ao moderno. Preços de referência — fale no WhatsApp e confirme o seu horário.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <svg class="serv-deco" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+        <div class="serv-num">01</div>
+        <h3>Corte Masculino</h3>
+        <p>Máquina e tesoura, do social ao moderno, finalizado do jeito que combina com o seu rosto.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 30</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-deco" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12c0-4 3-7 8-7s8 3 8 7-3 7-8 7c-2 0-3 1-4 2"/><path d="M9 12h.01M14 12h.01"/></svg>
+        <div class="serv-num">02</div>
+        <h3>Barba Modelada</h3>
+        <p>Desenho, toalha quente e navalha no acabamento. Barba alinhada que valoriza o visual.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 25</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-deco" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7M9 4h6"/><path d="M12 11v4"/></svg>
+        <div class="serv-num">03</div>
+        <h3>Corte + Barba</h3>
+        <p>O combo completo: cabeça e barba alinhadas no mesmo horário, do jeito certo, sem pressa.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 50</span></div>
+      </div>
+      <div class="serv-card reveal">
+        <svg class="serv-deco" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18l8-12 8 12M8 18h8"/></svg>
+        <div class="serv-num">04</div>
+        <h3>Pezinho &amp; Acabamento</h3>
+        <p>Aquele retoque rápido pra manter o corte em dia entre uma visita e outra.</p>
+        <div class="serv-price"><span class="from">a partir de</span><span class="val">R$ 15</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <span class="overline">Trabalhos</span>
+      <h2>O acabamento fala por si</h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="wide tall reveal"><img src="imagens/web-04.jpg" alt="Degradê bem feito na nuca"></figure>
+      <figure class="reveal"><img src="imagens/web-03.jpg" alt="Barba sendo aparada com tesoura"></figure>
+      <figure class="reveal"><img src="imagens/web-06.jpg" alt="Acabamento da nuca na máquina"></figure>
+      <figure class="wide reveal"><img src="imagens/web-05.jpg" alt="Barba modelada com máquina, acabamento cuidadoso"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="inner">
+    <span class="overline center">Quem senta na cadeira, volta</span>
+    <p class="quote">Nota <em>4.8 no Google</em> não vem de sorte — vem de corte bem feito e cliente bem tratado, um a um.</p>
+    <div class="reviews">
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Melhor barbearia da região. Corte impecável e o pessoal te atende com calma, sem aquela correria."</p>
+        <div class="who">Cliente do Google</div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Faço minha barba e corte sempre aqui. Sai sempre alinhado. Recomendo de olhos fechados."</p>
+        <div class="who">Cliente do Google</div>
+      </div>
+      <div class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Atendimento de primeira e preço justo. Marco pelo WhatsApp e não pego fila. Virei freguês."</p>
+        <div class="who">Cliente do Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="local">
+  <div class="local-grid">
+    <div class="reveal">
+      <span class="overline">Onde Estamos</span>
+      <h2>Aqui na <em>Fátima</em>, fácil de chegar.</h2>
+      <ul class="info-list">
+        <li>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="k">Endereço</div><div class="v">Trav. 2 de Junho, 428 — Fátima<br>Santarém - PA, 68040-480</div></div>
+        </li>
+        <li>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <div><div class="k">Telefone &amp; WhatsApp</div><a href="https://wa.me/5593991364175" class="v">(93) 99136-4175</a></div>
+        </li>
+        <li>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="k">Atendimento</div><div class="v">Com hora marcada — chame no WhatsApp e garanta seu horário.</div></div>
+        </li>
+      </ul>
+      <div class="hours">
+        <div class="row"><span>Segunda a Sexta</span><b>09h — 19h</b></div>
+        <div class="row"><span>Sábado</span><b>08h — 18h</b></div>
+        <div class="row"><span>Domingo</span><b>Fechado</b></div>
+      </div>
+    </div>
+    <div class="local-map reveal">
+      <img src="imagens/web-07.jpg" alt="Interior da Barbearia Seu Carlos com cadeiras de barbeiro e parede de tijolinho">
+      <div class="map-overlay">
+        <a href="https://www.google.com/maps/place/Barbearia+Seu+Carlos/@-2.4226893,-54.7275481,17z/data=!3m1!4b1!4m6!3m5!1s0x9288f9b13a914b0d:0x3ac3dbb363a1bb09!8m2!3d-2.4226893!4d-54.7275481!16s%2Fg%2F11c1v4_hls?authuser=0&hl=pt-BR" target="_blank" rel="noopener" class="btn-primary">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver no Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="inner">
+    <span class="overline center">Bora marcar?</span>
+    <h2>Sua próxima visita começa com <em>uma mensagem</em>.</h2>
+    <p>Escolha o melhor horário pra você. Manda um "oi" no WhatsApp que a gente já agenda — rápido e sem fila.</p>
+    <a href="https://wa.me/5593991364175" class="btn-primary">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Agendar agora
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="name">Barbearia Seu <span>Carlos</span></div>
+      <p>Corte, barba e acabamento de respeito no coração da Fátima, em Santarém - PA. Tradição e capricho em cada cadeira.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Barbearia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Cortes</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5593991364175">WhatsApp: (93) 99136-4175</a>
+      <p>Trav. 2 de Junho, 428 — Fátima</p>
+      <p>Santarém - PA, 68040-480</p>
+      <a href="https://www.google.com/maps/place/Barbearia+Seu+Carlos/@-2.4226893,-54.7275481,17z/data=!3m1!4b1!4m6!3m5!1s0x9288f9b13a914b0d:0x3ac3dbb363a1bb09!8m2!3d-2.4226893!4d-54.7275481!16s%2Fg%2F11c1v4_hls?authuser=0&hl=pt-BR" target="_blank" rel="noopener">Abrir no Google Maps</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Barbearia Seu Carlos. Todos os direitos reservados.</span>
+    <span>Feito para vender mais, sem complicação.</span>
+  </div>
+</footer>
+
+<!-- WA FAB -->
+<a href="https://wa.me/5593991364175" class="wa-fab" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  // Header sticky
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+
+  // Reveal on scroll
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+  }),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra Juliana Nóbrega · Estética Avançada — Imperatriz/MA</title>
+<meta name="description" content="Estética avançada com a Dra Juliana Nóbrega, farmacêutica esteta em Imperatriz/MA. Harmonização facial, preenchimento, toxina botulínica e bioestimuladores. Nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfície */
+  --bg-base:#faf7f3; --bg-surface:#fffdfb; --bg-inset:#f1eae2; --bg-dark:#14100e;
+  /* texto */
+  --text-primary:#1d1815; --text-secondary:#4a423b; --text-muted:#8a7f74; --text-inverse:#faf4ec;
+  /* acento + marca */
+  --accent:#a76d60; --accent-dark:#8a574c;
+  --accent-subtle:rgba(167,109,96,.10); --accent-border:rgba(167,109,96,.22);
+  --gold:#b8975a; --gold-light:#d8b878;
+  /* sombras 3 camadas */
+  --shadow-sm:0 1px 2px rgba(38,26,20,.04),0 2px 6px rgba(38,26,20,.05);
+  --shadow-md:0 2px 4px rgba(38,26,20,.04),0 8px 18px rgba(38,26,20,.07),0 20px 40px rgba(38,26,20,.05);
+  --shadow-lg:0 4px 8px rgba(38,26,20,.05),0 16px 32px rgba(38,26,20,.07),0 40px 80px rgba(38,26,20,.10);
+  --shadow-accent:0 8px 24px rgba(167,109,96,.30);
+  --shadow-accent-strong:0 12px 34px rgba(167,109,96,.42);
+  /* tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.95rem,1.3rem + 2.6vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.94rem,.86rem + .3vw,1.04rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.12; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.2em;
+  /* ritmo */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.4vw,1.9rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-base);color:var(--text-primary);
+  font-family:'Inter',system-ui,sans-serif;font-size:var(--text-body);
+  line-height:var(--lh-body);font-weight:400;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:400;letter-spacing:var(--ls-display);line-height:var(--lh-heading)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+
+/* overline */
+.overline{display:flex;align-items:center;gap:11px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor;opacity:.7}
+.overline.center{justify-content:center}
+
+/* buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:50px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-primary svg{width:17px;height:17px;fill:currentColor}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:.85rem 1.6rem;min-height:48px;border:1px solid var(--accent-border);border-radius:50px;font-size:.78rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--text-primary);transition:background .3s ease,border-color .3s ease,transform .3s cubic-bezier(.22,1,.36,1);touch-action:manipulation}
+.btn-ghost:hover{background:var(--accent-subtle);border-color:var(--accent);transform:translateY(-2px)}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(20,16,14,.92);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 1px 0 rgba(184,151,90,.25);padding-top:13px;padding-bottom:13px}
+.brand{display:flex;flex-direction:column;line-height:1;color:#fff;transition:color .35s ease}
+.brand .mark{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;letter-spacing:.01em}
+.brand .mark em{font-style:italic;color:var(--gold-light)}
+.brand .sub{font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a:not(.btn-primary){color:rgba(255,255,255,.85);font-size:.82rem;letter-spacing:.03em;transition:color .25s ease;position:relative}
+.nav-links a:not(.btn-primary):hover{color:#fff}
+.nav-links a:not(.btn-primary)::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold-light);transition:width .3s cubic-bezier(.22,1,.36,1)}
+.nav-links a:not(.btn-primary):hover::after{width:100%}
+.nav-links .btn-primary{padding:.7rem 1.5rem;min-height:44px}
+.menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{width:26px;height:2px;background:#fff;display:block;transition:.3s}
+@media(max-width:860px){
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,330px);background:var(--bg-dark);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .45s cubic-bezier(.22,1,.36,1);box-shadow:var(--shadow-lg)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a:not(.btn-primary){font-size:1.05rem}
+  .menu-btn{display:flex;z-index:101}
+}
+
+/* HERO — model C editorial */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden;background:var(--bg-dark)}
+.hero-bg{position:absolute;inset:0;background:url('imagens/insta-7.jpg') center 22%/cover no-repeat;animation:kb 26s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,16,14,.92) 0%,rgba(20,16,14,.62) 38%,rgba(20,16,14,.18) 62%,rgba(20,16,14,.45) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-content{position:relative;z-index:2;padding:0 8% clamp(3.2rem,8vh,6.5rem);max-width:720px}
+.hero-eyebrow{display:flex;align-items:center;gap:11px;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold-light)}
+.hero-title{color:var(--text-inverse);font-size:var(--text-display);line-height:var(--lh-display);max-width:15ch;margin-bottom:24px}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(112%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-title .line:nth-child(1) .word{animation-delay:.25s}
+.hero-title .line:nth-child(2) .word{animation-delay:.38s}
+.hero-title .line:nth-child(3) .word{animation-delay:.51s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(250,244,236,.86);font-size:clamp(1rem,.9rem + .4vw,1.18rem);max-width:46ch;margin-bottom:34px;font-weight:300;opacity:0;animation:fade-in 1s ease .8s forwards}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;opacity:0;animation:fade-in 1s ease 1s forwards}
+.hero-actions .btn-ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+.hero-actions .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+/* selo nota — glass */
+.hero-badge{position:absolute;z-index:3;top:clamp(92px,14vh,140px);right:clamp(1.5rem,6vw,5rem);display:flex;align-items:center;gap:13px;padding:14px 20px;border-radius:16px;background:rgba(255,255,255,.09);backdrop-filter:blur(13px) saturate(160%);-webkit-backdrop-filter:blur(13px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.1),0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);opacity:0;animation:fade-in 1s ease 1.2s forwards}
+.hero-badge .num{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:600;color:#fff;line-height:1}
+.hero-badge .stars{color:var(--gold-light);font-size:.85rem;letter-spacing:2px}
+.hero-badge .lbl{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:3px}
+@media(max-width:560px){.hero-badge{top:auto;bottom:clamp(0px,0vh,0px);right:8%;padding:11px 15px}.hero-badge .num{font-size:1.7rem}}
+
+/* SOBRE */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.sobre-figure{position:relative}
+.sobre-figure img{width:100%;border-radius:6px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;object-position:center}
+.sobre-figure::after{content:'';position:absolute;inset:auto -18px -18px auto;width:60%;height:60%;border:1px solid var(--accent-border);border-radius:6px;z-index:-1}
+.sobre-figure .tag{position:absolute;left:-14px;bottom:26px;background:var(--bg-dark);color:var(--text-inverse);padding:14px 22px;border-radius:4px;box-shadow:var(--shadow-md)}
+.sobre-figure .tag .t1{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--gold-light)}
+.sobre-figure .tag .t2{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,244,236,.75);margin-top:2px}
+.sobre h2{font-size:var(--text-h2);margin-bottom:22px;max-width:16ch}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px;font-weight:300}
+.sobre p strong{font-weight:500;color:var(--text-primary)}
+.cred{display:flex;gap:clamp(1.4rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.cred .item .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:var(--accent);line-height:1}
+.cred .item .l{font-size:.74rem;letter-spacing:.04em;color:var(--text-muted);margin-top:5px;max-width:16ch}
+@media(max-width:820px){.sobre-grid{grid-template-columns:1fr}.sobre-figure{max-width:440px;margin:0 auto}}
+
+/* PROCEDIMENTOS — diagonal dark */
+.proc{background:var(--bg-dark);color:var(--text-inverse);position:relative;clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-3vw;padding-top:calc(var(--section-pad) + 4vw)}
+.proc::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.proc .wrap{position:relative;z-index:1}
+.proc-head{max-width:640px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.proc-head .overline{color:var(--gold-light)}
+.proc-head h2{font-size:var(--text-h2);color:var(--text-inverse)}
+.proc-head h2 em{font-style:italic;color:var(--gold-light)}
+.proc-head p{color:rgba(250,244,236,.7);margin-top:14px;font-weight:300;max-width:52ch}
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.serv-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:clamp(1.6rem,2.6vw,2.3rem);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease,background .25s ease}
+.serv-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.055);box-shadow:0 18px 40px rgba(0,0,0,.35);border-color:rgba(184,151,90,.4)}
+.serv-card .idx{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--gold-light);letter-spacing:.1em}
+.serv-card .rule{width:38px;height:1px;background:rgba(184,151,90,.5);margin:16px 0 18px}
+.serv-card h3{font-size:var(--text-h3);color:var(--text-inverse);margin-bottom:10px}
+.serv-card p{color:rgba(250,244,236,.66);font-size:.92rem;font-weight:300}
+@media(max-width:900px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+
+/* RESULTADOS */
+.result{background:var(--bg-inset);position:relative}
+.result .head{text-align:center;max-width:620px;margin:0 auto clamp(2.5rem,5vw,3.6rem)}
+.result h2{font-size:var(--text-h2)}
+.result h2 em{font-style:italic;color:var(--accent)}
+.result .head p{color:var(--text-secondary);margin-top:14px;font-weight:300}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-cards)}
+.gal figure{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--bg-surface)}
+.gal figure img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{padding:15px 18px 17px;background:var(--bg-surface)}
+.gal figcaption .ttl{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--text-primary)}
+.gal figcaption .dsc{font-size:.78rem;color:var(--text-muted);margin-top:3px;letter-spacing:.02em}
+.gal .badge{position:absolute;top:12px;left:12px;background:rgba(20,16,14,.78);backdrop-filter:blur(6px);color:#fff;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;border-radius:50px}
+.result .note{text-align:center;color:var(--text-muted);font-size:.78rem;margin-top:26px;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1rem}
+@media(max-width:820px){.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.gal{grid-template-columns:1fr;max-width:380px;margin:0 auto}}
+
+/* PROVA / depoimento */
+.prova{background:var(--bg-base);position:relative}
+.prova .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.prova .score{text-align:center}
+.prova .score .big{font-family:'Cormorant Garamond',serif;font-size:clamp(4.5rem,9vw,7rem);font-weight:500;color:var(--accent);line-height:.9}
+.prova .score .stars{color:var(--gold);letter-spacing:4px;font-size:1.1rem;margin-top:8px}
+.prova .score .l{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-top:10px}
+.prova blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,1.1rem + 1.4vw,2.3rem);font-weight:300;line-height:1.32;color:var(--text-primary);font-style:italic}
+.prova blockquote .mk{color:var(--accent);font-style:normal}
+.prova .by{font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.04em;color:var(--text-muted);margin-top:20px;font-style:normal}
+@media(max-width:760px){.prova .wrap{grid-template-columns:1fr;text-align:center}.prova .score{justify-self:center}}
+
+/* LOCALIZAÇÃO */
+.local{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.local .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.local .overline{color:var(--gold-light)}
+.local h2{font-size:var(--text-h2);color:var(--text-inverse);margin-bottom:20px}
+.local h2 em{font-style:italic;color:var(--gold-light)}
+.info-row{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.info-row:last-of-type{border-bottom:none}
+.info-row .ic{flex:none;width:22px;height:22px;stroke:var(--gold-light);fill:none;stroke-width:1.5;margin-top:2px}
+.info-row .k{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,236,.55);margin-bottom:4px}
+.info-row .v{color:var(--text-inverse);font-weight:300;font-size:1rem}
+.info-row .v a{color:var(--gold-light)}
+.local .cta-block{margin-top:30px}
+.map-card{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.1);background:#000;min-height:340px;position:relative;display:block}
+.map-card iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(.25) contrast(1.02)}
+@media(max-width:760px){.local .wrap{grid-template-columns:1fr}.map-card{min-height:300px}}
+
+/* FOOTER */
+footer{background:#0c0907;color:rgba(250,244,236,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-top{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand .mark{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#fff}
+.foot-brand .mark em{font-style:italic;color:var(--gold-light)}
+.foot-brand p{margin-top:10px;font-size:.85rem;font-weight:300;max-width:34ch}
+.foot-links{display:flex;gap:clamp(2rem,5vw,4rem);flex-wrap:wrap}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:.86rem;color:rgba(250,244,236,.6);margin-bottom:9px;font-weight:300;transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bot{max-width:var(--content-max);margin:0 auto;padding-top:2rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.74rem;color:rgba(250,244,236,.4)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s ease}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.07s}
+.reveal:nth-child(3){transition-delay:.14s}
+.reveal:nth-child(4){transition-delay:.21s}
+.reveal:nth-child(5){transition-delay:.28s}
+.reveal:nth-child(6){transition-delay:.35s}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge{transition:none;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before{animation:none}
+  .gal figure:hover img,.serv-card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">
+    <span class="mark">Dra Juliana <em>Nóbrega</em></span>
+    <span class="sub">Estética Avançada</span>
+  </a>
+  <nav class="nav-links" id="nav">
+    <a href="#sobre">A Dra Juliana</a>
+    <a href="#procedimentos">Procedimentos</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#localizacao">Localização</a>
+    <a class="btn-primary" href="https://wa.me/5599981892628" target="_blank" rel="noopener">Agendar avaliação</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-badge">
+    <span class="num">5,0</span>
+    <span>
+      <span class="stars">★★★★★</span>
+      <span class="lbl">no Google</span>
+    </span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Farmacêutica Esteta · Imperatriz/MA</div>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Estética</span> <span class="word">avançada</span></span>
+      <span class="line"><span class="word">com</span> <span class="word">a</span> <span class="word">precisão</span></span>
+      <span class="line"><span class="word">de</span> <span class="word">quem</span> <span class="word"><em>entende&nbsp;de&nbsp;saúde.</em></span></span>
+    </h1>
+    <p class="hero-sub">Harmonização facial, preenchimento e protocolos personalizados com a Dra Juliana Nóbrega — resultados naturais, com técnica e segurança.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5599981892628" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-2.9-1.6-4.1-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+        Agendar minha avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-figure reveal">
+      <img src="imagens/maps-1.jpg" alt="Dra Juliana Nóbrega no consultório de estética avançada em Imperatriz">
+      <div class="tag">
+        <div class="t1">Dra Juliana Nóbrega</div>
+        <div class="t2">Farmacêutica Esteta</div>
+      </div>
+    </div>
+    <div class="sobre-text">
+      <div class="overline reveal">Quem cuida de você</div>
+      <h2 class="reveal">Mais que estética: um olhar de <em>saúde</em> sobre a sua beleza.</h2>
+      <p class="reveal">A Dra Juliana Nóbrega é <strong>farmacêutica esteta</strong> e atende em Imperatriz com um princípio simples: resultado bonito é resultado que respeita o seu rosto e o seu corpo. Cada protocolo começa por uma avaliação cuidadosa — nada de pacote pronto.</p>
+      <p class="reveal">No consultório do Edifício Aracati Office, ela une <strong>técnica avançada, produtos de alto padrão e atendimento próximo</strong> para entregar harmonização e procedimentos faciais com aparência natural. É essa combinação que sustenta a nota máxima de quem já passou por aqui.</p>
+      <div class="cred reveal">
+        <div class="item"><div class="n">5,0</div><div class="l">Nota no Google</div></div>
+        <div class="item"><div class="n">100%</div><div class="l">Protocolos personalizados</div></div>
+        <div class="item"><div class="n">+8</div><div class="l">Procedimentos faciais e corporais</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="wrap">
+    <div class="proc-head">
+      <div class="overline">O que fazemos</div>
+      <h2>Procedimentos com <em>resultado natural</em></h2>
+      <p>Tratamentos faciais e de saúde estética conduzidos pessoalmente pela Dra Juliana, do diagnóstico ao acompanhamento.</p>
+    </div>
+    <div class="proc-grid">
+      <article class="serv-card reveal">
+        <div class="idx">01</div><div class="rule"></div>
+        <h3>Harmonização Facial</h3>
+        <p>Equilíbrio entre traços com técnica e proporção, valorizando a sua identidade — sem exageros.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">02</div><div class="rule"></div>
+        <h3>Toxina Botulínica</h3>
+        <p>Suavização das rugas de expressão da testa, glabela e olhos, preservando a naturalidade do movimento.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">03</div><div class="rule"></div>
+        <h3>Preenchimento Labial</h3>
+        <p>Contorno e volume na medida certa, com aspecto hidratado e simétrico — lábios bonitos, nunca artificiais.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">04</div><div class="rule"></div>
+        <h3>Bioestimuladores de Colágeno</h3>
+        <p>Estímulo natural de firmeza e qualidade da pele, com produtos de alto padrão para um efeito gradual e duradouro.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">05</div><div class="rule"></div>
+        <h3>Definição de Papada</h3>
+        <p>Protocolos para redução da gordura submentoniana e contorno do terço inferior do rosto e pescoço.</p>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">06</div><div class="rule"></div>
+        <h3>Saúde Integrativa &amp; Emagrecimento</h3>
+        <p>Avaliação de marcadores e protocolos que cuidam da estética com base na sua saúde por dentro.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="result" id="resultados">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="overline center">Antes &amp; depois</div>
+      <h2>Resultados <em>reais</em> de pacientes</h2>
+      <p>Casos conduzidos pela Dra Juliana Nóbrega. Cada rosto tem um plano próprio — estes são alguns dos resultados.</p>
+    </div>
+    <div class="gal">
+      <figure class="reveal">
+        <span class="badge">Antes / Depois</span>
+        <img src="imagens/insta-8.jpg" alt="Antes e depois de harmonização e contorno labial - Dra Juliana Nóbrega">
+        <figcaption><div class="ttl">Contorno &amp; Harmonização</div><div class="dsc">Definição do terço inferior</div></figcaption>
+      </figure>
+      <figure class="reveal">
+        <span class="badge">Antes / Depois</span>
+        <img src="imagens/insta-2.jpg" alt="Antes e depois de toxina botulínica na glabela - Dra Juliana Nóbrega">
+        <figcaption><div class="ttl">Rugas de Expressão</div><div class="dsc">Suavização da glabela e testa</div></figcaption>
+      </figure>
+      <figure class="reveal">
+        <span class="badge">Antes / Depois</span>
+        <img src="imagens/insta-3.jpg" alt="Antes e depois de definição de papada e contorno facial - Dra Juliana Nóbrega">
+        <figcaption><div class="ttl">Contorno Facial</div><div class="dsc">Definição de perfil e papada</div></figcaption>
+      </figure>
+    </div>
+    <p class="note">Resultados variam de pessoa para pessoa, conforme a avaliação individual.</p>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap">
+    <div class="score reveal">
+      <div class="big">5,0</div>
+      <div class="stars">★★★★★</div>
+      <div class="l">Avaliação no Google</div>
+    </div>
+    <div class="reveal">
+      <blockquote><span class="mk">“</span>Profissional impecável e atenciosa do início ao fim. Me senti segura, o resultado ficou super natural e exatamente como eu queria.<span class="mk">”</span></blockquote>
+      <div class="by">— Paciente atendida no consultório · Imperatriz/MA</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="wrap">
+    <div class="local-text">
+      <div class="overline">Onde estamos</div>
+      <h2>Venha conhecer o <em>consultório</em></h2>
+      <div class="info-row">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><div class="k">Endereço</div><div class="v">Edifício Aracati Office — R. Urbano Santos, 155, Centro · Imperatriz/MA · 65900-410</div></div>
+      </div>
+      <div class="info-row">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <div><div class="k">WhatsApp</div><div class="v"><a href="https://wa.me/5599981892628" target="_blank" rel="noopener">(99) 98189-2628</a></div></div>
+      </div>
+      <div class="info-row">
+        <svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
+        <div><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/dra.juliananobrega/" target="_blank" rel="noopener">@dra.juliananobrega</a></div></div>
+      </div>
+      <div class="cta-block">
+        <a class="btn-primary" href="https://wa.me/5599981892628" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-2.9-1.6-4.1-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+    <a class="map-card reveal" href="https://www.google.com/maps/place/Dra+Juliana+N%C3%B3brega+-+Est%C3%A9tica+Avan%C3%A7ada+-+Imperatriz+MA/@-5.524953,-47.4855699,17z/data=!3m1!4b1!4m6!3m5!1s0x92c55f2ea4eed08b:0x68272e2573fb8e1e!8m2!3d-5.524953!4d-47.4855699" target="_blank" rel="noopener" aria-label="Abrir no Google Maps">
+      <iframe title="Localização da Dra Juliana Nóbrega no mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-5.524953,-47.4855699&z=16&output=embed"></iframe>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="mark">Dra Juliana <em>Nóbrega</em></div>
+      <p>Estética avançada e saúde em Imperatriz/MA. Resultados naturais, com técnica e cuidado.</p>
+    </div>
+    <div class="foot-links">
+      <div class="foot-col">
+        <h4>Navegar</h4>
+        <a href="#sobre">A Dra Juliana</a>
+        <a href="#procedimentos">Procedimentos</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#localizacao">Localização</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5599981892628" target="_blank" rel="noopener">WhatsApp (99) 98189-2628</a>
+        <a href="https://www.instagram.com/dra.juliananobrega/" target="_blank" rel="noopener">@dra.juliananobrega</a>
+        <p>R. Urbano Santos, 155 — Centro</p>
+        <p>Imperatriz/MA</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Dra Juliana Nóbrega — Estética Avançada. Todos os direitos reservados.</span>
+    <span>Imperatriz · Maranhão</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5599981892628" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.115zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minei Centro de Beleza | Salão de Beleza em Campo Grande, MS</title>
+<meta name="description" content="Minei Centro de Beleza — salão de beleza em Campo Grande, MS, com nota 4.9 no Google. Cortes, coloração, mechas e tratamentos. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf7f3; --bg-surface:#ffffff; --bg-inset:#f1eae1; --bg-dark:#1a130d;
+  --text-primary:#211a14; --text-secondary:#4d4339; --text-muted:#8a7e70; --text-inverse:#faf7f3;
+  --accent:#b3795a; --accent-dark:#8f5c3f; --accent-subtle:rgba(179,121,90,.10); --accent-border:rgba(179,121,90,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(40,25,12,.04),0 2px 6px rgba(40,25,12,.05);
+  --shadow-md:0 2px 4px rgba(40,25,12,.04),0 8px 18px rgba(40,25,12,.07),0 20px 40px rgba(40,25,12,.05);
+  --shadow-lg:0 4px 8px rgba(40,25,12,.05),0 16px 32px rgba(40,25,12,.07),0 40px 80px rgba(40,25,12,.10);
+  --shadow-accent:0 8px 22px rgba(179,121,90,.32);
+  --shadow-accent-strong:0 14px 34px rgba(179,121,90,.45);
+  --text-display:clamp(2.8rem,2rem + 4vw,5.5rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.9rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.74;
+  --ls-display:-.02em; --ls-overline:.18em;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:680px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg-base);color:var(--text-primary);font-family:'Nunito Sans',sans-serif;font-size:var(--text-body);line-height:var(--lh-body);font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;font-optical-sizing:auto;text-wrap:balance;font-weight:500;line-height:var(--lh-heading);letter-spacing:var(--ls-display)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+.wrap{max-width:var(--content-max);margin:0 auto}
+.overline{display:flex;align-items:center;gap:10px;font-family:'Nunito Sans',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:var(--ls-overline);text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* buttons */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:.95rem clamp(1.5rem,3vw,2.3rem);min-height:48px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;border-radius:50px;box-shadow:var(--shadow-accent);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:.85rem 1.6rem;min-height:48px;border:1px solid rgba(250,247,243,.4);color:var(--text-inverse);font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;border-radius:50px;transition:background .3s ease,border-color .3s ease;touch-action:manipulation}
+.btn-ghost:hover{background:rgba(250,247,243,.1);border-color:rgba(250,247,243,.8)}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .35s ease,box-shadow .35s ease,padding .35s ease}
+header.scrolled{background:rgba(26,19,13,.92);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);box-shadow:0 1px 0 var(--accent-border);padding:12px clamp(1.5rem,5vw,4rem)}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:var(--text-inverse);letter-spacing:.02em}
+.logo span{color:var(--gold-light)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a.navlink{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(250,247,243,.85);transition:color .25s ease}
+.nav a.navlink:hover{color:var(--gold-light)}
+.nav .btn-primary{padding:.7rem 1.4rem;min-height:42px}
+@media(max-width:860px){.nav a.navlink{display:none}}
+
+/* HERO model C */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/maps-1.jpg') center 40%/cover;animation:kb 26s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(20,14,9,.86) 0%,rgba(20,14,9,.55) 42%,rgba(20,14,9,.25) 70%,rgba(20,14,9,.5) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none}
+.hero-content{position:relative;z-index:3;padding:0 8% clamp(3.2rem,7vh,6rem);max-width:720px}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold-light);font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold-light)}
+.hero-title{color:var(--text-inverse);font-size:var(--text-display);line-height:var(--lh-display);font-weight:500;max-width:14ch;margin-bottom:24px}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title .word:nth-child(1){animation-delay:.25s}.hero-title .word:nth-child(2){animation-delay:.34s}.hero-title .word:nth-child(3){animation-delay:.43s}.hero-title .word:nth-child(4){animation-delay:.52s}.hero-title .word:nth-child(5){animation-delay:.61s}.hero-title .word:nth-child(6){animation-delay:.70s}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(250,247,243,.9);font-size:clamp(1rem,.95rem + .3vw,1.18rem);max-width:46ch;margin-bottom:34px;opacity:0;animation:fadein 1s ease .9s forwards}
+@keyframes fadein{to{opacity:1}}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;opacity:0;animation:fadein 1s ease 1.05s forwards}
+.hero-badge{position:absolute;z-index:3;top:clamp(86px,12vh,130px);right:clamp(1.5rem,6vw,5rem);display:flex;align-items:center;gap:13px;padding:14px 20px;border-radius:16px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.1),0 8px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);opacity:0;animation:fadein 1s ease 1.2s forwards}
+.hero-badge .num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold-light);line-height:1}
+.hero-badge .stars{color:var(--gold-light);font-size:.7rem;letter-spacing:2px}
+.hero-badge .lbl{color:rgba(250,247,243,.85);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:560px){.hero-badge{padding:11px 15px}.hero-badge .num{font-size:1.4rem}}
+
+/* SOBRE */
+.sobre{background:var(--bg-base)}
+.sobre-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:880px){.sobre-grid{grid-template-columns:1fr}}
+.sobre-figure{position:relative}
+.sobre-figure img{width:100%;height:100%;max-height:600px;object-fit:cover;border-radius:6px;box-shadow:var(--shadow-lg)}
+.sobre-figure .frame{position:absolute;inset:0;border:1px solid var(--accent-border);border-radius:6px;transform:translate(18px,18px);z-index:-1}
+.sobre h2{font-size:var(--text-h2);margin-bottom:22px;max-width:16ch}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.sobre .stats{display:flex;gap:clamp(1.5rem,4vw,3rem);margin-top:34px;flex-wrap:wrap}
+.sobre .stat .n{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--accent);line-height:1}
+.sobre .stat .t{font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin-top:6px}
+
+/* wave + dark services */
+.wave{display:block;line-height:0;margin-bottom:-1px}
+.wave svg{width:100%;height:clamp(40px,5vw,84px)}
+.servicos{position:relative;background:var(--bg-dark);color:var(--text-inverse)}
+.servicos::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.servicos .wrap{position:relative;z-index:1}
+.serv-head{max-width:620px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.serv-head h2{font-size:var(--text-h2);color:var(--text-inverse)}
+.serv-head h2 em{font-style:italic;color:var(--gold-light)}
+.serv-head p{color:rgba(250,247,243,.7);margin-top:16px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.serv-card{position:relative;padding:34px 30px 38px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--accent-border)}
+.serv-card .idx{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold-light);letter-spacing:.1em}
+.serv-card h3{font-size:1.45rem;color:var(--text-inverse);margin:18px 0 12px;font-weight:500}
+.serv-card p{color:rgba(250,247,243,.66);font-size:.95rem;line-height:1.7}
+.serv-card .rule{width:38px;height:2px;background:var(--accent);margin-top:20px;transition:width .35s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .rule{width:64px}
+
+/* GALERIA */
+.galeria{background:var(--bg-inset)}
+.gal-head{text-align:center;max-width:600px;margin:0 auto clamp(2.5rem,5vw,3.5rem)}
+.gal-head h2{font-size:var(--text-h2)}
+.gal-head h2 em{font-style:italic;color:var(--accent)}
+.gal-head p{color:var(--text-secondary);margin-top:14px}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.6vw,1.1rem);grid-auto-rows:1fr}
+.gal-grid figure{position:relative;overflow:hidden;border-radius:6px;box-shadow:var(--shadow-md);background:#000}
+.gal-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid figure.tall{grid-row:span 2}
+.gal-grid figure.tall img{aspect-ratio:4/6}
+@media(max-width:760px){.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-grid figure.tall{grid-row:span 1}.gal-grid figure.tall img{aspect-ratio:4/5}}
+
+/* PROVA SOCIAL */
+.prova{position:relative;background:var(--bg-base);overflow:hidden}
+.prova-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media(max-width:880px){.prova-grid{grid-template-columns:1fr}}
+.prova-fig img{width:100%;border-radius:6px;object-fit:cover;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.prova h2{font-size:var(--text-h2);margin-bottom:10px}
+.prova h2 em{font-style:italic;color:var(--accent)}
+.rating-big{display:flex;align-items:baseline;gap:14px;margin:24px 0 10px}
+.rating-big .score{font-family:'Playfair Display',serif;font-size:3.6rem;color:var(--accent);line-height:1}
+.rating-big .stars{color:var(--gold);letter-spacing:3px;font-size:1.1rem}
+.rating-big .src{font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}
+.quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.2rem,1rem + .8vw,1.6rem);line-height:1.5;color:var(--text-primary);margin:26px 0;padding-left:22px;border-left:2px solid var(--accent)}
+.quote-author{font-size:.85rem;color:var(--text-muted);letter-spacing:.04em}
+
+/* LOCALIZACAO (diagonal cut) */
+.local{position:relative;background:var(--bg-dark);color:var(--text-inverse);clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding-top:calc(var(--section-pad) + 4vw)}
+.local::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.05;pointer-events:none;z-index:0}
+.local .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media(max-width:880px){.local .wrap{grid-template-columns:1fr}}
+.local h2{font-size:var(--text-h2);color:var(--text-inverse);margin-bottom:20px}
+.local h2 em{font-style:italic;color:var(--gold-light)}
+.local .info{list-style:none;margin:24px 0 30px}
+.local .info li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(250,247,243,.85)}
+.local .info .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);min-width:96px;padding-top:3px}
+.local .info .v{font-size:1rem}
+.local .map-card{border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.1)}
+.local .map-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.local .map-card a{display:block;position:relative}
+.map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:50px;background:rgba(26,19,13,.78);backdrop-filter:blur(8px);color:var(--gold-light);font-size:.78rem;font-weight:600;letter-spacing:.05em;border:1px solid rgba(224,192,104,.4)}
+
+/* footer */
+footer{background:#120c07;color:rgba(250,247,243,.6);padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;align-items:flex-start}
+.foot-logo{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--text-inverse)}
+.foot-logo span{color:var(--gold-light)}
+footer p{font-size:.9rem;max-width:34ch;margin-top:14px;line-height:1.7}
+.foot-col h4{font-family:'Nunito Sans',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px;font-weight:700}
+.foot-col a,.foot-col span{display:block;font-size:.92rem;color:rgba(250,247,243,.7);margin-bottom:9px;transition:color .25s ease}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:2.6rem auto 0;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}.reveal:nth-child(3){transition-delay:.12s}.reveal:nth-child(4){transition-delay:.18s}.reveal:nth-child(5){transition-delay:.24s}.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg,.gal-grid img{animation:none!important}
+  .reveal,.hero-title .word,.hero-sub,.hero-actions,.hero-badge{transition:none!important;opacity:1!important;transform:none!important;animation:none!important}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="logo">minei<span>.</span></a>
+  <nav class="nav">
+    <a href="#sobre" class="navlink">O Salão</a>
+    <a href="#servicos" class="navlink">Serviços</a>
+    <a href="#resultados" class="navlink">Resultados</a>
+    <a href="#local" class="navlink">Onde Estamos</a>
+    <a href="https://wa.me/5567992719867" class="btn-primary" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" role="img" aria-label="Fachada do Minei Centro de Beleza em Campo Grande"></div>
+  <div class="hero-badge">
+    <span class="num">4.9</span>
+    <span>
+      <span class="stars">★★★★★</span><br>
+      <span class="lbl">no Google</span>
+    </span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Salão de Beleza · Campo Grande, MS</div>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Beleza</span> <span class="word">que</span> <span class="word">tem</span></span>
+      <span class="line"><span class="word"><em>nome</em></span> <span class="word">em</span> <span class="word">Campo&nbsp;Grande.</span></span>
+    </h1>
+    <p class="hero-sub">Cortes, coloração, mechas e tratamentos num ambiente que vira referência — e nota 4.9 no Google pra provar.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5567992719867" class="btn-primary" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.6 20.013c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-figure reveal">
+      <img src="imagens/insta-4.jpg" alt="Profissional do Minei Centro de Beleza" loading="lazy">
+      <span class="frame" aria-hidden="true"></span>
+    </div>
+    <div>
+      <div class="overline reveal">Quem é a Minei</div>
+      <h2 class="reveal">Um centro de beleza <em>completo</em> no coração de Campo Grande</h2>
+      <p class="reveal">No Jardim dos Estados, a Minei reúne corte, cor e cuidado num só lugar — com a técnica e o olhar de quem entende que cada cliente quer sair se sentindo mais bonita do que entrou.</p>
+      <p class="reveal">Do diagnóstico do fio à coloração que dura, cada procedimento é pensado pro seu cabelo e pro seu estilo. É por isso que tantas mulheres de Campo Grande viraram clientes fiéis — e deram à Minei a nota 4.9 no Google.</p>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">4.9</div><div class="t">Avaliação Google</div></div>
+        <div class="stat"><div class="n">+10</div><div class="t">Anos de história</div></div>
+        <div class="stat"><div class="n">100%</div><div class="t">Atendimento dedicado</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,36 C480,72 960,0 1440,36 L1440,72 L0,72 Z" fill="var(--bg-dark)"/></svg>
+</div>
+
+<!-- SERVICOS -->
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="serv-head">
+      <div class="overline">O que fazemos</div>
+      <h2>Procedimentos que <em>transformam</em> de verdade</h2>
+      <p>Cada serviço com avaliação de fio, produtos profissionais e acabamento que você leva pra casa.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv-card reveal">
+        <div class="idx">01</div>
+        <h3>Cortes &amp; Visagismo</h3>
+        <p>O corte certo pra formato de rosto e rotina — femininos, masculinos e infantis, com finalização impecável.</p>
+        <div class="rule"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">02</div>
+        <h3>Coloração &amp; Mechas</h3>
+        <p>Luzes, mechas, morena iluminada e cobertura de brancos com cor que dura e fio preservado.</p>
+        <div class="rule"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">03</div>
+        <h3>Tratamentos Capilares</h3>
+        <p>Hidratação, reconstrução e nutrição pra devolver brilho, força e maciez aos fios.</p>
+        <div class="rule"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">04</div>
+        <h3>Escova &amp; Penteados</h3>
+        <p>Escova, modelagem e penteados pro dia a dia ou pra aquele evento que pede um visual de tirar o fôlego.</p>
+        <div class="rule"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">05</div>
+        <h3>Alisamento &amp; Progressiva</h3>
+        <p>Redução de volume e alinhamento com produtos de qualidade, pra praticidade sem perder a saúde do cabelo.</p>
+        <div class="rule"></div>
+      </article>
+      <article class="serv-card reveal">
+        <div class="idx">06</div>
+        <h3>Dia da Noiva &amp; Eventos</h3>
+        <p>Pacotes especiais pra noivas, madrinhas e ocasiões — pra você ser o destaque do dia.</p>
+        <div class="rule"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="resultados">
+  <div class="wrap">
+    <div class="gal-head">
+      <div class="overline center">Resultados reais</div>
+      <h2>Trabalhos feitos <em>aqui dentro</em></h2>
+      <p>Transformações de clientes da Minei — registradas no nosso próprio salão.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="tall reveal"><img src="imagens/insta-6.jpg" alt="Resultado de mechas e iluminado no Minei Centro de Beleza" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-2.jpg" alt="Transformação de cabelo no ambiente do salão" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-1.jpg" alt="Corte sendo realizado no Minei Centro de Beleza" loading="lazy"></figure>
+      <figure class="reveal"><img src="imagens/insta-5.jpg" alt="Ambiente do salão com cliente e profissional" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="wrap prova-grid">
+    <div class="prova-fig reveal">
+      <img src="imagens/insta-5.jpg" alt="Interior do Minei Centro de Beleza com lustre e clientes" loading="lazy">
+    </div>
+    <div>
+      <div class="overline reveal">Prova social</div>
+      <h2 class="reveal">A confiança de quem <em>volta sempre</em></h2>
+      <div class="rating-big reveal">
+        <span class="score">4.9</span>
+        <span>
+          <span class="stars">★★★★★</span><br>
+          <span class="src">Avaliação no Google</span>
+        </span>
+      </div>
+      <blockquote class="quote reveal">"Saí me sentindo outra pessoa. Atendimento atencioso, ambiente lindo e o resultado do cabelo ficou exatamente como eu queria."</blockquote>
+      <p class="quote-author reveal">— Cliente Minei, avaliação Google</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL -->
+<section class="local" id="local">
+  <div class="wrap">
+    <div>
+      <div class="overline reveal">Onde estamos</div>
+      <h2 class="reveal">Venha conhecer o <em>nosso espaço</em></h2>
+      <ul class="info">
+        <li class="reveal"><span class="k">Endereço</span><span class="v">R. da Paz, 671 — Jardim dos Estados, Campo Grande - MS, 79020-250</span></li>
+        <li class="reveal"><span class="k">WhatsApp</span><span class="v">(67) 99271-9867</span></li>
+        <li class="reveal"><span class="k">Atendimento</span><span class="v">Com horário marcado — fale conosco no WhatsApp</span></li>
+      </ul>
+      <a href="https://wa.me/5567992719867" class="btn-primary reveal" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.6 20.013c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar meu horário
+      </a>
+    </div>
+    <div class="map-card reveal">
+      <a href="https://www.google.com/maps/place/Minei+Centro+de+Beleza+%7C+Sal%C3%A3o+de+beleza+em+Campo+Grande+MS/@-20.4582937,-54.5988119,17z/data=!3m1!4b1!4m6!3m5!1s0x9486e8818f8ac049:0xd1842fbed833ab8!8m2!3d-20.4582937!4d-54.5988119" target="_blank" rel="noopener">
+        <img src="imagens/maps-1.jpg" alt="Fachada do Minei Centro de Beleza em Campo Grande">
+        <span class="map-pin">Ver no Google Maps</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">minei<span>.</span></div>
+      <p>Centro de Beleza em Campo Grande, MS. Corte, cor e cuidado num só lugar — com nota 4.9 no Google.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">O Salão</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#local">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5567992719867" target="_blank" rel="noopener">WhatsApp: (67) 99271-9867</a>
+      <span>R. da Paz, 671 — Jardim dos Estados</span>
+      <span>Campo Grande - MS, 79020-250</span>
+      <a href="https://www.instagram.com/mineicentrodebeleza" target="_blank" rel="noopener">@mineicentrodebeleza</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Minei Centro de Beleza. Todos os direitos reservados.</span>
+    <span>Salão de Beleza · Campo Grande, MS</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5567992719867" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.6 20.013c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

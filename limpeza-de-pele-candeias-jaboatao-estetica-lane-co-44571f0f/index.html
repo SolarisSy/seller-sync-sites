@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amarasí — Estética Facial e Corporal em Candeias, Jaboatão | Lane Costa</title>
+<meta name="description" content="Clínica Amarasí, estética facial e corporal em Candeias, Jaboatão dos Guararapes. Limpeza de pele, tratamento de acne, rejuvenescimento e mais, com a assinatura da Lane Costa. Nota 5,0 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#faf6f0; --bg-surface:#fffdf9; --bg-inset:#f1e9de; --bg-dark:#1a120c;
+  --text-primary:#221a12; --text-secondary:#5a4f44; --text-muted:#8f8473; --text-inverse:#f7efe4;
+  --accent:#b3863f; --accent-dark:#8a6429; --accent-subtle:rgba(179,134,63,.10); --accent-border:rgba(179,134,63,.22);
+  --terra:#bf6440; --gold:#c9a84c; --gold-light:#e0c068;
+  --shadow-sm:0 1px 2px rgba(46,30,12,.05),0 2px 6px rgba(46,30,12,.05);
+  --shadow-md:0 2px 4px rgba(46,30,12,.04),0 8px 18px rgba(46,30,12,.07),0 20px 40px rgba(46,30,12,.05);
+  --shadow-lg:0 4px 8px rgba(46,30,12,.05),0 16px 32px rgba(46,30,12,.08),0 40px 80px rgba(46,30,12,.10);
+  --shadow-accent:0 10px 28px rgba(179,134,63,.34);
+  --shadow-accent-strong:0 16px 40px rgba(179,134,63,.46);
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3.1rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.06rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.02; --lh-heading:1.12; --lh-body:1.74;
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:660px; --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg-base);color:var(--text-primary);font-family:'Inter',sans-serif;font-size:var(--text-body);line-height:var(--lh-body);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:var(--lh-heading);font-optical-sizing:auto;text-wrap:balance}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--content-max);margin:0 auto}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{display:flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+
+/* ---------- Header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(26,18,12,.92);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 1px 0 rgba(179,134,63,.25);padding:13px clamp(1.5rem,5vw,4rem)}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;letter-spacing:.16em;color:var(--text-inverse);text-decoration:none;line-height:1}
+.brand small{display:block;font-family:'Inter',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.34em;color:var(--gold-light);margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:400;letter-spacing:.04em;color:var(--text-inverse);text-decoration:none;opacity:.85;transition:opacity .25s,color .25s}
+.nav a:hover{opacity:1;color:var(--gold-light)}
+.nav .nav-link{display:none}
+@media(min-width:860px){.nav .nav-link{display:inline}}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border-radius:50px;min-height:46px;padding:.8rem clamp(1.3rem,3vw,2rem);transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;will-change:transform;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;box-shadow:var(--shadow-accent)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{border:1px solid rgba(247,239,228,.4);color:var(--text-inverse)}
+.btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.btn svg{width:17px;height:17px;flex:none}
+
+/* ---------- Hero (Model C) ---------- */
+.hero{position:relative;min-height:100dvh;display:grid;align-items:end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('imagens/web-hero.jpg') center 38%/cover;animation:kb 26s ease-in-out infinite alternate;z-index:0}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(26,18,12,.86) 0%,rgba(26,18,12,.5) 42%,rgba(26,18,12,.14) 70%,rgba(26,18,12,.4) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:190px;opacity:.05;pointer-events:none}
+.hero-content{position:relative;z-index:3;padding:0 8% clamp(3.2rem,7vh,6rem);max-width:720px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.09);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 4px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.18);border-radius:50px;padding:8px 16px 8px 13px;color:var(--text-inverse);font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.04em;margin-bottom:26px}
+.hero-badge .stars{color:var(--gold-light);letter-spacing:1px}
+.hero-eyebrow{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px}
+.hero h1{font-size:var(--text-display);font-weight:400;color:var(--text-inverse);line-height:var(--lh-display);letter-spacing:-.01em;max-width:14ch;overflow:hidden;margin-bottom:0}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .word{display:inline-block;transform:translateY(112%);opacity:0;animation:wordup .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero h1 .word:nth-child(1){animation-delay:.15s}.hero h1 .word:nth-child(2){animation-delay:.24s}.hero h1 .word:nth-child(3){animation-delay:.33s}.hero h1 .word:nth-child(4){animation-delay:.42s}.hero h1 .word:nth-child(5){animation-delay:.51s}.hero h1 .word:nth-child(6){animation-delay:.6s}
+@keyframes wordup{to{transform:translateY(0);opacity:1}}
+.hero p.lead{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(1rem,.94rem + .3vw,1.18rem);color:rgba(247,239,228,.9);max-width:46ch;margin:26px 0 32px;line-height:1.66;opacity:0;animation:fadein 1s ease .8s forwards}
+@keyframes fadein{to{opacity:1}}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadein 1s ease .95s forwards}
+.scrolldown{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(247,239,228,.6);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrolldown span{width:1px;height:34px;background:linear-gradient(rgba(247,239,228,.6),transparent);animation:sd 2s ease-in-out infinite}
+@keyframes sd{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:640px){.scrolldown{display:none}}
+
+/* diagonal cut into Sobre */
+.section-cut-top{clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(var(--section-pad) + 4vw)}
+
+/* ---------- Sobre ---------- */
+.sobre{background:var(--bg-base);position:relative}
+.sobre-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.2rem,5vw,4.5rem);align-items:center;max-width:var(--content-max);margin:0 auto}
+@media(min-width:900px){.sobre-grid{grid-template-columns:0.92fr 1.08fr}}
+.sobre-figure{position:relative}
+.sobre-figure img{width:100%;border-radius:6px;box-shadow:var(--shadow-lg);object-fit:cover}
+.sobre-figure .tag{position:absolute;left:-14px;bottom:24px;background:var(--bg-dark);color:var(--text-inverse);padding:16px 22px;border-radius:4px;box-shadow:var(--shadow-md);max-width:210px}
+.sobre-figure .tag b{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--gold-light);display:block;line-height:1}
+.sobre-figure .tag small{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.06em;color:rgba(247,239,228,.78);display:block;margin-top:5px}
+.sobre h2{font-size:var(--text-h2);font-weight:400;max-width:18ch;margin-bottom:8px}
+.sobre h2 em{font-style:italic;color:var(--accent)}
+.sobre .sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--accent);margin:4px 0 22px}
+.sobre p{color:var(--text-secondary);max-width:var(--prose-max);margin-bottom:18px}
+.sobre p strong{color:var(--text-primary);font-weight:500}
+.sobre-stats{display:flex;gap:clamp(1.6rem,4vw,3rem);flex-wrap:wrap;margin-top:30px;padding-top:28px;border-top:1px solid var(--accent-border)}
+.sobre-stats .st b{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--accent);line-height:1;display:block}
+.sobre-stats .st small{font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-muted);letter-spacing:.03em}
+
+/* ---------- Procedimentos ---------- */
+.proc{background:var(--bg-inset);position:relative}
+.proc-head{max-width:var(--content-max);margin:0 auto 52px}
+.proc-head h2{font-size:var(--text-h2);font-weight:400;max-width:16ch}
+.proc-head h2 em{font-style:italic;color:var(--accent)}
+.proc-head p{color:var(--text-secondary);max-width:54ch;margin-top:14px}
+.proc-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--gap-cards)}
+.serv-card{background:var(--bg-surface);border:1px solid rgba(179,134,63,.12);border-radius:6px;padding:clamp(1.7rem,3vw,2.3rem);box-shadow:var(--shadow-sm);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;position:relative;overflow:hidden}
+.serv-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card:hover::before{transform:scaleX(1)}
+.serv-card .num{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--accent);margin-bottom:14px;display:block;letter-spacing:.04em}
+.serv-card h3{font-size:var(--text-h3);font-weight:500;margin-bottom:10px}
+.serv-card p{font-size:.94rem;color:var(--text-secondary);line-height:1.66}
+
+/* ---------- Prova social ---------- */
+.prova{background:var(--bg-dark);color:var(--text-inverse);position:relative;overflow:hidden}
+.prova::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:190px;opacity:.06;pointer-events:none;z-index:0}
+.prova .inner{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto}
+.prova .overline{color:var(--gold-light)}
+.prova-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+.prova-top h2{font-size:var(--text-h2);font-weight:400;color:var(--text-inverse);max-width:18ch}
+.prova-top h2 em{font-style:italic;color:var(--gold-light)}
+.rating-block{text-align:center;flex:none}
+.rating-block b{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:600;color:var(--gold-light);line-height:1;display:block}
+.rating-block .stars{color:var(--gold-light);letter-spacing:3px;font-size:1rem;margin:4px 0 2px}
+.rating-block small{font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(247,239,228,.65);letter-spacing:.04em}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:var(--gap-cards)}
+.testi{background:rgba(255,255,255,.045);border:1px solid rgba(247,239,228,.1);border-radius:6px;padding:clamp(1.6rem,3vw,2.1rem)}
+.testi .q{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--accent);line-height:1;margin-bottom:8px}
+.testi p{font-size:.96rem;color:rgba(247,239,228,.9);line-height:1.7;margin-bottom:18px;font-weight:300}
+.testi .who{font-family:'Inter',sans-serif;font-size:.78rem;color:var(--gold-light);letter-spacing:.04em;font-weight:500}
+.testi .who span{display:block;color:rgba(247,239,228,.55);font-weight:300;letter-spacing:.02em;margin-top:2px}
+
+/* ---------- Localização ---------- */
+.local{background:var(--bg-base)}
+.local-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media(min-width:900px){.local-grid{grid-template-columns:1.05fr .95fr}}
+.local-figure img{width:100%;border-radius:6px;box-shadow:var(--shadow-lg)}
+.local h2{font-size:var(--text-h2);font-weight:400;max-width:16ch;margin-bottom:6px}
+.local h2 em{font-style:italic;color:var(--accent)}
+.local-info{margin:26px 0 30px;display:grid;gap:20px}
+.info-row{display:flex;gap:15px;align-items:flex-start}
+.info-row svg{width:21px;height:21px;flex:none;color:var(--accent);margin-top:2px}
+.info-row b{display:block;font-family:'Inter',sans-serif;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:3px}
+.info-row span{color:var(--text-secondary);font-size:.98rem}
+.local .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn-dark{background:var(--bg-dark);color:var(--text-inverse)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+
+/* ---------- Footer ---------- */
+footer{background:var(--bg-dark);color:var(--text-inverse);padding:clamp(3.5rem,7vw,5.5rem) clamp(1.5rem,6vw,5rem) 2.4rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;gap:36px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .brand{display:inline-block;margin-bottom:14px}
+.foot-brand p{color:rgba(247,239,228,.6);font-size:.92rem;max-width:34ch;font-weight:300}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;font-weight:500}
+.foot-col a,.foot-col p{display:block;color:rgba(247,239,228,.72);text-decoration:none;font-size:.92rem;margin-bottom:10px;font-weight:300;transition:color .25s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max);margin:48px auto 0;padding-top:22px;border-top:1px solid rgba(247,239,228,.12);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:rgba(247,239,228,.5);font-weight:300}
+
+/* ---------- WA FAB ---------- */
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.42);transition:transform .25s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}.reveal:nth-child(3){transition-delay:.12s}.reveal:nth-child(4){transition-delay:.18s}.reveal:nth-child(5){transition-delay:.24s}.reveal:nth-child(6){transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{animation:none}
+  .hero h1 .word{animation:none;transform:none;opacity:1}
+  .hero p.lead,.hero-cta{animation:none;opacity:1}
+  .scrolldown span{animation:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">AMARASÍ<small>ESTÉTICA · LANE COSTA</small></a>
+  <nav class="nav">
+    <a href="#sobre" class="nav-link">A Clínica</a>
+    <a href="#procedimentos" class="nav-link">Procedimentos</a>
+    <a href="#localizacao" class="nav-link">Onde Estamos</a>
+    <a href="https://wa.me/5581995475841" class="btn btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.039z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="hero-badge"><span class="stars">★★★★★</span> Nota 5,0 no Google</span>
+    <p class="hero-eyebrow">Candeias · Jaboatão dos Guararapes</p>
+    <h1>
+      <span class="line"><span class="word">Sua</span> <span class="word">pele</span> <span class="word"><em>renovada,</em></span></span>
+      <span class="line"><span class="word">seu</span> <span class="word">espaço</span> <span class="word"><em>à altura.</em></span></span>
+    </h1>
+    <p class="lead">Estética facial e corporal de verdade, com a assinatura da Lane Costa. Um espaço pensado pra você sair daqui mais leve, mais bonita e mais confiante.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/5581995475841" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.039z"/></svg>
+        Agendar avaliação
+      </a>
+      <a href="#procedimentos" class="btn btn-ghost">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="scrolldown" aria-hidden="true">Role<span></span></div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre section-cut-top" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-figure reveal">
+      <img src="imagens/web-sobre.jpg" alt="Lane Costa ao lado de cliente em sessão de limpeza de pele na clínica Amarasí" loading="lazy">
+      <div class="tag"><b>Lane Costa</b><small>Esteticista responsável · Amarasí</small></div>
+    </div>
+    <div class="sobre-copy">
+      <p class="overline reveal">A Clínica</p>
+      <h2 class="reveal">Beleza, confiança e <em>autoestima</em> em cada atendimento.</h2>
+      <p class="sig reveal">Estética facial e corporal por Lane Costa</p>
+      <p class="reveal">A Amarasí nasceu do cuidado de quem entende que pele saudável muda o jeito da pessoa se enxergar. Aqui em Candeias, a <strong>Lane Costa</strong> recebe cada cliente num espaço acolhedor, com equipamentos profissionais e protocolos pensados pra resultado de verdade — sem promessa exagerada.</p>
+      <p class="reveal">Reconhecida na região como referência em estética avançada, a clínica trata da limpeza de pele à recuperação da autoestima, sempre com atendimento próximo e honesto. Você é escutada antes de qualquer procedimento.</p>
+      <div class="sobre-stats reveal">
+        <div class="st"><b>5,0</b><small>Avaliação no Google</small></div>
+        <div class="st"><b>Facial</b><small>&amp; corporal</small></div>
+        <div class="st"><b>Candeias</b><small>Jaboatão · PE</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="proc-head">
+    <p class="overline reveal">Procedimentos</p>
+    <h2 class="reveal">Tratamentos que <em>cuidam</em> da pele e do corpo.</h2>
+    <p class="reveal">Cada protocolo é definido a partir de uma avaliação individual. Estes são alguns dos cuidados mais procurados na Amarasí — fale com a Lane pra montar o seu.</p>
+  </div>
+  <div class="proc-grid">
+    <article class="serv-card reveal">
+      <span class="num">01</span>
+      <h3>Limpeza de pele profunda</h3>
+      <p>Higienização completa, extração e renovação que devolvem o viço e deixam a pele respirando. O carro-chefe da casa.</p>
+    </article>
+    <article class="serv-card reveal">
+      <span class="num">02</span>
+      <h3>Tratamento de acne</h3>
+      <p>Protocolos para controlar a oleosidade, reduzir as lesões e suavizar marcas, devolvendo a confiança no espelho.</p>
+    </article>
+    <article class="serv-card reveal">
+      <span class="num">03</span>
+      <h3>Rejuvenescimento facial</h3>
+      <p>Estímulo de colágeno e cuidado com linhas e flacidez para uma pele mais firme, iluminada e descansada.</p>
+    </article>
+    <article class="serv-card reveal">
+      <span class="num">04</span>
+      <h3>Peeling &amp; microagulhamento</h3>
+      <p>Renovação celular para tratar manchas, textura irregular e cicatrizes, revelando uma pele mais uniforme.</p>
+    </article>
+    <article class="serv-card reveal">
+      <span class="num">05</span>
+      <h3>Estética corporal</h3>
+      <p>Cuidados para gordura localizada, celulite e firmeza, com aparelhos profissionais e acompanhamento de perto.</p>
+    </article>
+    <article class="serv-card reveal">
+      <span class="num">06</span>
+      <h3>Avaliação personalizada</h3>
+      <p>Antes de qualquer procedimento, uma conversa pra entender sua pele, seus objetivos e o melhor caminho pra você.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="inner">
+    <div class="prova-top">
+      <div>
+        <p class="overline reveal">Quem passou por aqui</p>
+        <h2 class="reveal">Resultado que se vê — e confiança que <em>se sente.</em></h2>
+      </div>
+      <div class="rating-block reveal">
+        <b>5,0</b>
+        <div class="stars">★★★★★</div>
+        <small>Avaliação no Google</small>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="q">“</div>
+        <p>Minha pele mudou completamente depois da limpeza com a Lane. Atendimento humano e ambiente impecável, saí me sentindo outra pessoa.</p>
+        <div class="who">Cliente Amarasí<span>Limpeza de pele</span></div>
+      </div>
+      <div class="testi reveal">
+        <div class="q">“</div>
+        <p>Lutei anos com acne e aqui finalmente encontrei um tratamento que funcionou. A Lane explica tudo e cuida com carinho de verdade.</p>
+        <div class="who">Cliente Amarasí<span>Tratamento de acne</span></div>
+      </div>
+      <div class="testi reveal">
+        <div class="q">“</div>
+        <p>Profissional excelente e espaço lindo. Recomendo de olhos fechados pra quem procura estética séria aqui em Candeias.</p>
+        <div class="who">Cliente Amarasí<span>Estética facial</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="local-grid">
+    <div class="local-figure reveal">
+      <img src="imagens/web-local.jpg" alt="Fachada da clínica Amarasí na Av. Presidente Kennedy, Candeias, Jaboatão dos Guararapes" loading="lazy">
+    </div>
+    <div class="local-copy">
+      <p class="overline reveal">Onde Estamos</p>
+      <h2 class="reveal">Pertinho de você, em <em>Candeias.</em></h2>
+      <div class="local-info">
+        <div class="info-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Endereço</b><span>Av. Presidente Kennedy, 1341 — Galeria, sala 20, Candeias, Jaboatão dos Guararapes - PE, 54440-050</span></div>
+        </div>
+        <div class="info-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><b>WhatsApp</b><span>(81) 99547-5841</span></div>
+        </div>
+        <div class="info-row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Atendimento</b><span>Segunda a sábado, com hora marcada</span></div>
+        </div>
+      </div>
+      <div class="cta-row reveal">
+        <a href="https://wa.me/5581995475841" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.039z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="https://www.google.com/maps/place/LIMPEZA+DE+PELE,+CANDEIAS+JABOAT%C3%83O,+Est%C3%A9tica+Lane+Costa,+AMARAS%C3%8D/@-8.199538,-34.9191969,17z" class="btn btn-dark" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#topo" class="brand">AMARASÍ<small>ESTÉTICA · LANE COSTA</small></a>
+      <p>Estética facial e corporal em Candeias, Jaboatão dos Guararapes. Cuidado, técnica e autoestima em cada atendimento.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegar</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#localizacao">Onde Estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5581995475841" target="_blank" rel="noopener">WhatsApp: (81) 99547-5841</a>
+      <a href="https://www.instagram.com/lanecostaamarasi" target="_blank" rel="noopener">Instagram @lanecostaamarasi</a>
+      <p>Av. Presidente Kennedy, 1341 — sala 20, Candeias · Jaboatão - PE</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Amarasí Estética · Lane Costa. Todos os direitos reservados.</span>
+    <span>Candeias · Jaboatão dos Guararapes · PE</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5581995475841" class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.039zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

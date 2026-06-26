@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bioclinic Estética Avançada — Estética avançada em São Luís | Dra. Fabiana Tavares</title>
+<meta name="description" content="Clínica de estética avançada no Cohatrac, São Luís - MA. Tratamentos faciais e corporais com responsável técnica registrada (CRBM). Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Superfície */
+  --bg-base:#faf6f3;
+  --bg-surface:#ffffff;
+  --bg-inset:#f3ebe6;
+  --bg-dark:#241a18;
+
+  /* Texto */
+  --text-primary:#241a18;
+  --text-secondary:#5a4d49;
+  --text-muted:#9a8a83;
+  --text-inverse:#faf6f3;
+
+  /* Acento marca (rosé da fachada) */
+  --accent:#c0857d;
+  --accent-dark:#9d685f;
+  --accent-subtle:rgba(192,133,125,.10);
+  --accent-border:rgba(192,133,125,.22);
+
+  /* Metálico secundário */
+  --gold:#c9a84c;
+  --gold-light:#e0c068;
+
+  /* Sombras 3 camadas */
+  --shadow-sm:0 1px 2px rgba(36,26,24,.04),0 2px 6px rgba(36,26,24,.05);
+  --shadow-md:0 2px 4px rgba(36,26,24,.04),0 8px 18px rgba(36,26,24,.07),0 20px 40px rgba(36,26,24,.05);
+  --shadow-lg:0 4px 8px rgba(36,26,24,.05),0 16px 32px rgba(36,26,24,.07),0 40px 80px rgba(36,26,24,.10);
+  --shadow-accent:0 8px 24px rgba(157,104,95,.32);
+  --shadow-accent-strong:0 14px 36px rgba(157,104,95,.42);
+
+  /* Tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4vw,5.4rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.3rem,1rem + 1.2vw,1.85rem);
+  --text-body:clamp(.95rem,.88rem + .3vw,1.05rem);
+  --text-sm:clamp(.78rem,.72rem + .2vw,.875rem);
+  --lh-display:1.04;
+  --lh-heading:1.14;
+  --lh-body:1.72;
+  --ls-display:-.02em;
+
+  /* Espaço */
+  --section-pad:clamp(5rem,9vw,10rem);
+  --content-max:1200px;
+  --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  font-size:var(--text-body);
+  line-height:var(--lh-body);
+  color:var(--text-secondary);
+  background:var(--bg-base);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--text-primary);
+  font-weight:500;
+  line-height:var(--lh-heading);
+  font-optical-sizing:auto;
+  text-wrap:balance;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+.overline{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Inter',sans-serif;
+  font-size:.68rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-dark);margin-bottom:16px;
+}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.overline.center{justify-content:center}
+
+/* Botões */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.95rem clamp(1.5rem,3vw,2.3rem);
+  min-height:50px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;
+  font-family:'Inter',sans-serif;
+  font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:50px;
+  box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-primary);
+  padding:.6rem 0;border-bottom:1px solid var(--accent-border);
+  transition:color .25s ease,border-color .25s ease;
+}
+.btn-ghost:hover{color:var(--accent-dark);border-color:var(--accent-dark)}
+.wa-ico{width:18px;height:18px;flex:none}
+
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+header.scrolled{
+  background:rgba(36,26,24,.92);
+  backdrop-filter:blur(12px) saturate(150%);
+  -webkit-backdrop-filter:blur(12px) saturate(150%);
+  box-shadow:0 1px 0 rgba(192,133,125,.25);
+  padding-top:12px;padding-bottom:12px;
+}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:#fff;letter-spacing:.01em;line-height:1}
+.brand span{display:block;font-family:'Inter',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.lnk{font-size:.82rem;font-weight:400;color:rgba(250,246,243,.82);letter-spacing:.02em;transition:color .25s ease}
+.nav a.lnk:hover{color:#fff}
+.nav .btn-head{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#fff;
+  padding:.6rem 1.2rem;border-radius:50px;
+  font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  transition:transform .25s ease,background .25s ease;
+}
+.nav .btn-head:hover{transform:translateY(-2px);background:var(--accent-dark)}
+@media(max-width:860px){.nav a.lnk{display:none}}
+
+/* HERO — Modelo B split 40/60 */
+.hero{
+  display:grid;grid-template-columns:2fr 3fr;
+  min-height:100dvh;
+}
+.hero-copy{
+  position:relative;
+  background:linear-gradient(165deg,#2c201d 0%,var(--bg-dark) 60%,#1c1311 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(5.5rem,10vh,8rem) clamp(1.8rem,4vw,4rem) clamp(2.5rem,5vh,4rem);
+  overflow:hidden;
+}
+.hero-copy::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.05;pointer-events:none;
+}
+.hero-copy>*{position:relative;z-index:1}
+.hero-seal{
+  display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16);
+  padding:8px 15px;border-radius:50px;margin-bottom:26px;
+}
+.hero-seal .stars{color:var(--gold-light);font-size:.8rem;letter-spacing:1px}
+.hero-seal .txt{font-size:.72rem;font-weight:500;letter-spacing:.04em;color:rgba(250,246,243,.9)}
+.hero-title{
+  font-size:var(--text-display);
+  letter-spacing:var(--ls-display);
+  line-height:var(--lh-display);
+  color:#fff;max-width:13ch;
+  margin-bottom:24px;overflow:hidden;
+}
+.hero-title .ln{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(110%);opacity:0;animation:word-up .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic;color:var(--accent);font-weight:400}
+.hero-title .word:nth-child(1){animation-delay:.15s}
+.hero-title .word:nth-child(2){animation-delay:.27s}
+.hero-title .word:nth-child(3){animation-delay:.39s}
+.hero-title .word:nth-child(4){animation-delay:.51s}
+@keyframes word-up{to{transform:translateY(0);opacity:1}}
+.hero-sub{
+  color:rgba(250,246,243,.78);font-size:1.02rem;line-height:1.7;
+  max-width:42ch;margin-bottom:34px;
+  opacity:0;animation:fade-in 1s ease .8s forwards;
+}
+@keyframes fade-in{to{opacity:1}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center;opacity:0;animation:fade-in 1s ease 1s forwards}
+.hero-actions .btn-ghost{color:rgba(250,246,243,.85);border-color:rgba(255,255,255,.22)}
+.hero-actions .btn-ghost:hover{color:#fff;border-color:#fff}
+.hero-img{position:relative;overflow:hidden;min-height:48vh}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  animation:kb 24s ease-in-out infinite alternate;
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(36,26,24,.45) 0%,transparent 28%);
+}
+.hero-credit{
+  position:absolute;left:24px;bottom:22px;z-index:2;
+  font-family:'Cormorant Garamond',serif;color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.hero-credit b{display:block;font-size:1.25rem;font-weight:600;line-height:1.1}
+.hero-credit span{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{height:60vw;min-height:340px;order:-1}
+  .hero-copy{padding-top:6rem}
+}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.06s}
+.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}
+.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.30s}
+
+/* SOBRE */
+.sobre{background:var(--bg-base)}
+.sobre-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,5rem);align-items:center;
+}
+.sobre-imgs{position:relative}
+.sobre-imgs .main{
+  border-radius:8px;box-shadow:var(--shadow-lg);width:100%;
+  aspect-ratio:4/5;object-fit:cover;
+}
+.sobre-imgs .float{
+  position:absolute;right:-18px;bottom:-26px;width:46%;
+  border-radius:8px;border:6px solid var(--bg-base);
+  box-shadow:var(--shadow-md);aspect-ratio:1/1;object-fit:cover;
+}
+.sobre-imgs .badge{
+  position:absolute;left:-16px;top:26px;z-index:3;
+  background:var(--bg-dark);color:#fff;
+  padding:16px 20px;border-radius:8px;box-shadow:var(--shadow-md);
+  text-align:center;
+}
+.sobre-imgs .badge b{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;line-height:1;display:block;color:var(--gold-light)}
+.sobre-imgs .badge span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.sobre h2{font-size:var(--text-h2);margin-bottom:22px;max-width:16ch}
+.sobre h2 em{font-style:italic;color:var(--accent-dark)}
+.sobre p{margin-bottom:18px;max-width:var(--prose-max)}
+.sign{margin-top:28px;display:flex;align-items:center;gap:16px}
+.sign .nm{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);line-height:1}
+.sign .rt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;display:block}
+.sign .line{width:48px;height:1px;background:var(--accent)}
+@media(max-width:820px){
+  .sobre-grid{grid-template-columns:1fr;gap:4rem}
+  .sobre-imgs{max-width:440px;margin:0 auto}
+}
+
+/* PROCEDIMENTOS */
+.proc{
+  background:var(--bg-inset);position:relative;
+  clip-path:polygon(0 0,100% 4vw,100% 100%,0 100%);
+  margin-top:-2vw;padding-top:calc(var(--section-pad) + 4vw);
+}
+.proc-head{max-width:var(--content-max);margin:0 auto clamp(2.5rem,5vw,4rem)}
+.proc-head h2{font-size:var(--text-h2);max-width:18ch}
+.proc-head h2 em{font-style:italic;color:var(--accent-dark)}
+.proc-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--gap-cards);
+}
+.serv-card{
+  background:var(--bg-surface);border-radius:10px;overflow:hidden;
+  border:1px solid rgba(36,26,24,.06);
+  box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border);border-color:var(--accent-border)}
+.serv-card .ph{aspect-ratio:3/2;overflow:hidden}
+.serv-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .ph img{transform:scale(1.06)}
+.serv-body{padding:26px 26px 30px}
+.serv-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--accent);display:block;margin-bottom:8px}
+.serv-card h3{font-size:var(--text-h3);margin-bottom:10px}
+.serv-card p{font-size:.92rem;line-height:1.65}
+.serv-card.text-only{justify-content:center;background:linear-gradient(160deg,#2c201d,var(--bg-dark));border:none}
+.serv-card.text-only .serv-body{padding:34px 28px}
+.serv-card.text-only h3{color:#fff}
+.serv-card.text-only p{color:rgba(250,246,243,.78)}
+.serv-card.text-only .serv-num{color:var(--gold-light)}
+
+/* PROVA / FAIXA ESCURA */
+.prova{
+  background:var(--bg-dark);position:relative;overflow:hidden;
+  color:var(--text-inverse);
+}
+.prova::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;pointer-events:none;z-index:0;
+}
+.prova-inner{position:relative;z-index:1;max-width:var(--content-max);margin:0 auto}
+.prova-top{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.prova h2{color:#fff;font-size:var(--text-h2);max-width:16ch}
+.prova h2 em{font-style:italic;color:var(--accent)}
+.prova .lead{color:rgba(250,246,243,.78);max-width:46ch}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap-cards)}
+.quote{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:28px 26px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.quote .stars{color:var(--gold-light);font-size:.85rem;letter-spacing:2px;margin-bottom:14px}
+.quote p{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:400;font-style:italic;color:#fff;line-height:1.4;margin-bottom:18px}
+.quote .who{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,243,.6)}
+.stats{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,5vw,4rem);margin-top:clamp(2.5rem,5vw,4rem);padding-top:clamp(2rem,4vw,3rem);border-top:1px solid rgba(255,255,255,.12)}
+.stat b{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3rem);font-weight:600;color:var(--gold-light);display:block;line-height:1}
+.stat span{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,243,.7);margin-top:6px;display:block}
+@media(max-width:760px){.prova-top{grid-template-columns:1fr;gap:1.4rem}}
+
+/* GALERIA */
+.galeria{background:var(--bg-base)}
+.galeria-head{max-width:var(--content-max);margin:0 auto 2.6rem;text-align:center}
+.galeria-head h2{font-size:var(--text-h2)}
+.galeria-head h2 em{font-style:italic;color:var(--accent-dark)}
+.gal-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  grid-auto-rows:200px;
+}
+.gal-grid figure{overflow:hidden;border-radius:8px;box-shadow:var(--shadow-sm)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+.gal-grid .tall{grid-row:span 2}
+.gal-grid .wide{grid-column:span 2}
+@media(max-width:760px){
+  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+  .gal-grid .wide{grid-column:span 2}
+  .gal-grid .tall{grid-row:span 1}
+}
+
+/* LOCALIZACAO */
+.local{background:var(--bg-inset)}
+.local-grid{
+  max-width:var(--content-max);margin:0 auto;
+  display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+}
+.local-info h2{font-size:var(--text-h2);margin-bottom:24px;max-width:14ch}
+.local-info h2 em{font-style:italic;color:var(--accent-dark)}
+.info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(36,26,24,.09)}
+.info-row:last-of-type{border-bottom:none}
+.info-row .ic{width:22px;height:22px;flex:none;color:var(--accent-dark);margin-top:2px}
+.info-row .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px}
+.info-row .v{color:var(--text-primary);font-weight:500}
+.info-row a.v:hover{color:var(--accent-dark)}
+.local-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px}
+.local-photo{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:3/4}
+.local-photo img{width:100%;height:100%;object-fit:cover}
+.local-photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(transparent,rgba(36,26,24,.85));
+  color:#fff;padding:40px 22px 20px;font-size:.82rem;letter-spacing:.04em;
+}
+@media(max-width:820px){.local-grid{grid-template-columns:1fr;gap:3rem}}
+
+/* CTA FINAL */
+.cta-final{background:var(--bg-base);text-align:center}
+.cta-final .inner{
+  max-width:760px;margin:0 auto;
+  background:linear-gradient(160deg,#2c201d,var(--bg-dark));
+  border-radius:16px;padding:clamp(2.6rem,6vw,4.5rem) clamp(1.5rem,5vw,3rem);
+  position:relative;overflow:hidden;box-shadow:var(--shadow-lg);
+}
+.cta-final .inner::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;pointer-events:none;
+}
+.cta-final .inner>*{position:relative;z-index:1}
+.cta-final h2{color:#fff;font-size:var(--text-h2);max-width:18ch;margin:0 auto 16px}
+.cta-final h2 em{font-style:italic;color:var(--accent)}
+.cta-final p{color:rgba(250,246,243,.78);max-width:48ch;margin:0 auto 30px}
+
+/* FOOTER */
+footer{background:var(--bg-dark);color:rgba(250,246,243,.7);padding:clamp(3rem,6vw,4.5rem) clamp(1.5rem,6vw,5rem) 2rem}
+.foot-grid{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.4rem}
+.foot-brand .brand{color:#fff}
+.foot-brand p{margin-top:16px;max-width:34ch;font-size:.9rem}
+.foot-col h4{font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;margin-bottom:10px;color:rgba(250,246,243,.7);transition:color .25s ease}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:var(--content-max);margin:2.6rem auto 0;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.76rem;color:rgba(250,246,243,.5)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* WA FAB */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.45);
+  transition:transform .2s ease;
+}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab::before{content:'';position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero-img img{animation:none}
+  .hero-title .word,.hero-sub,.hero-actions{animation:none;opacity:1;transform:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  .wa-fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Bioclinic<span>Estética Avançada</span></a>
+  <nav class="nav">
+    <a class="lnk" href="#sobre">A Clínica</a>
+    <a class="lnk" href="#procedimentos">Procedimentos</a>
+    <a class="lnk" href="#prova">Resultados</a>
+    <a class="lnk" href="#localizacao">Onde estamos</a>
+    <a class="btn-head" href="https://wa.me/5598988111576" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm5.49-5.461c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Agendar
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="topo" class="hero" style="padding:0">
+  <div class="hero-copy">
+    <span class="hero-seal"><span class="stars">★★★★★</span><span class="txt">5,0 no Google</span></span>
+    <h1 class="hero-title">
+      <span class="ln"><span class="word">Estética</span></span>
+      <span class="ln"><span class="word">avançada</span></span>
+      <span class="ln"><span class="word">com</span> <span class="word"><em>confiança.</em></span></span>
+    </h1>
+    <p class="hero-sub">Tratamentos faciais e corporais no Cohatrac, em São Luís, conduzidos por responsável técnica registrada (CRBM). Cuidado de verdade com a sua pele — e o seu bem-estar.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5598988111576" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm5.49-5.461c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Agendar avaliação
+      </a>
+      <a class="btn-ghost" href="#procedimentos">Ver procedimentos</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="imagens/insta-1.jpg" alt="Dra. Fabiana Tavares, responsável técnica da Bioclinic Estética Avançada">
+    <div class="hero-credit"><b>Dra. Fabiana Tavares</b><span>Biomédica esteta · CRBM 11622</span></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-imgs reveal">
+      <img class="main" src="imagens/web-02.jpg" alt="Ambiente acolhedor da Bioclinic Estética Avançada">
+      <img class="float" src="imagens/web-01.jpg" alt="Tratamento facial na Bioclinic">
+      <div class="badge"><b>5,0</b><span>no Google</span></div>
+    </div>
+    <div class="sobre-text">
+      <p class="overline reveal">A Clínica</p>
+      <h2 class="reveal">Cada protocolo pensado para a <em>saúde</em> e a beleza da mulher.</h2>
+      <p class="reveal">A Bioclinic Estética Avançada nasceu para entregar, em São Luís, um atendimento que une técnica e acolhimento. Aqui a estética é tratada com seriedade clínica: avaliação individual, protocolos seguros e acompanhamento de quem entende de pele de verdade.</p>
+      <p class="reveal">À frente dos procedimentos está a Dra. Fabiana Tavares, biomédica esteta com registro profissional (CRBM 11622). É essa combinação de conhecimento e cuidado que fez a clínica chegar à nota máxima no Google — e fideliza quem passa por aqui.</p>
+      <div class="sign reveal">
+        <span class="line"></span>
+        <div>
+          <span class="nm">Dra. Fabiana Tavares</span>
+          <span class="rt">Responsável técnica · CRBM 11622</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section id="procedimentos" class="proc">
+  <div class="proc-head">
+    <p class="overline reveal">Procedimentos</p>
+    <h2 class="reveal">Tratamentos faciais e corporais para você se sentir <em>bem</em> na própria pele.</h2>
+  </div>
+  <div class="proc-grid">
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-01.jpg" alt="Limpeza de pele profunda"></div>
+      <div class="serv-body">
+        <span class="serv-num">01</span>
+        <h3>Limpeza de Pele Profunda</h3>
+        <p>Higienização, esfoliação e extração para uma pele renovada, livre de impurezas e com viço de volta.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-03.jpg" alt="Peeling e revitalização facial"></div>
+      <div class="serv-body">
+        <span class="serv-num">02</span>
+        <h3>Peeling &amp; Revitalização</h3>
+        <p>Estímulo de colágeno e renovação celular para suavizar manchas, marcas de acne e linhas de expressão.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-05.jpg" alt="Harmonização e preenchimento facial"></div>
+      <div class="serv-body">
+        <span class="serv-num">03</span>
+        <h3>Harmonização Facial</h3>
+        <p>Preenchimento e procedimentos avançados com resultado natural e harmonioso — realçar sem exagerar.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-04.jpg" alt="Massagem modeladora corporal"></div>
+      <div class="serv-body">
+        <span class="serv-num">04</span>
+        <h3>Modeladora Corporal</h3>
+        <p>Massagem modeladora e protocolos corporais para contorno, firmeza e bem-estar de corpo inteiro.</p>
+      </div>
+    </article>
+    <article class="serv-card reveal">
+      <div class="ph"><img src="imagens/web-02.jpg" alt="Protocolo de bem-estar e cuidado"></div>
+      <div class="serv-body">
+        <span class="serv-num">05</span>
+        <h3>Revitalização &amp; Bem-estar</h3>
+        <p>Protocolos personalizados de cuidado contínuo, num ambiente pensado para você relaxar e se cuidar.</p>
+      </div>
+    </article>
+    <article class="serv-card text-only reveal">
+      <div class="serv-body">
+        <span class="serv-num">+</span>
+        <h3>Avaliação personalizada</h3>
+        <p>Cada pele é única. Conte o que você quer melhorar e a Dra. Fabiana indica o protocolo certo pra você. Fale agora pelo WhatsApp.</p>
+        <p style="margin-top:18px"><a class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3)" href="https://wa.me/5598988111576" target="_blank" rel="noopener">Falar com a clínica →</a></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section id="prova" class="prova">
+  <div class="prova-inner">
+    <div class="prova-top">
+      <div>
+        <p class="overline reveal">Quem cuida aqui, volta</p>
+        <h2 class="reveal">Nota <em>5,0</em> construída uma cliente de cada vez.</h2>
+      </div>
+      <p class="lead reveal">A confiança das clientes da Bioclinic não está em promessa: está na avaliação máxima no Google e em quem indica a clínica para amigas e família em São Luís.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Atendimento impecável e resultado que eu via no espelho. Saí da limpeza de pele com a autoestima lá em cima.”</p>
+        <span class="who">Cliente · São Luís, MA</span>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“A Dra. Fabiana explica tudo, é cuidadosa e profissional. Confio totalmente na minha pele com ela.”</p>
+        <span class="who">Cliente · Cohatrac</span>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Ambiente acolhedor, hora marcada respeitada e procedimento seguro. Virei cliente fiel da Bioclinic.”</p>
+        <span class="who">Cliente · São Luís, MA</span>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b>5,0</b><span>Avaliação no Google</span></div>
+      <div class="stat reveal"><b>CRBM</b><span>Responsável técnica registrada</span></div>
+      <div class="stat reveal"><b>100%</b><span>Protocolos personalizados</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria">
+  <div class="galeria-head reveal">
+    <p class="overline center">Galeria</p>
+    <h2>Um pouco da <em>experiência</em> Bioclinic</h2>
+  </div>
+  <div class="gal-grid">
+    <figure class="tall reveal"><img src="imagens/web-01.jpg" alt="Tratamento facial com máscara"></figure>
+    <figure class="wide reveal"><img src="imagens/web-02.jpg" alt="Ambiente de cuidado e relaxamento"></figure>
+    <figure class="reveal"><img src="imagens/web-05.jpg" alt="Revitalização facial"></figure>
+    <figure class="reveal"><img src="imagens/web-03.jpg" alt="Tecnologia em cuidado da pele"></figure>
+    <figure class="wide reveal"><img src="imagens/web-04.jpg" alt="Massagem modeladora corporal"></figure>
+    <figure class="reveal"><img src="imagens/maps-1.jpg" alt="Fachada da Bioclinic Estética Avançada"></figure>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section id="localizacao" class="local">
+  <div class="local-grid">
+    <div class="local-info">
+      <p class="overline reveal">Onde estamos</p>
+      <h2 class="reveal">Pertinho de você, no <em>Cohatrac</em>.</h2>
+      <div class="reveal">
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="k">Endereço</div><div class="v">Av. Contorno Sul, Residencial Primavera 27G, Quadra 8 — Cohatrac, São Luís - MA, 65010-000</div></div>
+        </div>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="k">WhatsApp / Telefone</div><a class="v" href="https://wa.me/5598988111576" target="_blank" rel="noopener">(98) 98811-1576</a></div>
+        </div>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="k">Atendimento</div><div class="v">Com hora marcada — agende pelo WhatsApp</div></div>
+        </div>
+        <div class="info-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <div><div class="k">Instagram</div><a class="v" href="https://www.instagram.com/bioclinic_esteticavancada/" target="_blank" rel="noopener">@bioclinic_esteticavancada</a></div>
+        </div>
+      </div>
+      <div class="local-actions reveal">
+        <a class="btn-primary" href="https://wa.me/5598988111576" target="_blank" rel="noopener">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm5.49-5.461c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn-ghost" href="https://www.google.com/maps/place/Bioclinic+Est%C3%A9tica+Avan%C3%A7ada/@-2.5409167,-44.1997157,17z/data=!3m1!4b1!4m6!3m5!1s0x7f6914d820b578d:0x76df32f6ce28205f!8m2!3d-2.5409167!4d-44.1997157" target="_blank" rel="noopener">Ver no Google Maps →</a>
+      </div>
+    </div>
+    <figure class="local-photo reveal">
+      <img src="imagens/maps-1.jpg" alt="Fachada da Bioclinic Estética Avançada no Cohatrac, São Luís">
+      <figcaption>Bioclinic Estética Avançada · Cohatrac, São Luís - MA</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="inner">
+    <p class="overline center reveal" style="color:var(--accent)">Vamos cuidar de você</p>
+    <h2 class="reveal">Sua próxima avaliação está a <em>uma mensagem</em> de distância.</h2>
+    <p class="reveal">Conte o que você quer melhorar na sua pele ou no seu corpo. A Bioclinic responde no WhatsApp e ajuda você a marcar o melhor horário.</p>
+    <a class="btn-primary reveal" href="https://wa.me/5598988111576" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm5.49-5.461c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Falar agora no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <span class="brand">Bioclinic<span>Estética Avançada</span></span>
+      <p>Estética avançada com responsável técnica registrada. Cuidando da saúde e da beleza da mulher em São Luís - MA.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegação</h4>
+      <a href="#sobre">A Clínica</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#prova">Resultados</a>
+      <a href="#localizacao">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5598988111576" target="_blank" rel="noopener">(98) 98811-1576</a>
+      <a href="https://www.instagram.com/bioclinic_esteticavancada/" target="_blank" rel="noopener">@bioclinic_esteticavancada</a>
+      <p>Cohatrac, São Luís - MA</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Bioclinic Estética Avançada. Todos os direitos reservados.</span>
+    <span>Responsável técnica: Dra. Fabiana Tavares · CRBM 11622</span>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5598988111576" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.043zm5.49-5.461c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

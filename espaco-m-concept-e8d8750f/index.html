@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espaço M Concept — Estética & Autocuidado em Cuiabá</title>
+<meta name="description" content="Estética premium na Morada do Ouro, em Cuiabá. Limpeza de pele, revitalização facial e massagem. Nota 4.8 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* superfícies */
+  --bg-base:#f7f2ec; --bg-surface:#fffdfa; --bg-inset:#efe6db; --bg-dark:#221813;
+  /* texto */
+  --text-primary:#2a201a; --text-secondary:#5a4d44; --text-muted:#94877c; --text-inverse:#f6ede4;
+  /* acento marca */
+  --accent:#a86b4a; --accent-dark:#854f33;
+  --accent-subtle:rgba(168,107,74,.10); --accent-border:rgba(168,107,74,.22);
+  --gold:#c9a84c; --gold-light:#e0c068;
+  /* sombras */
+  --shadow-sm:0 1px 2px rgba(40,30,20,.04),0 2px 6px rgba(40,30,20,.05);
+  --shadow-md:0 2px 4px rgba(40,30,20,.04),0 8px 18px rgba(40,30,20,.07),0 20px 40px rgba(40,30,20,.05);
+  --shadow-lg:0 4px 8px rgba(40,30,20,.05),0 16px 32px rgba(40,30,20,.08),0 40px 80px rgba(40,30,20,.10);
+  --shadow-accent:0 6px 20px rgba(168,107,74,.32);
+  --shadow-accent-strong:0 12px 30px rgba(168,107,74,.42);
+  /* tipografia fluida */
+  --text-display:clamp(2.8rem,2rem + 4.4vw,5.6rem);
+  --text-h2:clamp(1.9rem,1.3rem + 2.5vw,3rem);
+  --text-h3:clamp(1.25rem,1rem + 1.1vw,1.75rem);
+  --text-body:clamp(0.95rem,0.88rem + 0.3vw,1.05rem);
+  --text-sm:clamp(0.78rem,0.72rem + 0.2vw,0.875rem);
+  --lh-display:1.04; --lh-heading:1.14; --lh-body:1.75;
+  /* ritmo */
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1180px; --prose-max:660px;
+  --gap-cards:clamp(1rem,2.5vw,2rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif; font-weight:400;
+  font-size:var(--text-body); line-height:var(--lh-body);
+  color:var(--text-primary); background:var(--bg-base);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif; font-weight:500; line-height:var(--lh-heading); font-optical-sizing:auto; text-wrap:balance}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--content-max); margin:0 auto; width:100%}
+
+/* ── overline ── */
+.overline{display:inline-flex; align-items:center; gap:10px; font-family:'Nunito Sans',sans-serif;
+  font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:16px}
+.overline::before{content:''; width:30px; height:1px; background:currentColor; opacity:.7}
+.overline.center{justify-content:center}
+
+/* ── botões ── */
+.btn-primary{display:inline-flex; align-items:center; gap:11px; padding:1rem clamp(1.6rem,3vw,2.3rem);
+  min-height:52px; background:linear-gradient(135deg,var(--accent),var(--accent-dark)); color:#fff;
+  font-family:'Nunito Sans',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase;
+  border-radius:50px; box-shadow:var(--shadow-accent);
+  transition:transform .3s cubic-bezier(.23,1,.32,1),box-shadow .3s ease;
+  will-change:transform; -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow-accent-strong)}
+.btn-primary:active{transform:translateY(-1px)}
+.btn-ghost{display:inline-flex; align-items:center; gap:10px; padding:.9rem 1.6rem; min-height:48px;
+  font-weight:700; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-primary);
+  border:1px solid var(--accent-border); border-radius:50px; background:transparent;
+  transition:background .3s ease,border-color .3s ease,transform .3s cubic-bezier(.22,1,.36,1);
+  -webkit-tap-highlight-color:transparent; touch-action:manipulation}
+.btn-ghost:hover{background:var(--accent-subtle); border-color:var(--accent); transform:translateY(-2px)}
+.btn-primary svg,.btn-ghost svg{width:18px; height:18px; flex-shrink:0}
+
+/* ── header ── */
+header{position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px clamp(1.5rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between;
+  transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(34,24,19,.92); backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%); box-shadow:0 1px 0 rgba(201,168,76,.22); padding-top:13px; padding-bottom:13px}
+.brand{font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:600; color:#fff; letter-spacing:.01em}
+.brand span{color:var(--gold-light)}
+.brand small{display:block; font-family:'Nunito Sans',sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:rgba(246,237,228,.7); margin-top:1px}
+.nav{display:flex; align-items:center; gap:30px}
+.nav a.lnk{font-size:.82rem; font-weight:600; letter-spacing:.03em; color:rgba(246,237,228,.85); transition:color .25s ease}
+.nav a.lnk:hover{color:var(--gold-light)}
+.nav .btn-head{display:inline-flex; align-items:center; gap:8px; padding:.6rem 1.2rem; min-height:42px;
+  background:var(--gold); color:#221813; font-weight:700; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  border-radius:50px; transition:transform .25s ease,background .25s ease; touch-action:manipulation}
+.nav .btn-head:hover{transform:translateY(-2px); background:var(--gold-light)}
+@media(max-width:780px){.nav a.lnk{display:none}}
+
+/* ── HERO (Modelo A cinematic full-bleed) ── */
+.hero{position:relative; min-height:100dvh; display:grid; align-items:end; overflow:hidden}
+.hero-bg{position:absolute; inset:0; background:url('imagens/web-01.jpg') center 30%/cover no-repeat;
+  animation:kb 24s ease-in-out infinite alternate; will-change:transform}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero::after{content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px; opacity:.05}
+.hero-overlay{position:absolute; inset:0; z-index:1;
+  background:linear-gradient(155deg,rgba(34,24,19,.25) 30%,rgba(34,24,19,.74) 74%,rgba(20,13,9,.94) 100%)}
+.hero-content{position:relative; z-index:2; width:100%; max-width:var(--content-max); margin:0 auto;
+  padding:0 clamp(1.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);
+  display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap}
+.hero-left{max-width:760px}
+.hero-eyebrow{color:var(--gold-light)}
+.hero-eyebrow::before{background:var(--gold-light)}
+.hero-title{font-size:var(--text-display); line-height:var(--lh-display); letter-spacing:-.02em; color:#fff; max-width:15ch}
+.hero-title .ln{display:block; overflow:hidden}
+.hero-title .word{display:inline-block; transform:translateY(110%); opacity:0; animation:wordUp .85s cubic-bezier(.22,1,.36,1) forwards}
+.hero-title em{font-style:italic; color:var(--gold-light)}
+.hero-title .ln:nth-child(1) .word{animation-delay:.25s}
+.hero-title .ln:nth-child(2) .word{animation-delay:.38s}
+.hero-title .ln:nth-child(3) .word{animation-delay:.51s}
+@keyframes wordUp{to{transform:translateY(0);opacity:1}}
+.hero-sub{color:rgba(246,237,228,.9); font-size:clamp(1rem,.92rem + .4vw,1.18rem); max-width:46ch; margin:22px 0 30px;
+  opacity:0; animation:fadeIn 1s ease .8s forwards}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap; opacity:0; animation:fadeIn 1s ease 1s forwards}
+@keyframes fadeIn{to{opacity:1}}
+.hero-badge{display:flex; flex-direction:column; gap:6px; padding:20px 26px; border-radius:18px; align-self:flex-end;
+  background:rgba(255,255,255,.08); backdrop-filter:blur(13px) saturate(160%); -webkit-backdrop-filter:blur(13px) saturate(160%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 2px 4px rgba(0,0,0,.1),0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0; animation:fadeIn 1s ease 1.15s forwards}
+.hero-badge .stars{color:var(--gold-light); font-size:1rem; letter-spacing:2px}
+.hero-badge .num{font-family:'Playfair Display',serif; font-size:2.4rem; color:#fff; line-height:1}
+.hero-badge .lbl{font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(246,237,228,.78)}
+.scroll-hint{position:absolute; bottom:22px; left:50%; transform:translateX(-50%); z-index:2;
+  font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:rgba(246,237,228,.6); display:flex; flex-direction:column; align-items:center; gap:8px}
+.scroll-hint::after{content:''; width:1px; height:34px; background:linear-gradient(rgba(246,237,228,.6),transparent); animation:hint 2s ease-in-out infinite}
+@keyframes hint{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:560px){.hero-badge{padding:15px 18px}.hero-badge .num{font-size:1.9rem}}
+
+/* ── reveal ── */
+.reveal{opacity:0; transform:translateY(30px);
+  transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal:nth-child(2){transition-delay:.06s}.reveal:nth-child(3){transition-delay:.12s}
+.reveal:nth-child(4){transition-delay:.18s}.reveal:nth-child(5){transition-delay:.24s}
+.reveal:nth-child(6){transition-delay:.3s}
+
+section{padding:var(--section-pad) clamp(1.5rem,6vw,5rem)}
+
+/* ── SOBRE (corte diagonal no topo) ── */
+.sobre{position:relative; background:var(--bg-base); clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);
+  margin-top:-4vw; padding-top:calc(var(--section-pad) + 4vw)}
+.sobre-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,5rem); align-items:center; max-width:var(--content-max); margin:0 auto}
+.sobre-fig{position:relative}
+.sobre-fig img{width:100%; height:clamp(360px,46vw,560px); object-fit:cover; border-radius:6px 6px 80px 6px; box-shadow:var(--shadow-lg)}
+.sobre-fig .tag{position:absolute; bottom:-26px; right:-10px; background:var(--bg-dark); color:var(--text-inverse);
+  padding:18px 24px; border-radius:14px; box-shadow:var(--shadow-md); max-width:230px}
+.sobre-fig .tag b{font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold-light); display:block}
+.sobre-fig .tag span{font-size:.78rem; color:rgba(246,237,228,.8)}
+.sobre h2{font-size:var(--text-h2); letter-spacing:-.01em; margin-bottom:20px; max-width:16ch}
+.sobre h2 em{font-style:italic; color:var(--accent)}
+.sobre p{color:var(--text-secondary); margin-bottom:18px; max-width:var(--prose-max)}
+.sobre .mini{display:flex; gap:30px; margin-top:30px; flex-wrap:wrap}
+.sobre .mini div b{font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--accent); display:block; line-height:1}
+.sobre .mini div span{font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted)}
+@media(max-width:860px){.sobre-grid{grid-template-columns:1fr}.sobre-fig{order:-1}.sobre-fig .tag{right:10px}}
+
+/* ── PROCEDIMENTOS ── */
+.proc{background:var(--bg-inset)}
+.proc-head{max-width:var(--content-max); margin:0 auto 50px; text-align:center; display:flex; flex-direction:column; align-items:center}
+.proc-head h2{font-size:var(--text-h2); max-width:18ch}
+.proc-head p{color:var(--text-secondary); max-width:54ch; margin-top:14px}
+.proc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--gap-cards); max-width:var(--content-max); margin:0 auto}
+.serv-card{position:relative; background:var(--bg-surface); border:1px solid rgba(168,107,74,.1); border-radius:16px; padding:34px 30px;
+  box-shadow:var(--shadow-sm); overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .25s ease}
+.serv-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-md),0 0 0 1px var(--accent-border); border-color:var(--accent-border)}
+.serv-card .idx{font-family:'Playfair Display',serif; font-size:.95rem; color:var(--accent); letter-spacing:.05em}
+.serv-card .ol{display:block; font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); margin:14px 0 8px}
+.serv-card h3{font-size:var(--text-h3); margin-bottom:10px}
+.serv-card p{font-size:.92rem; color:var(--text-secondary); line-height:1.65}
+.serv-card .line{width:34px; height:2px; background:var(--accent); margin-top:18px; opacity:.5; transition:width .35s cubic-bezier(.22,1,.36,1)}
+.serv-card:hover .line{width:58px; opacity:1}
+.proc-photos{display:grid; grid-template-columns:1.4fr 1fr; gap:var(--gap-cards); max-width:var(--content-max); margin:var(--gap-cards) auto 0}
+.proc-photos img{width:100%; height:clamp(220px,28vw,340px); object-fit:cover; border-radius:16px; box-shadow:var(--shadow-md)}
+@media(max-width:640px){.proc-photos{grid-template-columns:1fr}}
+
+/* ── PROVA SOCIAL (escura) ── */
+.prova{position:relative; background:var(--bg-dark); color:var(--text-inverse); overflow:hidden}
+.prova::before{content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px; opacity:.06}
+.prova .inner{position:relative; z-index:1; max-width:var(--content-max); margin:0 auto}
+.prova .top{display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; margin-bottom:48px}
+.prova h2{font-size:var(--text-h2); color:#fff; max-width:16ch}
+.prova h2 em{font-style:italic; color:var(--gold-light)}
+.prova .overline{color:var(--gold-light)}
+.prova .rating{display:flex; flex-direction:column; gap:4px; align-items:flex-end}
+.prova .rating .stars{color:var(--gold-light); letter-spacing:3px; font-size:1.2rem}
+.prova .rating b{font-family:'Playfair Display',serif; font-size:2.6rem; color:#fff; line-height:1}
+.prova .rating span{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(246,237,228,.7)}
+.depo-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--gap-cards)}
+.depo{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:28px 26px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.depo .q{font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--gold-light); line-height:.6; opacity:.6}
+.depo p{color:rgba(246,237,228,.9); font-size:.96rem; line-height:1.7; margin:10px 0 18px; font-style:italic; font-family:'Playfair Display',serif; font-weight:400}
+.depo .who{font-size:.8rem; font-weight:700; letter-spacing:.04em; color:#fff}
+.depo .who span{display:block; font-weight:400; color:rgba(246,237,228,.6); letter-spacing:.1em; font-size:.66rem; text-transform:uppercase; margin-top:3px}
+
+/* ── faixa CTA com foto ── */
+.band{position:relative; min-height:60vh; display:grid; align-items:center; overflow:hidden}
+.band-bg{position:absolute; inset:0; background:url('imagens/web-05.jpg') center/cover; animation:kb 26s ease-in-out infinite alternate}
+.band-ov{position:absolute; inset:0; background:linear-gradient(120deg,rgba(34,24,19,.86),rgba(34,24,19,.5))}
+.band .inner{position:relative; z-index:2; max-width:var(--content-max); margin:0 auto; padding:60px 0; color:#fff}
+.band h2{font-size:var(--text-h2); max-width:18ch; color:#fff}
+.band h2 em{font-style:italic; color:var(--gold-light)}
+.band p{color:rgba(246,237,228,.9); max-width:46ch; margin:16px 0 28px}
+
+/* ── LOCALIZAÇÃO ── */
+.local{background:var(--bg-base)}
+.local-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center; max-width:var(--content-max); margin:0 auto}
+.local h2{font-size:var(--text-h2); margin-bottom:8px; max-width:14ch}
+.local h2 em{font-style:italic; color:var(--accent)}
+.info-row{display:flex; gap:16px; padding:20px 0; border-bottom:1px solid rgba(168,107,74,.14)}
+.info-row:last-of-type{border-bottom:none}
+.info-row .ic{flex-shrink:0; width:42px; height:42px; border-radius:50%; background:var(--accent-subtle); display:flex; align-items:center; justify-content:center; color:var(--accent)}
+.info-row .ic svg{width:20px; height:20px}
+.info-row b{display:block; font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px}
+.info-row p{color:var(--text-primary); font-size:1rem; line-height:1.5}
+.info-row a{color:var(--accent); font-weight:600}
+.local .cta-row{margin-top:30px; display:flex; gap:14px; flex-wrap:wrap}
+.map-card{border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid rgba(168,107,74,.12)}
+.map-card iframe{width:100%; height:clamp(340px,42vw,480px); border:0; display:block; filter:saturate(.95)}
+@media(max-width:860px){.local-grid{grid-template-columns:1fr}.map-card{order:-1}}
+
+/* ── footer ── */
+footer{background:var(--bg-dark); color:var(--text-inverse); padding:clamp(3.5rem,6vw,5rem) clamp(1.5rem,6vw,5rem) 2.5rem}
+.foot-grid{max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap}
+.foot-brand .brand{font-size:1.6rem}
+.foot-brand p{color:rgba(246,237,228,.65); max-width:34ch; margin-top:14px; font-size:.92rem}
+.foot-col h4{font-family:'Nunito Sans',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px}
+.foot-col a,.foot-col p{display:block; color:rgba(246,237,228,.78); font-size:.92rem; margin-bottom:10px; transition:color .25s ease}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-bottom{max-width:var(--content-max); margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(246,237,228,.12);
+  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.78rem; color:rgba(246,237,228,.55)}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed; bottom:24px; right:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.45); transition:transform .2s ease; touch-action:manipulation}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px; height:30px; fill:#fff}
+.wa-fab::before{content:''; position:absolute; inset:-7px; border-radius:50%; border:2px solid rgba(37,211,102,.35);
+  animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hero-bg,.band-bg{animation:none}
+  .reveal,.hero-title .word,.hero-sub,.hero-cta,.hero-badge{transition:none; opacity:1; transform:none; animation:none}
+  .wa-fab::before,.scroll-hint::after{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="brand">Espaço M <span>Concept</span><small>Estética &amp; Autocuidado</small></a>
+  <nav class="nav">
+    <a href="#sobre" class="lnk">O Espaço</a>
+    <a href="#procedimentos" class="lnk">Procedimentos</a>
+    <a href="#prova" class="lnk">Avaliações</a>
+    <a href="#localizacao" class="lnk">Onde estamos</a>
+    <a href="https://wa.me/5565998023508" class="btn-head" target="_blank" rel="noopener">Agendar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="overline hero-eyebrow">Cuiabá · Morada do Ouro</span>
+      <h1 class="hero-title">
+        <span class="ln"><span class="word">Sua pele merece</span></span>
+        <span class="ln"><span class="word">um cuidado que</span></span>
+        <span class="ln"><span class="word"><em>se vê.</em></span></span>
+      </h1>
+      <p class="hero-sub">Estética premium e rituais de autocuidado pensados pra sua pele e pro seu tempo. Profissionais que tratam cada detalhe como ele merece.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/5565998023508" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.989-.607zm5.428-6.273c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#procedimentos" class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Ver procedimentos</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span class="stars">★★★★★</span>
+      <span class="num">4.8</span>
+      <span class="lbl">no Google</span>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Role</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-text reveal">
+      <span class="overline">O Espaço M Concept</span>
+      <h2>Um lugar pensado pra você <em>desacelerar</em> e cuidar de si</h2>
+      <p>Na Morada do Ouro, em Cuiabá, o Espaço M Concept reúne técnica e acolhimento em cada atendimento. Aqui a estética não é pressa: é um ritual, do momento em que você senta até a pele renovada na hora de ir embora.</p>
+      <p>Trabalhamos com avaliação individual, produtos de qualidade e mãos experientes — porque cada pele tem uma necessidade e cada cliente, um tempo. O resultado aparece no espelho e na confiança de quem sai daqui.</p>
+      <div class="mini">
+        <div><b>4.8</b><span>Nota no Google</span></div>
+        <div><b>100%</b><span>Atendimento individual</span></div>
+        <div><b>Cuiabá</b><span>Morada do Ouro</span></div>
+      </div>
+    </div>
+    <figure class="sobre-fig reveal">
+      <img src="imagens/web-02.jpg" alt="Sessão de massagem relaxante no Espaço M Concept" loading="lazy">
+      <div class="tag"><b>Cada detalhe</b><span>cuidado como ele merece</span></div>
+    </figure>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section class="proc" id="procedimentos">
+  <div class="proc-head reveal">
+    <span class="overline center">Procedimentos</span>
+    <h2>Cuidados sob medida pra sua pele e seu bem-estar</h2>
+    <p>Da limpeza de pele à massagem relaxante, cada protocolo é escolhido a partir de uma avaliação. Sem fórmula pronta — o cuidado certo pra você.</p>
+  </div>
+  <div class="proc-grid">
+    <article class="serv-card reveal">
+      <span class="idx">01</span>
+      <span class="ol">Pele</span>
+      <h3>Limpeza de Pele Profunda</h3>
+      <p>Higienização, extração e hidratação para uma pele limpa, leve e com viço renovado. Ideal pra quem quer aquela sensação de pele nova.</p>
+      <div class="line"></div>
+    </article>
+    <article class="serv-card reveal">
+      <span class="idx">02</span>
+      <span class="ol">Facial</span>
+      <h3>Revitalização Facial</h3>
+      <p>Protocolos de revitalização com massagem e ativos que devolvem firmeza, luminosidade e maciez ao rosto. Resultado que se nota no espelho.</p>
+      <div class="line"></div>
+    </article>
+    <article class="serv-card reveal">
+      <span class="idx">03</span>
+      <span class="ol">Corpo</span>
+      <h3>Massagem Relaxante</h3>
+      <p>Técnicas que aliviam a tensão do dia a dia e renovam a energia. Um intervalo de cuidado pro corpo respirar e a mente desacelerar.</p>
+      <div class="line"></div>
+    </article>
+    <article class="serv-card reveal">
+      <span class="idx">04</span>
+      <span class="ol">Estética avançada</span>
+      <h3>Tratamentos Corporais</h3>
+      <p>Cuidados estéticos voltados ao contorno e à saúde da pele do corpo, com avaliação individual e acompanhamento de resultado.</p>
+      <div class="line"></div>
+    </article>
+    <article class="serv-card reveal">
+      <span class="idx">05</span>
+      <span class="ol">Bem-estar</span>
+      <h3>Ritual de Autocuidado</h3>
+      <p>Uma experiência completa pra você se desligar do mundo lá fora e voltar inteira. Pele cuidada, corpo leve, cabeça em paz.</p>
+      <div class="line"></div>
+    </article>
+    <article class="serv-card reveal">
+      <span class="idx">06</span>
+      <span class="ol">Personalizado</span>
+      <h3>Avaliação &amp; Plano</h3>
+      <p>Antes de qualquer procedimento, uma conversa pra entender sua pele e seus objetivos — e montar o cuidado certo pra você.</p>
+      <div class="line"></div>
+    </article>
+  </div>
+  <div class="proc-photos">
+    <img src="imagens/web-03.jpg" alt="Massagem facial no Espaço M Concept" class="reveal" loading="lazy">
+    <img src="imagens/web-04.jpg" alt="Revitalização facial com rolo de pedra" class="reveal" loading="lazy">
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova" id="prova">
+  <div class="inner">
+    <div class="top">
+      <div class="reveal">
+        <span class="overline">Quem cuida da pele aqui, volta</span>
+        <h2>A confiança de Cuiabá no <em>cuidado certo</em></h2>
+      </div>
+      <div class="rating reveal">
+        <span class="stars">★★★★★</span>
+        <b>4.8</b>
+        <span>Avaliação no Google</span>
+      </div>
+    </div>
+    <div class="depo-grid">
+      <div class="depo reveal">
+        <div class="q">”</div>
+        <p>Saio de cada sessão com a pele renovada e a cabeça leve. Atendimento atencioso do começo ao fim — virei cliente fiel.</p>
+        <div class="who">Cliente do Espaço M<span>Avaliação Google</span></div>
+      </div>
+      <div class="depo reveal">
+        <div class="q">”</div>
+        <p>Ambiente acolhedor e profissionais que realmente entendem do assunto. Recomendo de olhos fechados pra quem é de Cuiabá.</p>
+        <div class="who">Cliente do Espaço M<span>Avaliação Google</span></div>
+      </div>
+      <div class="depo reveal">
+        <div class="q">”</div>
+        <p>Minha limpeza de pele de confiança. Sempre saio sentindo que cuidaram de mim com calma e capricho. Nota 10.</p>
+        <div class="who">Cliente do Espaço M<span>Avaliação Google</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA CTA -->
+<section class="band">
+  <div class="band-bg" aria-hidden="true"></div>
+  <div class="band-ov" aria-hidden="true"></div>
+  <div class="band wrap inner" style="padding-left:clamp(1.5rem,6vw,5rem);padding-right:clamp(1.5rem,6vw,5rem)">
+    <span class="overline" style="color:var(--gold-light)">Reserve seu horário</span>
+    <h2>Sua próxima sessão de <em>autocuidado</em> começa com uma mensagem</h2>
+    <p>Conte o que você precisa pela conversa — a gente sugere o cuidado ideal e marca o melhor horário pra você.</p>
+    <a href="https://wa.me/5565998023508" class="btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.989-.607zm5.428-6.273c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="local" id="localizacao">
+  <div class="local-grid">
+    <div class="reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>Pertinho de você, na <em>Morada do Ouro</em></h2>
+      <div class="info-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><b>Endereço</b><p>R. Dep. Milton de Figueiredo, 262<br>Morada do Ouro, Cuiabá - MT, 78053-500</p></div>
+      </div>
+      <div class="info-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><b>Telefone &amp; WhatsApp</b><p><a href="https://wa.me/5565998023508" target="_blank" rel="noopener">(65) 99802-3508</a></p></div>
+      </div>
+      <div class="info-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><b>Atendimento</b><p>Com hora marcada — garanta seu horário pelo WhatsApp.</p></div>
+      </div>
+      <div class="cta-row">
+        <a href="https://wa.me/5565998023508" class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.989-.607zm5.428-6.273c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Agendar agora
+        </a>
+        <a href="https://www.google.com/maps/place/Espa%C3%A7o+M+Concept/@-15.5673179,-56.0636232,17z/data=!3m1!4b1!4m6!3m5!1s0x939db185d0f337cd:0xaad234dae8d8750f!8m2!3d-15.5673179!4d-56.0636232!16s%2Fg%2F11fsmnndmc?authuser=0&hl=pt-BR" class="btn-ghost" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+    <div class="map-card reveal">
+      <iframe title="Mapa do Espaço M Concept" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=-15.5673179,-56.0636232&hl=pt-BR&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#topo" class="brand">Espaço M <span>Concept</span></a>
+      <p>Estética e autocuidado na Morada do Ouro, Cuiabá. Onde sua pele e o seu tempo recebem o cuidado que merecem.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegue</h4>
+      <a href="#sobre">O Espaço</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#prova">Avaliações</a>
+      <a href="#localizacao">Onde estamos</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contato</h4>
+      <p>R. Dep. Milton de Figueiredo, 262<br>Morada do Ouro, Cuiabá - MT</p>
+      <a href="https://wa.me/5565998023508" target="_blank" rel="noopener">WhatsApp · (65) 99802-3508</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Espaço M Concept · Cuiabá, MT</span>
+    <span>Atendimento com hora marcada</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5565998023508" class="wa-fab" aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.989-.607zm5.428-6.273c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
