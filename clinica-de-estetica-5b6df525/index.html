@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica de Estética · Renascença · São Luís/MA</title>
+<meta name="description" content="Estética facial e corporal avançada no Jardim Renascença, São Luís. Cuidado personalizado, ambiente acolhedor e resultados que respeitam a sua beleza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#f6f2ea; --bg-surface:#fbf8f2; --bg-inset:#efe8da; --bg-dark:#16201c;
+  --green:#1f3d34; --green-mid:#2e5547; --green-deep:#12231d;
+  --text-primary:#1b211e; --text-secondary:#48524d; --text-muted:#8c9189; --text-inverse:#f6f2ea;
+  --gold:#c9a86a; --gold-light:#e3cd9b;
+  --accent:#1f3d34; --accent-dark:#12231d;
+  --accent-subtle:rgba(31,61,52,.08); --accent-border:rgba(31,61,52,.16);
+  --shadow-md:0 2px 4px rgba(20,30,25,.04),0 8px 18px rgba(20,30,25,.07),0 20px 44px rgba(20,30,25,.06);
+  --shadow-lg:0 4px 8px rgba(20,30,25,.05),0 16px 32px rgba(20,30,25,.08),0 44px 80px rgba(20,30,25,.10);
+  --section-pad:clamp(5rem,9vw,10rem); --content-max:1200px; --prose-max:640px;
+  --text-display:clamp(2.9rem,1.8rem+4.6vw,6rem); --text-h2:clamp(1.9rem,1.3rem+2.5vw,3.1rem);
+  --text-h3:clamp(1.25rem,1rem+1vw,1.7rem); --text-body:clamp(.95rem,.88rem+.3vw,1.05rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-base);color:var(--text-primary);font-size:var(--text-body);line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.06;letter-spacing:-.01em;text-wrap:balance;font-optical-sizing:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--content-max);margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem)}
+.overline{display:inline-flex;align-items:center;gap:12px;font-family:'Inter';font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.overline::before{content:'';width:30px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:1rem 2rem;min-height:52px;font-family:'Inter';font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;transition:transform .35s var(--ease),box-shadow .35s ease,background .3s ease;will-change:transform}
+.btn-primary{background:linear-gradient(135deg,var(--gold),#b8954f);color:#1b211e;box-shadow:0 10px 30px rgba(201,168,106,.32)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(201,168,106,.42)}
+.btn-ghost{border:1px solid rgba(246,242,234,.4);color:var(--text-inverse)}
+.btn-ghost:hover{background:rgba(246,242,234,.1);transform:translateY(-3px)}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px clamp(1.5rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;transition:background .4s ease,box-shadow .4s ease,padding .4s ease}
+header.scrolled{background:rgba(18,35,29,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(201,168,106,.22);padding:14px clamp(1.5rem,5vw,3rem)}
+.logo{display:flex;align-items:center;gap:12px;color:#f6f2ea}
+.logo-mark{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond';font-size:1.35rem;color:var(--gold)}
+.logo-txt{font-family:'Cormorant Garamond';font-size:1.3rem;letter-spacing:.04em;line-height:1.1}
+.logo-txt small{display:block;font-family:'Inter';font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,242,234,.6)}
+header nav{display:none;gap:34px;font-size:.78rem;letter-spacing:.06em;color:rgba(246,242,234,.85)}
+header nav a{position:relative}
+header nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+header nav a:hover::after{width:100%}
+@media(min-width:980px){header nav{display:flex}}
+
+/* HERO — design-led, no photo */
+.hero{position:relative;min-height:100dvh;display:flex;align-items:center;overflow:hidden;background:var(--bg-dark)}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 78% 18%,rgba(46,85,71,.95) 0%,rgba(18,35,29,0) 55%),
+  radial-gradient(90% 80% at 12% 92%,rgba(201,168,106,.20) 0%,rgba(18,35,29,0) 50%),
+  radial-gradient(140% 120% at 50% 50%,#1a2d26 0%,#0e1814 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px;opacity:.05;pointer-events:none}
+.hero-orbit{position:absolute;width:min(78vw,720px);height:min(78vw,720px);right:-12%;top:50%;transform:translateY(-50%);border-radius:50%;border:1px solid rgba(201,168,106,.22);pointer-events:none}
+.hero-orbit::before{content:'';position:absolute;inset:16%;border-radius:50%;border:1px solid rgba(201,168,106,.12)}
+.hero-orbit::after{content:'';position:absolute;inset:34%;border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(201,168,106,.18),transparent 60%)}
+.hero-content{position:relative;z-index:3;color:var(--text-inverse);padding:7rem 0 3rem;max-width:760px}
+.hero h1{font-size:var(--text-display);font-weight:300;color:#f6f2ea;max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero .lead{font-size:clamp(1rem,.95rem+.4vw,1.18rem);color:rgba(246,242,234,.78);max-width:46ch;margin:26px 0 38px;font-weight:300}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-meta{margin-top:48px;display:flex;gap:34px;flex-wrap:wrap;border-top:1px solid rgba(246,242,234,.14);padding-top:26px}
+.hero-meta div{min-width:90px}
+.hero-meta b{display:block;font-family:'Cormorant Garamond';font-size:1.9rem;color:var(--gold-light);font-weight:500}
+.hero-meta span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.6)}
+.hero .word{display:inline-block;transform:translateY(110%);opacity:0;animation:wup .9s var(--ease) forwards}
+.hero h1 .l1{animation-delay:.15s}.hero h1 .l2{animation-delay:.3s}.hero h1 .l3{animation-delay:.45s}
+@keyframes wup{to{transform:translateY(0);opacity:1}}
+.hero-fade{opacity:0;animation:fadeIn 1s var(--ease) forwards}
+.hero-fade.d1{animation-delay:.6s}.hero-fade.d2{animation-delay:.75s}
+@keyframes fadeIn{to{opacity:1}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal:nth-child(2){transition-delay:.07s}.reveal:nth-child(3){transition-delay:.14s}.reveal:nth-child(4){transition-delay:.21s}.reveal:nth-child(5){transition-delay:.28s}.reveal:nth-child(6){transition-delay:.35s}
+
+section{padding:var(--section-pad) 0}
+.sec-head{max-width:var(--prose-max);margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head h2{font-size:var(--text-h2);color:var(--text-primary)}
+.sec-head h2 em{font-style:italic;color:var(--green-mid)}
+.sec-head p{color:var(--text-secondary);margin-top:18px;font-weight:300}
+
+/* FILOSOFIA */
+.philo{background:var(--bg-surface)}
+.philo-grid{display:grid;gap:clamp(2rem,5vw,5rem);align-items:center;grid-template-columns:1fr}
+@media(min-width:900px){.philo-grid{grid-template-columns:1.1fr .9fr}}
+.philo-quote{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-size:clamp(1.6rem,1.1rem+2vw,2.6rem);line-height:1.28;color:var(--green)}
+.philo-quote span{color:var(--gold);font-style:normal}
+.philo-side{border-left:1px solid var(--accent-border);padding-left:30px;display:grid;gap:24px}
+.philo-side .pt b{font-family:'Cormorant Garamond';font-size:1.3rem;color:var(--green);display:block;margin-bottom:4px}
+.philo-side .pt p{font-size:.92rem;color:var(--text-secondary);font-weight:300}
+
+/* SERVIÇOS */
+.serv{background:var(--bg-inset)}
+.serv-grid{display:grid;gap:clamp(1rem,2.4vw,1.6rem);grid-template-columns:1fr}
+@media(min-width:640px){.serv-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.serv-grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--bg-surface);border:1px solid var(--accent-border);border-radius:18px;padding:2.4rem 2rem;transition:transform .4s var(--ease),box-shadow .4s ease,border-color .3s ease;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md);border-color:rgba(201,168,106,.4)}
+.card-ico{width:54px;height:54px;border-radius:14px;background:var(--accent-subtle);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.card-ico svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:1.4}
+.card h3{font-size:var(--text-h3);color:var(--text-primary);margin-bottom:8px}
+.card p{font-size:.9rem;color:var(--text-secondary);font-weight:300}
+.card-num{position:absolute;top:18px;right:22px;font-family:'Cormorant Garamond';font-size:1.1rem;color:var(--accent-border)}
+
+/* EXPERIÊNCIA dark */
+.exp{position:relative;background:var(--bg-dark);color:var(--text-inverse);overflow:hidden}
+.exp::before{content:'';position:absolute;inset:0;background:radial-gradient(90% 80% at 80% 20%,rgba(46,85,71,.5),transparent 55%),radial-gradient(70% 70% at 10% 90%,rgba(201,168,106,.14),transparent 50%)}
+.exp .wrap{position:relative;z-index:2}
+.exp .sec-head h2{color:#f6f2ea}.exp .sec-head h2 em{color:var(--gold-light)}
+.exp .sec-head p{color:rgba(246,242,234,.7)}
+.exp-grid{display:grid;gap:clamp(1.6rem,4vw,3rem);grid-template-columns:1fr}
+@media(min-width:820px){.exp-grid{grid-template-columns:repeat(3,1fr)}}
+.exp-item{border-top:1px solid rgba(201,168,106,.3);padding-top:24px}
+.exp-item b{font-family:'Cormorant Garamond';font-size:clamp(2.4rem,1.6rem+3vw,3.6rem);color:var(--gold-light);font-weight:500;display:block;line-height:1}
+.exp-item span{display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,234,.6);margin:10px 0 8px}
+.exp-item p{font-size:.9rem;color:rgba(246,242,234,.78);font-weight:300}
+
+/* AGENDAMENTO / CTA */
+.book{background:var(--bg-surface);text-align:center}
+.book .wrap{max-width:760px}
+.book h2{font-size:var(--text-h2);color:var(--green)}
+.book h2 em{font-style:italic;color:var(--gold)}
+.book p{color:var(--text-secondary);margin:20px auto 36px;font-weight:300;max-width:48ch}
+.book-note{margin-top:22px;font-size:.78rem;color:var(--text-muted);letter-spacing:.04em}
+
+/* LOCAL */
+.local{background:var(--bg-inset)}
+.local-grid{display:grid;gap:clamp(1.6rem,4vw,3rem);grid-template-columns:1fr;align-items:center}
+@media(min-width:880px){.local-grid{grid-template-columns:1fr 1fr}}
+.local-info .row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--accent-border)}
+.local-info .row svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:3px}
+.local-info .row b{display:block;font-family:'Cormorant Garamond';font-size:1.2rem;color:var(--green)}
+.local-info .row p{font-size:.92rem;color:var(--text-secondary);font-weight:300}
+.local-map{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-md);min-height:340px;border:1px solid var(--accent-border)}
+.local-map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.02)}
+
+/* FOOTER */
+footer{background:var(--bg-dark);color:rgba(246,242,234,.7);padding:4rem 0 2.4rem;text-align:center}
+footer .logo{justify-content:center;margin-bottom:18px}
+footer p{font-size:.84rem;font-weight:300;max-width:40ch;margin:0 auto 8px}
+footer .fnote{margin-top:22px;font-size:.72rem;color:rgba(246,242,234,.4)}
+
+/* FAB flutuante — sem WhatsApp/telefone no cadastro, leva ao Maps (único canal) */
+.fab{position:fixed;bottom:22px;right:22px;z-index:999;display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 22px 0 18px;border-radius:50px;background:linear-gradient(135deg,var(--gold),#b8954f);color:#16201c;font-family:'Inter';font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 8px 26px rgba(201,168,106,.42);transition:transform .25s var(--ease),box-shadow .25s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.fab:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 36px rgba(201,168,106,.55)}
+.fab svg{width:22px;height:22px;stroke:#16201c;fill:none;stroke-width:1.6;flex-shrink:0}
+.fab::before{content:'';position:absolute;inset:-6px;border-radius:50px;border:2px solid rgba(201,168,106,.45);animation:fabpulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes fabpulse{0%{transform:scale(.98);opacity:.7}100%{transform:scale(1.12);opacity:0}}
+.fab-label{white-space:nowrap}
+@media(max-width:520px){.fab{padding:0 18px 0 16px;font-size:.68rem}.fab-label{display:none}.fab svg{width:24px;height:24px}}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal,.word,.hero-fade{transition:none;animation:none;opacity:1;transform:none}
+  .fab::before{animation:none}
+}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="#top">
+    <span class="logo-mark">e</span>
+    <span class="logo-txt">Clínica de Estética<small>São Luís · Renascença</small></span>
+  </a>
+  <nav>
+    <a href="#filosofia">Filosofia</a>
+    <a href="#tratamentos">Tratamentos</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a class="btn btn-primary" href="#contato" style="padding:.7rem 1.4rem;min-height:auto">Agendar</a>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-orbit"></div>
+  <div class="wrap hero-content">
+    <span class="overline hero-fade d1">Estética facial &amp; corporal · São Luís/MA</span>
+    <h1><span class="word l1">A sua pele merece</span><br><span class="word l2">um cuidado <em>à altura</em></span><br><span class="word l3">do Renascença.</span></h1>
+    <p class="lead hero-fade d1">Estética avançada num ambiente reservado e acolhedor, no coração do bairro mais nobre de São Luís. Protocolos personalizados para realçar a sua beleza com naturalidade.</p>
+    <div class="hero-cta hero-fade d2">
+      <a class="btn btn-primary" href="#contato">Agendar avaliação</a>
+      <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a>
+    </div>
+    <div class="hero-meta hero-fade d2">
+      <div><b>Renascença</b><span>Endereço nobre</span></div>
+      <div><b>1:1</b><span>Atendimento exclusivo</span></div>
+      <div><b>Facial+Corporal</b><span>Estética completa</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="philo" id="filosofia">
+  <div class="wrap">
+    <div class="philo-grid">
+      <div class="reveal">
+        <span class="overline">Nossa filosofia</span>
+        <p class="philo-quote">Beleza não se impõe — <span>ela se revela.</span> Cada protocolo nasce de uma escuta atenta da sua pele e dos seus objetivos.</p>
+      </div>
+      <div class="philo-side reveal">
+        <div class="pt"><b>Avaliação personalizada</b><p>Antes de qualquer procedimento, um diagnóstico cuidadoso para entender a sua pele.</p></div>
+        <div class="pt"><b>Naturalidade em primeiro lugar</b><p>Resultados elegantes que respeitam os seus traços — nunca exagerados.</p></div>
+        <div class="pt"><b>Ambiente reservado</b><p>Discrição e conforto de spa, no bairro Renascença.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="serv" id="tratamentos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="overline">O que oferecemos</span>
+      <h2>Tratamentos <em>faciais e corporais</em> sob medida</h2>
+      <p>Da rotina de cuidado com a pele aos protocolos avançados — tudo conduzido com técnica e sensibilidade estética.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="card reveal"><span class="card-num">01</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 3c4 4 6 6.5 6 9.5A6 6 0 0 1 6 12.5C6 9.5 8 7 12 3Z"/></svg></div>
+        <h3>Limpeza de pele profunda</h3><p>Renovação, extração e hidratação para uma pele leve e luminosa.</p>
+      </div>
+      <div class="card reveal"><span class="card-num">02</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Peelings &amp; rejuvenescimento</h3><p>Protocolos para textura, manchas e viço — pele renovada do jeito certo.</p>
+      </div>
+      <div class="card reveal"><span class="card-num">03</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M4 14c3-2 5-2 8 0s5 2 8 0"/><path d="M4 9c3-2 5-2 8 0s5 2 8 0"/></svg></div>
+        <h3>Estética corporal</h3><p>Tratamentos para firmeza, contorno e bem-estar corporal.</p>
+      </div>
+      <div class="card reveal"><span class="card-num">04</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Harmonização facial</h3><p>Realce sutil e equilibrado dos contornos do rosto, com naturalidade.</p>
+      </div>
+      <div class="card reveal"><span class="card-num">05</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3Z"/></svg></div>
+        <h3>Skincare premium</h3><p>Rotinas e ativos profissionais para manter o resultado em casa.</p>
+      </div>
+      <div class="card reveal"><span class="card-num">06</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14" stroke-linecap="round"/></svg></div>
+        <h3>Avaliação &amp; plano de cuidado</h3><p>Um diagnóstico completo e um plano só seu, com acompanhamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exp" id="experiencia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="overline">A experiência</span>
+      <h2>Mais do que um procedimento, <em>um ritual de cuidado</em></h2>
+      <p>Cada detalhe pensado para que você saia de cada sessão se sentindo melhor do que entrou.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item reveal"><b>100%</b><span>Personalizado</span><p>Nenhum protocolo de prateleira. Tudo desenhado para a sua pele.</p></div>
+      <div class="exp-item reveal"><b>Renascença</b><span>Localização premium</span><p>No endereço mais valorizado de São Luís, com discrição e conforto.</p></div>
+      <div class="exp-item reveal"><b>Naturalidade</b><span>Nossa assinatura</span><p>Resultados elegantes que valorizam você — sem exageros.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="contato">
+  <div class="wrap">
+    <span class="overline" style="justify-content:center">Agende sua avaliação</span>
+    <h2>Pronta para cuidar da sua pele <em>com quem leva a sério?</em></h2>
+    <p>Comece com uma avaliação personalizada. Conte com um atendimento exclusivo, em um ambiente pensado no seu conforto.</p>
+    <a class="btn btn-primary" href="https://www.google.com/maps/place/clinica+de+estetica/@-2.5019126,-44.290966,17z/data=!4m6!3m5!1s0x7f68da6f7560f15:0xe033adc65b6df525!8m2!3d-2.5019126!4d-44.290966!16s%2Fg%2F11ygktz6bs" target="_blank" rel="noopener">Como chegar &amp; agendar visita</a>
+    <p class="book-note">Av. Coronel Colares Moreira · Jardim Renascença · São Luís/MA</p>
+  </div>
+</section>
+
+<section class="local">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="overline">Onde estamos</span>
+      <h2>No coração do <em>Renascença</em></h2>
+    </div>
+    <div class="local-grid">
+      <div class="local-info reveal">
+        <div class="row">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><b>Endereço</b><p>Av. Coronel Colares Moreira — Jardim Renascença, São Luís/MA, 65000-000</p></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Atendimento</b><p>Com hora marcada — para que você tenha toda a atenção que merece.</p></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 8l8 5 8-5"/></svg>
+          <div><b>Agende sua visita</b><p>Clique em "Agendar avaliação" e conheça o espaço pessoalmente.</p></div>
+        </div>
+      </div>
+      <div class="local-map reveal">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-2.5019126,-44.290966&z=16&output=embed" title="Localização no Jardim Renascença, São Luís/MA"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="logo" href="#top"><span class="logo-mark">e</span><span class="logo-txt" style="color:#f6f2ea">Clínica de Estética<small>São Luís · Renascença</small></span></a>
+  <p>Estética facial e corporal avançada, com cuidado personalizado e ambiente acolhedor no Jardim Renascença.</p>
+  <p class="fnote">© 2026 · São Luís/MA · Site demonstrativo</p>
+</footer>
+
+<a class="fab" href="https://www.google.com/maps/place/clinica+de+estetica/@-2.5019126,-44.290966,17z/data=!4m6!3m5!1s0x7f68da6f7560f15:0xe033adc65b6df525!8m2!3d-2.5019126!4d-44.290966!16s%2Fg%2F11ygktz6bs" target="_blank" rel="noopener" aria-label="Como chegar à clínica no Renascença">
+  <svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+  <span class="fab-label">Como chegar</span>
+</a>
+
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>50),{passive:true});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
